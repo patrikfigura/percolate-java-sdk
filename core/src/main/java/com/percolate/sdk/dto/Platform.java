@@ -58,7 +58,7 @@ public class Platform implements Serializable, Comparable<Platform> {
 
     /**
      * Used to sort Platforms in the PostForm platform picker in the following order:
-     * Facebook, Twitter, Tumblr, Linkedin, gplus, <others>
+     * Facebook, Twitter, Tumblr, Linkedin, gplus, :others:
      * so that the order matches the website.
      */
     @Override

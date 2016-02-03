@@ -1,14 +1,30 @@
-group 'com.percolate.sdk'
-version '1.0-SNAPSHOT'
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
 
-apply plugin: 'java'
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
 
-sourceCompatibility = 1.5
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
 
-repositories {
-    mavenCentral()
-}
+    task skipWarningsJavaDoc(type: Javadoc) {
+        options.addStringOption("Xdoclint:none")
+    }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    task javadocJar(type: Jar, dependsOn: skipWarningsJavaDoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+
+    tasks.withType(Javadoc) {
+        options.addStringOption('-Xdoclint:none')
+    }
+
+    artifacts {
+        archives sourcesJar
+        archives javadocJar
+    }
 }

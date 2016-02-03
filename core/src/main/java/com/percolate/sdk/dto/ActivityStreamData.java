@@ -63,10 +63,8 @@ public class ActivityStreamData implements Serializable {
      * The /api/v4/activity endpoint returns a list of {@link ActivityStreamMetadata} objects.
      * Ex:
      * metadata: [ { 'key': 'somekey', 'value': 'str' }, ...]
-     * <p/>
      * To avoid traversing the metadata repeatedly, this method flattens this array list into
      * a hash map as:
-     * <p/>
      * {'somekey': 'str',...}
      *
      * @return map of metadata keys and values.
