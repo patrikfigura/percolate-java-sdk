@@ -9,5 +9,10 @@ TODO
 ## Contributing
 TODO
 
+## Troubleshooting:
+TODO
+https://jitpack.io/com/github/percolate/percolate-java-sdk/:commit_hash:/build.log
+
 ## License
 TODO
+
