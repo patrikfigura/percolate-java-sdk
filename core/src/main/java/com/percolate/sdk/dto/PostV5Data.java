@@ -1,0 +1,314 @@
+package com.percolate.sdk.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+import org.jetbrains.annotations.Nullable;
+
+import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+@SuppressWarnings("UnusedDeclaration")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class PostV5Data implements Serializable {
+
+    private static final long serialVersionUID = 2143339291862169519L;
+
+    @JsonIgnore
+    @Nullable
+    public Platform platform; //Set by client after looping through include data.
+
+    @JsonIgnore
+    @Nullable
+    public ChannelV5 channel; //Set by client after looping through include data.
+
+    @JsonIgnore
+    @Nullable
+    public List<Media> media; //Set by client after calling ApiGetMedia
+
+    @JsonIgnore
+    @Nullable
+    public WorkflowData workflowData; //Set by client after calling ApiGetWorkflow
+
+    @JsonIgnore
+    @Nullable
+    public Link link; //Set by client after calling ApiGetLink
+
+    @JsonIgnore
+    @Nullable
+    public Map<String, String> fieldLabels; //Mapping of dynamic field keys to field names.
+
+    @JsonProperty("id")
+    private String id;
+
+    @JsonProperty("scope_id")
+    private String scopeId;
+
+    @JsonProperty("user_id")
+    private String userId;
+
+    @JsonProperty("status")
+    private String status;
+
+    @JsonProperty("live_at")
+    private String liveAt;
+
+    @JsonProperty("live_at_timezone")
+    private String liveAtTimezone;
+
+    @JsonProperty("name")
+    private String name;
+
+    @JsonProperty("description")
+    private String description;
+
+    @JsonProperty("url")
+    private String url;
+
+    @JsonProperty("ingested")
+    private Boolean ingested;
+
+    @JsonProperty("platform_id")
+    private String platformId;
+
+    @JsonProperty("channel_id")
+    private String channelId;
+
+    @JsonProperty("approval_workflow_id")
+    private String approvalWorkflowId;
+
+    @JsonProperty("approval_group_id")
+    private String approvalGroupId;
+
+    @JsonProperty("schema_id")
+    private String schemaId;
+
+    @JsonProperty("interaction_id")
+    private String interactionId;
+
+    @JsonProperty("asset_ids")
+    private List<String> assetIds;
+
+    @JsonProperty("topic_ids")
+    private List<String> topicIds;
+
+    @JsonProperty("term_ids")
+    private List<String> termIds;
+
+    @JsonProperty("origin_ids")
+    private List<String> originIds;
+
+    @JsonProperty("link_ids")
+    private List<String> linkIds;
+
+    @JsonProperty("created_at")
+    private String createdAt;
+
+    @JsonProperty("updated_at")
+    private String updatedAt;
+
+    @JsonProperty("ext")
+    private LinkedHashMap<String, Object> ext;
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getScopeId() {
+        return scopeId;
+    }
+
+    public void setScopeId(String scopeId) {
+        this.scopeId = scopeId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getLiveAt() {
+        return liveAt;
+    }
+
+    public void setLiveAt(String liveAt) {
+        this.liveAt = liveAt;
+    }
+
+    public String getLiveAtTimezone() {
+        return liveAtTimezone;
+    }
+
+    public void setLiveAtTimezone(String liveAtTimezone) {
+        this.liveAtTimezone = liveAtTimezone;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Boolean getIngested() {
+        return ingested;
+    }
+
+    public void setIngested(Boolean ingested) {
+        this.ingested = ingested;
+    }
+
+    public String getPlatformId() {
+        return platformId;
+    }
+
+    public void setPlatformId(String platformId) {
+        this.platformId = platformId;
+    }
+
+    public String getChannelId() {
+        return channelId;
+    }
+
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
+    }
+
+    public String getApprovalWorkflowId() {
+        return approvalWorkflowId;
+    }
+
+    public void setApprovalWorkflowId(String approvalWorkflowId) {
+        this.approvalWorkflowId = approvalWorkflowId;
+    }
+
+    public String getApprovalGroupId() {
+        return approvalGroupId;
+    }
+
+    public void setApprovalGroupId(String approvalGroupId) {
+        this.approvalGroupId = approvalGroupId;
+    }
+
+    public String getSchemaId() {
+        return schemaId;
+    }
+
+    public void setSchemaId(String schemaId) {
+        this.schemaId = schemaId;
+    }
+
+    public String getInteractionId() {
+        return interactionId;
+    }
+
+    public void setInteractionId(String interactionId) {
+        this.interactionId = interactionId;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public List<String> getAssetIds() {
+        return assetIds;
+    }
+
+    public void setAssetIds(List<String> assetIds) {
+        this.assetIds = assetIds;
+    }
+
+    public List<String> getTopicIds() {
+        return topicIds;
+    }
+
+    public void setTopicIds(List<String> topicIds) {
+        this.topicIds = topicIds;
+    }
+
+    public List<String> getTermIds() {
+        return termIds;
+    }
+
+    public void setTermIds(List<String> termIds) {
+        this.termIds = termIds;
+    }
+
+    public List<String> getOriginIds() {
+        return originIds;
+    }
+
+    public void setOriginIds(List<String> originIds) {
+        this.originIds = originIds;
+    }
+
+    public List<String> getLinkIds() {
+        return linkIds;
+    }
+
+    public void setLinkIds(List<String> linkIds) {
+        this.linkIds = linkIds;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public LinkedHashMap<String, Object> getExt() {
+        return ext;
+    }
+
+    public void setExt(LinkedHashMap<String, Object> ext) {
+        this.ext = ext;
+    }
+}

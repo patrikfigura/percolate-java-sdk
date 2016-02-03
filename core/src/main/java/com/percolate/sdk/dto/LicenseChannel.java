@@ -1,0 +1,177 @@
+package com.percolate.sdk.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+import java.io.Serializable;
+
+@SuppressWarnings("UnusedDeclaration")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class LicenseChannel implements Serializable {
+
+    private static final long serialVersionUID = 5650271549581035867L;
+
+    public boolean displayed; //set to true by client once it is displayed
+
+    @JsonProperty("id")
+    private Long id;
+
+    @JsonProperty("uid")
+    private String uid;
+
+    @JsonProperty("license_id")
+    private Long licenseId;
+
+    @JsonProperty("channel_id")
+    private Long channelId;
+
+    @JsonProperty("token_id")
+    private Long tokenId;
+
+    @JsonProperty("publishing")
+    private Publishing publishing;
+
+    @JsonProperty("ingesting")
+    private EnabledProperty ingesting;
+
+    @JsonProperty("following")
+    private EnabledProperty following;
+
+    @JsonProperty("monitoring")
+    private EnabledProperty monitoring;
+
+    @JsonProperty("inbox")
+    private EnabledProperty inbox;
+
+    @JsonProperty("token")
+    private TokenStatus token;
+
+    @JsonProperty("license")
+    private License license;
+
+    @JsonProperty("channel")
+    private Channel channel;
+
+    @JsonProperty("scoped_channel_uid")
+    private String scopedChannelUid;
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public Long getLicenseId() {
+        return licenseId;
+    }
+
+    public void setLicenseId(Long licenseId) {
+        this.licenseId = licenseId;
+    }
+
+    public Long getChannelId() {
+        return channelId;
+    }
+
+    public void setChannelId(Long channelId) {
+        this.channelId = channelId;
+    }
+
+    public Long getTokenId() {
+        return tokenId;
+    }
+
+    public void setTokenId(Long tokenId) {
+        this.tokenId = tokenId;
+    }
+
+    public Publishing getPublishing() {
+        return publishing;
+    }
+
+    public void setPublishing(Publishing publishing) {
+        this.publishing = publishing;
+    }
+
+    public EnabledProperty getIngesting() {
+        return ingesting;
+    }
+
+    public void setIngesting(EnabledProperty ingesting) {
+        this.ingesting = ingesting;
+    }
+
+    public EnabledProperty getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(EnabledProperty following) {
+        this.following = following;
+    }
+
+    public EnabledProperty getMonitoring() {
+        return monitoring;
+    }
+
+    public void setMonitoring(EnabledProperty monitoring) {
+        this.monitoring = monitoring;
+    }
+
+    public EnabledProperty getInbox() {
+        return inbox;
+    }
+
+    public void setInbox(EnabledProperty inbox) {
+        this.inbox = inbox;
+    }
+
+    public TokenStatus getToken() {
+        return token;
+    }
+
+    public void setToken(TokenStatus token) {
+        this.token = token;
+    }
+
+    public License getLicense() {
+        return license;
+    }
+
+    public void setLicense(License license) {
+        this.license = license;
+    }
+
+    public Channel getChannel() {
+        return channel;
+    }
+
+    public void setChannel(Channel channel) {
+        this.channel = channel;
+    }
+
+    public String getScopedChannelUid() {
+        return scopedChannelUid;
+    }
+
+    public void setScopedChannelUid(String scopedChannelUid) {
+        this.scopedChannelUid = scopedChannelUid;
+    }
+}

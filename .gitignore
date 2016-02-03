@@ -1,0 +1,21 @@
+*.class
+.DS_Store
+
+# Gradle files
+.gradle/
+build/
+
+# IntelliJ files
+.idea/
+*.iml
+
+# Generated files
+bin/
+gen/
+
+# Jar Files
+*.jar
+
+# virtual machine crash logs
+hs_err_pid*
+
