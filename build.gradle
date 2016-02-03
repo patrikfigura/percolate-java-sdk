@@ -10,13 +10,17 @@ subprojects {
         from sourceSets.main.allSource
     }
 
-    task javadocJar(type: Jar, dependsOn: javadoc) {
+    task skipWarningsJavaDoc(type: Javadoc) {
+        options.addStringOption("Xdoclint:none")
+    }
+
+    task javadocJar(type: Jar, dependsOn: skipWarningsJavaDoc) {
         classifier = 'javadoc'
         from javadoc.destinationDir
     }
 
     tasks.withType(Javadoc) {
-        options.addStringOption('Xdoclint:none')
+        options.addStringOption('-Xdoclint:none')
     }
 
     artifacts {

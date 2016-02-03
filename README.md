@@ -8,6 +8,8 @@ TODO
 
 ## Contributing
 TODO
+**Using Java8**
+Test maven publishing (will be run by jitpack): `./gradlew --info clean install`
 
 ## Troubleshooting:
 TODO
