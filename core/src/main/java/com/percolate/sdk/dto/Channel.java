@@ -1,0 +1,102 @@
+package com.percolate.sdk.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+import java.io.Serializable;
+
+@SuppressWarnings("UnusedDeclaration")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Channel implements Serializable {
+
+    private static final long serialVersionUID = 4429915726701722436L;
+
+    @JsonIgnore
+    public boolean isPersonalChannel = false; // Set by client after checking if connected token is for a personal channel
+
+    @JsonProperty("id")
+    private Long id;
+
+    @JsonProperty("name")
+    private String name;
+
+    @JsonProperty("photo_url")
+    private String photoUrl;
+
+    @JsonProperty("total_subscribers")
+    private Integer totalSubscribers;
+
+    @JsonProperty("type")
+    private String type; //"twitter", "facebook", etc. 
+
+    @JsonProperty("url")
+    private String url;
+
+    @JsonProperty("page_id")
+    private String pageId;
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
+    public Integer getTotalSubscribers() {
+        return totalSubscribers;
+    }
+
+    public void setTotalSubscribers(Integer totalSubscribers) {
+        this.totalSubscribers = totalSubscribers;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getPageId() {
+        return pageId;
+    }
+
+    public void setPageId(String pageId) {
+        this.pageId = pageId;
+    }
+}
