@@ -15,13 +15,13 @@ public class OAuthTokenData implements Serializable {
     private static final long serialVersionUID = 6215034140127772622L;
 
     @JsonProperty("token_id")
-    private String tokenUID;
+    protected String tokenUID;
 
     @JsonProperty("license_token_id")
-    private String licenseTokenUID;
+    protected String licenseTokenUID;
 
     @JsonProperty("scope_id")
-    private String scopeUID;
+    protected String scopeUID;
 
     @Override
     public String toString() {

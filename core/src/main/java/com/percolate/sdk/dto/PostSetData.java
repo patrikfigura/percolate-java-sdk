@@ -18,94 +18,94 @@ public class PostSetData implements Serializable {
     private static final long serialVersionUID = -7566682514171654050L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("analytics")
-    private LinkedHashMap<String, Integer> analytics;
+    protected LinkedHashMap<String, Integer> analytics;
 
     @JsonProperty("body")
-    private String body;
+    protected String body;
 
     @JsonProperty("brand_id")
-    private Long brandId;
+    protected Long brandId;
 
     @JsonProperty("brew_id")
-    private Long brewId;
+    protected Long brewId;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("external")
-    private Boolean external;
+    protected Boolean external;
 
     @JsonProperty("link")
-    private Link link;
+    protected Link link;
 
     @JsonProperty("license_id")
-    private Long licenseId;
+    protected Long licenseId;
 
     @JsonProperty("link_id")
-    private Long linkId;
+    protected Long linkId;
 
     @JsonProperty("local_created_at")
-    private LocalCreatedAt localCreatedAt;
+    protected LocalCreatedAt localCreatedAt;
 
     @JsonProperty("media")
-    private Media media;
+    protected Media media;
 
     @JsonProperty("medias")
-    private List<Media> medias;
+    protected List<Media> medias;
 
     @JsonProperty("posts")
-    private List<Post> posts = new ArrayList<>();
+    protected List<Post> posts = new ArrayList<>();
 
     @JsonProperty("short_url")
-    private String shortUrl;
+    protected String shortUrl;
 
     @JsonProperty("tag_ids")
-    private List<Long> tagIds = new ArrayList<>();
+    protected List<Long> tagIds = new ArrayList<>();
 
     @JsonProperty("title")
-    private String title;
+    protected String title;
 
     @JsonProperty("tracking_tag_ids")
-    private List<Integer> trackingTagIds = new ArrayList<>();
+    protected List<Integer> trackingTagIds = new ArrayList<>();
 
     @JsonProperty("user")
-    private User user;
+    protected User user;
 
     @JsonProperty("user_id")
-    private Long userId;
+    protected Long userId;
 
     @JsonProperty("xtags")
-    private List<String> xtags = new ArrayList<>();
+    protected List<String> xtags = new ArrayList<>();
 
     @JsonProperty("tags")
-    private List<Topic> topics = new ArrayList<>();
+    protected List<Topic> topics = new ArrayList<>();
 
     @JsonProperty("link_title")
-    private String linkTitle;
+    protected String linkTitle;
 
     @JsonProperty("note")
-    private String note;
+    protected String note;
 
     @JsonProperty("brief_id")
-    private Integer briefId;
+    protected Integer briefId;
 
     @JsonProperty("comment_count")
-    private Integer commentCount;
+    protected Integer commentCount;
 
     @JsonProperty("user_agent")
-    private String userAgent;
+    protected String userAgent;
 
     @JsonProperty("share_id")
-    private Long shareId;
+    protected Long shareId;
 
     @JsonProperty("related_license_id")
-    private Integer relatedLicenseId;
+    protected Integer relatedLicenseId;
 
     @JsonProperty("errors")
-    private List<LinkedHashMap<String, Object>> errors;
+    protected List<LinkedHashMap<String, Object>> errors;
 
     @Override
     public String toString() {

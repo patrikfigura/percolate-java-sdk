@@ -21,16 +21,16 @@ public class InstagramComment implements Serializable {
     public InstagramMonitoringObject instagramMonitoringObject; //Set by client after calling ApiGetInstagramMonitoringItem
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("text")
-    private String text;
+    protected String text;
 
     @JsonProperty("from")
-    private InstagramUserData from;
+    protected InstagramUserData from;
 
     @JsonProperty("created_time")
-    private String createdTime;
+    protected String createdTime;
 
     @Override
     public String toString() {

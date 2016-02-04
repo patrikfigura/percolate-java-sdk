@@ -16,7 +16,7 @@ public class Workflow implements Serializable {
     private static final long serialVersionUID = -4718949090024226643L;
 
     @JsonProperty("data")
-    private List<WorkflowData> data;
+    protected List<WorkflowData> data;
 
     @Override
     public String toString() {

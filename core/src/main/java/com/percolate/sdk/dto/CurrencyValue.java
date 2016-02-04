@@ -15,10 +15,10 @@ public class CurrencyValue implements Serializable {
     private static final long serialVersionUID = 9084918391516878711L;
 
     @JsonProperty("currency")
-    private String currency;
+    protected String currency;
 
     @JsonProperty("amount")
-    private String amount;
+    protected String amount;
 
     @Override
     public String toString() {

@@ -26,16 +26,16 @@ public class TwitterMonitoringObject implements Serializable {
     public boolean wasFromMonitoringTab = false; //Set by client if object was loaded on the monitoring tab
 
     @JsonProperty("id")
-    private String id; // Twitter id
+    protected String id; // Twitter id
 
     @JsonProperty("activity")
-    private List<Object> activity;
+    protected List<Object> activity;
 
     @JsonProperty("author_influencer_score")
-    private Long authorInfluencerScore;
+    protected Long authorInfluencerScore;
 
     @JsonProperty("xobj")
-    private Tweet tweet;
+    protected Tweet tweet;
 
     @Override
     public String toString() {

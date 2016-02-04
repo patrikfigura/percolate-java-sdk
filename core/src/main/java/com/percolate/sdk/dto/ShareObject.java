@@ -16,31 +16,31 @@ public class ShareObject implements Serializable {
     private static final long serialVersionUID = -8957804320866631989L;
 
     @JsonProperty("uid")
-    private String UID;
+    protected String UID;
 
     @JsonProperty("created_at")
-    private Date createdAt;
+    protected Date createdAt;
 
     @JsonProperty("local_created_at")
-    private LocalCreatedAt localCreatedAt;
+    protected LocalCreatedAt localCreatedAt;
 
     @JsonProperty("link")
-    private ShareLink link;
+    protected ShareLink link;
 
     @JsonProperty("owner")
-    private ShareUser owner;
+    protected ShareUser owner;
 
     @JsonProperty("owner_uid")
-    private String ownerUID;
+    protected String ownerUID;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("image")
-    private Media image;
+    protected Media image;
 
     @JsonProperty("ugc_meta")
-    private ShareUgcMeta ugcMeta;
+    protected ShareUgcMeta ugcMeta;
 
     @Override
     public String toString() {

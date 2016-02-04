@@ -16,10 +16,10 @@ public class TwitterMonitoringObjects implements Serializable {
     private static final long serialVersionUID = 7493861292446960392L;
 
     @JsonProperty("data")
-    private List<TwitterMonitoringObject> data;
+    protected List<TwitterMonitoringObject> data;
 
     @JsonProperty("pagination")
-    private PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @Override
     public String toString() {

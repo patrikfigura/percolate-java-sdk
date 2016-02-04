@@ -15,13 +15,13 @@ public class TwitterConversationListData implements Serializable {
     private static final long serialVersionUID = 7377475363379793838L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("xobj")
-    private TwitterConversationMessage xobj;
+    protected TwitterConversationMessage xobj;
 
     @JsonProperty("replied")
-    private boolean replied; //Set by ApiGetTwitterConversation, but not by ApiGetTwitterConversationThread
+    protected boolean replied; //Set by ApiGetTwitterConversation, but not by ApiGetTwitterConversationThread
 
     @Override
     public String toString() {

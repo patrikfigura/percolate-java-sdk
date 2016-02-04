@@ -17,10 +17,10 @@ public class PostSet implements Serializable {
     private static final long serialVersionUID = 2406736684378546245L;
 
     @JsonProperty("data")
-    private List<PostSetData> postSetData = new ArrayList<>();
+    protected List<PostSetData> postSetData = new ArrayList<>();
 
     @JsonProperty("pagination")
-    private PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @Override
     public String toString() {

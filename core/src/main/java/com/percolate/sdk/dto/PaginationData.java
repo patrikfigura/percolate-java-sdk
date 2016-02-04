@@ -16,25 +16,25 @@ public class PaginationData implements Serializable {
     private static final long serialVersionUID = 3822172876701770176L;
 
     @JsonProperty("total")
-    private Integer total;
+    protected Integer total;
 
     @JsonProperty("limit")
-    private Integer limit;
+    protected Integer limit;
 
     @JsonProperty("offset")
-    private Integer offset;
+    protected Integer offset;
 
     @JsonProperty("order_by")
-    private String orderBy;
+    protected String orderBy;
 
     @JsonProperty("order_direction")
-    private String orderDirection; // "asc" or "desc"
+    protected String orderDirection; // "asc" or "desc"
 
     @JsonProperty("start_key")
-    private String startKey;
+    protected String startKey;
 
     @JsonProperty("end_key")
-    private String endKey;
+    protected String endKey;
 
     public void addToParamsMap(Map<String, String> params) {
         if (params != null) {

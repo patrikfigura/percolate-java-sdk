@@ -15,7 +15,7 @@ public class Translation implements Serializable {
     private static final long serialVersionUID = 6802825796553326017L;
 
     @JsonProperty("data")
-    private TranslationData data;
+    protected TranslationData data;
 
     @Override
     public String toString() {

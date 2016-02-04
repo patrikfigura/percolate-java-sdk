@@ -16,16 +16,16 @@ public class CampaignSectionData implements Serializable {
     private static final long serialVersionUID = -2202666222120218397L;
 
     @JsonProperty("uid")
-    private String uid;
+    protected String uid;
 
     @JsonProperty("title")
-    private String title;
+    protected String title;
 
     @JsonProperty("copy_html")
-    private String copyHtml;
+    protected String copyHtml;
 
     @JsonProperty("media_uids")
-    private List<String> mediaUids;
+    protected List<String> mediaUids;
 
     @Override
     public String toString() {

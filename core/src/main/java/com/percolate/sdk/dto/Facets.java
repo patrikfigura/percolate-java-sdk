@@ -16,7 +16,7 @@ public class Facets implements Serializable {
     private static final long serialVersionUID = -502807027675904076L;
 
     @JsonProperty("tags")
-    private LinkedHashMap<String, Integer> tags = new LinkedHashMap<>();
+    protected LinkedHashMap<String, Integer> tags = new LinkedHashMap<>();
 
     @Override
     public String toString() {

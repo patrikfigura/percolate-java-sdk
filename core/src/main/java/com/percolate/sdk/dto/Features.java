@@ -17,10 +17,10 @@ public class Features implements Serializable {
     private static final long serialVersionUID = 6303783337575122745L;
 
     @JsonProperty("meta")
-    private LinkedHashMap<String, Object> meta;
+    protected LinkedHashMap<String, Object> meta;
 
     @JsonProperty("data")
-    private List<FeatureData> data;
+    protected List<FeatureData> data;
 
     @Override
     public String toString() {

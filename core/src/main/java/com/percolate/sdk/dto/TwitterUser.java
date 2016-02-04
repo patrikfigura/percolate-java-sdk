@@ -25,136 +25,136 @@ public class TwitterUser implements Serializable {
     public boolean following = false; //Set by client after calling ApiGetTwitterFollowing
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("id_str")
-    private String idStr;
+    protected String idStr;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("screen_name")
-    private String screenName;
+    protected String screenName;
 
     @JsonProperty("location")
-    private String location;
+    protected String location;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @JsonProperty("entities")
-    private Object entities;
+    protected LinkedHashMap<String, Object> entities;
 
     @JsonProperty("protected")
-    private Boolean isProtected;
+    protected Boolean isProtected;
 
     @JsonProperty("followers_count")
-    private Long followersCount;
+    protected Long followersCount;
 
     @JsonProperty("friends_count")
-    private Long friendsCount;
+    protected Long friendsCount;
 
     @JsonProperty("listed_count")
-    private Long listedCount;
+    protected Long listedCount;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("favourites_count")
-    private Long favouritesCount;
+    protected Long favouritesCount;
 
     @JsonProperty("utc_offset")
-    private Long utcOffset;
+    protected Long utcOffset;
 
     @JsonProperty("time_zone")
-    private String timezone;
+    protected String timezone;
 
     @JsonProperty("geo_enabled")
-    private Boolean geoEnabled;
+    protected Boolean geoEnabled;
 
     @JsonProperty("verified")
-    private Boolean verified;
+    protected Boolean verified;
 
     @JsonProperty("statuses_count")
-    private Long statusesCount;
+    protected Long statusesCount;
 
     @JsonProperty("lang")
-    private String lang;
+    protected String lang;
 
     @JsonProperty("status")
-    private TwitterStatus status;
+    protected TwitterStatus status;
 
     @JsonProperty("contributors_enabled")
-    private Boolean contributorsEnabled;
+    protected Boolean contributorsEnabled;
 
     @JsonProperty("is_translator")
-    private Boolean translator;
+    protected Boolean translator;
 
     @JsonProperty("is_translation_enabled")
-    private Boolean translation_enabled;
+    protected Boolean translation_enabled;
 
     @JsonProperty("profile_background_color")
-    private String profileBackgroundColor;
+    protected String profileBackgroundColor;
 
     @JsonProperty("profile_background_image_url")
-    private String profileBackgroundImageUrl;
+    protected String profileBackgroundImageUrl;
 
     @JsonProperty("profile_background_image_url_https")
-    private String profileBackgroundImageUrlHttps;
+    protected String profileBackgroundImageUrlHttps;
 
     @JsonProperty("profile_background_tile")
-    private Boolean profileBackgroundTile;
+    protected Boolean profileBackgroundTile;
 
     @JsonProperty("profile_image_url")
-    private String profileImageUrl;
+    protected String profileImageUrl;
 
     @JsonProperty("profile_image_url_https")
-    private String profileImageUrlHttps;
+    protected String profileImageUrlHttps;
 
     @JsonProperty("profile_link_color")
-    private String profileLinkColor;
+    protected String profileLinkColor;
 
     @JsonProperty("profile_sidebar_border_color")
-    private String profileSidebarBorderColor;
+    protected String profileSidebarBorderColor;
 
     @JsonProperty("profile_sidebar_fill_color")
-    private String profileSidebarFillColor;
+    protected String profileSidebarFillColor;
 
     @JsonProperty("profile_text_color")
-    private String profileTextColor;
+    protected String profileTextColor;
 
     @JsonProperty("profile_use_background_image")
-    private Boolean profileUseBackgroundImage;
+    protected Boolean profileUseBackgroundImage;
 
     @JsonProperty("profile_banner_url")
-    private String profileBannerUrl;
+    protected String profileBannerUrl;
 
     @JsonProperty("default_profile")
-    private Boolean defaultProfile;
+    protected Boolean defaultProfile;
 
     @JsonProperty("default_profile_image")
-    private Boolean defaultProfileImage;
+    protected Boolean defaultProfileImage;
 
     @JsonProperty("following")
-    private Boolean followingObj;
+    protected Boolean followingObj;
 
     @JsonProperty("follow_request_sent")
-    private Boolean followRequestSent;
+    protected Boolean followRequestSent;
 
     @JsonProperty("notifications")
-    private Boolean notifications;
+    protected Boolean notifications;
 
     @JsonProperty("suspended")
-    private Boolean suspended;
+    protected Boolean suspended;
 
     @JsonProperty("needs_phone_verification")
-    private Boolean needsPhoneVerification;
+    protected Boolean needsPhoneVerification;
 
     @JsonProperty("errors")
-    private List<LinkedHashMap<String, Object>> errors;
+    protected List<LinkedHashMap<String, Object>> errors;
 
     @Override
     public String toString() {
@@ -229,12 +229,11 @@ public class TwitterUser implements Serializable {
         this.description = description;
     }
 
-
-    public Object getEntities() {
+    public LinkedHashMap<String, Object> getEntities() {
         return entities;
     }
 
-    public void setEntities(Object entities) {
+    public void setEntities(LinkedHashMap<String, Object> entities) {
         this.entities = entities;
     }
 

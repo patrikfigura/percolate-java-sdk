@@ -17,10 +17,10 @@ public class Shares implements Serializable {
     private static final long serialVersionUID = 3716896257654739360L;
 
     @JsonProperty("data")
-    private List<ShareData> data = new ArrayList<>();
+    protected List<ShareData> data = new ArrayList<>();
 
     @JsonProperty("pagination")
-    private PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @Override
     public String toString() {

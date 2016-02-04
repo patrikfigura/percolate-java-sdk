@@ -16,16 +16,16 @@ public class Entry implements Serializable {
     private static final long serialVersionUID = -6228332680774988388L;
 
     @JsonProperty("channel")
-    private Channel channel;
+    protected Channel channel;
 
     @JsonProperty("created_at")
-    private Date createdAt;
+    protected Date createdAt;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @Override
     public String toString() {

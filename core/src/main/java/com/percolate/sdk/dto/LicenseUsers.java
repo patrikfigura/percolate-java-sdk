@@ -17,10 +17,10 @@ public class LicenseUsers implements Serializable {
     private static final long serialVersionUID = 8919965239761196783L;
 
     @JsonProperty("data")
-    private List<LicenseUserInfo> data;
+    protected List<LicenseUserInfo> data;
 
     @JsonProperty("pagination")
-    private PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @Override
     public String toString() {

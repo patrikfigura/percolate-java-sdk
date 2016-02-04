@@ -15,7 +15,7 @@ public class SingleTerm implements Serializable {
     private static final long serialVersionUID = 2660978473371121477L;
 
     @JsonProperty("data")
-    private Term data;
+    protected Term data;
 
     @Override
     public String toString() {

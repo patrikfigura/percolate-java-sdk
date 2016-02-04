@@ -16,7 +16,7 @@ public class FacebookMessageAttachments implements Serializable {
     private static final long serialVersionUID = -5263016879014781921L;
 
     @JsonProperty("data")
-    private List<FacebookMessageAttachment> data;
+    protected List<FacebookMessageAttachment> data;
 
     @Override
     public String toString() {

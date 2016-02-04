@@ -15,28 +15,28 @@ public class FacebookMessageExtendedData implements Serializable {
     private static final long serialVersionUID = -5549405235141235537L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("created_time")
-    private String createdTime;
+    protected String createdTime;
 
     @JsonProperty("from")
-    private FacebookUser from;
+    protected FacebookUser from;
 
     @JsonProperty("to")
-    private FacebookUserDataList to;
+    protected FacebookUserDataList to;
 
     @JsonProperty("message")
-    private String message;
+    protected String message;
 
     @JsonProperty("shares")
-    private FacebookMessageKeyValueList shares;
+    protected FacebookMessageKeyValueList shares;
 
     @JsonProperty("tags")
-    private FacebookMessageKeyValueList tags;
+    protected FacebookMessageKeyValueList tags;
 
     @JsonProperty("attachments")
-    private FacebookMessageAttachments attachments;
+    protected FacebookMessageAttachments attachments;
 
     @Override
     public String toString() {

@@ -15,16 +15,16 @@ public class FacebookMessageAttachment implements Serializable {
     private static final long serialVersionUID = -2968749522512483725L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("mime_type")
-    private String mimeType;
+    protected String mimeType;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("image_data")
-    private FacebookMessageAttachmentImageData imageData;
+    protected FacebookMessageAttachmentImageData imageData;
 
     @Override
     public String toString() {

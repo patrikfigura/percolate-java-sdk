@@ -17,16 +17,16 @@ public class Token implements Serializable {
     private static final long serialVersionUID = -9204311148594925317L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("platform")
-    private String platform;
+    protected String platform;
 
     @JsonProperty("status")
-    private Integer status;
+    protected Integer status;
 
     @JsonProperty("pages")
-    private List<LinkedHashMap<String, Object>> pages;
+    protected List<LinkedHashMap<String, Object>> pages;
 
     @Override
     public String toString() {

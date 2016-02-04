@@ -16,10 +16,10 @@ public class Flags implements Serializable {
     private static final long serialVersionUID = -7832152877428648944L;
 
     @JsonProperty("data")
-    private List<Flag> data;
+    protected List<Flag> data;
 
     @JsonProperty("pagination")
-    private PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @Override
     public String toString() {

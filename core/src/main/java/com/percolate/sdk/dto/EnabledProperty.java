@@ -13,7 +13,7 @@ public class EnabledProperty implements Serializable {
 
     private static final long serialVersionUID = -6814557904913818377L;
 
-    private Boolean enabled;
+    protected Boolean enabled;
 
     public EnabledProperty() {
     }

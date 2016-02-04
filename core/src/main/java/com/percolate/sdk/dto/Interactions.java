@@ -16,10 +16,10 @@ public class Interactions implements Serializable {
     private static final long serialVersionUID = 3268412933584812239L;
 
     @JsonProperty("meta")
-    private InteractionsMetaData meta;
+    protected InteractionsMetaData meta;
 
     @JsonProperty("data")
-    private List<InteractionData> data;
+    protected List<InteractionData> data;
 
     @Override
     public String toString() {

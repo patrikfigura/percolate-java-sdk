@@ -15,7 +15,7 @@ public class SuccessStatus implements Serializable {
     private static final long serialVersionUID = 8975251171799014170L;
 
     @JsonProperty("success")
-    private SuccessProperty success;
+    protected SuccessProperty success;
 
     @Override
     public String toString() {

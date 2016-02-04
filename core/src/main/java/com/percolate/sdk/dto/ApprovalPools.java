@@ -16,7 +16,7 @@ public class ApprovalPools implements Serializable {
     private static final long serialVersionUID = -4542197289262070188L;
 
     @JsonProperty("data")
-    private List<ApprovalPool> data;
+    protected List<ApprovalPool> data;
 
     @Override
     public String toString() {

@@ -16,7 +16,7 @@ public class StreamsInclude implements Serializable {
     private static final long serialVersionUID = 6913934210095835536L;
 
     @JsonProperty("channel")
-    private List<StreamChannelData> channels;
+    protected List<StreamChannelData> channels;
 
     @Override
     public String toString() {

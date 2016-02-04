@@ -15,7 +15,7 @@ public class InstagramRequestMetaData implements Serializable {
     private static final long serialVersionUID = 8605602985756380262L;
 
     @JsonProperty("code")
-    private Integer code;
+    protected Integer code;
 
     @Override
     public String toString() {

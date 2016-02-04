@@ -17,10 +17,10 @@ public class BrewUsers implements Serializable {
     private static final long serialVersionUID = 6069464957101643016L;
 
     @JsonProperty("pagination")
-    private PaginationData paginationData = new PaginationData();
+    protected PaginationData paginationData = new PaginationData();
 
     @JsonProperty("data")
-    private List<User> users = new ArrayList<>();
+    protected List<User> users = new ArrayList<>();
 
     @Override
     public String toString() {

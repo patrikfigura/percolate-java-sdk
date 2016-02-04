@@ -16,10 +16,10 @@ public class Schemas implements Serializable {
     private static final long serialVersionUID = -397962289275402466L;
 
     @JsonProperty("meta")
-    private V5Meta meta;
+    protected V5Meta meta;
 
     @JsonProperty("data")
-    private List<Schema> data;
+    protected List<Schema> data;
 
     @Override
     public String toString() {

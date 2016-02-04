@@ -15,13 +15,13 @@ public class TopAnalytic implements Serializable {
     private static final long serialVersionUID = 5993155913464792085L;
 
     @JsonProperty("service_type")
-    private String serviceType;
+    protected String serviceType;
 
     @JsonProperty("analytic_label")
-    private String analyticLabel;
+    protected String analyticLabel;
 
     @JsonProperty("score")
-    private Integer score;
+    protected Integer score;
 
     @Override
     public String toString() {

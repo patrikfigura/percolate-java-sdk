@@ -15,13 +15,13 @@ public class FlagOwner implements Serializable {
     private static final long serialVersionUID = -6118511276801966120L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("license")
-    private License license;
+    protected License license;
 
     @Override
     public String toString() {

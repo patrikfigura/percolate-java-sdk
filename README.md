@@ -7,7 +7,7 @@
 ### Gradle / Maven
 Add jitpack.io to as a repository.  [Instructions](https://jitpack.io/docs/#how-to).
 
-To use the latest build: `compile 'com.github.percolate:percolate-java-sdk:SNAPSHOT'`
+To use the latest build: `compile 'com.github.percolate:percolate-java-sdk:master-SNAPSHOT'`
 To use a build from a specific commit: `compile 'com.github.percolate:percolate-java-sdk:COMMIT_HASH'`
 
 ### Just want the jar file?
@@ -20,6 +20,7 @@ Run the following **Using Java8** to test maven publishing that will be run by j
 ## Troubleshooting:
 TODO
 jitpack logs can be found at: https://jitpack.io/com/github/percolate/percolate-java-sdk/:COMMIT_HASH:/build.log
+The latests log can be found here: https://jitpack.io/com/github/percolate/percolate-java-sdk/-SNAPSHOT/build.log
 
 ## License
 TODO

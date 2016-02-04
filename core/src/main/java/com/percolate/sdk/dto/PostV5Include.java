@@ -16,10 +16,10 @@ public class PostV5Include implements Serializable {
     private static final long serialVersionUID = -3361111564265766009L;
 
     @JsonProperty("platform")
-    private List<Platform> platform;
+    protected List<Platform> platform;
 
     @JsonProperty("channel")
-    private List<ChannelV5> channel;
+    protected List<ChannelV5> channel;
 
     @Override
     public String toString() {

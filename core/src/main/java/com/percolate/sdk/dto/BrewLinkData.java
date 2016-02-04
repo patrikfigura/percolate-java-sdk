@@ -21,37 +21,37 @@ public class BrewLinkData implements Serializable {
     public int itemViewType;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("entries")
-    private List<Entry> entries = new ArrayList<>();
+    protected List<Entry> entries = new ArrayList<>();
 
     @JsonProperty("keywords")
-    private List<Keywords> keywords = new ArrayList<>();
+    protected List<Keywords> keywords = new ArrayList<>();
 
     @JsonProperty("medias")
-    private List<Media> medias = new ArrayList<>();
+    protected List<Media> medias = new ArrayList<>();
 
     @JsonProperty("owned_channel")
-    private OwnedChannel ownedChannel;
+    protected OwnedChannel ownedChannel;
 
     @JsonProperty("posts_summary")
-    private String postsSummary;
+    protected String postsSummary;
 
     @JsonProperty("socialbar_url")
-    private String socialbarUrl;
+    protected String socialbarUrl;
 
     @JsonProperty("title")
-    private String title;
+    protected String title;
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @Override
     public String toString() {

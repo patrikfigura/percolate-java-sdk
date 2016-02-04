@@ -17,13 +17,13 @@ public class PushRegistrationInfo implements Serializable {
     private static final long serialVersionUID = 5293786670952513731L;
 
     @JsonProperty("registration_id")
-    private String registrationId;
+    protected String registrationId;
 
     @JsonProperty("push_token_uid")
-    private String pushTokenUID;
+    protected String pushTokenUID;
 
     @JsonProperty("app_version")
-    private String appVersion; //GCM registration Id's are not guaranteed to work with the new app versions.
+    protected String appVersion; //GCM registration Id's are not guaranteed to work with the new app versions.
 
     @Override
     public String toString() {

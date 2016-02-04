@@ -15,7 +15,7 @@ public class CannedResponsesMetaData implements Serializable {
     private static final long serialVersionUID = -3410991984621577045L;
 
     @JsonProperty("total")
-    private Long total;
+    protected Long total;
 
     @Override
     public String toString() {

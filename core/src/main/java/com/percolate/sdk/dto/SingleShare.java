@@ -15,7 +15,7 @@ public class SingleShare implements Serializable {
     private static final long serialVersionUID = -5215388855107200846L;
 
     @JsonProperty("data")
-    private ShareData data;
+    protected ShareData data;
 
     @Override
     public String toString() {

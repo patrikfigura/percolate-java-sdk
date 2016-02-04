@@ -16,28 +16,28 @@ public class InteractionData implements Serializable {
     private static final long serialVersionUID = 2244260563471640657L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("platform")
-    private String platform;
+    protected String platform;
 
     @JsonProperty("scope_id")
-    private String scopeId;
+    protected String scopeId;
 
     @JsonProperty("xid")
-    private String xid;
+    protected String xid;
 
     @JsonProperty("read")
-    private Boolean read;
+    protected Boolean read;
 
     @JsonProperty("term_ids")
-    private List<String> termIds;
+    protected List<String> termIds;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("updated_at")
-    private String updatedAt;
+    protected String updatedAt;
 
     @Override
     public String toString() {

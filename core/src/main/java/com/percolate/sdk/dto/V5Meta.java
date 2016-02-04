@@ -16,10 +16,10 @@ public class V5Meta implements Serializable {
     private static final long serialVersionUID = -3704954110778397943L;
 
     @JsonProperty("query")
-    private LinkedHashMap<String, Object> query;
+    protected LinkedHashMap<String, Object> query;
 
     @JsonProperty("total")
-    private Long total;
+    protected Long total;
 
     @Override
     public String toString() {

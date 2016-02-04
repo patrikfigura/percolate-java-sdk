@@ -15,16 +15,16 @@ public class InstagramImageLocation implements Serializable {
     private static final long serialVersionUID = 1603230787329290303L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("latitude")
-    private Double latitude;
+    protected Double latitude;
 
     @JsonProperty("longitude")
-    private Double longitude;
+    protected Double longitude;
 
     @Override
     public String toString() {

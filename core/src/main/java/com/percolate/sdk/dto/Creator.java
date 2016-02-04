@@ -15,13 +15,13 @@ public class Creator implements Serializable {
     private static final long serialVersionUID = -5520630615228426626L;
 
     @JsonProperty("license_id")
-    private Long licenseId;
+    protected Long licenseId;
 
     @JsonProperty("user_id")
-    private Long userId;
+    protected Long userId;
 
     @JsonProperty("brand_id")
-    private Long brandId;
+    protected Long brandId;
 
     @Override
     public String toString() {

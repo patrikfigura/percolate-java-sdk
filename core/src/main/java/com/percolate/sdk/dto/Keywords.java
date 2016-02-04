@@ -15,13 +15,13 @@ public class Keywords implements Serializable {
     private static final long serialVersionUID = 6882567642837188994L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("keyword")
-    private String keyword;
+    protected String keyword;
 
     @JsonProperty("total_occurences")
-    private Integer totalOccurences;
+    protected Integer totalOccurences;
 
     @Override
     public String toString() {

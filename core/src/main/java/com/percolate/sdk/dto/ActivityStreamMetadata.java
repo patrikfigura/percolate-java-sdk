@@ -15,10 +15,10 @@ public class ActivityStreamMetadata implements Serializable {
     private static final long serialVersionUID = 7583076661503256595L;
 
     @JsonProperty("value")
-    private Object value;
+    protected Object value;
 
     @JsonProperty("key")
-    private String key;
+    protected String key;
 
     @Override
     public String toString() {

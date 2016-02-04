@@ -30,28 +30,28 @@ public class FacebookConversationMessage implements Serializable {
     public Flag flag; //Set by client after calling ApiGetFlags
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("conversation_id")
-    private String conversationId;
+    protected String conversationId;
 
     @JsonProperty("from")
-    private FacebookUser from;
+    protected FacebookUser from;
 
     // ApiGetFacebookConversations API returns "from"
     // ApiGetFlag API returns "from_user"
     // The setter method for this value sets <code>from</code> field.
     @JsonProperty("from_user")
-    private FacebookUser tempFromUser;
+    protected FacebookUser tempFromUser;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("has_attachments")
-    private Boolean hasAttachments;
+    protected Boolean hasAttachments;
 
     @JsonProperty("message")
-    private String message;
+    protected String message;
 
     @Override
     public String toString() {

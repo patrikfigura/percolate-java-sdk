@@ -36,22 +36,22 @@ public class StreamData implements Serializable {
     public TwitterQuery twitterQuery; //Set by client after calling ApiGetTwitterSearchQueries
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("type")
-    private String type; // Will be one of: activity | messages | query
+    protected String type; // Will be one of: activity | messages | query
 
     @JsonProperty("scope_id")
-    private String scopeId;
+    protected String scopeId;
 
     @JsonProperty("channel_id")
-    private String channelId;
+    protected String channelId;
 
     @JsonProperty("updated_at")
-    private String updatedAt;
+    protected String updatedAt;
 
     @JsonProperty("ext")
-    private Object ext;
+    protected LinkedHashMap<String, Object> ext;
 
     @Override
     public String toString() {
@@ -125,11 +125,11 @@ public class StreamData implements Serializable {
         this.updatedAt = updatedAt;
     }
 
-    public Object getExt() {
+    public LinkedHashMap<String, Object> getExt() {
         return ext;
     }
 
-    public void setExt(Object ext) {
+    public void setExt(LinkedHashMap<String, Object> ext) {
         this.ext = ext;
     }
 

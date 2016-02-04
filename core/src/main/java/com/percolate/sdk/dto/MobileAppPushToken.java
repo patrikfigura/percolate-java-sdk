@@ -15,7 +15,7 @@ public class MobileAppPushToken implements Serializable {
     private static final long serialVersionUID = -1641817014316211475L;
 
     @JsonProperty("data")
-    private MobileAppPushTokenData mobileAppPushTokenData;
+    protected MobileAppPushTokenData mobileAppPushTokenData;
 
     @Override
     public String toString() {

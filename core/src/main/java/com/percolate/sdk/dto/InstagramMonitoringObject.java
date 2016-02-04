@@ -23,19 +23,19 @@ public class InstagramMonitoringObject implements Serializable {
     public InstagramIncludeMediaData parent; //Set by client if include=parent_xids was sent to the API
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("xobj")
-    private InstagramComment xobj;
+    protected InstagramComment xobj;
 
     @JsonProperty("meta")
-    private InstagramMonitoringObjectMetaData meta;
+    protected InstagramMonitoringObjectMetaData meta;
 
     @JsonProperty("related_post_set_id")
-    private Long relatedPostSetId;
+    protected Long relatedPostSetId;
 
     @JsonProperty("activity")
-    private List<Object> activity;
+    protected List<Object> activity;
 
     @Override
     public String toString() {

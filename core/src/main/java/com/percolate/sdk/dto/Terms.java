@@ -16,10 +16,10 @@ public class Terms implements Serializable {
     private static final long serialVersionUID = -1574288769222247406L;
 
     @JsonProperty("meta")
-    private V5Meta meta;
+    protected V5Meta meta;
 
     @JsonProperty("data")
-    private List<Term> data;
+    protected List<Term> data;
 
     @Override
     public String toString() {

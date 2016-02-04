@@ -16,10 +16,10 @@ public class InstagramRecentMedia implements Serializable {
     private static final long serialVersionUID = 5997348676516800625L;
 
     @JsonProperty("meta")
-    private InstagramRequestMetaData meta;
+    protected InstagramRequestMetaData meta;
 
     @JsonProperty("data")
-    private List<InstagramMediaData> data;
+    protected List<InstagramMediaData> data;
 
     @Override
     public String toString() {

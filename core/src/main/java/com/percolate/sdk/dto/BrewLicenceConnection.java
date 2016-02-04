@@ -15,31 +15,31 @@ public class BrewLicenceConnection implements Serializable {
     private static final long serialVersionUID = 7688380520853872L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("total_channels")
-    private Integer totalChannels;
+    protected Integer totalChannels;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("primary")
-    private boolean primary;
+    protected boolean primary;
 
     @JsonProperty("approved")
-    private boolean approved;
+    protected boolean approved;
 
     @JsonProperty("priority")
-    private Integer priority;
+    protected Integer priority;
 
     @JsonProperty("license_id")
-    private Integer licenseId;
+    protected Integer licenseId;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("order")
-    private Integer order;
+    protected Integer order;
 
     @Override
     public String toString() {

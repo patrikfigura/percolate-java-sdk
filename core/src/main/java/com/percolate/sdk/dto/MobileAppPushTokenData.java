@@ -15,28 +15,28 @@ public class MobileAppPushTokenData implements Serializable {
     private static final long serialVersionUID = 6489210695336096464L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("user_id")
-    private String userUID;
+    protected String userUID;
 
     @JsonProperty("token")
-    private String token;
+    protected String token;
 
     @JsonProperty("push_platform")
-    private String pushPlatform;
+    protected String pushPlatform;
 
     @JsonProperty("bundle_identifier")
-    private String bundleIdentifier;
+    protected String bundleIdentifier;
 
     @JsonProperty("is_active")
-    private Boolean active;
+    protected Boolean active;
 
     @JsonProperty("arn")
-    private String arn;
+    protected String arn;
 
     @JsonProperty("mobile_app_arn")
-    private String mobileAppArn;
+    protected String mobileAppArn;
 
     @Override
     public String toString() {

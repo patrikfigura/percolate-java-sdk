@@ -17,49 +17,49 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1410394764791629912L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("username")
-    private String username;
+    protected String username;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("created_at")
-    private String createAt;
+    protected String createAt;
 
     @JsonProperty("state")
-    private String state;
+    protected String state;
 
     @JsonProperty("default_license_id")
-    private Long defaultLicenceId;
+    protected Long defaultLicenceId;
 
     @JsonProperty("email")
-    private String email;
+    protected String email;
 
     @JsonProperty("photo_url")
-    private String photoUrl;
+    protected String photoUrl;
 
     @JsonProperty("api_key")
-    private String apiKey;
+    protected String apiKey;
 
     @JsonProperty("active")
-    private boolean active;
+    protected boolean active;
 
     @JsonProperty("detail")
-    private String detail;
+    protected String detail;
 
     @JsonProperty("disabled")
-    private boolean disabled;
+    protected boolean disabled;
 
     @JsonProperty("complete")
-    private boolean complete;
+    protected boolean complete;
 
     @JsonProperty("role")
-    private String role;
+    protected String role;
 
     @JsonProperty("errors")
-    private List<LinkedHashMap<String, Object>> errors;
+    protected List<LinkedHashMap<String, Object>> errors;
 
     @Override
     public String toString() {

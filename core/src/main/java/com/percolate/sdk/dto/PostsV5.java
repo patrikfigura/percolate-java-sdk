@@ -16,13 +16,13 @@ public class PostsV5 implements Serializable {
     private static final long serialVersionUID = 4435737568483765895L;
 
     @JsonProperty("meta")
-    private V5Meta meta;
+    protected V5Meta meta;
 
     @JsonProperty("include")
-    private PostV5Include include;
+    protected PostV5Include include;
 
     @JsonProperty("data")
-    private List<PostV5Data> data;
+    protected List<PostV5Data> data;
 
     @Override
     public String toString() {

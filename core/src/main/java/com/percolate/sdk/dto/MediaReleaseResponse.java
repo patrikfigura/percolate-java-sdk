@@ -15,7 +15,7 @@ public class MediaReleaseResponse implements Serializable {
     private static final long serialVersionUID = -7661572721406666179L;
 
     @JsonProperty("data")
-    private MediaReleaseResponseData data;
+    protected MediaReleaseResponseData data;
 
     @Override
     public String toString() {

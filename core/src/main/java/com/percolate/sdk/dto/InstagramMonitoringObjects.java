@@ -16,13 +16,13 @@ public class InstagramMonitoringObjects implements Serializable {
     private static final long serialVersionUID = -731785363175190478L;
 
     @JsonProperty("pagination")
-    private PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @JsonProperty("data")
-    private List<InstagramMonitoringObject> data;
+    protected List<InstagramMonitoringObject> data;
 
     @JsonProperty("include")
-    private InstagramIncludes includes;
+    protected InstagramIncludes includes;
 
     @Override
     public String toString() {

@@ -15,28 +15,28 @@ public class FacebookMessageAttachmentImageData implements Serializable {
     private static final long serialVersionUID = -9078692815738333257L;
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @JsonProperty("preview_url")
-    private String previewUrl;
+    protected String previewUrl;
 
     @JsonProperty("height")
-    private Integer height;
+    protected Integer height;
 
     @JsonProperty("width")
-    private Integer width;
+    protected Integer width;
 
     @JsonProperty("render_as_sticker")
-    private Boolean renderAsSticker;
+    protected Boolean renderAsSticker;
 
     @JsonProperty("max_height")
-    private Integer maxHeight;
+    protected Integer maxHeight;
 
     @JsonProperty("max_width")
-    private Integer maxWidth;
+    protected Integer maxWidth;
 
     @JsonProperty("image_type")
-    private Integer imageType;
+    protected Integer imageType;
 
     @Override
     public String toString() {

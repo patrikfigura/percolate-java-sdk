@@ -16,52 +16,52 @@ public class InstagramMediaData implements Serializable {
     private static final long serialVersionUID = 5873971121884014169L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("caption")
-    private InstagramComment caption;
+    protected InstagramComment caption;
 
     @JsonProperty("images")
-    private InstagramMediaUrls images;
+    protected InstagramMediaUrls images;
 
     @JsonProperty("videos")
-    private InstagramMediaUrls videos;
+    protected InstagramMediaUrls videos;
 
     @JsonProperty("link")
-    private String link;
+    protected String link;
 
     @JsonProperty("user")
-    private InstagramUserData user;
+    protected InstagramUserData user;
 
     @JsonProperty("comments")
-    private InstagramComments comments;
+    protected InstagramComments comments;
 
     @JsonProperty("user_has_liked")
-    private boolean userHasLiked;
+    protected boolean userHasLiked;
 
     @JsonProperty("likes")
-    private InstagramLikes likes;
+    protected InstagramLikes likes;
 
     @JsonProperty("tags")
-    private List<String> tags;
+    protected List<String> tags;
 
     @JsonProperty("location")
-    private InstagramImageLocation location;
+    protected InstagramImageLocation location;
 
     @JsonProperty("filter")
-    private String filter;
+    protected String filter;
 
     @JsonProperty("users_in_photo")
-    private List<InstagramUsersInPhoto> usersInPhoto;
+    protected List<InstagramUsersInPhoto> usersInPhoto;
 
     @JsonProperty("attribution")
-    private Object attribution;
+    protected Object attribution;
 
     @JsonProperty("created_time")
-    private String createdTime;
+    protected String createdTime;
 
     @Override
     public String toString() {

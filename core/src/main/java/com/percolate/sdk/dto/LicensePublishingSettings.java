@@ -31,7 +31,7 @@ public class LicensePublishingSettings implements Serializable {
     */
 
     @JsonProperty("tags")
-    private List<Topic> topics;
+    protected List<Topic> topics;
 
     @Override
     public String toString() {

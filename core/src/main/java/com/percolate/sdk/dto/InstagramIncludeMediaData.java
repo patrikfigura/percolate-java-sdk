@@ -16,19 +16,19 @@ public class InstagramIncludeMediaData implements Serializable {
     private static final long serialVersionUID = -2952987534564201254L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("activity")
-    private List<Object> activity;
+    protected List<Object> activity;
 
     @JsonProperty("related_post_set_id")
-    private Long relatedPostSetId;
+    protected Long relatedPostSetId;
 
     @JsonProperty("xobj")
-    private InstagramMediaData xobj;
+    protected InstagramMediaData xobj;
 
     @JsonProperty("meta")
-    private InstagramMonitoringObjectMetaData meta;
+    protected InstagramMonitoringObjectMetaData meta;
 
     @Override
     public String toString() {

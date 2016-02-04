@@ -17,7 +17,7 @@ public class Plugs implements Serializable {
     private static final long serialVersionUID = 6511974218386725101L;
 
     @JsonProperty("data")
-    private List<Plug> plugs = new ArrayList<>();
+    protected List<Plug> plugs = new ArrayList<>();
 
     @Override
     public String toString() {

@@ -16,7 +16,7 @@ public class FacebookUserDataList implements Serializable {
     private static final long serialVersionUID = -305868333395532510L;
 
     @JsonProperty("data")
-    private List<FacebookUser> data;
+    protected List<FacebookUser> data;
 
     @Override
     public String toString() {

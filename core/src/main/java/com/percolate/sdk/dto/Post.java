@@ -33,82 +33,82 @@ public class Post implements Serializable {
 
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("analytics")
-    private LinkedHashMap<String, Integer> analytics;
+    protected LinkedHashMap<String, Integer> analytics;
 
     @JsonProperty("body")
-    private String body;
+    protected String body;
 
     @JsonProperty("channel")
-    private Channel channel;
+    protected Channel channel;
 
     @JsonProperty("channel_id")
-    private Long channelId;
+    protected Long channelId;
 
     @JsonProperty("guardrail_ids")
-    private List<String> guardrailIds = new ArrayList<>();
+    protected List<String> guardrailIds = new ArrayList<>();
 
     @JsonProperty("license_id")
-    private Long licenseId;
+    protected Long licenseId;
 
     @JsonProperty("link_description")
-    private String linkDescription;
+    protected String linkDescription;
 
     @JsonProperty("link_title")
-    private String linkTitle;
+    protected String linkTitle;
 
     @JsonProperty("local_release_at")
-    private LocalCreatedAt localReleaseAt;
+    protected LocalCreatedAt localReleaseAt;
 
     @JsonProperty("platform")
-    private String platform;
+    protected String platform;
 
     @JsonProperty("post_set_id")
-    private Long postSetId;
+    protected Long postSetId;
 
     @JsonProperty("published_at")
-    private String publishedAt;
+    protected String publishedAt;
 
     @JsonProperty("reference_source")
-    private Boolean referenceSource;
+    protected Boolean referenceSource;
 
     @JsonProperty("release_at")
-    private String releaseAt;
+    protected String releaseAt;
 
     @JsonProperty("status")
-    private String status;
+    protected String status;
 
     @JsonProperty("targeting")
-    private Targeting targeting;
+    protected Targeting targeting;
 
     @JsonProperty("title")
-    private String title;
+    protected String title;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @JsonProperty("workflow_id")
-    private Long workflowId;
+    protected Long workflowId;
 
     @JsonProperty("xstatus")
-    private String xstatus;
+    protected String xstatus;
 
     @JsonProperty("reference_xid")
-    private String referenceXId;
+    protected String referenceXId;
 
     @JsonProperty("error_id")
-    private String errorId;
+    protected String errorId;
 
     @JsonProperty("approval_pool_id")
-    private Long approvalPoolId;
+    protected Long approvalPoolId;
 
     @JsonProperty("facebook_mentions")
-    private List<FacebookMentionData> facebookMentions;
+    protected List<FacebookMentionData> facebookMentions;
 
     @Override
     public String toString() {

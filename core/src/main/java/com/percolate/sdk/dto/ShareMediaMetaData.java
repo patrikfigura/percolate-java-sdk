@@ -17,34 +17,34 @@ public class ShareMediaMetaData implements Serializable {
     private static final long serialVersionUID = 3046289637403627091L;
 
     @JsonProperty("uid")
-    private String uid;
+    protected String uid;
 
     @JsonProperty("tags")
-    private List<String> tags;
+    protected List<String> tags;
 
     @JsonProperty("owner_id")
-    private Long ownerId;
+    protected Long ownerId;
 
     @JsonProperty("owner_type")
-    private String ownerType;
+    protected String ownerType;
 
     @JsonProperty("title")
-    private String title;
+    protected String title;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("created_at")
-    private Date createAt;
+    protected Date createAt;
 
     @JsonProperty("original_filename")
-    private String originalFilename;
+    protected String originalFilename;
 
     @JsonProperty("modified_at")
-    private Date modifiedAt;
+    protected Date modifiedAt;
 
     @JsonProperty("creator")
-    private Creator creator;
+    protected Creator creator;
 
     @Override
     public String toString() {

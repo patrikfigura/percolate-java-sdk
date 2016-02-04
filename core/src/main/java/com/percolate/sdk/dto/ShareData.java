@@ -23,34 +23,34 @@ public class ShareData implements Serializable {
     public int itemViewType;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("body")
-    private String body;
+    protected String body;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("local_created_at")
-    private LocalCreatedAt localCreatedAt;
+    protected LocalCreatedAt localCreatedAt;
 
     @JsonProperty("object")
-    private ShareObject object;
+    protected ShareObject object;
 
     @JsonProperty("object_uid")
-    private String objectUID;
+    protected String objectUID;
 
     @JsonProperty("owner")
-    private ShareUser owner;
+    protected ShareUser owner;
 
     @JsonProperty("owner_uid")
-    private String ownerUID;
+    protected String ownerUID;
 
     @JsonProperty("recipient")
-    private ShareUser recipient;
+    protected ShareUser recipient;
 
     @JsonProperty("recipient_uid")
-    private String recipientUID;
+    protected String recipientUID;
 
     @Override
     public String toString() {

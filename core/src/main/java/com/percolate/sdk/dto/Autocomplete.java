@@ -17,25 +17,25 @@ public class Autocomplete implements Serializable {
     private static final long serialVersionUID = 6883166262212102498L;
 
     @JsonProperty("countries")
-    private List<LinkedHashMap<String, Object>> countries;
+    protected List<LinkedHashMap<String, Object>> countries;
 
     @JsonProperty("regions")
-    private List<LinkedHashMap<String, Object>> regions;
+    protected List<LinkedHashMap<String, Object>> regions;
 
     @JsonProperty("cities")
-    private List<LinkedHashMap<String, Object>> cities;
+    protected List<LinkedHashMap<String, Object>> cities;
 
     @JsonProperty("locales")
-    private List<LinkedHashMap<String, Object>> locales;
+    protected List<LinkedHashMap<String, Object>> locales;
 
     @JsonProperty("college_networks")
-    private List<LinkedHashMap<String, Object>> collegeNetworks;
+    protected List<LinkedHashMap<String, Object>> collegeNetworks;
 
     @JsonProperty("college_majors")
-    private List<LinkedHashMap<String, Object>> collegeMajors;
+    protected List<LinkedHashMap<String, Object>> collegeMajors;
 
     @JsonProperty("college_years")
-    private List<LinkedHashMap<String, Object>> collegeYears;
+    protected List<LinkedHashMap<String, Object>> collegeYears;
 
     @Override
     public String toString() {

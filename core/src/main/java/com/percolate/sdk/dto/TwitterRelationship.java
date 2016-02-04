@@ -15,10 +15,10 @@ public class TwitterRelationship implements Serializable {
     private static final long serialVersionUID = -112592603356726870L;
 
     @JsonProperty("source")
-    private TwitterRelationshipStatus source;
+    protected TwitterRelationshipStatus source;
 
     @JsonProperty("target")
-    private TwitterRelationshipStatus target;
+    protected TwitterRelationshipStatus target;
 
     @Override
     public String toString() {

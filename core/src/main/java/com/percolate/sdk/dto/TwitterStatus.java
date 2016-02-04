@@ -15,73 +15,73 @@ public class TwitterStatus implements Serializable {
     private static final long serialVersionUID = -2477125899122094140L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("id_str")
-    private String idStr;
+    protected String idStr;
 
     @JsonProperty("text")
-    private String text;
+    protected String text;
 
     @JsonProperty("source")
-    private String source;
+    protected String source;
 
     @JsonProperty("truncated")
-    private Boolean truncated;
+    protected Boolean truncated;
 
     @JsonProperty("in_reply_to_status_id")
-    private Long inReplyToStatusId;
+    protected Long inReplyToStatusId;
 
     @JsonProperty("in_reply_to_status_id_str")
-    private String inReplyToStatusIdStr;
+    protected String inReplyToStatusIdStr;
 
     @JsonProperty("in_reply_to_user_id")
-    private Long inReplyToUserId;
+    protected Long inReplyToUserId;
 
     @JsonProperty("in_reply_to_user_id_str")
-    private String inReplyToUserIdStr;
+    protected String inReplyToUserIdStr;
 
     @JsonProperty("in_reply_to_screen_name")
-    private String inReplyToScreenName;
+    protected String inReplyToScreenName;
 
     @JsonProperty("geo")
-    private Object geo;
+    protected Object geo;
 
     @JsonProperty("coordinates")
-    private Object coordinates;
+    protected Object coordinates;
 
     @JsonProperty("place")
-    private Object place;
+    protected Object place;
 
     @JsonProperty("contributors")
-    private Object contributors;
+    protected Object contributors;
 
     @JsonProperty("retweet_count")
-    private Long retweetCount;
+    protected Long retweetCount;
 
     @JsonProperty("favorite_count")
-    private Long favoriteCount;
+    protected Long favoriteCount;
 
     @JsonProperty("entities")
-    private Object entities;
+    protected Object entities;
 
     @JsonProperty("favorited")
-    private Boolean favorited;
+    protected Boolean favorited;
 
     @JsonProperty("retweeted")
-    private Boolean retweeted;
+    protected Boolean retweeted;
 
     @JsonProperty("lang")
-    private String lang;
+    protected String lang;
 
     @JsonProperty("possibly_sensitive")
-    private Boolean possiblySensitive;
+    protected Boolean possiblySensitive;
 
     @JsonProperty("retweeted_status")
-    private Tweet retweetedStatus;
+    protected Tweet retweetedStatus;
 
     @Override
     public String toString() {

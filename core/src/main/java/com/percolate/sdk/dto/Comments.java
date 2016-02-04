@@ -16,10 +16,10 @@ public class Comments implements Serializable {
     private static final long serialVersionUID = 3094776335568238621L;
 
     @JsonProperty("data")
-    private List<Comment> comments;
+    protected List<Comment> comments;
 
     @JsonProperty("include")
-    private CommentsInclude include;
+    protected CommentsInclude include;
 
     @Override
     public String toString() {

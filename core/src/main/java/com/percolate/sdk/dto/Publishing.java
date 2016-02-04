@@ -15,25 +15,25 @@ public class Publishing implements Serializable {
     private static final long serialVersionUID = 1136384423211158167L;
 
     @JsonProperty("targeting_disabled")
-    private Boolean targetingDisabled;
+    protected Boolean targetingDisabled;
 
     @JsonProperty("by_default")
-    private Boolean byDefault;
+    protected Boolean byDefault;
 
     @JsonProperty("suffix")
-    private String suffix;
+    protected String suffix;
 
     @JsonProperty("hub")
-    private Boolean hub;
+    protected Boolean hub;
 
     @JsonProperty("enabled")
-    private Boolean enabled;
+    protected Boolean enabled;
 
     @JsonProperty("xstatus_support")
-    private Boolean xstatusSupport;
+    protected Boolean xstatusSupport;
 
     @JsonProperty("album_xid")
-    private Object albumId; // Can be String or List
+    protected Object albumId; // Can be String or List
 
     @Override
     public String toString() {

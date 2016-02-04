@@ -18,19 +18,19 @@ public class MediaList implements Serializable {
     private static final long serialVersionUID = 1426883209215551876L;
 
     @JsonProperty("facets")
-    private Facets facets = new Facets();
+    protected Facets facets = new Facets();
 
     @JsonProperty("data")
-    private List<Media> data = new ArrayList<>();
+    protected List<Media> data = new ArrayList<>();
 
     @JsonProperty("pagination")
-    private PaginationData paginationData = new PaginationData();
+    protected PaginationData paginationData = new PaginationData();
 
     @JsonProperty("detail")
-    private String detail; // error message
+    protected String detail; // error message
 
     @JsonProperty("errors")
-    private List<LinkedHashMap<String, Object>> errors;
+    protected List<LinkedHashMap<String, Object>> errors;
 
     @Override
     public String toString() {

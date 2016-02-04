@@ -15,10 +15,10 @@ public class DateRangeValue implements Serializable {
     private static final long serialVersionUID = -1573058536502372203L;
 
     @JsonProperty("from")
-    private String from;
+    protected String from;
 
     @JsonProperty("to")
-    private String to;
+    protected String to;
 
     @Override
     public String toString() {

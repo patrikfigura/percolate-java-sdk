@@ -18,25 +18,25 @@ public class Comment implements Serializable {
     public User user; //Set by client code after calling ApiGetUser
 
     @JsonProperty("id")
-    private String uid;
+    protected String uid;
 
     @JsonProperty("object_id")
-    private String objectUID;
+    protected String objectUID;
 
     @JsonProperty("body")
-    private String body;
+    protected String body;
 
     @JsonProperty("mentions")
-    private List<Mention> mentions;
+    protected List<Mention> mentions;
 
     @JsonProperty("user_id")
-    private String userUID;
+    protected String userUID;
 
     @JsonProperty("scope_id")
-    private String scopeUID;
+    protected String scopeUID;
 
     @JsonProperty("updated_at")
-    private String updatedAt;
+    protected String updatedAt;
 
     @Override
     public String toString() {

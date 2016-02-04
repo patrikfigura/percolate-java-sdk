@@ -17,10 +17,10 @@ public class BrewLinks implements Serializable {
     private static final long serialVersionUID = -95774588881853668L;
 
     @JsonProperty("data")
-    private List<BrewLinkData> data = new ArrayList<>();
+    protected List<BrewLinkData> data = new ArrayList<>();
 
     @JsonProperty("pagination")
-    private PaginationData pagination;
+    protected PaginationData pagination;
 
     @Override
     public String toString() {

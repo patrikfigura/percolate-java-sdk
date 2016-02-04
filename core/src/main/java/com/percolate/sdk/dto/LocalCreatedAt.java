@@ -15,10 +15,10 @@ public class LocalCreatedAt implements Serializable {
     private static final long serialVersionUID = 1836316412476551789L;
 
     @JsonProperty("datetime")
-    private String datetime;
+    protected String datetime;
 
     @JsonProperty("timezone")
-    private String timezone;
+    protected String timezone;
 
     @Override
     public String toString() {

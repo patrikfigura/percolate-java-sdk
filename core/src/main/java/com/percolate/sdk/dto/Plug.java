@@ -15,22 +15,22 @@ public class Plug implements Serializable {
     private static final long serialVersionUID = 8655115311837847481L;
 
     @JsonProperty("id")
-    private Integer id;
+    protected Integer id;
 
     @JsonProperty("post_id")
-    private Integer postId;
+    protected Integer postId;
 
     @JsonProperty("budget")
-    private Double budget;
+    protected Double budget;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("start_at")
-    private String startAt;
+    protected String startAt;
 
     @JsonProperty("end_at")
-    private String endAt;
+    protected String endAt;
 
     @Override
     public String toString() {

@@ -15,7 +15,7 @@ public class MediaMetaDataHolder implements Serializable {
     private static final long serialVersionUID = 863071203532221745L;
 
     @JsonProperty("data")
-    private MediaMetaData data;
+    protected MediaMetaData data;
 
     @Override
     public String toString() {

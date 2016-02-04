@@ -16,10 +16,10 @@ public class FacebookMonitoringObjects implements Serializable {
     private static final long serialVersionUID = 6826014384269799318L;
 
     @JsonProperty("data")
-    private List<FacebookMonitoringObject> data;
+    protected List<FacebookMonitoringObject> data;
 
     @JsonProperty("pagination")
-    private PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @Override
     public String toString() {

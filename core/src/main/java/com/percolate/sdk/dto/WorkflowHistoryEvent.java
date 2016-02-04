@@ -16,31 +16,31 @@ public class WorkflowHistoryEvent implements Serializable {
     private static final long serialVersionUID = -6035453818419691479L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("user_id")
-    private Long userId;
+    protected Long userId;
 
     @JsonProperty("created_at")
-    private Date createdAt;
+    protected Date createdAt;
 
     @JsonProperty("value")
-    private String value;
+    protected String value;
 
     @JsonProperty("cycle_count")
-    private Integer cycleCount;
+    protected Integer cycleCount;
 
     @JsonProperty("workflow_id")
-    private Long workflowId;
+    protected Long workflowId;
 
     @JsonProperty("action")
-    private String action;
+    protected String action;
 
     @JsonProperty("step_id")
-    private Long stepId;
+    protected Long stepId;
 
     @JsonProperty("outdated")
-    private boolean outdated;
+    protected boolean outdated;
 
     @Override
     public String toString() {

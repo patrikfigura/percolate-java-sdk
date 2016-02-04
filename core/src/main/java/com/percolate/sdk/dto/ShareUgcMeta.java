@@ -16,22 +16,22 @@ public class ShareUgcMeta implements Serializable {
     private static final long serialVersionUID = 8241743059330507001L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("uid")
-    private String uid;
+    protected String uid;
 
     @JsonProperty("state")
-    private String state;
+    protected String state;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("metadata")
-    private ShareMediaMetaData metadata;
+    protected ShareMediaMetaData metadata;
 
     @JsonProperty("formats")
-    private List<MediaFormat> formats;
+    protected List<MediaFormat> formats;
 
     @Override
     public String toString() {

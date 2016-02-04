@@ -21,16 +21,16 @@ public class ImageSize implements Serializable {
     public static final String ORIGINAL = "original";
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @JsonProperty("width")
-    private String width;
+    protected String width;
 
     @JsonProperty("length")
-    private String length;
+    protected String length;
 
     @JsonProperty("height")
-    private String height;
+    protected String height;
 
     @Override
     public String toString() {

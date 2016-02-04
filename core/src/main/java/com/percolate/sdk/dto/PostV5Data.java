@@ -44,76 +44,76 @@ public class PostV5Data implements Serializable {
     public Map<String, String> fieldLabels; //Mapping of dynamic field keys to field names.
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("scope_id")
-    private String scopeId;
+    protected String scopeId;
 
     @JsonProperty("user_id")
-    private String userId;
+    protected String userId;
 
     @JsonProperty("status")
-    private String status;
+    protected String status;
 
     @JsonProperty("live_at")
-    private String liveAt;
+    protected String liveAt;
 
     @JsonProperty("live_at_timezone")
-    private String liveAtTimezone;
+    protected String liveAtTimezone;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @JsonProperty("ingested")
-    private Boolean ingested;
+    protected Boolean ingested;
 
     @JsonProperty("platform_id")
-    private String platformId;
+    protected String platformId;
 
     @JsonProperty("channel_id")
-    private String channelId;
+    protected String channelId;
 
     @JsonProperty("approval_workflow_id")
-    private String approvalWorkflowId;
+    protected String approvalWorkflowId;
 
     @JsonProperty("approval_group_id")
-    private String approvalGroupId;
+    protected String approvalGroupId;
 
     @JsonProperty("schema_id")
-    private String schemaId;
+    protected String schemaId;
 
     @JsonProperty("interaction_id")
-    private String interactionId;
+    protected String interactionId;
 
     @JsonProperty("asset_ids")
-    private List<String> assetIds;
+    protected List<String> assetIds;
 
     @JsonProperty("topic_ids")
-    private List<String> topicIds;
+    protected List<String> topicIds;
 
     @JsonProperty("term_ids")
-    private List<String> termIds;
+    protected List<String> termIds;
 
     @JsonProperty("origin_ids")
-    private List<String> originIds;
+    protected List<String> originIds;
 
     @JsonProperty("link_ids")
-    private List<String> linkIds;
+    protected List<String> linkIds;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("updated_at")
-    private String updatedAt;
+    protected String updatedAt;
 
     @JsonProperty("ext")
-    private LinkedHashMap<String, Object> ext;
+    protected LinkedHashMap<String, Object> ext;
 
     @Override
     public String toString() {

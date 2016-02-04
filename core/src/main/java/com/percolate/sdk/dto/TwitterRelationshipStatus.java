@@ -15,50 +15,50 @@ public class TwitterRelationshipStatus implements Serializable {
     private static final long serialVersionUID = -8436368374610963582L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("id_str")
-    private String idStr;
+    protected String idStr;
 
     @JsonProperty("screen_name")
-    private String screenName;
+    protected String screenName;
 
     @JsonProperty("can_dm")
-    private Boolean canDM;
+    protected Boolean canDM;
 
     @JsonProperty("followed_by")
-    private Boolean followedBy;
+    protected Boolean followedBy;
 
     @JsonProperty("following")
-    private Boolean following;
+    protected Boolean following;
 
     // These seem to always be null...
     @JsonProperty("all_replies")
-    private Object allReplies;
+    protected Object allReplies;
 
     @JsonProperty("blocked_by")
-    private Object blockedBy;
+    protected Object blockedBy;
 
     @JsonProperty("blocking")
-    private Object blocking;
+    protected Object blocking;
 
     @JsonProperty("following_received")
-    private Object followingReceived;
+    protected Object followingReceived;
 
     @JsonProperty("following_requested")
-    private Object followingRequested;
+    protected Object followingRequested;
 
     @JsonProperty("marked_spam")
-    private Object markedSpam;
+    protected Object markedSpam;
 
     @JsonProperty("muting")
-    private Object muting;
+    protected Object muting;
 
     @JsonProperty("notifications_enabled")
-    private Object notificationsEnabled;
+    protected Object notificationsEnabled;
 
     @JsonProperty("want_retweets")
-    private Object wantsRetweets;
+    protected Object wantsRetweets;
 
     @Override
     public String toString() {

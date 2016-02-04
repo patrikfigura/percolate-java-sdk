@@ -31,25 +31,25 @@ public class Platform implements Serializable, Comparable<Platform> {
     public String iconUrl; //Set by client after calling ApiGetMedia
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("scope_id")
-    private Object scopeId;
+    protected String scopeId;
 
     @JsonProperty("color")
-    private String color;
+    protected String color;
 
     @JsonProperty("avatar_id")
-    private String avatarId;
+    protected String avatarId;
 
     @JsonProperty("updated_at")
-    private String updatedAt;
+    protected String updatedAt;
 
     @Override
     public String toString() {
@@ -115,11 +115,11 @@ public class Platform implements Serializable, Comparable<Platform> {
         this.type = type;
     }
 
-    public Object getScopeId() {
+    public String getScopeId() {
         return scopeId;
     }
 
-    public void setScopeId(Object scopeId) {
+    public void setScopeId(String scopeId) {
         this.scopeId = scopeId;
     }
 
