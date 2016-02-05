@@ -11,38 +11,7 @@ buildscript {
 
 ext {
     compileSdkVersion = 23
-    buildToolsVersion = "23.0.2"
+    buildToolsVersion = "23.0.1"
     minSdkVersion = 16
     targetSdkVersion = 23
 }
-//
-//subprojects {
-//    apply plugin: 'java'
-//    apply plugin: 'maven'
-//
-//    sourceCompatibility = 1.7
-//    targetCompatibility = 1.7
-//
-//    task sourcesJar(type: Jar, dependsOn: classes) {
-//        classifier = 'sources'
-//        from sourceSets.main.allSource
-//    }
-//
-//    task skipWarningsJavaDoc(type: Javadoc) {
-//        options.addStringOption("Xdoclint:none")
-//    }
-//
-//    task javadocJar(type: Jar, dependsOn: skipWarningsJavaDoc) {
-//        classifier = 'javadoc'
-//        from javadoc.destinationDir
-//    }
-//
-//    tasks.withType(Javadoc) {
-//        options.addStringOption('-Xdoclint:none')
-//    }
-//
-//    artifacts {
-//        archives sourcesJar
-//        archives javadocJar
-//    }
-//}
