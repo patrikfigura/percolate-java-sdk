@@ -16,10 +16,10 @@ public class InstagramMediaComments implements Serializable {
     private static final long serialVersionUID = -3606954535139845464L;
 
     @JsonProperty("meta")
-    private InstagramRequestMetaData meta;
+    protected InstagramRequestMetaData meta;
 
     @JsonProperty("data")
-    private List<InstagramComment> data;
+    protected List<InstagramComment> data;
 
     @Override
     public String toString() {

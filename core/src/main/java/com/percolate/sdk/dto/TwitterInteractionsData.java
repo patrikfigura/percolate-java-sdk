@@ -16,7 +16,7 @@ public class TwitterInteractionsData implements Serializable {
     private static final long serialVersionUID = -8562006021982525923L;
 
     @JsonProperty("data")
-    private List<TwitterInteractionsDataObject> data;
+    protected List<TwitterInteractionsDataObject> data;
 
     @Override
     public String toString() {

@@ -17,25 +17,25 @@ public class LicenseUserInfo implements Serializable {
     private static final long serialVersionUID = -6705313614715852525L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("user_id")
-    private Long userId;
+    protected Long userId;
 
     @JsonProperty("role_id")
-    private Long roleId;
+    protected Long roleId;
 
     @JsonProperty("is_approver")
-    private boolean approver;
+    protected boolean approver;
 
     @JsonProperty("license_id")
-    private Long licenseId;
+    protected Long licenseId;
 
     @JsonProperty("user")
-    private User user;
+    protected User user;
 
     @JsonProperty("license")
-    private License license;
+    protected License license;
 
     @Override
     public boolean equals(Object that) {

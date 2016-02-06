@@ -15,19 +15,19 @@ public class MediaFormat implements Serializable {
     private static final long serialVersionUID = -4849494254932997755L;
 
     @JsonProperty("profile")
-    private String profile;
+    protected String profile;
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @JsonProperty("metadata")
-    private VideoFormatMetaData metaData;
+    protected VideoFormatMetaData metaData;
 
     @JsonProperty("content_type")
-    private String contentType;
+    protected String contentType;
 
     @JsonProperty("file_size")
-    private String fileSize;
+    protected String fileSize;
 
     @Override
     public String toString() {

@@ -15,10 +15,10 @@ public class InstagramUser implements Serializable {
     private static final long serialVersionUID = -2983231878313103195L;
 
     @JsonProperty("meta")
-    private InstagramRequestMetaData meta;
+    protected InstagramRequestMetaData meta;
 
     @JsonProperty("data")
-    private InstagramUserData data;
+    protected InstagramUserData data;
 
     @Override
     public String toString() {

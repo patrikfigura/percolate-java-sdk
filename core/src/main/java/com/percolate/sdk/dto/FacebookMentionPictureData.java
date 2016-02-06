@@ -14,10 +14,10 @@ public class FacebookMentionPictureData implements Serializable {
     private static final long serialVersionUID = -1631907049621162039L;
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @JsonProperty("is_silhouette")
-    private boolean silhouette;
+    protected boolean silhouette;
 
     @Override
     public String toString() {

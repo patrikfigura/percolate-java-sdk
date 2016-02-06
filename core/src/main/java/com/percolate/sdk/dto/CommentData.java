@@ -15,7 +15,7 @@ public class CommentData implements Serializable {
     private static final long serialVersionUID = 7043763753044346096L;
 
     @JsonProperty("data")
-    private Comment comment;
+    protected Comment comment;
 
     @Override
     public String toString() {

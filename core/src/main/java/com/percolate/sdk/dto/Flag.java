@@ -27,28 +27,28 @@ public class Flag implements Serializable {
     public LicenseChannel licenseChannel; //set by client after calling ApiGetLicenseChannel
 
     @JsonProperty("uid")
-    private String UID;
+    protected String UID;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("resolved")
-    private boolean resolved;
+    protected boolean resolved;
 
     @JsonProperty("status_xid")
-    private String statusXid;
+    protected String statusXid;
 
     @JsonProperty("monitoring_query_id")
-    private Long monitoringQueryId;
+    protected Long monitoringQueryId;
 
     @JsonProperty("urgent")
-    private boolean urgent;
+    protected boolean urgent;
 
     @JsonProperty("status")
-    private Object status; //Will be either a tweet, a fb post, or an Instagram post
+    protected Object status; //Will be either a tweet, a fb post, or an Instagram post
 
     @JsonIgnore
     public FacebookMonitoringXObj fbStatus; //Created if "status" contains a FB object.
@@ -66,43 +66,43 @@ public class Flag implements Serializable {
     public InstagramComment instagramComment; // Created if "status" contains an Instagram comment.
 
     @JsonProperty("resolved_at")
-    private String resolvedAt;
+    protected String resolvedAt;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("owner_uid")
-    private String ownerUID;
+    protected String ownerUID;
 
     @JsonProperty("tags")
-    private List<Topic> tags = new ArrayList<>();
+    protected List<Topic> tags = new ArrayList<>();
 
     @JsonProperty("tag_ids")
-    private List<Long> tagIds = new ArrayList<>();
+    protected List<Long> tagIds = new ArrayList<>();
 
     @JsonProperty("resolved_by_id")
-    private Long resolvedById;
+    protected Long resolvedById;
 
     @JsonProperty("created_by")
-    private User createdBy;
+    protected User createdBy;
 
     @JsonProperty("license_channel_uid")
-    private String licenseChannelUID;
+    protected String licenseChannelUID;
 
     @JsonProperty("assignees")
-    private List<User> assignees = new ArrayList<>();
+    protected List<User> assignees = new ArrayList<>();
 
     @JsonProperty("assignee_ids")
-    private List<Long> assigneeIds = new ArrayList<>();
+    protected List<Long> assigneeIds = new ArrayList<>();
 
     @JsonProperty("owner")
-    private FlagOwner owner;
+    protected FlagOwner owner;
 
     @JsonProperty("error_id")
-    private String errorId;
+    protected String errorId;
 
     @JsonProperty("status_type")
-    private String statusType; //Should match one of FlaggingStatusType enums.
+    protected String statusType; //Should match one of FlaggingStatusType enums.
 
     @Override
     public String toString() {
@@ -115,7 +115,7 @@ public class Flag implements Serializable {
      * or instagramComment.
      */
     @SuppressWarnings("unchecked")
-    private void extractStatusObject() {
+    protected void extractStatusObject() {
         if (status instanceof LinkedHashMap) {
             LinkedHashMap<String, Object> statusMap = (LinkedHashMap<String, Object>) status;
             ObjectMapper mapper = new ObjectMapper();

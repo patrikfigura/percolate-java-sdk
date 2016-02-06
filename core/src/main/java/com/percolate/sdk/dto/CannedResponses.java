@@ -16,10 +16,10 @@ public class CannedResponses implements Serializable {
     private static final long serialVersionUID = -6132829467032322387L;
 
     @JsonProperty("meta")
-    private CannedResponsesMetaData metaData;
+    protected CannedResponsesMetaData metaData;
 
     @JsonProperty("data")
-    private List<CannedResponseData> data;
+    protected List<CannedResponseData> data;
 
     @Override
     public String toString() {

@@ -19,42 +19,42 @@ public class License implements Serializable, Comparable<License> {
     private static final long serialVersionUID = -1659638539635426756L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("uid")
-    private String UID;
+    protected String UID;
 
     @JsonProperty("default_brew_id")
-    private Long defaultBrewId;
+    protected Long defaultBrewId;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("timezone")
-    private String timezone;
+    protected String timezone;
 
     @JsonProperty("virality_threshold")
-    private String viralityThreshold;
+    protected String viralityThreshold;
 
     @JsonProperty("photo_url")
-    private String photoUrl;
+    protected String photoUrl;
 
     @JsonProperty("targeting")
-    private String targeting;
+    protected String targeting;
 
     @JsonProperty("brand")
-    private Brand brand;
+    protected Brand brand;
 
     @JsonProperty("brand_id")
-    private Long brandId;
+    protected Long brandId;
 
     @JsonProperty("state")
-    private String state;
+    protected String state;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
-    private List<UserRolesLicenseData> userRolesLicenseData; //Set in some apps after calling ApiGetUserRoles
+    protected List<UserRolesLicenseData> userRolesLicenseData; //Set in some apps after calling ApiGetUserRoles
 
     @Override
     public String toString() {

@@ -21,82 +21,82 @@ public class Brief implements Serializable {
     public WorkflowData workflowData; // Set by client after calling ApiGetWorkflow
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("uid")
-    private String uid;
+    protected String uid;
 
     @JsonProperty("terms")
-    private List<Term> terms;
+    protected List<Term> terms;
 
     @JsonProperty("title")
-    private String title;
+    protected String title;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("budget")
-    private String budget;
+    protected String budget;
 
     @JsonProperty("start_at")
-    private String startAt;
+    protected String startAt;
 
     @JsonProperty("end_at")
-    private String endAt;
+    protected String endAt;
 
     @JsonProperty("media_uids")
-    private List<String> mediaUids = new ArrayList<>();
+    protected List<String> mediaUids = new ArrayList<>();
 
     @JsonProperty("media")
-    private List<Media> media;
+    protected List<Media> media;
 
     @JsonProperty("brief")
-    private List<CampaignSectionData> briefSectionData = new ArrayList<>();
+    protected List<CampaignSectionData> briefSectionData = new ArrayList<>();
 
     @JsonProperty("brief_approval_pool_id")
-    private String briefApprovalPoolId;
+    protected String briefApprovalPoolId;
 
     @JsonProperty("brief_workflow_id")
-    private Integer briefWorkflowId;
+    protected Integer briefWorkflowId;
 
     @JsonProperty("brief_workflow_complete")
-    private Boolean briefWorkflowComplete;
+    protected Boolean briefWorkflowComplete;
 
     @JsonProperty("workspace")
-    private List<CampaignSectionData> workspaceData = new ArrayList<>();
+    protected List<CampaignSectionData> workspaceData = new ArrayList<>();
 
     @JsonProperty("term_uids")
-    private List<String> termUids = new ArrayList<>();
+    protected List<String> termUids = new ArrayList<>();
 
     @JsonProperty("links")
-    private List<Link> links = new ArrayList<>();
+    protected List<Link> links = new ArrayList<>();
 
     @JsonProperty("post_set_ids")
-    private List<Integer> postSetIds = new ArrayList<>();
+    protected List<Integer> postSetIds = new ArrayList<>();
 
     @JsonProperty("tag_ids")
-    private List<Object> tagIds = new ArrayList<>();
+    protected List<Object> tagIds = new ArrayList<>();
 
     @JsonProperty("tags")
-    private List<Topic> topics = new ArrayList<>();
+    protected List<Topic> topics = new ArrayList<>();
 
     @JsonProperty("platforms")
-    private List<String> platforms = new ArrayList<>();
+    protected List<String> platforms = new ArrayList<>();
 
     @JsonProperty("visible")
-    private Boolean visible;
+    protected Boolean visible;
 
     @JsonProperty("owner_uid")
-    private String ownerUid;
+    protected String ownerUid;
 
     @JsonProperty("owner")
-    private Owner owner;
+    protected Owner owner;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("comment_count")
-    private Integer commentCount;
+    protected Integer commentCount;
 
     @Override
     public String toString() {

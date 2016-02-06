@@ -16,10 +16,10 @@ public class FacebookConversationThread implements Serializable {
     private static final long serialVersionUID = 6153718901755261878L;
 
     @JsonProperty("data")
-    private List<FacebookConversationMessage> data;
+    protected List<FacebookConversationMessage> data;
 
     @JsonProperty("pagination")
-    private PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @Override
     public String toString() {

@@ -18,55 +18,55 @@ public class TwitterQuery implements Serializable {
     private static final long serialVersionUID = 4619768390675966837L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("uid")
-    private String uid;
+    protected String uid;
 
     @JsonProperty("title")
-    private String title;
+    protected String title;
 
     @JsonProperty("platform")
-    private String platform;
+    protected String platform;
 
     @JsonProperty("owner_uid")
-    private String ownerUid;
+    protected String ownerUid;
 
     @JsonProperty("owner")
-    private ShareUser owner;
+    protected ShareUser owner;
 
     @JsonProperty("filter")
-    private Object filter;
+    protected Object filter;
 
     @JsonProperty("tag_ids")
-    private List<Long> tagIds;
+    protected List<Long> tagIds;
 
     @JsonProperty("tags")
-    private List<Topic> tags;
+    protected List<Topic> tags;
 
     @JsonProperty("visible")
-    private boolean visible;
+    protected boolean visible;
 
     @JsonProperty("license_channel_id")
-    private Long licenseChannelId;
+    protected Long licenseChannelId;
 
     @JsonProperty("created_at")
-    private Date createdAt;
+    protected Date createdAt;
 
     @JsonProperty("status")
-    private LinkedHashMap<String, Object> status;
+    protected LinkedHashMap<String, Object> status;
 
     @JsonProperty("filter_string")
-    private String filterString;
+    protected String filterString;
 
     @JsonProperty("version")
-    private Long version;
+    protected Long version;
 
     @JsonProperty("is_custom")
-    private Boolean isCustom;
+    protected Boolean isCustom;
 
     @JsonProperty("monthly_usage_limit")
-    private Long monthlyUsageLimit;
+    protected Long monthlyUsageLimit;
 
     @Override
     public String toString() {

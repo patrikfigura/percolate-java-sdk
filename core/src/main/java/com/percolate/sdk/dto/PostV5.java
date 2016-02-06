@@ -17,13 +17,13 @@ public class PostV5 implements Serializable {
     private static final long serialVersionUID = 7447298993127654587L;
 
     @JsonProperty("include")
-    private PostV5Include include;
+    protected PostV5Include include;
 
     @JsonProperty("data")
-    private PostV5Data data;
+    protected PostV5Data data;
 
     @JsonProperty("errors")
-    private List<LinkedHashMap<String, Object>> errors;
+    protected List<LinkedHashMap<String, Object>> errors;
 
     @Override
     public String toString() {

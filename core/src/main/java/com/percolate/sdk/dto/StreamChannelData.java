@@ -24,43 +24,43 @@ public class StreamChannelData implements Serializable {
     public LicenseChannel licenseChannel; // Set by client after calling ApiGetLicenseChannels
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("xid")
-    private String xid;
+    protected String xid;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("capabilities")
-    private List<String> capabilities;
+    protected List<String> capabilities;
 
     @JsonProperty("platform_id")
-    private String platformId;
+    protected String platformId;
 
     @JsonProperty("scope_id")
-    private String scopeId;
+    protected String scopeId;
 
     @JsonProperty("avatar_id")
-    private String avatarId;
+    protected String avatarId;
 
     @JsonProperty("term_ids")
-    private List<String> termIds;
+    protected List<String> termIds;
 
     @JsonProperty("ext")
-    private Object ext;
+    protected Object ext;
 
     @JsonProperty("token_id")
-    private String tokenId;
+    protected String tokenId;
 
     @JsonProperty("media_buyer_ids")
-    private List<String> mediaBuyerIds;
+    protected List<String> mediaBuyerIds;
 
     @JsonProperty("updated_at")
-    private String updatedAt;
+    protected String updatedAt;
 
     @Override
     public String toString() {

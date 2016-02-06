@@ -16,7 +16,7 @@ public class Topics implements Serializable {
     private static final long serialVersionUID = 791424067589827022L;
 
     @JsonProperty("data")
-    private List<Topic> data;
+    protected List<Topic> data;
 
     @Override
     public String toString() {

@@ -18,19 +18,19 @@ public class Term implements Serializable {
     private static final long serialVersionUID = 3098198274190964473L;
 
     @JsonProperty("id")
-    private String id;   // term id
+    protected String id;   // term id
 
     @JsonProperty("name")
-    private String name;  // tag name
+    protected String name;  // tag name
 
     @JsonProperty("namespace")
-    private String namespace;  // the namespace the term belongs to
+    protected String namespace;  // the namespace the term belongs to
 
     @JsonProperty("scope_id")
-    private String scopeId;  // an ID of the owner
+    protected String scopeId;  // an ID of the owner
 
     @JsonProperty("update_at")
-    private String updatedAt;
+    protected String updatedAt;
 
     /**
      * Objects equal if {@link #id} is equal.

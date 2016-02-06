@@ -15,7 +15,7 @@ public class ReleaseFormHtml implements Serializable {
     private static final long serialVersionUID = 2303492161064078319L;
 
     @JsonProperty("data")
-    private String html;
+    protected String html;
 
     @Override
     public String toString() {

@@ -15,16 +15,16 @@ public class ShareUser implements Serializable {
     private static final long serialVersionUID = 6179864185590640457L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("uid")
-    private String UID;
+    protected String UID;
 
     @JsonProperty("license")
-    private License license;
+    protected License license;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @Override
     public String toString() {

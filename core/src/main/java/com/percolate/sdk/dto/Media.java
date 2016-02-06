@@ -30,46 +30,46 @@ public class Media implements Serializable {
     public boolean isSelected = false;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("uid")
-    private String uid;
+    protected String uid;
 
     @JsonProperty("src")
-    private String source;
+    protected String source;
 
     @JsonProperty("width")
-    private int width;
+    protected int width;
 
     @JsonProperty("height")
-    private int height;
+    protected int height;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("metadata")
-    private MediaMetaData mediaMetaData = new MediaMetaData();
+    protected MediaMetaData mediaMetaData = new MediaMetaData();
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @JsonProperty("state")
-    private String state;
+    protected String state;
 
     @JsonProperty("formats")
-    private List<MediaFormat> formats;
+    protected List<MediaFormat> formats;
 
     @JsonProperty("format")
-    private String format;
+    protected String format;
 
     @JsonProperty("license_id")
-    private Long licenseId;
+    protected Long licenseId;
 
     @JsonIgnore
-    private LinkedHashMap<String, ImageSize> imagesForTypeImage;
+    protected LinkedHashMap<String, ImageSize> imagesForTypeImage;
 
     @JsonIgnore
-    private ArrayList<ImageSize> imagesForTypeVideo;
+    protected ArrayList<ImageSize> imagesForTypeVideo;
 
     @Override
     public String toString() {
@@ -136,7 +136,7 @@ public class Media implements Serializable {
         }
     }
 
-    private ImageSize constructImageSizeFromData(LinkedHashMap<String, Object> imgData) {
+    protected ImageSize constructImageSizeFromData(LinkedHashMap<String, Object> imgData) {
         ImageSize imgSize = new ImageSize();
         imgSize.setUrl(imgData.get("url").toString());
         imgSize.setWidth(imgData.get("width").toString());

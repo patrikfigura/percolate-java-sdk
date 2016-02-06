@@ -16,7 +16,7 @@ public class WorkflowHistory implements Serializable {
     private static final long serialVersionUID = -1674284719017609452L;
 
     @JsonProperty("data")
-    private List<WorkflowHistoryEvent> events;
+    protected List<WorkflowHistoryEvent> events;
 
     @Override
     public String toString() {

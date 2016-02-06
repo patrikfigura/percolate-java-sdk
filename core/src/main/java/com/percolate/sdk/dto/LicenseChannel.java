@@ -17,46 +17,46 @@ public class LicenseChannel implements Serializable {
     public boolean displayed; //set to true by client once it is displayed
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("uid")
-    private String uid;
+    protected String uid;
 
     @JsonProperty("license_id")
-    private Long licenseId;
+    protected Long licenseId;
 
     @JsonProperty("channel_id")
-    private Long channelId;
+    protected Long channelId;
 
     @JsonProperty("token_id")
-    private Long tokenId;
+    protected Long tokenId;
 
     @JsonProperty("publishing")
-    private Publishing publishing;
+    protected Publishing publishing;
 
     @JsonProperty("ingesting")
-    private EnabledProperty ingesting;
+    protected EnabledProperty ingesting;
 
     @JsonProperty("following")
-    private EnabledProperty following;
+    protected EnabledProperty following;
 
     @JsonProperty("monitoring")
-    private EnabledProperty monitoring;
+    protected EnabledProperty monitoring;
 
     @JsonProperty("inbox")
-    private EnabledProperty inbox;
+    protected EnabledProperty inbox;
 
     @JsonProperty("token")
-    private TokenStatus token;
+    protected TokenStatus token;
 
     @JsonProperty("license")
-    private License license;
+    protected License license;
 
     @JsonProperty("channel")
-    private Channel channel;
+    protected Channel channel;
 
     @JsonProperty("scoped_channel_uid")
-    private String scopedChannelUid;
+    protected String scopedChannelUid;
 
     @Override
     public String toString() {

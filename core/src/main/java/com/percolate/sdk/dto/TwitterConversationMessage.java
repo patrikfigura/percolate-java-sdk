@@ -25,43 +25,43 @@ public class TwitterConversationMessage implements Serializable {
     public Flag flag; //Set by client after calling ApiGetFlags
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("id_str")
-    private String idStr;
+    protected String idStr;
 
     @JsonProperty("text")
-    private String text;
+    protected String text;
 
     @JsonProperty("sender_id")
-    private Long senderId;
+    protected Long senderId;
 
     @JsonProperty("sender_id_str")
-    private String senderIdStr;
+    protected String senderIdStr;
 
     @JsonProperty("sender_screen_name")
-    private String senderScreenName;
+    protected String senderScreenName;
 
     @JsonProperty("sender")
-    private TwitterUser sender;
+    protected TwitterUser sender;
 
     @JsonProperty("recipient_id")
-    private Long recipientId;
+    protected Long recipientId;
 
     @JsonProperty("recipient_id_str")
-    private String recipientIdStr;
+    protected String recipientIdStr;
 
     @JsonProperty("recipient_screen_name")
-    private String recipientScreenName;
+    protected String recipientScreenName;
 
     @JsonProperty("recipient")
-    private TwitterUser recipient;
+    protected TwitterUser recipient;
 
     @JsonProperty("entities")
-    private LinkedHashMap<String, Object> entities;
+    protected LinkedHashMap<String, Object> entities;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @Override
     public String toString() {

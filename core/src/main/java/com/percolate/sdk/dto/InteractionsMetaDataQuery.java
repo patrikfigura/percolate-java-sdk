@@ -15,13 +15,13 @@ public class InteractionsMetaDataQuery implements Serializable {
     private static final long serialVersionUID = -8429083583720162263L;
 
     @JsonProperty("platform")
-    private String platform;
+    protected String platform;
 
     @JsonProperty("xids")
-    private String xids;
+    protected String xids;
 
     @JsonProperty("scope_ids")
-    private String scopeIds;
+    protected String scopeIds;
 
     @Override
     public String toString() {

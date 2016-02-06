@@ -16,22 +16,22 @@ public class WorkflowStep implements Serializable {
     private static final long serialVersionUID = 5727730742646755155L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("complete")
-    private boolean complete;
+    protected boolean complete;
 
     @JsonProperty("ordinal")
-    private Integer ordinal;
+    protected Integer ordinal;
 
     @JsonProperty("quorum")
-    private String quorum;
+    protected String quorum;
 
     @JsonProperty("users")
-    private List<User> users;
+    protected List<User> users;
 
     @Override
     public String toString() {

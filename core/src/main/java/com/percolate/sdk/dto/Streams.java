@@ -16,10 +16,10 @@ public class Streams implements Serializable {
     private static final long serialVersionUID = 3022425564996288651L;
 
     @JsonProperty("include")
-    private StreamsInclude include;
+    protected StreamsInclude include;
 
     @JsonProperty("data")
-    private List<StreamData> data;
+    protected List<StreamData> data;
 
     @Override
     public String toString() {

@@ -17,31 +17,31 @@ public class FacebookConversationListData implements Serializable {
     private static final long serialVersionUID = -2053250147383536912L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("originator")
-    private FacebookUser originator;
+    protected FacebookUser originator;
 
     @JsonProperty("message_count")
-    private Integer messageCount;
+    protected Integer messageCount;
 
     @JsonProperty("permalink")
-    private String permalink;
+    protected String permalink;
 
     @JsonProperty("updated_at")
-    private String updatedAt;
+    protected String updatedAt;
 
     @JsonProperty("snippet")
-    private String snippet;
+    protected String snippet;
 
     @JsonProperty("can_reply")
-    private Boolean canReply;
+    protected Boolean canReply;
 
     @JsonProperty("most_recent_message")
-    private FacebookConversationMessage mostRecentMessage;
+    protected FacebookConversationMessage mostRecentMessage;
 
     @JsonProperty("participants")
-    private FacebookUserDataList participants;
+    protected FacebookUserDataList participants;
 
     /**
      * Equals is used to removed duplicates in MonitorFacebookInboxAdapter.

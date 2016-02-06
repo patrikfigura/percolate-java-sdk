@@ -16,7 +16,7 @@ public class InstagramIncludes implements Serializable {
     private static final long serialVersionUID = 390131722143510937L;
 
     @JsonProperty("instagram:post")
-    private List<InstagramIncludeMediaData> posts;
+    protected List<InstagramIncludeMediaData> posts;
 
     @Override
     public String toString() {

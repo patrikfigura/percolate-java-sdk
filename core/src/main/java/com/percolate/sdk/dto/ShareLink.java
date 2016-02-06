@@ -17,22 +17,22 @@ public class ShareLink implements Serializable {
     private static final long serialVersionUID = 5988330662816241981L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("uid")
-    private String UID;
+    protected String UID;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("medias")
-    private List<Media> medias = new ArrayList<>();
+    protected List<Media> medias = new ArrayList<>();
 
     @JsonProperty("title")
-    private String title;
+    protected String title;
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @Override
     public String toString() {

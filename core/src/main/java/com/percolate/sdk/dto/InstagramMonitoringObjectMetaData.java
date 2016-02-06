@@ -15,16 +15,16 @@ public class InstagramMonitoringObjectMetaData implements Serializable {
     private static final long serialVersionUID = -3615282804419551717L;
 
     @JsonProperty("platform")
-    private String platform;
+    protected String platform;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("parent_xid")
-    private String parentXid;
+    protected String parentXid;
 
     @JsonProperty("parent_shortcode")
-    private String parentShortcode;
+    protected String parentShortcode;
 
     @Override
     public String toString() {

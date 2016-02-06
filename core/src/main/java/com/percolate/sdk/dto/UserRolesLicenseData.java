@@ -16,22 +16,22 @@ public class UserRolesLicenseData implements Serializable {
     private static final long serialVersionUID = 9122975716120766793L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("capabilities")
-    private List<UserRolesLicenseCapabilities> capabilities;
+    protected List<UserRolesLicenseCapabilities> capabilities;
 
     @JsonProperty("code")
-    private String code;
+    protected String code;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("tags")
-    private List<String> tags;
+    protected List<String> tags;
 
     @Override
     public String toString() {

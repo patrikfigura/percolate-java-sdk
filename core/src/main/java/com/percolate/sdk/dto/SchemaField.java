@@ -33,22 +33,22 @@ public class SchemaField implements Serializable {
     public List<Topic> topics; // Set by clients when adding topics
 
     @JsonProperty("key")
-    private String key;
+    protected String key;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("label")
-    private String label;
+    protected String label;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("required")
-    private Boolean required;
+    protected Boolean required;
 
     @JsonProperty("ext")
-    private LinkedHashMap<String, Object> ext;
+    protected LinkedHashMap<String, Object> ext;
 
     @Override
     public String toString() {

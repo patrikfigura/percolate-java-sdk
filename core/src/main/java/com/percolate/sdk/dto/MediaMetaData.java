@@ -17,68 +17,68 @@ public class MediaMetaData implements Serializable {
     private static final long serialVersionUID = 7544126992287411792L;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("copyright")
-    private String copyright;
+    protected String copyright;
 
     @JsonProperty("title")
-    private String title;
+    protected String title;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("tags")
-    private List<String> tags;
+    protected List<String> tags;
 
     @JsonProperty("modified_at")
-    private String modifiedAt;
+    protected String modifiedAt;
 
     @JsonProperty("ingested_from")
-    private String ingestedFrom;
+    protected String ingestedFrom;
 
     @JsonProperty("original_filename")
-    private String originalFilename;
+    protected String originalFilename;
 
     @JsonProperty("owner_type")
-    private String ownerType;
+    protected String ownerType;
 
     @JsonProperty("creator")
-    private Creator creator;
+    protected Creator creator;
 
     @JsonProperty("owner_id")
-    private Long ownerId;
+    protected Long ownerId;
 
     @JsonProperty("subject_date")
-    private Date subjectDate;
+    protected Date subjectDate;
 
     @JsonProperty("is_photo")
-    private boolean photo;
+    protected boolean photo;
 
     @JsonProperty("is_advertising")
-    private boolean advertising;
+    protected boolean advertising;
 
     @JsonProperty("has_logo")
-    private boolean hasLogo;
+    protected boolean hasLogo;
 
     //For Folders
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("parent_uid")
-    private String parentUID;
+    protected String parentUID;
 
     @JsonProperty("owner_uid")
-    private String ownerUID;
+    protected String ownerUID;
 
     @JsonProperty("creator_user_id")
-    private Long creatorUserId;
+    protected Long creatorUserId;
 
     @JsonProperty("item_count")
-    private Integer itemCount;
+    protected Integer itemCount;
 
     @JsonProperty("path")
-    private List<String> path;
+    protected List<String> path;
 
     @Override
     public String toString() {

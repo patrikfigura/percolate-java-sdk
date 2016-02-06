@@ -13,7 +13,7 @@ public class TokenStatus implements Serializable {
 
     private static final long serialVersionUID = 619792793077213566L;
 
-    private Integer status;
+    protected Integer status;
 
     @Override
     public String toString() {

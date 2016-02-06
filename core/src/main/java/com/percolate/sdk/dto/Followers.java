@@ -16,7 +16,7 @@ public class Followers implements Serializable {
     private static final long serialVersionUID = -8232801090049914890L;
 
     @JsonProperty("data")
-    private List<Follower> followers;
+    protected List<Follower> followers;
 
     @Override
     public String toString() {

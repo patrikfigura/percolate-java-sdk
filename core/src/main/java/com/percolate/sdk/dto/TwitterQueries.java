@@ -16,10 +16,10 @@ public class TwitterQueries implements Serializable {
     private static final long serialVersionUID = 5831728428416471410L;
 
     @JsonProperty("data")
-    private List<TwitterQuery> data;
+    protected List<TwitterQuery> data;
 
     @JsonProperty("pagination")
-    private PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @Override
     public String toString() {

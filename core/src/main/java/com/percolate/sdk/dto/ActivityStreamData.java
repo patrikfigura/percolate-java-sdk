@@ -19,40 +19,40 @@ public class ActivityStreamData implements Serializable {
     private static final long serialVersionUID = 7701722333929308105L;
 
     @JsonIgnore
-    private Map<String, Object> metaDataMap; //Set by client code after calling getMetadataMap.
+    protected Map<String, Object> metaDataMap; //Set by client code after calling getMetadataMap.
 
     @JsonProperty("related_object_uid")
-    private String relatedObjectUid;
+    protected String relatedObjectUid;
 
     @JsonProperty("related_object_preview")
-    private String relatedObjectPreview;
+    protected String relatedObjectPreview;
 
     @JsonProperty("object_uid")
-    private String objectUid;
+    protected String objectUid;
 
     @JsonProperty("user")
-    private User user;
+    protected User user;
 
     @JsonProperty("object_preview")
-    private String objectPreview;
+    protected String objectPreview;
 
     @JsonProperty("user_id")
-    private Integer userId;
+    protected Integer userId;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("license_id")
-    private Integer licenseId;
+    protected Integer licenseId;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("metadata")
-    private List<ActivityStreamMetadata> metadataList;
+    protected List<ActivityStreamMetadata> metadataList;
 
     @JsonProperty("mentions")
-    private List<Mention> mentions;
+    protected List<Mention> mentions;
 
     @Override
     public String toString() {

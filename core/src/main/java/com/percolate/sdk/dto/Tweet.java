@@ -7,6 +7,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
+import java.util.LinkedHashMap;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -15,88 +16,88 @@ public class Tweet implements Serializable {
     private static final long serialVersionUID = 5295422780107833868L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("id_str")
-    private String idStr;
+    protected String idStr;
 
     @JsonProperty("text")
-    private String text;
+    protected String text;
 
     @JsonProperty("source")
-    private Object source; //Can be String or object
+    protected Object source; //Can be String or object
 
     @JsonProperty("event")
-    private String event;
+    protected String event;
 
     @JsonProperty("target")
-    private Object target;
+    protected Object target;
 
     @JsonProperty("target_object")
-    private Object targetObj;
+    protected Object targetObj;
 
     @JsonProperty("truncated")
-    private Boolean truncated;
+    protected Boolean truncated;
 
     @JsonProperty("in_reply_to_status_id")
-    private Long inReplyToStatusId;
+    protected Long inReplyToStatusId;
 
     @JsonProperty("in_reply_to_status_id_str")
-    private String inReplyToStatusIdStr;
+    protected String inReplyToStatusIdStr;
 
     @JsonProperty("in_reply_to_user_id")
-    private Long inReplyToUserId;
+    protected Long inReplyToUserId;
 
     @JsonProperty("in_reply_to_user_id_str")
-    private String inReplyToUserIdStr;
+    protected String inReplyToUserIdStr;
 
     @JsonProperty("in_reply_to_screen_name")
-    private String inReplyToScreenName;
+    protected String inReplyToScreenName;
 
     @JsonProperty("user")
-    private TwitterUser user;
+    protected TwitterUser user;
 
     @JsonProperty("geo")
-    private Object geo;
+    protected Object geo;
 
     @JsonProperty("coordinates")
-    private Object coordinates;
+    protected Object coordinates;
 
     @JsonProperty("place")
-    private Object place;
+    protected Object place;
 
     @JsonProperty("contributors")
-    private Object contributors;
+    protected Object contributors;
 
     @JsonProperty("retweet_count")
-    private Long retweetCount;
+    protected Long retweetCount;
 
     @JsonProperty("favorite_count")
-    private Long favoriteCount;
+    protected Long favoriteCount;
 
     @JsonProperty("entities")
-    private Object entities;
+    protected LinkedHashMap<String, Object> entities;
 
     @JsonProperty("favorited")
-    private Boolean favorited;
+    protected Boolean favorited;
 
     @JsonProperty("retweeted_status")
-    private Tweet retweetedStatus;
+    protected Tweet retweetedStatus;
 
     @JsonProperty("retweeted")
-    private Boolean retweeted;
+    protected Boolean retweeted;
 
     @JsonProperty("possibly_sensitive")
-    private Boolean possiblySensitive;
+    protected Boolean possiblySensitive;
 
     @JsonProperty("lang")
-    private String lang;
+    protected String lang;
 
     @JsonProperty("filter_level")
-    private String filterLevel;
+    protected String filterLevel;
 
     @Override
     public String toString() {
@@ -263,11 +264,11 @@ public class Tweet implements Serializable {
         this.favoriteCount = favoriteCount;
     }
 
-    public Object getEntities() {
+    public LinkedHashMap<String, Object> getEntities() {
         return entities;
     }
 
-    public void setEntities(Object entities) {
+    public void setEntities(LinkedHashMap<String, Object> entities) {
         this.entities = entities;
     }
 

@@ -15,22 +15,22 @@ public class Topic implements Serializable {
     private static final long serialVersionUID = -7042873740209373803L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("parent_id")
-    private Long parentId;
+    protected Long parentId;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("color")
-    private String color;
+    protected String color;
 
     @JsonProperty("owner_uid")
-    private String ownerUid;
+    protected String ownerUid;
 
     @JsonProperty("owner")
-    private License owner;
+    protected License owner;
 
     @Override
     public String toString() {

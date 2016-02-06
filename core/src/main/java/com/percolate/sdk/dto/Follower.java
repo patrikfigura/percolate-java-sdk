@@ -12,19 +12,19 @@ public class Follower implements Serializable {
     private static final long serialVersionUID = -1691475328894439732L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("object_uid")
-    private String objectUid;
+    protected String objectUid;
 
     @JsonProperty("user")
-    private User user;
+    protected User user;
 
     @JsonProperty("user_id")
-    private Long userId;
+    protected Long userId;
 
     @JsonProperty("error_id")
-    private String errorId;
+    protected String errorId;
 
     public String getObjectUid() {
         return objectUid;

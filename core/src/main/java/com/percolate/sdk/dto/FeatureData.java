@@ -15,19 +15,19 @@ public class FeatureData implements Serializable {
     private static final long serialVersionUID = 4652077873067170980L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("scope_id")
-    private String scopeId;
+    protected String scopeId;
 
     @JsonProperty("feature_type")
-    private String featureType;
+    protected String featureType;
 
     @JsonProperty("updated_at")
-    private String updatedAt;
+    protected String updatedAt;
 
     @JsonProperty("value")
-    private Object value;
+    protected Object value;
 
     @Override
     public String toString() {

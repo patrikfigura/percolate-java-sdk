@@ -15,13 +15,13 @@ public class VideoFormatMetaData implements Serializable {
     private static final long serialVersionUID = -975272951240201494L;
 
     @JsonProperty("duration")
-    private Integer duration;
+    protected Integer duration;
 
     @JsonProperty("width")
-    private Integer width;
+    protected Integer width;
 
     @JsonProperty("height")
-    private Integer height;
+    protected Integer height;
 
     @Override
     public String toString() {

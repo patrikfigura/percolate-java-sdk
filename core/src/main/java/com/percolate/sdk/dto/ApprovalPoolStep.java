@@ -16,19 +16,19 @@ public class ApprovalPoolStep implements Serializable {
     private static final long serialVersionUID = -4122378363734928928L;
 
     @JsonProperty("quorum")
-    private String quorum;
+    protected String quorum;
 
     @JsonProperty("approver_ids")
-    private List<Long> approverIds;
+    protected List<Long> approverIds;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("channel_ids")
-    private List<Long> channelIds;
+    protected List<Long> channelIds;
 
     @JsonProperty("ordinal")
-    private Integer ordinal;
+    protected Integer ordinal;
 
     @Override
     public String toString() {

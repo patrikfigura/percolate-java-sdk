@@ -23,16 +23,16 @@ public class FacebookMonitoringObject implements Serializable {
     public boolean wasFromMonitoringTab = false; //Set by client if object was loaded on the monitoring tab
 
     @JsonProperty("id")
-    private String id; //Facebook Id
+    protected String id; //Facebook Id
 
     @JsonProperty("activity")
-    private List<Object> activity;
+    protected List<Object> activity;
 
     @JsonProperty("related_post_set_id")
-    private String relatedPostSetId;
+    protected String relatedPostSetId;
 
     @JsonProperty("xobj")
-    private FacebookMonitoringXObj xobj;
+    protected FacebookMonitoringXObj xobj;
 
     @Override
     public String toString() {

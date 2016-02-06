@@ -15,13 +15,13 @@ public class InstagramUserCounts implements Serializable {
     private static final long serialVersionUID = -1879803008621273795L;
 
     @JsonProperty("followed_by")
-    private Long followedBy;
+    protected Long followedBy;
 
     @JsonProperty("follows")
-    private Long follows;
+    protected Long follows;
 
     @JsonProperty("media")
-    private Long media;
+    protected Long media;
 
     @Override
     public String toString() {

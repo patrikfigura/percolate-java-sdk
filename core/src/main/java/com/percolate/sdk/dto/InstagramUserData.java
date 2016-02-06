@@ -15,25 +15,25 @@ public class InstagramUserData implements Serializable {
     private static final long serialVersionUID = 6985259701897119100L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("username")
-    private String username;
+    protected String username;
 
     @JsonProperty("full_name")
-    private String fullName;
+    protected String fullName;
 
     @JsonProperty("profile_picture")
-    private String profilePicture;
+    protected String profilePicture;
 
     @JsonProperty("bio")
-    private String bio;
+    protected String bio;
 
     @JsonProperty("website")
-    private String website;
+    protected String website;
 
     @JsonProperty("counts")
-    private InstagramUserCounts counts;
+    protected InstagramUserCounts counts;
 
     @Override
     public String toString() {

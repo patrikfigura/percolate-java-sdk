@@ -15,28 +15,28 @@ public class WorkflowData implements Serializable {
 
     private static final long serialVersionUID = 6010490237179083126L;
 
-    private WorkflowHistory workflowHistory; //Set by client after calling ApiGetWorkflowHistory
+    protected WorkflowHistory workflowHistory; //Set by client after calling ApiGetWorkflowHistory
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("complete")
-    private boolean complete;
+    protected boolean complete;
 
     @JsonProperty("current_step_id")
-    private Long currentStepId;
+    protected Long currentStepId;
 
     @JsonProperty("disposition")
-    private String disposition;
+    protected String disposition;
 
     @JsonProperty("cycle_count")
-    private Integer cycleCount;
+    protected Integer cycleCount;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("steps")
-    private List<WorkflowStep> steps;
+    protected List<WorkflowStep> steps;
 
     @Override
     public String toString() {

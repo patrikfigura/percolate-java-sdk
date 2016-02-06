@@ -15,7 +15,7 @@ public class FacebookConversationMessageId implements Serializable {
     private static final long serialVersionUID = -3433079150488185863L;
 
     @JsonProperty("message_id")
-    private String messageId;
+    protected String messageId;
 
     @Override
     public String toString() {

@@ -14,7 +14,7 @@ public class FacebookMentionPicture implements Serializable {
     private static final long serialVersionUID = -221662608585538150L;
 
     @JsonProperty("data")
-    private FacebookMentionPictureData data;
+    protected FacebookMentionPictureData data;
 
     @Override
     public String toString() {

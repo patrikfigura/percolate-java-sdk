@@ -17,7 +17,7 @@ public class FacebookMessageKeyValueList implements Serializable {
     private static final long serialVersionUID = -8069980492365035119L;
 
     @JsonProperty("data")
-    private List<LinkedHashMap<String, Object>> data;
+    protected List<LinkedHashMap<String, Object>> data;
 
     @Override
     public String toString() {

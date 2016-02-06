@@ -17,10 +17,10 @@ public class Licenses implements Serializable {
     private static final long serialVersionUID = -3284944770858651980L;
 
     @JsonProperty("pagination")
-    private PaginationData paginationData = new PaginationData();
+    protected PaginationData paginationData = new PaginationData();
 
     @JsonProperty("data")
-    private List<License> licenses = new ArrayList<>();
+    protected List<License> licenses = new ArrayList<>();
 
     @Override
     public String toString() {

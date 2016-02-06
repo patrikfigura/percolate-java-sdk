@@ -17,10 +17,10 @@ public class Briefs implements Serializable {
     private static final long serialVersionUID = -7778976393258821219L;
 
     @JsonProperty("data")
-    private List<Brief> data = new ArrayList<>();
+    protected List<Brief> data = new ArrayList<>();
 
     @JsonProperty("pagination")
-    private PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @Override
     public String toString() {

@@ -15,7 +15,7 @@ public class TwitterRelationships implements Serializable {
     private static final long serialVersionUID = 4587414576692739644L;
 
     @JsonProperty("relationship")
-    private TwitterRelationship relationship;
+    protected TwitterRelationship relationship;
 
     @Override
     public String toString() {

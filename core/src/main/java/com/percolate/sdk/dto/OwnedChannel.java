@@ -15,34 +15,34 @@ public class OwnedChannel implements Serializable {
     private static final long serialVersionUID = -267444600899027053L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("rss_url")
-    private String rssUrl;
+    protected String rssUrl;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @JsonProperty("page_id")
-    private String pageId;
+    protected String pageId;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("has_links")
-    private boolean hasLinks;
+    protected boolean hasLinks;
 
     @JsonProperty("total_subscribers")
-    private Integer totalSubscribers;
+    protected Integer totalSubscribers;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("photo_url")
-    private String photoUrl;
+    protected String photoUrl;
 
     @Override
     public String toString() {

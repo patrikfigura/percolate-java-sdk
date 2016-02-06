@@ -16,22 +16,22 @@ public class Brew implements Serializable {
     private static final long serialVersionUID = 3481043846462293641L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("total_channels")
-    private Integer totalChannels;
+    protected Integer totalChannels;
 
     @JsonProperty("priority")
-    private Integer priority;
+    protected Integer priority;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("approved")
-    private boolean approved;
+    protected boolean approved;
 
     @Override
     public String toString() {

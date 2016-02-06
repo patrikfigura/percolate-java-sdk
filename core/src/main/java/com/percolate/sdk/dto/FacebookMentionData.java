@@ -19,13 +19,13 @@ public class FacebookMentionData implements Serializable, Comparable<FacebookMen
     public String text; // Set by client after loading/creating a facebook_mention
 
     @JsonProperty("xid")
-    private String xid;
+    protected String xid;
 
     @JsonProperty("length")
-    private Integer length;
+    protected Integer length;
 
     @JsonProperty("offset")
-    private Integer offset;
+    protected Integer offset;
 
     @Override
     public String toString() {

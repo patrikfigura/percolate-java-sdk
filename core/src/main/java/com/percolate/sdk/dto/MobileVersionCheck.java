@@ -15,31 +15,31 @@ public class MobileVersionCheck implements Serializable {
     private static final long serialVersionUID = -2273464833455803057L;
 
     @JsonProperty("status")
-    private String status; //Will be "ok" if the app does not need to be updated.
+    protected String status; //Will be "ok" if the app does not need to be updated.
 
     @JsonProperty("namespace")
-    private String namespace;
+    protected String namespace;
 
     @JsonProperty("os_version_number")
-    private int osVersionNumber;
+    protected int osVersionNumber;
 
     @JsonProperty("force_upgrade")
-    private boolean forceUpgrade;
+    protected boolean forceUpgrade;
 
     @JsonProperty("platform")
-    private String platform;
+    protected String platform;
 
     @JsonProperty("custom_message")
-    private String customMessage;
+    protected String customMessage;
 
     @JsonProperty("upgrade_url")
-    private String upgradeUrl;
+    protected String upgradeUrl;
 
     @JsonProperty("version_number")
-    private int versionNumber;
+    protected int versionNumber;
 
     @JsonProperty("error")
-    private String error;
+    protected String error;
 
     @Override
     public String toString() {

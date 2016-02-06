@@ -15,10 +15,10 @@ public class FacebookMonitoringUser implements Serializable {
     private static final long serialVersionUID = 1597201298258204897L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @Override
     public String toString() {

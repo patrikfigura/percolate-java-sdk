@@ -21,22 +21,22 @@ public class Link implements Serializable {
     private static final long serialVersionUID = 1654480346828025928L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonIgnore
     public String originId;
 
     @JsonProperty("title")
-    private String title;
+    protected String title;
 
     @JsonProperty("description")
-    private String description;
+    protected String description;
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @JsonProperty("medias")
-    private List<Media> medias = new ArrayList<>();
+    protected List<Media> medias = new ArrayList<>();
 
     @Override
     public String toString() {

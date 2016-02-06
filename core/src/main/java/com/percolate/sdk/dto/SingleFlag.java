@@ -15,7 +15,7 @@ public class SingleFlag implements Serializable {
     private static final long serialVersionUID = -7070120286537326955L;
 
     @JsonProperty("data")
-    private Flag data;
+    protected Flag data;
 
     @Override
     public String toString() {

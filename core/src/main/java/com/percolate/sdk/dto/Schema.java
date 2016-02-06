@@ -21,34 +21,34 @@ public class Schema implements Serializable, Comparable<Schema> {
     private static final long serialVersionUID = -6137788601263891457L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("scope_id")
-    private String scopeId;
+    protected String scopeId;
 
     @JsonProperty("status")
-    private String status;
+    protected String status;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("fields")
-    private List<SchemaField> fields;
+    protected List<SchemaField> fields;
 
     @JsonProperty("plugins")
-    private List<Object> plugins;
+    protected List<Object> plugins;
 
     @JsonProperty("fieldsets")
-    private List<Object> fieldsets;
+    protected List<Object> fieldsets;
 
     @JsonProperty("ext")
-    private LinkedHashMap<String, Object> ext;
+    protected LinkedHashMap<String, Object> ext;
 
     @JsonProperty("updated_at")
-    private String updated_at;
+    protected String updated_at;
 
     @Override
     public String toString() {

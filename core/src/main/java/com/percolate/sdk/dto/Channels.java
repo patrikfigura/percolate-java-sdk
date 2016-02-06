@@ -16,10 +16,10 @@ public class Channels implements Serializable {
     private static final long serialVersionUID = 6277841434236148178L;
 
     @JsonProperty("meta")
-    private V5Meta meta;
+    protected V5Meta meta;
 
     @JsonProperty("data")
-    private List<ChannelV5> data;
+    protected List<ChannelV5> data;
 
     @Override
     public String toString() {

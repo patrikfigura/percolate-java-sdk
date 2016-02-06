@@ -16,10 +16,10 @@ public class InstagramLikes implements Serializable {
     private static final long serialVersionUID = 174929256400217126L;
 
     @JsonProperty("data")
-    private List<InstagramUser> data;
+    protected List<InstagramUser> data;
 
     @JsonProperty("count")
-    private Long count;
+    protected Long count;
 
     @Override
     public String toString() {

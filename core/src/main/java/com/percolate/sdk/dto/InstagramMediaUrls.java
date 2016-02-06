@@ -15,13 +15,13 @@ public class InstagramMediaUrls implements Serializable {
     private static final long serialVersionUID = 2367488877752973375L;
 
     @JsonProperty("standardResolution")
-    private InstagramMediaUrl standardResolution;
+    protected InstagramMediaUrl standardResolution;
 
     @JsonProperty("low_resolution")
-    private InstagramMediaUrl lowResolution;
+    protected InstagramMediaUrl lowResolution;
 
     @JsonProperty("low_bandwidth")
-    private InstagramMediaUrl lowBandwidth;
+    protected InstagramMediaUrl lowBandwidth;
 
     @Override
     public String toString() {

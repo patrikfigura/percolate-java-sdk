@@ -15,19 +15,19 @@ public class TranslationData implements Serializable {
     private static final long serialVersionUID = -4721866404655539374L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("translation")
-    private String translation;
+    protected String translation;
 
     @JsonProperty("detected_language")
-    private String detectedLanguage;
+    protected String detectedLanguage;
 
     @JsonProperty("updated_at")
-    private String updatedAt;
+    protected String updatedAt;
 
     @JsonProperty("attribution")
-    private TranslationAttribution attribution;
+    protected TranslationAttribution attribution;
 
     @Override
     public String toString() {

@@ -16,28 +16,28 @@ public class CannedResponseData implements Serializable {
     private static final long serialVersionUID = -4152482183994100675L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("title")
-    private String title;
+    protected String title;
 
     @JsonProperty("body")
-    private String body;
+    protected String body;
 
     @JsonProperty("scope_id")
-    private String scopeId;
+    protected String scopeId;
 
     @JsonProperty("topic_ids")
-    private List<String> topicIds;
+    protected List<String> topicIds;
 
     @JsonProperty("available_for_ids")
-    private List<String> availableForIds;
+    protected List<String> availableForIds;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("updated_at")
-    private String updatedAt;
+    protected String updatedAt;
 
     @Override
     public String toString() {

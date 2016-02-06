@@ -15,7 +15,7 @@ public class BriefData implements Serializable {
     private static final long serialVersionUID = -7778976393258821219L;
 
     @JsonProperty("data")
-    private Brief brief;
+    protected Brief brief;
 
     @Override
     public String toString() {

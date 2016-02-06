@@ -14,13 +14,13 @@ public class FacebookMention implements Serializable {
     private static final long serialVersionUID = -2635394381099711188L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("picture")
-    private FacebookMentionPicture picture;
+    protected FacebookMentionPicture picture;
 
     @Override
     public String toString() {

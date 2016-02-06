@@ -16,10 +16,10 @@ public class Users implements Serializable {
     private static final long serialVersionUID = 1691500182715302552L;
 
     @JsonProperty("pagination")
-    private PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @JsonProperty("data")
-    private List<User> data;
+    protected List<User> data;
 
     @Override
     public String toString() {

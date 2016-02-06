@@ -15,31 +15,31 @@ public class MediaReleaseResponseData implements Serializable {
     private static final long serialVersionUID = 3658251682257161899L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("url_expiration")
-    private Long urlExpiration;
+    protected Long urlExpiration;
 
     @JsonProperty("reference_uid")
-    private String referenceUID;
+    protected String referenceUID;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("signature_image_id")
-    private String signatureImageId;
+    protected String signatureImageId;
 
     @JsonProperty("birthdate")
-    private String birthdate;
+    protected String birthdate;
 
     @JsonProperty("email")
-    private String email;
+    protected String email;
 
     @JsonProperty("signature_image_url")
-    private String signatureImageUrl;
+    protected String signatureImageUrl;
 
     @Override
     public String toString() {

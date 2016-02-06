@@ -17,10 +17,10 @@ public class Tokens implements Serializable {
     private static final long serialVersionUID = 1957222789397691534L;
 
     @JsonProperty("data")
-    private List<Token> data = new ArrayList<>();
+    protected List<Token> data = new ArrayList<>();
 
     @JsonProperty("pagination")
-    private PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @Override
     public String toString() {

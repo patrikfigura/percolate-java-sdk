@@ -16,10 +16,10 @@ public class ActivityStream implements Serializable {
     private static final long serialVersionUID = 6182834338225033194L;
 
     @JsonProperty("pagination")
-    PaginationData paginationData;
+    protected PaginationData paginationData;
 
     @JsonProperty("data")
-    List<ActivityStreamData> data;
+    protected List<ActivityStreamData> data;
 
     @Override
     public String toString() {

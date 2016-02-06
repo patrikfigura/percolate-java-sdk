@@ -16,10 +16,10 @@ public class Services implements Serializable {
     private static final long serialVersionUID = -7087020580042995262L;
 
     @JsonProperty("analytics")
-    private LinkedHashMap<String, Integer> analytics;
+    protected LinkedHashMap<String, Integer> analytics;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @Override
     public String toString() {

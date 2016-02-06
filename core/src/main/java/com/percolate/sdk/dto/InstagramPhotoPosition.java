@@ -15,10 +15,10 @@ public class InstagramPhotoPosition implements Serializable {
     private static final long serialVersionUID = -7862112892290706492L;
 
     @JsonProperty("x")
-    private Double x;
+    protected Double x;
 
     @JsonProperty("y")
-    private Double y;
+    protected Double y;
 
     @Override
     public String toString() {

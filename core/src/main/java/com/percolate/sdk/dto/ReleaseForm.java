@@ -15,22 +15,22 @@ public class ReleaseForm implements Serializable {
     private static final long serialVersionUID = -8124374256190243861L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("birthdate")
-    private String birthdate;
+    protected String birthdate;
 
     @JsonProperty("email")
-    private String email;
+    protected String email;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("reference_uid")
-    private String referenceUID;
+    protected String referenceUID;
 
     @JsonProperty("signature_image_id")
-    private Long signatureImageId;
+    protected Long signatureImageId;
 
     @Override
     public String toString() {

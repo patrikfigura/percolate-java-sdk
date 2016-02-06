@@ -18,25 +18,25 @@ public class Targeting implements Serializable {
     private static final long serialVersionUID = -3528442782770731771L;
 
     @JsonProperty("autocomplete")
-    private Autocomplete autocomplete;
+    protected Autocomplete autocomplete;
 
     @JsonProperty("genders")
-    private List<Integer> genders;
+    protected List<Integer> genders;
 
     @JsonProperty("age_min")
-    private Integer ageMin;
+    protected Integer ageMin;
 
     @JsonProperty("age_max")
-    private Integer ageMax;
+    protected Integer ageMax;
 
     @JsonProperty("interested_in")
-    private List<Integer> interestedIn;
+    protected List<Integer> interestedIn;
 
     @JsonProperty("relationship_statuses")
-    private List<Integer> relationshipStatuses;
+    protected List<Integer> relationshipStatuses;
 
     @JsonProperty("work_networks")
-    private List<LinkedHashMap<String, Object>> workNetworks;
+    protected List<LinkedHashMap<String, Object>> workNetworks;
 
     @Override
     public String toString() {

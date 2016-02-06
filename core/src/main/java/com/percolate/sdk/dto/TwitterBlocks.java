@@ -16,19 +16,19 @@ public class TwitterBlocks implements Serializable {
     private static final long serialVersionUID = 6669960706326459027L;
 
     @JsonProperty("ids")
-    private List<Long> ids;
+    protected List<Long> ids;
 
     @JsonProperty("next_cursor")
-    private Integer nextCursor;
+    protected Integer nextCursor;
 
     @JsonProperty("next_cursor_str")
-    private String nextCursorStr;
+    protected String nextCursorStr;
 
     @JsonProperty("previous_cursor")
-    private Integer previousCursor;
+    protected Integer previousCursor;
 
     @JsonProperty("previous_cursor_str")
-    private String previousCursorStr;
+    protected String previousCursorStr;
 
     @Override
     public String toString() {

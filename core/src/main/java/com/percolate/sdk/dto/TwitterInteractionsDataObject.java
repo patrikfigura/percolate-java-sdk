@@ -16,10 +16,10 @@ public class TwitterInteractionsDataObject implements Serializable {
     private static final long serialVersionUID = 5095395185852262987L;
 
     @JsonProperty("id")
-    private String id; // NOTE: Not all objects have id.  Only retweets & replys.  Not favorites.
+    protected String id; // NOTE: Not all objects have id.  Only retweets & replys.  Not favorites.
 
     @JsonProperty("xobj")
-    private LinkedHashMap<String, Object> xobj;
+    protected LinkedHashMap<String, Object> xobj;
 
     @Override
     public String toString() {

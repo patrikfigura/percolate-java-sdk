@@ -15,7 +15,7 @@ public class ImageLicense implements Serializable {
     private static final long serialVersionUID = -3384937583884049836L;
 
     @JsonProperty("owner_url")
-    private String owner_url;
+    protected String owner_url;
 
     @Override
     public String toString() {

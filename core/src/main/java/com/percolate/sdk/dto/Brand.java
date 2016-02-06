@@ -15,10 +15,10 @@ public class Brand implements Serializable {
     private static final long serialVersionUID = 8527573711365326453L;
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @Override
     public String toString() {

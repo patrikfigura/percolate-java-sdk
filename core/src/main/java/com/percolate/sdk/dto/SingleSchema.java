@@ -17,7 +17,7 @@ public class SingleSchema implements Serializable {
     private static final long serialVersionUID = -3213350568663955162L;
 
     @JsonProperty("data")
-    private Schema data;
+    protected Schema data;
 
     @Override
     public String toString() {

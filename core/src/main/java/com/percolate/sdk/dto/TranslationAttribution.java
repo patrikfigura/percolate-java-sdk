@@ -15,13 +15,13 @@ public class TranslationAttribution implements Serializable {
     private static final long serialVersionUID = -4754494901033332462L;
 
     @JsonProperty("text")
-    private String text;
+    protected String text;
 
     @JsonProperty("image")
-    private String image;
+    protected String image;
 
     @JsonProperty("link")
-    private String link;
+    protected String link;
 
     @Override
     public String toString() {

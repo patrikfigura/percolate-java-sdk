@@ -14,16 +14,16 @@ public class Mention implements Serializable {
 
     private static final long serialVersionUID = -8957592944012297251L;
 
-    private String mentionName; // set by client as the display name for the mention
+    protected String mentionName; // set by client as the display name for the mention
 
     @JsonProperty("object_id")
-    private String objectId;
+    protected String objectId;
 
     @JsonProperty("offset")
-    private Integer offset;
+    protected Integer offset;
 
     @JsonProperty("length")
-    private Integer length;
+    protected Integer length;
 
     @Override
     public String toString() {

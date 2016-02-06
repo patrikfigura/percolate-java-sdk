@@ -15,13 +15,13 @@ public class Owner implements Serializable {
     private static final long serialVersionUID = 5308338463018649712L;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("license")
-    private License license;
+    protected License license;
 
     @Override
     public String toString() {

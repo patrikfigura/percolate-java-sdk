@@ -15,7 +15,7 @@ public class InstagramSingleMonitoringObject implements Serializable {
     private static final long serialVersionUID = 1851219957906612730L;
 
     @JsonProperty("data")
-    private InstagramMonitoringObject data;
+    protected InstagramMonitoringObject data;
 
     @Override
     public String toString() {

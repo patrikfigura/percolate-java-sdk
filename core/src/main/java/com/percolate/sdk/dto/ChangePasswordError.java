@@ -17,7 +17,7 @@ public class ChangePasswordError implements Serializable {
     private static final long serialVersionUID = -8065590165958930960L;
 
     @JsonProperty("errors")
-    private List<LinkedHashMap<String, Object>> errors;
+    protected List<LinkedHashMap<String, Object>> errors;
 
     public List<LinkedHashMap<String, Object>> getErrors() {
         return errors;

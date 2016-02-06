@@ -17,34 +17,34 @@ public class FacebookUser implements Serializable {
     private static final long serialVersionUID = -694364618125565258L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("about")
-    private String about;
+    protected String about;
 
     @JsonProperty("likes")
-    private Object likes;
+    protected Object likes;
 
     @JsonProperty("link")
-    private String link;
+    protected String link;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("website")
-    private String website;
+    protected String website;
 
     @JsonProperty("gender")
-    private String gender;
+    protected String gender;
 
     @JsonProperty("recent_activity")
-    private List<FacebookMonitoringXObj> recentActivity;
+    protected List<FacebookMonitoringXObj> recentActivity;
 
     @JsonProperty("location")
-    private LinkedHashMap<String, String> location;
+    protected LinkedHashMap<String, String> location;
 
     @JsonProperty("hometown")
-    private LinkedHashMap<String, String> hometown;
+    protected LinkedHashMap<String, String> hometown;
 
     @Override
     public String toString() {

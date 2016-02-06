@@ -15,40 +15,40 @@ public class FacebookMonitoringXObj implements Serializable {
     private static final long serialVersionUID = -1729202563494110505L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("body")
-    private String body;
+    protected String body;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    protected String createdAt;
 
     @JsonProperty("num_children")
-    private Integer numChildren;
+    protected Integer numChildren;
 
     @JsonProperty("num_likes")
-    private Integer numLikes;
+    protected Integer numLikes;
 
     @JsonProperty("num_shares")
-    private Integer numShares;
+    protected Integer numShares;
 
     @JsonProperty("parent_id")
-    private String parentId;
+    protected String parentId;
 
     @JsonProperty("permalink")
-    private String permalink;
+    protected String permalink;
 
     @JsonProperty("picture")
-    private String picture;
+    protected String picture;
 
     @JsonProperty("thumbnail")
-    private String thumbnail;
+    protected String thumbnail;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("user")
-    private FacebookMonitoringUser user;
+    protected FacebookMonitoringUser user;
 
     @Override
     public String toString() {

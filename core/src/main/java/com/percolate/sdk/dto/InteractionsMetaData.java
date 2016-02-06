@@ -15,10 +15,10 @@ public class InteractionsMetaData implements Serializable {
     private static final long serialVersionUID = -1727114334506910922L;
 
     @JsonProperty("query")
-    private InteractionsMetaDataQuery query;
+    protected InteractionsMetaDataQuery query;
 
     @JsonProperty("total")
-    private Long total;
+    protected Long total;
 
     @Override
     public String toString() {

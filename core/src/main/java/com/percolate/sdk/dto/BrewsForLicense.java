@@ -17,10 +17,10 @@ public class BrewsForLicense implements Serializable {
     private static final long serialVersionUID = -1807753700970904760L;
 
     @JsonProperty("pagination")
-    private PaginationData pagination;
+    protected PaginationData pagination;
 
     @JsonProperty("data")
-    private List<BrewLicenceConnection> data = new ArrayList<>();
+    protected List<BrewLicenceConnection> data = new ArrayList<>();
 
     @Override
     public String toString() {

@@ -19,25 +19,25 @@ public class Channel implements Serializable {
     public boolean isPersonalChannel = false; // Set by client after checking if connected token is for a personal channel
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
 
     @JsonProperty("name")
-    private String name;
+    protected String name;
 
     @JsonProperty("photo_url")
-    private String photoUrl;
+    protected String photoUrl;
 
     @JsonProperty("total_subscribers")
-    private Integer totalSubscribers;
+    protected Integer totalSubscribers;
 
     @JsonProperty("type")
-    private String type; //"twitter", "facebook", etc. 
+    protected String type; //"twitter", "facebook", etc.
 
     @JsonProperty("url")
-    private String url;
+    protected String url;
 
     @JsonProperty("page_id")
-    private String pageId;
+    protected String pageId;
 
     @Override
     public String toString() {
