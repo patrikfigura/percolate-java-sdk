@@ -61,10 +61,6 @@ public class Post extends com.percolate.sdk.dto.Post implements Parcelable {
     public Post() {
     }
 
-    public boolean testIt() {
-        return true;
-    }
-
     protected Post(Parcel in) {
         this.workflowData = (com.percolate.sdk.dto.WorkflowData) in.readSerializable();
         this.twitterInteractionsData = (TwitterInteractionsData) in.readSerializable();

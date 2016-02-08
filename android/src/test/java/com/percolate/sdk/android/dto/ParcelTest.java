@@ -4,10 +4,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class PostTest {
+public class ParcelTest {
 
     @Test
-    public void test() {
-        assertTrue(new Post().testIt());
+    public void testParceling() {
+        //TODO
     }
 }
