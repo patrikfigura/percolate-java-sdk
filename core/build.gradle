@@ -31,9 +31,20 @@ tasks.withType(Javadoc) {
     options.addStringOption('-Xdoclint:none')
 }
 
+task coverage(dependsOn: jacocoTestReport) {
+    description = 'Create code coverage report'
+}
+
 artifacts {
     archives sourcesJar
     archives javadocJar
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        xml.destination "${buildDir}/jacocoCoreTests.xml"
+    }
 }
 
 dependencies {

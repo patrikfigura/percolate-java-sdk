@@ -8,8 +8,7 @@ dependencies:
     - pip install codecov
 test:
   override:
-  - ./gradlew test jacocoTestReport
-  - ./gradlew install
+  - ./gradlew install test coverage
   post:
   - codecov
 
