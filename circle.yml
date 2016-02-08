@@ -1,7 +1,14 @@
 machine:
   java:
     version: oraclejdk8
+  python:
+    version: 2.7.10
+dependencies:
+  pre:
+    - pip install codecov
 test:
   override:
-  - ./gradlew test
-  - ./gradlew install
+  - ./gradlew install test coverage
+  post:
+  - codecov
+
