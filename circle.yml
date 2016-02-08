@@ -5,7 +5,7 @@ machine:
     version: 2.7.10
 dependencies:
   pre:
-    - pip install --user codecov
+    - pip install codecov
 test:
   override:
   - ./gradlew test jacocoTestReport
