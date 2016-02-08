@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'jacoco'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group 'com.percolate.sdk'
@@ -8,10 +9,53 @@ version '1.0-SNAPSHOT'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
+
+    buildTypes {
+        debug {
+            testCoverageEnabled false
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/DEPENDENCIES'
+    }
 }
 
 repositories {
     mavenCentral()
+}
+
+jacoco {
+    version = '0.7.5.201505241946'
+}
+
+task coverage(type:JacocoReport, dependsOn: "testDebugUnitTest") {
+    group = "Reporting"
+    description = 'Create code coverage report'
+
+    classDirectories = fileTree(
+            dir: "$buildDir/intermediates/classes/debug",
+            excludes: ['**/R.class',
+                       '**/R$*.class',
+                       '**/BuildConfig.*',
+                       '**/Manifest*.*']
+    )
+
+    sourceDirectories = files("src/main/java")
+    executionData = files("build/jacoco/testDebugUnitTest.exec")
+
+    reports {
+        //noinspection GroovyAssignabilityCheck
+        xml {
+            enabled = true
+            destination = "build/jacocoAndroidTests.xml"
+        }
+        html.enabled = true
+    }
 }
 
 dependencies {

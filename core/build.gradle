@@ -32,6 +32,7 @@ tasks.withType(Javadoc) {
 }
 
 task coverage(dependsOn: jacocoTestReport) {
+    group = "Reporting"
     description = 'Create code coverage report'
 }
 
