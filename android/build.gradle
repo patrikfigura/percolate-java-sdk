@@ -59,6 +59,14 @@ task coverage(type:JacocoReport, dependsOn: "testDebugUnitTest") {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
     compile project(':core')
+
+    // JUnit
+    testCompile 'junit:junit:4.12'
+
+    // Kotlin Standard Library
+    testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // Robolectric
+    testCompile 'org.robolectric:robolectric:3.0'
 }
