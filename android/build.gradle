@@ -35,7 +35,7 @@ jacoco {
 
 task coverage(type:JacocoReport, dependsOn: "testDebugUnitTest") {
     group = "Reporting"
-    description = 'Create code coverage report'
+    description = 'Create code coverage report for android module'
 
     classDirectories = fileTree(
             dir: "$buildDir/intermediates/classes/debug",

@@ -14,7 +14,6 @@ import com.openpojo.validation.test.impl.GetterTester
 import com.openpojo.validation.test.impl.SetterTester
 import com.openpojo.validation.utils.ValidationHelper
 import org.junit.Test
-import org.junit.Assert.fail
 
 /**
  * This test class uses OpenPojo to test all of our DTO classes dynamically.

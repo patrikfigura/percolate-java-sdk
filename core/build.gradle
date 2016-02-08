@@ -33,7 +33,7 @@ tasks.withType(Javadoc) {
 
 task coverage(dependsOn: jacocoTestReport) {
     group = "Reporting"
-    description = 'Create code coverage report'
+    description = 'Create code coverage report for core module'
 }
 
 artifacts {
@@ -65,6 +65,6 @@ dependencies {
     // OpenPojo
     testCompile 'com.openpojo:openpojo:0.8.3'
 
-    // Kotlin
+    // Kotlin Standard Library
     testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
