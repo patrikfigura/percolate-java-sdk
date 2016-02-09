@@ -34,7 +34,6 @@ import java.util.*
 class ParcelTest {
 
     @Test
-    @Throws(Exception::class)
     fun testObjectParceling() {
         val validator = ValidatorBuilder.create().with(MyParcelableTester()).build()
 
@@ -67,9 +66,10 @@ class ParcelTest {
         private fun setFieldValues(pojoClass: PojoClass): Any {
             val classInstance = ValidationHelper.getBasicInstance(pojoClass)
             val parent = pojoClass.superClass
+            val randomValueGenerator = RandomValueGenerator();
             for (fieldEntry in parent.pojoFields) {
                 if (fieldEntry.hasSetter()) {
-                    val value = getRandomValue(fieldEntry)
+                    val value = randomValueGenerator.createRandomValue(fieldEntry)
                     IdentityHandlerStub.registerIdentityHandlerStubForValue(value)
                     fieldEntry.invokeSetter(classInstance, value)
                     Affirm.affirmEquals("Setter test failed, non equal value for field=[$fieldEntry]", value, fieldEntry.get(classInstance))
@@ -80,48 +80,10 @@ class ParcelTest {
         }
 
         /**
-         * Handle `LinkedHashMap&lt;String, Object&gt;` and `List&lt;LinkedHashMap&lt;String, Object&gt;&gt;` as special
-         * case (OpenPojo would actually create `new Object()` values, which don't work with [Parcel].
-         */
-        private fun getRandomValue(fieldEntry: PojoField): Any {
-            if (fieldEntry.type.isAssignableFrom(LinkedHashMap::class.java)) {
-                val parameterTypes = fieldEntry.parameterTypes
-                if (parameterTypes.size == 2) {
-                    if ("class java.lang.Object" == parameterTypes[1].toString()) {
-                        return createRandomLinkedHashMap()
-                    }
-                }
-            }
-
-            if (fieldEntry.type.isAssignableFrom(List::class.java)) {
-                val parameterTypes = fieldEntry.parameterTypes
-                if (parameterTypes.size == 1) {
-                    if ("java.util.LinkedHashMap<java.lang.String, java.lang.Object>" == parameterTypes[0].toString()) {
-                        val randomValues = ArrayList<LinkedHashMap<String, Any>>()
-                        randomValues.add(createRandomLinkedHashMap())
-                        randomValues.add(createRandomLinkedHashMap())
-                        return randomValues
-                    }
-                }
-            }
-
-            return RandomFactory.getRandomValue(fieldEntry)
-        }
-
-        private fun createRandomLinkedHashMap(): LinkedHashMap<String, Any> {
-            val randomValues = LinkedHashMap<String, Any>()
-            for (i in 0..2) {
-                val randKey = RandomFactory.getRandomValue(String::class.java)
-                val randVal = RandomFactory.getRandomValue(String::class.java)
-                randomValues.put(randKey, randVal)
-            }
-            return randomValues
-        }
-
-        /**
          * Here's where the magic happens.  We put an instance of the object into Parcel, and then get it
          * back out of Parcel.  We then make sure all the fields in the 2 objects match.
          */
+        @Suppress("ConvertToStringTemplate")
         private fun testParceling(instance: Any) {
             try {
                 if (instance is Parcelable) {
@@ -131,8 +93,11 @@ class ParcelTest {
                     assertNotNull(fromParcel)
                     val equalsBuilder = createEqualsBuilder(instance, fromParcel)
 
-                    assertTrue("Objects do not match after writeToParcel / createFromParcel execution.\nInitial Object: [$instance].\nParcel Object:  [$fromParcel]",
-                            equalsBuilder.build()!!)
+                    assertTrue("Objects do not match after writeToParcel / createFromParcel execution." +
+                            "\nInitial Object: [$instance]." +
+                            "\nParcel Object:  [$fromParcel]",
+                            equalsBuilder.build())
+
                 } else {
                     fail("Object does not implement Parcelable: " + instance.javaClass.name)
                 }
@@ -145,14 +110,14 @@ class ParcelTest {
         /**
          * Write the object to (Robolectric's version of) Parcel.
          */
-        private fun writeToParcel(`object`: Parcelable, parcel: Parcel) {
-            `object`.writeToParcel(parcel, 0)
+        private fun writeToParcel(obj: Parcelable, parcel: Parcel) {
+            obj.writeToParcel(parcel, 0)
             parcel.setDataPosition(0)
         }
 
         /**
-         * The the objects "CREATOR" field that holds an instance of [Parcelable.Creator]
-         * and call `createFromParcel` on it.
+         * Get the objects "CREATOR" field that holds an instance of [Parcelable.Creator] and call
+         * `createFromParcel` on it.
          */
         @Throws(NoSuchFieldException::class, IllegalAccessException::class)
         private fun readFromParcel(obj: Parcelable, parcel: Parcel): Any {
@@ -164,19 +129,71 @@ class ParcelTest {
 
         /**
          * Construct an Apache Commons [EqualsBuilder].  Add fields from both objects
-         * to it, ignoring objects annotated with `@JsonIgnore`.
+         * to it, ignoring fields annotated with jackson's `@JsonIgnore` annotation.
          */
         @Throws(IllegalAccessException::class)
-        private fun createEqualsBuilder(`object`: Parcelable, fromParcel: Any): EqualsBuilder {
+        private fun createEqualsBuilder(obj: Parcelable, fromParcel: Any): EqualsBuilder {
             val equalsBuilder = EqualsBuilder()
-            val clazz = `object`.javaClass
+            val clazz = obj.javaClass
             val fields = clazz.declaredFields
             for (field in fields) {
                 if (!field.isAnnotationPresent(JsonIgnore::class.java) && !Modifier.isTransient(field.modifiers)) {
-                    equalsBuilder.append(field.get(`object`), field.get(fromParcel))
+                    equalsBuilder.append(field.get(obj), field.get(fromParcel))
                 }
             }
             return equalsBuilder
+        }
+    }
+
+    /**
+     * Class used to handle `LinkedHashMap<String, Object>` and `List<LinkedHashMap<String, Object>>` as special
+     * cases.  OpenPojo would create `new Object()` values, which don't work with [Parcel].  If the field is not one
+     * of the above types, we use OpenPojo's [RandomFactory.getRandomValue] for value generation.
+     */
+    internal inner class RandomValueGenerator {
+
+        fun createRandomValue(fieldEntry: PojoField): Any {
+            if(isLinkedHashMapOfObjects(fieldEntry)) {
+                return createRandomLinkedHashMap()
+            } else if (isListOfLinkedHashMapOfObjects(fieldEntry)) {
+                val randomValues = ArrayList<LinkedHashMap<String, Any>>()
+                randomValues.add(createRandomLinkedHashMap())
+                randomValues.add(createRandomLinkedHashMap())
+                return randomValues
+            } else {
+                return RandomFactory.getRandomValue(fieldEntry)
+            }
+        }
+
+        /**
+         * @return true if field is of type `LinkedHashMap<String, Object>`
+         */
+        private fun isLinkedHashMapOfObjects(fieldEntry: PojoField): Boolean {
+            return fieldEntry.type.isAssignableFrom(LinkedHashMap::class.java) &&
+                    fieldEntry.parameterTypes.size == 2 &&
+                    "class java.lang.Object" == fieldEntry.parameterTypes[1].toString();
+        }
+
+        /**
+         * @return true if field is of type `List<LinkedHashMap<String, Object>>`
+         */
+        private fun isListOfLinkedHashMapOfObjects(fieldEntry: PojoField): Boolean {
+            return fieldEntry.type.isAssignableFrom(List::class.java) &&
+                    fieldEntry.parameterTypes.size == 1 &&
+                    "java.util.LinkedHashMap<java.lang.String, java.lang.Object>" == fieldEntry.parameterTypes[0].toString();
+        }
+
+        /**
+         * Create a new `LinkedHashMap<String, Object>` containing 3 random key=value combinations.
+         */
+        private fun createRandomLinkedHashMap(): LinkedHashMap<String, Any> {
+            val randomValues = LinkedHashMap<String, Any>()
+            for (i in 0..2) {
+                val randKey = RandomFactory.getRandomValue(String::class.java)
+                val randVal = RandomFactory.getRandomValue(String::class.java)
+                randomValues.put(randKey, randVal)
+            }
+            return randomValues
         }
     }
 }
