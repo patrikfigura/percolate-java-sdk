@@ -2,7 +2,6 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.Channel;
 import com.percolate.sdk.dto.FacebookMentionData;
 import com.percolate.sdk.dto.LocalCreatedAt;
@@ -64,10 +63,11 @@ public class Post extends com.percolate.sdk.dto.Post implements Parcelable {
     protected Post(Parcel in) {
         this.workflowData = (com.percolate.sdk.dto.WorkflowData) in.readSerializable();
         this.twitterInteractionsData = (TwitterInteractionsData) in.readSerializable();
-        this.terms = new ArrayList<Term>();
+        this.terms = new ArrayList<>();
         in.readList(this.terms, List.class.getClassLoader());
         this.postSetData = (PostSetData) in.readSerializable();
         this.id = (Long) in.readValue(Long.class.getClassLoader());
+        this.analytics = new LinkedHashMap<>();
         in.readMap(this.analytics, LinkedHashMap.class.getClassLoader());
         this.body = in.readString();
         this.channel = (Channel) in.readSerializable();

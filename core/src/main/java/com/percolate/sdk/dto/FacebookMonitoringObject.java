@@ -8,6 +8,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 @SuppressWarnings("UnusedDeclaration")
@@ -26,7 +27,7 @@ public class FacebookMonitoringObject implements Serializable {
     protected String id; //Facebook Id
 
     @JsonProperty("activity")
-    protected List<Object> activity;
+    protected List<LinkedHashMap<String, Object>> activity;
 
     @JsonProperty("related_post_set_id")
     protected String relatedPostSetId;
@@ -47,11 +48,11 @@ public class FacebookMonitoringObject implements Serializable {
         this.id = id;
     }
 
-    public List<Object> getActivity() {
+    public List<LinkedHashMap<String, Object>> getActivity() {
         return activity;
     }
 
-    public void setActivity(List<Object> activity) {
+    public void setActivity(List<LinkedHashMap<String, Object>> activity) {
         this.activity = activity;
     }
 

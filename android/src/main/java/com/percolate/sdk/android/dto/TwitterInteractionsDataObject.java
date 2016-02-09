@@ -25,6 +25,7 @@ public class TwitterInteractionsDataObject extends com.percolate.sdk.dto.Twitter
 
     protected TwitterInteractionsDataObject(Parcel in) {
         this.id = in.readString();
+        this.xobj = new LinkedHashMap<>();
         in.readMap(this.xobj, LinkedHashMap.class.getClassLoader());
     }
 

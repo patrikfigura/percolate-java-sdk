@@ -4,6 +4,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.percolate.sdk.dto.*;
 
+import java.util.LinkedHashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.Tweet}.  Implements {@link Parcelable}
  */
@@ -47,7 +49,7 @@ public class Tweet extends com.percolate.sdk.dto.Tweet implements Parcelable {
         this.idStr = in.readString();
         this.text = in.readString();
         this.event = in.readString();
-        this.target = in.readParcelable(Object.class.getClassLoader());
+        this.truncated = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.inReplyToStatusId = (Long) in.readValue(Long.class.getClassLoader());
         this.inReplyToStatusIdStr = in.readString();
         this.inReplyToUserId = (Long) in.readValue(Long.class.getClassLoader());
@@ -56,6 +58,7 @@ public class Tweet extends com.percolate.sdk.dto.Tweet implements Parcelable {
         this.user = (com.percolate.sdk.dto.TwitterUser) in.readSerializable();
         this.retweetCount = (Long) in.readValue(Long.class.getClassLoader());
         this.favoriteCount = (Long) in.readValue(Long.class.getClassLoader());
+        this.entities = new LinkedHashMap<>();
         in.readMap(this.entities, Object.class.getClassLoader());
         this.favorited = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.retweetedStatus = (com.percolate.sdk.dto.Tweet) in.readSerializable();

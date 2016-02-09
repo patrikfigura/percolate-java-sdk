@@ -27,7 +27,6 @@ public class InstagramMonitoringObject extends com.percolate.sdk.dto.InstagramMo
         dest.writeSerializable(this.xobj);
         dest.writeSerializable(this.meta);
         dest.writeValue(this.relatedPostSetId);
-        dest.writeList(this.activity);
     }
 
     public InstagramMonitoringObject() {
@@ -40,8 +39,6 @@ public class InstagramMonitoringObject extends com.percolate.sdk.dto.InstagramMo
         this.xobj = (InstagramComment) in.readSerializable();
         this.meta = (InstagramMonitoringObjectMetaData) in.readSerializable();
         this.relatedPostSetId = (Long) in.readValue(Long.class.getClassLoader());
-        this.activity = new ArrayList<Object>();
-        in.readList(this.activity, List.class.getClassLoader());
     }
 
     public static final Creator<InstagramMonitoringObject> CREATOR = new Creator<InstagramMonitoringObject>() {

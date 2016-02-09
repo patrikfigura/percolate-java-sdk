@@ -2,13 +2,7 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
-import com.percolate.sdk.dto.CampaignSectionData;
-import com.percolate.sdk.dto.Link;
-import com.percolate.sdk.dto.Media;
 import com.percolate.sdk.dto.Owner;
-import com.percolate.sdk.dto.Term;
-import com.percolate.sdk.dto.Topic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +10,7 @@ import java.util.List;
 /**
  * Android version of {@link com.percolate.sdk.dto.Brief}.  Implements {@link Parcelable}
  */
+@SuppressWarnings("unused")
 public class Brief extends com.percolate.sdk.dto.Brief implements Parcelable {
     @Override
     public int describeContents() {
@@ -60,7 +55,7 @@ public class Brief extends com.percolate.sdk.dto.Brief implements Parcelable {
         this.workflowData = (com.percolate.sdk.dto.WorkflowData) in.readSerializable();
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.uid = in.readString();
-        this.terms = new ArrayList<Term>();
+        this.terms = new ArrayList<>();
         in.readList(this.terms, List.class.getClassLoader());
         this.title = in.readString();
         this.description = in.readString();
@@ -68,23 +63,23 @@ public class Brief extends com.percolate.sdk.dto.Brief implements Parcelable {
         this.startAt = in.readString();
         this.endAt = in.readString();
         this.mediaUids = in.createStringArrayList();
-        this.media = new ArrayList<Media>();
+        this.media = new ArrayList<>();
         in.readList(this.media, List.class.getClassLoader());
-        this.briefSectionData = new ArrayList<CampaignSectionData>();
+        this.briefSectionData = new ArrayList<>();
         in.readList(this.briefSectionData, List.class.getClassLoader());
         this.briefApprovalPoolId = in.readString();
         this.briefWorkflowId = (Integer) in.readValue(Integer.class.getClassLoader());
         this.briefWorkflowComplete = (Boolean) in.readValue(Boolean.class.getClassLoader());
-        this.workspaceData = new ArrayList<CampaignSectionData>();
+        this.workspaceData = new ArrayList<>();
         in.readList(this.workspaceData, List.class.getClassLoader());
         this.termUids = in.createStringArrayList();
-        this.links = new ArrayList<Link>();
+        this.links = new ArrayList<>();
         in.readList(this.links, List.class.getClassLoader());
-        this.postSetIds = new ArrayList<Integer>();
+        this.postSetIds = new ArrayList<>();
         in.readList(this.postSetIds, List.class.getClassLoader());
-        this.tagIds = new ArrayList<Object>();
+        this.tagIds = new ArrayList<>();
         in.readList(this.tagIds, List.class.getClassLoader());
-        this.topics = new ArrayList<Topic>();
+        this.topics = new ArrayList<>();
         in.readList(this.topics, List.class.getClassLoader());
         this.platforms = in.createStringArrayList();
         this.visible = (Boolean) in.readValue(Boolean.class.getClassLoader());

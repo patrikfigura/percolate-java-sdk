@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.TwitterQuery;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -39,6 +40,7 @@ public class StreamData extends com.percolate.sdk.dto.StreamData implements Parc
         this.scopeId = in.readString();
         this.channelId = in.readString();
         this.updatedAt = in.readString();
+        this.ext = new LinkedHashMap<>();
         in.readMap(this.ext, Map.class.getClassLoader());
     }
 

@@ -24,6 +24,7 @@ public class V5Meta extends com.percolate.sdk.dto.V5Meta implements Parcelable {
     }
 
     protected V5Meta(Parcel in) {
+        this.query = new LinkedHashMap<>();
         in.readMap(this.query, LinkedHashMap.class.getClassLoader());
         this.total = (Long) in.readValue(Long.class.getClassLoader());
     }

@@ -25,8 +25,11 @@ public class Schema extends com.percolate.sdk.dto.Schema implements Parcelable {
         dest.writeString(this.type);
         dest.writeString(this.name);
         dest.writeList(this.fields);
+        this.plugins = new ArrayList<>();
         dest.writeList(this.plugins);
+        this.fieldsets = new ArrayList<>();
         dest.writeList(this.fieldsets);
+        this.ext = new LinkedHashMap<>();
         dest.writeMap(this.ext);
         dest.writeString(this.updated_at);
     }

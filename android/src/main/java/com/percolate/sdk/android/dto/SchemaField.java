@@ -53,6 +53,7 @@ public class SchemaField extends com.percolate.sdk.dto.SchemaField implements Pa
         this.label = in.readString();
         this.description = in.readString();
         this.required = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.ext = new LinkedHashMap<>();
         in.readMap(this.ext, LinkedHashMap.class.getClassLoader());
     }
 

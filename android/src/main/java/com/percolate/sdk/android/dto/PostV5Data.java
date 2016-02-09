@@ -62,7 +62,7 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
     protected PostV5Data(Parcel in) {
         this.platform = (com.percolate.sdk.dto.Platform) in.readSerializable();
         this.channel = (ChannelV5) in.readSerializable();
-        this.media = new ArrayList<Media>();
+        this.media = new ArrayList<>();
         in.readList(this.media, List.class.getClassLoader());
         this.workflowData = (WorkflowData) in.readSerializable();
         this.link = (Link) in.readSerializable();
@@ -90,6 +90,7 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
         this.linkIds = in.createStringArrayList();
         this.createdAt = in.readString();
         this.updatedAt = in.readString();
+        this.ext = new LinkedHashMap<>();
         in.readMap(this.ext, LinkedHashMap.class.getClassLoader());
     }
 
