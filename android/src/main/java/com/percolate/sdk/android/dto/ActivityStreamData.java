@@ -7,6 +7,7 @@ import com.percolate.sdk.dto.ActivityStreamMetadata;
 import com.percolate.sdk.dto.Mention;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -40,6 +41,7 @@ public class ActivityStreamData extends com.percolate.sdk.dto.ActivityStreamData
     }
 
     protected ActivityStreamData(Parcel in) {
+        this.metaDataMap = new HashMap<>();
         in.readMap(this.metaDataMap, Map.class.getClassLoader());
         this.relatedObjectUid = in.readString();
         this.relatedObjectPreview = in.readString();

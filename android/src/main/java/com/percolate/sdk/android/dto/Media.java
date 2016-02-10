@@ -60,6 +60,7 @@ public class Media extends com.percolate.sdk.dto.Media implements Parcelable {
         in.readList(this.formats, List.class.getClassLoader());
         this.format = in.readString();
         this.licenseId = (Long) in.readValue(Long.class.getClassLoader());
+        this.imagesForTypeImage = new LinkedHashMap<>();
         in.readMap(this.imagesForTypeImage, LinkedHashMap.class.getClassLoader());
         this.imagesForTypeVideo = new ArrayList<ImageSize>();
         in.readList(this.imagesForTypeVideo, List.class.getClassLoader());

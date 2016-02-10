@@ -40,9 +40,11 @@ public class FacebookUser extends com.percolate.sdk.dto.FacebookUser implements 
         this.name = in.readString();
         this.website = in.readString();
         this.gender = in.readString();
-        this.recentActivity = new ArrayList<com.percolate.sdk.dto.FacebookMonitoringXObj>();
+        this.recentActivity = new ArrayList<>();
         in.readList(this.recentActivity, List.class.getClassLoader());
+        this.location = new LinkedHashMap<>();
         in.readMap(this.location, LinkedHashMap.class.getClassLoader());
+        this.hometown = new LinkedHashMap<>();
         in.readMap(this.hometown, LinkedHashMap.class.getClassLoader());
     }
 

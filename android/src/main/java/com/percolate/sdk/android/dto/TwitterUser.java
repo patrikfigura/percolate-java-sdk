@@ -80,6 +80,7 @@ public class TwitterUser extends com.percolate.sdk.dto.TwitterUser implements Pa
         this.location = in.readString();
         this.description = in.readString();
         this.url = in.readString();
+        this.entities = new LinkedHashMap<>();
         in.readMap(this.entities, LinkedHashMap.class.getClassLoader());
         this.isProtected = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.followersCount = (Long) in.readValue(Long.class.getClassLoader());

@@ -20,6 +20,7 @@ public class InstagramIncludeMediaData extends com.percolate.sdk.dto.InstagramIn
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.id);
+        this.activity = new ArrayList<>();
         dest.writeList(this.activity);
         dest.writeValue(this.relatedPostSetId);
         dest.writeSerializable(this.xobj);

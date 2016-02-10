@@ -53,7 +53,6 @@ public class PostSetData extends com.percolate.sdk.dto.PostSetData implements Pa
         dest.writeString(this.userAgent);
         dest.writeValue(this.shareId);
         dest.writeValue(this.relatedLicenseId);
-        dest.writeList(this.errors);
     }
 
     public PostSetData() {
@@ -61,6 +60,7 @@ public class PostSetData extends com.percolate.sdk.dto.PostSetData implements Pa
 
     protected PostSetData(Parcel in) {
         this.id = (Long) in.readValue(Long.class.getClassLoader());
+        this.analytics = new LinkedHashMap<>();
         in.readMap(this.analytics, LinkedHashMap.class.getClassLoader());
         this.body = in.readString();
         this.brandId = (Long) in.readValue(Long.class.getClassLoader());
@@ -94,7 +94,6 @@ public class PostSetData extends com.percolate.sdk.dto.PostSetData implements Pa
         this.userAgent = in.readString();
         this.shareId = (Long) in.readValue(Long.class.getClassLoader());
         this.relatedLicenseId = (Integer) in.readValue(Integer.class.getClassLoader());
-        this.errors = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.errors, List.class.getClassLoader());
     }
 

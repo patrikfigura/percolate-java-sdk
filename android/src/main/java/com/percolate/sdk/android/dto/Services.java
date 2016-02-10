@@ -24,6 +24,7 @@ public class Services extends com.percolate.sdk.dto.Services implements Parcelab
     }
 
     protected Services(Parcel in) {
+        this.analytics = new LinkedHashMap<>();
         in.readMap(this.analytics, LinkedHashMap.class.getClassLoader());
         this.type = in.readString();
     }

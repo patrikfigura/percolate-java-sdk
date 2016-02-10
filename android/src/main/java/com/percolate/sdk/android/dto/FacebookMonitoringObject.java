@@ -6,6 +6,7 @@ import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.FacebookMonitoringXObj;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -34,7 +35,7 @@ public class FacebookMonitoringObject extends com.percolate.sdk.dto.FacebookMoni
         this.flag = (com.percolate.sdk.dto.Flag) in.readSerializable();
         this.wasFromMonitoringTab = in.readByte() != 0;
         this.id = in.readString();
-        this.activity = new ArrayList<Object>();
+        this.activity = new ArrayList<>();
         in.readList(this.activity, List.class.getClassLoader());
         this.relatedPostSetId = in.readString();
         this.xobj = (FacebookMonitoringXObj) in.readSerializable();

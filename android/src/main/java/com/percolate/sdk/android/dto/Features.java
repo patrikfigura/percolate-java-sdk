@@ -27,8 +27,9 @@ public class Features extends com.percolate.sdk.dto.Features implements Parcelab
     }
 
     protected Features(Parcel in) {
+        this.meta = new LinkedHashMap<>();
         in.readMap(this.meta, LinkedHashMap.class.getClassLoader());
-        this.data = new ArrayList<com.percolate.sdk.dto.FeatureData>();
+        this.data = new ArrayList<>();
         in.readList(this.data, List.class.getClassLoader());
     }
 

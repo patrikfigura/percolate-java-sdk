@@ -75,7 +75,7 @@ public class Brief implements Serializable {
     protected List<Integer> postSetIds = new ArrayList<>();
 
     @JsonProperty("tag_ids")
-    protected List<Object> tagIds = new ArrayList<>();
+    protected List<String> tagIds = new ArrayList<>();
 
     @JsonProperty("tags")
     protected List<Topic> topics = new ArrayList<>();
@@ -171,8 +171,8 @@ public class Brief implements Serializable {
         return mediaUids;
     }
 
-    public void setMediaUids(List<String> media_uids) {
-        this.mediaUids = media_uids;
+    public void setMediaUids(List<String> mediaUids) {
+        this.mediaUids = mediaUids;
     }
 
     public List<Media> getMedia() {
@@ -243,16 +243,16 @@ public class Brief implements Serializable {
         return postSetIds;
     }
 
-    public void setPostSetIds(List<Integer> post_set_ids) {
-        this.postSetIds = post_set_ids;
+    public void setPostSetIds(List<Integer> postSetIds) {
+        this.postSetIds = postSetIds;
     }
 
-    public List<Object> getTagIds() {
+    public List<String> getTagIds() {
         return tagIds;
     }
 
-    public void setTagIds(List<Object> tag_ids) {
-        this.tagIds = tag_ids;
+    public void setTagIds(List<String> tagIds) {
+        this.tagIds = tagIds;
     }
 
     public List<Topic> getTopics() {
@@ -291,16 +291,16 @@ public class Brief implements Serializable {
         return ownerUid;
     }
 
-    public void setOwnerUid(String owner_uid) {
-        this.ownerUid = owner_uid;
+    public void setOwnerUid(String ownerUid) {
+        this.ownerUid = ownerUid;
     }
 
     public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String created_at) {
-        this.createdAt = created_at;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public Integer getCommentCount() {

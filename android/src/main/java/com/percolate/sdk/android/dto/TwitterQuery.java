@@ -57,6 +57,7 @@ public class TwitterQuery extends com.percolate.sdk.dto.TwitterQuery implements 
         this.licenseChannelId = (Long) in.readValue(Long.class.getClassLoader());
         long tmpCreatedAt = in.readLong();
         this.createdAt = tmpCreatedAt == -1 ? null : new Date(tmpCreatedAt);
+        this.status = new LinkedHashMap<>();
         in.readMap(this.status, LinkedHashMap.class.getClassLoader());
         this.filterString = in.readString();
         this.version = (Long) in.readValue(Long.class.getClassLoader());

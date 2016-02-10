@@ -23,6 +23,7 @@ public class TwitterMonitoringObject extends com.percolate.sdk.dto.TwitterMonito
         dest.writeSerializable(this.flag);
         dest.writeByte(wasFromMonitoringTab ? (byte) 1 : (byte) 0);
         dest.writeString(this.id);
+        this.activity = new ArrayList<>();
         dest.writeList(this.activity);
         dest.writeValue(this.authorInfluencerScore);
         dest.writeSerializable(this.tweet);

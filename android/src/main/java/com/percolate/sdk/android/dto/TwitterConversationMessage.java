@@ -55,6 +55,7 @@ public class TwitterConversationMessage extends com.percolate.sdk.dto.TwitterCon
         this.recipientIdStr = in.readString();
         this.recipientScreenName = in.readString();
         this.recipient = (TwitterUser) in.readSerializable();
+        this.entities = new LinkedHashMap<>();
         in.readMap(this.entities, LinkedHashMap.class.getClassLoader());
         this.createdAt = in.readString();
     }

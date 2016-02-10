@@ -2,11 +2,11 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.BriefData}.  Implements {@link Parcelable}
  */
+@SuppressWarnings("unused")
 public class BriefData extends com.percolate.sdk.dto.BriefData implements Parcelable {
     @Override
     public int describeContents() {
