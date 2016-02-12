@@ -84,5 +84,5 @@ jitpack logs can be found at: https://jitpack.io/com/github/percolate/percolate-
 The latests log can be found here: https://jitpack.io/com/github/percolate/percolate-java-sdk/-SNAPSHOT/build.log
 
 ## License
-TODO
+Distributed under the BSD 3 license. See [LICENSE](LICENSE.txt) for details.
 
