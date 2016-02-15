@@ -5,7 +5,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Test
 
-class ApprovalPoolsRequestTest : PercolateApiTest() {
+class ApprovalPoolsRequestTest : BaseApiTest() {
 
     @Test
     fun testApiGetRequest() {
