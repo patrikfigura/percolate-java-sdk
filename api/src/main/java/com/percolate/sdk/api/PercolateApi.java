@@ -1,6 +1,7 @@
 package com.percolate.sdk.api;
 
 import com.percolate.sdk.api.config.PercolateServer;
+import com.percolate.sdk.api.request.approvals.pools.ApprovalPoolsRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -80,5 +81,12 @@ public class PercolateApi {
      */
     public TermsRequest terms() {
         return new TermsRequest(this);
+    }
+
+    /**
+     * @return {@link ApprovalPoolsRequest} instance.
+     */
+    public ApprovalPoolsRequest approvalPools() {
+        return new ApprovalPoolsRequest(this);
     }
 }
