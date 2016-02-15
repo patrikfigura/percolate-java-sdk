@@ -6,7 +6,7 @@ import com.percolate.sdk.dto.ApprovalPools;
 import retrofit2.Call;
 
 /**
- * Terms request proxy.
+ * Approval pools request proxy.
  */
 @SuppressWarnings("unused")
 public class ApprovalPoolsRequest {
@@ -18,7 +18,7 @@ public class ApprovalPoolsRequest {
     }
 
     /**
-     * Query terms endpoint.
+     * Query approval pools endpoint.
      *
      * @param params API params.
      * @return {@link Call} object.

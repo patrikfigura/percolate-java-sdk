@@ -9,7 +9,7 @@ import retrofit2.http.QueryMap;
 import java.util.Map;
 
 /**
- * Percolate v5/terms API definition.
+ * Percolate v4/approval/pool/ API definition.
  */
 interface ApprovalPoolsService {
 
