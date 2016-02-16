@@ -10,7 +10,7 @@ The SDK is broken up into 3 libraries:
 | Component | Description                      |
 |-----------|----------------------------------|
 | core      | Core objects.  Required.         |
-| autu      | TODO.                            |
+| auth      | TODO.                            |
 | api       | API requests.                    |
 | android   | Android-specific objects.        |
    
@@ -21,11 +21,13 @@ If you are using Gradle or Maven, do the following:
 Add jitpack.io as a repository.  [Instructions](https://jitpack.io/docs/#how-to).
 
 To use the latest build, include 1 or more of the following in your `build.gradle` file: 
-`compile 'com.github.percolate.percolate-java-sdk:core:master-SNAPSHOT'`
-`compile 'com.github.percolate.percolate-java-sdk:network:master-SNAPSHOT'`
-`compile 'com.github.percolate.percolate-java-sdk:android:master-SNAPSHOT'`
+```
+compile 'com.github.percolate.percolate-java-sdk:core:master-SNAPSHOT'
+compile 'com.github.percolate.percolate-java-sdk:api:master-SNAPSHOT'
+compile 'com.github.percolate.percolate-java-sdk:android:master-SNAPSHOT'
+```
 
-To use a build from a specific github commit: `compile 'com.github.percolate.percolate-java-sdk:<core|network|android>:<COMMIT_HASH>'`
+To use a build from a specific github commit: `compile 'com.github.percolate.percolate-java-sdk:<core|api|android>:<COMMIT_HASH>'`
 
 ### Just want the jar file?
 `https://jitpack.io/com/github/percolate/percolate-java-sdk/LIBRARY/COMMIT_HASH/LIBRARY-COMMIT_HASH.jar`
