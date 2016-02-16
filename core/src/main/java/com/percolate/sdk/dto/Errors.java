@@ -10,37 +10,23 @@ import java.util.List;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Terms implements Serializable {
+public class Errors implements Serializable {
 
-    private static final long serialVersionUID = -1574288769222247406L;
-
-    @JsonProperty("meta")
-    protected V5Meta meta;
-
-    @JsonProperty("data")
-    protected List<Term> data;
+    private static final long serialVersionUID = -6908100623351411037L;
 
     @JsonProperty("errors")
-    protected Errors errors;
+    protected List<Error> errors;
 
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-    public V5Meta getMeta() {
-        return meta;
+    public List<Error> getErrors() {
+        return errors;
     }
 
-    public void setMeta(V5Meta meta) {
-        this.meta = meta;
-    }
-
-    public List<Term> getData() {
-        return data;
-    }
-
-    public void setData(List<Term> data) {
-        this.data = data;
+    public void setErrors(List<Error> errors) {
+        this.errors = errors;
     }
 }
