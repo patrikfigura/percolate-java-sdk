@@ -60,6 +60,7 @@ task coverage(type:JacocoReport, dependsOn: "testDebugUnitTest") {
 
 dependencies {
     compile project(':core')
+    compile project(':api')
 
     // JUnit
     testCompile 'junit:junit:4.12'

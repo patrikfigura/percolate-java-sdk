@@ -2,7 +2,6 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.Term;
 
 import java.util.ArrayList;
@@ -24,6 +23,11 @@ public class Terms extends com.percolate.sdk.dto.Terms implements Parcelable {
     }
 
     public Terms() {
+    }
+
+    public Terms(com.percolate.sdk.dto.Terms other) {
+        this.meta = other.getMeta();
+        this.data = other.getData();
     }
 
     protected Terms(Parcel in) {
