@@ -6,41 +6,37 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
-import java.util.List;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Terms implements Serializable {
+public class Error implements Serializable {
 
-    private static final long serialVersionUID = -1574288769222247406L;
+    private static final long serialVersionUID = 6959823337410858600L;
 
-    @JsonProperty("meta")
-    protected V5Meta meta;
+    @JsonProperty("message")
+    protected String message;
 
-    @JsonProperty("data")
-    protected List<Term> data;
-
-    @JsonProperty("errors")
-    protected Errors errors;
+    @JsonProperty("code")
+    protected String code;
 
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-    public V5Meta getMeta() {
-        return meta;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMeta(V5Meta meta) {
-        this.meta = meta;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public List<Term> getData() {
-        return data;
+    public String getCode() {
+        return code;
     }
 
-    public void setData(List<Term> data) {
-        this.data = data;
+    public void setCode(String code) {
+        this.code = code;
     }
 }
