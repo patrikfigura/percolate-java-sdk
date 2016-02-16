@@ -1,6 +1,6 @@
-package com.percolate.sdk.api
+package com.percolate.sdk.api.request.approvals.pools
 
-import com.percolate.sdk.api.request.approvals.pools.ApprovalPoolsParams
+import com.percolate.sdk.api.BaseApiTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Test
@@ -8,7 +8,7 @@ import org.junit.Test
 class ApprovalPoolsRequestTest : BaseApiTest() {
 
     @Test
-    fun testApiGetRequest() {
+    fun testGet() {
         val approvalPools = percolateApi
                 .approvalPools()
                 .get(ApprovalPoolsParams())
