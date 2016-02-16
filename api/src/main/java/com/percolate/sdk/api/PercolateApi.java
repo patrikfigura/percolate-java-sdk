@@ -45,7 +45,7 @@ public class PercolateApi {
      *
      * @param apiKey API key.
      */
-    public PercolateApi(String apiKey) {
+    public PercolateApi(@NotNull String apiKey) {
         this(apiKey, null);
     }
 
