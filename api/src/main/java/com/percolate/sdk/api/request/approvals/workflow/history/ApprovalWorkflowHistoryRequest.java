@@ -3,7 +3,7 @@ package com.percolate.sdk.api.request.approvals.workflow.history;
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.WorkflowHistory;
-import com.percolate.sdk.dto.WorkflowHistoryEvent;
+import com.percolate.sdk.dto.WorkflowHistoryEvents;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 
@@ -32,10 +32,10 @@ public class ApprovalWorkflowHistoryRequest {
     /**
      * Create Approval workflow history endpoint.
      *
-     * @param workflowHistoryEvent {@link WorkflowHistoryEvent} object.
+     * @param workflowHistoryEvents {@link WorkflowHistoryEvents} object.
      * @return {@link Call} object.
      */
-    public Call<WorkflowHistoryEvent> create(@NotNull final WorkflowHistoryEvent workflowHistoryEvent) {
-        return service.create(workflowHistoryEvent);
+    public Call<WorkflowHistory> create(@NotNull final WorkflowHistoryEvents workflowHistoryEvents) {
+        return service.create(workflowHistoryEvents);
     }
 }

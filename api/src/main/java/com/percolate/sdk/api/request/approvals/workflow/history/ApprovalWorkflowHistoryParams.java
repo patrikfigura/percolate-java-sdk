@@ -1,7 +1,5 @@
 package com.percolate.sdk.api.request.approvals.workflow.history;
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +14,7 @@ public class ApprovalWorkflowHistoryParams {
     }
 
     public ApprovalWorkflowHistoryParams id(String id) {
-        params.put("id", StringUtils.join(id, ","));
+        params.put("id", id);
         return this;
     }
 
