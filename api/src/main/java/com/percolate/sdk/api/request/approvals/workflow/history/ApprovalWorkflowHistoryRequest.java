@@ -4,6 +4,7 @@ import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.WorkflowHistory;
 import com.percolate.sdk.dto.WorkflowHistoryEvent;
+import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 
 /**
@@ -14,7 +15,7 @@ public class ApprovalWorkflowHistoryRequest {
 
     private ApprovalWorkflowHistoryService service;
 
-    public ApprovalWorkflowHistoryRequest(PercolateApi context) {
+    public ApprovalWorkflowHistoryRequest(@NotNull PercolateApi context) {
         this.service = new RetrofitApiFactory(context).getService(ApprovalWorkflowHistoryService.class);
     }
 
@@ -24,7 +25,7 @@ public class ApprovalWorkflowHistoryRequest {
      * @param params API params.
      * @return {@link Call} object.
      */
-    public Call<WorkflowHistory> get(final ApprovalWorkflowHistoryParams params) {
+    public Call<WorkflowHistory> get(@NotNull final ApprovalWorkflowHistoryParams params) {
         return service.get(params.getParams().get("id").toString());
     }
 
@@ -34,7 +35,7 @@ public class ApprovalWorkflowHistoryRequest {
      * @param workflowHistoryEvent {@link WorkflowHistoryEvent} object.
      * @return {@link Call} object.
      */
-    public Call<WorkflowHistoryEvent> create(final WorkflowHistoryEvent workflowHistoryEvent) {
+    public Call<WorkflowHistoryEvent> create(@NotNull final WorkflowHistoryEvent workflowHistoryEvent) {
         return service.create(workflowHistoryEvent);
     }
 }
