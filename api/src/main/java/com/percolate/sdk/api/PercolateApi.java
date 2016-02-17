@@ -5,6 +5,7 @@ import com.percolate.sdk.api.request.activity.ActivityRequest;
 import com.percolate.sdk.api.request.approvals.pools.ApprovalPoolsRequest;
 import com.percolate.sdk.api.request.approvals.workflow.ApprovalWorkflowRequest;
 import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflowHistoryRequest;
+import com.percolate.sdk.api.request.authorization.UserRolesRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -117,5 +118,13 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public ActivityRequest activity() {
         return new ActivityRequest(this);
+    }
+
+    /**
+     * @return {@link UserRolesRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public UserRolesRequest userRoles() {
+        return new UserRolesRequest(this);
     }
 }

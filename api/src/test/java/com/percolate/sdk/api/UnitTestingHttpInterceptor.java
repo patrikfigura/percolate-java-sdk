@@ -20,8 +20,12 @@ public class UnitTestingHttpInterceptor implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         final Request request = chain.request();
         final HttpUrl requestedUrl = request.url();
-        final String requestedPath = requestedUrl.encodedPath();
+        String requestedPath = requestedUrl.encodedPath();
         final String requestedMethod = request.method();
+
+        if(!requestedPath.endsWith("/")) {
+            requestedPath = requestedPath + "/";
+        }
 
         final String fixtureJsonPath = FIXTURES_DIR + requestedPath + requestedMethod + ".json";
         final InputStream inputStream = new FileInputStream(fixtureJsonPath);

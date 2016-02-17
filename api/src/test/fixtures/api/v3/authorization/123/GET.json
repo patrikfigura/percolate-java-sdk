@@ -1,0 +1,880 @@
+{
+	"data": [{
+		"code": "license-admin",
+		"name": "License Admin",
+		"tags": [],
+		"capabilities": [{
+			"code": "insights:search:create",
+			"implies": ["insights:search:read"],
+			"description": "Ability to create saved insights searches",
+			"name": "Create insights search",
+			"tags": []
+		}, {
+			"code": "folders:delete",
+			"implies": ["media:read", "media:delete"],
+			"description": "Ability to delete folders in the media library",
+			"name": "Delete folders",
+			"tags": []
+		}, {
+			"code": "preview_format:read",
+			"implies": [],
+			"description": "Ability to read a preview format",
+			"name": "Read preview format",
+			"tags": []
+		}, {
+			"code": "monitoring:facebook:pages:read",
+			"implies": [],
+			"description": "View monitored Facebook interactions for license owned pages",
+			"name": "View Facebook interactions",
+			"tags": []
+		}, {
+			"code": "elp:read",
+			"implies": [],
+			"description": "Ability to read saved elp queries\/dashboards",
+			"name": "Read ELP",
+			"tags": []
+		}, {
+			"code": "media:service:view",
+			"implies": ["media:create", "media:read"],
+			"description": "Available to post External Media Service assets",
+			"name": "Use External Media Service",
+			"tags": []
+		}, {
+			"code": "export:read",
+			"implies": [],
+			"description": "Ability to download exportable CSV files",
+			"name": "Download data",
+			"tags": []
+		}, {
+			"code": "folders:read",
+			"implies": ["media:read"],
+			"description": "Ability to view folders in the media library",
+			"name": "View folders",
+			"tags": []
+		}, {
+			"code": "post:promotion_request:read",
+			"implies": [],
+			"description": "Ability to read a service post's requested promotion(s).",
+			"name": "Read promotion request",
+			"tags": []
+		}, {
+			"code": "monitoring:stream_group:update",
+			"implies": [],
+			"description": "Update monitoring stream group",
+			"name": "Update monitoring stream group",
+			"tags": []
+		}, {
+			"code": "view:brews",
+			"implies": [],
+			"description": "View the brews section",
+			"name": "View brews",
+			"tags": []
+		}, {
+			"code": "license_channel:update",
+			"implies": [],
+			"description": "Update license channels settings for a license",
+			"name": "Update license channels",
+			"tags": []
+		}, {
+			"code": "webhook:manage",
+			"implies": [],
+			"description": "Ability to update\/disable webhook subscriptions",
+			"name": "Manage webhook subscription",
+			"tags": []
+		}, {
+			"code": "post:create",
+			"implies": ["post:read"],
+			"description": "Ability to create a new Post",
+			"name": "Create a new Post",
+			"tags": []
+		}, {
+			"code": "task:create",
+			"implies": [],
+			"description": "Ability to create tasks",
+			"name": "Create tasks",
+			"tags": []
+		}, {
+			"code": "media:download",
+			"implies": ["media:read"],
+			"description": "Ability to download media from the media library",
+			"name": "Download assets",
+			"tags": []
+		}, {
+			"code": "elp:update",
+			"implies": [],
+			"description": "Ability to update saved elp queries\/dashboards",
+			"name": "Update ELP",
+			"tags": []
+		}, {
+			"code": "saved_search:delete",
+			"implies": ["media:read", "saved_search:read"],
+			"description": "Ability to delete saved searches",
+			"name": "Delete Saved Searches",
+			"tags": []
+		}, {
+			"code": "preview_template:read",
+			"implies": [],
+			"description": "Ability to read a preview template",
+			"name": "Read preview template",
+			"tags": []
+		}, {
+			"code": "translate:machine",
+			"implies": [],
+			"description": "Create machine translations of arbitrary blocks of text",
+			"name": "Translate text",
+			"tags": []
+		}, {
+			"code": "requisition:read",
+			"implies": [],
+			"description": "Ability to view a content requisitions",
+			"name": "View content requisition",
+			"tags": []
+		}, {
+			"code": "view:campaigns",
+			"implies": [],
+			"description": "View the campaigns section",
+			"name": "View campaigns",
+			"tags": []
+		}, {
+			"code": "user:create",
+			"implies": [],
+			"description": "Create a user within a license",
+			"name": "Create a user",
+			"tags": []
+		}, {
+			"code": "insights:search:delete",
+			"implies": ["insights:search:read"],
+			"description": "Ability to delete saved insights searches",
+			"name": "Delete insights search",
+			"tags": []
+		}, {
+			"code": "view:shares",
+			"implies": [],
+			"description": "View the shares section",
+			"name": "View shares",
+			"tags": []
+		}, {
+			"code": "approval:post:approve",
+			"implies": ["approval:post:read"],
+			"description": "Ability to approve or leave feedback on posts pending approval",
+			"name": "Approve a post under approval",
+			"tags": []
+		}, {
+			"code": "post:promotion_request:create",
+			"implies": [],
+			"description": "Ability to request promotion on service posts.",
+			"name": "Create promotion request",
+			"tags": []
+		}, {
+			"code": "monitoring:canned_response:read",
+			"implies": [],
+			"description": "Read canned responses",
+			"name": "Read canned responses",
+			"tags": []
+		}, {
+			"code": "partner:read",
+			"implies": [],
+			"description": "View partner ID, name and requirements",
+			"name": "View partner information",
+			"tags": []
+		}, {
+			"code": "task:delete",
+			"implies": [],
+			"description": "Ability to delete tasks",
+			"name": "Delete tasks",
+			"tags": []
+		}, {
+			"code": "post:publish",
+			"implies": ["post:create"],
+			"description": "Ability to publish a post to a service",
+			"name": "Publish a post to a platform",
+			"tags": []
+		}, {
+			"code": "brief:edit",
+			"implies": ["brief:read"],
+			"description": "Ability to edit all content briefs",
+			"name": "Edit content briefs",
+			"tags": []
+		}, {
+			"code": "insights:report:read",
+			"implies": ["insights:search:read"],
+			"description": "Ability to read insights reports",
+			"name": "Read insights report",
+			"tags": []
+		}, {
+			"code": "monitoring:canned_response:create",
+			"implies": [],
+			"description": "Create canned responses",
+			"name": "Create canned responses",
+			"tags": []
+		}, {
+			"code": "insights:report:delete",
+			"implies": ["insights:search:delete"],
+			"description": "Ability to delete insights reports",
+			"name": "Delete insights report",
+			"tags": []
+		}, {
+			"code": "monitoring:stream_group:delete",
+			"implies": [],
+			"description": "Delete monitoring stream group",
+			"name": "Delete monitoring stream group",
+			"tags": []
+		}, {
+			"code": "view:analytics",
+			"implies": [],
+			"description": "View the analytics section",
+			"name": "View analytics",
+			"tags": []
+		}, {
+			"code": "insights:search:update",
+			"implies": ["insights:search:read"],
+			"description": "Ability to update saved insights searches",
+			"name": "Update insights search",
+			"tags": []
+		}, {
+			"code": "media:shutterstock:view",
+			"implies": ["media:create", "media:read"],
+			"description": "Ability to post Shutterstock images",
+			"name": "Use Shutterstock images",
+			"tags": []
+		}, {
+			"code": "monitoring:query:create",
+			"implies": [],
+			"description": "Create saved keyword and other searches on services",
+			"name": "Create saved monitoring searches",
+			"tags": []
+		}, {
+			"code": "brew_channel:update",
+			"implies": ["brew_channel:read"],
+			"description": "Ability to edit the influence that a source has on a brew",
+			"name": "Edit brew sources",
+			"tags": []
+		}, {
+			"code": "license:read",
+			"implies": [],
+			"description": "View settings that are specific to a license",
+			"name": "View license settings",
+			"tags": []
+		}, {
+			"code": "brew_channel:delete",
+			"implies": ["brew_channel:read"],
+			"description": "Ability to remove a source from a brew",
+			"name": "Delete brew sources",
+			"tags": []
+		}, {
+			"code": "monitoring:flag:read",
+			"implies": [],
+			"description": "Read monitoring flag",
+			"name": "Read monitoring flag",
+			"tags": []
+		}, {
+			"code": "monitoring:page-conversation-reply:create",
+			"implies": [],
+			"description": "Create page conversation reply",
+			"name": "Create page conversation reply",
+			"tags": []
+		}, {
+			"code": "requisition:edit",
+			"implies": ["requisition:read"],
+			"description": "Ability to edit a content brief requisition",
+			"name": "Edit a content brief requisition",
+			"tags": []
+		}, {
+			"code": "monitoring:page-conversation:read",
+			"implies": [],
+			"description": "Read page conversation",
+			"name": "Read page conversation",
+			"tags": []
+		}, {
+			"code": "requisition:create",
+			"implies": ["requisition:read"],
+			"description": "Ability to create a content brief requisition",
+			"name": "Create a new content brief requisition",
+			"tags": []
+		}, {
+			"code": "share:read",
+			"implies": [],
+			"description": "Ability to view a content share",
+			"name": "View a content share",
+			"tags": []
+		}, {
+			"code": "view:approvals",
+			"implies": [],
+			"description": "View the approvals section",
+			"name": "View approvals",
+			"tags": []
+		}, {
+			"code": "task_template:update",
+			"implies": [],
+			"description": "Ability to update task templates",
+			"name": "Update task templates",
+			"tags": []
+		}, {
+			"code": "media:metadata:update",
+			"implies": [],
+			"description": "Ability to update metadata for media residing in the media library",
+			"name": "Update asset metadata",
+			"tags": []
+		}, {
+			"code": "saved_search:read",
+			"implies": ["media:read"],
+			"description": "Ability to view saved searches",
+			"name": "Read Saved Searches",
+			"tags": []
+		}, {
+			"code": "view:insights",
+			"implies": [],
+			"description": "View the insights section",
+			"name": "View insights",
+			"tags": []
+		}, {
+			"code": "share:delete",
+			"implies": ["share:create"],
+			"description": "Ability to delete a content share",
+			"name": "Delete a content share",
+			"tags": []
+		}, {
+			"code": "media:getty:view",
+			"implies": ["media:create", "media:read"],
+			"description": "Ability to search and save royalty-free media from Getty Images",
+			"name": "Use Getty images",
+			"tags": []
+		}, {
+			"code": "brew_channel:create",
+			"implies": [],
+			"description": "Ability to add sources to brews",
+			"name": "Add sources to brews",
+			"tags": []
+		}, {
+			"code": "monitoring:query:read",
+			"implies": [],
+			"description": "View details and results of saved keyword and other searches on services",
+			"name": "View saved monitoring searches",
+			"tags": []
+		}, {
+			"code": "monitoring:stream_group:create",
+			"implies": [],
+			"description": "Create monitoring stream group",
+			"name": "Create monitoring stream group",
+			"tags": []
+		}, {
+			"code": "monitoring:canned_response:delete",
+			"implies": [],
+			"description": "Delete canned responses",
+			"name": "Delete canned responses",
+			"tags": []
+		}, {
+			"code": "schema:read",
+			"implies": [],
+			"description": "Ability to read schemas",
+			"name": "Read schema",
+			"tags": []
+		}, {
+			"code": "media:create",
+			"implies": ["media:read", "asset:upload"],
+			"description": "Ability to upload media to the media library or ingest an image by URL",
+			"name": "Upload assets",
+			"tags": []
+		}, {
+			"code": "monitoring:canned_response:edit",
+			"implies": [],
+			"description": "Edit canned responses",
+			"name": "Edit canned responses",
+			"tags": []
+		}, {
+			"code": "monitoring:interaction:read",
+			"implies": [],
+			"description": "View interactions -- scoped metadata for external items",
+			"name": "View interactions",
+			"tags": []
+		}, {
+			"code": "monitoring:stream_group:read",
+			"implies": [],
+			"description": "Read monitoring stream group",
+			"name": "Read monitoring stream group",
+			"tags": []
+		}, {
+			"code": "media:read",
+			"implies": ["license:read", "schema:read"],
+			"description": "Ability to view assets",
+			"name": "View assets",
+			"tags": []
+		}, {
+			"code": "post:update",
+			"implies": ["post:read"],
+			"description": "Ability to modify an existing post",
+			"name": "Update posts",
+			"tags": []
+		}, {
+			"code": "license_channel:create",
+			"implies": [],
+			"description": "Create license channel settings for a license",
+			"name": "Create license channels",
+			"tags": []
+		}, {
+			"code": "folders:create",
+			"implies": ["media:read"],
+			"description": "Ability to create folders in the media library",
+			"name": "Create folders",
+			"tags": []
+		}, {
+			"code": "approval:pool:update",
+			"implies": [],
+			"description": "Ability to update approval teams",
+			"name": "Update approval teams",
+			"tags": []
+		}, {
+			"code": "view:creative",
+			"implies": [],
+			"description": "View the creative section",
+			"name": "View creative",
+			"tags": []
+		}, {
+			"code": "elp:delete",
+			"implies": [],
+			"description": "Ability to delete saved elp dashboards",
+			"name": "Delete ELP Data",
+			"tags": []
+		}, {
+			"code": "elp:create",
+			"implies": [],
+			"description": "Ability to Create saved elp queries\/dashboards",
+			"name": "Create ELP",
+			"tags": []
+		}, {
+			"code": "elp:data",
+			"implies": [],
+			"description": "Ability to explore elp data",
+			"name": "Read ELP Data",
+			"tags": []
+		}, {
+			"code": "preference:read",
+			"implies": [],
+			"description": "Ability to read preference records",
+			"name": "Read preference records",
+			"tags": []
+		}, {
+			"code": "brief:create",
+			"implies": ["brief:read"],
+			"description": "Ability to view all content briefs",
+			"name": "Create a new content brief",
+			"tags": []
+		}, {
+			"code": "legal:read",
+			"implies": [],
+			"description": "Ability to read legal terms",
+			"name": "Read legal terms",
+			"tags": []
+		}, {
+			"code": "post:read",
+			"implies": ["license:publishing:settings:read"],
+			"description": "Ability to view created post pages",
+			"name": "Read post pages",
+			"tags": []
+		}, {
+			"code": "license:publishing:settings:read",
+			"implies": [],
+			"description": "Ability to read publishing settings",
+			"name": "Read publishing settings",
+			"tags": []
+		}, {
+			"code": "monitoring:stream:read",
+			"implies": [],
+			"description": "Read monitoring stream",
+			"name": "Read monitoring stream",
+			"tags": []
+		}, {
+			"code": "task_template:create",
+			"implies": [],
+			"description": "Ability to create task templates",
+			"name": "Create task templates",
+			"tags": []
+		}, {
+			"code": "approval:pool:delete",
+			"implies": [],
+			"description": "Ability to delete approval teams",
+			"name": "Delete approval teams",
+			"tags": []
+		}, {
+			"code": "folders:metadata:update",
+			"implies": ["media:read"],
+			"description": "Ability to update metadata for folders in the media library",
+			"name": "Update folder metadata",
+			"tags": []
+		}, {
+			"code": "rule:create",
+			"implies": [],
+			"description": "Ability to create a rule",
+			"name": "Create a rule",
+			"tags": []
+		}, {
+			"code": "waiver:read",
+			"implies": [],
+			"description": "Ability to read waiver terms",
+			"name": "Read waiver terms",
+			"tags": []
+		}, {
+			"code": "user:delete",
+			"implies": [],
+			"description": "Disable a user within a license",
+			"name": "Disable a user",
+			"tags": []
+		}, {
+			"code": "monitoring:query:delete",
+			"implies": [],
+			"description": "Delete saved monitoring searches",
+			"name": "Delete saved monitoring searches",
+			"tags": []
+		}, {
+			"code": "webhook:read",
+			"implies": [],
+			"description": "Ability to read webhook subscriptions",
+			"name": "Read webhook subscription",
+			"tags": []
+		}, {
+			"code": "post:submit-for-approval",
+			"implies": ["post:read"],
+			"description": "Ability to submit a new Post for Approval",
+			"name": "Submit a new Post for Approval",
+			"tags": []
+		}, {
+			"code": "insights:search:read",
+			"implies": [],
+			"description": "Ability to read saved insights searches",
+			"name": "Read insights search",
+			"tags": []
+		}, {
+			"code": "rule:update",
+			"implies": [],
+			"description": "Ability to update a rule",
+			"name": "Update a rule",
+			"tags": []
+		}, {
+			"code": "saved_search:edit",
+			"implies": ["media:read", "saved_search:read"],
+			"description": "Ability to edit saved searches",
+			"name": "Edit Saved Searches",
+			"tags": []
+		}, {
+			"code": "post:delete",
+			"implies": ["post:read"],
+			"description": "Ability to remove an existing post",
+			"name": "Delete posts",
+			"tags": []
+		}, {
+			"code": "brew_link:delete",
+			"implies": ["brew:read"],
+			"description": "Ability to teach the brew you don't want a link anymore",
+			"name": "Remove a link from a brew",
+			"tags": []
+		}, {
+			"code": "task:read",
+			"implies": [],
+			"description": "Ability to view tasks",
+			"name": "View tasks",
+			"tags": []
+		}, {
+			"code": "insights:report:update",
+			"implies": ["insights:search:read", "insights:report:read"],
+			"description": "Ability to update insights reports",
+			"name": "Update insights report",
+			"tags": []
+		}, {
+			"code": "monitoring:flag:edit",
+			"implies": [],
+			"description": "Edit monitoring flag",
+			"name": "Edit monitoring flag",
+			"tags": []
+		}, {
+			"code": "fulfillment:read",
+			"implies": [],
+			"description": "Ability to view a fulfillment",
+			"name": "View a fulfillment of a content requisition",
+			"tags": []
+		}, {
+			"code": "task_template:read",
+			"implies": [],
+			"description": "Ability to view task templates",
+			"name": "View task templates",
+			"tags": []
+		}, {
+			"code": "platform:manage",
+			"implies": [],
+			"description": "Ability update\/delete platforms",
+			"name": "Manage platform",
+			"tags": []
+		}, {
+			"code": "view:asset_library",
+			"implies": [],
+			"description": "View the asset library",
+			"name": "View asset library",
+			"tags": []
+		}, {
+			"code": "preference:update",
+			"implies": ["preference:read"],
+			"description": "Ability to update preference records",
+			"name": "Update preference records",
+			"tags": []
+		}, {
+			"code": "post:promotion_request:delete",
+			"implies": [],
+			"description": "Ability to delete promotion request on service posts.",
+			"name": "Delete promotion request",
+			"tags": []
+		}, {
+			"code": "brief:delete",
+			"implies": ["brief:read"],
+			"description": "Ability to delete all content briefs",
+			"name": "Delete content briefs",
+			"tags": []
+		}, {
+			"code": "user:read",
+			"implies": [],
+			"description": "View a user within a license",
+			"name": "View a user",
+			"tags": []
+		}, {
+			"code": "approval:post:read",
+			"implies": [],
+			"description": "Ability to view posts pending approval",
+			"name": "View an approval workflow",
+			"tags": []
+		}, {
+			"code": "rule:read",
+			"implies": [],
+			"description": "Ability to read a rule",
+			"name": "Read a rule",
+			"tags": []
+		}, {
+			"code": "waiver:update",
+			"implies": ["waiver:read"],
+			"description": "Ability to update waiver terms",
+			"name": "Update waiver terms",
+			"tags": []
+		}, {
+			"code": "view:monitoring",
+			"implies": [],
+			"description": "View the monitoring section",
+			"name": "View monitoring",
+			"tags": []
+		}, {
+			"code": "insights:report:create",
+			"implies": ["insights:search:read", "insights:search:create", "insights:report:read"],
+			"description": "Ability to create insights reports",
+			"name": "Create insights report",
+			"tags": []
+		}, {
+			"code": "task_template:delete",
+			"implies": [],
+			"description": "Ability to delete task templates",
+			"name": "Delete task templates",
+			"tags": []
+		}, {
+			"code": "monitoring:flag:delete",
+			"implies": [],
+			"description": "Delete monitoring flag",
+			"name": "Delete monitoring flag",
+			"tags": []
+		}, {
+			"code": "approval:pool:create",
+			"implies": [],
+			"description": "Ability to create approval teams",
+			"name": "Create approval teams",
+			"tags": []
+		}, {
+			"code": "monitoring:twitter:sitestream:read",
+			"implies": [],
+			"description": "View monitored twitter interactions for license owned twitter handles",
+			"name": "View twitter interactions",
+			"tags": []
+		}, {
+			"code": "role:manage",
+			"implies": [],
+			"description": "CRUD on roles",
+			"name": "Manage roles",
+			"tags": []
+		}, {
+			"code": "license_channel:delete",
+			"implies": [],
+			"description": "Delete license channels settings for a license",
+			"name": "Delete license channels",
+			"tags": []
+		}, {
+			"code": "brief:read",
+			"implies": [],
+			"description": "Ability to view all content briefs",
+			"name": "View content briefs",
+			"tags": []
+		}, {
+			"code": "media:delete",
+			"implies": ["media:read"],
+			"description": "Ability to delete media residing in the media library",
+			"name": "Delete assets",
+			"tags": []
+		}, {
+			"code": "user:search",
+			"implies": [],
+			"description": "Search for a user within a license",
+			"name": "Search for a user",
+			"tags": []
+		}, {
+			"code": "brew_channel:read",
+			"implies": ["brew:read"],
+			"description": "Ability to view brew sources",
+			"name": "View brew sources",
+			"tags": []
+		}, {
+			"code": "monitoring:flag:create",
+			"implies": [],
+			"description": "Create monitoring flag",
+			"name": "Create monitoring flag",
+			"tags": []
+		}, {
+			"code": "monitoring:interaction:create",
+			"implies": [],
+			"description": "Create and update interactions -- scoped metadata for external items",
+			"name": "Create interactions",
+			"tags": []
+		}, {
+			"code": "saved_search:create",
+			"implies": ["media:read", "saved_search:read"],
+			"description": "Ability to create saved searches",
+			"name": "Create Saved Searches",
+			"tags": []
+		}, {
+			"code": "license:update",
+			"implies": [],
+			"description": "Edit settings that are specific to a license",
+			"name": "Edit license settings",
+			"tags": []
+		}, {
+			"code": "share:create",
+			"implies": ["share:read"],
+			"description": "Ability to create a content share",
+			"name": "Create a new content share",
+			"tags": []
+		}, {
+			"code": "comment:manage",
+			"implies": [],
+			"description": "Able to delete other user's comments within scope",
+			"name": "Delete comments within license scope",
+			"tags": []
+		}, {
+			"code": "view:planner",
+			"implies": [],
+			"description": "View the planner",
+			"name": "View planner",
+			"tags": []
+		}, {
+			"code": "post:promotion_request:edit",
+			"implies": [],
+			"description": "Ability to update requested promotion(s).",
+			"name": "Update promotion request",
+			"tags": []
+		}, {
+			"code": "requisition:delete",
+			"implies": ["requisition:read"],
+			"description": "Ability to delete a content brief requisition",
+			"name": "Delete a content brief requisition",
+			"tags": []
+		}, {
+			"code": "publishing:pause",
+			"implies": [],
+			"description": "Ability to temporarily halt the publication of all posts",
+			"name": "Pause publishing",
+			"tags": []
+		}, {
+			"code": "asset:upload",
+			"implies": [],
+			"description": "Ability to upload assets",
+			"name": "Upload assets",
+			"tags": []
+		}, {
+			"code": "targeting:create",
+			"implies": [],
+			"description": "Ability to create targeting",
+			"name": "Create targeting",
+			"tags": []
+		}, {
+			"code": "targeting:update",
+			"implies": [],
+			"description": "Ability to update targeting",
+			"name": "Update targeting",
+			"tags": []
+		}, {
+			"code": "task:update",
+			"implies": [],
+			"description": "Ability to update tasks",
+			"name": "Update tasks",
+			"tags": []
+		}, {
+			"code": "brew:read",
+			"implies": [],
+			"description": "Ability to view all connected brews",
+			"name": "View all brews",
+			"tags": []
+		}, {
+			"code": "schema:manage",
+			"implies": [],
+			"description": "Ability to update\/delete schemas",
+			"name": "Manage schema",
+			"tags": []
+		}, {
+			"code": "approval:pool:read",
+			"implies": [],
+			"description": "Ability to view approval teams",
+			"name": "View approval teams",
+			"tags": []
+		}, {
+			"code": "monitoring:query:edit",
+			"implies": [],
+			"description": "Edit details of saved keyword and other searches on services",
+			"name": "Edit saved monitoring searches",
+			"tags": []
+		}, {
+			"code": "media:update",
+			"implies": ["media:read", "media:metadata:update", "license:publishing:settings:read"],
+			"description": "Ability to edit media residing in the media library",
+			"name": "Edit assets",
+			"tags": []
+		}, {
+			"code": "waiver:create",
+			"implies": ["waiver:read"],
+			"description": "Ability to create waiver terms",
+			"name": "Create waiver terms",
+			"tags": []
+		}, {
+			"code": "license_channel:read",
+			"implies": [],
+			"description": "View license channel settings for a license",
+			"name": "View license channels",
+			"tags": []
+		}, {
+			"code": "user:update",
+			"implies": [],
+			"description": "Edit a user within a license",
+			"name": "Edit a user",
+			"tags": []
+		}, {
+			"code": "view:tasks",
+			"implies": [],
+			"description": "View the tasks section",
+			"name": "View tasks",
+			"tags": []
+		}, {
+			"code": "analytics:read",
+			"implies": [],
+			"description": "Ability to view analytics measurements associated with posts, channels or monitoring queries",
+			"name": "View posts, channels or monitoring analytics",
+			"tags": []
+		}, {
+			"code": "targeting:read",
+			"implies": [],
+			"description": "Ability to read targeting data",
+			"name": "Read targeting data",
+			"tags": []
+		}],
+		"id": 11,
+		"description": "This role can configure all the users in a License"
+	}]
+}
