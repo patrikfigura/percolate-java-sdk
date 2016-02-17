@@ -1,6 +1,7 @@
 package com.percolate.sdk.api;
 
 import com.percolate.sdk.api.config.PercolateServer;
+import com.percolate.sdk.api.request.activity.ActivityRequest;
 import com.percolate.sdk.api.request.approvals.pools.ApprovalPoolsRequest;
 import com.percolate.sdk.api.request.approvals.workflow.ApprovalWorkflowRequest;
 import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflowHistoryRequest;
@@ -108,5 +109,13 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public ApprovalWorkflowHistoryRequest approvalWorkflowHistory() {
         return new ApprovalWorkflowHistoryRequest(this);
+    }
+
+    /**
+     * @return {@link ActivityRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public ActivityRequest activity() {
+        return new ActivityRequest(this);
     }
 }
