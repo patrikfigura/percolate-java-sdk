@@ -1,0 +1,54 @@
+{
+	"data": {
+		"brief_version": 1,
+		"uid": "brief:999",
+		"platform_uids": [],
+		"visible": true,
+		"workspace_version": 1,
+		"brief_workflow_id": null,
+		"owner": {
+			"type": "license",
+			"id": 100,
+			"license": {
+				"default_brew_id": 8989,
+				"brand": {
+					"id": 1,
+					"name": "Percolate Staff"
+				},
+				"name": "Some User",
+				"brand_id": 1,
+				"engagement_threshold": null,
+				"timezone": "US\/Eastern",
+				"id": 100,
+				"photo_url": "https:\/\/percolate.com\/cdn\/img\/someimage.png"
+			}
+		},
+		"terms": [{
+			"updated_at": "2016-01-26",
+			"scope_id": "license:100",
+			"namespace": "tag",
+			"id": 1,
+			"name": "test"
+		}],
+		"id": 999,
+		"title": "Campaign Title",
+		"media": [],
+		"tag_ids": [],
+		"brief": [],
+		"end_at": null,
+		"brief_workflow_complete": false,
+		"comment_count": 0,
+		"media_uids": [],
+		"start_at": null,
+		"description": "Some text",
+		"tags": [],
+		"owner_uid": "license:100",
+		"created_at": "2016-02-17T21:27:44Z",
+		"budget": "999",
+		"term_uids": ["term:1"],
+		"workspace": [],
+		"platforms": [],
+		"post_set_ids": []
+	}
+}
+
