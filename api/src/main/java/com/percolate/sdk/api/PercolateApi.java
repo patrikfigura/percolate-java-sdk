@@ -9,6 +9,7 @@ import com.percolate.sdk.api.request.authorization.UserRolesRequest;
 import com.percolate.sdk.api.request.brief.BriefRequest;
 import com.percolate.sdk.api.request.channel.ChannelRequest;
 import com.percolate.sdk.api.request.license.LicenseRequest;
+import com.percolate.sdk.api.request.licensechannel.LicenseChannelRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -153,5 +154,13 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public ChannelRequest channels() {
         return new ChannelRequest(this);
+    }
+
+    /**
+     * @return {@link LicenseChannelRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public LicenseChannelRequest licenseChannels() {
+        return new LicenseChannelRequest(this);
     }
 }

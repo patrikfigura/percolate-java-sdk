@@ -1,0 +1,127 @@
+{
+	"pagination": {
+		"order_direction": "asc",
+		"total": 2,
+		"order_by": null,
+		"limit": 1000,
+		"offset": 0
+	},
+	"data": [{
+		"media_buyer_ids": [],
+		"ingesting": {
+			"enabled": false
+		},
+		"uid": "license:111:channel:222",
+		"scoped_channel_uid": "channel:4000",
+		"inbox": {
+			"enabled": true
+		},
+		"license_id": 111,
+		"id": 12325,
+		"publishing": {
+			"targeting_disabled": false,
+			"by_default": false,
+			"hub": false,
+			"enabled": true,
+			"xstatus_support": true,
+			"album_xid": "100"
+		},
+		"monitoring": {
+			"enabled": true
+		},
+		"name": "",
+		"license": {
+			"brand_id": 1,
+			"name": "Some User",
+			"engagement_threshold": null,
+			"timezone": "US\/Eastern",
+			"brand": {
+				"id": 1,
+				"name": "Company Staff"
+			},
+			"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png",
+			"id": 111,
+			"default_brew_id": 333
+		},
+		"channel_id": 222,
+		"token": {
+			"status": 200
+		},
+		"following": {
+			"enabled": false
+		},
+		"token_id": 444,
+		"channel": {
+			"rss_url": "http:\/\/graph.facebook.com\/111",
+			"description": "",
+			"regional_type": "standalone",
+			"total_subscribers": 0,
+			"id": 222,
+			"categories": [],
+			"photo_url": "https:\/\/scontent.xx.fbcdn.net\/hprofile-xft1\/v\/t1.0-1\/someuser.png",
+			"name": "SomeUser",
+			"url": "http:\/\/facebook.com\/SomeUser",
+			"type": "facebook",
+			"has_links": false,
+			"page_id": "999"
+		}
+	}, {
+		"media_buyer_ids": [],
+		"ingesting": {
+			"enabled": true
+		},
+		"uid": "license:111:channel:222",
+		"scoped_channel_uid": "channel:8888",
+		"inbox": {
+			"enabled": false
+		},
+		"license_id": 111,
+		"id": 101,
+		"publishing": {
+			"xstatus_support": false,
+			"targeting_disabled": true,
+			"by_default": false,
+			"enabled": true,
+			"hub": false
+		},
+		"monitoring": {
+			"enabled": false
+		},
+		"name": "",
+		"license": {
+			"brand_id": 1,
+			"name": "Some User",
+			"engagement_threshold": null,
+			"timezone": "US\/Eastern",
+			"brand": {
+				"id": 1,
+				"name": "Company Staff"
+			},
+			"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png",
+			"id": 111,
+			"default_brew_id": 333
+		},
+		"channel_id": 222,
+		"token": {
+			"status": 200
+		},
+		"following": {
+			"enabled": false
+		},
+		"token_id": 75307,
+		"channel": {
+			"rss_url": "https:\/\/api.weibo.com\/2\/statuses\/user_timeline.json?uid=abc",
+			"description": "",
+			"regional_type": null,
+			"total_subscribers": 0,
+			"id": 222,
+			"categories": [],
+			"photo_url": "https:\/\/percolate.com\/cdn\/library\/image\/x",
+			"name": "percodev",
+			"url": "http:\/\/weibo.com\/u\/abc",
+			"type": "weibo",
+			"has_links": false,
+			"page_id": "6767"
+		}
+	}]
+}
