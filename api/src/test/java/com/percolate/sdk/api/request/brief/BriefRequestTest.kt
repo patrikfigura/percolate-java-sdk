@@ -10,7 +10,7 @@ class BriefRequestTest : BaseApiTest() {
     @Test
     fun testList() {
         val briefs = percolateApi
-                .brief()
+                .briefs()
                 .list(BriefListParams())
                 .execute()
                 .body();
@@ -23,7 +23,7 @@ class BriefRequestTest : BaseApiTest() {
     @Test
     fun testGet() {
         val briefData = percolateApi
-                .brief()
+                .briefs()
                 .get(BriefParams("123"))
                 .execute()
                 .body();
@@ -35,7 +35,7 @@ class BriefRequestTest : BaseApiTest() {
     @Test
     fun testCreate() {
         val briefData = percolateApi
-                .brief()
+                .briefs()
                 .create(Brief())
                 .execute()
                 .body();

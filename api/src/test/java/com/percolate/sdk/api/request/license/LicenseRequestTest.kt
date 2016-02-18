@@ -9,7 +9,7 @@ class LicenseRequestTest : BaseApiTest() {
     @Test
     fun testGet() {
         val licenses = percolateApi
-                .license()
+                .licenses()
                 .get(LicenseParams())
                 .execute()
                 .body();

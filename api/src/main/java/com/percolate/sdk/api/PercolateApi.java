@@ -7,6 +7,7 @@ import com.percolate.sdk.api.request.approvals.workflow.ApprovalWorkflowRequest;
 import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflowHistoryRequest;
 import com.percolate.sdk.api.request.authorization.UserRolesRequest;
 import com.percolate.sdk.api.request.brief.BriefRequest;
+import com.percolate.sdk.api.request.channel.ChannelRequest;
 import com.percolate.sdk.api.request.license.LicenseRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
 import org.jetbrains.annotations.NotNull;
@@ -134,7 +135,7 @@ public class PercolateApi {
      */
 
     @SuppressWarnings("unused")
-    public BriefRequest brief() {
+    public BriefRequest briefs() {
         return new BriefRequest(this);
     }
 
@@ -142,7 +143,15 @@ public class PercolateApi {
      * @return {@link LicenseRequest} instance.
      */
     @SuppressWarnings("unused")
-    public LicenseRequest license() {
+    public LicenseRequest licenses() {
         return new LicenseRequest(this);
+    }
+
+    /**
+     * @return {@link ChannelRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public ChannelRequest channels() {
+        return new ChannelRequest(this);
     }
 }
