@@ -12,6 +12,7 @@ import com.percolate.sdk.api.request.comment.CommentRequest;
 import com.percolate.sdk.api.request.license.LicenseRequest;
 import com.percolate.sdk.api.request.licensechannel.LicenseChannelRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
+import com.percolate.sdk.api.request.topics.TopicsRequest;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -171,5 +172,13 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public CommentRequest comments() {
         return new CommentRequest(this);
+    }
+
+    /**
+     * @return {@link TopicsRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public TopicsRequest topics() {
+        return new TopicsRequest(this);
     }
 }
