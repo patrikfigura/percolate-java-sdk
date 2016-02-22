@@ -15,6 +15,7 @@ import com.percolate.sdk.api.request.license.LicenseRequest;
 import com.percolate.sdk.api.request.license.users.LicenseUsersRequest;
 import com.percolate.sdk.api.request.licensechannel.LicenseChannelRequest;
 import com.percolate.sdk.api.request.links.LinksRequest;
+import com.percolate.sdk.api.request.media.MediaRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
 import com.percolate.sdk.api.request.topics.TopicsRequest;
 import org.jetbrains.annotations.NotNull;
@@ -216,5 +217,13 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public LinksRequest links() {
         return new LinksRequest(this);
+    }
+
+    /**
+     * @return {@link MediaRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public MediaRequest media() {
+        return new MediaRequest(this);
     }
 }
