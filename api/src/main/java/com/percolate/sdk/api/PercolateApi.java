@@ -9,6 +9,7 @@ import com.percolate.sdk.api.request.authorization.UserRolesRequest;
 import com.percolate.sdk.api.request.brief.BriefRequest;
 import com.percolate.sdk.api.request.channel.ChannelRequest;
 import com.percolate.sdk.api.request.comment.CommentRequest;
+import com.percolate.sdk.api.request.features.FeaturesRequest;
 import com.percolate.sdk.api.request.license.LicenseRequest;
 import com.percolate.sdk.api.request.licensechannel.LicenseChannelRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
@@ -180,5 +181,13 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public TopicsRequest topics() {
         return new TopicsRequest(this);
+    }
+
+    /**
+     * @return {@link FeaturesRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public FeaturesRequest features() {
+        return new FeaturesRequest(this);
     }
 }
