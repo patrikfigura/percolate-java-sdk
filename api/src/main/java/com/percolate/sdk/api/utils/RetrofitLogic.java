@@ -69,6 +69,10 @@ class RetrofitLogic {
             okHttpClientBuilder.proxy(proxy);
         }
 
+        if(context.getSelectedServer().getCustomInterceptor() != null) {
+            okHttpClientBuilder.interceptors().add(context.getSelectedServer().getCustomInterceptor());
+        }
+
         okHttpClientBuilder.interceptors().add(new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {

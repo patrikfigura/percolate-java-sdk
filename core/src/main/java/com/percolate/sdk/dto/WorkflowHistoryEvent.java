@@ -13,7 +13,7 @@ import java.util.Date;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WorkflowHistoryEvent implements Serializable {
 
-    private static final long serialVersionUID = -6035453818419691479L;
+    private static final long serialVersionUID = -5572825259266922622L;
 
     @JsonProperty("id")
     protected Long id;
@@ -41,6 +41,9 @@ public class WorkflowHistoryEvent implements Serializable {
 
     @JsonProperty("outdated")
     protected boolean outdated;
+
+    @JsonProperty("error_id")
+    protected String errorId;
 
     @Override
     public String toString() {
@@ -119,4 +122,11 @@ public class WorkflowHistoryEvent implements Serializable {
         this.outdated = outdated;
     }
 
+    public String getErrorId() {
+        return errorId;
+    }
+
+    public void setErrorId(String errorId) {
+        this.errorId = errorId;
+    }
 }

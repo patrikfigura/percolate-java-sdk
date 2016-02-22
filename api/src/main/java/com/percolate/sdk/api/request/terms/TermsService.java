@@ -20,7 +20,7 @@ interface TermsService {
     @GET(PercolateApi.API_V5_PATH + "/term/")
     Call<Terms> get(@QueryMap Map<String, Object> params);
 
-    @POST(PercolateApi.API_V5_PATH + "term/")
+    @POST(PercolateApi.API_V5_PATH + "/term/")
     Call<SingleTerm> create(@Body Term term);
 
 }

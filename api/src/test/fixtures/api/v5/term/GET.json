@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "query": {
+      "search": "test",
+      "limit": 1000,
+      "scope_ids": "license:12345",
+      "offset": 0
+    },
+    "total": 5
+  },
+  "data": [{
+    "updated_at": "2016-01-26T13:42:40+00:00",
+    "scope_id": "license:12345",
+    "namespace": "tag",
+    "id": "term:1",
+    "name": "test"
+  }, {
+    "updated_at": "2015-06-12T22:01:04+00:00",
+    "scope_id": "license:12345",
+    "namespace": "tag",
+    "id": "term:2",
+    "name": "test2"
+  }, {
+    "updated_at": "2015-06-12T22:07:26+00:00",
+    "scope_id": "license:12345",
+    "namespace": "tag",
+    "id": "term:3",
+    "name": "test 1"
+  }, {
+    "updated_at": "2015-08-20T16:25:16+00:00",
+    "scope_id": "license:12345",
+    "namespace": "tag",
+    "id": "term:4",
+    "name": "test21"
+  }, {
+    "updated_at": "2016-01-04T19:58:59+00:00",
+    "scope_id": "license:12345",
+    "namespace": "tag",
+    "id": "term:5",
+    "name": "test"
+  }]
+}

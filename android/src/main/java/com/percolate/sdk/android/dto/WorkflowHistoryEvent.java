@@ -25,6 +25,7 @@ public class WorkflowHistoryEvent extends com.percolate.sdk.dto.WorkflowHistoryE
         dest.writeString(this.action);
         dest.writeValue(this.stepId);
         dest.writeByte(outdated ? (byte) 1 : (byte) 0);
+        dest.writeString(this.errorId);
     }
 
     public WorkflowHistoryEvent() {
@@ -41,6 +42,7 @@ public class WorkflowHistoryEvent extends com.percolate.sdk.dto.WorkflowHistoryE
         this.action = in.readString();
         this.stepId = (Long) in.readValue(Long.class.getClassLoader());
         this.outdated = in.readByte() != 0;
+        this.errorId = in.readString();
     }
 
     public static final Creator<WorkflowHistoryEvent> CREATOR = new Creator<WorkflowHistoryEvent>() {

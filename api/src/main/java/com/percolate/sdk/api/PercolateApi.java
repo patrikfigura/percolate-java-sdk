@@ -1,6 +1,9 @@
 package com.percolate.sdk.api;
 
 import com.percolate.sdk.api.config.PercolateServer;
+import com.percolate.sdk.api.request.approvals.pools.ApprovalPoolsRequest;
+import com.percolate.sdk.api.request.approvals.workflow.ApprovalWorkflowRequest;
+import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflowHistoryRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -42,7 +45,7 @@ public class PercolateApi {
      *
      * @param apiKey API key.
      */
-    public PercolateApi(String apiKey) {
+    public PercolateApi(@NotNull String apiKey) {
         this(apiKey, null);
     }
 
@@ -78,7 +81,32 @@ public class PercolateApi {
     /**
      * @return {@link TermsRequest} instance.
      */
+    @SuppressWarnings("unused")
     public TermsRequest terms() {
         return new TermsRequest(this);
+    }
+
+    /**
+     * @return {@link ApprovalPoolsRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public ApprovalPoolsRequest approvalPools() {
+        return new ApprovalPoolsRequest(this);
+    }
+
+    /**
+     * @return {@link ApprovalWorkflowRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public ApprovalWorkflowRequest approvalWorkflow() {
+        return new ApprovalWorkflowRequest(this);
+    }
+
+    /**
+     * @return {@link ApprovalWorkflowHistoryRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public ApprovalWorkflowHistoryRequest approvalWorkflowHistory() {
+        return new ApprovalWorkflowHistoryRequest(this);
     }
 }
