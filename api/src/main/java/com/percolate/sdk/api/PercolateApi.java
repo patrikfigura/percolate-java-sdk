@@ -18,6 +18,7 @@ import com.percolate.sdk.api.request.links.LinksRequest;
 import com.percolate.sdk.api.request.media.MediaRequest;
 import com.percolate.sdk.api.request.media.release.MediaReleaseRequest;
 import com.percolate.sdk.api.request.monitoring.facebook.FacebookMonitoringRequest;
+import com.percolate.sdk.api.request.monitoring.twitter.TwitterMonitoringRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
 import com.percolate.sdk.api.request.topics.TopicsRequest;
 import org.jetbrains.annotations.NotNull;
@@ -243,5 +244,13 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public FacebookMonitoringRequest facebookMonitoring() {
         return new FacebookMonitoringRequest(this);
+    }
+
+    /**
+     * @return {@link TwitterMonitoringRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public TwitterMonitoringRequest twitterMonitoring() {
+        return new TwitterMonitoringRequest(this);
     }
 }

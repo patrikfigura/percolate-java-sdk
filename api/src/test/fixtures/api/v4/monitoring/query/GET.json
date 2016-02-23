@@ -1,0 +1,185 @@
+{
+	"pagination": {
+		"order_by": "created_at",
+		"order_direction": "desc",
+		"total": 3,
+		"limit": 100,
+		"offset": 0
+	},
+	"data": [{
+		"status": {
+			"message": "",
+			"code": "monitoring:normal"
+		},
+		"monthly_usage_limit": 100000,
+		"is_custom": false,
+		"uid": "monitoring_query:131313",
+		"title": "Android Pics",
+		"created_at": "2015-09-23T19:50:42Z",
+		"owner_uid": "license:1",
+		"tag_ids": [],
+		"filter": {
+			"and": ["#android", "#design", "#material", {
+				"or": ["has:media", "instagram"]
+			}, {
+				"not": "#ios"
+			}]
+		},
+		"platform": "twitter",
+		"version": 0,
+		"visible": true,
+		"owner": {
+			"type": "license",
+			"id": 1,
+			"license": {
+				"default_brew_id": 333,
+				"brand": {
+					"id": 1,
+					"name": "Some Company"
+				},
+				"name": "Some User",
+				"brand_id": 1,
+				"engagement_threshold": null,
+				"timezone": "US\/Eastern",
+				"id": 1,
+				"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png"
+			}
+		},
+		"filter_string": "#android #design #material (has:media OR instagram) -#ios",
+		"id": 131313,
+		"tags": [],
+		"license_channel_id": 4147
+	}, {
+		"status": {
+			"message": "",
+			"code": "monitoring:normal"
+		},
+		"monthly_usage_limit": 100000,
+		"is_custom": false,
+		"uid": "monitoring_query:1",
+		"title": "Shoes",
+		"created_at": "2014-10-21T20:15:26Z",
+		"owner_uid": "license:1",
+		"tag_ids": [14865, 14863],
+		"filter": {
+			"and": ["menswear", "Shoes", {
+				"not": {
+					"or": ["adidas", "nike"]
+				}
+			}]
+		},
+		"platform": "twitter",
+		"version": 0,
+		"visible": true,
+		"owner": {
+			"type": "license",
+			"id": 1,
+			"license": {
+				"default_brew_id": 333,
+				"brand": {
+					"id": 1,
+					"name": "Some Company"
+				},
+				"name": "Some User",
+				"brand_id": 1,
+				"engagement_threshold": null,
+				"timezone": "US\/Eastern",
+				"id": 1,
+				"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png"
+			}
+		},
+		"filter_string": "menswear Shoes -(adidas OR nike)",
+		"id": 1,
+		"tags": [{
+			"name": "Subtopic 1",
+			"owner_uid": "license:1",
+			"color": "#D7E3EA",
+			"parent_id": 14863,
+			"owner": {
+				"type": "license",
+				"id": 1,
+				"license": {
+					"default_brew_id": 333,
+					"brand": {
+						"id": 1,
+						"name": "Some Company"
+					},
+					"name": "Some User",
+					"brand_id": 1,
+					"engagement_threshold": null,
+					"timezone": "US\/Eastern",
+					"id": 1,
+					"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png"
+				}
+			},
+			"id": 14865
+		}, {
+			"name": "Brent Test 1",
+			"owner_uid": "license:1",
+			"color": "#A8C9D5",
+			"parent_id": null,
+			"owner": {
+				"type": "license",
+				"id": 1,
+				"license": {
+					"default_brew_id": 333,
+					"brand": {
+						"id": 1,
+						"name": "Some Company"
+					},
+					"name": "Some User",
+					"brand_id": 1,
+					"engagement_threshold": null,
+					"timezone": "US\/Eastern",
+					"id": 1,
+					"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png"
+				}
+			},
+			"id": 14863
+		}],
+		"license_channel_id": null
+	}, {
+		"status": {
+			"message": "",
+			"code": "monitoring:normal"
+		},
+		"monthly_usage_limit": 100000,
+		"is_custom": false,
+		"uid": "monitoring_query:1975",
+		"title": "Bacon",
+		"created_at": "2014-10-01T13:59:49Z",
+		"owner_uid": "license:1",
+		"tag_ids": [],
+		"filter": {
+			"and": ["Bacon", "breakfast", "hashbrowns", {
+				"not": {
+					"or": ["eggs", "is:retweet"]
+				}
+			}]
+		},
+		"platform": "twitter",
+		"version": 0,
+		"visible": true,
+		"owner": {
+			"type": "license",
+			"id": 1,
+			"license": {
+				"default_brew_id": 333,
+				"brand": {
+					"id": 1,
+					"name": "Some Company"
+				},
+				"name": "Some User",
+				"brand_id": 1,
+				"engagement_threshold": null,
+				"timezone": "US\/Eastern",
+				"id": 1,
+				"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png"
+			}
+		},
+		"filter_string": "Bacon breakfast hashbrowns -(eggs OR is:retweet)",
+		"id": 1975,
+		"tags": [],
+		"license_channel_id": null
+	}]
+}
