@@ -16,6 +16,6 @@ import java.util.Map;
 interface MediaReleaseService {
 
     @Multipart
-    @POST("/" + PercolateApi.API_V4_PATH + "/release/")
+    @POST(PercolateApi.API_V4_PATH + "/release/")
     Call<MediaReleaseResponse> create(@PartMap Map<String, RequestBody> params);
 }

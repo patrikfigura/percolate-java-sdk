@@ -5,10 +5,9 @@ import com.percolate.sdk.dto.Media;
 import com.percolate.sdk.dto.MediaItems;
 import com.percolate.sdk.dto.MediaList;
 import com.percolate.sdk.dto.MediaMetaDataHolder;
+import okhttp3.RequestBody;
 import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.Path;
-import retrofit2.http.QueryMap;
+import retrofit2.http.*;
 
 import java.util.Map;
 
@@ -31,4 +30,8 @@ interface MediaService {
 
     @GET(PercolateApi.API_V3_PATH + "/media/{uid}/metadata")
     Call<MediaMetaDataHolder> meta(@Path("uid") String uid, @QueryMap Map<String, Object> params);
+
+    @Multipart
+    @POST(PercolateApi.API_V3_PATH + "/media")
+    Call<Media> create(@PartMap Map<String, RequestBody> params);
 }

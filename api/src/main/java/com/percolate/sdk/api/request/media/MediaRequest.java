@@ -70,4 +70,14 @@ public class MediaRequest {
     public Call<MediaMetaDataHolder> meta(@NotNull String uid, @NotNull final MediaGetParams params) {
         return service.meta(uid, params.getParams());
     }
+
+    /**
+     * Create media item.
+     *
+     * @param params API params.
+     * @return {@link SingleTerm} object.
+     */
+    public Call<Media> create(@NotNull final MediaUploadParams params) {
+        return service.create(params.getParams());
+    }
 }

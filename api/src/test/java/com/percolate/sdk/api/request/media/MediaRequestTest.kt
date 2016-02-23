@@ -1,8 +1,10 @@
 package com.percolate.sdk.api.request.media
 
 import com.percolate.sdk.api.BaseApiTest
+import okhttp3.RequestBody
 import org.junit.Assert
 import org.junit.Test
+import java.io.File
 
 class MediaRequestTest : BaseApiTest() {
 
@@ -54,5 +56,20 @@ class MediaRequestTest : BaseApiTest() {
 
         Assert.assertNotNull(mediaMetaDataHolder)
         Assert.assertNotNull(mediaMetaDataHolder.data)
+    }
+
+    @Test
+    fun testCreate() {
+        val media = percolateApi
+                .media()
+                .create(MediaUploadParams().file(
+                        RequestBody.create(null, File("/some/path/file.jpg")),
+                        "/some/path/file.jpg"
+                ))
+                .execute()
+                .body();
+
+        Assert.assertNotNull(media)
+        Assert.assertNotNull(media.uid)
     }
 }
