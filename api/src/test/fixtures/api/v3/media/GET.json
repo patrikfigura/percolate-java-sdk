@@ -1,0 +1,131 @@
+[{
+	"getty_id": null,
+	"metadata": {
+		"added_at": "2015-07-20T14:36:34",
+		"created_at": "2015-11-23T19:29:34.914000+00:00",
+		"creator": {
+			"license_id": 123,
+			"user_id": 1
+		},
+		"deleted": false,
+		"description": "",
+		"ingested_from": "web",
+		"modified_at": "2016-01-29T18:05:35",
+		"name_path": ["Test Folder"],
+		"original_filename": "filename.jpg",
+		"owner_id": 123,
+		"owner_type": "license",
+		"path": ["folder:111"],
+		"tags": [],
+		"title": "",
+		"usage_rights": null
+	},
+	"custom_metadata": [],
+	"shutterstock_id": null,
+	"uid": "video:222",
+	"animated": false,
+	"exif": {
+		"copyright": null,
+		"x_resolution": 300,
+		"y_resolution": 300,
+		"created_at": "2007-07-11T01:32:49-04:00",
+		"updated_at": "2007-07-11T01:32:49-04:00",
+		"camera_maker": "Canon",
+		"camera_model": "Canon EOS 5D",
+		"focal_length": "100.0 mm",
+		"iso": 200,
+		"exposure_mode": "Manual",
+		"aperture": "f/13.0",
+		"shutter_speed": "1/180 sec.",
+		"flash": false,
+		"gps_coordinates": null
+	},
+	"file_size": 29683,
+	"format": "jpeg",
+	"height": 200.0,
+	"id": "1",
+	"images": {
+		"large": {
+			"url": "https://percolate.com/cdn/ugc/image/raw/x.jpg",
+			"width": 200.0,
+			"height": 200.0
+		},
+		"original": {
+			"url": "https://percolate.com/cdn/ugc/image/raw/x.jpg",
+			"width": 200.0,
+			"height": 200.0
+		},
+		"thumbnail": {
+			"url": "https://percolate.com/cdn/ugc/image/transcoded/x.jpg",
+			"width": 64.0,
+			"height": 64.0
+		}
+	},
+	"license": {
+		"owner_url": null
+	},
+	"src": "https://percolate.com/cdn/ugc/image/raw/x.jpg",
+	"state": "ready",
+	"type": "image",
+	"width": 200.0
+}, {
+	"getty_id": null,
+	"metadata": {
+		"added_at": "2015-12-04T23:03:15",
+		"created_at": "2015-12-04T22:56:14+00:00",
+		"creator": {
+			"license_id": 123,
+			"user_id": 0
+		},
+		"deleted": false,
+		"description": "",
+		"ingested_from": "facebook",
+		"modified_at": "2016-01-08T22:15:15",
+		"name_path": [],
+		"original_filename": "facebook_123.jpg",
+		"owner_id": 123,
+		"owner_type": "license",
+		"path": [],
+		"tags": [],
+		"title": "",
+		"usage_rights": null
+	},
+	"custom_metadata": [],
+	"shutterstock_id": null,
+	"uid": "video:444",
+	"animated": false,
+	"exif": {},
+	"file_size": 24728,
+	"format": "jpeg",
+	"height": 427.0,
+	"id": "2",
+	"images": {
+		"large": {
+			"url": "https://percolate.com/cdn/ugc/image/raw/x.jpg",
+			"width": 640.0,
+			"height": 427.0
+		},
+		"medium": {
+			"url": "https://percolate.com/cdn/ugc/image/transcoded/x.jpg",
+			"width": 520.0,
+			"height": 347.0
+		},
+		"original": {
+			"url": "https://percolate.com/cdn/ugc/image/raw/x.jpg",
+			"width": 640.0,
+			"height": 427.0
+		},
+		"thumbnail": {
+			"url": "https://percolate.com/cdn/ugc/image/transcoded/x.jpg",
+			"width": 64.0,
+			"height": 64.0
+		}
+	},
+	"license": {
+		"owner_url": null
+	},
+	"src": "https://percolate.com/cdn/ugc/image/raw/x.jpg",
+	"state": "ready",
+	"type": "image",
+	"width": 640.0
+}]
