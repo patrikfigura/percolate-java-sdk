@@ -9,7 +9,7 @@ import retrofit2.http.QueryMap;
 import java.util.Map;
 
 /**
- * Percolate v45/license API definition.
+ * Percolate v3/licenses API definition.
  */
 interface LicenseService {
 

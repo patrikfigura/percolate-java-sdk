@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Parameters for Approval Workflow request.
+ * Parameters for Approval Workflow History request.
  */
 @SuppressWarnings("unused")
 public class ApprovalWorkflowHistoryParams {
