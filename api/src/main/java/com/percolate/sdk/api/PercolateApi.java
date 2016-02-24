@@ -1,9 +1,15 @@
 package com.percolate.sdk.api;
 
 import com.percolate.sdk.api.config.PercolateServer;
+import com.percolate.sdk.api.request.activity.ActivityRequest;
 import com.percolate.sdk.api.request.approvals.pools.ApprovalPoolsRequest;
 import com.percolate.sdk.api.request.approvals.workflow.ApprovalWorkflowRequest;
 import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflowHistoryRequest;
+import com.percolate.sdk.api.request.authorization.UserRolesRequest;
+import com.percolate.sdk.api.request.brief.BriefRequest;
+import com.percolate.sdk.api.request.channel.ChannelRequest;
+import com.percolate.sdk.api.request.license.LicenseRequest;
+import com.percolate.sdk.api.request.licensechannel.LicenseChannelRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -108,5 +114,53 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public ApprovalWorkflowHistoryRequest approvalWorkflowHistory() {
         return new ApprovalWorkflowHistoryRequest(this);
+    }
+
+    /**
+     * @return {@link ActivityRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public ActivityRequest activity() {
+        return new ActivityRequest(this);
+    }
+
+    /**
+     * @return {@link UserRolesRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public UserRolesRequest userRoles() {
+        return new UserRolesRequest(this);
+    }
+    /**
+     * @return {@link BriefRequest} instance.
+     */
+
+    @SuppressWarnings("unused")
+    public BriefRequest briefs() {
+        return new BriefRequest(this);
+    }
+
+    /**
+     * @return {@link LicenseRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public LicenseRequest licenses() {
+        return new LicenseRequest(this);
+    }
+
+    /**
+     * @return {@link ChannelRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public ChannelRequest channels() {
+        return new ChannelRequest(this);
+    }
+
+    /**
+     * @return {@link LicenseChannelRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public LicenseChannelRequest licenseChannels() {
+        return new LicenseChannelRequest(this);
     }
 }

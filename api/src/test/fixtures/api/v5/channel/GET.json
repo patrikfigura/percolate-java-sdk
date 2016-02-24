@@ -1,0 +1,53 @@
+{
+	"meta": {
+		"query": {
+			"limit": 100,
+			"scope_ids": "license:999",
+			"offset": 0
+		},
+		"total": 3
+	},
+	"data": [{
+		"media_buyer_ids": [],
+		"updated_at": "2016-01-05T15:05:00+00:00",
+		"scope_id": "license:999",
+		"avatar_id": null,
+		"id": "channel:111",
+		"xid": "1111",
+		"name": "Some Custom Channel",
+		"capabilities": ["posting"],
+		"platform_id": "platform:11111",
+		"term_ids": [],
+		"ext": null,
+		"token_id": null,
+		"type": "custom"
+	}, {
+		"media_buyer_ids": [],
+		"updated_at": "2015-12-07T13:48:39+00:00",
+		"scope_id": "license:999",
+		"avatar_id": null,
+		"id": "channel:222",
+		"xid": "2222",
+		"name": "Custom Channel 2",
+		"capabilities": ["posting"],
+		"platform_id": "platform:22222",
+		"term_ids": [],
+		"ext": null,
+		"token_id": null,
+		"type": "custom"
+	}, {
+		"media_buyer_ids": [],
+		"updated_at": "2015-06-04T19:38:21+00:00",
+		"scope_id": "license:999",
+		"avatar_id": null,
+		"id": "channel:333",
+		"xid": "something.tumblr.com",
+		"name": "Untitled",
+		"capabilities": ["posting", "publishing", "hub"],
+		"platform_id": "platform:33333",
+		"term_ids": [],
+		"ext": null,
+		"token_id": "token:1",
+		"type": "tumblr"
+	}]
+}

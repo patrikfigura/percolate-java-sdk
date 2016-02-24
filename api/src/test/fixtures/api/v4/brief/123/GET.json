@@ -1,0 +1,526 @@
+{
+	"data": {
+		"brief_version": 3,
+		"uid": "brief:123",
+		"platform_uids": [],
+		"visible": true,
+		"workspace_version": 3,
+		"brief_workflow_id": 100,
+		"owner": {
+			"type": "license",
+			"id": 555,
+			"license": {
+				"default_brew_id": 999,
+				"brand": {
+					"id": 1,
+					"name": "Percolate Staff"
+				},
+				"name": "Some User",
+				"brand_id": 1,
+				"engagement_threshold": null,
+				"timezone": "US\/Eastern",
+				"id": 555,
+				"photo_url": "https:\/\/percolate.com\/cdn\/img\/z\/default_73px.png"
+			}
+		},
+		"terms": [{
+			"updated_at": "2015-12-22",
+			"scope_id": "license:555",
+			"namespace": "tag",
+			"id": 66666,
+			"name": "tag1"
+		}],
+		"id": 123,
+		"title": "Test Approval Campaign",
+		"media": [{
+			"license": {
+				"owner_url": null
+			},
+			"uid": "video:123",
+			"exif": {},
+			"format": "jpeg",
+			"getty_id": null,
+			"custom_metadata": [],
+			"shutterstock_id": null,
+			"height": 130.0,
+			"width": 130.0,
+			"state": "ready",
+			"src": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/imagex.jpg",
+			"file_size": 4450,
+			"images": {
+				"large": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/imagex.jpg",
+					"width": 130.0,
+					"height": 130.0
+				},
+				"original": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/imagex.jpg",
+					"width": 130.0,
+					"height": 130.0
+				},
+				"thumbnail": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/imagex.jpg",
+					"width": 64.0,
+					"height": 64.0
+				}
+			},
+			"animated": false,
+			"type": "image",
+			"id": "990099",
+			"metadata": {
+				"usage_rights": null,
+				"description": "",
+				"creator": {
+					"license_id": 555,
+					"user_id": 0
+				},
+				"deleted": false,
+				"title": "",
+				"created_at": "2016-01-07T23:17:32+00:00",
+				"tags": [],
+				"modified_at": "2016-01-09T01:48:47",
+				"added_at": "2016-01-07T23:31:46",
+				"ingested_from": "facebook",
+				"original_filename": "facebook_990099.jpg",
+				"name_path": [],
+				"path": [],
+				"owner_type": "license",
+				"owner_id": 555
+			}
+		}, {
+			"license": {
+				"owner_url": null
+			},
+			"uid": "video:12345",
+			"exif": {},
+			"format": "jpeg",
+			"getty_id": null,
+			"custom_metadata": [],
+			"shutterstock_id": null,
+			"height": 3264.0,
+			"width": 2448.0,
+			"state": "ready",
+			"src": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/imagey.jpg",
+			"file_size": 1716337,
+			"images": {
+				"large": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/image_large.jpg",
+					"width": 810.0,
+					"height": 1080.0
+				},
+				"medium": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/image_medium.jpg",
+					"width": 294.0,
+					"height": 392.0
+				},
+				"square": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/image_square.jpg",
+					"width": 440.0,
+					"height": 440.0
+				},
+				"original": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/imagey.jpg",
+					"width": 2448.0,
+					"height": 3264.0
+				},
+				"thumbnail": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/image_thumbnail.jpg",
+					"width": 64.0,
+					"height": 64.0
+				}
+			},
+			"animated": false,
+			"type": "image",
+			"id": "200",
+			"metadata": {
+				"usage_rights": null,
+				"description": "",
+				"creator": {
+					"license_id": 555,
+					"user_id": 300
+				},
+				"deleted": false,
+				"title": "",
+				"created_at": "2016-01-06T20:28:14.974000+00:00",
+				"tags": [],
+				"modified_at": "2016-01-09T01:33:35",
+				"added_at": "2016-01-06T20:28:15",
+				"ingested_from": "Android Approver",
+				"original_filename": "ORIG.jpg",
+				"name_path": [],
+				"path": [],
+				"owner_type": "license",
+				"owner_id": 555
+			}
+		}, {
+			"license": {
+				"owner_url": null
+			},
+			"uid": "video:500",
+			"exif": {},
+			"format": "jpeg",
+			"getty_id": null,
+			"custom_metadata": [],
+			"shutterstock_id": null,
+			"height": 1023.0,
+			"width": 1024.0,
+			"state": "ready",
+			"src": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/x.jpg",
+			"file_size": 61141,
+			"images": {
+				"large": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/x.jpg",
+					"width": 1024.0,
+					"height": 1023.0
+				},
+				"medium": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 392.0,
+					"height": 392.0
+				},
+				"square": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 440.0,
+					"height": 440.0
+				},
+				"original": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/x.jpg",
+					"width": 1024.0,
+					"height": 1023.0
+				},
+				"thumbnail": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 64.0,
+					"height": 64.0
+				}
+			},
+			"animated": false,
+			"type": "image",
+			"id": "700",
+			"metadata": {
+				"usage_rights": null,
+				"description": "",
+				"creator": {
+					"license_id": 555,
+					"user_id": 0
+				},
+				"deleted": false,
+				"title": "",
+				"created_at": "2015-12-25T13:19:37+00:00",
+				"tags": [],
+				"modified_at": "2016-01-08T23:57:23",
+				"added_at": "2015-12-25T13:31:40",
+				"ingested_from": "twitter",
+				"original_filename": "twitter_700.jpg",
+				"name_path": [],
+				"path": [],
+				"owner_type": "license",
+				"owner_id": 555
+			}
+		}, {
+			"license": {
+				"owner_url": null
+			},
+			"uid": "video:800",
+			"exif": {},
+			"format": "jpeg",
+			"getty_id": null,
+			"custom_metadata": [],
+			"shutterstock_id": null,
+			"height": 575.0,
+			"width": 720.0,
+			"state": "ready",
+			"src": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/a.jpg",
+			"file_size": 41990,
+			"images": {
+				"large": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/a.jpg",
+					"width": 720.0,
+					"height": 575.0
+				},
+				"medium": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/a.jpg",
+					"width": 491.0,
+					"height": 392.0
+				},
+				"square": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/a.jpg",
+					"width": 440.0,
+					"height": 440.0
+				},
+				"original": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/a.jpg",
+					"width": 720.0,
+					"height": 575.0
+				},
+				"thumbnail": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/a.jpg",
+					"width": 64.0,
+					"height": 64.0
+				}
+			},
+			"animated": false,
+			"type": "image",
+			"id": "900",
+			"metadata": {
+				"usage_rights": null,
+				"description": "",
+				"creator": {
+					"license_id": 555,
+					"user_id": 0
+				},
+				"deleted": false,
+				"title": "",
+				"created_at": "2015-12-23T22:25:47+00:00",
+				"tags": [],
+				"modified_at": "2016-01-08T23:50:23",
+				"added_at": "2015-12-23T22:31:49",
+				"ingested_from": "facebook",
+				"original_filename": "facebook_900.jpg",
+				"name_path": [],
+				"path": [],
+				"owner_type": "license",
+				"owner_id": 555
+			}
+		}, {
+			"license": {
+				"owner_url": null
+			},
+			"uid": "video:901",
+			"exif": {},
+			"format": "jpeg",
+			"getty_id": null,
+			"custom_metadata": [],
+			"shutterstock_id": null,
+			"height": 479.0,
+			"width": 720.0,
+			"state": "ready",
+			"src": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/b.jpg",
+			"file_size": 85118,
+			"images": {
+				"large": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/b.jpg",
+					"width": 720.0,
+					"height": 479.0
+				},
+				"medium": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/b.jpg",
+					"width": 520.0,
+					"height": 346.0
+				},
+				"square": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/b.jpg",
+					"width": 440.0,
+					"height": 440.0
+				},
+				"original": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/b.jpg",
+					"width": 720.0,
+					"height": 479.0
+				},
+				"thumbnail": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/b.jpg",
+					"width": 64.0,
+					"height": 64.0
+				}
+			},
+			"animated": false,
+			"type": "image",
+			"id": "902",
+			"metadata": {
+				"usage_rights": null,
+				"description": "",
+				"creator": {
+					"license_id": 555,
+					"user_id": 0
+				},
+				"deleted": false,
+				"title": "",
+				"created_at": "2015-12-23T22:25:48+00:00",
+				"tags": [],
+				"modified_at": "2016-01-08T23:50:23",
+				"added_at": "2015-12-23T22:31:43",
+				"ingested_from": "facebook",
+				"original_filename": "facebook_902.jpg",
+				"name_path": [],
+				"path": [],
+				"owner_type": "license",
+				"owner_id": 555
+			}
+		}, {
+			"license": {
+				"owner_url": null
+			},
+			"uid": "video:903",
+			"exif": {},
+			"format": "jpeg",
+			"getty_id": null,
+			"custom_metadata": [],
+			"shutterstock_id": null,
+			"height": 479.0,
+			"width": 720.0,
+			"state": "ready",
+			"src": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/c.jpg",
+			"file_size": 85118,
+			"images": {
+				"large": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/c.jpg",
+					"width": 720.0,
+					"height": 479.0
+				},
+				"medium": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/c.jpg",
+					"width": 520.0,
+					"height": 346.0
+				},
+				"square": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/c.jpg",
+					"width": 440.0,
+					"height": 440.0
+				},
+				"original": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/raw\/c.jpg",
+					"width": 720.0,
+					"height": 479.0
+				},
+				"thumbnail": {
+					"url": "https:\/\/percolate.com\/cdn\/ugc\/image\/transcoded\/c.jpg",
+					"width": 64.0,
+					"height": 64.0
+				}
+			},
+			"animated": false,
+			"type": "image",
+			"id": "904",
+			"metadata": {
+				"usage_rights": null,
+				"description": "",
+				"creator": {
+					"license_id": 555,
+					"user_id": 0
+				},
+				"deleted": false,
+				"title": "",
+				"created_at": "2015-12-23T16:16:04+00:00",
+				"tags": [],
+				"modified_at": "2016-01-08T23:46:16",
+				"added_at": "2015-12-23T16:31:54",
+				"ingested_from": "facebook",
+				"original_filename": "facebook_904.jpg",
+				"name_path": [],
+				"path": [],
+				"owner_type": "license",
+				"owner_id": 555
+			}
+		}],
+		"tag_ids": [14865, 7, 14866],
+		"brief": [{
+			"copy_html": "<p>Blah blah blah<\/p>",
+			"media_uids": ["video:123"],
+			"version": 1,
+			"uid": "campaign_brief_section:8000",
+			"title": "Test Brief Section 1"
+		}, {
+			"copy_html": "<p>Test Brief Section 2<\/p>",
+			"media_uids": ["video:500", "video:800", "video:901", "video:903"],
+			"version": 1,
+			"uid": "campaign_brief_section:9000",
+			"title": "Brief Section 2"
+		}],
+		"end_at": null,
+		"brief_workflow_complete": false,
+		"comment_count": 2,
+		"media_uids": ["video:123", "video:12345", "video:500", "video:800", "video:901", "video:903"],
+		"start_at": null,
+		"description": "Test Campaign",
+		"tags": [{
+			"name": "Subtopic 1",
+			"owner_uid": "license:555",
+			"color": "#D7E3EA",
+			"parent_id": 7,
+			"owner": {
+				"type": "license",
+				"id": 555,
+				"license": {
+					"default_brew_id": 999,
+					"brand": {
+						"id": 1,
+						"name": "Percolate Staff"
+					},
+					"name": "Some User",
+					"brand_id": 1,
+					"engagement_threshold": null,
+					"timezone": "US\/Eastern",
+					"id": 555,
+					"photo_url": "https:\/\/percolate.com\/cdn\/img\/d860043ea486fca32aa9f28e94f54bc3\/default_73px.png"
+				}
+			},
+			"id": 14865
+		}, {
+			"name": "Some User Test 1",
+			"owner_uid": "license:555",
+			"color": "#A8C9D5",
+			"parent_id": null,
+			"owner": {
+				"type": "license",
+				"id": 555,
+				"license": {
+					"default_brew_id": 999,
+					"brand": {
+						"id": 1,
+						"name": "Percolate Staff"
+					},
+					"name": "Some User",
+					"brand_id": 1,
+					"engagement_threshold": null,
+					"timezone": "US\/Eastern",
+					"id": 555,
+					"photo_url": "https:\/\/percolate.com\/cdn\/img\/f\/default_73px.png"
+				}
+			},
+			"id": 7
+		}, {
+			"name": "SubTopic 2",
+			"owner_uid": "license:555",
+			"color": "#D7E3EA",
+			"parent_id": 7,
+			"owner": {
+				"type": "license",
+				"id": 555,
+				"license": {
+					"default_brew_id": 999,
+					"brand": {
+						"id": 1,
+						"name": "Percolate Staff"
+					},
+					"name": "Some User",
+					"brand_id": 1,
+					"engagement_threshold": null,
+					"timezone": "US\/Eastern",
+					"id": 555,
+					"photo_url": "https:\/\/percolate.com\/cdn\/img\/g\/default_73px.png"
+				}
+			},
+			"id": 14866
+		}],
+		"owner_uid": "license:555",
+		"created_at": "2016-01-28T15:39:02Z",
+		"budget": "999.0000",
+		"term_uids": ["term:66666"],
+		"workspace": [{
+			"copy_html": "<p>Blah blah blah<\/p>",
+			"media_uids": ["video:12345"],
+			"version": 1,
+			"uid": "campaign_workspace:8010",
+			"title": "Test Workspace 1"
+		}, {
+			"copy_html": "<p>something something<\/p>",
+			"media_uids": [],
+			"version": 1,
+			"uid": "campaign_workspace:8888",
+			"title": "Workspace 2"
+		}],
+		"platforms": [],
+		"post_set_ids": [14152390]
+	}
+}

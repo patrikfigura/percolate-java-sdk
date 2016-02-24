@@ -22,5 +22,4 @@ interface TermsService {
 
     @POST(PercolateApi.API_V5_PATH + "/term/")
     Call<SingleTerm> create(@Body Term term);
-
 }
