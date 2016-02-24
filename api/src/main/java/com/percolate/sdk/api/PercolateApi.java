@@ -26,6 +26,7 @@ import com.percolate.sdk.api.request.push.PushTokenRequest;
 import com.percolate.sdk.api.request.release.ReleaseFormRequest;
 import com.percolate.sdk.api.request.responses.CannedResponsesRequest;
 import com.percolate.sdk.api.request.schema.SchemasRequest;
+import com.percolate.sdk.api.request.shares.SharesRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
 import com.percolate.sdk.api.request.topics.TopicsRequest;
 import org.jetbrains.annotations.NotNull;
@@ -315,5 +316,13 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public SchemasRequest schemas() {
         return new SchemasRequest(this);
+    }
+
+    /**
+     * @return {@link SharesRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public SharesRequest shares() {
+        return new SharesRequest(this);
     }
 }
