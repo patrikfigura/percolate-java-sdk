@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "query": {
+      "order_direction": "asc",
+      "order_by": "updated_at",
+      "limit": 100,
+      "offset": 0
+    },
+    "total": 3
+  },
+  "data": [
+    {
+      "body": "test",
+      "scope_id": "license:100",
+      "context_ext": null,
+      "mentions": [],
+      "context_type": null,
+      "user_id": "user:1",
+      "id": "comment:999",
+      "object_id": "post:12345",
+      "updated_at": "2016-02-18T19:32:59+00:00"
+    },
+    {
+      "body": "test 2",
+      "scope_id": "license:100",
+      "context_ext": null,
+      "mentions": [],
+      "context_type": null,
+      "user_id": "user:2",
+      "id": "comment:186770",
+      "object_id": "post:12345",
+      "updated_at": "2016-02-18T19:33:09+00:00"
+    },
+    {
+      "body": "test 3",
+      "scope_id": "license:100",
+      "context_ext": null,
+      "mentions": [],
+      "context_type": null,
+      "user_id": "user:3",
+      "id": "comment:186771",
+      "object_id": "post:12345",
+      "updated_at": "2016-02-18T19:33:15+00:00"
+    }
+  ]
+}

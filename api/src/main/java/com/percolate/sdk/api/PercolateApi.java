@@ -8,9 +8,15 @@ import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflow
 import com.percolate.sdk.api.request.authorization.UserRolesRequest;
 import com.percolate.sdk.api.request.brief.BriefRequest;
 import com.percolate.sdk.api.request.channel.ChannelRequest;
+import com.percolate.sdk.api.request.comment.CommentRequest;
+import com.percolate.sdk.api.request.features.FeaturesRequest;
+import com.percolate.sdk.api.request.followers.FollowersRequest;
 import com.percolate.sdk.api.request.license.LicenseRequest;
+import com.percolate.sdk.api.request.license.users.LicenseUsersRequest;
 import com.percolate.sdk.api.request.licensechannel.LicenseChannelRequest;
+import com.percolate.sdk.api.request.links.LinksRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
+import com.percolate.sdk.api.request.topics.TopicsRequest;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -162,5 +168,53 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public LicenseChannelRequest licenseChannels() {
         return new LicenseChannelRequest(this);
+    }
+
+    /**
+     * @return {@link CommentRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public CommentRequest comments() {
+        return new CommentRequest(this);
+    }
+
+    /**
+     * @return {@link TopicsRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public TopicsRequest topics() {
+        return new TopicsRequest(this);
+    }
+
+    /**
+     * @return {@link FeaturesRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public FeaturesRequest features() {
+        return new FeaturesRequest(this);
+    }
+
+    /**
+     * @return {@link FollowersRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public FollowersRequest followers() {
+        return new FollowersRequest(this);
+    }
+
+    /**
+     * @return {@link LicenseUsersRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public LicenseUsersRequest licenseUsers() {
+        return new LicenseUsersRequest(this);
+    }
+
+    /**
+     * @return {@link LinksRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public LinksRequest links() {
+        return new LinksRequest(this);
     }
 }

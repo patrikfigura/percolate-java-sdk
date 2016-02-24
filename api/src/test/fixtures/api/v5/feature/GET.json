@@ -1,0 +1,52 @@
+{
+	"meta": {
+		"query": {
+			"limit": 100,
+			"offset": 0
+		},
+		"total": 7
+	},
+	"data": [{
+		"updated_at": "2016-01-04T22:45:06+00:00",
+		"scope_id": "license:100",
+		"id": "feature:1",
+		"value": false,
+		"feature_type": "eloqua"
+	}, {
+		"updated_at": "2015-10-16T17:50:51+00:00",
+		"scope_id": "license:100",
+		"id": "feature:2",
+		"value": true,
+		"feature_type": "elp_enabled"
+	}, {
+		"updated_at": "2015-07-16T19:10:21+00:00",
+		"scope_id": "license:100",
+		"id": "feature:3",
+		"value": false,
+		"feature_type": "fanbranded_enabled"
+	}, {
+		"updated_at": null,
+		"scope_id": "license:100",
+		"id": "feature:4",
+		"value": [],
+		"feature_type": "partners_enabled"
+	}, {
+		"updated_at": "2015-07-16T19:10:21+00:00",
+		"scope_id": "license:100",
+		"id": "feature:5",
+		"value": "en",
+		"feature_type": "translation.default_language"
+	}, {
+		"updated_at": "2015-07-16T19:10:21+00:00",
+		"scope_id": "license:100",
+		"id": "feature:6",
+		"value": true,
+		"feature_type": "translation.enabled"
+	}, {
+		"updated_at": "2015-12-30T18:28:44+00:00",
+		"scope_id": "license:100",
+		"id": "feature:7",
+		"value": false,
+		"feature_type": "twitter_cards"
+	}]
+}

@@ -1,0 +1,13 @@
+{
+  "data": {
+    "body": "test",
+    "scope_id": "license:100",
+    "context_ext": null,
+    "mentions": [],
+    "context_type": null,
+    "user_id": "user:999",
+    "id": "comment:1",
+    "object_id": "post:2",
+    "updated_at": "2016-02-18T19:32:59+00:00"
+  }
+}
