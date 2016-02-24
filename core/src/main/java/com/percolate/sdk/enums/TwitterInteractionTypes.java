@@ -7,5 +7,6 @@ public enum TwitterInteractionTypes {
     REPLY,
     MENTION,
     RETWEET,
-    FAVORITE
+    FAVORITE,
+    OWN_REPLY
 }
