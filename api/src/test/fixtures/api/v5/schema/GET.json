@@ -1,0 +1,379 @@
+{
+	"meta": {
+		"query": {
+			"type": "post",
+			"scope_ids": "license:1,builtin_scope:system",
+			"statuses": "active"
+		},
+		"total": 9
+	},
+	"data": [{
+		"status": "active",
+		"ext": {
+			"platform_id": "platform:2",
+			"channel_type": "custom"
+		},
+		"scope_id": "license:1",
+		"name": "Currency Field Test 2",
+		"plugins": [],
+		"fields": [{
+			"description": null,
+			"required": false,
+			"label": "Not Required Field Test",
+			"ext": {},
+			"key": "24125",
+			"type": "currency"
+		}],
+		"type": "post",
+		"id": "schema:2",
+		"fieldsets": [],
+		"updated_at": "2016-01-29T19:04:42+00:00"
+	}, {
+		"status": "active",
+		"ext": {
+			"platform_id": "platform:2",
+			"channel_type": "custom"
+		},
+		"scope_id": "license:1",
+		"name": "Currency Test",
+		"plugins": [],
+		"fields": [{
+			"description": null,
+			"required": true,
+			"label": "Blah Blah",
+			"ext": {},
+			"key": "16675",
+			"type": "currency"
+		}],
+		"type": "post",
+		"id": "schema:2",
+		"fieldsets": [],
+		"updated_at": "2016-01-19T15:12:13+00:00"
+	}, {
+		"status": "active",
+		"ext": {
+			"platform_id": "platform:2",
+			"channel_type": "custom"
+		},
+		"scope_id": "license:1",
+		"name": "Email Address Test",
+		"plugins": [],
+		"fields": [{
+			"description": null,
+			"required": true,
+			"label": "Email addy",
+			"ext": {},
+			"key": "11826",
+			"type": "email"
+		}],
+		"type": "post",
+		"id": "schema:3",
+		"fieldsets": [],
+		"updated_at": "2016-01-12T14:29:52+00:00"
+	}, {
+		"status": "active",
+		"ext": {
+			"channel_type": "facebook",
+			"platform_id": "platform:1"
+		},
+		"scope_id": "builtin_scope:system",
+		"name": "Facebook Video",
+		"plugins": [{
+			"field_key": "message",
+			"ext": {
+				"search_trigger": "\/@\/",
+				"search_url": "https:\/\/graph.facebook.com\/v2.5\/search?type=page"
+			},
+			"type": "mentions",
+			"key": "mentions"
+		}],
+		"fields": [{
+			"description": "The status message",
+			"required": false,
+			"label": "Message",
+			"ext": {
+				"max_length": 5000
+			},
+			"key": "message",
+			"type": "text"
+		}, {
+			"description": "The asset",
+			"required": true,
+			"label": "Asset",
+			"ext": {
+				"limit": 1
+			},
+			"key": "asset",
+			"type": "asset"
+		}, {
+			"description": "Promoted Post",
+			"required": false,
+			"label": "Promoted Only",
+			"ext": {
+				"values": [{
+					"value": false,
+					"label": "No"
+				}, {
+					"value": true,
+					"label": "Yes"
+				}]
+			},
+			"key": "is_promoted",
+			"type": "select"
+		}],
+		"type": "post",
+		"id": "schema:4",
+		"fieldsets": [],
+		"updated_at": "2016-01-07T18:32:17+00:00"
+	}, {
+		"status": "active",
+		"ext": {
+			"channel_type": "facebook",
+			"platform_id": "platform:1"
+		},
+		"scope_id": "builtin_scope:system",
+		"name": "Facebook Status",
+		"plugins": [{
+			"field_key": "message",
+			"ext": {
+				"search_trigger": "\/@\/",
+				"search_url": "https:\/\/graph.facebook.com\/v2.5\/search?type=page"
+			},
+			"type": "mentions",
+			"key": "mentions"
+		}],
+		"fields": [{
+			"description": "The status message",
+			"required": true,
+			"label": "Message",
+			"ext": {
+				"max_length": 5000
+			},
+			"key": "message",
+			"type": "text"
+		}, {
+			"description": "Promoted Post",
+			"required": false,
+			"label": "Promoted Only",
+			"ext": {
+				"values": [{
+					"value": false,
+					"label": "No"
+				}, {
+					"value": true,
+					"label": "Yes"
+				}]
+			},
+			"key": "is_promoted",
+			"type": "select"
+		}],
+		"type": "post",
+		"id": "schema:5",
+		"fieldsets": [],
+		"updated_at": "2016-01-07T18:32:17+00:00"
+	}, {
+		"status": "active",
+		"ext": {
+			"channel_type": "facebook",
+			"platform_id": "platform:1"
+		},
+		"scope_id": "builtin_scope:system",
+		"name": "Facebook Photo",
+		"plugins": [{
+			"field_key": "message",
+			"ext": {
+				"search_trigger": "\/@\/",
+				"search_url": "https:\/\/graph.facebook.com\/v2.5\/search?type=page"
+			},
+			"type": "mentions",
+			"key": "mentions"
+		}],
+		"fields": [{
+			"description": "The status message",
+			"required": false,
+			"label": "Message",
+			"ext": {
+				"max_length": 5000
+			},
+			"key": "message",
+			"type": "text"
+		}, {
+			"description": "The asset",
+			"required": true,
+			"label": "Asset",
+			"ext": {
+				"limit": 1
+			},
+			"key": "asset",
+			"type": "asset"
+		}, {
+			"description": "Promoted Post",
+			"required": false,
+			"label": "Promoted Only",
+			"ext": {
+				"values": [{
+					"value": false,
+					"label": "No"
+				}, {
+					"value": true,
+					"label": "Yes"
+				}]
+			},
+			"key": "is_promoted",
+			"type": "select"
+		}],
+		"type": "post",
+		"id": "schema:6",
+		"fieldsets": [],
+		"updated_at": "2016-01-07T18:32:17+00:00"
+	}, {
+		"status": "active",
+		"ext": {
+			"channel_type": "facebook",
+			"platform_id": "platform:1"
+		},
+		"scope_id": "builtin_scope:system",
+		"name": "Facebook Multi-Photo",
+		"plugins": [{
+			"field_key": "message",
+			"ext": {
+				"search_trigger": "\/@\/",
+				"search_url": "https:\/\/graph.facebook.com\/v2.5\/search?type=page"
+			},
+			"type": "mentions",
+			"key": "mentions"
+		}],
+		"fields": [{
+			"description": "The status message",
+			"required": false,
+			"label": "Message",
+			"ext": {
+				"max_length": 5000
+			},
+			"key": "message",
+			"type": "text"
+		}, {
+			"description": "The asset",
+			"required": true,
+			"label": "Asset",
+			"ext": {},
+			"key": "asset",
+			"type": "asset"
+		}],
+		"type": "post",
+		"id": "schema:7",
+		"fieldsets": [],
+		"updated_at": "2016-01-07T18:32:17+00:00"
+	}, {
+		"status": "active",
+		"ext": {
+			"channel_type": "facebook",
+			"platform_id": "platform:1"
+		},
+		"scope_id": "builtin_scope:system",
+		"name": "Facebook Link",
+		"plugins": [{
+			"field_key": "message",
+			"ext": {
+				"search_trigger": "\/@\/",
+				"search_url": "https:\/\/graph.facebook.com\/v2.5\/search?type=page"
+			},
+			"type": "mentions",
+			"key": "mentions"
+		}],
+		"fields": [{
+			"description": "The status message",
+			"required": false,
+			"label": "Message",
+			"ext": {
+				"max_length": 5000
+			},
+			"key": "message",
+			"type": "text"
+		}, {
+			"description": "Link",
+			"required": true,
+			"label": "link",
+			"ext": {
+				"limit": 1
+			},
+			"key": "link",
+			"type": "link"
+		}, {
+			"description": "The asset",
+			"required": false,
+			"label": "Asset",
+			"ext": {
+				"limit": 1
+			},
+			"key": "asset",
+			"type": "asset"
+		}, {
+			"description": "Promoted Post",
+			"required": false,
+			"label": "Promoted Only",
+			"ext": {
+				"values": [{
+					"value": false,
+					"label": "No"
+				}, {
+					"value": true,
+					"label": "Yes"
+				}]
+			},
+			"key": "is_promoted",
+			"type": "select"
+		}],
+		"type": "post",
+		"id": "schema:8",
+		"fieldsets": [],
+		"updated_at": "2016-01-07T18:32:17+00:00"
+	}, {
+		"status": "active",
+		"ext": {
+			"channel_type": "twitter",
+			"platform_id": "platform:6"
+		},
+		"scope_id": "builtin_scope:system",
+		"name": "Tweet",
+		"plugins": [],
+		"fields": [{
+			"description": "The body of the tweet",
+			"required": true,
+			"label": "Body",
+			"ext": {
+				"max_length": 140
+			},
+			"key": "body",
+			"type": "textarea"
+		}, {
+			"description": "Add a link here to track clicks in analytics. This link will be added to the end of your tweet.",
+			"required": false,
+			"label": "Link tracking",
+			"ext": {
+				"limit": 1
+			},
+			"key": "link",
+			"type": "link"
+		}, {
+			"description": "Promoted Tweet",
+			"required": true,
+			"label": "Promoted Only",
+			"ext": {
+				"values": [{
+					"value": false,
+					"label": "No"
+				}, {
+					"value": true,
+					"label": "Yes"
+				}]
+			},
+			"key": "is_promoted",
+			"type": "select"
+		}],
+		"type": "post",
+		"id": "schema:9",
+		"fieldsets": [],
+		"updated_at": "2015-10-02T19:09:07+00:00"
+	}]
+}
