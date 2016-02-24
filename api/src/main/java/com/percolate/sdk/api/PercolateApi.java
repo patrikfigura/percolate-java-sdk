@@ -22,6 +22,7 @@ import com.percolate.sdk.api.request.monitoring.flagging.FlaggingRequest;
 import com.percolate.sdk.api.request.monitoring.instagram.InstagramMonitoringRequest;
 import com.percolate.sdk.api.request.monitoring.twitter.TwitterMonitoringRequest;
 import com.percolate.sdk.api.request.platform.PlatformsRequest;
+import com.percolate.sdk.api.request.push.PushTokenRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
 import com.percolate.sdk.api.request.topics.TopicsRequest;
 import org.jetbrains.annotations.NotNull;
@@ -279,5 +280,13 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public PlatformsRequest platforms() {
         return new PlatformsRequest(this);
+    }
+
+    /**
+     * @return {@link PushTokenRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public PushTokenRequest pushToken() {
+        return new PushTokenRequest(this);
     }
 }
