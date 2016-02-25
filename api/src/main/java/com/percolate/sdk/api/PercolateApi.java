@@ -33,6 +33,7 @@ import com.percolate.sdk.api.request.shares.SharesRequest;
 import com.percolate.sdk.api.request.streams.StreamsRequest;
 import com.percolate.sdk.api.request.task.TasksRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
+import com.percolate.sdk.api.request.tokens.TokensRequest;
 import com.percolate.sdk.api.request.topics.TopicsRequest;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -369,5 +370,13 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public TasksRequest tasks() {
         return new TasksRequest(this);
+    }
+
+    /**
+     * @return {@link TokensRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public TokensRequest tokens() {
+        return new TokensRequest(this);
     }
 }
