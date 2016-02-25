@@ -1,0 +1,247 @@
+{
+	"id": "t_mid.123:abc",
+	"snippet": "test",
+	"updated_time": "2016-02-25T19:31:32+0000",
+	"message_count": 44,
+	"unread_count": 15,
+	"tags": {
+		"data": [{
+			"name": "inbox"
+		}, {
+			"name": "sent"
+		}, {
+			"name": "source:mobile"
+		}]
+	},
+	"participants": {
+		"data": [{
+			"name": "Some User",
+			"email": "456\u0040facebook.com",
+			"id": "456"
+		}, {
+			"name": "Some FB Page",
+			"email": "123\u0040facebook.com",
+			"id": "123"
+		}]
+	},
+	"senders": {
+		"data": [{
+			"name": "Some FB Page",
+			"email": "123\u0040facebook.com",
+			"id": "123"
+		}, {
+			"name": "Some User",
+			"email": "456\u0040facebook.com",
+			"id": "456"
+		}]
+	},
+	"can_reply": true,
+	"is_subscribed": true,
+	"link": "\/SomeFBPage\/manager\/messages\/?mercurythreadid=userxx&threadid=mid.123\u00253Aabc&folder=inbox",
+	"messages": {
+		"data": [{
+			"id": "m_mid.12345:abcdefg",
+			"created_time": "2016-02-25T19:31:32+0000",
+			"tags": {
+				"data": [{
+					"name": "inbox"
+				}, {
+					"name": "read"
+				}, {
+					"name": "sent"
+				}, {
+					"name": "source:web"
+				}]
+			},
+			"from": {
+				"name": "Some FB Page",
+				"email": "123\u0040facebook.com",
+				"id": "123"
+			},
+			"to": {
+				"data": [{
+					"name": "Some User",
+					"email": "456\u0040facebook.com",
+					"id": "456"
+				}]
+			},
+			"message": "test"
+		}, {
+			"id": "m_mid.5678:abcd",
+			"created_time": "2016-01-27T16:18:29+0000",
+			"tags": {
+				"data": [{
+					"name": "inbox"
+				}, {
+					"name": "read"
+				}, {
+					"name": "sent"
+				}, {
+					"name": "source:web"
+				}]
+			},
+			"from": {
+				"name": "Some FB Page",
+				"email": "123\u0040facebook.com",
+				"id": "123"
+			},
+			"to": {
+				"data": [{
+					"name": "Some User",
+					"email": "456\u0040facebook.com",
+					"id": "456"
+				}]
+			},
+			"message": "test3"
+		}, {
+			"id": "m_mid.890:999",
+			"created_time": "2016-01-27T16:18:07+0000",
+			"tags": {
+				"data": [{
+					"name": "inbox"
+				}, {
+					"name": "read"
+				}, {
+					"name": "sent"
+				}, {
+					"name": "source:web"
+				}]
+			},
+			"from": {
+				"name": "Some FB Page",
+				"email": "123\u0040facebook.com",
+				"id": "123"
+			},
+			"to": {
+				"data": [{
+					"name": "Some User",
+					"email": "456\u0040facebook.com",
+					"id": "456"
+				}]
+			},
+			"message": "test"
+		}, {
+			"id": "m_mid.888:777",
+			"created_time": "2016-01-27T16:18:03+0000",
+			"tags": {
+				"data": [{
+					"name": "inbox"
+				}, {
+					"name": "read"
+				}, {
+					"name": "sent"
+				}, {
+					"name": "source:web"
+				}]
+			},
+			"from": {
+				"name": "Some FB Page",
+				"email": "123\u0040facebook.com",
+				"id": "123"
+			},
+			"to": {
+				"data": [{
+					"name": "Some User",
+					"email": "456\u0040facebook.com",
+					"id": "456"
+				}]
+			},
+			"message": "test"
+		}, {
+			"id": "m_mid.666:555",
+			"created_time": "2016-01-08T15:54:25+0000",
+			"tags": {
+				"data": [{
+					"name": "inbox"
+				}, {
+					"name": "source:chat"
+				}]
+			},
+			"from": {
+				"name": "Some User",
+				"email": "456\u0040facebook.com",
+				"id": "456"
+			},
+			"to": {
+				"data": [{
+					"name": "Some FB Page",
+					"email": "123\u0040facebook.com",
+					"id": "123"
+				}]
+			},
+			"message": "testing big image"
+		}, {
+			"id": "m_mid.444:333",
+			"created_time": "2016-01-08T15:54:14+0000",
+			"tags": {
+				"data": [{
+					"name": "inbox"
+				}, {
+					"name": "source:chat"
+				}]
+			},
+			"from": {
+				"name": "Some User",
+				"email": "456\u0040facebook.com",
+				"id": "456"
+			},
+			"to": {
+				"data": [{
+					"name": "Some FB Page",
+					"email": "123\u0040facebook.com",
+					"id": "123"
+				}]
+			},
+			"message": "",
+			"attachments": {
+				"data": [{
+					"id": "222",
+					"mime_type": "image\/jpeg",
+					"name": "x.jpg",
+					"size": null,
+					"image_data": {
+						"width": 1920,
+						"height": 1080,
+						"render_as_sticker": false,
+						"url": "",
+						"preview_url": "",
+						"image_type": 1,
+						"max_width": 1920,
+						"max_height": 1080
+					}
+				}]
+			}
+		}, {
+			"id": "m_mid.123:456",
+			"created_time": "2015-07-16T19:30:46+0000",
+			"tags": {
+				"data": [{
+					"name": "inbox"
+				}, {
+					"name": "read"
+				}, {
+					"name": "sent"
+				}, {
+					"name": "source:web"
+				}]
+			},
+			"from": {
+				"name": "Some FB Page",
+				"email": "123\u0040facebook.com",
+				"id": "123"
+			},
+			"to": {
+				"data": [{
+					"name": "Some User",
+					"email": "456\u0040facebook.com",
+					"id": "456"
+				}]
+			},
+			"message": "L'\u00e9quipe Android est assez impressionnant"
+		}],
+		"paging": {
+			"previous": "https:\/\/graph.facebook.com\/v2.3\/t_mid.123:abc\/messages",
+			"next": "https:\/\/graph.facebook.com\/v2.3\/t_mid.123:abc\/messages"
+		}
+	}
+}
