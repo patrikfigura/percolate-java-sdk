@@ -36,6 +36,7 @@ import com.percolate.sdk.api.request.terms.TermsRequest;
 import com.percolate.sdk.api.request.tokens.TokensRequest;
 import com.percolate.sdk.api.request.topics.TopicsRequest;
 import com.percolate.sdk.api.request.translate.TranslateRequest;
+import com.percolate.sdk.api.request.users.UsersRequest;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -387,5 +388,13 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public TranslateRequest translate() {
         return new TranslateRequest(this);
+    }
+
+    /**
+     * @return {@link UsersRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public UsersRequest users() {
+        return new UsersRequest(this);
     }
 }
