@@ -21,6 +21,13 @@ import com.percolate.sdk.api.request.monitoring.facebook.FacebookMonitoringReque
 import com.percolate.sdk.api.request.monitoring.flagging.FlaggingRequest;
 import com.percolate.sdk.api.request.monitoring.instagram.InstagramMonitoringRequest;
 import com.percolate.sdk.api.request.monitoring.twitter.TwitterMonitoringRequest;
+import com.percolate.sdk.api.request.platform.PlatformsRequest;
+import com.percolate.sdk.api.request.push.PushTokenRequest;
+import com.percolate.sdk.api.request.release.ReleaseFormRequest;
+import com.percolate.sdk.api.request.responses.CannedResponsesRequest;
+import com.percolate.sdk.api.request.schema.SchemasRequest;
+import com.percolate.sdk.api.request.shares.SharesRequest;
+import com.percolate.sdk.api.request.streams.StreamsRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
 import com.percolate.sdk.api.request.topics.TopicsRequest;
 import org.jetbrains.annotations.NotNull;
@@ -270,5 +277,61 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public FlaggingRequest flags() {
         return new FlaggingRequest(this);
+    }
+
+    /**
+     * @return {@link PlatformsRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public PlatformsRequest platforms() {
+        return new PlatformsRequest(this);
+    }
+
+    /**
+     * @return {@link PushTokenRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public PushTokenRequest pushToken() {
+        return new PushTokenRequest(this);
+    }
+
+    /**
+     * @return {@link ReleaseFormRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public ReleaseFormRequest releaseForm() {
+        return new ReleaseFormRequest(this);
+    }
+
+    /**
+     * @return {@link CannedResponsesRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public CannedResponsesRequest cannedResponses() {
+        return new CannedResponsesRequest(this);
+    }
+
+    /**
+     * @return {@link SchemasRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public SchemasRequest schemas() {
+        return new SchemasRequest(this);
+    }
+
+    /**
+     * @return {@link SharesRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public SharesRequest shares() {
+        return new SharesRequest(this);
+    }
+
+    /**
+     * @return {@link StreamsRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public StreamsRequest streams() {
+        return new StreamsRequest(this);
     }
 }

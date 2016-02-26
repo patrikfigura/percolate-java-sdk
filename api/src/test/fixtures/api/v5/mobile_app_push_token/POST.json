@@ -1,0 +1,11 @@
+{
+	"data": {
+		"user_id": "user:1",
+		"bundle_identifier": "com.percolate.someapp.namespace",
+		"is_active": true,
+		"push_platform": "GCM",
+		"token": "abc123",
+		"id": "mobile_app_push_token:1",
+		"arn": "--ARN_STRING--"
+	}
+}

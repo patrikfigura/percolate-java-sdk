@@ -1,0 +1,26 @@
+{
+	"data": {
+		"status": "active",
+		"ext": {
+			"platform_id": "platform:1",
+			"channel_type": "custom"
+		},
+		"scope_id": "license:1",
+		"name": "Template 1",
+		"plugins": [],
+		"fields": [{
+			"description": null,
+			"required": false,
+			"label": "So simple",
+			"ext": {
+				"max_length": null
+			},
+			"key": "15158",
+			"type": "text"
+		}],
+		"type": "post",
+		"id": "schema:1",
+		"fieldsets": [],
+		"updated_at": "2015-12-07T13:49:15+00:00"
+	}
+}

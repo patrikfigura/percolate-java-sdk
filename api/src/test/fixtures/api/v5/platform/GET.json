@@ -1,0 +1,55 @@
+{
+	"meta": {
+		"query": {},
+		"total": 6
+	},
+	"data": [{
+		"name": "platform 1",
+		"color": "#BAFA21",
+		"avatar_id": "video:651919722809064147",
+		"updated_at": "2015-12-07T13:48:03+00:00",
+		"scope_id": "license:1",
+		"type": "custom",
+		"id": "platform:1"
+	}, {
+		"name": "User Custom Test Platform",
+		"color": "#BAC1DA",
+		"avatar_id": "video:647881450750701713",
+		"updated_at": "2015-11-23T19:29:59+00:00",
+		"scope_id": "license:1",
+		"type": "custom",
+		"id": "platform:2"
+	}, {
+		"name": "Snapchat",
+		"color": "#333333",
+		"avatar_id": "asset:1",
+		"updated_at": "2015-06-28T18:07:59+00:00",
+		"scope_id": null,
+		"type": "native:snapchat",
+		"id": "platform:3"
+	}, {
+		"name": "Radio",
+		"color": "#1f093c",
+		"avatar_id": "asset:1",
+		"updated_at": "2015-06-28T18:07:59+00:00",
+		"scope_id": null,
+		"type": "native:radio",
+		"id": "platform:4"
+	}, {
+		"name": "Tumblr",
+		"color": "#415c7b",
+		"avatar_id": "asset:1",
+		"updated_at": "2015-06-28T18:07:59+00:00",
+		"scope_id": null,
+		"type": "native:tumblr",
+		"id": "platform:5"
+	}, {
+		"name": "Twitter",
+		"color": "#2ba9e1",
+		"avatar_id": "asset:1",
+		"updated_at": "2015-06-28T18:07:59+00:00",
+		"scope_id": null,
+		"type": "native:twitter",
+		"id": "platform:6"
+	}]
+}
