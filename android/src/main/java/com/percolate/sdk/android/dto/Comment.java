@@ -2,7 +2,7 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+import com.percolate.sdk.dto.CommentContextExt;
 import com.percolate.sdk.dto.Mention;
 
 import java.util.ArrayList;
@@ -26,6 +26,8 @@ public class Comment extends com.percolate.sdk.dto.Comment implements Parcelable
         dest.writeList(this.mentions);
         dest.writeString(this.userUID);
         dest.writeString(this.scopeUID);
+        dest.writeString(this.contextType);
+        dest.writeSerializable(this.contextExt);
         dest.writeString(this.updatedAt);
     }
 
@@ -41,6 +43,8 @@ public class Comment extends com.percolate.sdk.dto.Comment implements Parcelable
         in.readList(this.mentions, List.class.getClassLoader());
         this.userUID = in.readString();
         this.scopeUID = in.readString();
+        this.contextType = in.readString();
+        this.contextExt = (CommentContextExt) in.readSerializable();
         this.updatedAt = in.readString();
     }
 
