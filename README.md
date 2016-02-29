@@ -7,12 +7,13 @@
 
 The SDK is broken up into 3 libraries:
 
-| Component | Description                      |
-|-----------|----------------------------------|
-| core      | Core objects.  Required.         |
-| auth      | TODO.                            |
-| api       | API requests.                    |
-| android   | Android-specific objects.        |
+| Component     | Description                        |
+|---------------|------------------------------------| 
+| core          | Core objects.  Required.           |
+| auth          | TODO.                              |
+| api           | API requests.                      |
+| android       | Android-specific objects.          |
+| python-bridge | Allows core/api usage from python. |
    
 
 ### Using Gradle / Maven
@@ -76,6 +77,9 @@ call.enqueue(new Callback<Terms>() {
     public void onFailure(Call<Terms> call, Throwable t) { }    
 });
 ```
+
+## Usage from Python.
+This is an experimental feature.  See [python-bridge](tree/master/python-bridge) for details.
 
 ## Contributing
 TODO - Project setup, etc
