@@ -1,0 +1,370 @@
+{
+	"data": [{
+		"hub_post": null,
+		"short_url": null,
+		"hub_post_id": null,
+		"link_id": null,
+		"analytics": {
+			"score": 0,
+			"clicks": 0
+		},
+		"video": {},
+		"brew_id": null,
+		"id": 2,
+		"user_id": 2222,
+		"title": "",
+		"tracking_tag_ids": [],
+		"tag_ids": [],
+		"comment_count": 0,
+		"note": "",
+		"license_id": 1,
+		"body": "image test",
+		"user": {
+			"username": "user@company.com",
+			"name": "Some User",
+			"default_license_id": 1,
+			"active": true,
+			"created_at": "2014-01-06 19:23:06",
+			"photo_url": "https:\/\/company.com\/cdn\/avatar\/x.jpg",
+			"id": 2222,
+			"email": "user@company.com"
+		},
+		"xtags": [],
+		"brand_id": null,
+		"created_at": "2016-02-22T21:02:01Z",
+		"posts": [{
+			"body": "image test",
+			"analytics": {
+				"post_impressions_paid_unique": 0,
+				"post_consumptions_by_type_unique_video_play": 0,
+				"post_impressions_paid": 0,
+				"post_video_views_organic_unique": 0,
+				"post_consumptions": 0,
+				"engaged": 0,
+				"post_negative_feedback_by_type_hide_clicks": 0,
+				"post_negative_feedback_by_type_unique_hide_clicks": 0,
+				"post_negative_feedback": 0,
+				"talking": 0,
+				"shares": 0,
+				"post_consumptions_by_type_other_clicks": 0,
+				"post_consumptions_unique": 0,
+				"comments": 0,
+				"post_video_views_organic": 0,
+				"engagement": 0.0,
+				"post_negative_feedback_by_type_hide_all_clicks": 0,
+				"post_negative_feedback_unique": 0,
+				"post_impressions_fan_paid": 0,
+				"post_impressions_fan_paid_unique": 0,
+				"post_impressions_fan_unique": 0,
+				"post_video_avg_time_watched": 0,
+				"post_video_complete_views_paid_unique": 0,
+				"post_consumptions_by_type_unique_other_clicks": 0,
+				"post_video_complete_views_paid": 0,
+				"post_video_views_paid": 0,
+				"reach": 0,
+				"post_impressions_viral": 0,
+				"post_impressions_viral_unique": 0,
+				"post_impressions_organic_unique": 0,
+				"post_impressions_organic": 0,
+				"post_consumptions_by_type_link_clicks": 0,
+				"post_consumptions_by_type_video_play": 0,
+				"post_video_complete_views_organic_unique": 0,
+				"post_consumptions_by_type_unique_link_clicks": 0,
+				"post_stories": 0,
+				"post_impressions_fan": 0,
+				"post_video_views_paid_unique": 0,
+				"post_video_complete_views_organic": 0,
+				"post_negative_feedback_by_type_unique_hide_all_clicks": 0,
+				"post_storytellers": 0,
+				"likes": 0
+			},
+			"published_at": null,
+			"id": 1,
+			"targeting": {},
+			"related_license_id": null,
+			"title": "",
+			"twitter_promoted": false,
+			"link_description": "",
+			"platform": "facebook",
+			"license_id": 1,
+			"type": "default",
+			"channel": {
+				"rss_url": "http:\/\/graph.facebook.com\/123",
+				"description": "",
+				"regional_type": "standalone",
+				"total_subscribers": 0,
+				"id": 4444,
+				"categories": [],
+				"photo_url": "https:\/\/scontent.xx.fbcdn.net\/hprofile-xfl1\/v\/t1.0-1\/p50x50\/x.jpg?oh=x&oe=x",
+				"name": "Some FB Page",
+				"url": "https:\/\/facebook.com\/SomeFBPage",
+				"type": "facebook",
+				"subtype": null,
+				"has_links": false,
+				"page_id": "123"
+			},
+			"status": "draft",
+			"link_title": "",
+			"waiver_id": null,
+			"post_set_id": 2,
+			"reference_source": false,
+			"facebook_mentions": null,
+			"guardrail_ids": [],
+			"url": "",
+			"release_at": null,
+			"youtube_category_xid": null,
+			"webhook_ids": [],
+			"channel_id": 4444,
+			"xstatus": "published"
+		}],
+		"medias": [{
+			"license": {
+				"owner_url": null
+			},
+			"uid": "video:1",
+			"exif": {
+				"gps_coordinates": "40.123, -75.123",
+				"shutter_speed": "397\/1000000 sec.",
+				"copyright": null,
+				"x_resolution": 72,
+				"created_at": "2016-02-25T14:01:33",
+				"flash": false,
+				"updated_at": "2016-02-25T14:01:33",
+				"y_resolution": 72,
+				"camera_model": "Nexus 5",
+				"camera_maker": "LGE",
+				"focal_length": "4.0 mm",
+				"aperture": "f\/2.4",
+				"iso": 100,
+				"exposure_mode": "Auto"
+			},
+			"format": "jpeg",
+			"getty_id": null,
+			"custom_metadata": [],
+			"shutterstock_id": null,
+			"height": 3200.0,
+			"width": 218.0,
+			"state": "ready",
+			"src": "https:\/\/company.com\/cdn\/ugc\/image\/raw\/x.jpg",
+			"file_size": 2603721,
+			"images": {
+				"large": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 799.0,
+					"height": 1080.0
+				},
+				"medium": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 290.0,
+					"height": 392.0
+				},
+				"square": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 440.0,
+					"height": 440.0
+				},
+				"original": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/raw\/x.jpg",
+					"width": 218.0,
+					"height": 3200.0
+				},
+				"thumbnail": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 64.0,
+					"height": 64.0
+				}
+			},
+			"animated": false,
+			"type": "image",
+			"id": "128",
+			"metadata": {
+				"usage_rights": null,
+				"description": "",
+				"creator": {
+					"license_id": 1,
+					"user_id": 2222
+				},
+				"deleted": false,
+				"title": "",
+				"created_at": "2016-01-25T13:45:52.035000+00:00",
+				"tags": ["test2", "abc123"],
+				"modified_at": "2016-01-25T13:46:08",
+				"added_at": "2016-01-25T13:45:52",
+				"ingested_from": "Android Photographer",
+				"original_filename": "image.jpg",
+				"name_path": [],
+				"path": [],
+				"owner_type": "license",
+				"owner_id": 1
+			}
+		}, {
+			"license": {
+				"owner_url": null
+			},
+			"uid": "video:2",
+			"exif": {
+				"gps_coordinates": "40.123, -75.123",
+				"shutter_speed": "44111\/1000000 sec.",
+				"copyright": null,
+				"x_resolution": 72,
+				"created_at": "2016-02-25T15:09:49",
+				"flash": false,
+				"updated_at": "2016-02-25T15:09:49",
+				"y_resolution": 72,
+				"camera_model": "Nexus 5",
+				"camera_maker": "LGE",
+				"focal_length": "4.0 mm",
+				"aperture": "f\/2.4",
+				"iso": 529,
+				"exposure_mode": "Auto"
+			},
+			"format": "jpeg",
+			"getty_id": null,
+			"custom_metadata": [],
+			"shutterstock_id": null,
+			"height": 218.0,
+			"width": 3200.0,
+			"state": "ready",
+			"src": "https:\/\/company.com\/cdn\/ugc\/image\/raw\/x.jpg",
+			"file_size": 1863515,
+			"images": {
+				"large": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 1459.0,
+					"height": 1080.0
+				},
+				"medium": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 520.0,
+					"height": 385.0
+				},
+				"square": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 440.0,
+					"height": 440.0
+				},
+				"original": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/raw\/x.jpg",
+					"width": 3200.0,
+					"height": 218.0
+				},
+				"thumbnail": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 64.0,
+					"height": 64.0
+				}
+			},
+			"animated": false,
+			"type": "image",
+			"id": "129",
+			"metadata": {
+				"usage_rights": null,
+				"description": "",
+				"creator": {
+					"license_id": 1,
+					"user_id": 2222
+				},
+				"deleted": false,
+				"title": "",
+				"created_at": "2016-02-22T21:01:21.975000+00:00",
+				"tags": [],
+				"modified_at": "2016-02-22T21:01:1",
+				"added_at": "2016-02-22T21:01:22",
+				"ingested_from": "Android CM",
+				"original_filename": "IMG_20160206_150947.jpg",
+				"name_path": [],
+				"path": [],
+				"owner_type": "license",
+				"owner_id": 1
+			}
+		}],
+		"user_agent": null,
+		"media": {
+			"license": {
+				"owner_url": null
+			},
+			"uid": "video:1",
+			"exif": {
+				"gps_coordinates": "40.123, -75.123",
+				"shutter_speed": "397\/1000000 sec.",
+				"copyright": null,
+				"x_resolution": 72,
+				"created_at": "2016-02-25T14:01:33",
+				"flash": false,
+				"updated_at": "2016-02-25T14:01:33",
+				"y_resolution": 72,
+				"camera_model": "Nexus 5",
+				"camera_maker": "LGE",
+				"focal_length": "4.0 mm",
+				"aperture": "f\/2.4",
+				"iso": 100,
+				"exposure_mode": "Auto"
+			},
+			"format": "jpeg",
+			"getty_id": null,
+			"custom_metadata": [],
+			"shutterstock_id": null,
+			"height": 3200.0,
+			"width": 218.0,
+			"state": "ready",
+			"src": "https:\/\/company.com\/cdn\/ugc\/image\/raw\/x.jpg",
+			"file_size": 2603721,
+			"images": {
+				"large": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 799.0,
+					"height": 1080.0
+				},
+				"medium": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 290.0,
+					"height": 392.0
+				},
+				"square": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 440.0,
+					"height": 440.0
+				},
+				"original": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/raw\/x.jpg",
+					"width": 218.0,
+					"height": 3200.0
+				},
+				"thumbnail": {
+					"url": "https:\/\/company.com\/cdn\/ugc\/image\/transcoded\/x.jpg",
+					"width": 64.0,
+					"height": 64.0
+				}
+			},
+			"animated": false,
+			"type": "image",
+			"id": "128",
+			"metadata": {
+				"usage_rights": null,
+				"description": "",
+				"creator": {
+					"license_id": 1,
+					"user_id": 2222
+				},
+				"deleted": false,
+				"title": "",
+				"created_at": "2016-01-25T13:45:52.035000+00:00",
+				"tags": ["test2", "abc123"],
+				"modified_at": "2016-01-25T13:46:08",
+				"added_at": "2016-01-25T13:45:52",
+				"ingested_from": "Android Photographer",
+				"original_filename": "IMG_20160124_140132.jpg",
+				"name_path": [],
+				"path": [],
+				"owner_type": "license",
+				"owner_id": 1
+			}
+		},
+		"brief_id": null,
+		"local_created_at": {
+			"timezone": "US\/Eastern",
+			"datetime": "2016-02-22T16:02:01"
+		},
+		"external": false
+	}]
+}

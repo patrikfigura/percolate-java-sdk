@@ -1,0 +1,62 @@
+{
+	"include": {
+		"platform": [{
+			"name": "Facebook",
+			"color": "#3b579d",
+			"avatar_id": "asset:1",
+			"updated_at": "2015-06-28T18:07:59+00:00",
+			"scope_id": null,
+			"type": "native:facebook",
+			"id": "platform:1"
+		}],
+		"channel": [{
+			"media_buyer_ids": [],
+			"updated_at": "2016-02-24T22:28:21+00:00",
+			"scope_id": "license:1",
+			"avatar_id": null,
+			"id": "channel:4",
+			"xid": "123",
+			"name": "Some FB Page",
+			"capabilities": ["posting", "inbox", "publishing", "publishing_queue", "ingestion", "monitoring", "targeting"],
+			"platform_id": "platform:1",
+			"term_ids": [],
+			"ext": null,
+			"token_id": "token:6",
+			"type": "facebook"
+		}]
+	},
+	"data": {
+		"asset_ids": ["asset:1", "asset:2"],
+		"topic_ids": [],
+		"updated_at": "2016-02-25T14:53:12+00:00",
+		"id": "post:1",
+		"user_id": "user:2222",
+		"term_ids": [],
+		"approval_workflow_id": null,
+		"ext": {
+			"mentions": [],
+			"message": "test post",
+			"is_promoted": false,
+			"asset": [
+				["asset:1", "asset:2"]
+			]
+		},
+		"ingested": false,
+		"interaction_id": null,
+		"live_at": null,
+		"status": "draft",
+		"description": "",
+		"live_at_timezone": null,
+		"targeting_id": null,
+		"origin_ids": [],
+		"scope_id": "license:1",
+		"xid": "",
+		"link_ids": [],
+		"name": "test post",
+		"url": null,
+		"created_at": "2016-02-22T21:02:01+00:00",
+		"platform_id": "platform:1",
+		"channel_id": "channel:4",
+		"schema_id": "schema:111"
+	}
+}

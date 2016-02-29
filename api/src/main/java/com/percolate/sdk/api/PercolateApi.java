@@ -22,6 +22,9 @@ import com.percolate.sdk.api.request.monitoring.flagging.FlaggingRequest;
 import com.percolate.sdk.api.request.monitoring.instagram.InstagramMonitoringRequest;
 import com.percolate.sdk.api.request.monitoring.twitter.TwitterMonitoringRequest;
 import com.percolate.sdk.api.request.platform.PlatformsRequest;
+import com.percolate.sdk.api.request.post.PostRequest;
+import com.percolate.sdk.api.request.post.plug.PostPlugRequest;
+import com.percolate.sdk.api.request.postset.PostSetRequest;
 import com.percolate.sdk.api.request.push.PushTokenRequest;
 import com.percolate.sdk.api.request.release.ReleaseFormRequest;
 import com.percolate.sdk.api.request.responses.CannedResponsesRequest;
@@ -333,5 +336,29 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public StreamsRequest streams() {
         return new StreamsRequest(this);
+    }
+
+    /**
+     * @return {@link PostRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public PostRequest post() {
+        return new PostRequest(this);
+    }
+
+    /**
+     * @return {@link PostPlugRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public PostPlugRequest postPlug() {
+        return new PostPlugRequest(this);
+    }
+
+    /**
+     * @return {@link PostSetRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public PostSetRequest postSet() {
+        return new PostSetRequest(this);
     }
 }
