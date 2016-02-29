@@ -79,7 +79,7 @@ call.enqueue(new Callback<Terms>() {
 ```
 
 ## Usage from Python.
-This is an experimental feature.  See [python-bridge](tree/master/python-bridge) for details.
+This is an experimental feature.  See [python-bridge](python-bridge) for details.
 
 ## Contributing
 TODO - Project setup, etc
