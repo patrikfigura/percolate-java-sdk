@@ -31,8 +31,15 @@ import com.percolate.sdk.api.request.responses.CannedResponsesRequest;
 import com.percolate.sdk.api.request.schema.SchemasRequest;
 import com.percolate.sdk.api.request.shares.SharesRequest;
 import com.percolate.sdk.api.request.streams.StreamsRequest;
+import com.percolate.sdk.api.request.task.TasksRequest;
 import com.percolate.sdk.api.request.terms.TermsRequest;
+import com.percolate.sdk.api.request.tokens.TokensRequest;
 import com.percolate.sdk.api.request.topics.TopicsRequest;
+import com.percolate.sdk.api.request.translate.TranslateRequest;
+import com.percolate.sdk.api.request.users.UsersRequest;
+import com.percolate.sdk.api.request.vendor.facebook.FacebookVendorRequest;
+import com.percolate.sdk.api.request.vendor.instagram.InstagramVendorRequest;
+import com.percolate.sdk.api.request.vendor.twitter.TwitterVendorRequest;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -360,5 +367,61 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public PostSetRequest postSet() {
         return new PostSetRequest(this);
+    }
+
+    /**
+     * @return {@link TasksRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public TasksRequest tasks() {
+        return new TasksRequest(this);
+    }
+
+    /**
+     * @return {@link TokensRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public TokensRequest tokens() {
+        return new TokensRequest(this);
+    }
+
+    /**
+     * @return {@link TranslateRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public TranslateRequest translate() {
+        return new TranslateRequest(this);
+    }
+
+    /**
+     * @return {@link UsersRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public UsersRequest users() {
+        return new UsersRequest(this);
+    }
+
+    /**
+     * @return {@link FacebookVendorRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public FacebookVendorRequest vendorFacebook() {
+        return new FacebookVendorRequest(this);
+    }
+
+    /**
+     * @return {@link InstagramVendorRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public InstagramVendorRequest vendorInstagram() {
+        return new InstagramVendorRequest(this);
+    }
+
+    /**
+     * @return {@link TwitterVendorRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public TwitterVendorRequest vendorTwitter() {
+        return new TwitterVendorRequest(this);
     }
 }
