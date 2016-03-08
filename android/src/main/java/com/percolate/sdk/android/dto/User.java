@@ -18,7 +18,7 @@ public class User extends com.percolate.sdk.dto.User implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(this.id);
+        dest.writeString(this.id);
         dest.writeString(this.username);
         dest.writeString(this.name);
         dest.writeString(this.createAt);
