@@ -3,6 +3,7 @@ package com.percolate.sdk.api.request.comment;
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.*;
+import okhttp3.ResponseBody;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 
@@ -36,5 +37,15 @@ public class CommentRequest {
      */
     public Call<CommentData> create(@NotNull final Comment comment) {
         return service.create(comment);
+    }
+
+    /**
+     * Delete comment.
+     *
+     * @param commentId Comment UID.
+     * @return {@link Call} object.
+     */
+    public Call<ResponseBody> delete(@NotNull final String commentId) {
+        return service.create(commentId);
     }
 }

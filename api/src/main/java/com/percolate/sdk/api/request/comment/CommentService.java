@@ -4,11 +4,9 @@ import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.dto.Comment;
 import com.percolate.sdk.dto.CommentData;
 import com.percolate.sdk.dto.Comments;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.QueryMap;
+import retrofit2.http.*;
 
 import java.util.Map;
 
@@ -22,4 +20,7 @@ interface CommentService {
 
     @POST(PercolateApi.API_V5_PATH + "/comment/")
     Call<CommentData> create(@Body Comment comment);
+
+    @DELETE(PercolateApi.API_V5_PATH + "/comment/{comment_id}")
+    Call<ResponseBody> create(@Path("comment_id") String commentId);
 }
