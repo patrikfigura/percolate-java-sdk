@@ -1,0 +1,9 @@
+{
+  "data": {
+    "updated_at": "2016-02-17T14:56:06+00:00",
+    "scope_id": "license:12345",
+    "namespace": "tag",
+    "id": "term:99",
+    "name": "newterm"
+  }
+}

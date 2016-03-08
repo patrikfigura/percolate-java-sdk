@@ -1,0 +1,57 @@
+{
+  "data": {
+    "media_buyer_ids": [],
+    "ingesting": {
+      "enabled": false
+    },
+    "monitoring": {
+      "enabled": false
+    },
+    "name": null,
+    "license": {
+      "default_brew_id": 100,
+      "name": "Personal License for Some User",
+      "brand_id": null,
+      "engagement_threshold": null,
+      "timezone": "US\/Eastern",
+      "id": 77,
+      "photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png"
+    },
+    "channel_id": 999,
+    "publishing": {
+      "xstatus_support": false,
+      "targeting_disabled": false,
+      "by_default": false,
+      "enabled": true,
+      "hub": false
+    },
+    "scoped_channel_uid": "channel:1000",
+    "token": {
+      "status": 200
+    },
+    "inbox": {
+      "enabled": false
+    },
+    "token_id": 99,
+    "following": {
+      "enabled": false
+    },
+    "license_id": 77,
+    "id": 2020,
+    "channel": {
+      "rss_url": "http:\/\/api.twitter.com\/1\/statuses\/user_timeline.json?user_id=777",
+      "name": "some_user",
+      "url": "http:\/\/twitter.com\/some_user",
+      "page_id": "777",
+      "description": "",
+      "regional_type": null,
+      "has_links": false,
+      "total_subscribers": 7,
+      "type": "twitter",
+      "id": 999,
+      "categories": [],
+      "photo_url": "https:\/\/pbs.twimg.com\/profile_images\/444\/avatar_200px_normal.jpg"
+    },
+    "uid": "license:77:channel:999"
+  }
+}

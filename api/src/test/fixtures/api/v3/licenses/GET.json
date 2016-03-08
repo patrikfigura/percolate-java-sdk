@@ -1,0 +1,68 @@
+{
+	"pagination": {
+		"total": 4,
+		"limit": 1000,
+		"offset": 0
+	},
+	"data": [{
+		"name": "Some User",
+		"brand": {
+			"id": 1,
+			"name": "Company Staff"
+		},
+		"marketplace_enabled": false,
+		"brand_id": 1,
+		"state": "active",
+		"engagement_threshold": null,
+		"timezone": "US\/Eastern",
+		"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png",
+		"type": "standard",
+		"id": 100,
+		"default_brew_id": 999
+	}, {
+		"name": "Some License 1",
+		"brand": {
+			"id": 1,
+			"name": "Company Staff"
+		},
+		"marketplace_enabled": false,
+		"brand_id": 1,
+		"state": "active",
+		"engagement_threshold": null,
+		"timezone": "US\/Eastern",
+		"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png",
+		"type": "standard",
+		"id": 888,
+		"default_brew_id": 7
+	}, {
+		"name": "Some License 2",
+		"brand": {
+			"id": 4,
+			"name": "Testing"
+		},
+		"marketplace_enabled": false,
+		"brand_id": 4,
+		"state": "active",
+		"engagement_threshold": null,
+		"timezone": "US\/Eastern",
+		"photo_url": "https:\/\/percolate.com\/cdn\/avatar\/x.png",
+		"type": "standard",
+		"id": 777,
+		"default_brew_id": 9090
+	}, {
+		"name": "Team Testing",
+		"brand": {
+			"id": 1,
+			"name": "Company Staff"
+		},
+		"marketplace_enabled": false,
+		"brand_id": 1,
+		"state": "active",
+		"engagement_threshold": null,
+		"timezone": "America\/New_York",
+		"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png",
+		"type": "standard",
+		"id": 8080,
+		"default_brew_id": 4545
+	}]
+}

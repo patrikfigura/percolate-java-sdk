@@ -1,0 +1,72 @@
+{
+	"pagination": {
+		"total": 2,
+		"limit": 1000,
+		"offset": 0
+	},
+	"data": [{
+		"user_id": 1,
+		"license": {
+			"name": "Some User",
+			"brand": {
+				"id": 1,
+				"name": "Company Staff"
+			},
+			"marketplace_enabled": false,
+			"brand_id": 1,
+			"state": "active",
+			"engagement_threshold": null,
+			"timezone": "US\/Eastern",
+			"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png",
+			"type": "personal",
+			"id": 123,
+			"default_brew_id": 333
+		},
+		"role_id": 11,
+		"is_approver": true,
+		"user": {
+			"username": "someuser@percolate.com",
+			"name": "Some User",
+			"created_at": "2014-01-06 19:23:06",
+			"email": "someuser@percolate.com",
+			"default_license_id": 123,
+			"active": true,
+			"id": 888,
+			"photo_url": "https:\/\/percolate.com\/cdn\/avatar\/x.jpg"
+		},
+		"license_id": 123,
+		"id": 11
+	}, {
+		"user_id": 2,
+		"license": {
+			"name": "My Company",
+			"brand": {
+				"id": 1,
+				"name": "Company Staff"
+			},
+			"marketplace_enabled": true,
+			"brand_id": 1,
+			"state": "active",
+			"engagement_threshold": null,
+			"timezone": "US\/Eastern",
+			"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png",
+			"type": "standard",
+			"id": 456,
+			"default_brew_id": 555
+		},
+		"role_id": 12,
+		"is_approver": false,
+		"user": {
+			"username": "someuser2@percolate.com",
+			"name": "Some User 2",
+			"created_at": "2014-01-06 19:23:06",
+			"email": "someuser2@percolate.com",
+			"default_license_id": 123,
+			"active": true,
+			"id": 888,
+			"photo_url": "https:\/\/percolate.com\/cdn\/avatar\/x.jpg"
+		},
+		"license_id": 123,
+		"id": 22
+	}]
+}

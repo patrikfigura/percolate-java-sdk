@@ -1,0 +1,95 @@
+{
+	"data": [{
+		"name": "Some User Test 1",
+		"owner_uid": "license:100",
+		"color": "#A8C9D5",
+		"parent_id": null,
+		"owner": {
+			"type": "license",
+			"id": 100,
+			"license": {
+				"default_brew_id": 333,
+				"brand": {
+					"id": 1,
+					"name": "Company Staff"
+				},
+				"name": "Some User Watson",
+				"brand_id": 1,
+				"engagement_threshold": null,
+				"timezone": "US\/Eastern",
+				"id": 100,
+				"photo_url": "https:\/\/company.com\/cdn\/img\/x\/default_73px.png"
+			}
+		},
+		"id": 777
+	}, {
+		"name": "Some User Test 2",
+		"owner_uid": "license:100",
+		"color": "#BCDCA7",
+		"parent_id": null,
+		"owner": {
+			"type": "license",
+			"id": 100,
+			"license": {
+				"default_brew_id": 333,
+				"brand": {
+					"id": 1,
+					"name": "Company Staff"
+				},
+				"name": "Some User Watson",
+				"brand_id": 1,
+				"engagement_threshold": null,
+				"timezone": "US\/Eastern",
+				"id": 100,
+				"photo_url": "https:\/\/Company.com\/cdn\/img\/d860043ea486fca32aa9f28e94f54bc3\/default_73px.png"
+			}
+		},
+		"id": 888
+	}, {
+		"name": "Subtopic 1",
+		"owner_uid": "license:100",
+		"color": "#D7E3EA",
+		"parent_id": 888,
+		"owner": {
+			"type": "license",
+			"id": 100,
+			"license": {
+				"default_brew_id": 333,
+				"brand": {
+					"id": 1,
+					"name": "Company Staff"
+				},
+				"name": "Some User Watson",
+				"brand_id": 1,
+				"engagement_threshold": null,
+				"timezone": "US\/Eastern",
+				"id": 100,
+				"photo_url": "https:\/\/company.com\/cdn\/img\/x\/default_73px.png"
+			}
+		},
+		"id": 999
+	}, {
+		"name": "SubTopic 2",
+		"owner_uid": "license:100",
+		"color": "#D7E3EA",
+		"parent_id": 888,
+		"owner": {
+			"type": "license",
+			"id": 100,
+			"license": {
+				"default_brew_id": 333,
+				"brand": {
+					"id": 1,
+					"name": "Company Staff"
+				},
+				"name": "Some User Watson",
+				"brand_id": 1,
+				"engagement_threshold": null,
+				"timezone": "US\/Eastern",
+				"id": 100,
+				"photo_url": "https:\/\/company.com\/cdn\/img\/x\/default_73px.png"
+			}
+		},
+		"id": 1111
+	}]
+}

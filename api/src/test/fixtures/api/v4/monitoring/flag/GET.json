@@ -1,0 +1,300 @@
+{
+  "pagination": {
+    "order_by": "created_at",
+    "order_direction": "desc",
+    "total": 5,
+    "limit": 20,
+    "offset": 0
+  },
+  "data": [{
+    "status": null,
+    "resolved": true,
+    "monitoring_query_id": null,
+    "resolved_at": "2015-10-19T13:47:44Z",
+    "uid": "monitoring_flag:2",
+    "owner_uid": "license:1",
+    "created_at": "2015-10-19T13:47:16Z",
+    "tags": [],
+    "tag_ids": [],
+    "rule_uid": null,
+    "created_by": {
+      "username": "user@company.com",
+      "name": "Some User",
+      "created_at": "2014-01-06T19:23:06Z",
+      "id": 2222,
+      "state": "",
+      "default_license_id": 1,
+      "active": true,
+      "email": "user@company.com",
+      "photo_url": "https:\/x.jpg"
+    },
+    "status_xid": "1111",
+    "urgent": false,
+    "resolved_by_id": 2222,
+    "license_channel_uid": "license:1:channel:22222",
+    "assignee_ids": [2222],
+    "owner": {
+      "type": "license",
+      "id": 1,
+      "license": {
+        "default_brew_id": 23232323,
+        "brand": {
+          "id": 1,
+          "name": "Company Staff"
+        },
+        "name": "Some User",
+        "brand_id": 1,
+        "engagement_threshold": null,
+        "timezone": "US\/Eastern",
+        "id": 1,
+        "photo_url": "https:\/\/company.com\/cdn\/img\/x\/default_73px.png"
+      }
+    },
+    "assignees": [{
+      "username": "user@company.com",
+      "name": "Some User",
+      "created_at": "2014-01-06T19:23:06Z",
+      "id": 2222,
+      "state": "",
+      "default_license_id": 1,
+      "active": true,
+      "email": "user@company.com",
+      "photo_url": "https:\/x.jpg"
+    }],
+    "id": 2,
+    "status_type": "twitter:reply",
+    "description": "blah"
+  }, {
+    "status": null,
+    "resolved": true,
+    "monitoring_query_id": null,
+    "resolved_at": "2015-07-24T18:37:46Z",
+    "uid": "monitoring_flag:4444",
+    "owner_uid": "license:1",
+    "created_at": "2015-07-16T13:51:20Z",
+    "tags": [],
+    "tag_ids": [],
+    "rule_uid": null,
+    "created_by": {
+      "username": "user@company.com",
+      "name": "Some User",
+      "created_at": "2014-01-06T19:23:06Z",
+      "id": 2222,
+      "state": "",
+      "default_license_id": 1,
+      "active": true,
+      "email": "user@company.com",
+      "photo_url": "https:\/x.jpg"
+    },
+    "status_xid": "123",
+    "urgent": false,
+    "resolved_by_id": 2222,
+    "license_channel_uid": "license:1:channel:123123",
+    "assignee_ids": [2222],
+    "owner": {
+      "type": "license",
+      "id": 1,
+      "license": {
+        "default_brew_id": 23232323,
+        "brand": {
+          "id": 1,
+          "name": "Company Staff"
+        },
+        "name": "Some User",
+        "brand_id": 1,
+        "engagement_threshold": null,
+        "timezone": "US\/Eastern",
+        "id": 1,
+        "photo_url": "https:\/\/company.com\/cdn\/img\/x\/default_73px.png"
+      }
+    },
+    "assignees": [{
+      "username": "user@company.com",
+      "name": "Some User",
+      "created_at": "2014-01-06T19:23:06Z",
+      "id": 2222,
+      "state": "",
+      "default_license_id": 1,
+      "active": true,
+      "email": "user@company.com",
+      "photo_url": "https:\/x.jpg"
+    }],
+    "id": 4444,
+    "status_type": "twitter:reply",
+    "description": "y test"
+  }, {
+    "status": null,
+    "resolved": true,
+    "monitoring_query_id": null,
+    "resolved_at": "2015-07-16T13:53:05Z",
+    "uid": "monitoring_flag:4444",
+    "owner_uid": "license:1",
+    "created_at": "2015-07-16T13:51:03Z",
+    "tags": [],
+    "tag_ids": [],
+    "rule_uid": null,
+    "created_by": {
+      "username": "user@company.com",
+      "name": "Some User",
+      "created_at": "2014-01-06T19:23:06Z",
+      "id": 2222,
+      "state": "",
+      "default_license_id": 1,
+      "active": true,
+      "email": "user@company.com",
+      "photo_url": "https:\/x.jpg"
+    },
+    "status_xid": "4444",
+    "urgent": false,
+    "resolved_by_id": 2222,
+    "license_channel_uid": "license:1:channel:123123",
+    "assignee_ids": [2222],
+    "owner": {
+      "type": "license",
+      "id": 1,
+      "license": {
+        "default_brew_id": 23232323,
+        "brand": {
+          "id": 1,
+          "name": "Company Staff"
+        },
+        "name": "Some User",
+        "brand_id": 1,
+        "engagement_threshold": null,
+        "timezone": "US\/Eastern",
+        "id": 1,
+        "photo_url": "https:\/\/company.com\/cdn\/img\/x\/default_73px.png"
+      }
+    },
+    "assignees": [{
+      "username": "user@company.com",
+      "name": "Some User",
+      "created_at": "2014-01-06T19:23:06Z",
+      "id": 2222,
+      "state": "",
+      "default_license_id": 1,
+      "active": true,
+      "email": "user@company.com",
+      "photo_url": "https:\/x.jpg"
+    }],
+    "id": 4444,
+    "status_type": "twitter:tweet",
+    "description": "x test"
+  }, {
+    "status": null,
+    "resolved": true,
+    "monitoring_query_id": null,
+    "resolved_at": "2015-08-05T14:07:26Z",
+    "uid": "monitoring_flag:800",
+    "owner_uid": "license:1",
+    "created_at": "2015-07-16T12:47:23Z",
+    "tags": [],
+    "tag_ids": [],
+    "rule_uid": null,
+    "created_by": {
+      "username": "user@company.com",
+      "name": "Some User",
+      "created_at": "2014-01-06T19:23:06Z",
+      "id": 2222,
+      "state": "",
+      "default_license_id": 1,
+      "active": true,
+      "email": "user@company.com",
+      "photo_url": "https:\/x.jpg"
+    },
+    "status_xid": "900",
+    "urgent": true,
+    "resolved_by_id": 2222,
+    "license_channel_uid": "license:1:channel:22222",
+    "assignee_ids": [2222],
+    "owner": {
+      "type": "license",
+      "id": 1,
+      "license": {
+        "default_brew_id": 23232323,
+        "brand": {
+          "id": 1,
+          "name": "Company Staff"
+        },
+        "name": "Some User",
+        "brand_id": 1,
+        "engagement_threshold": null,
+        "timezone": "US\/Eastern",
+        "id": 1,
+        "photo_url": "https:\/\/company.com\/cdn\/img\/x\/default_73px.png"
+      }
+    },
+    "assignees": [{
+      "username": "user@company.com",
+      "name": "Some User",
+      "created_at": "2014-01-06T19:23:06Z",
+      "id": 2222,
+      "state": "",
+      "default_license_id": 1,
+      "active": true,
+      "email": "user@company.com",
+      "photo_url": "https:\/x.jpg"
+    }],
+    "id": 800,
+    "status_type": "twitter:tweet",
+    "description": "Test 2 edited"
+  }, {
+    "status": null,
+    "resolved": true,
+    "monitoring_query_id": null,
+    "resolved_at": "2015-07-16T13:20:21Z",
+    "uid": "monitoring_flag:999999",
+    "owner_uid": "license:1",
+    "created_at": "2015-06-30T15:19:46Z",
+    "tags": [],
+    "tag_ids": [],
+    "rule_uid": null,
+    "created_by": {
+      "username": "user@company.com",
+      "name": "Some User",
+      "created_at": "2014-01-06T19:23:06Z",
+      "id": 2222,
+      "state": "",
+      "default_license_id": 1,
+      "active": true,
+      "email": "user@company.com",
+      "photo_url": "https:\/x.jpg"
+    },
+    "status_xid": "18432409948943_898989",
+    "urgent": false,
+    "resolved_by_id": 2222,
+    "license_channel_uid": "license:1:channel:123456",
+    "assignee_ids": [2222],
+    "owner": {
+      "type": "license",
+      "id": 1,
+      "license": {
+        "default_brew_id": 23232323,
+        "brand": {
+          "id": 1,
+          "name": "Company Staff"
+        },
+        "name": "Some User",
+        "brand_id": 1,
+        "engagement_threshold": null,
+        "timezone": "US\/Eastern",
+        "id": 1,
+        "photo_url": "https:\/\/company.com\/cdn\/img\/x\/default_73px.png"
+      }
+    },
+    "assignees": [{
+      "username": "user@company.com",
+      "name": "Some User",
+      "created_at": "2014-01-06T19:23:06Z",
+      "id": 2222,
+      "state": "",
+      "default_license_id": 1,
+      "active": true,
+      "email": "user@company.com",
+      "photo_url": "https:\/x.jpg"
+    }],
+    "id": 999999,
+    "status_type": "facebook:status",
+    "description": "test"
+  }]
+}

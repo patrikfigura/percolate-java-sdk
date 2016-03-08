@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "user_id": 999,
+      "created_at": "2016-02-16T19:23:05Z",
+      "value": "approve",
+      "cycle_count": 1,
+      "workflow_id": 123,
+      "action": "vote",
+      "step_id": 1,
+      "id": 11
+    }
+  ]
+}

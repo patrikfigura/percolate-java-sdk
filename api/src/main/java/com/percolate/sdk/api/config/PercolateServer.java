@@ -1,5 +1,7 @@
 package com.percolate.sdk.api.config;
 
+import okhttp3.Interceptor;
+
 /**
  * Percolate server endpoint configuration data.
  */
@@ -20,6 +22,11 @@ public class PercolateServer {
      */
     private boolean enableLocalProxy = false;
 
+    /**
+     * Allow clients to inject a custom interceptor if required.
+     */
+    private Interceptor customInterceptor;
+
     public PercolateServer(String transport, String domain) {
         this.transport = transport;
         this.domain = domain;
@@ -39,5 +46,13 @@ public class PercolateServer {
 
     public void setEnableLocalProxy(boolean enableLocalProxy) {
         this.enableLocalProxy = enableLocalProxy;
+    }
+
+    public Interceptor getCustomInterceptor() {
+        return customInterceptor;
+    }
+
+    public void setCustomInterceptor(Interceptor customInterceptor) {
+        this.customInterceptor = customInterceptor;
     }
 }

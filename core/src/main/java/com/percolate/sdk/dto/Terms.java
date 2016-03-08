@@ -20,6 +20,9 @@ public class Terms implements Serializable {
     @JsonProperty("data")
     protected List<Term> data;
 
+    @JsonProperty("errors")
+    protected Errors errors;
+
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);

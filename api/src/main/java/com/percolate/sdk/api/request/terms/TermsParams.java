@@ -1,5 +1,7 @@
 package com.percolate.sdk.api.request.terms;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,7 +18,7 @@ public class TermsParams {
     }
 
     public TermsParams termIds(List<String> termIds) {
-        params.put("ids", termIds);
+        params.put("ids", StringUtils.join(termIds, ","));
         return this;
     }
 

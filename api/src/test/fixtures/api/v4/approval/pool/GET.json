@@ -1,0 +1,47 @@
+{
+  "pagination": {
+    "order_by": null,
+    "order_direction": "asc",
+    "total": 2,
+    "limit": 1000,
+    "offset": 0
+  },
+  "data": [
+    {
+      "name": "Approval Workflow 1",
+      "default": false,
+      "steps": [
+        {
+          "ordinal": 1,
+          "approver_ids": [
+            14849
+          ],
+          "name": "The First Step",
+          "channel_ids": [],
+          "quorum": "any"
+        }
+      ],
+      "license_id": 14027,
+      "type": "post",
+      "id": 4776
+    },
+    {
+      "name": "Approval Workflow 2",
+      "default": false,
+      "steps": [
+        {
+          "ordinal": 1,
+          "approver_ids": [
+            14849
+          ],
+          "name": "My 1st Step",
+          "channel_ids": [],
+          "quorum": "all"
+        }
+      ],
+      "license_id": 14027,
+      "type": "post",
+      "id": 5355
+    }
+  ]
+}

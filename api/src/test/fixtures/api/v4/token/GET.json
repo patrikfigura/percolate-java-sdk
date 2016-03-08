@@ -1,0 +1,198 @@
+{
+	"pagination": {
+		"order_by": null,
+		"order_direction": "asc",
+		"total": 11,
+		"limit": 1000,
+		"offset": 0
+	},
+	"data": [{
+		"status": 200,
+		"platform": "facebook",
+		"marketo_templates": [],
+		"id": 6,
+		"pages": [{
+			"access_token": "abc123",
+			"albums": [{
+				"link": "https:\/\/www.facebook.com\/album.php?fbid=123&id=1234&aid=123",
+				"id": "123",
+				"name": "Pictures"
+			}, {
+				"link": "https:\/\/www.facebook.com\/album.php?fbid=12345&id=1234&aid=123",
+				"id": "12345",
+				"name": "Test creation"
+			}],
+			"id": "1234",
+			"name": "FB Account 2"
+		}, {
+			"category": "Website",
+			"name": "Some FB Page",
+			"access_token": "abc1234",
+			"perms": ["ADMINISTER", "EDIT_PROFILE", "CREATE_CONTENT", "MODERATE_CONTENT", "CREATE_ADS", "BASIC_ADMIN"],
+			"albums": [{
+				"link": "https:\/\/www.facebook.com\/album.php?fbid=123456&id=123&aid=1",
+				"id": "123456",
+				"name": "Timeline Photos"
+			}],
+			"id": "123"
+		}, {
+			"category": "Small Business",
+			"name": "Company Unlimited",
+			"access_token": "abc12345",
+			"perms": ["EDIT_PROFILE", "CREATE_CONTENT", "MODERATE_CONTENT", "CREATE_ADS", "BASIC_ADMIN"],
+			"albums": [],
+			"id": "2"
+		}, {
+			"category": "Food\/Beverages",
+			"name": "UserX's Page",
+			"access_token": "abc12345",
+			"perms": ["MODERATE_CONTENT", "CREATE_ADS", "BASIC_ADMIN"],
+			"albums": [{
+				"link": "https:\/\/www.facebook.com\/album.php?fbid=1234567&id=5&aid=1",
+				"id": "1234567",
+				"name": "Timeline Photos"
+			}],
+			"id": "5"
+		}]
+	}, {
+		"status": 403,
+		"platform": "facebook",
+		"marketo_templates": [],
+		"id": 6,
+		"pages": [{
+			"access_token": "abc123",
+			"albums": [],
+			"id": "1234",
+			"name": "Perca Latte"
+		}, {
+			"category": "Appliances",
+			"name": "BLP",
+			"access_token": "abc1234",
+			"perms": ["MODERATE_CONTENT", "CREATE_ADS", "BASIC_ADMIN"],
+			"albums": [{
+				"link": "https:\/\/www.facebook.com\/album.php?fbid=12345678&id=6&aid=1",
+				"id": "12345678",
+				"name": "Timeline Photos"
+			}, {
+				"link": "https:\/\/www.facebook.com\/album.php?fbid=123&id=6&aid=2",
+				"id": "123",
+				"name": "Untitled Album"
+			}, {
+				"link": "https:\/\/www.facebook.com\/album.php?fbid=1234&id=6&aid=3",
+				"id": "1234",
+				"name": "Profile Pictures"
+			}],
+			"id": "6"
+		}, {
+			"category": "Food\/beverages",
+			"name": "PT",
+			"access_token": "abc1234",
+			"perms": ["CREATE_ADS", "BASIC_ADMIN"],
+			"albums": [{
+				"link": "https:\/\/www.facebook.com\/album.php?fbid=12345&id=7&aid=123",
+				"id": "12345",
+				"name": "Timeline Photos"
+			}],
+			"id": "7"
+		}]
+	}, {
+		"status": 200,
+		"platform": "tumblr",
+		"marketo_templates": [],
+		"id": 1,
+		"pages": [{
+			"id": "soempage.tumblr.com",
+			"name": "soempage"
+		}, {
+			"id": "testaccount1.tumblr.com",
+			"name": "testaccount1"
+		}]
+	}, {
+		"status": 200,
+		"platform": "twitter",
+		"marketo_templates": [],
+		"id": 2,
+		"pages": [{
+			"id": "4",
+			"name": "some_user"
+		}]
+	}, {
+		"status": 403,
+		"platform": "linkedin",
+		"marketo_templates": [],
+		"id": 3,
+		"pages": [{
+			"subtype": "company",
+			"id": "1",
+			"name": "PrcltTest2"
+		}, {
+			"subtype": "company",
+			"id": "2",
+			"name": "PrcltTest1"
+		}, {
+			"subtype": "company",
+			"id": "3",
+			"name": "Percomail"
+		}, {
+			"subtype": "user",
+			"name": "Perco Test",
+			"id": "4"
+		}]
+	}, {
+		"status": 200,
+		"platform": "instagram",
+		"marketo_templates": [],
+		"id": 5,
+		"pages": [{
+			"id": "123",
+			"name": "useruser"
+		}]
+	}, {
+		"status": 200,
+		"platform": "youtube",
+		"marketo_templates": [],
+		"id": 73246,
+		"pages": [{
+			"id": "abc123",
+			"name": ""
+		}]
+	}, {
+		"status": 200,
+		"platform": "twitter",
+		"marketo_templates": [],
+		"id": 6,
+		"pages": [{
+			"id": "4040",
+			"name": "CompanyDemo"
+		}]
+	}, {
+		"status": 200,
+		"platform": "instagram",
+		"marketo_templates": [],
+		"id": 7,
+		"pages": [{
+			"id": "1010269771",
+			"name": "testaccount1"
+		}]
+	}, {
+		"status": 200,
+		"platform": "weibo",
+		"marketo_templates": [],
+		"id": 4,
+		"pages": [{
+			"id": "524249107",
+			"name": "percodev"
+		}]
+	}, {
+		"status": 200,
+		"platform": "facebook",
+		"marketo_templates": [],
+		"id": 5,
+		"pages": [{
+			"access_token": "abc123",
+			"albums": [],
+			"id": "1234",
+			"name": "FB Account 2"
+		}]
+	}]
+}

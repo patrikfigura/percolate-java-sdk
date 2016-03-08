@@ -35,6 +35,12 @@ public class Comment implements Serializable {
     @JsonProperty("scope_id")
     protected String scopeUID;
 
+    @JsonProperty("context_type")
+    protected String contextType;
+
+    @JsonProperty("context_ext")
+    protected CommentContextExt contextExt;
+
     @JsonProperty("updated_at")
     protected String updatedAt;
 
@@ -93,6 +99,22 @@ public class Comment implements Serializable {
 
     public String getUpdatedAt() {
         return updatedAt;
+    }
+
+    public String getContextType() {
+        return contextType;
+    }
+
+    public void setContextType(String contextType) {
+        this.contextType = contextType;
+    }
+
+    public CommentContextExt getContextExt() {
+        return contextExt;
+    }
+
+    public void setContextExt(CommentContextExt contextExt) {
+        this.contextExt = contextExt;
     }
 
     public void setUpdatedAt(String updatedAt) {

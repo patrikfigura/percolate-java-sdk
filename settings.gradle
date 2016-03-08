@@ -1,2 +1,1 @@
-include ':core', ':android', ':api'
-
+include ':core', ':android', ':api', ':python-bridge'

@@ -14,7 +14,6 @@ public class Mention extends com.percolate.sdk.dto.Mention implements Parcelable
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.mentionName);
         dest.writeString(this.objectId);
         dest.writeValue(this.offset);
         dest.writeValue(this.length);
@@ -24,7 +23,6 @@ public class Mention extends com.percolate.sdk.dto.Mention implements Parcelable
     }
 
     protected Mention(Parcel in) {
-        this.mentionName = in.readString();
         this.objectId = in.readString();
         this.offset = (Integer) in.readValue(Integer.class.getClassLoader());
         this.length = (Integer) in.readValue(Integer.class.getClassLoader());
