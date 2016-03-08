@@ -17,7 +17,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1410394764791629912L;
 
     @JsonProperty("id")
-    protected Long id;
+    protected String id;
 
     @JsonProperty("username")
     protected String username;
@@ -66,11 +66,11 @@ public class User implements Serializable {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

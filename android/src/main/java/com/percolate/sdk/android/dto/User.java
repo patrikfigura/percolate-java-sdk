@@ -39,7 +39,7 @@ public class User extends com.percolate.sdk.dto.User implements Parcelable {
     }
 
     protected User(Parcel in) {
-        this.id = (Long) in.readValue(Long.class.getClassLoader());
+        this.id = in.readString();
         this.username = in.readString();
         this.name = in.readString();
         this.createAt = in.readString();
