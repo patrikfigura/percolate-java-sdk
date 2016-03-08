@@ -15,7 +15,7 @@ public class CommentsInclude implements Serializable {
 
     private static final long serialVersionUID = -5501631821037467976L;
 
-    @JsonProperty("users")
+    @JsonProperty("user")
     protected List<User> users;
 
     @Override
