@@ -14,8 +14,6 @@ public class Mention implements Serializable {
 
     private static final long serialVersionUID = -8957592944012297251L;
 
-    protected String mentionName; // set by client as the display name for the mention
-
     @JsonProperty("object_id")
     protected String objectId;
 
@@ -52,29 +50,5 @@ public class Mention implements Serializable {
 
     public void setLength(Integer length) {
         this.length = length;
-    }
-
-    public int getMentionOffset() {
-        return offset;
-    }
-
-    public void setMentionOffset(int offset) {
-        this.offset = offset;
-    }
-
-    public int getMentionLength() {
-        return length;
-    }
-
-    public void setMentionLength(int length) {
-        this.length = length;
-    }
-
-    public String getMentionName() {
-        return mentionName;
-    }
-
-    public void setMentionName(String mentionName) {
-        this.mentionName = mentionName;
     }
 }
