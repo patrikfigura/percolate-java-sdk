@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.TwitterUser;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -35,6 +35,7 @@ public class TwitterConversationMessage extends com.percolate.sdk.dto.TwitterCon
         dest.writeSerializable(this.recipient);
         dest.writeMap(this.entities);
         dest.writeString(this.createdAt);
+        dest.writeMap(this.extraFields);
     }
 
     public TwitterConversationMessage() {
@@ -58,6 +59,8 @@ public class TwitterConversationMessage extends com.percolate.sdk.dto.TwitterCon
         this.entities = new LinkedHashMap<>();
         in.readMap(this.entities, LinkedHashMap.class.getClassLoader());
         this.createdAt = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterConversationMessage> CREATOR = new Creator<TwitterConversationMessage>() {

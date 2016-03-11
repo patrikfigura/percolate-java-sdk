@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class Token extends com.percolate.sdk.dto.Token implements Parcelable {
         dest.writeString(this.platform);
         dest.writeValue(this.status);
         dest.writeList(this.pages);
+        dest.writeMap(this.extraFields);
     }
 
     public Token() {
@@ -33,6 +35,8 @@ public class Token extends com.percolate.sdk.dto.Token implements Parcelable {
         this.status = (Integer) in.readValue(Integer.class.getClassLoader());
         this.pages = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.pages, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Token> CREATOR = new Creator<Token>() {

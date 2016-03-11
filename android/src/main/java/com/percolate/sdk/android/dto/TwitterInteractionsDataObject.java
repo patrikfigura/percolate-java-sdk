@@ -3,6 +3,7 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 /**
@@ -18,6 +19,7 @@ public class TwitterInteractionsDataObject extends com.percolate.sdk.dto.Twitter
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.id);
         dest.writeMap(this.xobj);
+        dest.writeMap(this.extraFields);
     }
 
     public TwitterInteractionsDataObject() {
@@ -27,6 +29,8 @@ public class TwitterInteractionsDataObject extends com.percolate.sdk.dto.Twitter
         this.id = in.readString();
         this.xobj = new LinkedHashMap<>();
         in.readMap(this.xobj, LinkedHashMap.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterInteractionsDataObject> CREATOR = new Creator<TwitterInteractionsDataObject>() {

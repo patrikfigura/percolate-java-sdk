@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import com.percolate.sdk.dto.Term;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -20,6 +21,7 @@ public class Terms extends com.percolate.sdk.dto.Terms implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.meta);
         dest.writeList(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public Terms() {
@@ -34,6 +36,8 @@ public class Terms extends com.percolate.sdk.dto.Terms implements Parcelable {
         this.meta = (com.percolate.sdk.dto.V5Meta) in.readSerializable();
         this.data = new ArrayList<Term>();
         in.readList(this.data, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Terms> CREATOR = new Creator<Terms>() {

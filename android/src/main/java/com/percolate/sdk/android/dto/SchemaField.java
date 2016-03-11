@@ -2,12 +2,12 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.Link;
 import com.percolate.sdk.dto.Term;
 import com.percolate.sdk.dto.Topic;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -33,6 +33,7 @@ public class SchemaField extends com.percolate.sdk.dto.SchemaField implements Pa
         dest.writeString(this.description);
         dest.writeValue(this.required);
         dest.writeMap(this.ext);
+        dest.writeMap(this.extraFields);
     }
 
     public SchemaField() {
@@ -55,6 +56,8 @@ public class SchemaField extends com.percolate.sdk.dto.SchemaField implements Pa
         this.required = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.ext = new LinkedHashMap<>();
         in.readMap(this.ext, LinkedHashMap.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<SchemaField> CREATOR = new Creator<SchemaField>() {

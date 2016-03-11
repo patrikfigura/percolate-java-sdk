@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.TwitterRelationshipStatus}.  Implements {@link Parcelable}
  */
@@ -20,6 +22,7 @@ public class TwitterRelationshipStatus extends com.percolate.sdk.dto.TwitterRela
         dest.writeValue(this.canDM);
         dest.writeValue(this.followedBy);
         dest.writeValue(this.following);
+        dest.writeMap(this.extraFields);
     }
 
     public TwitterRelationshipStatus() {
@@ -32,6 +35,8 @@ public class TwitterRelationshipStatus extends com.percolate.sdk.dto.TwitterRela
         this.canDM = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.followedBy = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.following = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterRelationshipStatus> CREATOR = new Creator<TwitterRelationshipStatus>() {

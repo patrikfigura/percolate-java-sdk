@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.CommentContextExt}.  Implements {@link Parcelable}
  */
@@ -18,6 +20,7 @@ public class CommentContextExt extends com.percolate.sdk.dto.CommentContextExt i
         dest.writeValue(this.x);
         dest.writeValue(this.y);
         dest.writeString(this.unit);
+        dest.writeMap(this.extraFields);
     }
 
     public CommentContextExt() {
@@ -27,6 +30,8 @@ public class CommentContextExt extends com.percolate.sdk.dto.CommentContextExt i
         this.x = (Double) in.readValue(Double.class.getClassLoader());
         this.y = (Double) in.readValue(Double.class.getClassLoader());
         this.unit = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<CommentContextExt> CREATOR = new Creator<CommentContextExt>() {

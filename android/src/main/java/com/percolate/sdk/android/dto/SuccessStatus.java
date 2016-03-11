@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.SuccessStatus}.  Implements {@link Parcelable}
@@ -16,6 +17,7 @@ public class SuccessStatus extends com.percolate.sdk.dto.SuccessStatus implement
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.success);
+        dest.writeMap(this.extraFields);
     }
 
     public SuccessStatus() {
@@ -23,6 +25,8 @@ public class SuccessStatus extends com.percolate.sdk.dto.SuccessStatus implement
 
     protected SuccessStatus(Parcel in) {
         this.success = (com.percolate.sdk.dto.SuccessProperty) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<SuccessStatus> CREATOR = new Creator<SuccessStatus>() {

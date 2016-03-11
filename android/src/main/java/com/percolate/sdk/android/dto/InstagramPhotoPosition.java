@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.InstagramPhotoPosition}.  Implements {@link Parcelable}
  */
@@ -16,6 +18,7 @@ public class InstagramPhotoPosition extends com.percolate.sdk.dto.InstagramPhoto
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeValue(this.x);
         dest.writeValue(this.y);
+        dest.writeMap(this.extraFields);
     }
 
     public InstagramPhotoPosition() {
@@ -24,6 +27,8 @@ public class InstagramPhotoPosition extends com.percolate.sdk.dto.InstagramPhoto
     protected InstagramPhotoPosition(Parcel in) {
         this.x = (Double) in.readValue(Double.class.getClassLoader());
         this.y = (Double) in.readValue(Double.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramPhotoPosition> CREATOR = new Creator<InstagramPhotoPosition>() {

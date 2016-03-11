@@ -2,7 +2,6 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.InstagramComments;
 import com.percolate.sdk.dto.InstagramImageLocation;
 import com.percolate.sdk.dto.InstagramLikes;
@@ -11,6 +10,7 @@ import com.percolate.sdk.dto.InstagramUserData;
 import com.percolate.sdk.dto.InstagramUsersInPhoto;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -39,6 +39,7 @@ public class InstagramMediaData extends com.percolate.sdk.dto.InstagramMediaData
         dest.writeString(this.filter);
         dest.writeList(this.usersInPhoto);
         dest.writeString(this.createdTime);
+        dest.writeMap(this.extraFields);
     }
 
     public InstagramMediaData() {
@@ -61,6 +62,8 @@ public class InstagramMediaData extends com.percolate.sdk.dto.InstagramMediaData
         this.usersInPhoto = new ArrayList<InstagramUsersInPhoto>();
         in.readList(this.usersInPhoto, List.class.getClassLoader());
         this.createdTime = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramMediaData> CREATOR = new Creator<InstagramMediaData>() {

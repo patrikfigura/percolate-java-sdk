@@ -2,11 +2,12 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.Channel;
 import com.percolate.sdk.dto.EnabledProperty;
 import com.percolate.sdk.dto.License;
 import com.percolate.sdk.dto.TokenStatus;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.LicenseChannel}.  Implements {@link Parcelable}
@@ -34,6 +35,7 @@ public class LicenseChannel extends com.percolate.sdk.dto.LicenseChannel impleme
         dest.writeSerializable(this.license);
         dest.writeSerializable(this.channel);
         dest.writeString(this.scopedChannelUid);
+        dest.writeMap(this.extraFields);
     }
 
     public LicenseChannel() {
@@ -55,6 +57,8 @@ public class LicenseChannel extends com.percolate.sdk.dto.LicenseChannel impleme
         this.license = (License) in.readSerializable();
         this.channel = (Channel) in.readSerializable();
         this.scopedChannelUid = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<LicenseChannel> CREATOR = new Creator<LicenseChannel>() {

@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -24,6 +24,7 @@ public class ApprovalPool extends com.percolate.sdk.dto.ApprovalPool implements 
         dest.writeValue(this.licenseId);
         dest.writeString(this.type);
         dest.writeList(this.steps);
+        dest.writeMap(this.extraFields);
     }
 
     public ApprovalPool() {
@@ -36,6 +37,8 @@ public class ApprovalPool extends com.percolate.sdk.dto.ApprovalPool implements 
         this.type = in.readString();
         this.steps = new ArrayList<com.percolate.sdk.dto.ApprovalPoolStep>();
         in.readList(this.steps, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ApprovalPool> CREATOR = new Creator<ApprovalPool>() {

@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.BrewLicenceConnection}.  Implements {@link Parcelable}
  */
@@ -23,6 +25,7 @@ public class BrewLicenceConnection extends com.percolate.sdk.dto.BrewLicenceConn
         dest.writeValue(this.licenseId);
         dest.writeString(this.type);
         dest.writeValue(this.order);
+        dest.writeMap(this.extraFields);
     }
 
     public BrewLicenceConnection() {
@@ -38,6 +41,8 @@ public class BrewLicenceConnection extends com.percolate.sdk.dto.BrewLicenceConn
         this.licenseId = (Integer) in.readValue(Integer.class.getClassLoader());
         this.type = in.readString();
         this.order = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<BrewLicenceConnection> CREATOR = new Creator<BrewLicenceConnection>() {

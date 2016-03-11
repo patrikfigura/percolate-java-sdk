@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.PushRegistrationInfo}.  Implements {@link Parcelable}
  */
@@ -17,6 +19,7 @@ public class PushRegistrationInfo extends com.percolate.sdk.dto.PushRegistration
         dest.writeString(this.registrationId);
         dest.writeString(this.pushTokenUID);
         dest.writeString(this.appVersion);
+        dest.writeMap(this.extraFields);
     }
 
     public PushRegistrationInfo() {
@@ -26,6 +29,8 @@ public class PushRegistrationInfo extends com.percolate.sdk.dto.PushRegistration
         this.registrationId = in.readString();
         this.pushTokenUID = in.readString();
         this.appVersion = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<PushRegistrationInfo> CREATOR = new Creator<PushRegistrationInfo>() {

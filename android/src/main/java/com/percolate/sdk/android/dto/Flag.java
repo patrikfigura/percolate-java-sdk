@@ -2,7 +2,6 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.FacebookConversationMessage;
 import com.percolate.sdk.dto.FacebookMonitoringXObj;
 import com.percolate.sdk.dto.FlagOwner;
@@ -14,6 +13,7 @@ import com.percolate.sdk.dto.TwitterConversationMessage;
 import com.percolate.sdk.dto.User;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -54,6 +54,7 @@ public class Flag extends com.percolate.sdk.dto.Flag implements Parcelable {
         dest.writeSerializable(this.owner);
         dest.writeString(this.errorId);
         dest.writeString(this.statusType);
+        dest.writeMap(this.extraFields);
     }
 
     public Flag() {
@@ -92,6 +93,8 @@ public class Flag extends com.percolate.sdk.dto.Flag implements Parcelable {
         this.owner = (FlagOwner) in.readSerializable();
         this.errorId = in.readString();
         this.statusType = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Flag> CREATOR = new Creator<Flag>() {

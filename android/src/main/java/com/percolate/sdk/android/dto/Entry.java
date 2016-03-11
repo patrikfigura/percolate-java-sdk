@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.Entry}.  Implements {@link Parcelable}
@@ -21,6 +21,7 @@ public class Entry extends com.percolate.sdk.dto.Entry implements Parcelable {
         dest.writeLong(createdAt != null ? createdAt.getTime() : -1);
         dest.writeString(this.description);
         dest.writeString(this.url);
+        dest.writeMap(this.extraFields);
     }
 
     public Entry() {
@@ -32,6 +33,8 @@ public class Entry extends com.percolate.sdk.dto.Entry implements Parcelable {
         this.createdAt = tmpCreatedAt == -1 ? null : new Date(tmpCreatedAt);
         this.description = in.readString();
         this.url = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Entry> CREATOR = new Creator<Entry>() {

@@ -2,12 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.PostV5Data;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.PostV5}.  Implements {@link Parcelable}
@@ -22,6 +20,7 @@ public class PostV5 extends com.percolate.sdk.dto.PostV5 implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.include);
         dest.writeSerializable(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public PostV5() {
@@ -31,6 +30,8 @@ public class PostV5 extends com.percolate.sdk.dto.PostV5 implements Parcelable {
         this.include = (com.percolate.sdk.dto.PostV5Include) in.readSerializable();
         this.data = (PostV5Data) in.readSerializable();
         this.errors = new ArrayList<>();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<PostV5> CREATOR = new Creator<PostV5>() {

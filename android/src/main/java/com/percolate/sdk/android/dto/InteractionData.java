@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.InteractionData}.  Implements {@link Parcelable}
  */
@@ -22,6 +24,7 @@ public class InteractionData extends com.percolate.sdk.dto.InteractionData imple
         dest.writeStringList(this.termIds);
         dest.writeString(this.createdAt);
         dest.writeString(this.updatedAt);
+        dest.writeMap(this.extraFields);
     }
 
     public InteractionData() {
@@ -36,6 +39,8 @@ public class InteractionData extends com.percolate.sdk.dto.InteractionData imple
         this.termIds = in.createStringArrayList();
         this.createdAt = in.readString();
         this.updatedAt = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InteractionData> CREATOR = new Creator<InteractionData>() {

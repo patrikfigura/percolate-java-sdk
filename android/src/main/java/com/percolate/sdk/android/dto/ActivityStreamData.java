@@ -2,7 +2,6 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.ActivityStreamMetadata;
 import com.percolate.sdk.dto.Mention;
 
@@ -35,6 +34,7 @@ public class ActivityStreamData extends com.percolate.sdk.dto.ActivityStreamData
         dest.writeString(this.type);
         dest.writeList(this.metadataList);
         dest.writeList(this.mentions);
+        dest.writeMap(this.extraFields);
     }
 
     public ActivityStreamData() {
@@ -56,6 +56,8 @@ public class ActivityStreamData extends com.percolate.sdk.dto.ActivityStreamData
         in.readList(this.metadataList, List.class.getClassLoader());
         this.mentions = new ArrayList<Mention>();
         in.readList(this.mentions, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ActivityStreamData> CREATOR = new Creator<ActivityStreamData>() {

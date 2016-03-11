@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,6 +19,7 @@ public class CommentsInclude extends com.percolate.sdk.dto.CommentsInclude imple
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.users);
+        dest.writeMap(this.extraFields);
     }
 
     public CommentsInclude() {
@@ -27,6 +28,8 @@ public class CommentsInclude extends com.percolate.sdk.dto.CommentsInclude imple
     protected CommentsInclude(Parcel in) {
         this.users = new ArrayList<com.percolate.sdk.dto.User>();
         in.readList(this.users, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<CommentsInclude> CREATOR = new Creator<CommentsInclude>() {

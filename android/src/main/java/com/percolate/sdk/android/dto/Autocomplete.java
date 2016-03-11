@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class Autocomplete extends com.percolate.sdk.dto.Autocomplete implements 
         dest.writeList(this.collegeNetworks);
         dest.writeList(this.collegeMajors);
         dest.writeList(this.collegeYears);
+        dest.writeMap(this.extraFields);
     }
 
     public Autocomplete() {
@@ -45,6 +47,8 @@ public class Autocomplete extends com.percolate.sdk.dto.Autocomplete implements 
         in.readList(this.collegeMajors, List.class.getClassLoader());
         this.collegeYears = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.collegeYears, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Autocomplete> CREATOR = new Creator<Autocomplete>() {

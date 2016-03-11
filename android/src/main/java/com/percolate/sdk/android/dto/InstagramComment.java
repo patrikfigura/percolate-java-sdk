@@ -2,8 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.InstagramUserData;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.InstagramComment}.  Implements {@link Parcelable}
@@ -21,6 +22,7 @@ public class InstagramComment extends com.percolate.sdk.dto.InstagramComment imp
         dest.writeString(this.text);
         dest.writeSerializable(this.from);
         dest.writeString(this.createdTime);
+        dest.writeMap(this.extraFields);
     }
 
     public InstagramComment() {
@@ -32,6 +34,8 @@ public class InstagramComment extends com.percolate.sdk.dto.InstagramComment imp
         this.text = in.readString();
         this.from = (InstagramUserData) in.readSerializable();
         this.createdTime = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramComment> CREATOR = new Creator<InstagramComment>() {

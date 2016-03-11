@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.MediaMetaData}.  Implements {@link Parcelable}
@@ -38,6 +38,7 @@ public class MediaMetaData extends com.percolate.sdk.dto.MediaMetaData implement
         dest.writeValue(this.creatorUserId);
         dest.writeValue(this.itemCount);
         dest.writeStringList(this.path);
+        dest.writeMap(this.extraFields);
     }
 
     public MediaMetaData() {
@@ -66,6 +67,8 @@ public class MediaMetaData extends com.percolate.sdk.dto.MediaMetaData implement
         this.creatorUserId = (Long) in.readValue(Long.class.getClassLoader());
         this.itemCount = (Integer) in.readValue(Integer.class.getClassLoader());
         this.path = in.createStringArrayList();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MediaMetaData> CREATOR = new Creator<MediaMetaData>() {

@@ -2,8 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.TwitterRelationshipStatus;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.TwitterRelationship}.  Implements {@link Parcelable}
@@ -18,6 +19,7 @@ public class TwitterRelationship extends com.percolate.sdk.dto.TwitterRelationsh
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.source);
         dest.writeSerializable(this.target);
+        dest.writeMap(this.extraFields);
     }
 
     public TwitterRelationship() {
@@ -26,6 +28,8 @@ public class TwitterRelationship extends com.percolate.sdk.dto.TwitterRelationsh
     protected TwitterRelationship(Parcel in) {
         this.source = (com.percolate.sdk.dto.TwitterRelationshipStatus) in.readSerializable();
         this.target = (TwitterRelationshipStatus) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterRelationship> CREATOR = new Creator<TwitterRelationship>() {

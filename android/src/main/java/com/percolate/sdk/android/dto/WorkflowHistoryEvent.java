@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.WorkflowHistoryEvent}.  Implements {@link Parcelable}
@@ -26,6 +27,7 @@ public class WorkflowHistoryEvent extends com.percolate.sdk.dto.WorkflowHistoryE
         dest.writeValue(this.stepId);
         dest.writeByte(outdated ? (byte) 1 : (byte) 0);
         dest.writeString(this.errorId);
+        dest.writeMap(this.extraFields);
     }
 
     public WorkflowHistoryEvent() {
@@ -43,6 +45,8 @@ public class WorkflowHistoryEvent extends com.percolate.sdk.dto.WorkflowHistoryE
         this.stepId = (Long) in.readValue(Long.class.getClassLoader());
         this.outdated = in.readByte() != 0;
         this.errorId = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<WorkflowHistoryEvent> CREATOR = new Creator<WorkflowHistoryEvent>() {

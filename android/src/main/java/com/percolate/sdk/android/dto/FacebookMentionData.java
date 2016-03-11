@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.FacebookMentionData}.  Implements {@link Parcelable}
  */
@@ -18,6 +20,7 @@ public class FacebookMentionData extends com.percolate.sdk.dto.FacebookMentionDa
         dest.writeString(this.xid);
         dest.writeValue(this.length);
         dest.writeValue(this.offset);
+        dest.writeMap(this.extraFields);
     }
 
     public FacebookMentionData() {
@@ -28,6 +31,8 @@ public class FacebookMentionData extends com.percolate.sdk.dto.FacebookMentionDa
         this.xid = in.readString();
         this.length = (Integer) in.readValue(Integer.class.getClassLoader());
         this.offset = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMentionData> CREATOR = new Creator<FacebookMentionData>() {

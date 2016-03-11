@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.LocalCreatedAt}.  Implements {@link Parcelable}
  */
@@ -16,6 +18,7 @@ public class LocalCreatedAt extends com.percolate.sdk.dto.LocalCreatedAt impleme
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.datetime);
         dest.writeString(this.timezone);
+        dest.writeMap(this.extraFields);
     }
 
     public LocalCreatedAt() {
@@ -24,6 +27,8 @@ public class LocalCreatedAt extends com.percolate.sdk.dto.LocalCreatedAt impleme
     protected LocalCreatedAt(Parcel in) {
         this.datetime = in.readString();
         this.timezone = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<LocalCreatedAt> CREATOR = new Creator<LocalCreatedAt>() {

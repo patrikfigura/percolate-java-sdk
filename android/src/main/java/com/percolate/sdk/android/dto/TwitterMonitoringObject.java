@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.Tweet;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -27,6 +27,7 @@ public class TwitterMonitoringObject extends com.percolate.sdk.dto.TwitterMonito
         dest.writeList(this.activity);
         dest.writeValue(this.authorInfluencerScore);
         dest.writeSerializable(this.tweet);
+        dest.writeMap(this.extraFields);
     }
 
     public TwitterMonitoringObject() {
@@ -41,6 +42,8 @@ public class TwitterMonitoringObject extends com.percolate.sdk.dto.TwitterMonito
         in.readList(this.activity, List.class.getClassLoader());
         this.authorInfluencerScore = (Long) in.readValue(Long.class.getClassLoader());
         this.tweet = (Tweet) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterMonitoringObject> CREATOR = new Creator<TwitterMonitoringObject>() {

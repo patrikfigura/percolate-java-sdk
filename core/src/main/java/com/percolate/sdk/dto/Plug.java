@@ -1,12 +1,14 @@
 package com.percolate.sdk.dto;
 
-import java.io.Serializable;
-
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -31,6 +33,8 @@ public class Plug implements Serializable {
 
     @JsonProperty("end_at")
     protected String endAt;
+
+    protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override
     public String toString() {
@@ -83,5 +87,17 @@ public class Plug implements Serializable {
 
     public void setEndAt(String endAt) {
         this.endAt = endAt;
+    }
+
+    public Map<String, Object> getExtraFields() {
+        if(extraFields == null) {
+            extraFields = new HashMap<>();
+        }
+        return extraFields;
+    }
+
+    @JsonAnySetter
+    public void putExtraField(String key, Object value) {
+        getExtraFields().put(key, value);
     }
 }

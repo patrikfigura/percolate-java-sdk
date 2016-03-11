@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.License;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -21,6 +21,7 @@ public class Licenses extends com.percolate.sdk.dto.Licenses implements Parcelab
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.paginationData);
         dest.writeList(this.licenses);
+        dest.writeMap(this.extraFields);
     }
 
     public Licenses() {
@@ -30,6 +31,8 @@ public class Licenses extends com.percolate.sdk.dto.Licenses implements Parcelab
         this.paginationData = (com.percolate.sdk.dto.PaginationData) in.readSerializable();
         this.licenses = new ArrayList<License>();
         in.readList(this.licenses, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Licenses> CREATOR = new Creator<Licenses>() {

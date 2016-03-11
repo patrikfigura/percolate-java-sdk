@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.SuccessProperty}.  Implements {@link Parcelable}
  */
@@ -15,6 +17,7 @@ public class SuccessProperty extends com.percolate.sdk.dto.SuccessProperty imple
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.success);
+        dest.writeMap(this.extraFields);
     }
 
     public SuccessProperty() {
@@ -22,6 +25,8 @@ public class SuccessProperty extends com.percolate.sdk.dto.SuccessProperty imple
 
     protected SuccessProperty(Parcel in) {
         this.success = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<SuccessProperty> CREATOR = new Creator<SuccessProperty>() {

@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.InteractionsMetaDataQuery}.  Implements {@link Parcelable}
  */
@@ -17,6 +19,7 @@ public class InteractionsMetaDataQuery extends com.percolate.sdk.dto.Interaction
         dest.writeString(this.platform);
         dest.writeString(this.xids);
         dest.writeString(this.scopeIds);
+        dest.writeMap(this.extraFields);
     }
 
     public InteractionsMetaDataQuery() {
@@ -26,6 +29,8 @@ public class InteractionsMetaDataQuery extends com.percolate.sdk.dto.Interaction
         this.platform = in.readString();
         this.xids = in.readString();
         this.scopeIds = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InteractionsMetaDataQuery> CREATOR = new Creator<InteractionsMetaDataQuery>() {

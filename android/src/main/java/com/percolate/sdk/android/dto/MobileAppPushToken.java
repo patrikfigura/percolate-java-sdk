@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.MobileAppPushToken}.  Implements {@link Parcelable}
@@ -16,6 +17,7 @@ public class MobileAppPushToken extends com.percolate.sdk.dto.MobileAppPushToken
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.mobileAppPushTokenData);
+        dest.writeMap(this.extraFields);
     }
 
     public MobileAppPushToken() {
@@ -23,6 +25,8 @@ public class MobileAppPushToken extends com.percolate.sdk.dto.MobileAppPushToken
 
     protected MobileAppPushToken(Parcel in) {
         this.mobileAppPushTokenData = (com.percolate.sdk.dto.MobileAppPushTokenData) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MobileAppPushToken> CREATOR = new Creator<MobileAppPushToken>() {

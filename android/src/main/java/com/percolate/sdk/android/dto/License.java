@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.UserRolesLicenseData;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -32,6 +32,7 @@ public class License extends com.percolate.sdk.dto.License implements Parcelable
         dest.writeString(this.state);
         dest.writeString(this.type);
         dest.writeList(this.userRolesLicenseData);
+        dest.writeMap(this.extraFields);
     }
 
     public License() {
@@ -52,6 +53,8 @@ public class License extends com.percolate.sdk.dto.License implements Parcelable
         this.type = in.readString();
         this.userRolesLicenseData = new ArrayList<UserRolesLicenseData>();
         in.readList(this.userRolesLicenseData, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<License> CREATOR = new Creator<License>() {

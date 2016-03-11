@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,6 +19,7 @@ public class StreamsInclude extends com.percolate.sdk.dto.StreamsInclude impleme
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.channels);
+        dest.writeMap(this.extraFields);
     }
 
     public StreamsInclude() {
@@ -27,6 +28,8 @@ public class StreamsInclude extends com.percolate.sdk.dto.StreamsInclude impleme
     protected StreamsInclude(Parcel in) {
         this.channels = new ArrayList<com.percolate.sdk.dto.StreamChannelData>();
         in.readList(this.channels, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<StreamsInclude> CREATOR = new Creator<StreamsInclude>() {

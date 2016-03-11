@@ -1,13 +1,15 @@
 package com.percolate.sdk.dto;
 
-import java.io.Serializable;
-import java.util.LinkedHashMap;
-
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -17,6 +19,8 @@ public class Facets implements Serializable {
 
     @JsonProperty("tags")
     protected LinkedHashMap<String, Integer> tags = new LinkedHashMap<>();
+
+    protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override
     public String toString() {
@@ -29,5 +33,17 @@ public class Facets implements Serializable {
 
     public void setTags(LinkedHashMap<String, Integer> tags) {
         this.tags = tags;
+    }
+
+    public Map<String, Object> getExtraFields() {
+        if(extraFields == null) {
+            extraFields = new HashMap<>();
+        }
+        return extraFields;
+    }
+
+    @JsonAnySetter
+    public void putExtraField(String key, Object value) {
+        getExtraFields().put(key, value);
     }
 }

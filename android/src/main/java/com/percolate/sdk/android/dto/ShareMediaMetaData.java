@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.ShareMediaMetaData}.  Implements {@link Parcelable}
@@ -27,6 +27,7 @@ public class ShareMediaMetaData extends com.percolate.sdk.dto.ShareMediaMetaData
         dest.writeString(this.originalFilename);
         dest.writeLong(modifiedAt != null ? modifiedAt.getTime() : -1);
         dest.writeSerializable(this.creator);
+        dest.writeMap(this.extraFields);
     }
 
     public ShareMediaMetaData() {
@@ -45,6 +46,8 @@ public class ShareMediaMetaData extends com.percolate.sdk.dto.ShareMediaMetaData
         long tmpModifiedAt = in.readLong();
         this.modifiedAt = tmpModifiedAt == -1 ? null : new Date(tmpModifiedAt);
         this.creator = (com.percolate.sdk.dto.Creator) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ShareMediaMetaData> CREATOR = new Creator<ShareMediaMetaData>() {

@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.TwitterInteractions}.  Implements {@link Parcelable}
@@ -16,6 +17,7 @@ public class TwitterInteractions extends com.percolate.sdk.dto.TwitterInteractio
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public TwitterInteractions() {
@@ -23,6 +25,8 @@ public class TwitterInteractions extends com.percolate.sdk.dto.TwitterInteractio
 
     protected TwitterInteractions(Parcel in) {
         this.data = (com.percolate.sdk.dto.TwitterMonitoringObject) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterInteractions> CREATOR = new Creator<TwitterInteractions>() {

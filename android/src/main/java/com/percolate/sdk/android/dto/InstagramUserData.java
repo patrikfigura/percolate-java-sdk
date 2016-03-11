@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.InstagramUserData}.  Implements {@link Parcelable}
@@ -22,6 +23,7 @@ public class InstagramUserData extends com.percolate.sdk.dto.InstagramUserData i
         dest.writeString(this.bio);
         dest.writeString(this.website);
         dest.writeSerializable(this.counts);
+        dest.writeMap(this.extraFields);
     }
 
     public InstagramUserData() {
@@ -35,6 +37,8 @@ public class InstagramUserData extends com.percolate.sdk.dto.InstagramUserData i
         this.bio = in.readString();
         this.website = in.readString();
         this.counts = (com.percolate.sdk.dto.InstagramUserCounts) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramUserData> CREATOR = new Creator<InstagramUserData>() {

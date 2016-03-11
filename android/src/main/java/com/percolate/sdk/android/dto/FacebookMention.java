@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.FacebookMention}.  Implements {@link Parcelable}
@@ -18,6 +19,7 @@ public class FacebookMention extends com.percolate.sdk.dto.FacebookMention imple
         dest.writeString(this.id);
         dest.writeString(this.name);
         dest.writeSerializable(this.picture);
+        dest.writeMap(this.extraFields);
     }
 
     public FacebookMention() {
@@ -27,6 +29,8 @@ public class FacebookMention extends com.percolate.sdk.dto.FacebookMention imple
         this.id = in.readString();
         this.name = in.readString();
         this.picture = (com.percolate.sdk.dto.FacebookMentionPicture) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMention> CREATOR = new Creator<FacebookMention>() {

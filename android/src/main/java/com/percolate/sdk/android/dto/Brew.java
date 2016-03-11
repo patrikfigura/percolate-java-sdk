@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.Brew}.  Implements {@link Parcelable}
  */
@@ -20,6 +22,7 @@ public class Brew extends com.percolate.sdk.dto.Brew implements Parcelable {
         dest.writeValue(this.priority);
         dest.writeString(this.type);
         dest.writeByte(approved ? (byte) 1 : (byte) 0);
+        dest.writeMap(this.extraFields);
     }
 
     public Brew() {
@@ -32,6 +35,8 @@ public class Brew extends com.percolate.sdk.dto.Brew implements Parcelable {
         this.priority = (Integer) in.readValue(Integer.class.getClassLoader());
         this.type = in.readString();
         this.approved = in.readByte() != 0;
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Brew> CREATOR = new Creator<Brew>() {

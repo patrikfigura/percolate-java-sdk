@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.MediaMetaDataHolder}.  Implements {@link Parcelable}
@@ -16,6 +17,7 @@ public class MediaMetaDataHolder extends com.percolate.sdk.dto.MediaMetaDataHold
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public MediaMetaDataHolder() {
@@ -23,6 +25,8 @@ public class MediaMetaDataHolder extends com.percolate.sdk.dto.MediaMetaDataHold
 
     protected MediaMetaDataHolder(Parcel in) {
         this.data = (com.percolate.sdk.dto.MediaMetaData) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MediaMetaDataHolder> CREATOR = new Creator<MediaMetaDataHolder>() {

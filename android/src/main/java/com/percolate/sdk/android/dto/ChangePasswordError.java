@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class ChangePasswordError extends com.percolate.sdk.dto.ChangePasswordErr
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.errors);
+        dest.writeMap(this.extraFields);
     }
 
     public ChangePasswordError() {
@@ -27,6 +29,8 @@ public class ChangePasswordError extends com.percolate.sdk.dto.ChangePasswordErr
     protected ChangePasswordError(Parcel in) {
         this.errors = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.errors, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ChangePasswordError> CREATOR = new Creator<ChangePasswordError>() {

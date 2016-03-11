@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,6 +19,7 @@ public class FacebookMessageAttachments extends com.percolate.sdk.dto.FacebookMe
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public FacebookMessageAttachments() {
@@ -27,6 +28,8 @@ public class FacebookMessageAttachments extends com.percolate.sdk.dto.FacebookMe
     protected FacebookMessageAttachments(Parcel in) {
         this.data = new ArrayList<com.percolate.sdk.dto.FacebookMessageAttachment>();
         in.readList(this.data, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMessageAttachments> CREATOR = new Creator<FacebookMessageAttachments>() {

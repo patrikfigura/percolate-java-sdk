@@ -2,9 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.ShareObject;
 import com.percolate.sdk.dto.ShareUser;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.ShareData}.  Implements {@link Parcelable}
@@ -29,6 +30,7 @@ public class ShareData extends com.percolate.sdk.dto.ShareData implements Parcel
         dest.writeString(this.ownerUID);
         dest.writeSerializable(this.recipient);
         dest.writeString(this.recipientUID);
+        dest.writeMap(this.extraFields);
     }
 
     public ShareData() {
@@ -47,6 +49,8 @@ public class ShareData extends com.percolate.sdk.dto.ShareData implements Parcel
         this.ownerUID = in.readString();
         this.recipient = (ShareUser) in.readSerializable();
         this.recipientUID = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ShareData> CREATOR = new Creator<ShareData>() {

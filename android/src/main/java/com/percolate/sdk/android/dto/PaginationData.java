@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.PaginationData}.  Implements {@link Parcelable}
  */
@@ -22,6 +24,7 @@ public class PaginationData extends com.percolate.sdk.dto.PaginationData impleme
         dest.writeString(this.orderDirection);
         dest.writeString(this.startKey);
         dest.writeString(this.endKey);
+        dest.writeMap(this.extraFields);
     }
 
     public PaginationData() {
@@ -35,6 +38,8 @@ public class PaginationData extends com.percolate.sdk.dto.PaginationData impleme
         this.orderDirection = in.readString();
         this.startKey = in.readString();
         this.endKey = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<PaginationData> CREATOR = new Creator<PaginationData>() {

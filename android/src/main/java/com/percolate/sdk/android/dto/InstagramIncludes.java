@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,6 +19,7 @@ public class InstagramIncludes extends com.percolate.sdk.dto.InstagramIncludes i
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.posts);
+        dest.writeMap(this.extraFields);
     }
 
     public InstagramIncludes() {
@@ -27,6 +28,8 @@ public class InstagramIncludes extends com.percolate.sdk.dto.InstagramIncludes i
     protected InstagramIncludes(Parcel in) {
         this.posts = new ArrayList<com.percolate.sdk.dto.InstagramIncludeMediaData>();
         in.readList(this.posts, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramIncludes> CREATOR = new Creator<InstagramIncludes>() {

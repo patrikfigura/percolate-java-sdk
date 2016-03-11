@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -26,6 +26,7 @@ public class Targeting extends com.percolate.sdk.dto.Targeting implements Parcel
         dest.writeList(this.interestedIn);
         dest.writeList(this.relationshipStatuses);
         dest.writeList(this.workNetworks);
+        dest.writeMap(this.extraFields);
     }
 
     public Targeting() {
@@ -43,6 +44,8 @@ public class Targeting extends com.percolate.sdk.dto.Targeting implements Parcel
         in.readList(this.relationshipStatuses, List.class.getClassLoader());
         this.workNetworks = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.workNetworks, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Targeting> CREATOR = new Creator<Targeting>() {

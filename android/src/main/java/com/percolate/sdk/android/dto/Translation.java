@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.Translation}.  Implements {@link Parcelable}
@@ -16,6 +17,7 @@ public class Translation extends com.percolate.sdk.dto.Translation implements Pa
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public Translation() {
@@ -23,6 +25,8 @@ public class Translation extends com.percolate.sdk.dto.Translation implements Pa
 
     protected Translation(Parcel in) {
         this.data = (com.percolate.sdk.dto.TranslationData) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Translation> CREATOR = new Creator<Translation>() {

@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.Schema;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -29,6 +29,7 @@ public class Platform extends com.percolate.sdk.dto.Platform implements Parcelab
         dest.writeString(this.color);
         dest.writeString(this.avatarId);
         dest.writeString(this.updatedAt);
+        dest.writeMap(this.extraFields);
     }
 
     public Platform() {
@@ -47,6 +48,8 @@ public class Platform extends com.percolate.sdk.dto.Platform implements Parcelab
         this.color = in.readString();
         this.avatarId = in.readString();
         this.updatedAt = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Platform> CREATOR = new Creator<Platform>() {

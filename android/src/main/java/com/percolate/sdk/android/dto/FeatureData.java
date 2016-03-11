@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.FeatureData}.  Implements {@link Parcelable}
  */
@@ -18,6 +20,7 @@ public class FeatureData extends com.percolate.sdk.dto.FeatureData implements Pa
         dest.writeString(this.scopeId);
         dest.writeString(this.featureType);
         dest.writeString(this.updatedAt);
+        dest.writeMap(this.extraFields);
     }
 
     public FeatureData() {
@@ -28,6 +31,8 @@ public class FeatureData extends com.percolate.sdk.dto.FeatureData implements Pa
         this.scopeId = in.readString();
         this.featureType = in.readString();
         this.updatedAt = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FeatureData> CREATOR = new Creator<FeatureData>() {

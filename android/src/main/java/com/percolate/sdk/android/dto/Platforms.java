@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.Platform;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -21,6 +21,7 @@ public class Platforms extends com.percolate.sdk.dto.Platforms implements Parcel
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.meta);
         dest.writeList(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public Platforms() {
@@ -30,6 +31,8 @@ public class Platforms extends com.percolate.sdk.dto.Platforms implements Parcel
         this.meta = (com.percolate.sdk.dto.V5Meta) in.readSerializable();
         this.data = new ArrayList<Platform>();
         in.readList(this.data, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Platforms> CREATOR = new Creator<Platforms>() {

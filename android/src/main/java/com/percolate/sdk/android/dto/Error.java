@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.Error}.  Implements {@link Parcelable}
  */
@@ -17,6 +19,7 @@ public class Error extends com.percolate.sdk.dto.Error implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.message);
         dest.writeString(this.code);
+        dest.writeMap(this.extraFields);
     }
 
     public Error() {
@@ -25,6 +28,8 @@ public class Error extends com.percolate.sdk.dto.Error implements Parcelable {
     protected Error(Parcel in) {
         this.message = in.readString();
         this.code = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Parcelable.Creator<com.percolate.sdk.android.dto.Error> CREATOR = new Parcelable.Creator<com.percolate.sdk.android.dto.Error>() {

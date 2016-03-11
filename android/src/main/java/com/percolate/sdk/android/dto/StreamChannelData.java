@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.StreamChannelData}.  Implements {@link Parcelable}
@@ -28,6 +29,7 @@ public class StreamChannelData extends com.percolate.sdk.dto.StreamChannelData i
         dest.writeString(this.tokenId);
         dest.writeStringList(this.mediaBuyerIds);
         dest.writeString(this.updatedAt);
+        dest.writeMap(this.extraFields);
     }
 
     public StreamChannelData() {
@@ -47,6 +49,8 @@ public class StreamChannelData extends com.percolate.sdk.dto.StreamChannelData i
         this.tokenId = in.readString();
         this.mediaBuyerIds = in.createStringArrayList();
         this.updatedAt = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<StreamChannelData> CREATOR = new Creator<StreamChannelData>() {

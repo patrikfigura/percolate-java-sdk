@@ -7,10 +7,10 @@ import com.percolate.sdk.dto.FacebookMentionData;
 import com.percolate.sdk.dto.LocalCreatedAt;
 import com.percolate.sdk.dto.PostSetData;
 import com.percolate.sdk.dto.Targeting;
-import com.percolate.sdk.dto.Term;
 import com.percolate.sdk.dto.TwitterInteractionsData;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -55,6 +55,8 @@ public class Post extends com.percolate.sdk.dto.Post implements Parcelable {
         dest.writeString(this.errorId);
         dest.writeValue(this.approvalPoolId);
         dest.writeList(this.facebookMentions);
+        dest.writeMap(this.extraFields);
+        dest.writeMap(this.extraFields);
     }
 
     public Post() {
@@ -94,6 +96,8 @@ public class Post extends com.percolate.sdk.dto.Post implements Parcelable {
         this.approvalPoolId = (Long) in.readValue(Long.class.getClassLoader());
         this.facebookMentions = new ArrayList<FacebookMentionData>();
         in.readList(this.facebookMentions, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Post> CREATOR = new Creator<Post>() {

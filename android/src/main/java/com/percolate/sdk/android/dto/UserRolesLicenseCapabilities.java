@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.UserRolesLicenseCapabilities}.  Implements {@link Parcelable}
  */
@@ -19,6 +21,7 @@ public class UserRolesLicenseCapabilities extends com.percolate.sdk.dto.UserRole
         dest.writeString(this.name);
         dest.writeStringList(this.tags);
         dest.writeStringList(this.implies);
+        dest.writeMap(this.extraFields);
     }
 
     public UserRolesLicenseCapabilities() {
@@ -30,6 +33,8 @@ public class UserRolesLicenseCapabilities extends com.percolate.sdk.dto.UserRole
         this.name = in.readString();
         this.tags = in.createStringArrayList();
         this.implies = in.createStringArrayList();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<UserRolesLicenseCapabilities> CREATOR = new Creator<UserRolesLicenseCapabilities>() {

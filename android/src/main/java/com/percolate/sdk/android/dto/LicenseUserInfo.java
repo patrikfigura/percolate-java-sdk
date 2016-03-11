@@ -2,8 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.License;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.LicenseUserInfo}.  Implements {@link Parcelable}
@@ -23,6 +24,7 @@ public class LicenseUserInfo extends com.percolate.sdk.dto.LicenseUserInfo imple
         dest.writeValue(this.licenseId);
         dest.writeSerializable(this.user);
         dest.writeSerializable(this.license);
+        dest.writeMap(this.extraFields);
     }
 
     public LicenseUserInfo() {
@@ -36,6 +38,8 @@ public class LicenseUserInfo extends com.percolate.sdk.dto.LicenseUserInfo imple
         this.licenseId = (Long) in.readValue(Long.class.getClassLoader());
         this.user = (com.percolate.sdk.dto.User) in.readSerializable();
         this.license = (License) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<LicenseUserInfo> CREATOR = new Creator<LicenseUserInfo>() {

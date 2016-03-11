@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.InstagramImageLocation}.  Implements {@link Parcelable}
  */
@@ -18,6 +20,7 @@ public class InstagramImageLocation extends com.percolate.sdk.dto.InstagramImage
         dest.writeString(this.name);
         dest.writeValue(this.latitude);
         dest.writeValue(this.longitude);
+        dest.writeMap(this.extraFields);
     }
 
     public InstagramImageLocation() {
@@ -28,6 +31,8 @@ public class InstagramImageLocation extends com.percolate.sdk.dto.InstagramImage
         this.name = in.readString();
         this.latitude = (Double) in.readValue(Double.class.getClassLoader());
         this.longitude = (Double) in.readValue(Double.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramImageLocation> CREATOR = new Creator<InstagramImageLocation>() {

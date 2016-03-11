@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.Keywords}.  Implements {@link Parcelable}
  */
@@ -17,6 +19,7 @@ public class Keywords extends com.percolate.sdk.dto.Keywords implements Parcelab
         dest.writeValue(this.id);
         dest.writeString(this.keyword);
         dest.writeValue(this.totalOccurences);
+        dest.writeMap(this.extraFields);
     }
 
     public Keywords() {
@@ -26,6 +29,8 @@ public class Keywords extends com.percolate.sdk.dto.Keywords implements Parcelab
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.keyword = in.readString();
         this.totalOccurences = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Keywords> CREATOR = new Creator<Keywords>() {

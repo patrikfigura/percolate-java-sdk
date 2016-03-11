@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.MobileAppPushTokenData}.  Implements {@link Parcelable}
  */
@@ -22,6 +24,7 @@ public class MobileAppPushTokenData extends com.percolate.sdk.dto.MobileAppPushT
         dest.writeValue(this.active);
         dest.writeString(this.arn);
         dest.writeString(this.mobileAppArn);
+        dest.writeMap(this.extraFields);
     }
 
     public MobileAppPushTokenData() {
@@ -36,6 +39,8 @@ public class MobileAppPushTokenData extends com.percolate.sdk.dto.MobileAppPushT
         this.active = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.arn = in.readString();
         this.mobileAppArn = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MobileAppPushTokenData> CREATOR = new Creator<MobileAppPushTokenData>() {

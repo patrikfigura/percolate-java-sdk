@@ -1,12 +1,14 @@
 package com.percolate.sdk.dto;
 
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -22,6 +24,8 @@ public class TwitterConversationListData implements Serializable {
 
     @JsonProperty("replied")
     protected boolean replied; //Set by ApiGetTwitterConversation, but not by ApiGetTwitterConversationThread
+
+    protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override
     public String toString() {
@@ -50,5 +54,17 @@ public class TwitterConversationListData implements Serializable {
 
     public void setXobj(TwitterConversationMessage xobj) {
         this.xobj = xobj;
+    }
+
+    public Map<String, Object> getExtraFields() {
+        if(extraFields == null) {
+            extraFields = new HashMap<>();
+        }
+        return extraFields;
+    }
+
+    @JsonAnySetter
+    public void putExtraField(String key, Object value) {
+        getExtraFields().put(key, value);
     }
 }

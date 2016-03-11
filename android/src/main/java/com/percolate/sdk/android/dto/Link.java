@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -24,6 +24,7 @@ public class Link extends com.percolate.sdk.dto.Link implements Parcelable {
         dest.writeString(this.description);
         dest.writeString(this.url);
         dest.writeList(this.medias);
+        dest.writeMap(this.extraFields);
     }
 
     public Link() {
@@ -37,6 +38,8 @@ public class Link extends com.percolate.sdk.dto.Link implements Parcelable {
         this.url = in.readString();
         this.medias = new ArrayList<com.percolate.sdk.dto.Media>();
         in.readList(this.medias, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Link> CREATOR = new Creator<Link>() {

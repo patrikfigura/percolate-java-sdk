@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,6 +19,7 @@ public class FacebookUserDataList extends com.percolate.sdk.dto.FacebookUserData
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public FacebookUserDataList() {
@@ -27,6 +28,8 @@ public class FacebookUserDataList extends com.percolate.sdk.dto.FacebookUserData
     protected FacebookUserDataList(Parcel in) {
         this.data = new ArrayList<com.percolate.sdk.dto.FacebookUser>();
         in.readList(this.data, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookUserDataList> CREATOR = new Creator<FacebookUserDataList>() {

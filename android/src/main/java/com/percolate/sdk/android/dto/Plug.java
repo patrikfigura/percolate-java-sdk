@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.Plug}.  Implements {@link Parcelable}
  */
@@ -20,6 +22,7 @@ public class Plug extends com.percolate.sdk.dto.Plug implements Parcelable {
         dest.writeString(this.createdAt);
         dest.writeString(this.startAt);
         dest.writeString(this.endAt);
+        dest.writeMap(this.extraFields);
     }
 
     public Plug() {
@@ -32,6 +35,8 @@ public class Plug extends com.percolate.sdk.dto.Plug implements Parcelable {
         this.createdAt = in.readString();
         this.startAt = in.readString();
         this.endAt = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Plug> CREATOR = new Creator<Plug>() {

@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.TwitterStatus}.  Implements {@link Parcelable}
@@ -33,6 +34,7 @@ public class TwitterStatus extends com.percolate.sdk.dto.TwitterStatus implement
         dest.writeString(this.lang);
         dest.writeValue(this.possiblySensitive);
         dest.writeSerializable(this.retweetedStatus);
+        dest.writeMap(this.extraFields);
     }
 
     public TwitterStatus() {
@@ -57,6 +59,8 @@ public class TwitterStatus extends com.percolate.sdk.dto.TwitterStatus implement
         this.lang = in.readString();
         this.possiblySensitive = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.retweetedStatus = (com.percolate.sdk.dto.Tweet) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterStatus> CREATOR = new Creator<TwitterStatus>() {

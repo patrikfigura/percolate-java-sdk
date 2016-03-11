@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.MediaReleaseResponseData}.  Implements {@link Parcelable}
  */
@@ -23,6 +25,7 @@ public class MediaReleaseResponseData extends com.percolate.sdk.dto.MediaRelease
         dest.writeString(this.birthdate);
         dest.writeString(this.email);
         dest.writeString(this.signatureImageUrl);
+        dest.writeMap(this.extraFields);
     }
 
     public MediaReleaseResponseData() {
@@ -38,6 +41,8 @@ public class MediaReleaseResponseData extends com.percolate.sdk.dto.MediaRelease
         this.birthdate = in.readString();
         this.email = in.readString();
         this.signatureImageUrl = in.readString();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MediaReleaseResponseData> CREATOR = new Creator<MediaReleaseResponseData>() {

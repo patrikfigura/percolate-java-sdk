@@ -2,13 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.Topic;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.TwitterQuery}.  Implements {@link Parcelable}
@@ -37,6 +33,7 @@ public class TwitterQuery extends com.percolate.sdk.dto.TwitterQuery implements 
         dest.writeValue(this.version);
         dest.writeValue(this.isCustom);
         dest.writeValue(this.monthlyUsageLimit);
+        dest.writeMap(this.extraFields);
     }
 
     public TwitterQuery() {
@@ -63,6 +60,8 @@ public class TwitterQuery extends com.percolate.sdk.dto.TwitterQuery implements 
         this.version = (Long) in.readValue(Long.class.getClassLoader());
         this.isCustom = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.monthlyUsageLimit = (Long) in.readValue(Long.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterQuery> CREATOR = new Creator<TwitterQuery>() {

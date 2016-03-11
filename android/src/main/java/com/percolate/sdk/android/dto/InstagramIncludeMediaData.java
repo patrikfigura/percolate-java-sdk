@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.InstagramMonitoringObjectMetaData;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -25,6 +25,7 @@ public class InstagramIncludeMediaData extends com.percolate.sdk.dto.InstagramIn
         dest.writeValue(this.relatedPostSetId);
         dest.writeSerializable(this.xobj);
         dest.writeSerializable(this.meta);
+        dest.writeMap(this.extraFields);
     }
 
     public InstagramIncludeMediaData() {
@@ -37,6 +38,8 @@ public class InstagramIncludeMediaData extends com.percolate.sdk.dto.InstagramIn
         this.relatedPostSetId = (Long) in.readValue(Long.class.getClassLoader());
         this.xobj = (com.percolate.sdk.dto.InstagramMediaData) in.readSerializable();
         this.meta = (InstagramMonitoringObjectMetaData) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramIncludeMediaData> CREATOR = new Creator<InstagramIncludeMediaData>() {
