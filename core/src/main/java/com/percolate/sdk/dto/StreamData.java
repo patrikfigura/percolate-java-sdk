@@ -1,9 +1,6 @@
 package com.percolate.sdk.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonIgnoreType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -136,4 +133,15 @@ public class StreamData implements Serializable {
         this.ext = ext;
     }
 
+    public Map<String, Object> getExtraFields() {
+        if(extraFields == null) {
+            extraFields = new HashMap<>();
+        }
+        return extraFields;
+    }
+
+    @JsonAnySetter
+    public void putExtraField(String key, Object value) {
+        getExtraFields().put(key, value);
+    }
 }

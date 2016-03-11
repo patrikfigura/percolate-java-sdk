@@ -1,14 +1,14 @@
 package com.percolate.sdk.dto;
 
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
@@ -66,5 +66,17 @@ public class CampaignSectionData implements Serializable {
 
     public void setMediaUids(List<String> mediaUids) {
         this.mediaUids = mediaUids;
+    }
+
+    public Map<String, Object> getExtraFields() {
+        if(extraFields == null) {
+            extraFields = new HashMap<>();
+        }
+        return extraFields;
+    }
+
+    @JsonAnySetter
+    public void putExtraField(String key, Object value) {
+        getExtraFields().put(key, value);
     }
 }

@@ -1,5 +1,6 @@
 package com.percolate.sdk.dto;
 
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -66,4 +67,16 @@ public class InstagramMonitoringObjectMetaData implements Serializable {
         this.parentShortcode = parentShortcode;
     }
 
+
+    public Map<String, Object> getExtraFields() {
+        if(extraFields == null) {
+            extraFields = new HashMap<>();
+        }
+        return extraFields;
+    }
+
+    @JsonAnySetter
+    public void putExtraField(String key, Object value) {
+        getExtraFields().put(key, value);
+    }
 }
