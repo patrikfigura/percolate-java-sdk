@@ -6,6 +6,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -27,6 +29,8 @@ public class Follower implements Serializable {
 
     @JsonProperty("error_id")
     protected String errorId;
+
+    protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override
     public String toString() {

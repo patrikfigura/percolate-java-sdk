@@ -1,17 +1,20 @@
 package com.percolate.sdk.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MediaItems extends ArrayList<Media> {
 
     private static final long serialVersionUID = -7668204906873975115L;
+
+    protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override
     public String toString() {

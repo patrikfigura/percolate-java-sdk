@@ -1,18 +1,14 @@
 package com.percolate.sdk.dto;
 
-import org.jetbrains.annotations.NotNull;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -49,6 +45,8 @@ public class Schema implements Serializable, Comparable<Schema> {
 
     @JsonProperty("updated_at")
     protected String updated_at;
+
+    protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override
     public String toString() {

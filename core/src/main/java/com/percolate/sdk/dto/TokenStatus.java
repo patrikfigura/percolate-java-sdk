@@ -1,11 +1,12 @@
 package com.percolate.sdk.dto;
 
-import java.io.Serializable;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -14,6 +15,8 @@ public class TokenStatus implements Serializable {
     private static final long serialVersionUID = 619792793077213566L;
 
     protected Integer status;
+
+    protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override
     public String toString() {

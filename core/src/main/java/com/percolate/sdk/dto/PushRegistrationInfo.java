@@ -1,11 +1,12 @@
 package com.percolate.sdk.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Used by Push Library to holds registration ID that will be saved in SessionManager.
@@ -24,6 +25,8 @@ public class PushRegistrationInfo implements Serializable {
 
     @JsonProperty("app_version")
     protected String appVersion; //GCM registration Id's are not guaranteed to work with the new app versions.
+
+    protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override
     public String toString() {

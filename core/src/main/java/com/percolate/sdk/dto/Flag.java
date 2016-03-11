@@ -4,15 +4,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import com.percolate.sdk.enums.FlaggingStatusType;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.*;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -103,6 +100,8 @@ public class Flag implements Serializable {
 
     @JsonProperty("status_type")
     protected String statusType; //Should match one of FlaggingStatusType enums.
+
+    protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override
     public String toString() {

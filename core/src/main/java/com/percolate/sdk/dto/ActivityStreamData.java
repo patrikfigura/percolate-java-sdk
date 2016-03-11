@@ -54,6 +54,8 @@ public class ActivityStreamData implements Serializable {
     @JsonProperty("mentions")
     protected List<Mention> mentions;
 
+    protected Map<String, Object> extraFields = new HashMap<>();
+
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
