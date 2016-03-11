@@ -30,7 +30,7 @@ public class TwitterConversationListData extends com.percolate.sdk.dto.TwitterCo
         this.xobj = (com.percolate.sdk.dto.TwitterConversationMessage) in.readSerializable();
         this.replied = in.readByte() != 0;
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterConversationListData> CREATOR = new Creator<TwitterConversationListData>() {

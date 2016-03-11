@@ -34,7 +34,7 @@ public class TranslationData extends com.percolate.sdk.dto.TranslationData imple
         this.updatedAt = in.readString();
         this.attribution = (com.percolate.sdk.dto.TranslationAttribution) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TranslationData> CREATOR = new Creator<TranslationData>() {

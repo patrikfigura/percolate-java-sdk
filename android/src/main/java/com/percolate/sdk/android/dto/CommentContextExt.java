@@ -31,7 +31,7 @@ public class CommentContextExt extends com.percolate.sdk.dto.CommentContextExt i
         this.y = (Double) in.readValue(Double.class.getClassLoader());
         this.unit = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<CommentContextExt> CREATOR = new Creator<CommentContextExt>() {

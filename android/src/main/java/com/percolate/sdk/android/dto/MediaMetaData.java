@@ -68,7 +68,7 @@ public class MediaMetaData extends com.percolate.sdk.dto.MediaMetaData implement
         this.itemCount = (Integer) in.readValue(Integer.class.getClassLoader());
         this.path = in.createStringArrayList();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MediaMetaData> CREATOR = new Creator<MediaMetaData>() {

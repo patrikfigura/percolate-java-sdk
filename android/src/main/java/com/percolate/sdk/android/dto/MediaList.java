@@ -41,7 +41,7 @@ public class MediaList extends com.percolate.sdk.dto.MediaList implements Parcel
         this.errors = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.errors, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MediaList> CREATOR = new Creator<MediaList>() {

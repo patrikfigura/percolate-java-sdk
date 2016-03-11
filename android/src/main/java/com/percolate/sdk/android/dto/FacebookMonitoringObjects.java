@@ -32,7 +32,7 @@ public class FacebookMonitoringObjects extends com.percolate.sdk.dto.FacebookMon
         in.readList(this.data, List.class.getClassLoader());
         this.paginationData = (PaginationData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMonitoringObjects> CREATOR = new Creator<FacebookMonitoringObjects>() {

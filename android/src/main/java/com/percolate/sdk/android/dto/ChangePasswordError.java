@@ -30,7 +30,7 @@ public class ChangePasswordError extends com.percolate.sdk.dto.ChangePasswordErr
         this.errors = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.errors, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ChangePasswordError> CREATOR = new Creator<ChangePasswordError>() {

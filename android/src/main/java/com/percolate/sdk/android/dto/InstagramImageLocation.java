@@ -32,7 +32,7 @@ public class InstagramImageLocation extends com.percolate.sdk.dto.InstagramImage
         this.latitude = (Double) in.readValue(Double.class.getClassLoader());
         this.longitude = (Double) in.readValue(Double.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramImageLocation> CREATOR = new Creator<InstagramImageLocation>() {

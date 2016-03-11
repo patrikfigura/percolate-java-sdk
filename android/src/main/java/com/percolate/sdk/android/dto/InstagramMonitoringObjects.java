@@ -35,7 +35,7 @@ public class InstagramMonitoringObjects extends com.percolate.sdk.dto.InstagramM
         in.readList(this.data, List.class.getClassLoader());
         this.includes = (InstagramIncludes) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramMonitoringObjects> CREATOR = new Creator<InstagramMonitoringObjects>() {

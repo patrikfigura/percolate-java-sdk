@@ -26,7 +26,7 @@ public class TokenStatus extends com.percolate.sdk.dto.TokenStatus implements Pa
     protected TokenStatus(Parcel in) {
         this.status = (Integer) in.readValue(Integer.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TokenStatus> CREATOR = new Creator<TokenStatus>() {

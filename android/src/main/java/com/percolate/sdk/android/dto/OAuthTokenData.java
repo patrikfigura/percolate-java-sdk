@@ -30,7 +30,7 @@ public class OAuthTokenData extends com.percolate.sdk.dto.OAuthTokenData impleme
         this.licenseTokenUID = in.readString();
         this.scopeUID = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<OAuthTokenData> CREATOR = new Creator<OAuthTokenData>() {

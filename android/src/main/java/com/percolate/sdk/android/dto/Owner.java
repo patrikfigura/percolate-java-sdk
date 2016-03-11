@@ -30,7 +30,7 @@ public class Owner extends com.percolate.sdk.dto.Owner implements Parcelable {
         this.id = in.readString();
         this.license = (com.percolate.sdk.dto.License) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Owner> CREATOR = new Creator<Owner>() {

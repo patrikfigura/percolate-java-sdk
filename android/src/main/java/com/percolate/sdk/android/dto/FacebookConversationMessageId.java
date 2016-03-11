@@ -26,7 +26,7 @@ public class FacebookConversationMessageId extends com.percolate.sdk.dto.Faceboo
     protected FacebookConversationMessageId(Parcel in) {
         this.messageId = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookConversationMessageId> CREATOR = new Creator<FacebookConversationMessageId>() {

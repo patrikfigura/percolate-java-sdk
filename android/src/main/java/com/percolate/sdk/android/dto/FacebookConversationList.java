@@ -32,7 +32,7 @@ public class FacebookConversationList extends com.percolate.sdk.dto.FacebookConv
         in.readList(this.data, List.class.getClassLoader());
         this.paginationData = (PaginationData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookConversationList> CREATOR = new Creator<FacebookConversationList>() {

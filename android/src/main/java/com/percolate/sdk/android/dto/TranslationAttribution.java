@@ -30,7 +30,7 @@ public class TranslationAttribution extends com.percolate.sdk.dto.TranslationAtt
         this.image = in.readString();
         this.link = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TranslationAttribution> CREATOR = new Creator<TranslationAttribution>() {

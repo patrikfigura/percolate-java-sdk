@@ -32,7 +32,7 @@ public class Schemas extends com.percolate.sdk.dto.Schemas implements Parcelable
         this.data = new ArrayList<Schema>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Schemas> CREATOR = new Creator<Schemas>() {

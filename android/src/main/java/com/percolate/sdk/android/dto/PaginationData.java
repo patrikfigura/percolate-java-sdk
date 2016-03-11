@@ -39,7 +39,7 @@ public class PaginationData extends com.percolate.sdk.dto.PaginationData impleme
         this.startKey = in.readString();
         this.endKey = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<PaginationData> CREATOR = new Creator<PaginationData>() {

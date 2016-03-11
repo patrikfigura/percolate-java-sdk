@@ -26,7 +26,7 @@ public class EnabledProperty extends com.percolate.sdk.dto.EnabledProperty imple
     protected EnabledProperty(Parcel in) {
         this.enabled = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<EnabledProperty> CREATOR = new Creator<EnabledProperty>() {

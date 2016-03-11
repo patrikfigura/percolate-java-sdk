@@ -31,7 +31,7 @@ public class InstagramComments extends com.percolate.sdk.dto.InstagramComments i
         in.readList(this.data, List.class.getClassLoader());
         this.count = (Long) in.readValue(Long.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramComments> CREATOR = new Creator<InstagramComments>() {

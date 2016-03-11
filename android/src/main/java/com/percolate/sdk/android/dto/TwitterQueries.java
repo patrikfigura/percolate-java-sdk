@@ -32,7 +32,7 @@ public class TwitterQueries extends com.percolate.sdk.dto.TwitterQueries impleme
         in.readList(this.data, List.class.getClassLoader());
         this.paginationData = (PaginationData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterQueries> CREATOR = new Creator<TwitterQueries>() {

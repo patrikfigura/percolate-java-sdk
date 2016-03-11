@@ -90,7 +90,7 @@ public class Brief extends com.percolate.sdk.dto.Brief implements Parcelable {
         this.createdAt = in.readString();
         this.commentCount = (Integer) in.readValue(Integer.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Brief> CREATOR = new Creator<Brief>() {

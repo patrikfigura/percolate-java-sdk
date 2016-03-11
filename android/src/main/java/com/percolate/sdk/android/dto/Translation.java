@@ -26,7 +26,7 @@ public class Translation extends com.percolate.sdk.dto.Translation implements Pa
     protected Translation(Parcel in) {
         this.data = (com.percolate.sdk.dto.TranslationData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Translation> CREATOR = new Creator<Translation>() {

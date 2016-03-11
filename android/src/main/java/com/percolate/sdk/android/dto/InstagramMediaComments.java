@@ -32,7 +32,7 @@ public class InstagramMediaComments extends com.percolate.sdk.dto.InstagramMedia
         this.data = new ArrayList<InstagramComment>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramMediaComments> CREATOR = new Creator<InstagramMediaComments>() {

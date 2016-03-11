@@ -32,7 +32,7 @@ public class FacebookMessageAttachment extends com.percolate.sdk.dto.FacebookMes
         this.name = in.readString();
         this.imageData = (com.percolate.sdk.dto.FacebookMessageAttachmentImageData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMessageAttachment> CREATOR = new Creator<FacebookMessageAttachment>() {

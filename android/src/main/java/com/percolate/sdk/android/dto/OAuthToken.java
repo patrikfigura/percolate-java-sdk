@@ -26,7 +26,7 @@ public class OAuthToken extends com.percolate.sdk.dto.OAuthToken implements Parc
     protected OAuthToken(Parcel in) {
         this.oAuthTokenData = (com.percolate.sdk.dto.OAuthTokenData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<OAuthToken> CREATOR = new Creator<OAuthToken>() {

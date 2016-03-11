@@ -32,7 +32,7 @@ public class Channels extends com.percolate.sdk.dto.Channels implements Parcelab
         this.data = new ArrayList<ChannelV5>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Channels> CREATOR = new Creator<Channels>() {

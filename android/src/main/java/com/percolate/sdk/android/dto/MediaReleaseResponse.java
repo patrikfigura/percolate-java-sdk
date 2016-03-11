@@ -26,7 +26,7 @@ public class MediaReleaseResponse extends com.percolate.sdk.dto.MediaReleaseResp
     protected MediaReleaseResponse(Parcel in) {
         this.data = (com.percolate.sdk.dto.MediaReleaseResponseData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MediaReleaseResponse> CREATOR = new Creator<MediaReleaseResponse>() {

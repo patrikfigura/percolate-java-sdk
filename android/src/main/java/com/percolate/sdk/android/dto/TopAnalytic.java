@@ -30,7 +30,7 @@ public class TopAnalytic extends com.percolate.sdk.dto.TopAnalytic implements Pa
         this.analyticLabel = in.readString();
         this.score = (Integer) in.readValue(Integer.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TopAnalytic> CREATOR = new Creator<TopAnalytic>() {

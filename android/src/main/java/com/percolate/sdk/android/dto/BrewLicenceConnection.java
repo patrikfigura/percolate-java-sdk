@@ -42,7 +42,7 @@ public class BrewLicenceConnection extends com.percolate.sdk.dto.BrewLicenceConn
         this.type = in.readString();
         this.order = (Integer) in.readValue(Integer.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<BrewLicenceConnection> CREATOR = new Creator<BrewLicenceConnection>() {

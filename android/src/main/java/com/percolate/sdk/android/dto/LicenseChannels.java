@@ -32,7 +32,7 @@ public class LicenseChannels extends com.percolate.sdk.dto.LicenseChannels imple
         in.readList(this.data, List.class.getClassLoader());
         this.paginationData = (PaginationData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<LicenseChannels> CREATOR = new Creator<LicenseChannels>() {

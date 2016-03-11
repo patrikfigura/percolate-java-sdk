@@ -31,7 +31,7 @@ public class InstagramMediaUrls extends com.percolate.sdk.dto.InstagramMediaUrls
         this.lowResolution = (InstagramMediaUrl) in.readSerializable();
         this.lowBandwidth = (InstagramMediaUrl) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramMediaUrls> CREATOR = new Creator<InstagramMediaUrls>() {

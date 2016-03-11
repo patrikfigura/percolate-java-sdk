@@ -30,7 +30,7 @@ public class Mention extends com.percolate.sdk.dto.Mention implements Parcelable
         this.offset = (Integer) in.readValue(Integer.class.getClassLoader());
         this.length = (Integer) in.readValue(Integer.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Mention> CREATOR = new Creator<Mention>() {

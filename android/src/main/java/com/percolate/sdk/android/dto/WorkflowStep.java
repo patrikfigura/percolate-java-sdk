@@ -39,7 +39,7 @@ public class WorkflowStep extends com.percolate.sdk.dto.WorkflowStep implements 
         this.users = new ArrayList<com.percolate.sdk.dto.User>();
         in.readList(this.users, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<WorkflowStep> CREATOR = new Creator<WorkflowStep>() {

@@ -31,7 +31,7 @@ public class InstagramLikes extends com.percolate.sdk.dto.InstagramLikes impleme
         in.readList(this.data, List.class.getClassLoader());
         this.count = (Long) in.readValue(Long.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramLikes> CREATOR = new Creator<InstagramLikes>() {

@@ -52,7 +52,7 @@ public class FacebookConversationMessage extends com.percolate.sdk.dto.FacebookC
         this.hasAttachments = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.message = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookConversationMessage> CREATOR = new Creator<FacebookConversationMessage>() {

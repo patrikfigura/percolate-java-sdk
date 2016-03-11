@@ -26,7 +26,7 @@ public class SuccessProperty extends com.percolate.sdk.dto.SuccessProperty imple
     protected SuccessProperty(Parcel in) {
         this.success = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<SuccessProperty> CREATOR = new Creator<SuccessProperty>() {

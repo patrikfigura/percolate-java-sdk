@@ -59,7 +59,7 @@ public class BrewLinkData extends com.percolate.sdk.dto.BrewLinkData implements 
         this.url = in.readString();
         this.createdAt = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<BrewLinkData> CREATOR = new Creator<BrewLinkData>() {

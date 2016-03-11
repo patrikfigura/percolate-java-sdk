@@ -27,7 +27,7 @@ public class SingleTask extends com.percolate.sdk.dto.SingleTask implements Parc
     protected SingleTask(Parcel in) {
         this.data = (com.percolate.sdk.dto.Task) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<SingleTask> CREATOR = new Creator<SingleTask>() {

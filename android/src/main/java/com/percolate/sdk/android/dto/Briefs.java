@@ -32,7 +32,7 @@ public class Briefs extends com.percolate.sdk.dto.Briefs implements Parcelable {
         in.readList(this.data, List.class.getClassLoader());
         this.paginationData = (PaginationData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Briefs> CREATOR = new Creator<Briefs>() {

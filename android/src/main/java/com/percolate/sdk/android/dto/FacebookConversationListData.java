@@ -44,7 +44,7 @@ public class FacebookConversationListData extends com.percolate.sdk.dto.Facebook
         this.mostRecentMessage = (FacebookConversationMessage) in.readSerializable();
         this.participants = (FacebookUserDataList) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookConversationListData> CREATOR = new Creator<FacebookConversationListData>() {

@@ -30,7 +30,7 @@ public class Creator extends com.percolate.sdk.dto.Creator implements Parcelable
         this.userId = (Long) in.readValue(Long.class.getClassLoader());
         this.brandId = (Long) in.readValue(Long.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final android.os.Parcelable.Creator<com.percolate.sdk.android.dto.Creator> CREATOR = new android.os.Parcelable.Creator<com.percolate.sdk.android.dto.Creator>() {

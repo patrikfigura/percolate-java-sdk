@@ -94,7 +94,7 @@ public class Flag extends com.percolate.sdk.dto.Flag implements Parcelable {
         this.errorId = in.readString();
         this.statusType = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Flag> CREATOR = new Creator<Flag>() {

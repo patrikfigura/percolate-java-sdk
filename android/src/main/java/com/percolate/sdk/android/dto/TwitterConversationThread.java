@@ -32,7 +32,7 @@ public class TwitterConversationThread extends com.percolate.sdk.dto.TwitterConv
         in.readList(this.data, List.class.getClassLoader());
         this.paginationData = (PaginationData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterConversationThread> CREATOR = new Creator<TwitterConversationThread>() {

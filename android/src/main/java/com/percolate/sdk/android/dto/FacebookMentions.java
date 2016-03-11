@@ -29,7 +29,7 @@ public class FacebookMentions extends com.percolate.sdk.dto.FacebookMentions imp
         this.mentions = new ArrayList<com.percolate.sdk.dto.FacebookMention>();
         in.readList(this.mentions, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMentions> CREATOR = new Creator<FacebookMentions>() {

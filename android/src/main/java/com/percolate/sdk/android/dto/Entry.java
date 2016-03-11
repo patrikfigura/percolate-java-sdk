@@ -34,7 +34,7 @@ public class Entry extends com.percolate.sdk.dto.Entry implements Parcelable {
         this.description = in.readString();
         this.url = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Entry> CREATOR = new Creator<Entry>() {

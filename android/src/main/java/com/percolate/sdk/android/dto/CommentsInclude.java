@@ -29,7 +29,7 @@ public class CommentsInclude extends com.percolate.sdk.dto.CommentsInclude imple
         this.users = new ArrayList<com.percolate.sdk.dto.User>();
         in.readList(this.users, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<CommentsInclude> CREATOR = new Creator<CommentsInclude>() {

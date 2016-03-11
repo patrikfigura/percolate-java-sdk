@@ -32,7 +32,7 @@ public class BrewUsers extends com.percolate.sdk.dto.BrewUsers implements Parcel
         this.users = new ArrayList<User>();
         in.readList(this.users, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<BrewUsers> CREATOR = new Creator<BrewUsers>() {

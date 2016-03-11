@@ -30,7 +30,7 @@ public class Services extends com.percolate.sdk.dto.Services implements Parcelab
         in.readMap(this.analytics, LinkedHashMap.class.getClassLoader());
         this.type = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Services> CREATOR = new Creator<Services>() {

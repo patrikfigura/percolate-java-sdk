@@ -32,7 +32,7 @@ public class CampaignSectionData extends com.percolate.sdk.dto.CampaignSectionDa
         this.copyHtml = in.readString();
         this.mediaUids = in.createStringArrayList();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<CampaignSectionData> CREATOR = new Creator<CampaignSectionData>() {

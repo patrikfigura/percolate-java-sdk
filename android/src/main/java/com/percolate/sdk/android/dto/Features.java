@@ -33,7 +33,7 @@ public class Features extends com.percolate.sdk.dto.Features implements Parcelab
         this.data = new ArrayList<>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Features> CREATOR = new Creator<Features>() {

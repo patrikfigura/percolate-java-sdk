@@ -44,7 +44,7 @@ public class StreamData extends com.percolate.sdk.dto.StreamData implements Parc
         this.ext = new LinkedHashMap<>();
         in.readMap(this.ext, Map.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<StreamData> CREATOR = new Creator<StreamData>() {

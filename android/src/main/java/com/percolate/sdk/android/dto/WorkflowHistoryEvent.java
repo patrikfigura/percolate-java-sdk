@@ -46,7 +46,7 @@ public class WorkflowHistoryEvent extends com.percolate.sdk.dto.WorkflowHistoryE
         this.outdated = in.readByte() != 0;
         this.errorId = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<WorkflowHistoryEvent> CREATOR = new Creator<WorkflowHistoryEvent>() {

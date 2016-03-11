@@ -30,7 +30,7 @@ public class InteractionsMetaDataQuery extends com.percolate.sdk.dto.Interaction
         this.xids = in.readString();
         this.scopeIds = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InteractionsMetaDataQuery> CREATOR = new Creator<InteractionsMetaDataQuery>() {

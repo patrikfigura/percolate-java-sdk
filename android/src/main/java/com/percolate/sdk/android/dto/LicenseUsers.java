@@ -32,7 +32,7 @@ public class LicenseUsers extends com.percolate.sdk.dto.LicenseUsers implements 
         in.readList(this.data, List.class.getClassLoader());
         this.paginationData = (PaginationData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<LicenseUsers> CREATOR = new Creator<LicenseUsers>() {

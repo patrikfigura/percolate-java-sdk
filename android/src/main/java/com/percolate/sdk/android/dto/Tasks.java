@@ -35,7 +35,7 @@ public class Tasks extends com.percolate.sdk.dto.Tasks implements Parcelable {
         this.errors = new ArrayList<>();
         in.readList(this.errors, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Tasks> CREATOR = new Creator<Tasks>() {

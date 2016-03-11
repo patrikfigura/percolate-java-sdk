@@ -29,7 +29,7 @@ public class Topics extends com.percolate.sdk.dto.Topics implements Parcelable {
         this.data = new ArrayList<com.percolate.sdk.dto.Topic>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Topics> CREATOR = new Creator<Topics>() {

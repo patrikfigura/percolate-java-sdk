@@ -63,7 +63,7 @@ public class InstagramMediaData extends com.percolate.sdk.dto.InstagramMediaData
         in.readList(this.usersInPhoto, List.class.getClassLoader());
         this.createdTime = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramMediaData> CREATOR = new Creator<InstagramMediaData>() {

@@ -42,7 +42,7 @@ public class MobileVersionCheck extends com.percolate.sdk.dto.MobileVersionCheck
         this.versionNumber = in.readInt();
         this.error = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MobileVersionCheck> CREATOR = new Creator<MobileVersionCheck>() {

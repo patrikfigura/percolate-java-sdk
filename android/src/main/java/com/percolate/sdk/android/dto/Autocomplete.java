@@ -48,7 +48,7 @@ public class Autocomplete extends com.percolate.sdk.dto.Autocomplete implements 
         this.collegeYears = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.collegeYears, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Autocomplete> CREATOR = new Creator<Autocomplete>() {

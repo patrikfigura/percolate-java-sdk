@@ -26,7 +26,7 @@ public class SingleShare extends com.percolate.sdk.dto.SingleShare implements Pa
     protected SingleShare(Parcel in) {
         this.data = (com.percolate.sdk.dto.ShareData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<SingleShare> CREATOR = new Creator<SingleShare>() {

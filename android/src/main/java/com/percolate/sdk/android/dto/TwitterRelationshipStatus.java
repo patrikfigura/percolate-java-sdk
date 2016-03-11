@@ -36,7 +36,7 @@ public class TwitterRelationshipStatus extends com.percolate.sdk.dto.TwitterRela
         this.followedBy = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.following = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterRelationshipStatus> CREATOR = new Creator<TwitterRelationshipStatus>() {

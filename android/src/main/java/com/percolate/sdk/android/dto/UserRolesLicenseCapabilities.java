@@ -34,7 +34,7 @@ public class UserRolesLicenseCapabilities extends com.percolate.sdk.dto.UserRole
         this.tags = in.createStringArrayList();
         this.implies = in.createStringArrayList();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<UserRolesLicenseCapabilities> CREATOR = new Creator<UserRolesLicenseCapabilities>() {

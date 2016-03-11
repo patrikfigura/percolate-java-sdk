@@ -36,7 +36,7 @@ public class Publishing extends com.percolate.sdk.dto.Publishing implements Parc
         this.enabled = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.xstatusSupport = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Publishing> CREATOR = new Creator<Publishing>() {

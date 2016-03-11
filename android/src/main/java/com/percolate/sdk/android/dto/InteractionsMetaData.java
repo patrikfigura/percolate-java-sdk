@@ -28,7 +28,7 @@ public class InteractionsMetaData extends com.percolate.sdk.dto.InteractionsMeta
         this.query = (com.percolate.sdk.dto.InteractionsMetaDataQuery) in.readSerializable();
         this.total = (Long) in.readValue(Long.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InteractionsMetaData> CREATOR = new Creator<InteractionsMetaData>() {

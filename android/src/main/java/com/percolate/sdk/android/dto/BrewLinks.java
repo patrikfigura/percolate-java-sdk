@@ -32,7 +32,7 @@ public class BrewLinks extends com.percolate.sdk.dto.BrewLinks implements Parcel
         in.readList(this.data, List.class.getClassLoader());
         this.pagination = (PaginationData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<BrewLinks> CREATOR = new Creator<BrewLinks>() {

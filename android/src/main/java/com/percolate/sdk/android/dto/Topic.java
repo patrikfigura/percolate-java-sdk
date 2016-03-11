@@ -36,7 +36,7 @@ public class Topic extends com.percolate.sdk.dto.Topic implements Parcelable {
         this.ownerUid = in.readString();
         this.owner = (com.percolate.sdk.dto.License) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Topic> CREATOR = new Creator<Topic>() {

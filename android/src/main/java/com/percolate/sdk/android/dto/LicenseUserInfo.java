@@ -39,7 +39,7 @@ public class LicenseUserInfo extends com.percolate.sdk.dto.LicenseUserInfo imple
         this.user = (com.percolate.sdk.dto.User) in.readSerializable();
         this.license = (License) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<LicenseUserInfo> CREATOR = new Creator<LicenseUserInfo>() {

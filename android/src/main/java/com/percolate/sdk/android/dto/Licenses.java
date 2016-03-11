@@ -32,7 +32,7 @@ public class Licenses extends com.percolate.sdk.dto.Licenses implements Parcelab
         this.licenses = new ArrayList<License>();
         in.readList(this.licenses, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Licenses> CREATOR = new Creator<Licenses>() {

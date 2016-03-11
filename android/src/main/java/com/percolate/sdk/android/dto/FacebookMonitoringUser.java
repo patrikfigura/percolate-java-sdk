@@ -28,7 +28,7 @@ public class FacebookMonitoringUser extends com.percolate.sdk.dto.FacebookMonito
         this.id = in.readString();
         this.name = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMonitoringUser> CREATOR = new Creator<FacebookMonitoringUser>() {

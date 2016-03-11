@@ -58,7 +58,7 @@ public class User extends com.percolate.sdk.dto.User implements Parcelable {
         this.errors = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.errors, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {

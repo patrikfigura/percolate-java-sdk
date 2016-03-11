@@ -121,7 +121,7 @@ public class TwitterUser extends com.percolate.sdk.dto.TwitterUser implements Pa
         this.errors = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.errors, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterUser> CREATOR = new Creator<TwitterUser>() {

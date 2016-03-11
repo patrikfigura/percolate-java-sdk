@@ -26,7 +26,7 @@ public class InstagramRequestMetaData extends com.percolate.sdk.dto.InstagramReq
     protected InstagramRequestMetaData(Parcel in) {
         this.code = (Integer) in.readValue(Integer.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramRequestMetaData> CREATOR = new Creator<InstagramRequestMetaData>() {

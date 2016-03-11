@@ -29,7 +29,7 @@ public class InstagramMedia extends com.percolate.sdk.dto.InstagramMedia impleme
         this.meta = (com.percolate.sdk.dto.InstagramRequestMetaData) in.readSerializable();
         this.data = (InstagramMediaData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramMedia> CREATOR = new Creator<InstagramMedia>() {

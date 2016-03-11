@@ -32,7 +32,7 @@ public class Interactions extends com.percolate.sdk.dto.Interactions implements 
         this.data = new ArrayList<InteractionData>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Interactions> CREATOR = new Creator<Interactions>() {

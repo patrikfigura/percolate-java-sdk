@@ -48,7 +48,7 @@ public class ShareObject extends com.percolate.sdk.dto.ShareObject implements Pa
         this.image = (Media) in.readSerializable();
         this.ugcMeta = (ShareUgcMeta) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ShareObject> CREATOR = new Creator<ShareObject>() {

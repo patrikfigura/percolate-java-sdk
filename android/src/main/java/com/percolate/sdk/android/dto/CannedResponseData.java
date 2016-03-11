@@ -40,7 +40,7 @@ public class CannedResponseData extends com.percolate.sdk.dto.CannedResponseData
         this.createdAt = in.readString();
         this.updatedAt = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<CannedResponseData> CREATOR = new Creator<CannedResponseData>() {

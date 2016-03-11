@@ -26,7 +26,7 @@ public class SingleLicenseChannel extends com.percolate.sdk.dto.SingleLicenseCha
     protected SingleLicenseChannel(Parcel in) {
         this.data = (com.percolate.sdk.dto.LicenseChannel) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<SingleLicenseChannel> CREATOR = new Creator<SingleLicenseChannel>() {

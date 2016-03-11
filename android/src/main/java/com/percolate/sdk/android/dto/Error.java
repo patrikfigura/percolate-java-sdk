@@ -29,7 +29,7 @@ public class Error extends com.percolate.sdk.dto.Error implements Parcelable {
         this.message = in.readString();
         this.code = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Parcelable.Creator<com.percolate.sdk.android.dto.Error> CREATOR = new Parcelable.Creator<com.percolate.sdk.android.dto.Error>() {

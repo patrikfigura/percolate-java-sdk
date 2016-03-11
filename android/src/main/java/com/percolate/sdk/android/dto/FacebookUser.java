@@ -48,7 +48,7 @@ public class FacebookUser extends com.percolate.sdk.dto.FacebookUser implements 
         this.hometown = new LinkedHashMap<>();
         in.readMap(this.hometown, LinkedHashMap.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookUser> CREATOR = new Creator<FacebookUser>() {

@@ -27,7 +27,7 @@ public class BriefData extends com.percolate.sdk.dto.BriefData implements Parcel
     protected BriefData(Parcel in) {
         this.brief = (com.percolate.sdk.dto.Brief) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<BriefData> CREATOR = new Creator<BriefData>() {

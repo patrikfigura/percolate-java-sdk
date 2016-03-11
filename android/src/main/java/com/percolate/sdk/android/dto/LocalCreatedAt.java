@@ -28,7 +28,7 @@ public class LocalCreatedAt extends com.percolate.sdk.dto.LocalCreatedAt impleme
         this.datetime = in.readString();
         this.timezone = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<LocalCreatedAt> CREATOR = new Creator<LocalCreatedAt>() {

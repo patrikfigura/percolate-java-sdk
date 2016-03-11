@@ -68,7 +68,7 @@ public class Tweet extends com.percolate.sdk.dto.Tweet implements Parcelable {
         this.lang = in.readString();
         this.filterLevel = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Tweet> CREATOR = new Creator<Tweet>() {

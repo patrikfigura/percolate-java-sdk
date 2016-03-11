@@ -32,7 +32,7 @@ public class Streams extends com.percolate.sdk.dto.Streams implements Parcelable
         this.data = new ArrayList<StreamData>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Streams> CREATOR = new Creator<Streams>() {

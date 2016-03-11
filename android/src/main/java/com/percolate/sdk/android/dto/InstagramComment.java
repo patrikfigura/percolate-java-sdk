@@ -35,7 +35,7 @@ public class InstagramComment extends com.percolate.sdk.dto.InstagramComment imp
         this.from = (InstagramUserData) in.readSerializable();
         this.createdTime = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramComment> CREATOR = new Creator<InstagramComment>() {

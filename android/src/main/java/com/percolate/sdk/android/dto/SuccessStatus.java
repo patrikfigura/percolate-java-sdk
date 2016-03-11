@@ -26,7 +26,7 @@ public class SuccessStatus extends com.percolate.sdk.dto.SuccessStatus implement
     protected SuccessStatus(Parcel in) {
         this.success = (com.percolate.sdk.dto.SuccessProperty) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<SuccessStatus> CREATOR = new Creator<SuccessStatus>() {

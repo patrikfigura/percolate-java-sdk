@@ -27,7 +27,7 @@ public class Facets extends com.percolate.sdk.dto.Facets implements Parcelable {
     protected Facets(Parcel in) {
         in.readMap(this.tags, LinkedHashMap.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Facets> CREATOR = new Creator<Facets>() {

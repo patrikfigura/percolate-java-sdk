@@ -30,7 +30,7 @@ public class FacebookMention extends com.percolate.sdk.dto.FacebookMention imple
         this.name = in.readString();
         this.picture = (com.percolate.sdk.dto.FacebookMentionPicture) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMention> CREATOR = new Creator<FacebookMention>() {

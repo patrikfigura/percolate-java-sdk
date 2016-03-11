@@ -42,7 +42,7 @@ public class MediaReleaseResponseData extends com.percolate.sdk.dto.MediaRelease
         this.email = in.readString();
         this.signatureImageUrl = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MediaReleaseResponseData> CREATOR = new Creator<MediaReleaseResponseData>() {

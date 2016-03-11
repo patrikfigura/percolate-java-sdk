@@ -32,7 +32,7 @@ public class InstagramRecentMedia extends com.percolate.sdk.dto.InstagramRecentM
         this.data = new ArrayList<InstagramMediaData>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramRecentMedia> CREATOR = new Creator<InstagramRecentMedia>() {

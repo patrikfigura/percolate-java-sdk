@@ -60,7 +60,7 @@ public class TwitterConversationMessage extends com.percolate.sdk.dto.TwitterCon
         in.readMap(this.entities, LinkedHashMap.class.getClassLoader());
         this.createdAt = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterConversationMessage> CREATOR = new Creator<TwitterConversationMessage>() {

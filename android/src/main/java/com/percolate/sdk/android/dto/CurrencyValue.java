@@ -28,7 +28,7 @@ public class CurrencyValue extends com.percolate.sdk.dto.CurrencyValue implement
         this.currency = in.readString();
         this.amount = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<CurrencyValue> CREATOR = new Creator<CurrencyValue>() {

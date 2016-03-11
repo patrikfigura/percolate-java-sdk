@@ -54,7 +54,7 @@ public class License extends com.percolate.sdk.dto.License implements Parcelable
         this.userRolesLicenseData = new ArrayList<UserRolesLicenseData>();
         in.readList(this.userRolesLicenseData, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<License> CREATOR = new Creator<License>() {

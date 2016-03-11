@@ -50,7 +50,7 @@ public class StreamChannelData extends com.percolate.sdk.dto.StreamChannelData i
         this.mediaBuyerIds = in.createStringArrayList();
         this.updatedAt = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<StreamChannelData> CREATOR = new Creator<StreamChannelData>() {

@@ -29,7 +29,7 @@ public class StreamsInclude extends com.percolate.sdk.dto.StreamsInclude impleme
         this.channels = new ArrayList<com.percolate.sdk.dto.StreamChannelData>();
         in.readList(this.channels, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<StreamsInclude> CREATOR = new Creator<StreamsInclude>() {

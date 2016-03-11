@@ -36,7 +36,7 @@ public class Plug extends com.percolate.sdk.dto.Plug implements Parcelable {
         this.startAt = in.readString();
         this.endAt = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Plug> CREATOR = new Creator<Plug>() {

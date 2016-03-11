@@ -40,7 +40,7 @@ public class ShareUgcMeta extends com.percolate.sdk.dto.ShareUgcMeta implements 
         this.formats = new ArrayList<MediaFormat>();
         in.readList(this.formats, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ShareUgcMeta> CREATOR = new Creator<ShareUgcMeta>() {

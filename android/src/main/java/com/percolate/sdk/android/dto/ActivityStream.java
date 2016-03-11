@@ -23,7 +23,6 @@ public class ActivityStream extends com.percolate.sdk.dto.ActivityStream impleme
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.paginationData);
         dest.writeList(this.data);
-        dest.writeMap(this.extraFields);
     }
 
     public ActivityStream() {
@@ -34,7 +33,7 @@ public class ActivityStream extends com.percolate.sdk.dto.ActivityStream impleme
         this.data = new ArrayList<ActivityStreamData>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Parcelable.Creator<ActivityStream> CREATOR = new Parcelable.Creator<ActivityStream>() {

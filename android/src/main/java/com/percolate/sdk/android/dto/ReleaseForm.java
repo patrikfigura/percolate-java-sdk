@@ -36,7 +36,7 @@ public class ReleaseForm extends com.percolate.sdk.dto.ReleaseForm implements Pa
         this.referenceUID = in.readString();
         this.signatureImageId = (Long) in.readValue(Long.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ReleaseForm> CREATOR = new Creator<ReleaseForm>() {

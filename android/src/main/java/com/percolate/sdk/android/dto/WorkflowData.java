@@ -44,7 +44,7 @@ public class WorkflowData extends com.percolate.sdk.dto.WorkflowData implements 
         this.steps = new ArrayList<WorkflowStep>();
         in.readList(this.steps, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<WorkflowData> CREATOR = new Creator<WorkflowData>() {

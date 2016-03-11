@@ -26,7 +26,7 @@ public class SingleFlag extends com.percolate.sdk.dto.SingleFlag implements Parc
     protected SingleFlag(Parcel in) {
         this.data = (com.percolate.sdk.dto.Flag) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<SingleFlag> CREATOR = new Creator<SingleFlag>() {

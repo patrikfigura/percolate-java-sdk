@@ -38,7 +38,7 @@ public class ApprovalPoolStep extends com.percolate.sdk.dto.ApprovalPoolStep imp
         in.readList(this.channelIds, List.class.getClassLoader());
         this.ordinal = (Integer) in.readValue(Integer.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ApprovalPoolStep> CREATOR = new Creator<ApprovalPoolStep>() {

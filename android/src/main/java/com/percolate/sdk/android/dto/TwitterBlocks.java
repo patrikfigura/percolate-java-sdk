@@ -37,7 +37,7 @@ public class TwitterBlocks extends com.percolate.sdk.dto.TwitterBlocks implement
         this.previousCursor = (Integer) in.readValue(Integer.class.getClassLoader());
         this.previousCursorStr = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterBlocks> CREATOR = new Creator<TwitterBlocks>() {

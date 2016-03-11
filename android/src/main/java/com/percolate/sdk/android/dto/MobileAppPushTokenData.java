@@ -40,7 +40,7 @@ public class MobileAppPushTokenData extends com.percolate.sdk.dto.MobileAppPushT
         this.arn = in.readString();
         this.mobileAppArn = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MobileAppPushTokenData> CREATOR = new Creator<MobileAppPushTokenData>() {

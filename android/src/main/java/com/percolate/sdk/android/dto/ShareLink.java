@@ -39,7 +39,7 @@ public class ShareLink extends com.percolate.sdk.dto.ShareLink implements Parcel
         this.title = in.readString();
         this.url = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ShareLink> CREATOR = new Creator<ShareLink>() {

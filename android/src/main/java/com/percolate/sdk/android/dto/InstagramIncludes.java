@@ -29,7 +29,7 @@ public class InstagramIncludes extends com.percolate.sdk.dto.InstagramIncludes i
         this.posts = new ArrayList<com.percolate.sdk.dto.InstagramIncludeMediaData>();
         in.readList(this.posts, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramIncludes> CREATOR = new Creator<InstagramIncludes>() {

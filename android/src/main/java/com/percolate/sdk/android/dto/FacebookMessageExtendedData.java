@@ -43,7 +43,7 @@ public class FacebookMessageExtendedData extends com.percolate.sdk.dto.FacebookM
         this.tags = (FacebookMessageKeyValueList) in.readSerializable();
         this.attachments = (FacebookMessageAttachments) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMessageExtendedData> CREATOR = new Creator<FacebookMessageExtendedData>() {

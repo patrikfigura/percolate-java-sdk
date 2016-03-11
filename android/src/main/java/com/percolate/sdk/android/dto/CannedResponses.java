@@ -32,7 +32,7 @@ public class CannedResponses extends com.percolate.sdk.dto.CannedResponses imple
         this.data = new ArrayList<CannedResponseData>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<CannedResponses> CREATOR = new Creator<CannedResponses>() {

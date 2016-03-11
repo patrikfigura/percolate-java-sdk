@@ -26,7 +26,7 @@ public class TwitterInteractions extends com.percolate.sdk.dto.TwitterInteractio
     protected TwitterInteractions(Parcel in) {
         this.data = (com.percolate.sdk.dto.TwitterMonitoringObject) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterInteractions> CREATOR = new Creator<TwitterInteractions>() {

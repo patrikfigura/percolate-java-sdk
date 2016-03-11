@@ -40,7 +40,7 @@ public class FacebookMonitoringObject extends com.percolate.sdk.dto.FacebookMoni
         this.relatedPostSetId = in.readString();
         this.xobj = (FacebookMonitoringXObj) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMonitoringObject> CREATOR = new Creator<FacebookMonitoringObject>() {

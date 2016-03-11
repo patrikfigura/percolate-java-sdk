@@ -33,7 +33,7 @@ public class PostV5Include extends com.percolate.sdk.dto.PostV5Include implement
         this.channel = new ArrayList<ChannelV5>();
         in.readList(this.channel, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<PostV5Include> CREATOR = new Creator<PostV5Include>() {

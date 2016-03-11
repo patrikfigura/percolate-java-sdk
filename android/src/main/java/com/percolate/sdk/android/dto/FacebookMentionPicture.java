@@ -26,7 +26,7 @@ public class FacebookMentionPicture extends com.percolate.sdk.dto.FacebookMentio
     protected FacebookMentionPicture(Parcel in) {
         this.data = (com.percolate.sdk.dto.FacebookMentionPictureData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMentionPicture> CREATOR = new Creator<FacebookMentionPicture>() {

@@ -26,7 +26,7 @@ public class CommentData extends com.percolate.sdk.dto.CommentData implements Pa
     protected CommentData(Parcel in) {
         this.comment = (com.percolate.sdk.dto.Comment) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<CommentData> CREATOR = new Creator<CommentData>() {

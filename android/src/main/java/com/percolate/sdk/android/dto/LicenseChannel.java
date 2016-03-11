@@ -58,7 +58,7 @@ public class LicenseChannel extends com.percolate.sdk.dto.LicenseChannel impleme
         this.channel = (Channel) in.readSerializable();
         this.scopedChannelUid = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<LicenseChannel> CREATOR = new Creator<LicenseChannel>() {

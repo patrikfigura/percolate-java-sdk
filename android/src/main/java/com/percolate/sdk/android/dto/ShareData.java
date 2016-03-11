@@ -50,7 +50,7 @@ public class ShareData extends com.percolate.sdk.dto.ShareData implements Parcel
         this.recipient = (ShareUser) in.readSerializable();
         this.recipientUID = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ShareData> CREATOR = new Creator<ShareData>() {

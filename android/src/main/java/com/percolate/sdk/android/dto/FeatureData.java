@@ -32,7 +32,7 @@ public class FeatureData extends com.percolate.sdk.dto.FeatureData implements Pa
         this.featureType = in.readString();
         this.updatedAt = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FeatureData> CREATOR = new Creator<FeatureData>() {

@@ -28,7 +28,7 @@ public class FacebookMentionPictureData extends com.percolate.sdk.dto.FacebookMe
         this.url = in.readString();
         this.silhouette = in.readByte() != 0;
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMentionPictureData> CREATOR = new Creator<FacebookMentionPictureData>() {

@@ -30,7 +30,7 @@ public class VideoFormatMetaData extends com.percolate.sdk.dto.VideoFormatMetaDa
         this.width = (Integer) in.readValue(Integer.class.getClassLoader());
         this.height = (Integer) in.readValue(Integer.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<VideoFormatMetaData> CREATOR = new Creator<VideoFormatMetaData>() {

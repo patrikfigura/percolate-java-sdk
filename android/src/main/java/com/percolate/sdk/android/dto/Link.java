@@ -39,7 +39,7 @@ public class Link extends com.percolate.sdk.dto.Link implements Parcelable {
         this.medias = new ArrayList<com.percolate.sdk.dto.Media>();
         in.readList(this.medias, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Link> CREATOR = new Creator<Link>() {

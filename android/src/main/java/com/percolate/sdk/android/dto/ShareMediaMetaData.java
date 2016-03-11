@@ -47,7 +47,7 @@ public class ShareMediaMetaData extends com.percolate.sdk.dto.ShareMediaMetaData
         this.modifiedAt = tmpModifiedAt == -1 ? null : new Date(tmpModifiedAt);
         this.creator = (com.percolate.sdk.dto.Creator) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ShareMediaMetaData> CREATOR = new Creator<ShareMediaMetaData>() {

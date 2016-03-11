@@ -27,7 +27,7 @@ public class ActivityStreamMetadata extends com.percolate.sdk.dto.ActivityStream
     protected ActivityStreamMetadata(Parcel in) {
         this.key = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ActivityStreamMetadata> CREATOR = new Creator<ActivityStreamMetadata>() {

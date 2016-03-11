@@ -29,7 +29,7 @@ public class TwitterRelationship extends com.percolate.sdk.dto.TwitterRelationsh
         this.source = (com.percolate.sdk.dto.TwitterRelationshipStatus) in.readSerializable();
         this.target = (TwitterRelationshipStatus) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterRelationship> CREATOR = new Creator<TwitterRelationship>() {

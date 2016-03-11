@@ -60,7 +60,7 @@ public class TwitterStatus extends com.percolate.sdk.dto.TwitterStatus implement
         this.possiblySensitive = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.retweetedStatus = (com.percolate.sdk.dto.Tweet) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterStatus> CREATOR = new Creator<TwitterStatus>() {

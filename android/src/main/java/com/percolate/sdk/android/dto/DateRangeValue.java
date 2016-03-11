@@ -28,7 +28,7 @@ public class DateRangeValue extends com.percolate.sdk.dto.DateRangeValue impleme
         this.from = in.readString();
         this.to = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<DateRangeValue> CREATOR = new Creator<DateRangeValue>() {

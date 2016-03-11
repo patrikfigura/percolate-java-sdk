@@ -29,7 +29,7 @@ public class Followers extends com.percolate.sdk.dto.Followers implements Parcel
         this.followers = new ArrayList<com.percolate.sdk.dto.Follower>();
         in.readList(this.followers, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Followers> CREATOR = new Creator<Followers>() {

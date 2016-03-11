@@ -45,7 +45,7 @@ public class Targeting extends com.percolate.sdk.dto.Targeting implements Parcel
         this.workNetworks = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.workNetworks, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Targeting> CREATOR = new Creator<Targeting>() {

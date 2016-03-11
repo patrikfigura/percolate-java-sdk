@@ -30,7 +30,7 @@ public class TwitterInteractionsDataObject extends com.percolate.sdk.dto.Twitter
         this.xobj = new LinkedHashMap<>();
         in.readMap(this.xobj, LinkedHashMap.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterInteractionsDataObject> CREATOR = new Creator<TwitterInteractionsDataObject>() {

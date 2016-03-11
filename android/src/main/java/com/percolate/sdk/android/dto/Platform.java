@@ -49,7 +49,7 @@ public class Platform extends com.percolate.sdk.dto.Platform implements Parcelab
         this.avatarId = in.readString();
         this.updatedAt = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Platform> CREATOR = new Creator<Platform>() {

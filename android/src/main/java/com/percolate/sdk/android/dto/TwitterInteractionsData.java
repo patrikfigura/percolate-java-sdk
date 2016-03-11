@@ -29,7 +29,7 @@ public class TwitterInteractionsData extends com.percolate.sdk.dto.TwitterIntera
         this.data = new ArrayList<com.percolate.sdk.dto.TwitterInteractionsDataObject>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterInteractionsData> CREATOR = new Creator<TwitterInteractionsData>() {

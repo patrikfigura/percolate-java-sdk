@@ -61,7 +61,7 @@ public class TwitterQuery extends com.percolate.sdk.dto.TwitterQuery implements 
         this.isCustom = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.monthlyUsageLimit = (Long) in.readValue(Long.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterQuery> CREATOR = new Creator<TwitterQuery>() {

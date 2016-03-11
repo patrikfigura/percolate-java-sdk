@@ -26,7 +26,7 @@ public class ImageLicense extends com.percolate.sdk.dto.ImageLicense implements 
     protected ImageLicense(Parcel in) {
         this.owner_url = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ImageLicense> CREATOR = new Creator<ImageLicense>() {

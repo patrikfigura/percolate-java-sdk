@@ -29,7 +29,7 @@ public class Workflow extends com.percolate.sdk.dto.Workflow implements Parcelab
         this.data = new ArrayList<com.percolate.sdk.dto.WorkflowData>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Workflow> CREATOR = new Creator<Workflow>() {

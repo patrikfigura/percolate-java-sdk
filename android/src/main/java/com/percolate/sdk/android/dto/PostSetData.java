@@ -53,6 +53,7 @@ public class PostSetData extends com.percolate.sdk.dto.PostSetData implements Pa
         dest.writeString(this.userAgent);
         dest.writeValue(this.shareId);
         dest.writeValue(this.relatedLicenseId);
+        dest.writeList(this.errors);
         dest.writeMap(this.extraFields);
     }
 
@@ -95,9 +96,10 @@ public class PostSetData extends com.percolate.sdk.dto.PostSetData implements Pa
         this.userAgent = in.readString();
         this.shareId = (Long) in.readValue(Long.class.getClassLoader());
         this.relatedLicenseId = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.errors = new ArrayList<>();
         in.readList(this.errors, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<PostSetData> CREATOR = new Creator<PostSetData>() {

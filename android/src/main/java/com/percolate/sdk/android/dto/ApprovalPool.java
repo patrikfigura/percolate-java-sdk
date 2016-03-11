@@ -38,7 +38,7 @@ public class ApprovalPool extends com.percolate.sdk.dto.ApprovalPool implements 
         this.steps = new ArrayList<com.percolate.sdk.dto.ApprovalPoolStep>();
         in.readList(this.steps, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ApprovalPool> CREATOR = new Creator<ApprovalPool>() {

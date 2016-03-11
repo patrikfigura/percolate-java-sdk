@@ -32,7 +32,7 @@ public class ShareUser extends com.percolate.sdk.dto.ShareUser implements Parcel
         this.license = (com.percolate.sdk.dto.License) in.readSerializable();
         this.type = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ShareUser> CREATOR = new Creator<ShareUser>() {

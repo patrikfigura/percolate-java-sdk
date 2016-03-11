@@ -39,7 +39,7 @@ public class InstagramIncludeMediaData extends com.percolate.sdk.dto.InstagramIn
         this.xobj = (com.percolate.sdk.dto.InstagramMediaData) in.readSerializable();
         this.meta = (InstagramMonitoringObjectMetaData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramIncludeMediaData> CREATOR = new Creator<InstagramIncludeMediaData>() {

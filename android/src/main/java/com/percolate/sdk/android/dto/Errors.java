@@ -30,7 +30,7 @@ public class Errors extends com.percolate.sdk.dto.Errors implements Parcelable {
         this.errors = new ArrayList<>();
         in.readList(this.errors, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Errors> CREATOR = new Creator<Errors>() {

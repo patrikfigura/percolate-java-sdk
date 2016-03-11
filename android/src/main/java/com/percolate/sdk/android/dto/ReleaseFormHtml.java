@@ -26,7 +26,7 @@ public class ReleaseFormHtml extends com.percolate.sdk.dto.ReleaseFormHtml imple
     protected ReleaseFormHtml(Parcel in) {
         this.html = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ReleaseFormHtml> CREATOR = new Creator<ReleaseFormHtml>() {

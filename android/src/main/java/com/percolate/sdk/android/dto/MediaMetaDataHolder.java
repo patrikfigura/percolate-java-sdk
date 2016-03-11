@@ -26,7 +26,7 @@ public class MediaMetaDataHolder extends com.percolate.sdk.dto.MediaMetaDataHold
     protected MediaMetaDataHolder(Parcel in) {
         this.data = (com.percolate.sdk.dto.MediaMetaData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MediaMetaDataHolder> CREATOR = new Creator<MediaMetaDataHolder>() {

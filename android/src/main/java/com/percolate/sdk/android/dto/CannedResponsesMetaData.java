@@ -26,7 +26,7 @@ public class CannedResponsesMetaData extends com.percolate.sdk.dto.CannedRespons
     protected CannedResponsesMetaData(Parcel in) {
         this.total = (Long) in.readValue(Long.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<CannedResponsesMetaData> CREATOR = new Creator<CannedResponsesMetaData>() {

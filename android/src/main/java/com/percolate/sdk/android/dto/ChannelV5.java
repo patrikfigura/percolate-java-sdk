@@ -54,7 +54,7 @@ public class ChannelV5 extends com.percolate.sdk.dto.ChannelV5 implements Parcel
         this.capabilities = in.createStringArrayList();
         this.updatedAt = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ChannelV5> CREATOR = new Creator<ChannelV5>() {

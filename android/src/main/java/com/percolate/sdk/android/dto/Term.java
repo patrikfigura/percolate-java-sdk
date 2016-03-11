@@ -34,7 +34,7 @@ public class Term extends com.percolate.sdk.dto.Term implements Parcelable {
         this.scopeId = in.readString();
         this.updatedAt = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Term> CREATOR = new Creator<Term>() {

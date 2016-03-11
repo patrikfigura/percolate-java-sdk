@@ -38,7 +38,7 @@ public class InstagramUserData extends com.percolate.sdk.dto.InstagramUserData i
         this.website = in.readString();
         this.counts = (com.percolate.sdk.dto.InstagramUserCounts) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramUserData> CREATOR = new Creator<InstagramUserData>() {

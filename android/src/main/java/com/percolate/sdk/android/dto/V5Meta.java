@@ -30,7 +30,7 @@ public class V5Meta extends com.percolate.sdk.dto.V5Meta implements Parcelable {
         in.readMap(this.query, LinkedHashMap.class.getClassLoader());
         this.total = (Long) in.readValue(Long.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<V5Meta> CREATOR = new Creator<V5Meta>() {

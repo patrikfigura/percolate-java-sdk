@@ -30,7 +30,7 @@ public class InstagramUserCounts extends com.percolate.sdk.dto.InstagramUserCoun
         this.follows = (Long) in.readValue(Long.class.getClassLoader());
         this.media = (Long) in.readValue(Long.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramUserCounts> CREATOR = new Creator<InstagramUserCounts>() {

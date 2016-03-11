@@ -57,7 +57,7 @@ public class ActivityStreamData extends com.percolate.sdk.dto.ActivityStreamData
         this.mentions = new ArrayList<Mention>();
         in.readList(this.mentions, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ActivityStreamData> CREATOR = new Creator<ActivityStreamData>() {

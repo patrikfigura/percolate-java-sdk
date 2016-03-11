@@ -32,7 +32,7 @@ public class Platforms extends com.percolate.sdk.dto.Platforms implements Parcel
         this.data = new ArrayList<Platform>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Platforms> CREATOR = new Creator<Platforms>() {

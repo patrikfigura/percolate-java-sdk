@@ -32,7 +32,7 @@ public class Comments extends com.percolate.sdk.dto.Comments implements Parcelab
         in.readList(this.comments, List.class.getClassLoader());
         this.include = (CommentsInclude) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Comments> CREATOR = new Creator<Comments>() {

@@ -32,7 +32,7 @@ public class PostSet extends com.percolate.sdk.dto.PostSet implements Parcelable
         in.readList(this.postSetData, List.class.getClassLoader());
         this.paginationData = (PaginationData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<PostSet> CREATOR = new Creator<PostSet>() {

@@ -97,7 +97,7 @@ public class Post extends com.percolate.sdk.dto.Post implements Parcelable {
         this.facebookMentions = new ArrayList<FacebookMentionData>();
         in.readList(this.facebookMentions, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Post> CREATOR = new Creator<Post>() {

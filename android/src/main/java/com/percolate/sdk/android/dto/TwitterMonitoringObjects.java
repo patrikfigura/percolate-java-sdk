@@ -32,7 +32,7 @@ public class TwitterMonitoringObjects extends com.percolate.sdk.dto.TwitterMonit
         in.readList(this.data, List.class.getClassLoader());
         this.paginationData = (PaginationData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterMonitoringObjects> CREATOR = new Creator<TwitterMonitoringObjects>() {

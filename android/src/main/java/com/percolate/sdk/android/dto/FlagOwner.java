@@ -30,7 +30,7 @@ public class FlagOwner extends com.percolate.sdk.dto.FlagOwner implements Parcel
         this.type = in.readString();
         this.license = (com.percolate.sdk.dto.License) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FlagOwner> CREATOR = new Creator<FlagOwner>() {

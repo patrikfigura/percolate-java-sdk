@@ -40,7 +40,7 @@ public class FacebookMessageAttachmentImageData extends com.percolate.sdk.dto.Fa
         this.maxWidth = (Integer) in.readValue(Integer.class.getClassLoader());
         this.imageType = (Integer) in.readValue(Integer.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMessageAttachmentImageData> CREATOR = new Creator<FacebookMessageAttachmentImageData>() {

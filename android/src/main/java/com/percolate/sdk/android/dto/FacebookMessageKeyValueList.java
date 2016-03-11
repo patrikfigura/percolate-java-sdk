@@ -30,7 +30,7 @@ public class FacebookMessageKeyValueList extends com.percolate.sdk.dto.FacebookM
         this.data = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookMessageKeyValueList> CREATOR = new Creator<FacebookMessageKeyValueList>() {

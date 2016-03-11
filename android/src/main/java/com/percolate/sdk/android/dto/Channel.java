@@ -40,7 +40,7 @@ public class Channel extends com.percolate.sdk.dto.Channel implements Parcelable
         this.url = in.readString();
         this.pageId = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Channel> CREATOR = new Creator<Channel>() {

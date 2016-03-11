@@ -26,7 +26,7 @@ public class InstagramSingleMonitoringObject extends com.percolate.sdk.dto.Insta
     protected InstagramSingleMonitoringObject(Parcel in) {
         this.data = (com.percolate.sdk.dto.InstagramMonitoringObject) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramSingleMonitoringObject> CREATOR = new Creator<InstagramSingleMonitoringObject>() {

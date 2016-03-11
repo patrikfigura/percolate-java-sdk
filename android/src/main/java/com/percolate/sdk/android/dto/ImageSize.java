@@ -32,7 +32,7 @@ public class ImageSize extends com.percolate.sdk.dto.ImageSize implements Parcel
         this.length = in.readString();
         this.height = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<ImageSize> CREATOR = new Creator<ImageSize>() {

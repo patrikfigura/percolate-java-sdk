@@ -30,7 +30,7 @@ public class Keywords extends com.percolate.sdk.dto.Keywords implements Parcelab
         this.keyword = in.readString();
         this.totalOccurences = (Integer) in.readValue(Integer.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Keywords> CREATOR = new Creator<Keywords>() {

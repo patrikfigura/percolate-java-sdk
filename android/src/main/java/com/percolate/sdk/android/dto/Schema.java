@@ -53,7 +53,7 @@ public class Schema extends com.percolate.sdk.dto.Schema implements Parcelable {
         in.readMap(this.ext, LinkedHashMap.class.getClassLoader());
         this.updated_at = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Schema> CREATOR = new Creator<Schema>() {

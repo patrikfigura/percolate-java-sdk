@@ -28,7 +28,7 @@ public class InstagramPhotoPosition extends com.percolate.sdk.dto.InstagramPhoto
         this.x = (Double) in.readValue(Double.class.getClassLoader());
         this.y = (Double) in.readValue(Double.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramPhotoPosition> CREATOR = new Creator<InstagramPhotoPosition>() {

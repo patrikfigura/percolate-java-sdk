@@ -26,7 +26,7 @@ public class MobileAppPushToken extends com.percolate.sdk.dto.MobileAppPushToken
     protected MobileAppPushToken(Parcel in) {
         this.mobileAppPushTokenData = (com.percolate.sdk.dto.MobileAppPushTokenData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MobileAppPushToken> CREATOR = new Creator<MobileAppPushToken>() {

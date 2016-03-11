@@ -49,7 +49,7 @@ public class Task extends com.percolate.sdk.dto.Task implements Parcelable {
         this.termIds = in.createStringArrayList();
         this.ordinal = (Integer) in.readValue(Integer.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Task> CREATOR = new Creator<Task>() {

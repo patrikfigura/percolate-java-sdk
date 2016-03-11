@@ -89,7 +89,7 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
         this.ext = new LinkedHashMap<>();
         in.readMap(this.ext, LinkedHashMap.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<PostV5Data> CREATOR = new Creator<PostV5Data>() {

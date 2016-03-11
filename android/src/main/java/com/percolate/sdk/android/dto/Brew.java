@@ -36,7 +36,7 @@ public class Brew extends com.percolate.sdk.dto.Brew implements Parcelable {
         this.type = in.readString();
         this.approved = in.readByte() != 0;
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Brew> CREATOR = new Creator<Brew>() {

@@ -26,7 +26,7 @@ public class TwitterRelationships extends com.percolate.sdk.dto.TwitterRelations
     protected TwitterRelationships(Parcel in) {
         this.relationship = (com.percolate.sdk.dto.TwitterRelationship) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<TwitterRelationships> CREATOR = new Creator<TwitterRelationships>() {

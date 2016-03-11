@@ -29,7 +29,7 @@ public class UserRoles extends com.percolate.sdk.dto.UserRoles implements Parcel
         this.userRolesLicenseData = new ArrayList<com.percolate.sdk.dto.UserRolesLicenseData>();
         in.readList(this.userRolesLicenseData, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<UserRoles> CREATOR = new Creator<UserRoles>() {

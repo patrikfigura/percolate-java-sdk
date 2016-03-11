@@ -49,7 +49,7 @@ public class Comment extends com.percolate.sdk.dto.Comment implements Parcelable
         this.contextExt = (CommentContextExt) in.readSerializable();
         this.updatedAt = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Comment> CREATOR = new Creator<Comment>() {

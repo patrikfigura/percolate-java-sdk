@@ -26,7 +26,7 @@ public class SingleSchema extends com.percolate.sdk.dto.SingleSchema implements 
     protected SingleSchema(Parcel in) {
         this.data = (com.percolate.sdk.dto.Schema) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<SingleSchema> CREATOR = new Creator<SingleSchema>() {

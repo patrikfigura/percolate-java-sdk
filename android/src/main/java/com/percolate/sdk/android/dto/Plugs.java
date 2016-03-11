@@ -29,7 +29,7 @@ public class Plugs extends com.percolate.sdk.dto.Plugs implements Parcelable {
         this.plugs = new ArrayList<com.percolate.sdk.dto.Plug>();
         in.readList(this.plugs, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Plugs> CREATOR = new Creator<Plugs>() {

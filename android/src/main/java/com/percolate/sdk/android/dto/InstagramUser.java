@@ -29,7 +29,7 @@ public class InstagramUser extends com.percolate.sdk.dto.InstagramUser implement
         this.meta = (com.percolate.sdk.dto.InstagramRequestMetaData) in.readSerializable();
         this.data = (InstagramUserData) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramUser> CREATOR = new Creator<InstagramUser>() {

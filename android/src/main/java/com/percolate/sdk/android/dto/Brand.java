@@ -28,7 +28,7 @@ public class Brand extends com.percolate.sdk.dto.Brand implements Parcelable {
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.name = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Brand> CREATOR = new Creator<Brand>() {

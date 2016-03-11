@@ -29,7 +29,7 @@ public class WorkflowHistory extends com.percolate.sdk.dto.WorkflowHistory imple
         this.events = new ArrayList<com.percolate.sdk.dto.WorkflowHistoryEvent>();
         in.readList(this.events, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<WorkflowHistory> CREATOR = new Creator<WorkflowHistory>() {

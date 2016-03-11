@@ -36,7 +36,7 @@ public class Token extends com.percolate.sdk.dto.Token implements Parcelable {
         this.pages = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.pages, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Token> CREATOR = new Creator<Token>() {

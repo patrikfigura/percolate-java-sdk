@@ -30,7 +30,7 @@ public class PushRegistrationInfo extends com.percolate.sdk.dto.PushRegistration
         this.pushTokenUID = in.readString();
         this.appVersion = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<PushRegistrationInfo> CREATOR = new Creator<PushRegistrationInfo>() {

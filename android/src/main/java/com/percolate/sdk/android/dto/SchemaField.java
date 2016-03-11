@@ -57,7 +57,7 @@ public class SchemaField extends com.percolate.sdk.dto.SchemaField implements Pa
         this.ext = new LinkedHashMap<>();
         in.readMap(this.ext, LinkedHashMap.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<SchemaField> CREATOR = new Creator<SchemaField>() {

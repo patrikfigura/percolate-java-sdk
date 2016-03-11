@@ -66,7 +66,7 @@ public class Media extends com.percolate.sdk.dto.Media implements Parcelable {
         this.imagesForTypeVideo = new ArrayList<ImageSize>();
         in.readList(this.imagesForTypeVideo, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Media> CREATOR = new Creator<Media>() {

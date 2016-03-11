@@ -35,7 +35,7 @@ public class PostsV5 extends com.percolate.sdk.dto.PostsV5 implements Parcelable
         this.data = new ArrayList<PostV5Data>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<PostsV5> CREATOR = new Creator<PostsV5>() {

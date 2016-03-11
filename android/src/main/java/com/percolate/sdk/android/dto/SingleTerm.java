@@ -26,7 +26,7 @@ public class SingleTerm extends com.percolate.sdk.dto.SingleTerm implements Parc
     protected SingleTerm(Parcel in) {
         this.data = (com.percolate.sdk.dto.Term) in.readSerializable();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<SingleTerm> CREATOR = new Creator<SingleTerm>() {

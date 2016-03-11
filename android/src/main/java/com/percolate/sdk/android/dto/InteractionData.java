@@ -40,7 +40,7 @@ public class InteractionData extends com.percolate.sdk.dto.InteractionData imple
         this.createdAt = in.readString();
         this.updatedAt = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InteractionData> CREATOR = new Creator<InteractionData>() {

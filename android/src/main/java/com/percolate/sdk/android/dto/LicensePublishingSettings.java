@@ -29,7 +29,7 @@ public class LicensePublishingSettings extends com.percolate.sdk.dto.LicensePubl
         this.topics = new ArrayList<com.percolate.sdk.dto.Topic>();
         in.readList(this.topics, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<LicensePublishingSettings> CREATOR = new Creator<LicensePublishingSettings>() {

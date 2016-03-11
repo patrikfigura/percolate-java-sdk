@@ -29,7 +29,7 @@ public class FacebookUserDataList extends com.percolate.sdk.dto.FacebookUserData
         this.data = new ArrayList<com.percolate.sdk.dto.FacebookUser>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<FacebookUserDataList> CREATOR = new Creator<FacebookUserDataList>() {

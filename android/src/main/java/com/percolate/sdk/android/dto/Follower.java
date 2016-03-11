@@ -34,7 +34,7 @@ public class Follower extends com.percolate.sdk.dto.Follower implements Parcelab
         this.userId = (Long) in.readValue(Long.class.getClassLoader());
         this.errorId = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<Follower> CREATOR = new Creator<Follower>() {

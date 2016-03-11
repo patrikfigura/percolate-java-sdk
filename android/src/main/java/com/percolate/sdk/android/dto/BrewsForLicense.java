@@ -32,7 +32,7 @@ public class BrewsForLicense extends com.percolate.sdk.dto.BrewsForLicense imple
         this.data = new ArrayList<BrewLicenceConnection>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<BrewsForLicense> CREATOR = new Creator<BrewsForLicense>() {

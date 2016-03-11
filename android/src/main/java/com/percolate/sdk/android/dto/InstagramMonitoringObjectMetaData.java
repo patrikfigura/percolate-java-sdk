@@ -32,7 +32,7 @@ public class InstagramMonitoringObjectMetaData extends com.percolate.sdk.dto.Ins
         this.parentXid = in.readString();
         this.parentShortcode = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<InstagramMonitoringObjectMetaData> CREATOR = new Creator<InstagramMonitoringObjectMetaData>() {

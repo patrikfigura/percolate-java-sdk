@@ -34,7 +34,7 @@ public class MediaFormat extends com.percolate.sdk.dto.MediaFormat implements Pa
         this.contentType = in.readString();
         this.fileSize = in.readString();
         this.extraFields = new HashMap<>();
-        in.writeMap(this.extraFields);
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final Creator<MediaFormat> CREATOR = new Creator<MediaFormat>() {
