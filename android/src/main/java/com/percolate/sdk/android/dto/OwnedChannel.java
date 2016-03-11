@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.OwnedChannel}.  Implements {@link Parcelable}
  */
@@ -24,6 +26,7 @@ public class OwnedChannel extends com.percolate.sdk.dto.OwnedChannel implements 
         dest.writeValue(this.totalSubscribers);
         dest.writeString(this.type);
         dest.writeString(this.photoUrl);
+        dest.writeMap(this.extraFields);
     }
 
     public OwnedChannel() {
@@ -40,6 +43,8 @@ public class OwnedChannel extends com.percolate.sdk.dto.OwnedChannel implements 
         this.totalSubscribers = (Integer) in.readValue(Integer.class.getClassLoader());
         this.type = in.readString();
         this.photoUrl = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<OwnedChannel> CREATOR = new Creator<OwnedChannel>() {

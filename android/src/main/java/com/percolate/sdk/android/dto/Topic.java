@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.Topic}.  Implements {@link Parcelable}
@@ -21,6 +22,7 @@ public class Topic extends com.percolate.sdk.dto.Topic implements Parcelable {
         dest.writeString(this.color);
         dest.writeString(this.ownerUid);
         dest.writeSerializable(this.owner);
+        dest.writeMap(this.extraFields);
     }
 
     public Topic() {
@@ -33,6 +35,8 @@ public class Topic extends com.percolate.sdk.dto.Topic implements Parcelable {
         this.color = in.readString();
         this.ownerUid = in.readString();
         this.owner = (com.percolate.sdk.dto.License) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Topic> CREATOR = new Creator<Topic>() {

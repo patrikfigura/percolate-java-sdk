@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,6 +19,7 @@ public class LicensePublishingSettings extends com.percolate.sdk.dto.LicensePubl
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.topics);
+        dest.writeMap(this.extraFields);
     }
 
     public LicensePublishingSettings() {
@@ -27,6 +28,8 @@ public class LicensePublishingSettings extends com.percolate.sdk.dto.LicensePubl
     protected LicensePublishingSettings(Parcel in) {
         this.topics = new ArrayList<com.percolate.sdk.dto.Topic>();
         in.readList(this.topics, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<LicensePublishingSettings> CREATOR = new Creator<LicensePublishingSettings>() {

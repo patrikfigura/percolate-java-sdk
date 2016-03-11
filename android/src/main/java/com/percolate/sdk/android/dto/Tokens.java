@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.PaginationData;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -21,6 +21,7 @@ public class Tokens extends com.percolate.sdk.dto.Tokens implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.data);
         dest.writeSerializable(this.paginationData);
+        dest.writeMap(this.extraFields);
     }
 
     public Tokens() {
@@ -30,6 +31,8 @@ public class Tokens extends com.percolate.sdk.dto.Tokens implements Parcelable {
         this.data = new ArrayList<com.percolate.sdk.dto.Token>();
         in.readList(this.data, List.class.getClassLoader());
         this.paginationData = (PaginationData) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Tokens> CREATOR = new Creator<Tokens>() {

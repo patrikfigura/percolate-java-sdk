@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.InstagramMonitoringObjectMetaData}.  Implements {@link Parcelable}
  */
@@ -18,6 +20,7 @@ public class InstagramMonitoringObjectMetaData extends com.percolate.sdk.dto.Ins
         dest.writeString(this.type);
         dest.writeString(this.parentXid);
         dest.writeString(this.parentShortcode);
+        dest.writeMap(this.extraFields);
     }
 
     public InstagramMonitoringObjectMetaData() {
@@ -28,6 +31,8 @@ public class InstagramMonitoringObjectMetaData extends com.percolate.sdk.dto.Ins
         this.type = in.readString();
         this.parentXid = in.readString();
         this.parentShortcode = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<InstagramMonitoringObjectMetaData> CREATOR = new Creator<InstagramMonitoringObjectMetaData>() {

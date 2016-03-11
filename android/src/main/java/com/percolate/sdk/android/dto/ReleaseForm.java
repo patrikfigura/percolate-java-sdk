@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.ReleaseForm}.  Implements {@link Parcelable}
  */
@@ -20,6 +22,7 @@ public class ReleaseForm extends com.percolate.sdk.dto.ReleaseForm implements Pa
         dest.writeString(this.name);
         dest.writeString(this.referenceUID);
         dest.writeValue(this.signatureImageId);
+        dest.writeMap(this.extraFields);
     }
 
     public ReleaseForm() {
@@ -32,6 +35,8 @@ public class ReleaseForm extends com.percolate.sdk.dto.ReleaseForm implements Pa
         this.name = in.readString();
         this.referenceUID = in.readString();
         this.signatureImageId = (Long) in.readValue(Long.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<ReleaseForm> CREATOR = new Creator<ReleaseForm>() {

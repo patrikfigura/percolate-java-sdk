@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,6 +19,7 @@ public class Plugs extends com.percolate.sdk.dto.Plugs implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.plugs);
+        dest.writeMap(this.extraFields);
     }
 
     public Plugs() {
@@ -27,6 +28,8 @@ public class Plugs extends com.percolate.sdk.dto.Plugs implements Parcelable {
     protected Plugs(Parcel in) {
         this.plugs = new ArrayList<com.percolate.sdk.dto.Plug>();
         in.readList(this.plugs, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Plugs> CREATOR = new Creator<Plugs>() {

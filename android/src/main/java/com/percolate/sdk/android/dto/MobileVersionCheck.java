@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.MobileVersionCheck}.  Implements {@link Parcelable}
  */
@@ -23,6 +25,7 @@ public class MobileVersionCheck extends com.percolate.sdk.dto.MobileVersionCheck
         dest.writeString(this.upgradeUrl);
         dest.writeInt(this.versionNumber);
         dest.writeString(this.error);
+        dest.writeMap(this.extraFields);
     }
 
     public MobileVersionCheck() {
@@ -38,6 +41,8 @@ public class MobileVersionCheck extends com.percolate.sdk.dto.MobileVersionCheck
         this.upgradeUrl = in.readString();
         this.versionNumber = in.readInt();
         this.error = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<MobileVersionCheck> CREATOR = new Creator<MobileVersionCheck>() {

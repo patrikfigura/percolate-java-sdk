@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.OAuthTokenData}.  Implements {@link Parcelable}
  */
@@ -17,6 +19,7 @@ public class OAuthTokenData extends com.percolate.sdk.dto.OAuthTokenData impleme
         dest.writeString(this.tokenUID);
         dest.writeString(this.licenseTokenUID);
         dest.writeString(this.scopeUID);
+        dest.writeMap(this.extraFields);
     }
 
     public OAuthTokenData() {
@@ -26,6 +29,8 @@ public class OAuthTokenData extends com.percolate.sdk.dto.OAuthTokenData impleme
         this.tokenUID = in.readString();
         this.licenseTokenUID = in.readString();
         this.scopeUID = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<OAuthTokenData> CREATOR = new Creator<OAuthTokenData>() {

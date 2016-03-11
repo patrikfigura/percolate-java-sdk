@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.InstagramMediaUrl}.  Implements {@link Parcelable}
  */
@@ -17,6 +19,7 @@ public class InstagramMediaUrl extends com.percolate.sdk.dto.InstagramMediaUrl i
         dest.writeString(this.url);
         dest.writeInt(this.width);
         dest.writeInt(this.height);
+        dest.writeMap(this.extraFields);
     }
 
     public InstagramMediaUrl() {
@@ -26,6 +29,8 @@ public class InstagramMediaUrl extends com.percolate.sdk.dto.InstagramMediaUrl i
         this.url = in.readString();
         this.width = in.readInt();
         this.height = in.readInt();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<InstagramMediaUrl> CREATOR = new Creator<InstagramMediaUrl>() {

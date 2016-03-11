@@ -2,11 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.FacebookMonitoringXObj;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -26,6 +25,7 @@ public class FacebookMonitoringObject extends com.percolate.sdk.dto.FacebookMoni
         dest.writeList(this.activity);
         dest.writeString(this.relatedPostSetId);
         dest.writeSerializable(this.xobj);
+        dest.writeMap(this.extraFields);
     }
 
     public FacebookMonitoringObject() {
@@ -39,6 +39,8 @@ public class FacebookMonitoringObject extends com.percolate.sdk.dto.FacebookMoni
         in.readList(this.activity, List.class.getClassLoader());
         this.relatedPostSetId = in.readString();
         this.xobj = (FacebookMonitoringXObj) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<FacebookMonitoringObject> CREATOR = new Creator<FacebookMonitoringObject>() {

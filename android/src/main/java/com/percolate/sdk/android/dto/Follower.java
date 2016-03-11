@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.Follower}.  Implements {@link Parcelable}
@@ -20,6 +21,7 @@ public class Follower extends com.percolate.sdk.dto.Follower implements Parcelab
         dest.writeSerializable(this.user);
         dest.writeValue(this.userId);
         dest.writeString(this.errorId);
+        dest.writeMap(this.extraFields);
     }
 
     public Follower() {
@@ -31,6 +33,8 @@ public class Follower extends com.percolate.sdk.dto.Follower implements Parcelab
         this.user = (com.percolate.sdk.dto.User) in.readSerializable();
         this.userId = (Long) in.readValue(Long.class.getClassLoader());
         this.errorId = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Follower> CREATOR = new Creator<Follower>() {

@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.SingleFlag}.  Implements {@link Parcelable}
@@ -16,6 +17,7 @@ public class SingleFlag extends com.percolate.sdk.dto.SingleFlag implements Parc
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public SingleFlag() {
@@ -23,6 +25,8 @@ public class SingleFlag extends com.percolate.sdk.dto.SingleFlag implements Parc
 
     protected SingleFlag(Parcel in) {
         this.data = (com.percolate.sdk.dto.Flag) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<SingleFlag> CREATOR = new Creator<SingleFlag>() {

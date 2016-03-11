@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.User;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -21,6 +21,7 @@ public class BrewUsers extends com.percolate.sdk.dto.BrewUsers implements Parcel
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.paginationData);
         dest.writeList(this.users);
+        dest.writeMap(this.extraFields);
     }
 
     public BrewUsers() {
@@ -30,6 +31,8 @@ public class BrewUsers extends com.percolate.sdk.dto.BrewUsers implements Parcel
         this.paginationData = (com.percolate.sdk.dto.PaginationData) in.readSerializable();
         this.users = new ArrayList<User>();
         in.readList(this.users, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<BrewUsers> CREATOR = new Creator<BrewUsers>() {

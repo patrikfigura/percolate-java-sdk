@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.ChannelV5}.  Implements {@link Parcelable}
  */
@@ -29,6 +31,7 @@ public class ChannelV5 extends com.percolate.sdk.dto.ChannelV5 implements Parcel
         dest.writeStringList(this.mediaBuyerIds);
         dest.writeStringList(this.capabilities);
         dest.writeString(this.updatedAt);
+        dest.writeMap(this.extraFields);
     }
 
     public ChannelV5() {
@@ -50,6 +53,8 @@ public class ChannelV5 extends com.percolate.sdk.dto.ChannelV5 implements Parcel
         this.mediaBuyerIds = in.createStringArrayList();
         this.capabilities = in.createStringArrayList();
         this.updatedAt = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<ChannelV5> CREATOR = new Creator<ChannelV5>() {

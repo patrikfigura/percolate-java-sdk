@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,6 +19,7 @@ public class Workflow extends com.percolate.sdk.dto.Workflow implements Parcelab
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public Workflow() {
@@ -27,6 +28,8 @@ public class Workflow extends com.percolate.sdk.dto.Workflow implements Parcelab
     protected Workflow(Parcel in) {
         this.data = new ArrayList<com.percolate.sdk.dto.WorkflowData>();
         in.readList(this.data, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Workflow> CREATOR = new Creator<Workflow>() {

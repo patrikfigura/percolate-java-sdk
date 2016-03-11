@@ -2,11 +2,11 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.FacebookUser;
 import com.percolate.sdk.dto.Flag;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -31,6 +31,7 @@ public class FacebookConversationMessage extends com.percolate.sdk.dto.FacebookC
         dest.writeString(this.createdAt);
         dest.writeValue(this.hasAttachments);
         dest.writeString(this.message);
+        dest.writeMap(this.extraFields);
     }
 
     public FacebookConversationMessage() {
@@ -50,6 +51,8 @@ public class FacebookConversationMessage extends com.percolate.sdk.dto.FacebookC
         this.createdAt = in.readString();
         this.hasAttachments = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.message = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<FacebookConversationMessage> CREATOR = new Creator<FacebookConversationMessage>() {

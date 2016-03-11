@@ -3,6 +3,7 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 /**
@@ -18,6 +19,7 @@ public class Services extends com.percolate.sdk.dto.Services implements Parcelab
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeMap(this.analytics);
         dest.writeString(this.type);
+        dest.writeMap(this.extraFields);
     }
 
     public Services() {
@@ -27,6 +29,8 @@ public class Services extends com.percolate.sdk.dto.Services implements Parcelab
         this.analytics = new LinkedHashMap<>();
         in.readMap(this.analytics, LinkedHashMap.class.getClassLoader());
         this.type = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Services> CREATOR = new Creator<Services>() {

@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.ChannelV5;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -21,6 +21,7 @@ public class PostV5Include extends com.percolate.sdk.dto.PostV5Include implement
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.platform);
         dest.writeList(this.channel);
+        dest.writeMap(this.extraFields);
     }
 
     public PostV5Include() {
@@ -31,6 +32,8 @@ public class PostV5Include extends com.percolate.sdk.dto.PostV5Include implement
         in.readList(this.platform, List.class.getClassLoader());
         this.channel = new ArrayList<ChannelV5>();
         in.readList(this.channel, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<PostV5Include> CREATOR = new Creator<PostV5Include>() {

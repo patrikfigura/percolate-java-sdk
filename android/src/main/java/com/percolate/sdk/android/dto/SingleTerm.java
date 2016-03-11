@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.SingleTerm}.  Implements {@link Parcelable}
@@ -16,6 +17,7 @@ public class SingleTerm extends com.percolate.sdk.dto.SingleTerm implements Parc
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public SingleTerm() {
@@ -23,6 +25,8 @@ public class SingleTerm extends com.percolate.sdk.dto.SingleTerm implements Parc
 
     protected SingleTerm(Parcel in) {
         this.data = (com.percolate.sdk.dto.Term) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<SingleTerm> CREATOR = new Creator<SingleTerm>() {

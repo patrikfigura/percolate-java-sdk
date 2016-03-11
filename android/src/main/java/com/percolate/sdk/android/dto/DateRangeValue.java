@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.DateRangeValue}.  Implements {@link Parcelable}
  */
@@ -16,6 +18,7 @@ public class DateRangeValue extends com.percolate.sdk.dto.DateRangeValue impleme
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.from);
         dest.writeString(this.to);
+        dest.writeMap(this.extraFields);
     }
 
     public DateRangeValue() {
@@ -24,6 +27,8 @@ public class DateRangeValue extends com.percolate.sdk.dto.DateRangeValue impleme
     protected DateRangeValue(Parcel in) {
         this.from = in.readString();
         this.to = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<DateRangeValue> CREATOR = new Creator<DateRangeValue>() {

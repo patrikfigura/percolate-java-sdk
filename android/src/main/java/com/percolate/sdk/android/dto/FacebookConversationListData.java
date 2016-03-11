@@ -2,9 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.FacebookConversationMessage;
 import com.percolate.sdk.dto.FacebookUserDataList;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.FacebookConversationListData}.  Implements {@link Parcelable}
@@ -26,6 +27,7 @@ public class FacebookConversationListData extends com.percolate.sdk.dto.Facebook
         dest.writeValue(this.canReply);
         dest.writeSerializable(this.mostRecentMessage);
         dest.writeSerializable(this.participants);
+        dest.writeMap(this.extraFields);
     }
 
     public FacebookConversationListData() {
@@ -41,6 +43,8 @@ public class FacebookConversationListData extends com.percolate.sdk.dto.Facebook
         this.canReply = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.mostRecentMessage = (FacebookConversationMessage) in.readSerializable();
         this.participants = (FacebookUserDataList) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<FacebookConversationListData> CREATOR = new Creator<FacebookConversationListData>() {

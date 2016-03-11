@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.MediaFormat}.  Implements {@link Parcelable}
@@ -20,6 +21,7 @@ public class MediaFormat extends com.percolate.sdk.dto.MediaFormat implements Pa
         dest.writeSerializable(this.metaData);
         dest.writeString(this.contentType);
         dest.writeString(this.fileSize);
+        dest.writeMap(this.extraFields);
     }
 
     public MediaFormat() {
@@ -31,6 +33,8 @@ public class MediaFormat extends com.percolate.sdk.dto.MediaFormat implements Pa
         this.metaData = (com.percolate.sdk.dto.VideoFormatMetaData) in.readSerializable();
         this.contentType = in.readString();
         this.fileSize = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<MediaFormat> CREATOR = new Creator<MediaFormat>() {

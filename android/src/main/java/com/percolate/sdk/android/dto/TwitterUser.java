@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -65,6 +65,7 @@ public class TwitterUser extends com.percolate.sdk.dto.TwitterUser implements Pa
         dest.writeValue(this.suspended);
         dest.writeValue(this.needsPhoneVerification);
         dest.writeList(this.errors);
+        dest.writeMap(this.extraFields);
     }
 
     public TwitterUser() {
@@ -119,6 +120,8 @@ public class TwitterUser extends com.percolate.sdk.dto.TwitterUser implements Pa
         this.needsPhoneVerification = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.errors = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.errors, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<TwitterUser> CREATOR = new Creator<TwitterUser>() {

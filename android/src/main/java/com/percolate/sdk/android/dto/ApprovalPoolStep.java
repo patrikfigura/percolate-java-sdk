@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -22,6 +23,7 @@ public class ApprovalPoolStep extends com.percolate.sdk.dto.ApprovalPoolStep imp
         dest.writeString(this.name);
         dest.writeList(this.channelIds);
         dest.writeValue(this.ordinal);
+        dest.writeMap(this.extraFields);
     }
 
     public ApprovalPoolStep() {
@@ -35,6 +37,8 @@ public class ApprovalPoolStep extends com.percolate.sdk.dto.ApprovalPoolStep imp
         this.channelIds = new ArrayList<Long>();
         in.readList(this.channelIds, List.class.getClassLoader());
         this.ordinal = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<ApprovalPoolStep> CREATOR = new Creator<ApprovalPoolStep>() {

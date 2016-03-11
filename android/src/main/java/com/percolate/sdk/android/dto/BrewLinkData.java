@@ -2,12 +2,12 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.Keywords;
 import com.percolate.sdk.dto.Media;
 import com.percolate.sdk.dto.OwnedChannel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -35,6 +35,7 @@ public class BrewLinkData extends com.percolate.sdk.dto.BrewLinkData implements 
         dest.writeString(this.title);
         dest.writeString(this.url);
         dest.writeString(this.createdAt);
+        dest.writeMap(this.extraFields);
     }
 
     public BrewLinkData() {
@@ -57,6 +58,8 @@ public class BrewLinkData extends com.percolate.sdk.dto.BrewLinkData implements 
         this.title = in.readString();
         this.url = in.readString();
         this.createdAt = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<BrewLinkData> CREATOR = new Creator<BrewLinkData>() {

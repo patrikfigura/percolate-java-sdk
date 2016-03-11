@@ -2,13 +2,13 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.Media;
 import com.percolate.sdk.dto.ShareLink;
 import com.percolate.sdk.dto.ShareUgcMeta;
 import com.percolate.sdk.dto.ShareUser;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.ShareObject}.  Implements {@link Parcelable}
@@ -30,6 +30,7 @@ public class ShareObject extends com.percolate.sdk.dto.ShareObject implements Pa
         dest.writeString(this.type);
         dest.writeSerializable(this.image);
         dest.writeSerializable(this.ugcMeta);
+        dest.writeMap(this.extraFields);
     }
 
     public ShareObject() {
@@ -46,6 +47,8 @@ public class ShareObject extends com.percolate.sdk.dto.ShareObject implements Pa
         this.type = in.readString();
         this.image = (Media) in.readSerializable();
         this.ugcMeta = (ShareUgcMeta) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<ShareObject> CREATOR = new Creator<ShareObject>() {

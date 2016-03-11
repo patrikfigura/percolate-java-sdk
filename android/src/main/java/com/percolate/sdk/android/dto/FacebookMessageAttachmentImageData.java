@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.FacebookMessageAttachmentImageData}.  Implements {@link Parcelable}
  */
@@ -22,6 +24,7 @@ public class FacebookMessageAttachmentImageData extends com.percolate.sdk.dto.Fa
         dest.writeValue(this.maxHeight);
         dest.writeValue(this.maxWidth);
         dest.writeValue(this.imageType);
+        dest.writeMap(this.extraFields);
     }
 
     public FacebookMessageAttachmentImageData() {
@@ -36,6 +39,8 @@ public class FacebookMessageAttachmentImageData extends com.percolate.sdk.dto.Fa
         this.maxHeight = (Integer) in.readValue(Integer.class.getClassLoader());
         this.maxWidth = (Integer) in.readValue(Integer.class.getClassLoader());
         this.imageType = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<FacebookMessageAttachmentImageData> CREATOR = new Creator<FacebookMessageAttachmentImageData>() {

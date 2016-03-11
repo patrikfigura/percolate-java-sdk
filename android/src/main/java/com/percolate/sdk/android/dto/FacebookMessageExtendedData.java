@@ -2,10 +2,11 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.FacebookMessageAttachments;
 import com.percolate.sdk.dto.FacebookMessageKeyValueList;
 import com.percolate.sdk.dto.FacebookUserDataList;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.FacebookMessageExtendedData}.  Implements {@link Parcelable}
@@ -26,6 +27,7 @@ public class FacebookMessageExtendedData extends com.percolate.sdk.dto.FacebookM
         dest.writeSerializable(this.shares);
         dest.writeSerializable(this.tags);
         dest.writeSerializable(this.attachments);
+        dest.writeMap(this.extraFields);
     }
 
     public FacebookMessageExtendedData() {
@@ -40,6 +42,8 @@ public class FacebookMessageExtendedData extends com.percolate.sdk.dto.FacebookM
         this.shares = (FacebookMessageKeyValueList) in.readSerializable();
         this.tags = (FacebookMessageKeyValueList) in.readSerializable();
         this.attachments = (FacebookMessageAttachments) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<FacebookMessageExtendedData> CREATOR = new Creator<FacebookMessageExtendedData>() {

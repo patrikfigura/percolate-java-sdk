@@ -2,11 +2,11 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.PostV5Data;
 import com.percolate.sdk.dto.PostV5Include;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -23,6 +23,7 @@ public class PostsV5 extends com.percolate.sdk.dto.PostsV5 implements Parcelable
         dest.writeSerializable(this.meta);
         dest.writeSerializable(this.include);
         dest.writeList(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public PostsV5() {
@@ -33,6 +34,8 @@ public class PostsV5 extends com.percolate.sdk.dto.PostsV5 implements Parcelable
         this.include = (PostV5Include) in.readSerializable();
         this.data = new ArrayList<PostV5Data>();
         in.readList(this.data, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<PostsV5> CREATOR = new Creator<PostsV5>() {

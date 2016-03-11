@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.FacebookMonitoringXObj}.  Implements {@link Parcelable}
@@ -27,6 +28,7 @@ public class FacebookMonitoringXObj extends com.percolate.sdk.dto.FacebookMonito
         dest.writeString(this.thumbnail);
         dest.writeString(this.type);
         dest.writeSerializable(this.user);
+        dest.writeMap(this.extraFields);
     }
 
     public FacebookMonitoringXObj() {
@@ -45,6 +47,8 @@ public class FacebookMonitoringXObj extends com.percolate.sdk.dto.FacebookMonito
         this.thumbnail = in.readString();
         this.type = in.readString();
         this.user = (com.percolate.sdk.dto.FacebookMonitoringUser) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<FacebookMonitoringXObj> CREATOR = new Creator<FacebookMonitoringXObj>() {

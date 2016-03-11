@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.CampaignSectionData}.  Implements {@link Parcelable}
  */
@@ -18,6 +20,7 @@ public class CampaignSectionData extends com.percolate.sdk.dto.CampaignSectionDa
         dest.writeString(this.title);
         dest.writeString(this.copyHtml);
         dest.writeStringList(this.mediaUids);
+        dest.writeMap(this.extraFields);
     }
 
     public CampaignSectionData() {
@@ -28,6 +31,8 @@ public class CampaignSectionData extends com.percolate.sdk.dto.CampaignSectionDa
         this.title = in.readString();
         this.copyHtml = in.readString();
         this.mediaUids = in.createStringArrayList();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<CampaignSectionData> CREATOR = new Creator<CampaignSectionData>() {

@@ -2,8 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 /**
@@ -38,6 +38,7 @@ public class Tweet extends com.percolate.sdk.dto.Tweet implements Parcelable {
         dest.writeValue(this.possiblySensitive);
         dest.writeString(this.lang);
         dest.writeString(this.filterLevel);
+        dest.writeMap(this.extraFields);
     }
 
     public Tweet() {
@@ -66,6 +67,8 @@ public class Tweet extends com.percolate.sdk.dto.Tweet implements Parcelable {
         this.possiblySensitive = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.lang = in.readString();
         this.filterLevel = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Tweet> CREATOR = new Creator<Tweet>() {

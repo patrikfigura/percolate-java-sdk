@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,6 +19,7 @@ public class WorkflowHistory extends com.percolate.sdk.dto.WorkflowHistory imple
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.events);
+        dest.writeMap(this.extraFields);
     }
 
     public WorkflowHistory() {
@@ -27,6 +28,8 @@ public class WorkflowHistory extends com.percolate.sdk.dto.WorkflowHistory imple
     protected WorkflowHistory(Parcel in) {
         this.events = new ArrayList<com.percolate.sdk.dto.WorkflowHistoryEvent>();
         in.readList(this.events, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<WorkflowHistory> CREATOR = new Creator<WorkflowHistory>() {

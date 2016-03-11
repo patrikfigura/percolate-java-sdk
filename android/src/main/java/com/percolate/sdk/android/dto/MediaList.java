@@ -2,11 +2,11 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.Media;
 import com.percolate.sdk.dto.PaginationData;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -26,6 +26,7 @@ public class MediaList extends com.percolate.sdk.dto.MediaList implements Parcel
         dest.writeSerializable(this.paginationData);
         dest.writeString(this.detail);
         dest.writeList(this.errors);
+        dest.writeMap(this.extraFields);
     }
 
     public MediaList() {
@@ -39,6 +40,8 @@ public class MediaList extends com.percolate.sdk.dto.MediaList implements Parcel
         this.detail = in.readString();
         this.errors = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.errors, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<MediaList> CREATOR = new Creator<MediaList>() {

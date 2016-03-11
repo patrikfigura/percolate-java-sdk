@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.Task}.  Implements {@link Parcelable}
  */
@@ -27,6 +29,7 @@ public class Task extends com.percolate.sdk.dto.Task implements Parcelable {
         dest.writeString(this.scopeId);
         dest.writeStringList(this.termIds);
         dest.writeValue(this.ordinal);
+        dest.writeMap(this.extraFields);
     }
 
     public Task() {
@@ -45,6 +48,8 @@ public class Task extends com.percolate.sdk.dto.Task implements Parcelable {
         this.scopeId = in.readString();
         this.termIds = in.createStringArrayList();
         this.ordinal = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Task> CREATOR = new Creator<Task>() {

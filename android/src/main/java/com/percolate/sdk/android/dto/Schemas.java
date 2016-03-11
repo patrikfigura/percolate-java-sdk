@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.Schema;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -21,6 +21,7 @@ public class Schemas extends com.percolate.sdk.dto.Schemas implements Parcelable
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.meta);
         dest.writeList(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public Schemas() {
@@ -30,6 +31,8 @@ public class Schemas extends com.percolate.sdk.dto.Schemas implements Parcelable
         this.meta = (com.percolate.sdk.dto.V5Meta) in.readSerializable();
         this.data = new ArrayList<Schema>();
         in.readList(this.data, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Schemas> CREATOR = new Creator<Schemas>() {

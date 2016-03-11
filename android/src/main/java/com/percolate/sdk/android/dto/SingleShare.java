@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.SingleShare}.  Implements {@link Parcelable}
@@ -16,6 +17,7 @@ public class SingleShare extends com.percolate.sdk.dto.SingleShare implements Pa
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public SingleShare() {
@@ -23,6 +25,8 @@ public class SingleShare extends com.percolate.sdk.dto.SingleShare implements Pa
 
     protected SingleShare(Parcel in) {
         this.data = (com.percolate.sdk.dto.ShareData) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<SingleShare> CREATOR = new Creator<SingleShare>() {

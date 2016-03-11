@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.ImageSize}.  Implements {@link Parcelable}
  */
@@ -18,6 +20,7 @@ public class ImageSize extends com.percolate.sdk.dto.ImageSize implements Parcel
         dest.writeString(this.width);
         dest.writeString(this.length);
         dest.writeString(this.height);
+        dest.writeMap(this.extraFields);
     }
 
     public ImageSize() {
@@ -28,6 +31,8 @@ public class ImageSize extends com.percolate.sdk.dto.ImageSize implements Parcel
         this.width = in.readString();
         this.length = in.readString();
         this.height = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<ImageSize> CREATOR = new Creator<ImageSize>() {

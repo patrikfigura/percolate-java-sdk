@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -21,6 +21,7 @@ public class Features extends com.percolate.sdk.dto.Features implements Parcelab
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeMap(this.meta);
         dest.writeList(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public Features() {
@@ -31,6 +32,8 @@ public class Features extends com.percolate.sdk.dto.Features implements Parcelab
         in.readMap(this.meta, LinkedHashMap.class.getClassLoader());
         this.data = new ArrayList<>();
         in.readList(this.data, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Features> CREATOR = new Creator<Features>() {

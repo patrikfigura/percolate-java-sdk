@@ -2,13 +2,11 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.InstagramComment;
 import com.percolate.sdk.dto.InstagramIncludeMediaData;
 import com.percolate.sdk.dto.InstagramMonitoringObjectMetaData;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.InstagramMonitoringObject}.  Implements {@link Parcelable}
@@ -27,6 +25,7 @@ public class InstagramMonitoringObject extends com.percolate.sdk.dto.InstagramMo
         dest.writeSerializable(this.xobj);
         dest.writeSerializable(this.meta);
         dest.writeValue(this.relatedPostSetId);
+        dest.writeMap(this.extraFields);
     }
 
     public InstagramMonitoringObject() {
@@ -39,6 +38,8 @@ public class InstagramMonitoringObject extends com.percolate.sdk.dto.InstagramMo
         this.xobj = (InstagramComment) in.readSerializable();
         this.meta = (InstagramMonitoringObjectMetaData) in.readSerializable();
         this.relatedPostSetId = (Long) in.readValue(Long.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<InstagramMonitoringObject> CREATOR = new Creator<InstagramMonitoringObject>() {

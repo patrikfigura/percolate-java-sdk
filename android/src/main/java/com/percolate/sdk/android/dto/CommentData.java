@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.CommentData}.  Implements {@link Parcelable}
@@ -16,6 +17,7 @@ public class CommentData extends com.percolate.sdk.dto.CommentData implements Pa
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.comment);
+        dest.writeMap(this.extraFields);
     }
 
     public CommentData() {
@@ -23,6 +25,8 @@ public class CommentData extends com.percolate.sdk.dto.CommentData implements Pa
 
     protected CommentData(Parcel in) {
         this.comment = (com.percolate.sdk.dto.Comment) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<CommentData> CREATOR = new Creator<CommentData>() {

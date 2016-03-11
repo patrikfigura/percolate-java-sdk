@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -24,6 +24,7 @@ public class WorkflowStep extends com.percolate.sdk.dto.WorkflowStep implements 
         dest.writeValue(this.ordinal);
         dest.writeString(this.quorum);
         dest.writeList(this.users);
+        dest.writeMap(this.extraFields);
     }
 
     public WorkflowStep() {
@@ -37,6 +38,8 @@ public class WorkflowStep extends com.percolate.sdk.dto.WorkflowStep implements 
         this.quorum = in.readString();
         this.users = new ArrayList<com.percolate.sdk.dto.User>();
         in.readList(this.users, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<WorkflowStep> CREATOR = new Creator<WorkflowStep>() {

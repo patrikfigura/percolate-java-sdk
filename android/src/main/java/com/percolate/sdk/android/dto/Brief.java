@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import com.percolate.sdk.dto.Owner;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -46,6 +47,7 @@ public class Brief extends com.percolate.sdk.dto.Brief implements Parcelable {
         dest.writeSerializable(this.owner);
         dest.writeString(this.createdAt);
         dest.writeValue(this.commentCount);
+        dest.writeMap(this.extraFields);
     }
 
     public Brief() {
@@ -87,6 +89,8 @@ public class Brief extends com.percolate.sdk.dto.Brief implements Parcelable {
         this.owner = (Owner) in.readSerializable();
         this.createdAt = in.readString();
         this.commentCount = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Brief> CREATOR = new Creator<Brief>() {

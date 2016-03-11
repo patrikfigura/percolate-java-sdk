@@ -2,9 +2,9 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -24,6 +24,7 @@ public class UserRolesLicenseData extends com.percolate.sdk.dto.UserRolesLicense
         dest.writeString(this.description);
         dest.writeString(this.name);
         dest.writeStringList(this.tags);
+        dest.writeMap(this.extraFields);
     }
 
     public UserRolesLicenseData() {
@@ -37,6 +38,8 @@ public class UserRolesLicenseData extends com.percolate.sdk.dto.UserRolesLicense
         this.description = in.readString();
         this.name = in.readString();
         this.tags = in.createStringArrayList();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<UserRolesLicenseData> CREATOR = new Creator<UserRolesLicenseData>() {

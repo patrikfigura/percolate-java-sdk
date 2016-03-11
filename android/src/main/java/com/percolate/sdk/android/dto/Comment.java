@@ -6,6 +6,7 @@ import com.percolate.sdk.dto.CommentContextExt;
 import com.percolate.sdk.dto.Mention;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -29,6 +30,7 @@ public class Comment extends com.percolate.sdk.dto.Comment implements Parcelable
         dest.writeString(this.contextType);
         dest.writeSerializable(this.contextExt);
         dest.writeString(this.updatedAt);
+        dest.writeMap(this.extraFields);
     }
 
     public Comment() {
@@ -46,6 +48,8 @@ public class Comment extends com.percolate.sdk.dto.Comment implements Parcelable
         this.contextType = in.readString();
         this.contextExt = (CommentContextExt) in.readSerializable();
         this.updatedAt = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Comment> CREATOR = new Creator<Comment>() {

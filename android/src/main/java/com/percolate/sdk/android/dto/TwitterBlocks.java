@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -22,6 +23,7 @@ public class TwitterBlocks extends com.percolate.sdk.dto.TwitterBlocks implement
         dest.writeString(this.nextCursorStr);
         dest.writeValue(this.previousCursor);
         dest.writeString(this.previousCursorStr);
+        dest.writeMap(this.extraFields);
     }
 
     public TwitterBlocks() {
@@ -34,6 +36,8 @@ public class TwitterBlocks extends com.percolate.sdk.dto.TwitterBlocks implement
         this.nextCursorStr = in.readString();
         this.previousCursor = (Integer) in.readValue(Integer.class.getClassLoader());
         this.previousCursorStr = in.readString();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<TwitterBlocks> CREATOR = new Creator<TwitterBlocks>() {

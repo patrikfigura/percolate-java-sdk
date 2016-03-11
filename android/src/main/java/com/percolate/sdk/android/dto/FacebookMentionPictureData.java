@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+
 /**
  * Android version of {@link com.percolate.sdk.dto.FacebookMentionPictureData}.  Implements {@link Parcelable}
  */
@@ -16,6 +18,7 @@ public class FacebookMentionPictureData extends com.percolate.sdk.dto.FacebookMe
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.url);
         dest.writeByte(silhouette ? (byte) 1 : (byte) 0);
+        dest.writeMap(this.extraFields);
     }
 
     public FacebookMentionPictureData() {
@@ -24,6 +27,8 @@ public class FacebookMentionPictureData extends com.percolate.sdk.dto.FacebookMe
     protected FacebookMentionPictureData(Parcel in) {
         this.url = in.readString();
         this.silhouette = in.readByte() != 0;
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<FacebookMentionPictureData> CREATOR = new Creator<FacebookMentionPictureData>() {

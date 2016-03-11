@@ -2,7 +2,8 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
+
+import java.util.HashMap;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.FlagOwner}.  Implements {@link Parcelable}
@@ -18,6 +19,7 @@ public class FlagOwner extends com.percolate.sdk.dto.FlagOwner implements Parcel
         dest.writeValue(this.id);
         dest.writeString(this.type);
         dest.writeSerializable(this.license);
+        dest.writeMap(this.extraFields);
     }
 
     public FlagOwner() {
@@ -27,6 +29,8 @@ public class FlagOwner extends com.percolate.sdk.dto.FlagOwner implements Parcel
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.type = in.readString();
         this.license = (com.percolate.sdk.dto.License) in.readSerializable();
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<FlagOwner> CREATOR = new Creator<FlagOwner>() {

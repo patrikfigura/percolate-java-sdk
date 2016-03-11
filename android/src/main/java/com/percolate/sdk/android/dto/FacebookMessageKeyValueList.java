@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class FacebookMessageKeyValueList extends com.percolate.sdk.dto.FacebookM
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public FacebookMessageKeyValueList() {
@@ -27,6 +29,8 @@ public class FacebookMessageKeyValueList extends com.percolate.sdk.dto.FacebookM
     protected FacebookMessageKeyValueList(Parcel in) {
         this.data = new ArrayList<LinkedHashMap<String, Object>>();
         in.readList(this.data, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<FacebookMessageKeyValueList> CREATOR = new Creator<FacebookMessageKeyValueList>() {

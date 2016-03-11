@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.InstagramComment;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -21,6 +21,7 @@ public class InstagramMediaComments extends com.percolate.sdk.dto.InstagramMedia
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.meta);
         dest.writeList(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public InstagramMediaComments() {
@@ -30,6 +31,8 @@ public class InstagramMediaComments extends com.percolate.sdk.dto.InstagramMedia
         this.meta = (com.percolate.sdk.dto.InstagramRequestMetaData) in.readSerializable();
         this.data = new ArrayList<InstagramComment>();
         in.readList(this.data, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<InstagramMediaComments> CREATOR = new Creator<InstagramMediaComments>() {

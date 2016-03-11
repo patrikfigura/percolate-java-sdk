@@ -2,7 +2,6 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.LocalCreatedAt;
 import com.percolate.sdk.dto.Media;
 import com.percolate.sdk.dto.Post;
@@ -10,6 +9,7 @@ import com.percolate.sdk.dto.Topic;
 import com.percolate.sdk.dto.User;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -53,6 +53,7 @@ public class PostSetData extends com.percolate.sdk.dto.PostSetData implements Pa
         dest.writeString(this.userAgent);
         dest.writeValue(this.shareId);
         dest.writeValue(this.relatedLicenseId);
+        dest.writeMap(this.extraFields);
     }
 
     public PostSetData() {
@@ -95,6 +96,8 @@ public class PostSetData extends com.percolate.sdk.dto.PostSetData implements Pa
         this.shareId = (Long) in.readValue(Long.class.getClassLoader());
         this.relatedLicenseId = (Integer) in.readValue(Integer.class.getClassLoader());
         in.readList(this.errors, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<PostSetData> CREATOR = new Creator<PostSetData>() {

@@ -2,10 +2,10 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.MediaFormat;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -25,6 +25,7 @@ public class ShareUgcMeta extends com.percolate.sdk.dto.ShareUgcMeta implements 
         dest.writeString(this.type);
         dest.writeSerializable(this.metadata);
         dest.writeList(this.formats);
+        dest.writeMap(this.extraFields);
     }
 
     public ShareUgcMeta() {
@@ -38,6 +39,8 @@ public class ShareUgcMeta extends com.percolate.sdk.dto.ShareUgcMeta implements 
         this.metadata = (com.percolate.sdk.dto.ShareMediaMetaData) in.readSerializable();
         this.formats = new ArrayList<MediaFormat>();
         in.readList(this.formats, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<ShareUgcMeta> CREATOR = new Creator<ShareUgcMeta>() {

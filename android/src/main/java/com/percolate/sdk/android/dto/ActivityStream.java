@@ -2,11 +2,11 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.ActivityStreamData;
 import com.percolate.sdk.dto.PaginationData;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -23,6 +23,7 @@ public class ActivityStream extends com.percolate.sdk.dto.ActivityStream impleme
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.paginationData);
         dest.writeList(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public ActivityStream() {
@@ -32,6 +33,8 @@ public class ActivityStream extends com.percolate.sdk.dto.ActivityStream impleme
         this.paginationData = (PaginationData) in.readSerializable();
         this.data = new ArrayList<ActivityStreamData>();
         in.readList(this.data, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Parcelable.Creator<ActivityStream> CREATOR = new Parcelable.Creator<ActivityStream>() {

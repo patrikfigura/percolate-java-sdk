@@ -2,11 +2,11 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.*;
 import com.percolate.sdk.dto.ImageSize;
 import com.percolate.sdk.dto.MediaFormat;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -38,6 +38,7 @@ public class Media extends com.percolate.sdk.dto.Media implements Parcelable {
         dest.writeValue(this.licenseId);
         dest.writeMap(this.imagesForTypeImage);
         dest.writeList(this.imagesForTypeVideo);
+        dest.writeMap(this.extraFields);
     }
 
     public Media() {
@@ -64,6 +65,8 @@ public class Media extends com.percolate.sdk.dto.Media implements Parcelable {
         in.readMap(this.imagesForTypeImage, LinkedHashMap.class.getClassLoader());
         this.imagesForTypeVideo = new ArrayList<ImageSize>();
         in.readList(this.imagesForTypeVideo, List.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.writeMap(this.extraFields);
     }
 
     public static final Creator<Media> CREATOR = new Creator<Media>() {
