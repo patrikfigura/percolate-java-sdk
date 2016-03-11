@@ -89,7 +89,7 @@ public class WorkflowStep implements Serializable {
     public void setUsers(List<User> users) {
         this.users = users;
     }
-    
+
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();

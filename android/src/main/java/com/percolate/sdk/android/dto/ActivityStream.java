@@ -23,6 +23,7 @@ public class ActivityStream extends com.percolate.sdk.dto.ActivityStream impleme
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.paginationData);
         dest.writeList(this.data);
+        dest.writeMap(this.extraFields);
     }
 
     public ActivityStream() {
