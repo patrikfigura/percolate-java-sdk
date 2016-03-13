@@ -24,9 +24,6 @@ public class Link implements Serializable {
     @JsonProperty("id")
     protected Long id;
 
-    @JsonIgnore
-    public String originId;
-
     @JsonProperty("title")
     protected String title;
 

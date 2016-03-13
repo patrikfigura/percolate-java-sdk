@@ -42,7 +42,7 @@ public class Topic implements Serializable {
     }
 
     /**
-     * Equals used by PostFormLib to make sure duplicate topics are not added to the post.
+     * Equals used to make sure duplicate topics are not added to the post.
      */
     @Override
     public boolean equals(Object o) {

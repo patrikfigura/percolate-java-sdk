@@ -19,18 +19,6 @@ public class FacebookConversationMessage implements Serializable {
 
     private static final long serialVersionUID = -7978616001157824820L;
 
-    @JsonIgnore
-    public List<FacebookConversationMessage> extraMessages = new ArrayList<>(); // Set by client to group messages happening around the same time
-
-    @JsonIgnore
-    public String stickerUrl; //Set by client.  If message is empty, ApiGetFacebookMessage is used to check for images/stickers.
-
-    @JsonIgnore
-    public List<FacebookMessageAttachment> attachments; //Set by client after calling ApiGetFacebookMessage.
-
-    @JsonIgnore
-    public Flag flag; //Set by client after calling ApiGetFlags
-
     @JsonProperty("id")
     protected String id;
 
@@ -40,9 +28,6 @@ public class FacebookConversationMessage implements Serializable {
     @JsonProperty("from")
     protected FacebookUser from;
 
-    // ApiGetFacebookConversations API returns "from"
-    // ApiGetFlag API returns "from_user"
-    // The setter method for this value sets <code>from</code> field.
     @JsonProperty("from_user")
     protected FacebookUser tempFromUser;
 

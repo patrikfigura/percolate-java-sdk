@@ -18,12 +18,6 @@ public class Flag implements Serializable {
 
     private static final long serialVersionUID = 1680480238150106321L;
 
-    @JsonIgnore
-    public List<Topic> orderedTopics = null; // set by client after ordering Topics
-
-    @JsonIgnore
-    public LicenseChannel licenseChannel; //set by client after calling ApiGetLicenseChannel
-
     @JsonProperty("uid")
     protected String UID;
 
@@ -47,21 +41,6 @@ public class Flag implements Serializable {
 
     @JsonProperty("status")
     protected Object status; //Will be either a tweet, a fb post, or an Instagram post
-
-    @JsonIgnore
-    public FacebookMonitoringXObj fbStatus; //Created if "status" contains a FB object.
-
-    @JsonIgnore
-    public FacebookConversationMessage fbMessage;  //Created if "status" contains a FB inbox message.
-
-    @JsonIgnore
-    public TwitterConversationMessage twitterDirectMessage;  //Created if "status" contains a Twitter direct message.
-
-    @JsonIgnore
-    public Tweet tweet; //Created if "status" contains a tweet object.
-
-    @JsonIgnore
-    public InstagramComment instagramComment; // Created if "status" contains an Instagram comment.
 
     @JsonProperty("resolved_at")
     protected String resolvedAt;

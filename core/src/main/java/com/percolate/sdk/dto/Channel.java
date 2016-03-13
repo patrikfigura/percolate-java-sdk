@@ -17,9 +17,6 @@ public class Channel implements Serializable {
 
     private static final long serialVersionUID = 4429915726701722436L;
 
-    @JsonIgnore
-    public boolean isPersonalChannel = false; // Set by client after checking if connected token is for a personal channel
-
     @JsonProperty("id")
     protected Long id;
 

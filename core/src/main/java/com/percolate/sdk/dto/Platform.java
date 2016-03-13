@@ -21,15 +21,6 @@ public class Platform implements Serializable, Comparable<Platform> {
 
     private static final long serialVersionUID = 487676188878352763L;
 
-    @JsonIgnore
-    public List<ChannelV5> channels; // Set by client after calling ApiGetChannels
-
-    @JsonIgnore
-    public List<Schema> schemas; // Set by client after calling ApiGetSchemas
-
-    @JsonIgnore
-    public String iconUrl; //Set by client after calling ApiGetMedia
-
     @JsonProperty("id")
     protected String id;
 

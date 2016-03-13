@@ -25,10 +25,6 @@ public class Post extends com.percolate.sdk.dto.Post implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeSerializable(this.workflowData);
-        dest.writeSerializable(this.twitterInteractionsData);
-        dest.writeList(this.terms);
-        dest.writeSerializable(this.postSetData);
         dest.writeValue(this.id);
         dest.writeMap(this.analytics);
         dest.writeString(this.body);
@@ -63,11 +59,6 @@ public class Post extends com.percolate.sdk.dto.Post implements Parcelable {
     }
 
     protected Post(Parcel in) {
-        this.workflowData = (com.percolate.sdk.dto.WorkflowData) in.readSerializable();
-        this.twitterInteractionsData = (TwitterInteractionsData) in.readSerializable();
-        this.terms = new ArrayList<>();
-        in.readList(this.terms, List.class.getClassLoader());
-        this.postSetData = (PostSetData) in.readSerializable();
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.analytics = new LinkedHashMap<>();
         in.readMap(this.analytics, LinkedHashMap.class.getClassLoader());

@@ -19,9 +19,6 @@ public class Brief implements Serializable {
 
     private static final long serialVersionUID = 2614032831697058538L;
 
-    @JsonIgnore
-    public WorkflowData workflowData; // Set by client after calling ApiGetWorkflow
-
     @JsonProperty("id")
     protected Long id;
 

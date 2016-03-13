@@ -18,10 +18,6 @@ public class BrewLinkData implements Serializable {
 
     private static final long serialVersionUID = 2498535372228330993L;
 
-    /* These are set by the client code in our ListView Adapter code, to improve performance */
-    public boolean loaded = false;
-    public int itemViewType;
-
     @JsonProperty("id")
     protected Long id;
 

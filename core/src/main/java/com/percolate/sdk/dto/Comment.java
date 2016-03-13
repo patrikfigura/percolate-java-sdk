@@ -17,8 +17,6 @@ public class Comment implements Serializable {
 
     private static final long serialVersionUID = -348154790646104399L;
 
-    public User user; //Set by client code after calling ApiGetUser
-
     @JsonProperty("id")
     protected String uid;
 

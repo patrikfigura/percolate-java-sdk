@@ -17,9 +17,6 @@ public class FacebookMentionData implements Serializable, Comparable<FacebookMen
 
     private static final long serialVersionUID = -8684245906086050351L;
 
-    @JsonIgnore
-    public String text; // Set by client after loading/creating a facebook_mention
-
     @JsonProperty("xid")
     protected String xid;
 
@@ -37,8 +34,7 @@ public class FacebookMentionData implements Serializable, Comparable<FacebookMen
     }
 
     /**
-     * Frontend currently requires facebook_mentions to be ordered by offset, otherwise the
-     * post form on web breaks.  We implement Comparable so that we can sort mentions before
+     * We implement Comparable so that we can sort mentions before
      * POSTing/PUTing the <code>PostSet</code> data.
      */
     @Override

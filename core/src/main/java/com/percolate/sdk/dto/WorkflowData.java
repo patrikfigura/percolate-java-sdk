@@ -17,8 +17,6 @@ public class WorkflowData implements Serializable {
 
     private static final long serialVersionUID = 6010490237179083126L;
 
-    protected WorkflowHistory workflowHistory; //Set by client after calling ApiGetWorkflowHistory
-
     @JsonProperty("id")
     protected Long id;
 

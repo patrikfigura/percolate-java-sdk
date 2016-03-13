@@ -19,8 +19,6 @@ public class TwitterUser extends com.percolate.sdk.dto.TwitterUser implements Pa
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeByte(blocked ? (byte) 1 : (byte) 0);
-        dest.writeByte(following ? (byte) 1 : (byte) 0);
         dest.writeValue(this.id);
         dest.writeString(this.idStr);
         dest.writeString(this.name);
@@ -72,8 +70,6 @@ public class TwitterUser extends com.percolate.sdk.dto.TwitterUser implements Pa
     }
 
     protected TwitterUser(Parcel in) {
-        this.blocked = in.readByte() != 0;
-        this.following = in.readByte() != 0;
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.idStr = in.readString();
         this.name = in.readString();

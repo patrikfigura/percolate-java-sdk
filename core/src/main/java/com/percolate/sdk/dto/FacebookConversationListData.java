@@ -46,8 +46,8 @@ public class FacebookConversationListData implements Serializable {
     protected FacebookUserDataList participants;
 
     /**
-     * Equals is used to removed duplicates in MonitorFacebookInboxAdapter.
-     * because the pagination of this API is known to return duplicates.
+     * Equals is used to removed duplicates, because the pagination of this API
+     * is known to return duplicates.
      */
     @Override
     public boolean equals(Object that) {

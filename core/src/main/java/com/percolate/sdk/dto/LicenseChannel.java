@@ -16,8 +16,6 @@ public class LicenseChannel implements Serializable {
 
     private static final long serialVersionUID = 5650271549581035867L;
 
-    public boolean displayed; //set to true by client once it is displayed
-
     @JsonProperty("id")
     protected Long id;
 

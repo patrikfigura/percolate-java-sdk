@@ -19,7 +19,6 @@ public class Link extends com.percolate.sdk.dto.Link implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeValue(this.id);
-        dest.writeString(this.originId);
         dest.writeString(this.title);
         dest.writeString(this.description);
         dest.writeString(this.url);
@@ -32,7 +31,6 @@ public class Link extends com.percolate.sdk.dto.Link implements Parcelable {
 
     protected Link(Parcel in) {
         this.id = (Long) in.readValue(Long.class.getClassLoader());
-        this.originId = in.readString();
         this.title = in.readString();
         this.description = in.readString();
         this.url = in.readString();

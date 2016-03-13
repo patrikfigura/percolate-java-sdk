@@ -19,21 +19,6 @@ public class SchemaField implements Serializable {
 
     private static final long serialVersionUID = -8430096455662427494L;
 
-    @JsonIgnore
-    public List<Media> assets; // Set by clients when adding assets
-
-    @JsonIgnore
-    public List<String> stringArrayValues; // Set by clients when adding string array values
-
-    @JsonIgnore
-    public List<Term> terms; // Set by clients when adding terms
-
-    @JsonIgnore
-    public List<Link> links; // Set by clients when adding links
-
-    @JsonIgnore
-    public List<Topic> topics; // Set by clients when adding topics
-
     @JsonProperty("key")
     protected String key;
 

@@ -23,16 +23,6 @@ public class StreamData implements Serializable {
         ACTIVITY, MESSAGE, QUERY, UNKNOWN
     }
 
-    @JsonIgnore
-    @NotNull
-    @SuppressWarnings("NullableProblems")
-    public StreamChannelData channelData; //Set by client by looping through parent "include" data
-
-    @JsonIgnore
-    @NotNull
-    @SuppressWarnings("NullableProblems")
-    public TwitterQuery twitterQuery; //Set by client after calling ApiGetTwitterSearchQueries
-
     @JsonProperty("id")
     protected String id;
 

@@ -9,11 +9,6 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Used by Push Library to holds registration ID that will be saved in SessionManager.
- * **Note: Uses JsonProperty declariations so that it can be stored in SessionManager, which
- * serializes objects to JSON when they are stored
- */
 public class PushRegistrationInfo implements Serializable {
 
     private static final long serialVersionUID = 5293786670952513731L;

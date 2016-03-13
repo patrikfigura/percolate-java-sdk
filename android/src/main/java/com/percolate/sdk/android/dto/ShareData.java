@@ -18,8 +18,6 @@ public class ShareData extends com.percolate.sdk.dto.ShareData implements Parcel
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeByte(loaded ? (byte) 1 : (byte) 0);
-        dest.writeInt(this.itemViewType);
         dest.writeValue(this.id);
         dest.writeString(this.body);
         dest.writeString(this.createdAt);
@@ -37,8 +35,6 @@ public class ShareData extends com.percolate.sdk.dto.ShareData implements Parcel
     }
 
     protected ShareData(Parcel in) {
-        this.loaded = in.readByte() != 0;
-        this.itemViewType = in.readInt();
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.body = in.readString();
         this.createdAt = in.readString();

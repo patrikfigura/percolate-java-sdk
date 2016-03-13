@@ -19,11 +19,6 @@ public class StreamChannelData implements Serializable {
 
     private static final long serialVersionUID = 6222465143988267593L;
 
-    @JsonIgnore
-    @NotNull
-    @SuppressWarnings("NullableProblems")
-    public LicenseChannel licenseChannel; // Set by client after calling ApiGetLicenseChannels
-
     @JsonProperty("id")
     protected String id;
 
