@@ -110,6 +110,7 @@ public class Targeting implements Serializable, HasExtraFields {
                 interestedIn == null && relationshipStatuses == null && workNetworks == null;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -117,6 +118,7 @@ public class Targeting implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

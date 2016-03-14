@@ -36,6 +36,7 @@ public class Followers implements Serializable, HasExtraFields {
         this.followers = data;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -43,6 +44,7 @@ public class Followers implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

@@ -113,6 +113,7 @@ public class FacebookMessageAttachmentImageData implements Serializable, HasExtr
     }
 
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -120,6 +121,7 @@ public class FacebookMessageAttachmentImageData implements Serializable, HasExtr
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

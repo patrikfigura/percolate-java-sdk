@@ -150,6 +150,7 @@ public class Platform implements Serializable, HasExtraFields, Comparable<Platfo
         this.updatedAt = updatedAt;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -157,6 +158,7 @@ public class Platform implements Serializable, HasExtraFields, Comparable<Platfo
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

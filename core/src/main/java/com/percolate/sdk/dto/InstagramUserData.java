@@ -77,6 +77,7 @@ public class InstagramUserData implements Serializable, HasExtraFields {
         this.profilePicture = profilePicture;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -84,6 +85,7 @@ public class InstagramUserData implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

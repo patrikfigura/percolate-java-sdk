@@ -35,6 +35,7 @@ public class CommentData implements Serializable, HasExtraFields {
         this.comment = comment;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -42,6 +43,7 @@ public class CommentData implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

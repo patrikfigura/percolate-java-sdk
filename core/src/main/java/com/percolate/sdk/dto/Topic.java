@@ -115,6 +115,7 @@ public class Topic implements Serializable, HasExtraFields {
         this.owner = owner;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -122,6 +123,7 @@ public class Topic implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

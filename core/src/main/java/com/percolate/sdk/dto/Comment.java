@@ -126,6 +126,7 @@ public class Comment implements Serializable, HasExtraFields {
         this.updatedAt = updatedAt;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -133,6 +134,7 @@ public class Comment implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

@@ -180,6 +180,7 @@ public class LicenseChannel implements Serializable, HasExtraFields {
         this.scopedChannelUid = scopedChannelUid;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -187,6 +188,7 @@ public class LicenseChannel implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

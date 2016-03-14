@@ -35,6 +35,7 @@ public class FacebookMentions implements Serializable, HasExtraFields {
         this.mentions = mentions;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -42,6 +43,7 @@ public class FacebookMentions implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

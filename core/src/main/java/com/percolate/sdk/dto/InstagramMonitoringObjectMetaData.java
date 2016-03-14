@@ -69,6 +69,7 @@ public class InstagramMonitoringObjectMetaData implements Serializable, HasExtra
     }
 
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -76,6 +77,7 @@ public class InstagramMonitoringObjectMetaData implements Serializable, HasExtra
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

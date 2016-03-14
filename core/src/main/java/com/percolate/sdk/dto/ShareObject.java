@@ -124,6 +124,7 @@ public class ShareObject implements Serializable, HasExtraFields {
         this.ugcMeta = ugcMeta;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -131,6 +132,7 @@ public class ShareObject implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

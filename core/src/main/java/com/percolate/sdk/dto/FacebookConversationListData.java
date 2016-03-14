@@ -156,6 +156,7 @@ public class FacebookConversationListData implements Serializable, HasExtraField
     }
 
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -163,6 +164,7 @@ public class FacebookConversationListData implements Serializable, HasExtraField
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

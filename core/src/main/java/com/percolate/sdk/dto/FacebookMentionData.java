@@ -75,6 +75,7 @@ public class FacebookMentionData implements Serializable, HasExtraFields, Compar
         this.offset = offset;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -82,6 +83,7 @@ public class FacebookMentionData implements Serializable, HasExtraFields, Compar
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

@@ -80,6 +80,7 @@ public class ApprovalPoolStep implements Serializable, HasExtraFields {
         this.ordinal = ordinal;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -87,6 +88,7 @@ public class ApprovalPoolStep implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

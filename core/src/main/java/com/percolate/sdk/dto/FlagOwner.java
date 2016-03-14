@@ -57,6 +57,7 @@ public class FlagOwner implements Serializable, HasExtraFields {
         this.license = license;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -64,6 +65,7 @@ public class FlagOwner implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

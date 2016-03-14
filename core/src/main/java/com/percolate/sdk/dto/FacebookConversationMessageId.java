@@ -35,6 +35,7 @@ public class FacebookConversationMessageId implements Serializable, HasExtraFiel
         this.messageId = messageId;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -42,6 +43,7 @@ public class FacebookConversationMessageId implements Serializable, HasExtraFiel
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

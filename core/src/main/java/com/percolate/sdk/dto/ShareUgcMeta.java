@@ -91,6 +91,7 @@ public class ShareUgcMeta implements Serializable, HasExtraFields {
         this.formats = formats;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -98,6 +99,7 @@ public class ShareUgcMeta implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

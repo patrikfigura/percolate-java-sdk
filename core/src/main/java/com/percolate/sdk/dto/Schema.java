@@ -158,6 +158,7 @@ public class Schema implements Serializable, HasExtraFields, Comparable<Schema> 
         this.updated_at = updated_at;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -165,6 +166,7 @@ public class Schema implements Serializable, HasExtraFields, Comparable<Schema> 
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

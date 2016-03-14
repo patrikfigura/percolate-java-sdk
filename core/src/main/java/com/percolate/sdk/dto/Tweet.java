@@ -333,6 +333,7 @@ public class Tweet implements Serializable, HasExtraFields {
         this.event = event;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -340,6 +341,7 @@ public class Tweet implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

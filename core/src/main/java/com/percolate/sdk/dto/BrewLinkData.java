@@ -151,8 +151,7 @@ public class BrewLinkData implements Serializable, HasExtraFields {
         this.ownedChannel = ownedChannel;
     }
 
-
-
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -160,6 +159,7 @@ public class BrewLinkData implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

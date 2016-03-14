@@ -59,6 +59,7 @@ public class PostV5 implements Serializable, HasExtraFields {
         this.errors = errors;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -66,6 +67,7 @@ public class PostV5 implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

@@ -79,6 +79,7 @@ public class FeatureData implements Serializable, HasExtraFields {
         this.value = value;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -86,6 +87,7 @@ public class FeatureData implements Serializable, HasExtraFields {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);
