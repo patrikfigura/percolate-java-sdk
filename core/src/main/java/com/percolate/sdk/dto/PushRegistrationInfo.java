@@ -46,12 +46,12 @@ public class PushRegistrationInfo implements Serializable {
     }
 
     public String getAppVersion() {
-        return appVersion;
-    }
+       return appVersion;
+   }
 
-    public void setAppVersion(String appVersion) {
-        this.appVersion = appVersion;
-    }
+   public void setAppVersion(String appVersion) {
+       this.appVersion = appVersion;
+   }
 
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
