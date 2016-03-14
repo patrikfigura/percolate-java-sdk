@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.percolate.sdk.interfaces.HasExtraFields;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.jetbrains.annotations.NotNull;
@@ -13,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class FacebookMentionData implements Serializable, Comparable<FacebookMentionData> {
+public class FacebookMentionData implements Serializable, HasExtraFields, Comparable<FacebookMentionData> {
 
     private static final long serialVersionUID = -8684245906086050351L;
 
@@ -70,6 +71,7 @@ public class FacebookMentionData implements Serializable, Comparable<FacebookMen
         this.offset = offset;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -77,6 +79,7 @@ public class FacebookMentionData implements Serializable, Comparable<FacebookMen
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

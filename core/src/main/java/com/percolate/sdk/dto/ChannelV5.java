@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.percolate.sdk.interfaces.HasExtraFields;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -17,7 +18,7 @@ import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ChannelV5 implements Serializable {
+public class ChannelV5 implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = 2007591110523885960L;
 
@@ -198,6 +199,7 @@ public class ChannelV5 implements Serializable {
         this.ext = ext;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -205,6 +207,7 @@ public class ChannelV5 implements Serializable {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);

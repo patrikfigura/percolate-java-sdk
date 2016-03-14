@@ -3,6 +3,7 @@ package com.percolate.sdk.dto;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.percolate.sdk.interfaces.HasExtraFields;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -13,7 +14,7 @@ import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LicensePublishingSettings implements Serializable {
+public class LicensePublishingSettings implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = -5154375915441246126L;
 
@@ -50,6 +51,7 @@ public class LicensePublishingSettings implements Serializable {
         this.topics = topics;
     }
 
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();
@@ -57,6 +59,7 @@ public class LicensePublishingSettings implements Serializable {
         return extraFields;
     }
 
+    @Override
     @JsonAnySetter
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);
