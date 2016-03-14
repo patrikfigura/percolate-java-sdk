@@ -21,9 +21,6 @@ public class Media extends com.percolate.sdk.dto.Media implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeByte(localVersion ? (byte) 1 : (byte) 0);
-        dest.writeString(this.localFileLocation);
-        dest.writeByte(isSelected ? (byte) 1 : (byte) 0);
         dest.writeString(this.id);
         dest.writeString(this.uid);
         dest.writeString(this.source);
@@ -45,9 +42,6 @@ public class Media extends com.percolate.sdk.dto.Media implements Parcelable {
     }
 
     protected Media(Parcel in) {
-        this.localVersion = in.readByte() != 0;
-        this.localFileLocation = in.readString();
-        this.isSelected = in.readByte() != 0;
         this.id = in.readString();
         this.uid = in.readString();
         this.source = in.readString();

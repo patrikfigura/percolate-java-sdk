@@ -18,15 +18,6 @@ public class Media implements Serializable {
 
     private static final long serialVersionUID = 69550139319470210L;
 
-    @JsonIgnore
-    public boolean localVersion = false; // Set to true by client if Object was manually created (not part of data returned by the API)
-
-    @JsonIgnore
-    public String localFileLocation; //Set by client when uploading media.
-
-    @JsonIgnore
-    public boolean isSelected = false;
-
     @JsonProperty("id")
     protected String id;
 
