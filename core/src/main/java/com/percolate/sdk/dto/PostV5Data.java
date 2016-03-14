@@ -21,30 +21,6 @@ public class PostV5Data implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = 2143339291862169519L;
 
-    @JsonIgnore
-    @Nullable
-    public Platform platform; //Set by client after looping through include data.
-
-    @JsonIgnore
-    @Nullable
-    public ChannelV5 channel; //Set by client after looping through include data.
-
-    @JsonIgnore
-    @Nullable
-    public List<Media> media; //Set by client after calling ApiGetMedia
-
-    @JsonIgnore
-    @Nullable
-    public WorkflowData workflowData; //Set by client after calling ApiGetWorkflow
-
-    @JsonIgnore
-    @Nullable
-    public Link link; //Set by client after calling ApiGetLink
-
-    @JsonIgnore
-    @Nullable
-    public Map<String, String> fieldLabels; //Mapping of dynamic field keys to field names.
-
     @JsonProperty("id")
     protected String id;
 

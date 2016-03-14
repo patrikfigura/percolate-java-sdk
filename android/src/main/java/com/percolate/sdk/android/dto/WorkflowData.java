@@ -19,7 +19,6 @@ public class WorkflowData extends com.percolate.sdk.dto.WorkflowData implements 
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeSerializable(this.workflowHistory);
         dest.writeValue(this.id);
         dest.writeByte(complete ? (byte) 1 : (byte) 0);
         dest.writeValue(this.currentStepId);
@@ -34,7 +33,6 @@ public class WorkflowData extends com.percolate.sdk.dto.WorkflowData implements 
     }
 
     protected WorkflowData(Parcel in) {
-        this.workflowHistory = (com.percolate.sdk.dto.WorkflowHistory) in.readSerializable();
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.complete = in.readByte() != 0;
         this.currentStepId = (Long) in.readValue(Long.class.getClassLoader());

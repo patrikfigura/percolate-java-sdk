@@ -16,9 +16,6 @@ public class ChannelV5 extends com.percolate.sdk.dto.ChannelV5 implements Parcel
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(this.isPersonalChannel);
-        dest.writeString(this.avatarUrl);
-        dest.writeValue(this.v4ChannelId);
         dest.writeString(this.id);
         dest.writeString(this.xid);
         dest.writeString(this.name);
@@ -38,9 +35,6 @@ public class ChannelV5 extends com.percolate.sdk.dto.ChannelV5 implements Parcel
     }
 
     protected ChannelV5(Parcel in) {
-        this.isPersonalChannel = (Boolean) in.readValue(Boolean.class.getClassLoader());
-        this.avatarUrl = in.readString();
-        this.v4ChannelId = (Long) in.readValue(Long.class.getClassLoader());
         this.id = in.readString();
         this.xid = in.readString();
         this.name = in.readString();

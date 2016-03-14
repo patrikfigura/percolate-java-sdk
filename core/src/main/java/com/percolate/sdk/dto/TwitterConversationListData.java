@@ -24,7 +24,7 @@ public class TwitterConversationListData implements Serializable, HasExtraFields
     protected TwitterConversationMessage xobj;
 
     @JsonProperty("replied")
-    protected boolean replied; //Set by ApiGetTwitterConversation, but not by ApiGetTwitterConversationThread
+    protected boolean replied;
 
     protected Map<String, Object> extraFields = new HashMap<>();
 

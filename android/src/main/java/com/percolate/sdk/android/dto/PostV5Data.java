@@ -19,12 +19,6 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeSerializable(this.platform);
-        dest.writeSerializable(this.channel);
-        dest.writeList(this.media);
-        dest.writeSerializable(this.workflowData);
-        dest.writeSerializable(this.link);
-        dest.writeMap(this.fieldLabels);
         dest.writeString(this.id);
         dest.writeString(this.scopeId);
         dest.writeString(this.userId);
@@ -56,13 +50,6 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
     }
 
     protected PostV5Data(Parcel in) {
-        this.platform = (com.percolate.sdk.dto.Platform) in.readSerializable();
-        this.channel = (ChannelV5) in.readSerializable();
-        this.media = new ArrayList<>();
-        in.readList(this.media, List.class.getClassLoader());
-        this.workflowData = (WorkflowData) in.readSerializable();
-        this.link = (Link) in.readSerializable();
-        in.readMap(this.fieldLabels, Map.class.getClassLoader());
         this.id = in.readString();
         this.scopeId = in.readString();
         this.userId = in.readString();

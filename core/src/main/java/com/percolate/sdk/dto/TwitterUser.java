@@ -21,12 +21,6 @@ public class TwitterUser implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = -3340107184258855542L;
 
-    @JsonIgnore
-    public boolean blocked = false; //Set by client after calling ApiGetTwitterBlocks
-
-    @JsonIgnore
-    public boolean following = false; //Set by client after calling ApiGetTwitterFollowing
-
     @JsonProperty("id")
     protected Long id;
 

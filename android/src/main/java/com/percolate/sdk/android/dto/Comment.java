@@ -20,7 +20,6 @@ public class Comment extends com.percolate.sdk.dto.Comment implements Parcelable
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeSerializable(this.user);
         dest.writeString(this.uid);
         dest.writeString(this.objectUID);
         dest.writeString(this.body);
@@ -37,7 +36,6 @@ public class Comment extends com.percolate.sdk.dto.Comment implements Parcelable
     }
 
     protected Comment(Parcel in) {
-        this.user = (com.percolate.sdk.dto.User) in.readSerializable();
         this.uid = in.readString();
         this.objectUID = in.readString();
         this.body = in.readString();

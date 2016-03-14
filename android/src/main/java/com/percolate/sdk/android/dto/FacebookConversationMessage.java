@@ -20,10 +20,6 @@ public class FacebookConversationMessage extends com.percolate.sdk.dto.FacebookC
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeList(this.extraMessages);
-        dest.writeString(this.stickerUrl);
-        dest.writeList(this.attachments);
-        dest.writeSerializable(this.flag);
         dest.writeString(this.id);
         dest.writeString(this.conversationId);
         dest.writeSerializable(this.from);
@@ -38,12 +34,6 @@ public class FacebookConversationMessage extends com.percolate.sdk.dto.FacebookC
     }
 
     protected FacebookConversationMessage(Parcel in) {
-        this.extraMessages = new ArrayList<com.percolate.sdk.dto.FacebookConversationMessage>();
-        in.readList(this.extraMessages, List.class.getClassLoader());
-        this.stickerUrl = in.readString();
-        this.attachments = new ArrayList<com.percolate.sdk.dto.FacebookMessageAttachment>();
-        in.readList(this.attachments, List.class.getClassLoader());
-        this.flag = (Flag) in.readSerializable();
         this.id = in.readString();
         this.conversationId = in.readString();
         this.from = (FacebookUser) in.readSerializable();

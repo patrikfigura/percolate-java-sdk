@@ -20,8 +20,6 @@ public class TwitterConversationMessage extends com.percolate.sdk.dto.TwitterCon
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeList(this.extraMessages);
-        dest.writeSerializable(this.flag);
         dest.writeValue(this.id);
         dest.writeString(this.idStr);
         dest.writeString(this.text);
@@ -42,9 +40,6 @@ public class TwitterConversationMessage extends com.percolate.sdk.dto.TwitterCon
     }
 
     protected TwitterConversationMessage(Parcel in) {
-        this.extraMessages = new ArrayList<com.percolate.sdk.dto.TwitterConversationMessage>();
-        in.readList(this.extraMessages, List.class.getClassLoader());
-        this.flag = (com.percolate.sdk.dto.Flag) in.readSerializable();
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.idStr = in.readString();
         this.text = in.readString();

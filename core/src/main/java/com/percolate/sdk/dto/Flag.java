@@ -19,12 +19,6 @@ public class Flag implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = 1680480238150106321L;
 
-    @JsonIgnore
-    public List<Topic> orderedTopics = null; // set by client after ordering Topics
-
-    @JsonIgnore
-    public LicenseChannel licenseChannel; //set by client after calling ApiGetLicenseChannel
-
     @JsonProperty("uid")
     protected String UID;
 

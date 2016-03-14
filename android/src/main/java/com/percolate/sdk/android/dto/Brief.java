@@ -20,7 +20,6 @@ public class Brief extends com.percolate.sdk.dto.Brief implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeSerializable(this.workflowData);
         dest.writeValue(this.id);
         dest.writeString(this.uid);
         dest.writeList(this.terms);
@@ -54,7 +53,6 @@ public class Brief extends com.percolate.sdk.dto.Brief implements Parcelable {
     }
 
     protected Brief(Parcel in) {
-        this.workflowData = (com.percolate.sdk.dto.WorkflowData) in.readSerializable();
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.uid = in.readString();
         this.terms = new ArrayList<>();

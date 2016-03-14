@@ -19,12 +19,6 @@ public class InstagramMonitoringObject implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = -8868746361534487444L;
 
-    @JsonIgnore
-    public Flag flag; //Set by client after calling ApiGetFlags
-
-    @JsonIgnore
-    public InstagramIncludeMediaData parent; //Set by client if include=parent_xids was sent to the API
-
     @JsonProperty("id")
     protected String id;
 

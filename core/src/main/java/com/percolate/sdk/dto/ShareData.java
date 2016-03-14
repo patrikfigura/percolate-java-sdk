@@ -18,13 +18,6 @@ public class ShareData implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = -2218654368933208095L;
 
-    /* These are set by the client code in our ListView Adapter code, to improve performance */
-    @JsonIgnore
-    public boolean loaded = false;
-
-    @JsonIgnore
-    public int itemViewType;
-
     @JsonProperty("id")
     protected Long id;
 

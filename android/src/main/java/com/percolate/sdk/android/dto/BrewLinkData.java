@@ -22,8 +22,6 @@ public class BrewLinkData extends com.percolate.sdk.dto.BrewLinkData implements 
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeByte(loaded ? (byte) 1 : (byte) 0);
-        dest.writeInt(this.itemViewType);
         dest.writeValue(this.id);
         dest.writeString(this.description);
         dest.writeList(this.entries);
@@ -42,8 +40,6 @@ public class BrewLinkData extends com.percolate.sdk.dto.BrewLinkData implements 
     }
 
     protected BrewLinkData(Parcel in) {
-        this.loaded = in.readByte() != 0;
-        this.itemViewType = in.readInt();
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.description = in.readString();
         this.entries = new ArrayList<com.percolate.sdk.dto.Entry>();

@@ -19,10 +19,6 @@ public class InstagramComment implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = -7233760905645099831L;
 
-    @JsonIgnore
-    @Nullable
-    public InstagramMonitoringObject instagramMonitoringObject; //Set by client after calling ApiGetInstagramMonitoringItem
-
     @JsonProperty("id")
     protected String id;
 

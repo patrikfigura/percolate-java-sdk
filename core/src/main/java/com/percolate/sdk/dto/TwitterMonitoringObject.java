@@ -19,15 +19,6 @@ public class TwitterMonitoringObject implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = -6192973897879987770L;
 
-    @JsonIgnore
-    public boolean fromTwitterSearchQuery; //Set by client if loaded from a twitter monitoring query
-
-    @JsonIgnore
-    public Flag flag; //Set by client after calling ApiGetFlags
-
-    @JsonIgnore
-    public boolean wasFromMonitoringTab = false; //Set by client if object was loaded on the monitoring tab
-
     @JsonProperty("id")
     protected String id; // Twitter id
 

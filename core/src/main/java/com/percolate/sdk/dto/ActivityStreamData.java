@@ -63,29 +63,25 @@ public class ActivityStreamData implements Serializable, HasExtraFields {
     }
 
     /**
-     * The /api/v4/activity endpoint returns a list of {@link ActivityStreamMetadata} objects.
-     * Ex:
-     * metadata: [ { 'key': 'somekey', 'value': 'str' }, ...]
-     * To avoid traversing the metadata repeatedly, this method flattens this array list into
-     * a hash map as:
-     * {'somekey': 'str',...}
-     *
-     * @return map of metadata keys and values.
-     */
+    * The /api/v4/activity endpoint returns a list of {@link ActivityStreamMetadata} objects.
+    * Ex:
+    * metadata: [ { 'key': 'somekey', 'value': 'str' }, ...]
+    * To avoid traversing the metadata repeatedly, this method flattens this array list into
+    * a hash map as:
+    * {'somekey': 'str',...}
+    *
+    * @return map of metadata keys and values.
+    */
     public Map<String, Object> getMetadataMap() {
-        if (metaDataMap == null) {
-            metaDataMap = new HashMap<>();
-            if (metadataList != null) {
-                for (ActivityStreamMetadata activityStreamMetadata : metadataList) {
-                    metaDataMap.put(activityStreamMetadata.getKey(), activityStreamMetadata.getValue());
-                }
-            }
-        }
-        return metaDataMap;
-    }
-
-    public void setMetaDataMap(Map<String, Object> metaDataMap) {
-        this.metaDataMap = metaDataMap;
+       if (metaDataMap == null) {
+           metaDataMap = new HashMap<>();
+           if (metadataList != null) {
+               for (ActivityStreamMetadata activityStreamMetadata : metadataList) {
+                   metaDataMap.put(activityStreamMetadata.getKey(), activityStreamMetadata.getValue());
+               }
+           }
+       }
+       return metaDataMap;
     }
 
     public String getRelatedObjectUid() {

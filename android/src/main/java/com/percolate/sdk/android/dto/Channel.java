@@ -16,7 +16,6 @@ public class Channel extends com.percolate.sdk.dto.Channel implements Parcelable
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeByte(isPersonalChannel ? (byte) 1 : (byte) 0);
         dest.writeValue(this.id);
         dest.writeString(this.name);
         dest.writeString(this.photoUrl);
@@ -31,7 +30,6 @@ public class Channel extends com.percolate.sdk.dto.Channel implements Parcelable
     }
 
     protected Channel(Parcel in) {
-        this.isPersonalChannel = in.readByte() != 0;
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.name = in.readString();
         this.photoUrl = in.readString();

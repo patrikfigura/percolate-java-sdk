@@ -19,9 +19,6 @@ public class Platform extends com.percolate.sdk.dto.Platform implements Parcelab
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeList(this.channels);
-        dest.writeList(this.schemas);
-        dest.writeString(this.iconUrl);
         dest.writeString(this.id);
         dest.writeString(this.name);
         dest.writeString(this.type);
@@ -36,11 +33,6 @@ public class Platform extends com.percolate.sdk.dto.Platform implements Parcelab
     }
 
     protected Platform(Parcel in) {
-        this.channels = new ArrayList<com.percolate.sdk.dto.ChannelV5>();
-        in.readList(this.channels, List.class.getClassLoader());
-        this.schemas = new ArrayList<Schema>();
-        in.readList(this.schemas, List.class.getClassLoader());
-        this.iconUrl = in.readString();
         this.id = in.readString();
         this.name = in.readString();
         this.type = in.readString();
