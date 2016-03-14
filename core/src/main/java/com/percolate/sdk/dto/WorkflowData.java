@@ -112,14 +112,6 @@ public class WorkflowData implements Serializable {
         this.name = name;
     }
 
-    public WorkflowHistory getWorkflowHistory() {
-        return workflowHistory;
-    }
-
-    public void setWorkflowHistory(WorkflowHistory workflowHistory) {
-        this.workflowHistory = workflowHistory;
-    }
-
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();

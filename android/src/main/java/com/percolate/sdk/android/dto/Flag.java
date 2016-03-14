@@ -5,8 +5,10 @@ import android.os.Parcelable;
 import com.percolate.sdk.dto.FacebookConversationMessage;
 import com.percolate.sdk.dto.FacebookMonitoringXObj;
 import com.percolate.sdk.dto.FlagOwner;
+import com.percolate.sdk.dto.InstagramComment;
 import com.percolate.sdk.dto.LicenseChannel;
 import com.percolate.sdk.dto.Topic;
+import com.percolate.sdk.dto.Tweet;
 import com.percolate.sdk.dto.TwitterConversationMessage;
 import com.percolate.sdk.dto.User;
 
@@ -32,6 +34,11 @@ public class Flag extends com.percolate.sdk.dto.Flag implements Parcelable {
         dest.writeString(this.statusXid);
         dest.writeValue(this.monitoringQueryId);
         dest.writeByte(urgent ? (byte) 1 : (byte) 0);
+        dest.writeSerializable(this.fbStatus);
+        dest.writeSerializable(this.fbMessage);
+        dest.writeSerializable(this.twitterDirectMessage);
+        dest.writeSerializable(this.tweet);
+        dest.writeSerializable(this.instagramComment);
         dest.writeString(this.resolvedAt);
         dest.writeString(this.createdAt);
         dest.writeString(this.ownerUID);
@@ -59,6 +66,11 @@ public class Flag extends com.percolate.sdk.dto.Flag implements Parcelable {
         this.statusXid = in.readString();
         this.monitoringQueryId = (Long) in.readValue(Long.class.getClassLoader());
         this.urgent = in.readByte() != 0;
+        this.fbStatus = (FacebookMonitoringXObj) in.readSerializable();
+        this.fbMessage = (FacebookConversationMessage) in.readSerializable();
+        this.twitterDirectMessage = (TwitterConversationMessage) in.readSerializable();
+        this.tweet = (Tweet) in.readSerializable();
+        this.instagramComment = (InstagramComment) in.readSerializable();
         this.resolvedAt = in.readString();
         this.createdAt = in.readString();
         this.ownerUID = in.readString();
