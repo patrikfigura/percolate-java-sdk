@@ -22,6 +22,15 @@ public class ChannelV5 implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = 2007591110523885960L;
 
+    @JsonIgnore
+    public Boolean isPersonalChannel; // Set by client after calling ApiGetTokens
+
+    @JsonIgnore
+    public String avatarUrl; // Set by client after calling ApiGetLicenseChannels
+
+    @JsonIgnore
+    public Long v4ChannelId; // Set by client after calling ApiGetLicenseChannels
+
     @JsonProperty("id")
     protected String id;
 

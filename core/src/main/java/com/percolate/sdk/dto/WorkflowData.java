@@ -18,6 +18,8 @@ public class WorkflowData implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = 6010490237179083126L;
 
+    protected WorkflowHistory workflowHistory; //Set by client after calling ApiGetWorkflowHistory
+
     @JsonProperty("id")
     protected Long id;
 
@@ -113,6 +115,15 @@ public class WorkflowData implements Serializable, HasExtraFields {
         this.name = name;
     }
 
+    public WorkflowHistory getWorkflowHistory() {
+        return workflowHistory;
+    }
+
+    public void setWorkflowHistory(WorkflowHistory workflowHistory) {
+        this.workflowHistory = workflowHistory;
+    }
+
+    @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
             extraFields = new HashMap<>();

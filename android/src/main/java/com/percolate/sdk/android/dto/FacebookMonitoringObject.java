@@ -19,6 +19,8 @@ public class FacebookMonitoringObject extends com.percolate.sdk.dto.FacebookMoni
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeSerializable(this.flag);
+        dest.writeByte(wasFromMonitoringTab ? (byte) 1 : (byte) 0);
         dest.writeString(this.id);
         dest.writeList(this.activity);
         dest.writeString(this.relatedPostSetId);
@@ -30,6 +32,8 @@ public class FacebookMonitoringObject extends com.percolate.sdk.dto.FacebookMoni
     }
 
     protected FacebookMonitoringObject(Parcel in) {
+        this.flag = (com.percolate.sdk.dto.Flag) in.readSerializable();
+        this.wasFromMonitoringTab = in.readByte() != 0;
         this.id = in.readString();
         this.activity = new ArrayList<>();
         in.readList(this.activity, List.class.getClassLoader());

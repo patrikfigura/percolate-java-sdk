@@ -16,6 +16,7 @@ public class FacebookMentionData extends com.percolate.sdk.dto.FacebookMentionDa
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.text);
         dest.writeString(this.xid);
         dest.writeValue(this.length);
         dest.writeValue(this.offset);
@@ -26,6 +27,7 @@ public class FacebookMentionData extends com.percolate.sdk.dto.FacebookMentionDa
     }
 
     protected FacebookMentionData(Parcel in) {
+        this.text = in.readString();
         this.xid = in.readString();
         this.length = (Integer) in.readValue(Integer.class.getClassLoader());
         this.offset = (Integer) in.readValue(Integer.class.getClassLoader());

@@ -16,6 +16,7 @@ public class StreamChannelData extends com.percolate.sdk.dto.StreamChannelData i
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeSerializable(this.licenseChannel);
         dest.writeString(this.id);
         dest.writeString(this.xid);
         dest.writeString(this.name);
@@ -35,6 +36,7 @@ public class StreamChannelData extends com.percolate.sdk.dto.StreamChannelData i
     }
 
     protected StreamChannelData(Parcel in) {
+        this.licenseChannel = (com.percolate.sdk.dto.LicenseChannel) in.readSerializable();
         this.id = in.readString();
         this.xid = in.readString();
         this.name = in.readString();

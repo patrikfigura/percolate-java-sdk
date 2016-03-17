@@ -19,6 +19,8 @@ public class StreamData extends com.percolate.sdk.dto.StreamData implements Parc
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeSerializable(this.channelData);
+        dest.writeSerializable(this.twitterQuery);
         dest.writeString(this.id);
         dest.writeString(this.type);
         dest.writeString(this.scopeId);
@@ -32,6 +34,8 @@ public class StreamData extends com.percolate.sdk.dto.StreamData implements Parc
     }
 
     protected StreamData(Parcel in) {
+        this.channelData = (com.percolate.sdk.dto.StreamChannelData) in.readSerializable();
+        this.twitterQuery = (TwitterQuery) in.readSerializable();
         this.id = in.readString();
         this.type = in.readString();
         this.scopeId = in.readString();

@@ -27,6 +27,8 @@ public class Flag extends com.percolate.sdk.dto.Flag implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeList(this.orderedTopics);
+        dest.writeSerializable(this.licenseChannel);
         dest.writeString(this.UID);
         dest.writeValue(this.id);
         dest.writeString(this.description);
@@ -59,6 +61,9 @@ public class Flag extends com.percolate.sdk.dto.Flag implements Parcelable {
     }
 
     protected Flag(Parcel in) {
+        this.orderedTopics = new ArrayList<com.percolate.sdk.dto.Topic>();
+        in.readList(this.orderedTopics, List.class.getClassLoader());
+        this.licenseChannel = (LicenseChannel) in.readSerializable();
         this.UID = in.readString();
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.description = in.readString();

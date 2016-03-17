@@ -22,6 +22,11 @@ public class SchemaField extends com.percolate.sdk.dto.SchemaField implements Pa
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeList(this.assets);
+        dest.writeStringList(this.stringArrayValues);
+        dest.writeList(this.terms);
+        dest.writeList(this.links);
+        dest.writeList(this.topics);
         dest.writeString(this.key);
         dest.writeString(this.type);
         dest.writeString(this.label);
@@ -35,6 +40,15 @@ public class SchemaField extends com.percolate.sdk.dto.SchemaField implements Pa
     }
 
     protected SchemaField(Parcel in) {
+        this.assets = new ArrayList<com.percolate.sdk.dto.Media>();
+        in.readList(this.assets, List.class.getClassLoader());
+        this.stringArrayValues = in.createStringArrayList();
+        this.terms = new ArrayList<Term>();
+        in.readList(this.terms, List.class.getClassLoader());
+        this.links = new ArrayList<Link>();
+        in.readList(this.links, List.class.getClassLoader());
+        this.topics = new ArrayList<Topic>();
+        in.readList(this.topics, List.class.getClassLoader());
         this.key = in.readString();
         this.type = in.readString();
         this.label = in.readString();

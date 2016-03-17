@@ -19,6 +19,9 @@ public class TwitterMonitoringObject extends com.percolate.sdk.dto.TwitterMonito
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeByte(fromTwitterSearchQuery ? (byte) 1 : (byte) 0);
+        dest.writeSerializable(this.flag);
+        dest.writeByte(wasFromMonitoringTab ? (byte) 1 : (byte) 0);
         dest.writeString(this.id);
         this.activity = new ArrayList<>();
         dest.writeList(this.activity);
@@ -31,6 +34,9 @@ public class TwitterMonitoringObject extends com.percolate.sdk.dto.TwitterMonito
     }
 
     protected TwitterMonitoringObject(Parcel in) {
+        this.fromTwitterSearchQuery = in.readByte() != 0;
+        this.flag = (com.percolate.sdk.dto.Flag) in.readSerializable();
+        this.wasFromMonitoringTab = in.readByte() != 0;
         this.id = in.readString();
         this.activity = new ArrayList<Object>();
         in.readList(this.activity, List.class.getClassLoader());
