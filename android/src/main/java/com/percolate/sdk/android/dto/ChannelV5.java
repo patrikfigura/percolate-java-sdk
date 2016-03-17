@@ -17,7 +17,7 @@ public class ChannelV5 extends com.percolate.sdk.dto.ChannelV5 implements Parcel
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeSerializable(this.platform));
+        dest.writeSerializable(this.platform);
         dest.writeValue(this.isPersonalChannel);
         dest.writeString(this.avatarUrl);
         dest.writeValue(this.v4ChannelId);
