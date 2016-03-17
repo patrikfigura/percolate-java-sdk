@@ -20,6 +20,12 @@ public class FacebookMonitoringObject implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = 3763956518885813706L;
 
+    @JsonIgnore
+    public Flag flag; //Set by client after calling ApiGetFlags
+
+    @JsonIgnore
+    public boolean wasFromMonitoringTab = false; //Set by client if object was loaded on the monitoring tab
+
     @JsonProperty("id")
     protected String id; //Facebook Id
 

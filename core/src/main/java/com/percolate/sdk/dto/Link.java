@@ -25,6 +25,9 @@ public class Link implements Serializable, HasExtraFields {
     @JsonProperty("id")
     protected Long id;
 
+    @JsonIgnore
+    public String originId;
+
     @JsonProperty("title")
     protected String title;
 

@@ -20,6 +20,7 @@ public class LicenseChannel extends com.percolate.sdk.dto.LicenseChannel impleme
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeByte(displayed ? (byte) 1 : (byte) 0);
         dest.writeValue(this.id);
         dest.writeString(this.uid);
         dest.writeValue(this.licenseId);
@@ -41,6 +42,7 @@ public class LicenseChannel extends com.percolate.sdk.dto.LicenseChannel impleme
     }
 
     protected LicenseChannel(Parcel in) {
+        this.displayed = in.readByte() != 0;
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.uid = in.readString();
         this.licenseId = (Long) in.readValue(Long.class.getClassLoader());

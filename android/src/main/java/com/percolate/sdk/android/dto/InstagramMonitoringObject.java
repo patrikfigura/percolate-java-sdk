@@ -19,6 +19,8 @@ public class InstagramMonitoringObject extends com.percolate.sdk.dto.InstagramMo
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeSerializable(this.flag);
+        dest.writeSerializable(this.parent);
         dest.writeString(this.id);
         dest.writeSerializable(this.xobj);
         dest.writeSerializable(this.meta);
@@ -30,6 +32,8 @@ public class InstagramMonitoringObject extends com.percolate.sdk.dto.InstagramMo
     }
 
     protected InstagramMonitoringObject(Parcel in) {
+        this.flag = (com.percolate.sdk.dto.Flag) in.readSerializable();
+        this.parent = (InstagramIncludeMediaData) in.readSerializable();
         this.id = in.readString();
         this.xobj = (InstagramComment) in.readSerializable();
         this.meta = (InstagramMonitoringObjectMetaData) in.readSerializable();

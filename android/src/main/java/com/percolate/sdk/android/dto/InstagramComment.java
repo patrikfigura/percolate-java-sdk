@@ -17,6 +17,7 @@ public class InstagramComment extends com.percolate.sdk.dto.InstagramComment imp
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeSerializable(this.instagramMonitoringObject);
         dest.writeString(this.id);
         dest.writeString(this.text);
         dest.writeSerializable(this.from);
@@ -28,6 +29,7 @@ public class InstagramComment extends com.percolate.sdk.dto.InstagramComment imp
     }
 
     protected InstagramComment(Parcel in) {
+        this.instagramMonitoringObject = (com.percolate.sdk.dto.InstagramMonitoringObject) in.readSerializable();
         this.id = in.readString();
         this.text = in.readString();
         this.from = (InstagramUserData) in.readSerializable();

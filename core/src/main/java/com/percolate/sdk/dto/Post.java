@@ -17,6 +17,20 @@ public class Post implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = -1092763210799796857L;
 
+    @JsonIgnore
+    public WorkflowData workflowData; // Set by client after calling ApiGetWorkflow
+
+    @JsonIgnore
+    public TwitterInteractionsData twitterInteractionsData; //Set by client after calling ApiGetTwitterInteractionData
+
+    @JsonIgnore
+    public List<Term> terms; //Set by client after calling ApiPostTerm and/or ApiGetTerms
+
+    @JsonIgnore
+    //IMPORTANT: passed in object will have <code>postSetData.setPosts(null);</code> called to avoid circular object graphs!
+    public PostSetData postSetData; //Set by client to store related post_set_date.
+
+
     @JsonProperty("id")
     protected Long id;
 

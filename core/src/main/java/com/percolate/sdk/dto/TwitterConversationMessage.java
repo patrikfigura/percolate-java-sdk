@@ -17,6 +17,12 @@ public class TwitterConversationMessage implements Serializable, HasExtraFields 
 
     private static final long serialVersionUID = 7326061449551179235L;
 
+    @JsonIgnore
+    public List<TwitterConversationMessage> extraMessages = new ArrayList<>(); // Set by client to group messages happening around the same time
+
+    @JsonIgnore
+    public Flag flag; //Set by client after calling ApiGetFlags
+
     @JsonProperty("id")
     protected Long id;
 
