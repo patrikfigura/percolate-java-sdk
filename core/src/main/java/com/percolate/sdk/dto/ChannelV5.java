@@ -31,6 +31,9 @@ public class ChannelV5 implements Serializable, HasExtraFields {
     @JsonIgnore
     public Long v4ChannelId; // Set by client after calling ApiGetLicenseChannels
 
+    @JsonIgnore
+    public Platform platform; // Set by client when combining platforms and channels
+
     @JsonProperty("id")
     protected String id;
 
