@@ -2,6 +2,7 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.percolate.sdk.dto.Platform;
 
 import java.util.HashMap;
 
@@ -19,6 +20,7 @@ public class ChannelV5 extends com.percolate.sdk.dto.ChannelV5 implements Parcel
         dest.writeValue(this.isPersonalChannel);
         dest.writeString(this.avatarUrl);
         dest.writeValue(this.v4ChannelId);
+        dest.writeSerializable(this.platform);
         dest.writeString(this.id);
         dest.writeString(this.xid);
         dest.writeString(this.name);
@@ -41,6 +43,7 @@ public class ChannelV5 extends com.percolate.sdk.dto.ChannelV5 implements Parcel
         this.isPersonalChannel = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.avatarUrl = in.readString();
         this.v4ChannelId = (Long) in.readValue(Long.class.getClassLoader());
+        this.platform = (Platform) in.readSerializable();
         this.id = in.readString();
         this.xid = in.readString();
         this.name = in.readString();
