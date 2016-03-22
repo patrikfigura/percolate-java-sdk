@@ -1,5 +1,6 @@
 package com.percolate.sdk.api.config;
 
+import okhttp3.Cache;
 import okhttp3.Interceptor;
 
 /**
@@ -26,6 +27,11 @@ public class PercolateServer {
      * Allow clients to inject a custom interceptor if required.
      */
     private Interceptor customInterceptor;
+
+    /**
+     * Network cache configuration.
+     */
+    private Cache cache;
 
     public PercolateServer(String transport, String domain) {
         this.transport = transport;
@@ -54,5 +60,13 @@ public class PercolateServer {
 
     public void setCustomInterceptor(Interceptor customInterceptor) {
         this.customInterceptor = customInterceptor;
+    }
+
+    public Cache getCache() {
+        return cache;
+    }
+
+    public void setCache(Cache cache) {
+        this.cache = cache;
     }
 }
