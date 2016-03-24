@@ -159,6 +159,7 @@ public class TwitterUser implements Serializable, HasExtraFields {
     @JsonProperty("errors")
     protected List<LinkedHashMap<String, Object>> errors;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

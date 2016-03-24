@@ -41,6 +41,7 @@ public class Targeting implements Serializable, HasExtraFields {
     @JsonProperty("work_networks")
     protected List<LinkedHashMap<String, Object>> workNetworks;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

@@ -73,6 +73,7 @@ public class ChannelV5 implements Serializable, HasExtraFields {
     @JsonProperty("ext")
     protected Object ext;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

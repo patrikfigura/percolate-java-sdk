@@ -40,6 +40,7 @@ public class InstagramMonitoringObject implements Serializable, HasExtraFields {
     @JsonProperty("activity")
     protected List<Object> activity;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

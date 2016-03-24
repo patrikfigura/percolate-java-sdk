@@ -101,6 +101,7 @@ public class Brief implements Serializable, HasExtraFields {
     @JsonProperty("comment_count")
     protected Integer commentCount;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

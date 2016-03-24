@@ -55,6 +55,7 @@ public class ShareData implements Serializable, HasExtraFields {
     @JsonProperty("recipient_uid")
     protected String recipientUID;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

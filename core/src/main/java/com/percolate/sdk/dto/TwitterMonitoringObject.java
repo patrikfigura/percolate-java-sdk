@@ -40,6 +40,7 @@ public class TwitterMonitoringObject implements Serializable, HasExtraFields {
     @JsonProperty("xobj")
     protected Tweet tweet;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

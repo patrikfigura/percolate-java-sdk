@@ -55,6 +55,7 @@ public class ActivityStreamData implements Serializable, HasExtraFields {
     @JsonProperty("mentions")
     protected List<Mention> mentions;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

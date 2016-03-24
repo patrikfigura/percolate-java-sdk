@@ -64,6 +64,7 @@ public class StreamChannelData implements Serializable, HasExtraFields {
     @JsonProperty("updated_at")
     protected String updatedAt;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

@@ -109,6 +109,7 @@ public class Post implements Serializable, HasExtraFields {
     @JsonProperty("facebook_mentions")
     protected List<FacebookMentionData> facebookMentions;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override
