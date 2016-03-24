@@ -52,6 +52,7 @@ public class Platform implements Serializable, HasExtraFields, Comparable<Platfo
     @JsonProperty("updated_at")
     protected String updatedAt;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

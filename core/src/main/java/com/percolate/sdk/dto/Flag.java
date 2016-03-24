@@ -103,6 +103,7 @@ public class Flag implements Serializable, HasExtraFields {
     @JsonProperty("status_type")
     protected String statusType; //Should match one of FlaggingStatusType enums.
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

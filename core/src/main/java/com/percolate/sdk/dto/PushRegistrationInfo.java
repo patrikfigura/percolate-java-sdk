@@ -1,6 +1,7 @@
 package com.percolate.sdk.dto;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.percolate.sdk.interfaces.HasExtraFields;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -28,6 +29,7 @@ public class PushRegistrationInfo implements Serializable, HasExtraFields {
     @JsonProperty("app_version")
     protected String appVersion; //GCM registration Id's are not guaranteed to work with the new app versions.
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

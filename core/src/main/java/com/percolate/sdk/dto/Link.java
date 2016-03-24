@@ -40,6 +40,7 @@ public class Link implements Serializable, HasExtraFields {
     @JsonProperty("medias")
     protected List<Media> medias = new ArrayList<>();
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override
