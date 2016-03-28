@@ -16,10 +16,10 @@ import java.util.Map;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AuthorizeDataExt implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -5544251067234352709L;
+    private static final long serialVersionUID = 6700661611326561278L;
 
-    @JsonProperty("token_setup_code")
-    protected String tokenSetupCode;
+    @JsonProperty("code")
+    protected String code;
 
     @JsonProperty("client_id")
     protected String clientId;
@@ -35,12 +35,12 @@ public class AuthorizeDataExt implements Serializable, HasExtraFields {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-    public String getTokenSetupCode() {
-        return tokenSetupCode;
+    public String getCode() {
+        return code;
     }
 
-    public void setTokenSetupCode(String tokenSetupCode) {
-        this.tokenSetupCode = tokenSetupCode;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getClientId() {

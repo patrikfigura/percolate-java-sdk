@@ -17,6 +17,7 @@ public class AuthTokenData extends com.percolate.sdk.dto.AuthTokenData implement
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.id);
+        dest.writeString(this.tokenType);
         dest.writeString(this.key);
         dest.writeString(this.userId);
         dest.writeString(this.grantId);
@@ -31,6 +32,7 @@ public class AuthTokenData extends com.percolate.sdk.dto.AuthTokenData implement
 
     protected AuthTokenData(Parcel in) {
         this.id = in.readString();
+        this.tokenType = in.readString();
         this.key = in.readString();
         this.userId = in.readString();
         this.grantId = in.readString();

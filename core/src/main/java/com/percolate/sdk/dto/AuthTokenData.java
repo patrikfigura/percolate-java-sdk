@@ -16,10 +16,13 @@ import java.util.Map;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AuthTokenData implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -7576796881434896202L;
+    private static final long serialVersionUID = -8168635337161980833L;
 
     @JsonProperty("id")
     protected String id;
+
+    @JsonProperty("token_type")
+    protected String tokenType;
 
     @JsonProperty("key")
     protected String key;
@@ -53,6 +56,14 @@ public class AuthTokenData implements Serializable, HasExtraFields {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getTokenType() {
+        return tokenType;
+    }
+
+    public void setTokenType(String tokenType) {
+        this.tokenType = tokenType;
     }
 
     public String getKey() {
