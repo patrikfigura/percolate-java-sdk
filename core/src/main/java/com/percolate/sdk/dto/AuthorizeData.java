@@ -10,6 +10,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
@@ -19,19 +21,22 @@ public class AuthorizeData implements Serializable, HasExtraFields {
     private static final long serialVersionUID = -6329025686470303708L;
 
     @JsonProperty("id")
-    private String id;
+    protected String id;
 
     @JsonProperty("user_id")
-    private String userId;
+    protected String userId;
 
     @JsonProperty("type")
-    private String type;
+    protected String type;
 
     @JsonProperty("ext")
-    private AuthorizeDataExt ext;
+    protected AuthorizeDataExt ext;
 
     @JsonProperty("updated_at")
-    private String updatedAt;
+    protected String updatedAt;
+
+    @JsonProperty("errors")
+    protected List<LinkedHashMap<String, Object>> errors;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -79,6 +84,14 @@ public class AuthorizeData implements Serializable, HasExtraFields {
 
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public List<LinkedHashMap<String, Object>> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(List<LinkedHashMap<String, Object>> errors) {
+        this.errors = errors;
     }
 
     @Override

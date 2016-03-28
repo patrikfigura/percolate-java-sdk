@@ -17,7 +17,7 @@ public class AuthorizeDataExt extends com.percolate.sdk.dto.AuthorizeDataExt imp
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.tokenSetupCode);
+        dest.writeString(this.code);
         dest.writeString(this.clientId);
         dest.writeString(this.callbackUrl);
         dest.writeMap(this.extraFields);
@@ -27,7 +27,7 @@ public class AuthorizeDataExt extends com.percolate.sdk.dto.AuthorizeDataExt imp
     }
 
     protected AuthorizeDataExt(Parcel in) {
-        this.tokenSetupCode = in.readString();
+        this.code = in.readString();
         this.clientId = in.readString();
         this.callbackUrl = in.readString();
         this.extraFields = new HashMap<>();
