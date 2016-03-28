@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Android version of {@link com.percolate.sdk.dto.AuthorizeData}.  Implements {@link Parcelable}
  */
-public class AuthorizeData extends com.percolate.sdk.dto.ApprovalPoolStep implements Parcelable {
+public class AuthorizeData extends com.percolate.sdk.dto.AuthorizeData implements Parcelable {
 
     @Override
     public int describeContents() {
@@ -19,11 +19,12 @@ public class AuthorizeData extends com.percolate.sdk.dto.ApprovalPoolStep implem
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.quorum);
-        dest.writeList(this.approverIds);
-        dest.writeString(this.name);
-        dest.writeList(this.channelIds);
-        dest.writeValue(this.ordinal);
+        dest.writeString(this.id);
+        dest.writeString(this.userId);
+        dest.writeString(this.type);
+        dest.writeSerializable(this.ext);
+        dest.writeString(this.updatedAt);
+        dest.writeList(this.errors);
         dest.writeMap(this.extraFields);
     }
 
@@ -31,13 +32,13 @@ public class AuthorizeData extends com.percolate.sdk.dto.ApprovalPoolStep implem
     }
 
     protected AuthorizeData(Parcel in) {
-        this.quorum = in.readString();
-        this.approverIds = new ArrayList<Long>();
-        in.readList(this.approverIds, List.class.getClassLoader());
-        this.name = in.readString();
-        this.channelIds = new ArrayList<Long>();
-        in.readList(this.channelIds, List.class.getClassLoader());
-        this.ordinal = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.id = in.readString();
+        this.userId = in.readString();
+        this.type = in.readString();
+        this.ext = (com.percolate.sdk.dto.AuthorizeDataExt) in.readSerializable();
+        this.updatedAt = in.readString();
+        this.errors = new ArrayList<>();
+        in.readList(this.errors, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
