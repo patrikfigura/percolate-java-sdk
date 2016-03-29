@@ -70,6 +70,7 @@ public class Media implements Serializable, HasExtraFields {
     @JsonIgnore
     protected ArrayList<ImageSize> imagesForTypeVideo;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

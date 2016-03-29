@@ -1,6 +1,7 @@
 package com.percolate.sdk.dto;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.percolate.sdk.interfaces.HasExtraFields;
@@ -41,6 +42,7 @@ public class MobileAppPushTokenData implements Serializable, HasExtraFields {
     @JsonProperty("mobile_app_arn")
     protected String mobileAppArn;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

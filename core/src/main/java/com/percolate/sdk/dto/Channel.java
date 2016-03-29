@@ -42,6 +42,7 @@ public class Channel implements Serializable, HasExtraFields {
     @JsonProperty("page_id")
     protected String pageId;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

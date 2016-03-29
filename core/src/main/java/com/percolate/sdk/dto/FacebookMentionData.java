@@ -30,6 +30,7 @@ public class FacebookMentionData implements Serializable, HasExtraFields, Compar
     @JsonProperty("offset")
     protected Integer offset;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

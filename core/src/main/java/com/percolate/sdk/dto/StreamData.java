@@ -52,6 +52,7 @@ public class StreamData implements Serializable, HasExtraFields {
     @JsonProperty("ext")
     protected LinkedHashMap<String, Object> ext;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

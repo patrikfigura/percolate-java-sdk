@@ -56,6 +56,7 @@ public class FacebookConversationMessage implements Serializable, HasExtraFields
     @JsonProperty("message")
     protected String message;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

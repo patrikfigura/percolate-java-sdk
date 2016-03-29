@@ -2,6 +2,7 @@
 package com.percolate.sdk.dto;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.percolate.sdk.interfaces.HasExtraFields;
@@ -36,6 +37,7 @@ public class Brew implements Serializable, HasExtraFields {
     @JsonProperty("approved")
     protected boolean approved;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

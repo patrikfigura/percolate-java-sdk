@@ -1,6 +1,7 @@
 package com.percolate.sdk.dto;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.percolate.sdk.interfaces.HasExtraFields;
@@ -58,6 +59,7 @@ public class License implements Serializable, HasExtraFields, Comparable<License
 
     protected List<UserRolesLicenseData> userRolesLicenseData; //Set in some apps after calling ApiGetUserRoles
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

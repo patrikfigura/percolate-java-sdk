@@ -62,6 +62,7 @@ public class TwitterConversationMessage implements Serializable, HasExtraFields 
     @JsonProperty("created_at")
     protected String createdAt;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

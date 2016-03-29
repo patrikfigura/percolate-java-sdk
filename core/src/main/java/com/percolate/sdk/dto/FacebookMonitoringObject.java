@@ -38,6 +38,7 @@ public class FacebookMonitoringObject implements Serializable, HasExtraFields {
     @JsonProperty("xobj")
     protected FacebookMonitoringXObj xobj;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override

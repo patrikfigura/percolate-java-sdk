@@ -35,6 +35,7 @@ public class InstagramComment implements Serializable, HasExtraFields {
     @JsonProperty("created_time")
     protected String createdTime;
 
+    @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
     @Override
