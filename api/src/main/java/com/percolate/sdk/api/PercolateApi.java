@@ -5,6 +5,7 @@ import com.percolate.sdk.api.request.activity.ActivityRequest;
 import com.percolate.sdk.api.request.approvals.pools.ApprovalPoolsRequest;
 import com.percolate.sdk.api.request.approvals.workflow.ApprovalWorkflowRequest;
 import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflowHistoryRequest;
+import com.percolate.sdk.api.request.auth.AuthRequest;
 import com.percolate.sdk.api.request.authorization.UserRolesRequest;
 import com.percolate.sdk.api.request.brief.BriefRequest;
 import com.percolate.sdk.api.request.channel.ChannelRequest;
@@ -40,7 +41,6 @@ import com.percolate.sdk.api.request.users.UsersRequest;
 import com.percolate.sdk.api.request.vendor.facebook.FacebookVendorRequest;
 import com.percolate.sdk.api.request.vendor.instagram.InstagramVendorRequest;
 import com.percolate.sdk.api.request.vendor.twitter.TwitterVendorRequest;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -56,7 +56,12 @@ public class PercolateApi {
     /**
      * User API key.
      */
-    private final String apiKey;
+    private String apiKey;
+
+    /**
+     * OAuth2 Token key.
+     */
+    private String oAuthTokenKey;
 
     /**
      * Selected server config.
@@ -69,19 +74,25 @@ public class PercolateApi {
     public static final PercolateServer PROD = new PercolateServer("https", "percolate.com");
 
     /**
-     * API version paths.
+     * Create percolate API instance that accesses {@code percolate.com} endpoint.
      */
-    public static final String API_V3_PATH = "api/v3";
-    public static final String API_V4_PATH = "api/v4";
-    public static final String API_V5_PATH = "api/v5";
-    public static final String AUTH_V5_PATH = "auth/v5";
+    public PercolateApi() {
+        this(null, null);
+    }
+
+    /**
+     * Create percolate API instance that accesses the given {@link PercolateServer} endpoint.
+     */
+    public PercolateApi(@Nullable PercolateServer selectedServer) {
+        this(null, selectedServer);
+    }
 
     /**
      * Create percolate API instance that accesses {@code percolate.com} endpoint.
      *
      * @param apiKey API key.
      */
-    public PercolateApi(@NotNull String apiKey) {
+    public PercolateApi(@Nullable String apiKey) {
         this(apiKey, null);
     }
 
@@ -91,7 +102,7 @@ public class PercolateApi {
      * @param apiKey API key.
      * @param selectedServer Server config.
      */
-    public PercolateApi(@NotNull String apiKey, @Nullable PercolateServer selectedServer) {
+    public PercolateApi(@Nullable String apiKey, @Nullable PercolateServer selectedServer) {
         this.apiKey = apiKey;
         if(selectedServer != null) {
             this.selectedServer = selectedServer;
@@ -108,10 +119,40 @@ public class PercolateApi {
     }
 
     /**
+     * Set API Key.
+     * @param apiKey API Key.
+     */
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
+    }
+
+    /**
+     * @return OAuth2 Token key.
+     */
+    public String getOAuthTokenKey() {
+        return oAuthTokenKey;
+    }
+
+    /**
+     * set OAuth2 Token key.
+     * @param oAuthTokenKey OAuth2 Token key.
+     */
+    public void setOAuthTokenKey(String oAuthTokenKey) {
+        this.oAuthTokenKey = oAuthTokenKey;
+    }
+
+    /**
      * @return Selected server.
      */
     public PercolateServer getSelectedServer() {
         return selectedServer;
+    }
+
+    /**
+     * @return {@link AuthRequest} instance.
+     */
+    public AuthRequest auth() {
+        return new AuthRequest(this);
     }
 
     /**
