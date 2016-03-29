@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.followers;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Follower;
 import com.percolate.sdk.dto.Followers;
 import okhttp3.ResponseBody;
@@ -15,12 +15,12 @@ import java.util.Map;
  */
 interface FollowersService {
 
-    @GET(PercolateApi.API_V4_PATH + "/follower/")
+    @GET(Endpoints.API_V4_PATH + "/follower/")
     Call<Followers> get(@QueryMap Map<String, Object> params);
 
-    @POST(PercolateApi.API_V4_PATH + "/follower/")
+    @POST(Endpoints.API_V4_PATH + "/follower/")
     Call<Followers> create(@Body List<Follower> followers);
 
-    @DELETE(PercolateApi.API_V4_PATH + "/follower/{follower_id}")
+    @DELETE(Endpoints.API_V4_PATH + "/follower/{follower_id}")
     Call<ResponseBody> delete(@Path("follower_id") String followerId);
 }

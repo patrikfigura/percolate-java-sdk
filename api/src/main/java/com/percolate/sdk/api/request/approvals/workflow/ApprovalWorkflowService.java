@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.approvals.workflow;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Workflow;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,7 +13,7 @@ import java.util.Map;
  */
 interface ApprovalWorkflowService {
 
-    @GET(PercolateApi.API_V3_PATH + "/approval/workflow/")
+    @GET(Endpoints.API_V3_PATH + "/approval/workflow/")
     Call<Workflow> get(@QueryMap Map<String, Object> params);
 
 }

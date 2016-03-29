@@ -2,7 +2,8 @@ package com.percolate.sdk.api.request.schema;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
-import com.percolate.sdk.dto.*;
+import com.percolate.sdk.dto.Schemas;
+import com.percolate.sdk.dto.SingleSchema;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 

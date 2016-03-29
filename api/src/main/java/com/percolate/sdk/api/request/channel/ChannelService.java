@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.channel;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Channels;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,6 +13,6 @@ import java.util.Map;
  */
 interface ChannelService {
 
-    @GET(PercolateApi.API_V5_PATH + "/channel/")
+    @GET(Endpoints.API_V5_PATH + "/channel/")
     Call<Channels> get(@QueryMap Map<String, Object> params);
 }

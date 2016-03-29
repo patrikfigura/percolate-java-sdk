@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.shares;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Shares;
 import com.percolate.sdk.dto.SingleShare;
 import retrofit2.Call;
@@ -15,9 +15,9 @@ import java.util.Map;
  */
 interface SharesService {
 
-    @GET(PercolateApi.API_V4_PATH + "/share/")
+    @GET(Endpoints.API_V4_PATH + "/share/")
     Call<Shares> list(@QueryMap Map<String, Object> params);
 
-    @GET(PercolateApi.API_V4_PATH + "/share/{share_id}")
+    @GET(Endpoints.API_V4_PATH + "/share/{share_id}")
     Call<SingleShare> get(@Path("share_id") String shareId, @QueryMap Map<String, Object> params);
 }
