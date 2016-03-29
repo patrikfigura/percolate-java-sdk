@@ -2,7 +2,9 @@ package com.percolate.sdk.api.request.brief;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
-import com.percolate.sdk.dto.*;
+import com.percolate.sdk.dto.Brief;
+import com.percolate.sdk.dto.BriefData;
+import com.percolate.sdk.dto.Briefs;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 

@@ -3,6 +3,7 @@ package com.percolate.sdk.api.utils;
 import com.percolate.sdk.api.PercolateApi;
 import okhttp3.*;
 import org.apache.commons.lang3.StringUtils;
+
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
@@ -86,11 +87,16 @@ public class RetrofitLogic {
             @Override
             public Response intercept(Chain chain) throws IOException {
                 Request request = chain.request();
-                request = request.newBuilder()
-                        .addHeader("User-Agent", userAgentString)
-                        .addHeader("Authorization", context.getApiKey())
-                        .build();
-                return chain.proceed(request);
+                Request.Builder builder = request.newBuilder();
+                builder.addHeader("User-Agent", userAgentString);
+                if(StringUtils.isBlank(request.header("Authorization"))) {
+                    if(StringUtils.isNotBlank(context.getOAuthTokenKey())) {
+                        builder.addHeader("Authorization", "Bearer " + context.getOAuthTokenKey());
+                    } else if(StringUtils.isNotBlank(context.getApiKey())){
+                        builder.addHeader("Authorization", context.getApiKey());
+                    }
+                }
+                return chain.proceed(builder.build());
             }
         });
         return okHttpClientBuilder.build();

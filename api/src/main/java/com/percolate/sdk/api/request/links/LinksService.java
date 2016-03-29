@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.links;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Link;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -13,9 +13,9 @@ import retrofit2.http.Path;
  */
 interface LinksService {
 
-    @GET(PercolateApi.API_V3_PATH + "/links/{id}")
+    @GET(Endpoints.API_V3_PATH + "/links/{id}")
     Call<Link> get(@Path("id") String id);
 
-    @POST(PercolateApi.API_V3_PATH + "/links")
+    @POST(Endpoints.API_V3_PATH + "/links")
     Call<Link> create(@Body String url);
 }

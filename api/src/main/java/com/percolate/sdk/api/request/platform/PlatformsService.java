@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.platform;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Platforms;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,6 +13,6 @@ import java.util.Map;
  */
 interface PlatformsService {
 
-    @GET(PercolateApi.API_V5_PATH + "/platform/")
+    @GET(Endpoints.API_V5_PATH + "/platform/")
     Call<Platforms> get(@QueryMap Map<String, Object> params);
 }

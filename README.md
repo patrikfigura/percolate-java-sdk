@@ -78,17 +78,18 @@ call.enqueue(new Callback<Terms>() {
 });
 ```
 
-## Usage from Python.
-This is an experimental feature.  See [python-bridge](python-bridge) for details.
+## OAuth2 Authentication
+This library supports API_KEY authentication or OAuth2 authentication.
+See the [wiki page](wiki/OAuth2-vs-API_KEY-Authentication) for details.
+
+## Usage from Python
+This is an experimental feature.
+See [python-bridge](python-bridge) for details.
 
 ## Contributing
 TODO - Project setup, etc
-Run the following **Using Java8** to test maven publishing that will be run by jitpack: `./gradlew --info clean install`
 
-## Troubleshooting:
-jitpack logs can be found at: https://jitpack.io/com/github/percolate/percolate-java-sdk/:COMMIT_HASH:/build.log
-The latests log can be found here: https://jitpack.io/com/github/percolate/percolate-java-sdk/-SNAPSHOT/build.log
+Run the following **Using Java8** to test maven publishing that will be run by jitpack: `./gradlew --info clean install`
 
 ## License
 Distributed under the BSD 3 license. See [LICENSE](LICENSE.txt) for details.
-

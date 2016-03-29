@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.activity;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.ActivityStream;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,6 +13,6 @@ import java.util.Map;
  */
 interface ActivityService {
 
-    @GET(PercolateApi.API_V4_PATH + "/activity/")
+    @GET(Endpoints.API_V4_PATH + "/activity/")
     Call<ActivityStream> get(@QueryMap Map<String, Object> params);
 }

@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.responses;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.CannedResponses;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,6 +13,6 @@ import java.util.Map;
  */
 interface CannedResponsesService {
 
-    @GET(PercolateApi.API_V5_PATH + "/canned_response/")
+    @GET(Endpoints.API_V5_PATH + "/canned_response/")
     Call<CannedResponses> get(@QueryMap Map<String, Object> params);
 }

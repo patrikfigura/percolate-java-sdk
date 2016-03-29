@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.translate;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Translation;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,6 +13,6 @@ import java.util.Map;
  */
 interface TranslateService {
 
-    @GET(PercolateApi.API_V5_PATH + "/translate/")
+    @GET(Endpoints.API_V5_PATH + "/translate/")
     Call<Translation> get(@QueryMap Map<String, Object> params);
 }

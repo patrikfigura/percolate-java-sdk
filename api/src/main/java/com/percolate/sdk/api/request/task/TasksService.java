@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.task;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.SingleTask;
 import com.percolate.sdk.dto.Task;
 import com.percolate.sdk.dto.Tasks;
@@ -15,15 +15,15 @@ import java.util.Map;
  */
 interface TasksService {
 
-    @GET(PercolateApi.API_V5_PATH + "/task/")
+    @GET(Endpoints.API_V5_PATH + "/task/")
     Call<Tasks> get(@QueryMap Map<String, Object> params);
 
-    @POST(PercolateApi.API_V5_PATH + "/task/")
+    @POST(Endpoints.API_V5_PATH + "/task/")
     Call<SingleTask> create(@Body Task task);
 
-    @PUT(PercolateApi.API_V5_PATH + "/task/{id}")
+    @PUT(Endpoints.API_V5_PATH + "/task/{id}")
     Call<SingleTask> update(@Path("id") String id, @Body Task task);
 
-    @DELETE(PercolateApi.API_V5_PATH + "/task/{id}")
+    @DELETE(Endpoints.API_V5_PATH + "/task/{id}")
     Call<ResponseBody> delete(@Path("id") String id, @QueryMap Map<String, Object> params);
 }

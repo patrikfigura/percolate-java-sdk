@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.approvals.pools;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.ApprovalPools;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,7 +13,7 @@ import java.util.Map;
  */
 interface ApprovalPoolsService {
 
-    @GET(PercolateApi.API_V4_PATH + "/approval/pool/")
+    @GET(Endpoints.API_V4_PATH + "/approval/pool/")
     Call<ApprovalPools> get(@QueryMap Map<String, Object> params);
 
 }

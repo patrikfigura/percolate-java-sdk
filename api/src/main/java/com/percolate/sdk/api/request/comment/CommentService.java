@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.comment;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Comment;
 import com.percolate.sdk.dto.CommentData;
 import com.percolate.sdk.dto.Comments;
@@ -15,12 +15,12 @@ import java.util.Map;
  */
 interface CommentService {
 
-    @GET(PercolateApi.API_V5_PATH + "/comment/")
+    @GET(Endpoints.API_V5_PATH + "/comment/")
     Call<Comments> get(@QueryMap Map<String, Object> params);
 
-    @POST(PercolateApi.API_V5_PATH + "/comment/")
+    @POST(Endpoints.API_V5_PATH + "/comment/")
     Call<CommentData> create(@Body Comment comment);
 
-    @DELETE(PercolateApi.API_V5_PATH + "/comment/{comment_id}")
+    @DELETE(Endpoints.API_V5_PATH + "/comment/{comment_id}")
     Call<ResponseBody> create(@Path("comment_id") String commentId);
 }

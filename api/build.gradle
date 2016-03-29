@@ -59,6 +59,9 @@ dependencies {
     // Apache Commons
     compile 'org.apache.commons:commons-lang3:3.4'
 
+    // Base64 Encoder/Decoder
+    compile 'net.iharder:base64:2.3.9'
+
     // Jackson
     compile 'com.fasterxml.jackson.core:jackson-databind:2.7.1'
     compile 'com.fasterxml.jackson.core:jackson-core:2.7.1'

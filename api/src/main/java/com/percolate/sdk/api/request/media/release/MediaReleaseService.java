@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.media.release;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.MediaReleaseResponse;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -16,6 +16,6 @@ import java.util.Map;
 interface MediaReleaseService {
 
     @Multipart
-    @POST(PercolateApi.API_V4_PATH + "/release/")
+    @POST(Endpoints.API_V4_PATH + "/release/")
     Call<MediaReleaseResponse> create(@PartMap Map<String, RequestBody> params);
 }

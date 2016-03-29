@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.release;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.ReleaseFormHtml;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,6 +13,6 @@ import java.util.Map;
  */
 interface ReleaseFormService {
 
-    @GET(PercolateApi.API_V4_PATH + "/release/form")
+    @GET(Endpoints.API_V4_PATH + "/release/form")
     Call<ReleaseFormHtml> get(@QueryMap Map<String, Object> params);
 }

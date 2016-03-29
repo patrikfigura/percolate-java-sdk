@@ -2,7 +2,9 @@ package com.percolate.sdk.api.request.comment;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
-import com.percolate.sdk.dto.*;
+import com.percolate.sdk.dto.Comment;
+import com.percolate.sdk.dto.CommentData;
+import com.percolate.sdk.dto.Comments;
 import okhttp3.ResponseBody;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
