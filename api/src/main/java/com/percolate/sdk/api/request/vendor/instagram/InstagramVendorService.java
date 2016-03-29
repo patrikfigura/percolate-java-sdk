@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.vendor.instagram;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.InstagramMedia;
 import com.percolate.sdk.dto.InstagramMediaComments;
 import com.percolate.sdk.dto.InstagramRecentMedia;
@@ -17,15 +17,15 @@ import java.util.Map;
  */
 interface InstagramVendorService {
 
-    @GET(PercolateApi.API_V5_PATH + "/vendor/instagram/v1/media/{media_id}")
+    @GET(Endpoints.API_V5_PATH + "/vendor/instagram/v1/media/{media_id}")
     Call<InstagramMedia> media(@Path("media_id") String mediaId, @QueryMap Map<String, Object> params);
 
-    @GET(PercolateApi.API_V5_PATH + "/vendor/instagram/v1/media/{media_id}/comments")
+    @GET(Endpoints.API_V5_PATH + "/vendor/instagram/v1/media/{media_id}/comments")
     Call<InstagramMediaComments> comments(@Path("media_id") String mediaId, @QueryMap Map<String, Object> params);
 
-    @GET(PercolateApi.API_V5_PATH + "/vendor/instagram/v1/users/{instagram_user_id}/media/recent")
+    @GET(Endpoints.API_V5_PATH + "/vendor/instagram/v1/users/{instagram_user_id}/media/recent")
     Call<InstagramRecentMedia> recent(@Path("instagram_user_id") String instagramUserId, @QueryMap Map<String, Object> params);
 
-    @GET(PercolateApi.API_V5_PATH + "/vendor/instagram/v1/users/{instagram_user_id}")
+    @GET(Endpoints.API_V5_PATH + "/vendor/instagram/v1/users/{instagram_user_id}")
     Call<InstagramUser> user(@Path("instagram_user_id") String instagramUserId, @QueryMap Map<String, Object> params);
 }

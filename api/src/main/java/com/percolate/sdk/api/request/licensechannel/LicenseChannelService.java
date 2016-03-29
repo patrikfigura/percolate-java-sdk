@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.licensechannel;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.LicenseChannel;
 import com.percolate.sdk.dto.LicenseChannels;
 import com.percolate.sdk.dto.SingleLicenseChannel;
@@ -17,9 +17,9 @@ import java.util.Map;
  */
 interface LicenseChannelService {
 
-    @GET(PercolateApi.API_V4_PATH + "/license_channel/")
+    @GET(Endpoints.API_V4_PATH + "/license_channel/")
     Call<LicenseChannels> get(@QueryMap Map<String, Object> params);
 
-    @POST(PercolateApi.API_V4_PATH + "/license_channel/")
+    @POST(Endpoints.API_V4_PATH + "/license_channel/")
     Call<SingleLicenseChannel> create(@Body LicenseChannel licenseChannel);
 }

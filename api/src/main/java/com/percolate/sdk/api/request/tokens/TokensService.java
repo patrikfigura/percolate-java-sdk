@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.tokens;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Tokens;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -16,9 +16,9 @@ import java.util.Map;
  */
 interface TokensService {
 
-    @GET(PercolateApi.API_V4_PATH + "/token/")
+    @GET(Endpoints.API_V4_PATH + "/token/")
     Call<Tokens> get(@QueryMap Map<String, Object> params);
 
-    @DELETE(PercolateApi.API_V4_PATH + "/token/{token_id}")
+    @DELETE(Endpoints.API_V4_PATH + "/token/{token_id}")
     Call<ResponseBody> delete(@Path("token_id") String tokenId, @QueryMap Map<String, Object> params);
 }

@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.media;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Media;
 import com.percolate.sdk.dto.MediaItems;
 import com.percolate.sdk.dto.MediaList;
@@ -16,22 +16,22 @@ import java.util.Map;
  */
 interface MediaService {
 
-    @GET(PercolateApi.API_V3_PATH + "/media/{uid}")
+    @GET(Endpoints.API_V3_PATH + "/media/{uid}")
     Call<Media> get(@Path("uid") String uid, @QueryMap Map<String, Object> params);
 
-    @GET(PercolateApi.API_V3_PATH + "/media")
+    @GET(Endpoints.API_V3_PATH + "/media")
     Call<MediaList> list(@QueryMap Map<String, Object> params);
 
-    @GET(PercolateApi.API_V3_PATH + "/media/{library_uid}")
+    @GET(Endpoints.API_V3_PATH + "/media/{library_uid}")
     Call<MediaList> list(@Path("library_uid") String libraryUid, @QueryMap Map<String, Object> params);
 
-    @GET(PercolateApi.API_V3_PATH + "/media")
+    @GET(Endpoints.API_V3_PATH + "/media")
     Call<MediaItems> items(@QueryMap Map<String, Object> params);
 
-    @GET(PercolateApi.API_V3_PATH + "/media/{uid}/metadata")
+    @GET(Endpoints.API_V3_PATH + "/media/{uid}/metadata")
     Call<MediaMetaDataHolder> meta(@Path("uid") String uid, @QueryMap Map<String, Object> params);
 
     @Multipart
-    @POST(PercolateApi.API_V3_PATH + "/media")
+    @POST(Endpoints.API_V3_PATH + "/media")
     Call<Media> create(@PartMap Map<String, RequestBody> params);
 }

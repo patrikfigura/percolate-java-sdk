@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.users;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.ChangePasswordError;
 import com.percolate.sdk.dto.Users;
 import retrofit2.Call;
@@ -16,9 +16,9 @@ import java.util.Map;
  */
 interface UsersService {
 
-    @GET(PercolateApi.API_V3_PATH + "/users")
+    @GET(Endpoints.API_V3_PATH + "/users")
     Call<Users> get(@QueryMap Map<String, Object> params);
 
-    @PUT(PercolateApi.API_V5_PATH + "/users/{user_id}/password")
+    @PUT(Endpoints.API_V5_PATH + "/users/{user_id}/password")
     Call<ChangePasswordError> changePassword(@Path("user_id") String userId, @QueryMap Map<String, Object> params);
 }

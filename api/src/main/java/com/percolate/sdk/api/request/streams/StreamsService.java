@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.streams;
 
-import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Streams;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,6 +13,6 @@ import java.util.Map;
  */
 interface StreamsService {
 
-    @GET(PercolateApi.API_V5_PATH + "/stream/")
+    @GET(Endpoints.API_V5_PATH + "/stream/")
     Call<Streams> get(@QueryMap Map<String, Object> params);
 }
