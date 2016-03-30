@@ -12,6 +12,7 @@ import com.percolate.sdk.api.request.channel.ChannelRequest;
 import com.percolate.sdk.api.request.comment.CommentRequest;
 import com.percolate.sdk.api.request.features.FeaturesRequest;
 import com.percolate.sdk.api.request.followers.FollowersRequest;
+import com.percolate.sdk.api.request.interaction.InteractionRequest;
 import com.percolate.sdk.api.request.license.LicenseRequest;
 import com.percolate.sdk.api.request.license.users.LicenseUsersRequest;
 import com.percolate.sdk.api.request.licensechannel.LicenseChannelRequest;
@@ -265,6 +266,14 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public FollowersRequest followers() {
         return new FollowersRequest(this);
+    }
+
+    /**
+     * @return {@link InteractionRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public InteractionRequest interactions() {
+        return new InteractionRequest(this);
     }
 
     /**
