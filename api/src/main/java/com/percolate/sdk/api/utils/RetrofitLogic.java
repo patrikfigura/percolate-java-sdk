@@ -1,11 +1,9 @@
 package com.percolate.sdk.api.utils;
 
 import com.percolate.sdk.api.PercolateApi;
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import okhttp3.*;
 import org.apache.commons.lang3.StringUtils;
+
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
@@ -18,7 +16,10 @@ import java.net.Proxy;
  * Code to hide away Retrofit logic and implementation details. It configures
  * Retrofit by setting an application interceptor and sets the Jackson Converter factory.
  */
-class RetrofitLogic {
+@SuppressWarnings("WeakerAccess")
+public class RetrofitLogic {
+
+    public static final int CACHE_MAX_AGE = 21600; //6hr
 
     /**
      * {@link Retrofit}
@@ -65,13 +66,21 @@ class RetrofitLogic {
     public OkHttpClient createOkHttpClient() {
         OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
 
+        // Enable local proxy (127.0.0.1:8888).
         if(context.getSelectedServer().getEnableLocalProxy()) {
             final Proxy proxy = new Proxy(Proxy.Type.HTTP, InetSocketAddress.createUnresolved("127.0.0.1", 8888));
             okHttpClientBuilder.proxy(proxy);
         }
 
+        // Add custom Interceptors.
         if(context.getSelectedServer().getCustomInterceptor() != null) {
             okHttpClientBuilder.interceptors().add(context.getSelectedServer().getCustomInterceptor());
+        }
+
+        // Enable caching.
+        if(context.getSelectedServer().getCache() != null) {
+            okHttpClientBuilder.cache(context.getSelectedServer().getCache());
+            forceCacheControlHeaders(okHttpClientBuilder);
         }
 
         okHttpClientBuilder.interceptors().add(new Interceptor() {
@@ -90,6 +99,38 @@ class RetrofitLogic {
                 return chain.proceed(builder.build());
             }
         });
-        return  okHttpClientBuilder.build();
+        return okHttpClientBuilder.build();
+    }
+
+    /**
+     * Percolate's API adds no-cache headers to requests.  Here we override them so that the okhttp framework
+     * will cache response data.
+     * <ul>
+     *   <li>Requests with {@code &skip-cache=true} won't be modified to enable caching.</li>
+     *   <li>Only GET requests will be modified to enable caching.</li>
+     *   <li>Only 200 OK responses will be modified to enable caching.</li>
+     * </ul>
+     */
+    private void forceCacheControlHeaders(final OkHttpClient.Builder okHttpClientBuilder) {
+        okHttpClientBuilder.addNetworkInterceptor(new Interceptor() {
+            @Override
+            public Response intercept(Chain chain) throws IOException {
+                final Response originalResponse = chain.proceed(chain.request());
+                final String cacheControlHeader = originalResponse.header("Cache-Control");
+                final Request request = chain.request();
+                final HttpUrl url = request.url();
+                final boolean skipCache = StringUtils.isNotBlank(url.queryParameter("skip-cache"));
+                final boolean isGetRequest = StringUtils.equalsIgnoreCase("GET", request.method());
+                final boolean is200 = originalResponse.code() == 200;
+
+                if(!skipCache && isGetRequest && is200 && ( cacheControlHeader == null || cacheControlHeader.contains("max-age=0") || cacheControlHeader.contains("no-cache")) ){
+                    return originalResponse.newBuilder()
+                            .header("Cache-Control", "max-age=" + CACHE_MAX_AGE)
+                            .build();
+                } else {
+                    return originalResponse;
+                }
+            }
+        });
     }
 }
