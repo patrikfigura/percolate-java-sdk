@@ -4,7 +4,6 @@ import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.InteractionData;
 import com.percolate.sdk.dto.Interactions;
-import com.percolate.sdk.dto.SingleInteraction;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 
@@ -34,9 +33,9 @@ public class InteractionRequest {
      * Create interaction.
      *
      * @param interaction {@link InteractionData} object.
-     * @return {@link SingleInteraction} object.
+     * @return {@link InteractionData} object.
      */
-    public Call<SingleInteraction> create(@NotNull final InteractionData interaction) {
+    public Call<InteractionData> create(@NotNull final InteractionData interaction) {
         return service.create(interaction);
     }
 }
