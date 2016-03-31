@@ -3,6 +3,7 @@ package com.percolate.sdk.api.request.users;
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.ChangePasswordError;
+import com.percolate.sdk.dto.SingleUser;
 import com.percolate.sdk.dto.Users;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
@@ -17,6 +18,15 @@ public class UsersRequest {
 
     public UsersRequest(@NotNull PercolateApi context) {
         this.service = new RetrofitApiFactory(context).getService(UsersService.class);
+    }
+
+    /**
+     * Query "me" endpoint.
+     *
+     * @return {@link Call} object.
+     */
+    public Call<SingleUser> me() {
+        return service.me();
     }
 
     /**
