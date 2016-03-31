@@ -39,7 +39,7 @@ public class RetrofitLogic {
     /**
      * Construct instance.
      */
-    RetrofitLogic(@NotNull PercolateApi context) {
+    public RetrofitLogic(@NotNull PercolateApi context) {
         this.context = context;
     }
 
