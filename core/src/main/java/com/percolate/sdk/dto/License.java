@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.percolate.sdk.interfaces.HasExtraFields;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.jetbrains.annotations.NotNull;
@@ -76,6 +78,27 @@ public class License implements Serializable, HasExtraFields, Comparable<License
             return this.name.compareToIgnoreCase(anotherLicense.getName());
         } else {
             return 0;
+        }
+    }
+
+    @Override
+    public boolean equals(Object that) {
+        if (this == that) return true;
+        if (that == null || getClass() != that.getClass()) return false;
+        License license = (License) that;
+        if(StringUtils.isNotBlank(UID)) {
+            return new EqualsBuilder().append(UID, license.UID).isEquals();
+        } else {
+            return new EqualsBuilder().append(id, license.id).isEquals();
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        if(StringUtils.isNotBlank(UID)) {
+            return new HashCodeBuilder(17, 37).append(UID).toHashCode();
+        } else {
+            return new HashCodeBuilder(17, 37).append(id).toHashCode();
         }
     }
 
