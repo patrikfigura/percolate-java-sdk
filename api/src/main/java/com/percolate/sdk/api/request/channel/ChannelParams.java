@@ -1,6 +1,9 @@
 package com.percolate.sdk.api.request.channel;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,8 +16,8 @@ public class ChannelParams {
     public ChannelParams() {
     }
 
-    public ChannelParams scopeId(String scopeId) {
-        params.put("scope_ids", scopeId);
+    public ChannelParams scopeIds(List<String> scopeIds) {
+        params.put("scope_ids", StringUtils.join(scopeIds, ","));
         return this;
     }
 

@@ -3,6 +3,7 @@ package com.percolate.sdk.api.request.responses;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,7 +16,7 @@ public class CannedResponsesParams {
     public CannedResponsesParams() {
     }
 
-    public CannedResponsesParams scopeIds(String scopeIds){
+    public CannedResponsesParams scopeIds(List<String> scopeIds){
         params.put("scope_ids", StringUtils.join(scopeIds, ","));
         return this;
     }

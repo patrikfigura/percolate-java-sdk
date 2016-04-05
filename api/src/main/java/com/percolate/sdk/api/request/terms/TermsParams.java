@@ -22,8 +22,8 @@ public class TermsParams {
         return this;
     }
 
-    public TermsParams scopeId(String scopeId) {
-        params.put("scope_ids", scopeId);
+    public TermsParams scopeIds(List<String> scopeIds) {
+        params.put("scope_ids", StringUtils.join(scopeIds, ","));
         return this;
     }
 
