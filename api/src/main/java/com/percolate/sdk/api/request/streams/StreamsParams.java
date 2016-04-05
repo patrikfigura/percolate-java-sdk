@@ -22,7 +22,7 @@ public class StreamsParams {
         return this;
     }
 
-    public StreamsParams scopeIds(String scopeIds) {
+    public StreamsParams scopeIds(List<String> scopeIds) {
         params.put("scope_ids", StringUtils.join(scopeIds, ","));
         return this;
     }
