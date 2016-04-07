@@ -133,4 +133,11 @@ public class RetrofitLogic {
             }
         });
     }
+
+    /**
+     * Reset cached {@link #retrofit} instance.
+     */
+    public static void reset() {
+        retrofit = null;
+    }
 }
