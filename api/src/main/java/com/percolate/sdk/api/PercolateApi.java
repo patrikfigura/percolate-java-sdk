@@ -67,7 +67,7 @@ public class PercolateApi {
     /**
      * Selected server config.
      */
-    private final PercolateServer selectedServer;
+    private PercolateServer selectedServer;
 
     /**
      * Default server config that will be used if nothing else is provided.
@@ -147,6 +147,10 @@ public class PercolateApi {
      */
     public PercolateServer getSelectedServer() {
         return selectedServer;
+    }
+
+    public void setSelectedServer(PercolateServer selectedServer) {
+        this.selectedServer = selectedServer;
     }
 
     /**
