@@ -10,8 +10,8 @@ The SDK is broken up into 3 libraries:
 | Component     | Description                        |
 |---------------|------------------------------------| 
 | core          | Core objects.  Required.           |
-| auth          | TODO.                              |
 | api           | API requests.                      |
+| auth          | Helper OAuth2  objects.            |
 | android       | Android-specific objects.          |
 | python-bridge | Allows core/api usage from python. |
    
