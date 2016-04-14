@@ -21,7 +21,7 @@ class AuthIntegrationTest {
         assertEquals(AuthStatus.READY, response.status)
         assertEquals("mock_oauth_token_key", percolateApi.oAuthTokenKey)
     }
-    
+
     /**
      * This [Interceptor] gets plugged into Retrofit's okhttp client
      * and is used to return local JSON data for unit testing instead of
