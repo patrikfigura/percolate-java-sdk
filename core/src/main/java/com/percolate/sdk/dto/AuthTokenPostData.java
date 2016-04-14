@@ -24,6 +24,9 @@ public class AuthTokenPostData implements Serializable, HasExtraFields {
     @JsonProperty("grant_type")
     protected String grantType;
 
+    @JsonProperty("client_id")
+    protected String clientId;
+
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
@@ -46,6 +49,14 @@ public class AuthTokenPostData implements Serializable, HasExtraFields {
 
     public void setGrantType(String grantType) {
         this.grantType = grantType;
+    }
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
     }
 
     @Override

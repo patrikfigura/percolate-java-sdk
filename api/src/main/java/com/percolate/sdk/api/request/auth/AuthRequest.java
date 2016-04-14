@@ -41,4 +41,14 @@ public class AuthRequest {
     public Call<AuthTokenData> token(@NotNull final AuthTokenParams params, @NotNull final AuthTokenPostData data) {
         return service.token(params.tokenAuthHeader(), data);
     }
+
+    /**
+     * Authorization token request
+     *
+     * @param data Auth data.
+     * @return {@link Call} object.
+     */
+    public Call<AuthTokenData> token(@NotNull final AuthTokenPostData data) {
+        return service.token(data);
+    }
 }

@@ -42,6 +42,8 @@ import com.percolate.sdk.api.request.users.UsersRequest;
 import com.percolate.sdk.api.request.vendor.facebook.FacebookVendorRequest;
 import com.percolate.sdk.api.request.vendor.instagram.InstagramVendorRequest;
 import com.percolate.sdk.api.request.vendor.twitter.TwitterVendorRequest;
+import com.percolate.sdk.api.utils.RetrofitApiFactory;
+import com.percolate.sdk.api.utils.RetrofitLogic;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -67,7 +69,7 @@ public class PercolateApi {
     /**
      * Selected server config.
      */
-    private final PercolateServer selectedServer;
+    private PercolateServer selectedServer;
 
     /**
      * Default server config that will be used if nothing else is provided.
@@ -147,6 +149,12 @@ public class PercolateApi {
      */
     public PercolateServer getSelectedServer() {
         return selectedServer;
+    }
+
+    public void setSelectedServer(PercolateServer selectedServer) {
+        this.selectedServer = selectedServer;
+        RetrofitLogic.reset();
+        RetrofitApiFactory.reset();
     }
 
     /**
