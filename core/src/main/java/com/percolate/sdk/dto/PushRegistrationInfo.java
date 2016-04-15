@@ -1,8 +1,6 @@
 package com.percolate.sdk.dto;
 
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import com.percolate.sdk.interfaces.HasExtraFields;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -16,6 +14,9 @@ import java.util.Map;
  * **Note: Uses JsonProperty declarations so that it can be stored in session, which
  * serializes objects to JSON when they are stored
  */
+@SuppressWarnings("UnusedDeclaration")
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PushRegistrationInfo implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = 5293786670952513731L;
