@@ -15,6 +15,7 @@ import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class StreamData implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = -2489176252831188435L;

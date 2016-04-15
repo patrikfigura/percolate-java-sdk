@@ -12,8 +12,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Used by Push Library to holds registration ID that will be saved in SessionManager.
- * **Note: Uses JsonProperty declariations so that it can be stored in SessionManager, which
+ * Used by Push Library to holds registration ID that will be saved in session.
+ * **Note: Uses JsonProperty declarations so that it can be stored in session, which
  * serializes objects to JSON when they are stored
  */
 public class PushRegistrationInfo implements Serializable, HasExtraFields {
