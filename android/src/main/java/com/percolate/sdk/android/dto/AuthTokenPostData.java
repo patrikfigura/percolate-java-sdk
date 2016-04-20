@@ -19,6 +19,7 @@ public class AuthTokenPostData extends com.percolate.sdk.dto.AuthTokenPostData i
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.code);
         dest.writeString(this.grantType);
+        dest.writeString(this.clientId);
         dest.writeMap(this.extraFields);
     }
 
@@ -28,6 +29,7 @@ public class AuthTokenPostData extends com.percolate.sdk.dto.AuthTokenPostData i
     protected AuthTokenPostData(Parcel in) {
         this.code = in.readString();
         this.grantType = in.readString();
+        this.clientId = in.readString();
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }

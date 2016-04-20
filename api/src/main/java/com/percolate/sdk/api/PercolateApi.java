@@ -8,6 +8,7 @@ import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflow
 import com.percolate.sdk.api.request.auth.AuthRequest;
 import com.percolate.sdk.api.request.authorization.UserRolesRequest;
 import com.percolate.sdk.api.request.brief.BriefRequest;
+import com.percolate.sdk.api.request.campaigns.CampaignsRequest;
 import com.percolate.sdk.api.request.channel.ChannelRequest;
 import com.percolate.sdk.api.request.comment.CommentRequest;
 import com.percolate.sdk.api.request.features.FeaturesRequest;
@@ -42,6 +43,8 @@ import com.percolate.sdk.api.request.users.UsersRequest;
 import com.percolate.sdk.api.request.vendor.facebook.FacebookVendorRequest;
 import com.percolate.sdk.api.request.vendor.instagram.InstagramVendorRequest;
 import com.percolate.sdk.api.request.vendor.twitter.TwitterVendorRequest;
+import com.percolate.sdk.api.utils.RetrofitApiFactory;
+import com.percolate.sdk.api.utils.RetrofitLogic;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -67,7 +70,7 @@ public class PercolateApi {
     /**
      * Selected server config.
      */
-    private final PercolateServer selectedServer;
+    private PercolateServer selectedServer;
 
     /**
      * Default server config that will be used if nothing else is provided.
@@ -149,6 +152,12 @@ public class PercolateApi {
         return selectedServer;
     }
 
+    public void setSelectedServer(PercolateServer selectedServer) {
+        this.selectedServer = selectedServer;
+        RetrofitLogic.reset();
+        RetrofitApiFactory.reset();
+    }
+
     /**
      * @return {@link AuthRequest} instance.
      */
@@ -203,13 +212,21 @@ public class PercolateApi {
     public UserRolesRequest userRoles() {
         return new UserRolesRequest(this);
     }
+
     /**
      * @return {@link BriefRequest} instance.
      */
-
     @SuppressWarnings("unused")
     public BriefRequest briefs() {
         return new BriefRequest(this);
+    }
+
+    /**
+     * @return {@link CampaignsRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public CampaignsRequest campaigns() {
+        return new CampaignsRequest(this);
     }
 
     /**

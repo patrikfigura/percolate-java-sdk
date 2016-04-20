@@ -54,4 +54,12 @@ public class RetrofitApiFactory {
         }
         return retrofitLogic.getRetrofit();
     }
+
+    /**
+     * Reset cached {@link #retrofitLogic} instance and empties service endpoint cache.
+     */
+    public static void reset() {
+        retrofitLogic = null;
+        cache.clear();
+    }
 }

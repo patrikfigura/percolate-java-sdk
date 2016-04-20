@@ -21,7 +21,7 @@ public class CannedResponsesParams {
         return this;
     }
 
-    public CannedResponsesParams availableForIds(String availableForIds){
+    public CannedResponsesParams availableForIds(List<String> availableForIds){
         params.put("available_for_ids", StringUtils.join(availableForIds, ","));
         return this;
     }

@@ -1,5 +1,7 @@
 package com.percolate.sdk.dto
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import com.fasterxml.jackson.annotation.JsonInclude
 import com.openpojo.reflection.PojoClass
 import com.openpojo.reflection.filters.FilterClassName
 import com.openpojo.reflection.filters.FilterEnum
@@ -26,6 +28,7 @@ class DtosTest {
         val validator = ValidatorBuilder.create().with(SetterTester()) // Test all setter methods
                 .with(GetterTester()) // Test all getter methods
                 .with(OpenPojoToStringTester()) // Test for custom toString() method
+                .with(OpenPojoHasExpectedAnnotationsTester()) // Ensure all DTOs have any required annotations
                 .with(NoNestedClassRule()) // Pojo's should stay simple, don't allow nested classes.
                 .with(NoStaticExceptFinalRule()) // Static fields must be final.
                 .with(SerializableMustHaveSerialVersionUIDRule()) // Serializable classes must have serialVersionUID.
@@ -52,6 +55,22 @@ class DtosTest {
             val toString = classInstance.toString()
             val startsAsExpected = toString.startsWith(simpleClassName + "[")
             Affirm.affirmTrue("No toString() found in " + fullClassName, startsAsExpected)
+        }
+    }
+
+    /**
+     * This class implements OpenPojo's `Tester` interface.
+     * It makes sure that all DTOs are annotated with 2 annotations that we require on
+     * all objects: @JsonIgnoreProperties and @JsonInclude.
+     */
+    internal inner class OpenPojoHasExpectedAnnotationsTester : Tester {
+        override fun run(pojoClass: PojoClass) {
+            val classInstance = ValidationHelper.getBasicInstance(pojoClass)
+            val fullClassName = classInstance.javaClass.canonicalName
+            val hasJsonIgnorePropertiesAnnotation = classInstance.javaClass.isAnnotationPresent(JsonIgnoreProperties::class.java)
+            val hasJsonIncludeAnnotation = classInstance.javaClass.isAnnotationPresent(JsonInclude::class.java)
+            Affirm.affirmTrue("Expected annotation @JsonIgnoreProperties not found on " + fullClassName, hasJsonIgnorePropertiesAnnotation);
+            Affirm.affirmTrue("Expected annotation @JsonInclude not found on " + fullClassName, hasJsonIncludeAnnotation);
         }
     }
 }

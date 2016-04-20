@@ -1,10 +1,7 @@
 package com.percolate.sdk.dto;
 
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.*;
+ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.percolate.sdk.enums.FlaggingStatusType;
 import com.percolate.sdk.interfaces.HasExtraFields;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -15,6 +12,7 @@ import java.util.*;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Flag implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = 1680480238150106321L;

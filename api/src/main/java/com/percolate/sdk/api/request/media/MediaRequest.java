@@ -3,7 +3,9 @@ package com.percolate.sdk.api.request.media;
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.*;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import retrofit2.Call;
 
 /**
@@ -42,12 +44,16 @@ public class MediaRequest {
     /**
      * Query media endpoint for a list of media items within a folder/library.
      *
-     * @param libraryUid Folder/library UID.
+     * @param libraryUid Folder/library UID.  If null/blank, will execute {@link #list(MediaListParams)}.
      * @param params API params.
      * @return {@link Call} object.
      */
-    public Call<MediaList> list(@NotNull final String libraryUid, @NotNull final MediaListParams params) {
-        return service.list(libraryUid, params.getParams());
+    public Call<MediaList> list(@Nullable final String libraryUid, @NotNull final MediaListParams params) {
+        if(StringUtils.isNotBlank(libraryUid)) {
+            return service.list(libraryUid, params.getParams());
+        } else {
+            return list(params);
+        }
     }
 
     /**
