@@ -9,48 +9,48 @@ import java.util.Map;
 /**
  * Parameters for Campaign Brief Sections request.
  */
-public class BriefSectionListParams {
+public class BriefSectionsListParams {
     private Map<String, Object> params = new HashMap<>();
 
-    public BriefSectionListParams() {
+    public BriefSectionsListParams() {
     }
 
-    public BriefSectionListParams ids(List<String> ids) {
+    public BriefSectionsListParams ids(List<String> ids) {
         params.put("ids", StringUtils.join(ids, ","));
         return this;
     }
 
-    public BriefSectionListParams scopeIds(List<String> scopeIds) {
+    public BriefSectionsListParams scopeIds(List<String> scopeIds) {
         params.put("scope_ids", StringUtils.join(scopeIds, ","));
         return this;
     }
 
-    public BriefSectionListParams campaignIds(List<String> campaignIds) {
+    public BriefSectionsListParams campaignIds(List<String> campaignIds) {
         params.put("campaign_ids", StringUtils.join(campaignIds, ","));
         return this;
     }
 
-    public BriefSectionListParams page(Integer page) {
+    public BriefSectionsListParams page(Integer page) {
         params.put("page", page);
         return this;
     }
 
-    public BriefSectionListParams offset(Integer offset) {
+    public BriefSectionsListParams offset(Integer offset) {
         params.put("offset", offset);
         return this;
     }
 
-    public BriefSectionListParams limit(Integer limit) {
+    public BriefSectionsListParams limit(Integer limit) {
         params.put("limit", limit);
         return this;
     }
 
-    public BriefSectionListParams orderBy(String orderBy) {
+    public BriefSectionsListParams orderBy(String orderBy) {
         params.put("order_by", orderBy);
         return this;
     }
 
-    public BriefSectionListParams orderDirection(String orderDirection) {
+    public BriefSectionsListParams orderDirection(String orderDirection) {
         params.put("order_direction", orderDirection);
         return this;
     }

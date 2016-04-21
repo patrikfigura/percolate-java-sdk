@@ -14,12 +14,12 @@ import retrofit2.Call;
  * Campaign briefs request proxy.
  */
 @SuppressWarnings("unused")
-public class BriefSectionRequest {
+public class BriefSectionsRequest {
 
-    private BriefSectionService service;
+    private BriefSectionsService service;
 
-    public BriefSectionRequest(@NotNull PercolateApi context) {
-        this.service = new RetrofitApiFactory(context).getService(BriefSectionService.class);
+    public BriefSectionsRequest(@NotNull PercolateApi context) {
+        this.service = new RetrofitApiFactory(context).getService(BriefSectionsService.class);
     }
 
     /**
@@ -38,7 +38,7 @@ public class BriefSectionRequest {
      * @param params API params.
      * @return {@link Call} object.
      */
-    public Call<CampaignSections> list(@NotNull final BriefSectionListParams params) {
+    public Call<CampaignSections> list(@NotNull final BriefSectionsListParams params) {
         return service.list(params.getParams());
     }
 

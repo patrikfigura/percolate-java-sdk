@@ -11,10 +11,10 @@ import java.util.Map;
 /**
  * Percolate v5/campaign_brief (and related) API definition.
  */
-interface BriefSectionService {
+interface BriefSectionsService {
 
     @GET(Endpoints.API_V5_PATH + "/campaign_brief/{campaign_brief_id}")
-    Call<SingleCampaignSection> get(@Path("campaign_brief_id") String campaignBriefId);
+    Call<SingleCampaignSection> get(@Path("campaign_brief_id") String campaignBriefUid);
 
     @GET(Endpoints.API_V5_PATH + "/campaign_brief/")
     Call<CampaignSections> list(@QueryMap Map<String, Object> params);
@@ -23,9 +23,9 @@ interface BriefSectionService {
     Call<SingleCampaignSection> create(@Body CampaignSectionsData briefSections);
 
     @PUT(Endpoints.API_V5_PATH + "/campaign_brief/{campaign_brief_id}")
-    Call<SingleCampaignSection> update(@Path("campaign_brief_id") String campaignBriefId, @Body CampaignSectionsData briefSections);
+    Call<SingleCampaignSection> update(@Path("campaign_brief_id") String campaignBriefUid, @Body CampaignSectionsData briefSections);
 
     @DELETE(Endpoints.API_V5_PATH + "/campaign_brief/{campaign_brief_id}")
-    Call<ResponseBody> delete(@Path("campaign_brief_id") String campaignBriefId);
+    Call<ResponseBody> delete(@Path("campaign_brief_id") String campaignBriefUid);
 
 }

@@ -6,13 +6,13 @@ import org.junit.Assert
 import org.junit.Test
 
 @SuppressWarnings("unused")
-class BriefSectionRequestTest : BaseApiTest() {
+class BriefSectionsRequestTest : BaseApiTest() {
 
     @Test
     fun testList() {
         val campaignBriefs = percolateApi
                 .briefSections()
-                .list(BriefSectionListParams())
+                .list(BriefSectionsListParams())
                 .execute()
                 .body();
 
