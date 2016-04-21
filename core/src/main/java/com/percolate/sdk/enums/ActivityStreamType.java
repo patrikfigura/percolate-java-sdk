@@ -100,7 +100,8 @@ public enum ActivityStreamType {
      */
     public boolean isTopLevelCreationType() {
         return (this == CREATE_BRIEF || this == CREATE_BRIEF_SECTION ||
-                this == CREATE_WORKSPACE_SECTION || this == CREATE_POST);
+                this == CREATE_WORKSPACE_SECTION || this == CREATE_BRIEF_POST ||
+                this == CREATE_POST);
     }
 
     /**
