@@ -95,6 +95,14 @@ public enum ActivityStreamType {
                 this == UPDATE_POST);
     }
 
+    /**
+     * @return true if stream type is for an new top-level data type.
+     */
+    public boolean isTopLevelCreationType() {
+        return (this == CREATE_BRIEF || this == CREATE_BRIEF_SECTION ||
+                this == CREATE_WORKSPACE_SECTION || this == CREATE_POST);
+    }
+
     @Override
     public String toString() {
         return name().toLowerCase(Locale.getDefault());
