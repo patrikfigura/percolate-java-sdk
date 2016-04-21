@@ -52,7 +52,7 @@ public class Brief implements Serializable, HasExtraFields {
     protected List<Media> media;
 
     @JsonProperty("brief")
-    protected List<CampaignSectionData> briefSectionData = new ArrayList<>();
+    protected List<CampaignSection> briefSectionData = new ArrayList<>();
 
     @JsonProperty("brief_approval_pool_id")
     protected String briefApprovalPoolId;
@@ -64,7 +64,7 @@ public class Brief implements Serializable, HasExtraFields {
     protected Boolean briefWorkflowComplete;
 
     @JsonProperty("workspace")
-    protected List<CampaignSectionData> workspaceData = new ArrayList<>();
+    protected List<CampaignSection> workspaceData = new ArrayList<>();
 
     @JsonProperty("term_uids")
     protected List<String> termUids = new ArrayList<>();
@@ -187,11 +187,11 @@ public class Brief implements Serializable, HasExtraFields {
         this.media = media;
     }
 
-    public List<CampaignSectionData> getBriefSectionData() {
+    public List<CampaignSection> getBriefSectionData() {
         return briefSectionData;
     }
 
-    public void setBriefSectionData(List<CampaignSectionData> briefSectionData) {
+    public void setBriefSectionData(List<CampaignSection> briefSectionData) {
         this.briefSectionData = briefSectionData;
     }
 
@@ -219,11 +219,11 @@ public class Brief implements Serializable, HasExtraFields {
         this.briefWorkflowComplete = briefWorkflowComplete;
     }
 
-    public List<CampaignSectionData> getWorkspaceData() {
+    public List<CampaignSection> getWorkspaceData() {
         return workspaceData;
     }
 
-    public void setWorkspaceData(List<CampaignSectionData> workspaceData) {
+    public void setWorkspaceData(List<CampaignSection> workspaceData) {
         this.workspaceData = workspaceData;
     }
 

@@ -7,19 +7,17 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CampaignSections implements Serializable, HasExtraFields {
+public class SingleCampaignSection implements Serializable, HasExtraFields {
 
-    @JsonProperty("meta")
-    protected V5Meta meta;
+    private static final long serialVersionUID = 5960214112793121045L;
 
     @JsonProperty("data")
-    protected List<CampaignSectionsData> data;
+    protected CampaignSectionsData data;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -29,19 +27,11 @@ public class CampaignSections implements Serializable, HasExtraFields {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-    public V5Meta getMeta() {
-        return meta;
-    }
-
-    public void setMeta(V5Meta meta) {
-        this.meta = meta;
-    }
-
-    public List<CampaignSectionsData> getData() {
+    public CampaignSectionsData getData() {
         return data;
     }
 
-    public void setData(List<CampaignSectionsData> data) {
+    public void setData(CampaignSectionsData data) {
         this.data = data;
     }
 

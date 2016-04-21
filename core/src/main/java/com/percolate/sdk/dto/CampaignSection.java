@@ -13,9 +13,9 @@ import java.util.Map;
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CampaignSectionData implements Serializable, HasExtraFields {
+public class CampaignSection implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -2202666222120218397L;
+    private static final long serialVersionUID = -4641325300395962379L;
 
     @JsonProperty("uid")
     protected String uid;
@@ -28,6 +28,12 @@ public class CampaignSectionData implements Serializable, HasExtraFields {
 
     @JsonProperty("media_uids")
     protected List<String> mediaUids;
+
+    @JsonProperty("asset_ids")
+    protected List<String> assetIds;
+
+    @JsonProperty("version")
+    protected Integer version;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -67,6 +73,22 @@ public class CampaignSectionData implements Serializable, HasExtraFields {
 
     public void setMediaUids(List<String> mediaUids) {
         this.mediaUids = mediaUids;
+    }
+
+    public List<String> getAssetIds() {
+        return assetIds;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public void setAssetIds(List<String> assetIds) {
+        this.assetIds = assetIds;
     }
 
     @Override

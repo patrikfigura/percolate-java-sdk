@@ -6,9 +6,9 @@ import android.os.Parcelable;
 import java.util.HashMap;
 
 /**
- * Android version of {@link com.percolate.sdk.dto.CampaignSectionData}.  Implements {@link Parcelable}
+ * Android version of {@link com.percolate.sdk.dto.CampaignSection}.  Implements {@link Parcelable}
  */
-public class CampaignSectionData extends com.percolate.sdk.dto.CampaignSectionData implements Parcelable {
+public class CampaignSection extends com.percolate.sdk.dto.CampaignSection implements Parcelable {
     @Override
     public int describeContents() {
         return 0;
@@ -23,10 +23,10 @@ public class CampaignSectionData extends com.percolate.sdk.dto.CampaignSectionDa
         dest.writeMap(this.extraFields);
     }
 
-    public CampaignSectionData() {
+    public CampaignSection() {
     }
 
-    protected CampaignSectionData(Parcel in) {
+    protected CampaignSection(Parcel in) {
         this.uid = in.readString();
         this.title = in.readString();
         this.copyHtml = in.readString();
@@ -35,13 +35,13 @@ public class CampaignSectionData extends com.percolate.sdk.dto.CampaignSectionDa
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
-    public static final Creator<CampaignSectionData> CREATOR = new Creator<CampaignSectionData>() {
-        public CampaignSectionData createFromParcel(Parcel source) {
-            return new CampaignSectionData(source);
+    public static final Creator<com.percolate.sdk.android.dto.CampaignSection> CREATOR = new Creator<com.percolate.sdk.android.dto.CampaignSection>() {
+        public com.percolate.sdk.android.dto.CampaignSection createFromParcel(Parcel source) {
+            return new com.percolate.sdk.android.dto.CampaignSection(source);
         }
 
-        public CampaignSectionData[] newArray(int size) {
-            return new CampaignSectionData[size];
+        public com.percolate.sdk.android.dto.CampaignSection[] newArray(int size) {
+            return new com.percolate.sdk.android.dto.CampaignSection[size];
         }
     };
 }
