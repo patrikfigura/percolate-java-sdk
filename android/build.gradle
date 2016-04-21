@@ -61,16 +61,12 @@ task coverage(type:JacocoReport, dependsOn: "testDebugUnitTest") {
 dependencies {
     compile project(':core')
     compile project(':api')
-
     // JUnit
     testCompile 'junit:junit:4.12'
-
     // OpenPojo
     testCompile 'com.openpojo:openpojo:0.8.3'
-
     // Kotlin Standard Library
     testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
     // Robolectric
     testCompile 'org.robolectric:robolectric:3.0'
 }

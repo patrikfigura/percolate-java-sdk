@@ -6,6 +6,7 @@ import android.os.Parcelable;
 import com.percolate.sdk.dto.CampaignSection;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -27,7 +28,7 @@ public class CampaignSectionsData extends com.percolate.sdk.dto.CampaignSections
         dest.writeValue(this.version);
         dest.writeString(this.createdAt);
         dest.writeString(this.updatedAt);
-        dest.writeParcelable(this.extraFields, flags);
+        dest.writeMap(this.extraFields);
     }
 
     public CampaignSectionsData() {
@@ -42,7 +43,8 @@ public class CampaignSectionsData extends com.percolate.sdk.dto.CampaignSections
         this.version = (Integer) in.readValue(Integer.class.getClassLoader());
         this.createdAt = in.readString();
         this.updatedAt = in.readString();
-        this.extraFields = in.readParcelable(Map<String, Object>.class.getClassLoader());
+        this.extraFields = new HashMap<>();
+        in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
     public static final android.os.Parcelable.Creator<com.percolate.sdk.android.dto.CampaignSectionsData> CREATOR = new android.os.Parcelable.Creator<com.percolate.sdk.android.dto.CampaignSectionsData>() {

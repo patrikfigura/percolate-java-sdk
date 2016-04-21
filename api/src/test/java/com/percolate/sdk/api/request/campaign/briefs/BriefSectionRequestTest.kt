@@ -1,7 +1,6 @@
 package com.percolate.sdk.api.request.campaign.briefs
 
 import com.percolate.sdk.api.BaseApiTest
-import com.percolate.sdk.api.request.brief.BriefParams
 import com.percolate.sdk.dto.CampaignSectionsData
 import org.junit.Assert
 import org.junit.Test
@@ -19,20 +18,10 @@ class BriefSectionRequestTest : BaseApiTest() {
 
         Assert.assertNotNull(campaignBriefs)
         Assert.assertNotNull(campaignBriefs.data)
-        Assert.assertEquals(2, campaignBriefs.data.size.toLong())
-    }
-
-    @Test
-    fun testGet() {
-        val singleCampaignSection = percolateApi
-                .briefSections()
-                .get(BriefParams("campaign_brief:1"))
-                .execute()
-                .body();
-
-        Assert.assertNotNull(singleCampaignSection)
-        Assert.assertNotNull(singleCampaignSection.data)
-        Assert.assertEquals("campaign_brief:1", singleCampaignSection.data.id)
+        Assert.assertEquals(1, campaignBriefs.data.size.toLong())
+        Assert.assertNotNull(campaignBriefs.data.get(0))
+        Assert.assertNotNull(campaignBriefs.data.get(0).sections)
+        Assert.assertEquals(2, campaignBriefs.data.get(0).sections.size.toLong())
     }
 
     @Test
