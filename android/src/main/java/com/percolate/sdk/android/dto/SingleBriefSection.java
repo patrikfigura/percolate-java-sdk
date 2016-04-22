@@ -31,7 +31,7 @@ public class SingleBriefSection extends com.percolate.sdk.dto.SingleBriefSection
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
-    public static final Parcelable.Creator<com.percolate.sdk.android.dto.SingleBriefSection> CREATOR = new Parcelable.Creator<com.percolate.sdk.android.dto.SingleBriefSection>() {
+    public static final Parcelable.Creator<SingleBriefSection> CREATOR = new Parcelable.Creator<SingleBriefSection>() {
         @Override
         public com.percolate.sdk.android.dto.SingleBriefSection createFromParcel(Parcel source) {
             return new com.percolate.sdk.android.dto.SingleBriefSection(source);

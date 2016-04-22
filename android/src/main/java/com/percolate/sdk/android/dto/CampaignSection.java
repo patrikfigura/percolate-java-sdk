@@ -35,7 +35,7 @@ public class CampaignSection extends com.percolate.sdk.dto.CampaignSection imple
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
-    public static final Creator<com.percolate.sdk.android.dto.CampaignSection> CREATOR = new Creator<com.percolate.sdk.android.dto.CampaignSection>() {
+    public static final Creator<CampaignSection> CREATOR = new Creator<CampaignSection>() {
         public com.percolate.sdk.android.dto.CampaignSection createFromParcel(Parcel source) {
             return new com.percolate.sdk.android.dto.CampaignSection(source);
         }

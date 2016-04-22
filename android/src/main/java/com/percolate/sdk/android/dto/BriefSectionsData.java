@@ -46,7 +46,7 @@ public class BriefSectionsData extends com.percolate.sdk.dto.BriefSectionsData i
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
-    public static final android.os.Parcelable.Creator<com.percolate.sdk.android.dto.BriefSectionsData> CREATOR = new android.os.Parcelable.Creator<com.percolate.sdk.android.dto.BriefSectionsData>() {
+    public static final android.os.Parcelable.Creator<BriefSectionsData> CREATOR = new android.os.Parcelable.Creator<BriefSectionsData>() {
         @Override
         public com.percolate.sdk.android.dto.BriefSectionsData createFromParcel(android.os.Parcel source) {
             return new com.percolate.sdk.android.dto.BriefSectionsData(source);
