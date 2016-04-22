@@ -6,6 +6,9 @@ import com.percolate.sdk.dto.Link;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Link request proxy.
  */
@@ -35,6 +38,8 @@ public class LinksRequest {
      * @return {@link Link} object.
      */
     public Call<Link> create(@NotNull final String url) {
-        return service.create(url);
+        final Map<String, String> body = new HashMap<>();
+        body.put("url", url);
+        return service.create(body);
     }
 }
