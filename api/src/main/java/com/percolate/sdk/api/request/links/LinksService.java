@@ -8,6 +8,8 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
+import java.util.Map;
+
 /**
  * Percolate v3/links API definition.
  */
@@ -17,5 +19,5 @@ interface LinksService {
     Call<Link> get(@Path("id") String id);
 
     @POST(Endpoints.API_V3_PATH + "/links")
-    Call<Link> create(@Body String url);
+    Call<Link> create(@Body Map body);
 }
