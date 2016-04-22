@@ -1,11 +1,10 @@
 package com.percolate.sdk.api.request.campaign.brief;
 
 import com.percolate.sdk.api.PercolateApi;
-import com.percolate.sdk.api.request.brief.BriefParams;
 import com.percolate.sdk.api.request.campaign.CampaignSectionsListParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
-import com.percolate.sdk.dto.BriefSectionsData;
 import com.percolate.sdk.dto.BriefSections;
+import com.percolate.sdk.dto.BriefSectionsData;
 import com.percolate.sdk.dto.SingleBriefSection;
 import okhttp3.ResponseBody;
 import org.jetbrains.annotations.NotNull;
@@ -26,11 +25,11 @@ public class BriefSectionsRequest {
     /**
      * Get campaign brief.
      *
-     * @param params API params.
+     * @param uid campaign brief uid.
      * @return {@link Call} object.
      */
-    public Call<SingleBriefSection> get(@NotNull final BriefParams params) {
-        return service.get(params.getBriefId());
+    public Call<SingleBriefSection> get(@NotNull final String uid) {
+        return service.get(uid);
     }
 
     /**
@@ -66,10 +65,10 @@ public class BriefSectionsRequest {
     /**
      * Delete campaign brief.
      *
-     * @param briefUid Campaign brief id;
+     * @param uid Campaign brief uid;
      * @return {@link Call} object.
      */
-    public Call<ResponseBody> delete(@NotNull final String briefUid) {
-        return service.delete(briefUid);
+    public Call<ResponseBody> delete(@NotNull final String uid) {
+        return service.delete(uid);
     }
 }

@@ -33,11 +33,11 @@ public class BriefRequest {
     /**
      * Query brief endpoint.
      *
-     * @param params API params.
+     * @param id brief id.
      * @return {@link Call} object.
      */
-    public Call<BriefData> get(@NotNull final BriefParams params) {
-        return service.get(params.getBriefId());
+    public Call<BriefData> get(@NotNull final String id) {
+        return service.get(id);
     }
 
     /**

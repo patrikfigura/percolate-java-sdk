@@ -35,13 +35,13 @@ public class BriefSections extends com.percolate.sdk.dto.BriefSections implement
 
     public static final android.os.Parcelable.Creator<BriefSections> CREATOR = new android.os.Parcelable.Creator<BriefSections>() {
         @Override
-        public com.percolate.sdk.android.dto.BriefSections createFromParcel(android.os.Parcel source) {
-            return new com.percolate.sdk.android.dto.BriefSections(source);
+        public BriefSections createFromParcel(android.os.Parcel source) {
+            return new BriefSections(source);
         }
 
         @Override
-        public com.percolate.sdk.android.dto.BriefSections[] newArray(int size) {
-            return new com.percolate.sdk.android.dto.BriefSections[size];
+        public BriefSections[] newArray(int size) {
+            return new BriefSections[size];
         }
     };
 }

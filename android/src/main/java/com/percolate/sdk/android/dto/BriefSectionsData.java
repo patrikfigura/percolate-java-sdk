@@ -48,13 +48,13 @@ public class BriefSectionsData extends com.percolate.sdk.dto.BriefSectionsData i
 
     public static final android.os.Parcelable.Creator<BriefSectionsData> CREATOR = new android.os.Parcelable.Creator<BriefSectionsData>() {
         @Override
-        public com.percolate.sdk.android.dto.BriefSectionsData createFromParcel(android.os.Parcel source) {
-            return new com.percolate.sdk.android.dto.BriefSectionsData(source);
+        public BriefSectionsData createFromParcel(android.os.Parcel source) {
+            return new BriefSectionsData(source);
         }
 
         @Override
-        public com.percolate.sdk.android.dto.BriefSectionsData[] newArray(int size) {
-            return new com.percolate.sdk.android.dto.BriefSectionsData[size];
+        public BriefSectionsData[] newArray(int size) {
+            return new BriefSectionsData[size];
         }
     };
 }

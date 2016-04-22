@@ -1,7 +1,6 @@
 package com.percolate.sdk.api.request.campaign.workspace;
 
 import com.percolate.sdk.api.PercolateApi;
-import com.percolate.sdk.api.request.campaign.CampaignSectionParams;
 import com.percolate.sdk.api.request.campaign.CampaignSectionsListParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.*;
@@ -24,11 +23,11 @@ public class WorkspaceSectionsRequest {
     /**
      * Get campaign workspace.
      *
-     * @param params API params.
+     * @param uid Workspace section uid.
      * @return {@link Call} object.
      */
-    public Call<SingleWorkspaceSection> get(@NotNull final CampaignSectionParams params) {
-        return service.get(params.getId());
+    public Call<SingleWorkspaceSection> get(@NotNull final String uid) {
+        return service.get(uid);
     }
 
     /**

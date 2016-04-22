@@ -26,6 +26,19 @@ class BriefSectionsRequestTest : BaseApiTest() {
     }
 
     @Test
+    fun testGet() {
+        val campaignBrief = percolateApi
+                .briefSections()
+                .get("123")
+                .execute()
+                .body();
+
+        Assert.assertNotNull(campaignBrief)
+        Assert.assertNotNull(campaignBrief.data)
+        Assert.assertEquals("123", campaignBrief.data.id)
+    }
+
+    @Test
     fun testCreate() {
         val singleCampaignSection = percolateApi
                 .briefSections()

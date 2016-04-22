@@ -24,7 +24,7 @@ class BriefRequestTest : BaseApiTest() {
     fun testGet() {
         val briefData = percolateApi
                 .briefs()
-                .get(BriefParams("123"))
+                .get("123")
                 .execute()
                 .body();
 

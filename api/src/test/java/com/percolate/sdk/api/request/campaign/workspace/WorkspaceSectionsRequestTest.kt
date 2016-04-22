@@ -23,6 +23,19 @@ class WorkspaceSectionsRequestTest : BaseApiTest() {
     }
 
     @Test
+    fun testGet() {
+        val campaignWorkspace = percolateApi
+                .workspaceSections()
+                .get("123")
+                .execute()
+                .body();
+
+        Assert.assertNotNull(campaignWorkspace)
+        Assert.assertNotNull(campaignWorkspace.data)
+        Assert.assertEquals("123", campaignWorkspace.data.id)
+    }
+
+    @Test
     fun testCreate() {
         val singleWorkspaceSection = percolateApi
                 .workspaceSections()

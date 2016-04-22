@@ -33,13 +33,13 @@ public class SingleBriefSection extends com.percolate.sdk.dto.SingleBriefSection
 
     public static final Parcelable.Creator<SingleBriefSection> CREATOR = new Parcelable.Creator<SingleBriefSection>() {
         @Override
-        public com.percolate.sdk.android.dto.SingleBriefSection createFromParcel(Parcel source) {
-            return new com.percolate.sdk.android.dto.SingleBriefSection(source);
+        public SingleBriefSection createFromParcel(Parcel source) {
+            return new SingleBriefSection(source);
         }
 
         @Override
-        public com.percolate.sdk.android.dto.SingleBriefSection[] newArray(int size) {
-            return new com.percolate.sdk.android.dto.SingleBriefSection[size];
+        public SingleBriefSection[] newArray(int size) {
+            return new SingleBriefSection[size];
         }
     };
 }

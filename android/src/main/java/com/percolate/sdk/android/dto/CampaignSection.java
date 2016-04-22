@@ -36,12 +36,12 @@ public class CampaignSection extends com.percolate.sdk.dto.CampaignSection imple
     }
 
     public static final Creator<CampaignSection> CREATOR = new Creator<CampaignSection>() {
-        public com.percolate.sdk.android.dto.CampaignSection createFromParcel(Parcel source) {
-            return new com.percolate.sdk.android.dto.CampaignSection(source);
+        public CampaignSection createFromParcel(Parcel source) {
+            return new CampaignSection(source);
         }
 
-        public com.percolate.sdk.android.dto.CampaignSection[] newArray(int size) {
-            return new com.percolate.sdk.android.dto.CampaignSection[size];
+        public CampaignSection[] newArray(int size) {
+            return new CampaignSection[size];
         }
     };
 }
