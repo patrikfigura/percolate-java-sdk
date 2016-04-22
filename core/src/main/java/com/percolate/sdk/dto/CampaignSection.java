@@ -15,7 +15,7 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CampaignSection implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -4641325300395962379L;
+    private static final long serialVersionUID = -2909448948990047218L;
 
     @JsonProperty("uid")
     protected String uid;

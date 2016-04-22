@@ -15,7 +15,7 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BriefSection implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -4641325300395962379L;
+    private static final long serialVersionUID = -3471263684162403223L;
 
     @JsonProperty("key")
     protected String key;
