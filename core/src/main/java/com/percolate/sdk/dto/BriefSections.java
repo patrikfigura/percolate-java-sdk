@@ -13,7 +13,7 @@ import java.util.Map;
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CampaignSections implements Serializable, HasExtraFields {
+public class BriefSections implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = -347155821310475290L;
 
@@ -21,7 +21,7 @@ public class CampaignSections implements Serializable, HasExtraFields {
     protected V5Meta meta;
 
     @JsonProperty("data")
-    protected List<CampaignSectionsData> data;
+    protected List<BriefSectionsData> data;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -39,11 +39,11 @@ public class CampaignSections implements Serializable, HasExtraFields {
         this.meta = meta;
     }
 
-    public List<CampaignSectionsData> getData() {
+    public List<BriefSectionsData> getData() {
         return data;
     }
 
-    public void setData(List<CampaignSectionsData> data) {
+    public void setData(List<BriefSectionsData> data) {
         this.data = data;
     }
 

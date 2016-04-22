@@ -1,18 +1,17 @@
 package com.percolate.sdk.android.dto;
 
-import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.percolate.sdk.dto.BriefSection;
 import com.percolate.sdk.dto.CampaignSection;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
- * Android version of {@link com.percolate.sdk.dto.CampaignSectionsData}.  Implements {@link Parcelable}
+ * Android version of {@link com.percolate.sdk.dto.BriefSectionsData}.  Implements {@link Parcelable}
  */
-public class CampaignSectionsData extends com.percolate.sdk.dto.CampaignSectionsData implements Parcelable {
+public class BriefSectionsData extends com.percolate.sdk.dto.BriefSectionsData implements Parcelable {
 
     @Override
     public int describeContents() {
@@ -31,14 +30,14 @@ public class CampaignSectionsData extends com.percolate.sdk.dto.CampaignSections
         dest.writeMap(this.extraFields);
     }
 
-    public CampaignSectionsData() {
+    public BriefSectionsData() {
     }
 
-    protected CampaignSectionsData(android.os.Parcel in) {
+    protected BriefSectionsData(android.os.Parcel in) {
         this.id = in.readString();
         this.campaignId = in.readString();
         this.scopeId = in.readString();
-        this.sections = new ArrayList<CampaignSection>();
+        this.sections = new ArrayList<BriefSection>();
         in.readList(this.sections, CampaignSection.class.getClassLoader());
         this.version = (Integer) in.readValue(Integer.class.getClassLoader());
         this.createdAt = in.readString();
@@ -47,15 +46,15 @@ public class CampaignSectionsData extends com.percolate.sdk.dto.CampaignSections
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
-    public static final android.os.Parcelable.Creator<com.percolate.sdk.android.dto.CampaignSectionsData> CREATOR = new android.os.Parcelable.Creator<com.percolate.sdk.android.dto.CampaignSectionsData>() {
+    public static final android.os.Parcelable.Creator<com.percolate.sdk.android.dto.BriefSectionsData> CREATOR = new android.os.Parcelable.Creator<com.percolate.sdk.android.dto.BriefSectionsData>() {
         @Override
-        public com.percolate.sdk.android.dto.CampaignSectionsData createFromParcel(android.os.Parcel source) {
-            return new com.percolate.sdk.android.dto.CampaignSectionsData(source);
+        public com.percolate.sdk.android.dto.BriefSectionsData createFromParcel(android.os.Parcel source) {
+            return new com.percolate.sdk.android.dto.BriefSectionsData(source);
         }
 
         @Override
-        public com.percolate.sdk.android.dto.CampaignSectionsData[] newArray(int size) {
-            return new com.percolate.sdk.android.dto.CampaignSectionsData[size];
+        public com.percolate.sdk.android.dto.BriefSectionsData[] newArray(int size) {
+            return new com.percolate.sdk.android.dto.BriefSectionsData[size];
         }
     };
 }

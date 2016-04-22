@@ -1,11 +1,12 @@
-package com.percolate.sdk.api.request.campaign.briefs;
+package com.percolate.sdk.api.request.campaign.brief;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.request.brief.BriefParams;
+import com.percolate.sdk.api.request.campaign.CampaignSectionsListParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
-import com.percolate.sdk.dto.CampaignSectionsData;
-import com.percolate.sdk.dto.CampaignSections;
-import com.percolate.sdk.dto.SingleCampaignSection;
+import com.percolate.sdk.dto.BriefSectionsData;
+import com.percolate.sdk.dto.BriefSections;
+import com.percolate.sdk.dto.SingleBriefSection;
 import okhttp3.ResponseBody;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
@@ -28,7 +29,7 @@ public class BriefSectionsRequest {
      * @param params API params.
      * @return {@link Call} object.
      */
-    public Call<SingleCampaignSection> get(@NotNull final BriefParams params) {
+    public Call<SingleBriefSection> get(@NotNull final BriefParams params) {
         return service.get(params.getBriefId());
     }
 
@@ -38,38 +39,37 @@ public class BriefSectionsRequest {
      * @param params API params.
      * @return {@link Call} object.
      */
-    public Call<CampaignSections> list(@NotNull final BriefSectionsListParams params) {
+    public Call<BriefSections> list(@NotNull final CampaignSectionsListParams params) {
         return service.list(params.getParams());
     }
 
     /**
      * Create campaign brief.
      *
-     * @param campaignBrief {@link CampaignSectionsData} object.
+     * @param campaignBrief {@link BriefSectionsData} object.
      * @return {@link Call} object.
      */
-    public Call<SingleCampaignSection> create(@NotNull final CampaignSectionsData campaignBrief) {
+    public Call<SingleBriefSection> create(@NotNull final BriefSectionsData campaignBrief) {
         return service.create(campaignBrief);
     }
 
     /**
      * Update campaign brief.
      *
-     * @param campaignBriefUid Campaign brief id;
-     * @param campaignBrief {@link CampaignSectionsData} object.
+     * @param campaignBrief {@link BriefSectionsData} object.
      * @return {@link Call} object.
      */
-    public Call<SingleCampaignSection> update(@NotNull final String campaignBriefUid, @NotNull final CampaignSectionsData campaignBrief) {
-        return service.update(campaignBriefUid, campaignBrief);
+    public Call<SingleBriefSection> update(@NotNull final BriefSectionsData campaignBrief) {
+        return service.update(campaignBrief.getId(), campaignBrief);
     }
 
     /**
      * Delete campaign brief.
      *
-     * @param campaignBriefUid Campaign brief id;
+     * @param briefUid Campaign brief id;
      * @return {@link Call} object.
      */
-    public Call<ResponseBody> delete(@NotNull final String campaignBriefUid) {
-        return service.delete(campaignBriefUid);
+    public Call<ResponseBody> delete(@NotNull final String briefUid) {
+        return service.delete(briefUid);
     }
 }

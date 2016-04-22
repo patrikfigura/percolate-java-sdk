@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "include": {},
+    "query": {
+      "limit": 10,
+      "offset": 0
+    },
+    "total": 1
+  },
+  "data": [
+    {
+      "id": "campaign_workspace:1",
+      "scope_id": "license:1",
+      "title": "Workspace section 1",
+      "copy_html": "<b>Some workspace copy</b>",
+      "ordinal": 3.14,
+      "asset_ids": [
+        "asset:1",
+        "asset:2"
+      ],
+      "created_at": "2015-07-23T17:50:34+00.00",
+      "updated_at": "2015-07-23T17:50:34+00.00"
+    }
+  ]
+}

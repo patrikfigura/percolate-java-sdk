@@ -12,12 +12,12 @@ import java.util.Map;
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class SingleCampaignSection implements Serializable, HasExtraFields {
+public class SingleBriefSection implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = -3664564336021967354L;
 
     @JsonProperty("data")
-    protected CampaignSectionsData data;
+    protected BriefSectionsData data;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -27,11 +27,11 @@ public class SingleCampaignSection implements Serializable, HasExtraFields {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-    public CampaignSectionsData getData() {
+    public BriefSectionsData getData() {
         return data;
     }
 
-    public void setData(CampaignSectionsData data) {
+    public void setData(BriefSectionsData data) {
         this.data = data;
     }
 

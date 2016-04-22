@@ -1,4 +1,4 @@
-package com.percolate.sdk.api.request.campaign.briefs;
+package com.percolate.sdk.api.request.campaign;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -7,50 +7,50 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Parameters for Campaign Brief Sections request.
+ * Parameters for Campaign Brief and Workspace Sections request.
  */
-public class BriefSectionsListParams {
+public class CampaignSectionsListParams {
     private Map<String, Object> params = new HashMap<>();
 
-    public BriefSectionsListParams() {
+    public CampaignSectionsListParams() {
     }
 
-    public BriefSectionsListParams ids(List<String> ids) {
+    public CampaignSectionsListParams ids(List<String> ids) {
         params.put("ids", StringUtils.join(ids, ","));
         return this;
     }
 
-    public BriefSectionsListParams scopeIds(List<String> scopeIds) {
+    public CampaignSectionsListParams scopeIds(List<String> scopeIds) {
         params.put("scope_ids", StringUtils.join(scopeIds, ","));
         return this;
     }
 
-    public BriefSectionsListParams campaignIds(List<String> campaignIds) {
+    public CampaignSectionsListParams campaignIds(List<String> campaignIds) {
         params.put("campaign_ids", StringUtils.join(campaignIds, ","));
         return this;
     }
 
-    public BriefSectionsListParams page(Integer page) {
+    public CampaignSectionsListParams page(Integer page) {
         params.put("page", page);
         return this;
     }
 
-    public BriefSectionsListParams offset(Integer offset) {
+    public CampaignSectionsListParams offset(Integer offset) {
         params.put("offset", offset);
         return this;
     }
 
-    public BriefSectionsListParams limit(Integer limit) {
+    public CampaignSectionsListParams limit(Integer limit) {
         params.put("limit", limit);
         return this;
     }
 
-    public BriefSectionsListParams orderBy(String orderBy) {
+    public CampaignSectionsListParams orderBy(String orderBy) {
         params.put("order_by", orderBy);
         return this;
     }
 
-    public BriefSectionsListParams orderDirection(String orderDirection) {
+    public CampaignSectionsListParams orderDirection(String orderDirection) {
         params.put("order_direction", orderDirection);
         return this;
     }
