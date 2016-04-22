@@ -8,7 +8,7 @@ import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflow
 import com.percolate.sdk.api.request.auth.AuthRequest;
 import com.percolate.sdk.api.request.authorization.UserRolesRequest;
 import com.percolate.sdk.api.request.brief.BriefRequest;
-import com.percolate.sdk.api.request.campaigns.CampaignsRequest;
+import com.percolate.sdk.api.request.campaign.CampaignsRequest;
 import com.percolate.sdk.api.request.channel.ChannelRequest;
 import com.percolate.sdk.api.request.comment.CommentRequest;
 import com.percolate.sdk.api.request.features.FeaturesRequest;
