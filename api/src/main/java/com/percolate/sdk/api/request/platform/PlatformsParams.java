@@ -16,8 +16,18 @@ public class PlatformsParams {
     public PlatformsParams() {
     }
 
+    public PlatformsParams ids(List<String> ids) {
+        params.put("ids", StringUtils.join(ids, ","));
+        return this;
+    }
+
     public PlatformsParams scopeIds(List<String> scopeIds) {
         params.put("scope_ids", StringUtils.join(scopeIds, ","));
+        return this;
+    }
+
+    public PlatformsParams types(List<String> types) {
+        params.put("types", StringUtils.join(types, ","));
         return this;
     }
 
