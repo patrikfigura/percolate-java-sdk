@@ -95,6 +95,23 @@ public enum ActivityStreamType {
                 this == UPDATE_POST);
     }
 
+    /**
+     * @return true if stream type is for an new top-level data type.
+     */
+    public boolean isTopLevelCreationType() {
+        return (this == CREATE_BRIEF || this == CREATE_BRIEF_SECTION ||
+                this == CREATE_WORKSPACE_SECTION || this == CREATE_BRIEF_POST ||
+                this == CREATE_POST);
+    }
+
+    /**
+     * @return true if stream type is for an approval (send for approval event or an approved event).
+     */
+    public boolean isApprovalType() {
+        return (this == APPROVE || this == APPROVE_BRIEF ||
+                this == SUBMIT_POST_FOR_APPROVAL || this == SUBMIT_BRIEF_FOR_APPROVAL );
+    }
+
     @Override
     public String toString() {
         return name().toLowerCase(Locale.getDefault());
