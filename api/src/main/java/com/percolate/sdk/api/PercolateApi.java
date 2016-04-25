@@ -8,6 +8,8 @@ import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflow
 import com.percolate.sdk.api.request.auth.AuthRequest;
 import com.percolate.sdk.api.request.authorization.UserRolesRequest;
 import com.percolate.sdk.api.request.brief.BriefRequest;
+import com.percolate.sdk.api.request.campaign.brief.BriefSectionsRequest;
+import com.percolate.sdk.api.request.campaign.workspace.WorkspaceSectionsRequest;
 import com.percolate.sdk.api.request.campaigns.CampaignsRequest;
 import com.percolate.sdk.api.request.channel.ChannelRequest;
 import com.percolate.sdk.api.request.comment.CommentRequest;
@@ -227,6 +229,20 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public CampaignsRequest campaigns() {
         return new CampaignsRequest(this);
+    }
+
+    /**
+     * @return {@link BriefSectionsRequest} instance.
+     */
+    public BriefSectionsRequest briefSections() {
+        return new BriefSectionsRequest(this);
+    }
+
+    /**
+     * @return {@link WorkspaceSectionsRequest} instance.
+     */
+    public WorkspaceSectionsRequest workspaceSections() {
+        return new WorkspaceSectionsRequest(this);
     }
 
     /**

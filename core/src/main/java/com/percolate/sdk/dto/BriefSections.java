@@ -13,21 +13,15 @@ import java.util.Map;
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CampaignSectionData implements Serializable, HasExtraFields {
+public class BriefSections implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -2202666222120218397L;
+    private static final long serialVersionUID = -347155821310475290L;
 
-    @JsonProperty("uid")
-    protected String uid;
+    @JsonProperty("meta")
+    protected V5Meta meta;
 
-    @JsonProperty("title")
-    protected String title;
-
-    @JsonProperty("copy_html")
-    protected String copyHtml;
-
-    @JsonProperty("media_uids")
-    protected List<String> mediaUids;
+    @JsonProperty("data")
+    protected List<BriefSectionsData> data;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -37,36 +31,20 @@ public class CampaignSectionData implements Serializable, HasExtraFields {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-    public String getUid() {
-        return uid;
+    public V5Meta getMeta() {
+        return meta;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setMeta(V5Meta meta) {
+        this.meta = meta;
     }
 
-    public String getTitle() {
-        return title;
+    public List<BriefSectionsData> getData() {
+        return data;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getCopyHtml() {
-        return copyHtml;
-    }
-
-    public void setCopyHtml(String copyHtml) {
-        this.copyHtml = copyHtml;
-    }
-
-    public List<String> getMediaUids() {
-        return mediaUids;
-    }
-
-    public void setMediaUids(List<String> mediaUids) {
-        this.mediaUids = mediaUids;
+    public void setData(List<BriefSectionsData> data) {
+        this.data = data;
     }
 
     @Override
@@ -82,4 +60,5 @@ public class CampaignSectionData implements Serializable, HasExtraFields {
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);
     }
+
 }
