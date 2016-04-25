@@ -1,0 +1,76 @@
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'maven'
+apply plugin: 'jacoco'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+group 'com.percolate.sdk'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task skipWarningsJavaDoc(type: Javadoc) {
+    options.addStringOption("Xdoclint:none")
+}
+
+task javadocJar(type: Jar, dependsOn: skipWarningsJavaDoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('-Xdoclint:none')
+}
+
+task coverage(dependsOn: jacocoTestReport) {
+    group = "Reporting"
+    description = 'Create code coverage report for auth module'
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        xml.destination "${buildDir}/jacocoAuthTests.xml"
+    }
+}
+
+dependencies {
+    compile project(':api')
+
+    testCompile 'junit:junit:4.12'
+
+    // Kotlin Standard Library
+    testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // Apache Commons
+    compile 'org.apache.commons:commons-lang3:3.4'
+
+    // Base64 Encoder/Decoder
+    compile 'net.iharder:base64:2.3.9'
+
+    // Jackson
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.1'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.7.1'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.7.1'
+
+    // JetBrains Annotations
+    compile 'org.jetbrains:annotations-java5:15.0'
+
+    // Retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.0'
+    compile 'com.squareup.retrofit2:converter-jackson:2.0.0'
+}
