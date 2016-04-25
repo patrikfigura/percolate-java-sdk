@@ -1,4 +1,4 @@
-package com.percolate.sdk.api.request.campaigns;
+package com.percolate.sdk.api.request.campaign;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -10,68 +10,68 @@ import java.util.Map;
  * Parameters for Campaigns request.
  */
 @SuppressWarnings("unused")
-public class CampaignsParams {
+public class CampaignsListParams {
     private Map<String, Object> params = new HashMap<>();
 
-    public CampaignsParams() {
+    public CampaignsListParams() {
     }
 
-    public CampaignsParams ids(List<String> ids) {
+    public CampaignsListParams ids(List<String> ids) {
         params.put("ids", StringUtils.join(ids, ","));
         return this;
     }
 
-    public CampaignsParams scopeIds(List<String> scopeIds) {
+    public CampaignsListParams scopeIds(List<String> scopeIds) {
         params.put("scope_ids", StringUtils.join(scopeIds, ","));
         return this;
     }
 
-    public CampaignsParams platformIds(List<String> platformIds) {
+    public CampaignsListParams platformIds(List<String> platformIds) {
         params.put("platform_ids", StringUtils.join(platformIds, ","));
         return this;
     }
 
-    public CampaignsParams topicIds(List<String> topicIds) {
+    public CampaignsListParams topicIds(List<String> topicIds) {
         params.put("topic_ids", StringUtils.join(topicIds, ","));
         return this;
     }
 
-    public CampaignsParams termIds(List<String> termIds) {
+    public CampaignsListParams termIds(List<String> termIds) {
         params.put("term_ids", StringUtils.join(termIds, ","));
         return this;
     }
 
-    public CampaignsParams startAt(String startAt) {
+    public CampaignsListParams startAt(String startAt) {
         params.put("start_at", startAt);
         return this;
     }
 
-    public CampaignsParams endAt(String endAt) {
+    public CampaignsListParams endAt(String endAt) {
         params.put("end_at", endAt);
         return this;
     }
 
-    public CampaignsParams page(Integer page) {
+    public CampaignsListParams page(Integer page) {
         params.put("page", page);
         return this;
     }
 
-    public CampaignsParams offset(Integer offset) {
+    public CampaignsListParams offset(Integer offset) {
         params.put("offset", offset);
         return this;
     }
 
-    public CampaignsParams limit(Integer limit) {
+    public CampaignsListParams limit(Integer limit) {
         params.put("limit", limit);
         return this;
     }
 
-    public CampaignsParams orderBy(String orderBy) {
+    public CampaignsListParams orderBy(String orderBy) {
         params.put("order_by", orderBy);
         return this;
     }
 
-    public CampaignsParams orderDirection(String orderDirection) {
+    public CampaignsListParams orderDirection(String orderDirection) {
         params.put("order_direction", orderDirection);
         return this;
     }
