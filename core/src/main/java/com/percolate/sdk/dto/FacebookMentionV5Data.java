@@ -14,7 +14,7 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FacebookMentionV5Data implements Serializable, HasExtraFields, Comparable<FacebookMentionV5Data> {
 
-    private static final long serialVersionUID = -8684245906086050351L;
+    private static final long serialVersionUID = -7356257201746328086L;
 
     @JsonProperty("value")
     protected String value;
