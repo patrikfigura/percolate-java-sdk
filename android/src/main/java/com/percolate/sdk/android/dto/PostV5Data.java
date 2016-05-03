@@ -55,6 +55,40 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
     public PostV5Data() {
     }
 
+    public PostV5Data(com.percolate.sdk.dto.PostV5Data other) {
+        this.platform = other.platform;
+        this.channel = other.channel;
+        this.media = other.media;
+        this.workflowData = other.workflowData;
+        this.link = other.link;
+        this.fieldLabels = other.fieldLabels;
+        this.id = other.getId();
+        this.scopeId = other.getScopeId();
+        this.userId = other.getUserId();
+        this.status = other.getStatus();
+        this.liveAt = other.getLiveAt();
+        this.liveAtTimezone = other.getLiveAtTimezone();
+        this.name = other.getName();
+        this.description = other.getDescription();
+        this.url = other.getUrl();
+        this.ingested = other.getIngested();
+        this.platformId = other.getPlatformId();
+        this.channelId = other.getChannelId();
+        this.approvalWorkflowId = other.getApprovalWorkflowId();
+        this.approvalGroupId = other.getApprovalGroupId();
+        this.schemaId = other.getSchemaId();
+        this.interactionId = other.getInteractionId();
+        this.assetIds = other.getAssetIds();
+        this.topicIds = other.getTopicIds();
+        this.termIds = other.getTermIds();
+        this.originIds = other.getOriginIds();
+        this.linkIds = other.getLinkIds();
+        this.createdAt = other.getCreatedAt();
+        this.updatedAt = other.getUpdatedAt();
+        this.ext = other.getExt();
+        this.extraFields = other.getExtraFields();
+    }
+
     protected PostV5Data(Parcel in) {
         this.platform = (com.percolate.sdk.dto.Platform) in.readSerializable();
         this.channel = (ChannelV5) in.readSerializable();
