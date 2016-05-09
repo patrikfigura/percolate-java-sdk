@@ -58,6 +58,7 @@ public class PostStatus {
     public enum Query {
         DRAFTS("draft"),
         APPROVAL_DRAFTS("approvals.draft"),
+        APPROVAL_QUEUED("approvals.queued"),
         APPROVALS("approvals.*"),
         QUEUED("queued.*"),
         LIVE("live");
