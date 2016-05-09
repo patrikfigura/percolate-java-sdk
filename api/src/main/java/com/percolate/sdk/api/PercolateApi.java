@@ -33,6 +33,7 @@ import com.percolate.sdk.api.request.postset.PostSetRequest;
 import com.percolate.sdk.api.request.push.PushTokenRequest;
 import com.percolate.sdk.api.request.release.ReleaseFormRequest;
 import com.percolate.sdk.api.request.responses.CannedResponsesRequest;
+import com.percolate.sdk.api.request.roles.RolesRequest;
 import com.percolate.sdk.api.request.schema.SchemasRequest;
 import com.percolate.sdk.api.request.shares.SharesRequest;
 import com.percolate.sdk.api.request.streams.StreamsRequest;
@@ -395,6 +396,14 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public ReleaseFormRequest releaseForm() {
         return new ReleaseFormRequest(this);
+    }
+
+    /**
+     * @return {@link RolesRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public RolesRequest roles() {
+        return new RolesRequest(this);
     }
 
     /**
