@@ -5,7 +5,7 @@
 
 ## Usage
 
-The SDK is broken up into multiple libraries:
+This SDK is broken up into multiple libraries:
 
 | Component     | Description                        |
 |---------------|------------------------------------| 
