@@ -37,6 +37,11 @@ public class MediaListParams {
         return this;
     }
 
+    public MediaListParams folderUid(String folderUid) {
+        params.put("folder_uid", folderUid);
+        return this;
+    }
+
     public MediaListParams hideFacets(Boolean hideFacets) {
         params.put("hide_facets", hideFacets);
         return this;
