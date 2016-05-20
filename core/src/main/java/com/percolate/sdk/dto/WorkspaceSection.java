@@ -55,6 +55,20 @@ public class WorkspaceSection implements Serializable, HasExtraFields {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
+    /**
+     * Used to sort WorkspaceSection by their ordinal.
+     */
+    @Override
+    public int compareTo(@NotNull WorkspaceSection other) {
+        if (other.ordinal < ordinal) {
+          return -1;
+        } else if (ordinal > other.ordinal) {
+          return 1;
+        } else {
+          return 0;
+        }
+    }
+
     public String getId() {
         return id;
     }
