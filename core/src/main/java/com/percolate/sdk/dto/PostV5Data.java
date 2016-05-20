@@ -28,16 +28,19 @@ public class PostV5Data implements Serializable, HasExtraFields {
     public ChannelV5 channel; //Set by client after looping through include data.
 
     @JsonIgnore
-    @Nullable
-    public List<Media> media; //Set by client after calling ApiGetMedia
+    public Schema schema; // Set by client after looping through include data.
 
     @JsonIgnore
     @Nullable
-    public WorkflowData workflowData; //Set by client after calling ApiGetWorkflow
+    public List<Media> media; //Set by client after calling media api.
 
     @JsonIgnore
     @Nullable
-    public Link link; //Set by client after calling ApiGetLink
+    public WorkflowData workflowData; //Set by client after calling approval workflow api.
+
+    @JsonIgnore
+    @Nullable
+    public Link link; //Set by client after calling links api.
 
     @JsonIgnore
     @Nullable

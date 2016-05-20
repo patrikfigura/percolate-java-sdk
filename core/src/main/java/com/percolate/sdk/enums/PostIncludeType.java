@@ -5,5 +5,6 @@ package com.percolate.sdk.enums;
  */
 public enum PostIncludeType {
     CHANNEL_ID,
-    PLATFORM_ID
+    PLATFORM_ID,
+    SCHEMA_ID
 }
