@@ -14,7 +14,7 @@ import java.util.Map;
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class WorkspaceSection implements Serializable, HasExtraFields {
+public class WorkspaceSection implements Serializable, HasExtraFields, Comparable<WorkspaceSection> {
 
     private static final long serialVersionUID = -4641325300395962379L;
 
