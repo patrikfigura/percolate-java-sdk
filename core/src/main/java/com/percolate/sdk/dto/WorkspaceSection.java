@@ -61,10 +61,10 @@ public class WorkspaceSection implements Serializable, HasExtraFields, Comparabl
      */
     @Override
     public int compareTo(@NotNull WorkspaceSection other) {
-        if (other.ordinal < ordinal) {
-          return 1;
-        } else if (ordinal > other.ordinal) {
+        if (ordinal < other.ordinal) {
           return -1;
+        } else if (ordinal > other.ordinal) {
+          return 1;
         } else {
           return 0;
         }
