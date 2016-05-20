@@ -15,13 +15,16 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PostV5Include implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -3361111564265766009L;
+    private static final long serialVersionUID = 3023521241837003165L;
 
     @JsonProperty("platform")
     protected List<Platform> platform;
 
     @JsonProperty("channel")
     protected List<ChannelV5> channel;
+
+    @JsonProperty("schema")
+    protected List<Schema> schema;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -40,12 +43,19 @@ public class PostV5Include implements Serializable, HasExtraFields {
     }
 
     public List<Platform> getPlatform() {
-
         return platform;
     }
 
     public void setPlatform(List<Platform> platform) {
         this.platform = platform;
+    }
+
+    public List<Schema> getSchema() {
+        return schema;
+    }
+
+    public void setSchema(List<Schema> schema) {
+        this.schema = schema;
     }
 
     @Override
