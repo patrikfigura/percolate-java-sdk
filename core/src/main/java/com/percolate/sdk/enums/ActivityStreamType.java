@@ -27,6 +27,10 @@ public enum ActivityStreamType {
     CREATE_POST_FOLLOW,
     SUBMIT_POST_FOR_APPROVAL,
     APPROVE,
+    COMPLETE_POST_APPROVAL,
+    COMPLETE_BRIEF_APPROVAL,
+    COMPLETE_POST_APPROVAL_STEP,
+    COMPLETE_BRIEF_APPROVAL_STEP,
     UNKNOWN;
 
     /**
@@ -108,8 +112,10 @@ public enum ActivityStreamType {
      * @return true if stream type is for an approval (send for approval event or an approved event).
      */
     public boolean isApprovalType() {
-        return (this == APPROVE || this == APPROVE_BRIEF ||
-                this == SUBMIT_POST_FOR_APPROVAL || this == SUBMIT_BRIEF_FOR_APPROVAL );
+        return (this == SUBMIT_POST_FOR_APPROVAL || this == SUBMIT_BRIEF_FOR_APPROVAL ||
+                this == APPROVE || this == APPROVE_BRIEF ||
+                this == COMPLETE_POST_APPROVAL || this == COMPLETE_BRIEF_APPROVAL ||
+                this == COMPLETE_POST_APPROVAL_STEP || this == COMPLETE_BRIEF_APPROVAL_STEP);
     }
 
     @Override

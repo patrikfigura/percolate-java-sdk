@@ -2,8 +2,10 @@ package com.percolate.sdk.dto;
 
 import com.fasterxml.jackson.annotation.*;
 import com.percolate.sdk.interfaces.HasExtraFields;
+import org.apache.commons.lang3.builder.CompareToBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -13,7 +15,7 @@ import java.util.Map;
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class WorkspaceSection implements Serializable, HasExtraFields {
+public class WorkspaceSection implements Serializable, HasExtraFields, Comparable<WorkspaceSection> {
 
     private static final long serialVersionUID = -4641325300395962379L;
 
@@ -53,6 +55,16 @@ public class WorkspaceSection implements Serializable, HasExtraFields {
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
+
+    /**
+     * Used to sort WorkspaceSection by their ordinal.
+     */
+    @Override
+    public int compareTo(@NotNull WorkspaceSection other) {
+      return new CompareToBuilder()
+          .append(ordinal, other.ordinal)
+          .toComparison();
     }
 
     public String getId() {
