@@ -3,6 +3,7 @@ package com.percolate.sdk.api.request.authorization;
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.UserRoles;
+import com.percolate.sdk.dto.UserRolesV5;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 
@@ -26,5 +27,15 @@ public class UserRolesRequest {
      */
     public Call<UserRoles> get(@NotNull final UserRolesParams params) {
         return service.get(params.getUserId(), params.getParams());
+    }
+
+    /**
+     * Query user roles endpoint.
+     *
+     * @param params API params.
+     * @return {@link Call} object.
+     */
+    public Call<UserRolesV5> get(@NotNull final UserRolesV5Params params) {
+        return service.get(params.getParams());
     }
 }
