@@ -2,8 +2,10 @@ package com.percolate.sdk.dto;
 
 import com.fasterxml.jackson.annotation.*;
 import com.percolate.sdk.interfaces.HasExtraFields;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -32,6 +34,45 @@ public class UserRolesV5 implements Serializable, HasExtraFields {
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
+
+    /**
+     * Returns the role that the user has for the given license.
+     * @param licenseId Scope UID.
+     * @return The {@code Role} the user is in, or {@code null}.
+     */
+    @Nullable
+    public Role getRoleForLicense(final String licenseId) {
+        if (data != null && include != null) {
+            for (UserRole userRole : data) {
+                if(StringUtils.equalsIgnoreCase(licenseId, userRole.getScopeId())) {
+                    for (Role includeRole : include.getRole()) {
+                        if (StringUtils.equalsIgnoreCase(includeRole.getId(), userRole.getRoleId())) {
+                            return includeRole;
+                        }
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Checks if the {@link #include} data contains the given capability for the given license.
+     * @param licenseId Scope UID.
+     * @param capability Capability to check for
+     * @return {@code true} if the user has the capability for the given scope.
+     */
+    public boolean hasCapability(final String licenseId, final String capability) {
+        final Role role = getRoleForLicense(licenseId);
+        if(role != null && role.getCapabilities() != null) {
+            for (String roleCapability : role.getCapabilities()) {
+                if(StringUtils.equalsIgnoreCase(capability, roleCapability)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public V5Meta getMeta() {
