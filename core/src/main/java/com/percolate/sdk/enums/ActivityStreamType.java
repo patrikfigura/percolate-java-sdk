@@ -70,7 +70,8 @@ public enum ActivityStreamType {
     public boolean isPostType() {
         return (this == CREATE_BRIEF_POST  || this == UPDATE_BRIEF_POST || this == CREATE_POST
                 || this == UPDATE_POST || this == SUBMIT_POST_FOR_APPROVAL || this == APPROVE
-                || this == CREATE_POST_COMMENT || this == CREATE_POST_FOLLOW);
+                || this == CREATE_POST_COMMENT || this == CREATE_POST_FOLLOW || this == COMPLETE_POST_APPROVAL
+                || this == COMPLETE_POST_APPROVAL_STEP);
     }
 
     /**
@@ -86,7 +87,8 @@ public enum ActivityStreamType {
      */
     public boolean isBriefSectionType() {
         return (this == CREATE_BRIEF_SECTION || this == UPDATE_BRIEF_SECTION
-                || this == SUBMIT_BRIEF_FOR_APPROVAL || this == APPROVE_BRIEF);
+                || this == SUBMIT_BRIEF_FOR_APPROVAL || this == APPROVE_BRIEF
+                || this == COMPLETE_BRIEF_APPROVAL || this == COMPLETE_BRIEF_APPROVAL_STEP);
     }
 
     /**
