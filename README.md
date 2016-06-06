@@ -11,6 +11,7 @@ The SDK is broken up into multiple libraries:
 |---------------|------------------------------------| 
 | core          | Core objects.  Required.           |
 | api           | API requests.                      |
+| rxjava        | RxJava objects.                    |
 | auth          | OAuth2 helper objects.             |
 | android       | Android-specific objects.          |
 | python-bridge | Allows core/api usage from python. |
@@ -65,6 +66,28 @@ call.enqueue(new Callback<Terms>() {
     @Override
     public void onFailure(Call<Terms> call, Throwable t) { }    
 });
+```
+
+## Usage with RxJava
+Use the `PercolateApiRx` class to get an `Observable` for an API endpoint. For example, `PercolateApiRx#termsRx` is used to get
+an observable for a `v5/terms` endpoint. You can then call `get()`, `create()`, `update()` on the returned object to get an
+`Observable`.
+
+
+### Example:
+```java
+PercolateApiRx percolateApi = new PercolateApiRx(API_KEY);
+TermsParams params = new TermsParams()
+  .scopeId("license:12345")
+  .search("abc");
+Observable<Terms> observable = percolateApiRx.termsRx().get(params);
+observable.subscribe(new Action1<Terms>() {
+     @Override
+     public void call(Terms terms) {
+         ...
+     }
+});
+...
 ```
 
 
