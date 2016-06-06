@@ -1,16 +1,22 @@
 package com.percolate.sdk.api.utils;
 
 import com.percolate.sdk.api.PercolateApi;
-import okhttp3.*;
-import org.apache.commons.lang3.StringUtils;
 
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
-import retrofit2.Retrofit;
-import retrofit2.converter.jackson.JacksonConverterFactory;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
+
+import okhttp3.HttpUrl;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.jackson.JacksonConverterFactory;
 
 /**
  * Code to hide away Retrofit logic and implementation details. It configures
@@ -50,6 +56,7 @@ public class RetrofitLogic {
         if(retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(context.getSelectedServer().getTransport() + "://" + context.getSelectedServer().getDomain() + "/")
+                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .addConverterFactory(JacksonConverterFactory.create())
                     .client(createOkHttpClient())
                     .build();
