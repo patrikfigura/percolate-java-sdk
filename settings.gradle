@@ -1,1 +1,1 @@
-include ':core', ':android', ':api', ':auth', ':python-bridge', ':rxjava'
+include ':core', ':android', ':api', ':rxjava', ':auth', ':python-bridge'
