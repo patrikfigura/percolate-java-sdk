@@ -69,10 +69,8 @@ call.enqueue(new Callback<Terms>() {
 ```
 
 ## Usage with RxJava
-Use the `PercolateApiRx` class to get an `Observable` for an API endpoint. For example, `PercolateApiRx#termsRx` is used to get
-an observable for a `v5/terms` endpoint. You can then call `get()`, `create()`, `update()` on the returned object to get an
-`Observable`.
-
+If you want to do reactive programming using [RxJava](https://github.com/ReactiveX/RxJava) then you can use the `PercolateApiRx` class. The class provides methods that return an `Observable` for an API endpoint. For example, `PercolateApiRx#termsRx` returns an object
+on which `get()`, `create()` and `update()` methods can be invoked to get an Observable. Subscribing to this Observable will you allow to interact with the Terms API.
 
 ### Example:
 ```java
