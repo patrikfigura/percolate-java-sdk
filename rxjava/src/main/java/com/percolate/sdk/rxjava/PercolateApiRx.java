@@ -1,6 +1,7 @@
-package com.percolate.sdk.rxjava.request;
+package com.percolate.sdk.rxjava;
 
 import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.config.PercolateServer;
 import com.percolate.sdk.api.request.approvals.pools.ApprovalPoolsRequest;
 import com.percolate.sdk.api.request.approvals.workflow.ApprovalWorkflowRequest;
 import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflowHistoryRequest;
@@ -56,10 +57,45 @@ import com.percolate.sdk.rxjava.request.vendor.facebook.FacebookVendorRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.instagram.InstagramVendorRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.twitter.TwitterVendorRequestRx;
 
+import org.jetbrains.annotations.Nullable;
+
 /**
  * Percolate API for using RxJava.
  */
 public class PercolateApiRx extends PercolateApi {
+
+    /**
+     * Create percolate API instance that accesses {@code percolate.com} endpoint.
+     */
+    public PercolateApiRx() {
+        this(null, null);
+    }
+
+    /**
+     * Create percolate API instance that accesses the given {@link PercolateServer} endpoint.
+     */
+    public PercolateApiRx(@Nullable PercolateServer selectedServer) {
+        super(null, selectedServer);
+    }
+
+    /**
+     * Create percolateRx API instance that accesses {@code percolate.com} endpoint.
+     *
+     * @param apiKey API key.
+     */
+    public PercolateApiRx(@Nullable String apiKey) {
+        super(apiKey, null);
+    }
+
+    /**
+     * Create percolateRx API instance that accesses the given {@link PercolateServer} endpoint.
+     *
+     * @param apiKey API key.
+     * @param selectedServer Server config.
+     */
+    public PercolateApiRx(@Nullable String apiKey, @Nullable PercolateServer selectedServer) {
+        super(apiKey, selectedServer);
+    }
 
     /**
      * @return {@link AuthRequestRx} instance.
