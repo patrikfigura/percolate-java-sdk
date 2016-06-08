@@ -25,7 +25,7 @@ class RxServiceMethodTest {
                 // loop through each api service method checking whether it exists in rx version of the service class
                 it.pojoMethods.forEach {
                     val rxServiceMethod = PojoMethodFactory.getMethod(rxServiceClass.clazz, it.name, *it.parameterTypes);
-                    assertNotNull(rxServiceMethod)
+                    assertNotNull(rxServiceClass.name + " doesn't have this method.", rxServiceMethod)
                 }
 
             } catch (ex: ClassNotFoundException) {

@@ -43,7 +43,7 @@ class RxRequestMethodTest {
                 apiMethods.forEach {
                     if (!it.isConstructor) {
                         val rxMethod = PojoMethodFactory.getMethod(rxRequestClass.clazz, it.name, *it.parameterTypes)
-                        Assert.assertNotNull(rxMethod)
+                        Assert.assertNotNull(rxRequestClass.name + "doesn't have this method.", rxMethod)
                     }
                 }
 
