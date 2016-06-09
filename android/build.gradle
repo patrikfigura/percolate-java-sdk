@@ -30,7 +30,7 @@ repositories {
 }
 
 jacoco {
-    version = '0.7.5.201505241946'
+    version = '0.7.6.201602180812'
 }
 
 task coverage(type:JacocoReport, dependsOn: "testDebugUnitTest") {

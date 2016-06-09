@@ -11,6 +11,7 @@ The SDK is broken up into multiple libraries:
 |---------------|------------------------------------| 
 | core          | Core objects.  Required.           |
 | api           | API requests.                      |
+| rxjava        | RxJava objects.                    |
 | auth          | OAuth2 helper objects.             |
 | android       | Android-specific objects.          |
 | python-bridge | Allows core/api usage from python. |
@@ -65,6 +66,26 @@ call.enqueue(new Callback<Terms>() {
     @Override
     public void onFailure(Call<Terms> call, Throwable t) { }    
 });
+```
+
+## Usage with RxJava
+If you want to do reactive programming using [RxJava](https://github.com/ReactiveX/RxJava) then you can use the `PercolateApiRx` class. The class provides methods that return an `Observable` for an API endpoint. For example, `PercolateApiRx#termsRx` returns an object
+on which `get()`, `create()` and `update()` methods can be invoked to get an Observable. Subscribing to this Observable will you allow to interact with the Terms API.
+
+### Example:
+```java
+PercolateApiRx percolateApi = new PercolateApiRx(API_KEY);
+TermsParams params = new TermsParams()
+  .scopeId("license:12345")
+  .search("abc");
+Observable<Terms> observable = percolateApiRx.termsRx().get(params);
+observable.subscribe(new Action1<Terms>() {
+     @Override
+     public void call(Terms terms) {
+         ...
+     }
+});
+...
 ```
 
 
