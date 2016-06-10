@@ -13,7 +13,7 @@ import java.util.Map;
 import rx.Observable;
 
 /**
- * PreviewData request proxy.
+ * Preview request proxy.
  */
 @SuppressWarnings("unused")
 public class PreviewRequestRx {
@@ -27,8 +27,8 @@ public class PreviewRequestRx {
     /**
      * Create a post's preview.
      *
-     * @param previewTemplateId PreviewData template id.
-     * @param postData {@code PostV5} object.
+     * @param previewTemplateId Preview template id.
+     * @param postData {@code PostV5Data} object.
      * @return {@link Observable} object.
      */
     public Observable<Preview> create(@NotNull final String previewTemplateId, @NotNull final PostV5Data postData) {

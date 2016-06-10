@@ -25,7 +25,7 @@ public class Preview extends com.percolate.sdk.dto.Preview implements Parcelable
     }
 
     protected Preview(Parcel in) {
-        this.data = (com.percolate.sdk.dto.PreviewData) in.readSerializable();
+        this.data = (PreviewData) in.readSerializable();
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }

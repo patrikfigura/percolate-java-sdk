@@ -34,15 +34,15 @@ public class PreviewData extends com.percolate.sdk.dto.PreviewData implements Pa
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
 
-    public static final Creator<com.percolate.sdk.android.dto.PreviewData> CREATOR = new Creator<com.percolate.sdk.android.dto.PreviewData>() {
+    public static final Creator<PreviewData> CREATOR = new Creator<PreviewData>() {
         @Override
-        public com.percolate.sdk.android.dto.PreviewData createFromParcel(Parcel source) {
-            return new com.percolate.sdk.android.dto.PreviewData(source);
+        public PreviewData createFromParcel(Parcel source) {
+            return new PreviewData(source);
         }
 
         @Override
-        public com.percolate.sdk.android.dto.PreviewData[] newArray(int size) {
-            return new com.percolate.sdk.android.dto.PreviewData[size];
+        public PreviewData[] newArray(int size) {
+            return new PreviewData[size];
         }
     };
 }

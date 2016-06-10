@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import rx.Observable;
 
 /**
- * PreviewData format request proxy.
+ * Preview Format request proxy.
  */
 public class PreviewFormatRequestRx {
 

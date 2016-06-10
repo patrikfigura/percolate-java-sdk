@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Parameters for PreviewData Format request.
+ * Parameters for Preview Format request.
  */
 public class PreviewFormatListParams {
     private Map<String, Object> params = new HashMap<>();
