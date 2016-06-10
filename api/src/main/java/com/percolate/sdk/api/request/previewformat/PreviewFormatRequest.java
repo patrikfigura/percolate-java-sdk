@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 
 /**
- * Preview format request proxy.
+ * PreviewData format request proxy.
  */
 public class PreviewFormatRequest {
 

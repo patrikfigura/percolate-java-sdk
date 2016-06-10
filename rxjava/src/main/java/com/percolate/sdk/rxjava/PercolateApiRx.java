@@ -32,8 +32,9 @@ import com.percolate.sdk.rxjava.request.monitoring.twitter.TwitterMonitoringRequ
 import com.percolate.sdk.rxjava.request.platform.PlatformsRequestRx;
 import com.percolate.sdk.rxjava.request.post.PostRequestRx;
 import com.percolate.sdk.rxjava.request.post.plug.PostPlugRequestRx;
-import com.percolate.sdk.rxjava.request.post.previewformat.PreviewFormatRequestRx;
 import com.percolate.sdk.rxjava.request.postset.PostSetRequestRx;
+import com.percolate.sdk.rxjava.request.preview.PreviewRequestRx;
+import com.percolate.sdk.rxjava.request.previewformat.PreviewFormatRequestRx;
 import com.percolate.sdk.rxjava.request.push.PushTokenRequestRx;
 import com.percolate.sdk.rxjava.request.release.ReleaseFormRequestRx;
 import com.percolate.sdk.rxjava.request.responses.CannedResponsesRequestRx;
@@ -318,6 +319,14 @@ public class PercolateApiRx extends PercolateApi {
     @SuppressWarnings("unused")
     public PreviewFormatRequestRx previewFormatRx() {
         return new PreviewFormatRequestRx(this);
+    }
+
+    /**
+     * @return {@link PreviewRequestRx} instance.
+     */
+    @SuppressWarnings("unused")
+    public PreviewRequestRx previewRx() {
+        return new PreviewRequestRx(this);
     }
 
     /**

@@ -29,8 +29,9 @@ import com.percolate.sdk.api.request.monitoring.twitter.TwitterMonitoringRequest
 import com.percolate.sdk.api.request.platform.PlatformsRequest;
 import com.percolate.sdk.api.request.post.PostRequest;
 import com.percolate.sdk.api.request.post.plug.PostPlugRequest;
-import com.percolate.sdk.api.request.previewformat.PreviewFormatRequest;
 import com.percolate.sdk.api.request.postset.PostSetRequest;
+import com.percolate.sdk.api.request.preview.PreviewRequest;
+import com.percolate.sdk.api.request.previewformat.PreviewFormatRequest;
 import com.percolate.sdk.api.request.push.PushTokenRequest;
 import com.percolate.sdk.api.request.release.ReleaseFormRequest;
 import com.percolate.sdk.api.request.responses.CannedResponsesRequest;
@@ -49,6 +50,7 @@ import com.percolate.sdk.api.request.vendor.instagram.InstagramVendorRequest;
 import com.percolate.sdk.api.request.vendor.twitter.TwitterVendorRequest;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.api.utils.RetrofitLogic;
+
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -389,6 +391,14 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public PreviewFormatRequest previewFormat() {
         return new PreviewFormatRequest(this);
+    }
+
+    /**
+     * @return {@link PreviewRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public PreviewRequest preview() {
+        return new PreviewRequest(this);
     }
 
     /**

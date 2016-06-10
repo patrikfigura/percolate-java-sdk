@@ -1,4 +1,4 @@
-package com.percolate.sdk.rxjava.request.post.previewformat;
+package com.percolate.sdk.rxjava.request.previewformat;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.request.previewformat.PreviewFormatListParams;
@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import rx.Observable;
 
 /**
- * Preview format request proxy.
+ * PreviewData format request proxy.
  */
 public class PreviewFormatRequestRx {
 
