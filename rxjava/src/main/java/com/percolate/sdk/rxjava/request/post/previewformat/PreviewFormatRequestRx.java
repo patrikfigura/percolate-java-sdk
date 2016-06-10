@@ -1,7 +1,7 @@
 package com.percolate.sdk.rxjava.request.post.previewformat;
 
 import com.percolate.sdk.api.PercolateApi;
-import com.percolate.sdk.api.request.post.previewformat.PreviewFormatListParams;
+import com.percolate.sdk.api.request.previewformat.PreviewFormatListParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.PreviewFormats;
 import com.percolate.sdk.dto.SinglePreviewFormat;

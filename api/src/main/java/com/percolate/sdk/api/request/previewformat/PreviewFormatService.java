@@ -1,4 +1,4 @@
-package com.percolate.sdk.api.request.post.previewformat;
+package com.percolate.sdk.api.request.previewformat;
 
 import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.PreviewFormats;

@@ -29,7 +29,7 @@ import com.percolate.sdk.api.request.monitoring.twitter.TwitterMonitoringRequest
 import com.percolate.sdk.api.request.platform.PlatformsRequest;
 import com.percolate.sdk.api.request.post.PostRequest;
 import com.percolate.sdk.api.request.post.plug.PostPlugRequest;
-import com.percolate.sdk.api.request.post.previewformat.PreviewFormatRequest;
+import com.percolate.sdk.api.request.previewformat.PreviewFormatRequest;
 import com.percolate.sdk.api.request.postset.PostSetRequest;
 import com.percolate.sdk.api.request.push.PushTokenRequest;
 import com.percolate.sdk.api.request.release.ReleaseFormRequest;

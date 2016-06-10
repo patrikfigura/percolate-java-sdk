@@ -1,4 +1,4 @@
-package com.percolate.sdk.api.request.post.previewformat;
+package com.percolate.sdk.api.request.previewformat;
 
 import org.apache.commons.lang3.StringUtils;
 
