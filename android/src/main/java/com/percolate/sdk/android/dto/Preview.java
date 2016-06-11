@@ -3,6 +3,8 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.percolate.sdk.dto.PreviewData;
+
 import java.util.HashMap;
 
 /**
