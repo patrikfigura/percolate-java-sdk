@@ -2,15 +2,8 @@ package com.percolate.sdk.rxjava;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.config.PercolateServer;
-import com.percolate.sdk.api.request.approvals.pools.ApprovalPoolsRequest;
-import com.percolate.sdk.api.request.approvals.workflow.ApprovalWorkflowRequest;
-import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflowHistoryRequest;
 import com.percolate.sdk.api.request.media.release.MediaReleaseRequest;
-import com.percolate.sdk.api.request.monitoring.twitter.TwitterMonitoringRequest;
-import com.percolate.sdk.api.request.platform.PlatformsRequest;
 import com.percolate.sdk.api.request.post.plug.PostPlugRequest;
-import com.percolate.sdk.api.request.push.PushTokenRequest;
-import com.percolate.sdk.api.request.terms.TermsRequest;
 import com.percolate.sdk.rxjava.request.activity.ActivityRequestRx;
 import com.percolate.sdk.rxjava.request.approvals.pools.ApprovalPoolsRequestRx;
 import com.percolate.sdk.rxjava.request.approvals.workflow.ApprovalWorkflowRequestRx;
@@ -40,6 +33,8 @@ import com.percolate.sdk.rxjava.request.platform.PlatformsRequestRx;
 import com.percolate.sdk.rxjava.request.post.PostRequestRx;
 import com.percolate.sdk.rxjava.request.post.plug.PostPlugRequestRx;
 import com.percolate.sdk.rxjava.request.postset.PostSetRequestRx;
+import com.percolate.sdk.rxjava.request.preview.PreviewRequestRx;
+import com.percolate.sdk.rxjava.request.previewformat.PreviewFormatRequestRx;
 import com.percolate.sdk.rxjava.request.push.PushTokenRequestRx;
 import com.percolate.sdk.rxjava.request.release.ReleaseFormRequestRx;
 import com.percolate.sdk.rxjava.request.responses.CannedResponsesRequestRx;
@@ -105,7 +100,7 @@ public class PercolateApiRx extends PercolateApi {
     }
 
     /**
-     * @return {@link TermsRequest} instance.
+     * @return {@link TermsRequestRx} instance.
      */
     @SuppressWarnings("unused")
     public TermsRequestRx termsRx() {
@@ -113,7 +108,7 @@ public class PercolateApiRx extends PercolateApi {
     }
 
     /**
-     * @return {@link ApprovalPoolsRequest} instance.
+     * @return {@link ApprovalPoolsRequestRx} instance.
      */
     @SuppressWarnings("unused")
     public ApprovalPoolsRequestRx approvalPoolsRx() {
@@ -121,7 +116,7 @@ public class PercolateApiRx extends PercolateApi {
     }
 
     /**
-     * @return {@link ApprovalWorkflowRequest} instance.
+     * @return {@link ApprovalWorkflowRequestRx} instance.
      */
     @SuppressWarnings("unused")
     public ApprovalWorkflowRequestRx approvalWorkflowRx() {
@@ -129,7 +124,7 @@ public class PercolateApiRx extends PercolateApi {
     }
 
     /**
-     * @return {@link ApprovalWorkflowHistoryRequest} instance.
+     * @return {@link ApprovalWorkflowHistoryRequestRx} instance.
      */
     @SuppressWarnings("unused")
     public ApprovalWorkflowHistoryRequestRx approvalWorkflowHistoryRx() {
@@ -287,7 +282,7 @@ public class PercolateApiRx extends PercolateApi {
     }
 
     /**
-     * @return {@link TwitterMonitoringRequest} instance.
+     * @return {@link TwitterMonitoringRequestRx} instance.
      */
     @SuppressWarnings("unused")
     public TwitterMonitoringRequestRx twitterMonitoringRx() {
@@ -311,7 +306,7 @@ public class PercolateApiRx extends PercolateApi {
     }
 
     /**
-     * @return {@link PlatformsRequest} instance.
+     * @return {@link PlatformsRequestRx} instance.
      */
     @SuppressWarnings("unused")
     public PlatformsRequestRx platformsRx() {
@@ -319,7 +314,23 @@ public class PercolateApiRx extends PercolateApi {
     }
 
     /**
-     * @return {@link PushTokenRequest} instance.
+     * @return {@link PreviewFormatRequestRx} instance.
+     */
+    @SuppressWarnings("unused")
+    public PreviewFormatRequestRx previewFormatRx() {
+        return new PreviewFormatRequestRx(this);
+    }
+
+    /**
+     * @return {@link PreviewRequestRx} instance.
+     */
+    @SuppressWarnings("unused")
+    public PreviewRequestRx previewRx() {
+        return new PreviewRequestRx(this);
+    }
+
+    /**
+     * @return {@link PushTokenRequestRx} instance.
      */
     @SuppressWarnings("unused")
     public PushTokenRequestRx pushTokenRx() {
