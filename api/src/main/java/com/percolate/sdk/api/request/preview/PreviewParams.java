@@ -3,6 +3,7 @@ package com.percolate.sdk.api.request.preview;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public class PreviewParams {
         return this;
     }
 
-    public PreviewParams licenseId(String channelId) {
+    public PreviewParams channelId(String channelId) {
         params.put("channel_id", channelId);
         return this;
     }
@@ -48,6 +49,11 @@ public class PreviewParams {
 
     public PreviewParams name(String name) {
         params.put("name", name);
+        return this;
+    }
+
+    public PreviewParams ext(LinkedHashMap<String, Object> ext) {
+        params.put("ext", ext);
         return this;
     }
 
