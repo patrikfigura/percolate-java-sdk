@@ -2,7 +2,6 @@ package com.percolate.sdk.api.request.preview;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
-import com.percolate.sdk.dto.PostV5Data;
 import com.percolate.sdk.dto.Preview;
 
 import org.jetbrains.annotations.NotNull;
@@ -28,13 +27,13 @@ public class PreviewRequest {
      * Create a post's preview.
      *
      * @param previewTemplateId Preview template id.
-     * @param postData {@code PostV5Data} object.
+     * @param previewParams Preview params.
      * @return {@link Call} object.
      */
-    public Call<Preview> create(@NotNull final String previewTemplateId, @NotNull final PostV5Data postData) {
+    public Call<Preview> create(@NotNull final String previewTemplateId, @NotNull final PreviewParams previewParams) {
         final Map<String, Object> body = new HashMap<>();
         body.put("preview_template_id", previewTemplateId);
-        body.put("post_data", postData);
+        body.put("post_data", previewParams.getParams());
         return service.create(body);
     }
 
