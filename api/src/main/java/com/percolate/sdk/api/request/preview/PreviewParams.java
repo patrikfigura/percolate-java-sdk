@@ -52,6 +52,11 @@ public class PreviewParams {
         return this;
     }
 
+    public PreviewParams interactionId(String interactionId) {
+        params.put("interaction_id", interactionId);
+        return this;
+    }
+
     public PreviewParams ext(LinkedHashMap<String, Object> ext) {
         params.put("ext", ext);
         return this;
