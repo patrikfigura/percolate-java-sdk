@@ -52,6 +52,21 @@ public class PreviewParams {
         return this;
     }
 
+    public PreviewParams interactionId(String interactionId) {
+        params.put("interaction_id", interactionId);
+        return this;
+    }
+
+    public PreviewParams liveAt(String liveAt) {
+        params.put("live_at", liveAt);
+        return this;
+    }
+
+    public PreviewParams liveAtTimezone(String liveAtTimezone) {
+        params.put("live_at_timezone", liveAtTimezone);
+        return this;
+    }
+
     public PreviewParams ext(LinkedHashMap<String, Object> ext) {
         params.put("ext", ext);
         return this;
