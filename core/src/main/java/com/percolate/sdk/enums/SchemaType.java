@@ -5,5 +5,7 @@ package com.percolate.sdk.enums;
  */
 public enum SchemaType {
     POST,
-    TARGETING
+    TARGETING,
+    CAMPAIGN_SECTION,
+    METADATA
 }
