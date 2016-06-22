@@ -2,7 +2,6 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.MetadataItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,7 +29,7 @@ public class MetadataList extends com.percolate.sdk.dto.MetadataList implements 
 
     protected MetadataList(Parcel in) {
         this.meta = (com.percolate.sdk.dto.V5Meta) in.readSerializable();
-        this.data = new ArrayList<MetadataItem>();
+        this.data = new ArrayList<>();
         in.readList(this.data, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());

@@ -20,7 +20,7 @@ public class SingleMetadataItem implements Serializable, HasExtraFields {
     protected V5Meta meta;
 
     @JsonProperty("data")
-    protected MetadataItem MetadataItem;
+    protected MetadataItem data;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -38,12 +38,12 @@ public class SingleMetadataItem implements Serializable, HasExtraFields {
         this.meta = meta;
     }
 
-    public MetadataItem getMetadataItem() {
-        return MetadataItem;
+    public MetadataItem getData() {
+        return data;
     }
 
-    public void setMetadataItem(MetadataItem metadataItem) {
-        MetadataItem = metadataItem;
+    public void setData(MetadataItem data) {
+        this.data = data;
     }
 
     @Override

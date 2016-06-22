@@ -18,7 +18,7 @@ public class SingleMetadataItem extends com.percolate.sdk.dto.SingleMetadataItem
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeSerializable(this.meta);
-        dest.writeSerializable(this.MetadataItem);
+        dest.writeSerializable(this.data);
         dest.writeMap(this.extraFields);
     }
 
@@ -27,7 +27,7 @@ public class SingleMetadataItem extends com.percolate.sdk.dto.SingleMetadataItem
 
     protected SingleMetadataItem(Parcel in) {
         this.meta = (com.percolate.sdk.dto.V5Meta) in.readSerializable();
-        this.MetadataItem = (com.percolate.sdk.dto.MetadataItem) in.readSerializable();
+        this.data = (com.percolate.sdk.dto.MetadataItem) in.readSerializable();
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
