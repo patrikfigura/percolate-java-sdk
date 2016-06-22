@@ -11,7 +11,7 @@ class CampaignSectionsRequestTest : BaseApiTest() {
     @Test
     fun testList() {
         val campaignSections = percolateApi
-                .campaignSection()
+                .campaignSections()
                 .list(CampaignSectionsListParams())
                 .execute()
                 .body();
@@ -24,7 +24,7 @@ class CampaignSectionsRequestTest : BaseApiTest() {
     @Test
     fun testGet() {
         val singleCampaignSection = percolateApi
-                .campaignSection()
+                .campaignSections()
                 .get("123")
                 .execute()
                 .body();
@@ -46,7 +46,7 @@ class CampaignSectionsRequestTest : BaseApiTest() {
         }
 
         val singleCampaignSection = percolateApi
-                .campaignSection()
+                .campaignSections()
                 .create(campaignSectionData)
                 .execute()
                 .body();

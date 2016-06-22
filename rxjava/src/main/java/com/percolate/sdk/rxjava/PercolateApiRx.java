@@ -168,7 +168,7 @@ public class PercolateApiRx extends PercolateApi {
      * @return {@link CampaignSectionsRequestRx} instance.
      */
     @SuppressWarnings("unused")
-    public CampaignSectionsRequestRx campaignSectionRx() {
+    public CampaignSectionsRequestRx campaignSectionsRx() {
         return new CampaignSectionsRequestRx(this);
     }
 

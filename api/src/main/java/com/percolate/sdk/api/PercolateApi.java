@@ -240,7 +240,7 @@ public class PercolateApi {
      * @return {@link CampaignSectionsRequest} instance.
      */
     @SuppressWarnings("unused")
-    public CampaignSectionsRequest campaignSection() {
+    public CampaignSectionsRequest campaignSections() {
         return new CampaignSectionsRequest(this);
     }
 
