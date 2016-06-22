@@ -22,6 +22,7 @@ import com.percolate.sdk.api.request.licensechannel.LicenseChannelRequest;
 import com.percolate.sdk.api.request.links.LinksRequest;
 import com.percolate.sdk.api.request.media.MediaRequest;
 import com.percolate.sdk.api.request.media.release.MediaReleaseRequest;
+import com.percolate.sdk.api.request.metadata.MetadataRequest;
 import com.percolate.sdk.api.request.monitoring.facebook.FacebookMonitoringRequest;
 import com.percolate.sdk.api.request.monitoring.flagging.FlaggingRequest;
 import com.percolate.sdk.api.request.monitoring.instagram.InstagramMonitoringRequest;
@@ -343,6 +344,14 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public MediaReleaseRequest mediaRelease() {
         return new MediaReleaseRequest(this);
+    }
+
+    /**
+     * @return {@link MetadataRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public MetadataRequest metadata() {
+        return new MetadataRequest(this);
     }
 
     /**
