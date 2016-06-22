@@ -26,6 +26,7 @@ import com.percolate.sdk.rxjava.request.licensechannel.LicenseChannelRequestRx;
 import com.percolate.sdk.rxjava.request.links.LinksRequestRx;
 import com.percolate.sdk.rxjava.request.media.MediaRequestRx;
 import com.percolate.sdk.rxjava.request.media.release.MediaReleaseRequestRx;
+import com.percolate.sdk.rxjava.request.metadata.MetadataRequestRx;
 import com.percolate.sdk.rxjava.request.monitoring.facebook.FacebookMonitoringRequestRx;
 import com.percolate.sdk.rxjava.request.monitoring.flagging.FlaggingRequestRx;
 import com.percolate.sdk.rxjava.request.monitoring.instagram.InstagramMonitoringRequestRx;
@@ -52,7 +53,6 @@ import com.percolate.sdk.rxjava.request.users.UsersRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.facebook.FacebookVendorRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.instagram.InstagramVendorRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.twitter.TwitterVendorRequestRx;
-
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -280,6 +280,14 @@ public class PercolateApiRx extends PercolateApi {
     @SuppressWarnings("unused")
     public MediaReleaseRequestRx mediaReleaseRx() {
         return new MediaReleaseRequestRx(this);
+    }
+
+    /**
+     * @return {@link MetadataRequestRx} instance.
+     */
+    @SuppressWarnings("unused")
+    public MetadataRequestRx metadataRx() {
+        return new MetadataRequestRx(this);
     }
 
     /**
