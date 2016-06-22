@@ -1,4 +1,4 @@
-package com.percolate.sdk.api.request.campaignsection;
+package com.percolate.sdk.rxjava.request.campaignsection;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.request.campaign.CampaignSectionsListParams;
@@ -10,27 +10,27 @@ import com.percolate.sdk.dto.SingleCampaignSection;
 import org.jetbrains.annotations.NotNull;
 
 import okhttp3.ResponseBody;
-import retrofit2.Call;
+import rx.Observable;
 
 /**
  * Campaign Sections request proxy.
  */
 @SuppressWarnings("unused")
-public class CampaignSectionRequest {
+public class CampaignSectionsRequestRx {
 
-    private CampaignSectionService service;
+    private CampaignSectionServiceRx service;
 
-    public CampaignSectionRequest(@NotNull PercolateApi context) {
-        this.service = new RetrofitApiFactory(context).getService(CampaignSectionService.class);
+    public CampaignSectionsRequestRx(@NotNull PercolateApi context) {
+        this.service = new RetrofitApiFactory(context).getService(CampaignSectionServiceRx.class);
     }
 
     /**
      * Get a campaign section.
      *
      * @param campaignSectionId Campaign section id.
-     * @return {@link Call} object.
+     * @return {@link Observable} object.
      */
-    public Call<SingleCampaignSection> get(@NotNull final String campaignSectionId) {
+    public Observable<SingleCampaignSection> get(@NotNull final String campaignSectionId) {
         return service.get(campaignSectionId);
     }
 
@@ -38,9 +38,9 @@ public class CampaignSectionRequest {
      * Get campaign sections.
      *
      * @param params API params.
-     * @return {@link Call} object.
+     * @return {@link Observable} object.
      */
-    public Call<CampaignSections> list(@NotNull final CampaignSectionsListParams params) {
+    public Observable<CampaignSections> list(@NotNull final CampaignSectionsListParams params) {
         return service.list(params.getParams());
     }
 
@@ -48,9 +48,9 @@ public class CampaignSectionRequest {
      * Create campaign section.
      *
      * @param campaignSectionData {@link CampaignSectionData} object.
-     * @return {@link SingleCampaignSection} object.
+     * @return {@link Observable} object.
      */
-    public Call<SingleCampaignSection> create(@NotNull final CampaignSectionData campaignSectionData) {
+    public Observable<SingleCampaignSection> create(@NotNull final CampaignSectionData campaignSectionData) {
         return service.create(campaignSectionData);
     }
 
@@ -58,9 +58,9 @@ public class CampaignSectionRequest {
      * Update campaign section.
      *
      * @param campaignSectionData {@link CampaignSectionData} object.
-     * @return {@link SingleCampaignSection} object.
+     * @return {@link Observable} object.
      */
-    public Call<SingleCampaignSection> update(@NotNull final CampaignSectionData campaignSectionData) {
+    public Observable<SingleCampaignSection> update(@NotNull final CampaignSectionData campaignSectionData) {
         return service.update(campaignSectionData.getId(), campaignSectionData);
     }
 
@@ -68,9 +68,9 @@ public class CampaignSectionRequest {
      * Delete campaign section.
      *
      * @param campaignSectionId Campaign section id.
-     * @return {@link ResponseBody} object.
+     * @return {@link Observable} object.
      */
-    public Call<ResponseBody> delete(@NotNull final String campaignSectionId) {
+    public Observable<ResponseBody> delete(@NotNull final String campaignSectionId) {
         return service.delete(campaignSectionId);
     }
 }

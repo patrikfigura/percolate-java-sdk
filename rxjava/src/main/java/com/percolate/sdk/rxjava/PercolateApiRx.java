@@ -14,7 +14,7 @@ import com.percolate.sdk.rxjava.request.brief.BriefRequestRx;
 import com.percolate.sdk.rxjava.request.campaign.CampaignsRequestRx;
 import com.percolate.sdk.rxjava.request.campaign.brief.BriefSectionsRequestRx;
 import com.percolate.sdk.rxjava.request.campaign.workspace.WorkspaceSectionsRequestRx;
-import com.percolate.sdk.rxjava.request.campaignsection.CampaignSectionRequestRx;
+import com.percolate.sdk.rxjava.request.campaignsection.CampaignSectionsRequestRx;
 import com.percolate.sdk.rxjava.request.channel.ChannelRequestRx;
 import com.percolate.sdk.rxjava.request.comment.CommentRequestRx;
 import com.percolate.sdk.rxjava.request.features.FeaturesRequestRx;
@@ -165,11 +165,11 @@ public class PercolateApiRx extends PercolateApi {
     }
 
     /**
-     * @return {@link CampaignSectionRequestRx} instance.
+     * @return {@link CampaignSectionsRequestRx} instance.
      */
     @SuppressWarnings("unused")
-    public CampaignSectionRequestRx campaignSectionRx() {
-        return new CampaignSectionRequestRx(this);
+    public CampaignSectionsRequestRx campaignSectionRx() {
+        return new CampaignSectionsRequestRx(this);
     }
 
     /**

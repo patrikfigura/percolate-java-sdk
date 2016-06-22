@@ -6,7 +6,7 @@ import com.percolate.sdk.dto.CampaignSectionData
 import org.junit.Assert
 import org.junit.Test
 
-class CampaignSectionRequestTest : BaseApiTest() {
+class CampaignSectionsRequestTest : BaseApiTest() {
 
     @Test
     fun testList() {
