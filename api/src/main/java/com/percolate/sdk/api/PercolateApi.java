@@ -11,6 +11,7 @@ import com.percolate.sdk.api.request.brief.BriefRequest;
 import com.percolate.sdk.api.request.campaign.CampaignsRequest;
 import com.percolate.sdk.api.request.campaign.brief.BriefSectionsRequest;
 import com.percolate.sdk.api.request.campaign.workspace.WorkspaceSectionsRequest;
+import com.percolate.sdk.api.request.campaignsection.CampaignSectionsRequest;
 import com.percolate.sdk.api.request.channel.ChannelRequest;
 import com.percolate.sdk.api.request.comment.CommentRequest;
 import com.percolate.sdk.api.request.features.FeaturesRequest;
@@ -233,6 +234,14 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public CampaignsRequest campaigns() {
         return new CampaignsRequest(this);
+    }
+
+    /**
+     * @return {@link CampaignSectionsRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public CampaignSectionsRequest campaignSections() {
+        return new CampaignSectionsRequest(this);
     }
 
     /**
