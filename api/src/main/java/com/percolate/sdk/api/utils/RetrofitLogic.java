@@ -1,22 +1,17 @@
 package com.percolate.sdk.api.utils;
 
 import com.percolate.sdk.api.PercolateApi;
-
+import okhttp3.*;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.jackson.JacksonConverterFactory;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
-
-import okhttp3.HttpUrl;
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.jackson.JacksonConverterFactory;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Code to hide away Retrofit logic and implementation details. It configures
@@ -90,6 +85,13 @@ public class RetrofitLogic {
             forceCacheControlHeaders(okHttpClientBuilder);
         }
 
+        // Set timeout and retry settings.
+        okHttpClientBuilder
+                .connectTimeout(60, TimeUnit.SECONDS)
+                .readTimeout(60, TimeUnit.SECONDS)
+                .writeTimeout(60, TimeUnit.SECONDS)
+                .retryOnConnectionFailure(false);
+
         okHttpClientBuilder.interceptors().add(new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
@@ -106,6 +108,7 @@ public class RetrofitLogic {
                 return chain.proceed(builder.build());
             }
         });
+
         return okHttpClientBuilder.build();
     }
 
