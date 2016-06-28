@@ -47,4 +47,14 @@ public class MetadataRequest {
     public Call<SingleMetadataItem> create(@NotNull final MetadataItem metadataItem) {
         return service.create(metadataItem);
     }
+
+    /**
+     * Update metadata data item.
+     *
+     * @param metadataItem {@link MetadataItem} object.
+     * @return {@link SingleMetadataItem} object.
+     */
+    public Call<SingleMetadataItem> update(@NotNull final MetadataItem metadataItem) {
+        return service.update(metadataItem.getId(), metadataItem);
+    }
 }

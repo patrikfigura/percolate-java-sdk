@@ -22,4 +22,7 @@ interface MetadataServiceRx {
 
     @POST(Endpoints.API_V5_PATH + "/metadata/")
     Observable<SingleMetadataItem> create(@Body MetadataItem metadataItem);
+
+    @PUT(Endpoints.API_V5_PATH + "/metadata/{metadata_id}")
+    Observable<SingleMetadataItem> update(@Path("metadata_id") String metadataId, @Body MetadataItem metadataItem);
 }
