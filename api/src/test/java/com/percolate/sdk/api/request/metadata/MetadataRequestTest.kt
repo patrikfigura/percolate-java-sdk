@@ -46,4 +46,17 @@ class MetadataRequestTest : BaseApiTest() {
         Assert.assertNotNull(metadata.data)
         Assert.assertEquals("metadata:9", metadata.data.id)
     }
+
+    @Test
+    fun testUpdate() {
+        val metadata = percolateApi
+                .metadata()
+                .update(MetadataItem().apply { id="123" })
+                .execute()
+                .body();
+
+        Assert.assertNotNull(metadata)
+        Assert.assertNotNull(metadata.data)
+        Assert.assertEquals("metadata:123", metadata.data.id)
+    }
 }

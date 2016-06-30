@@ -3,6 +3,8 @@ package com.percolate.sdk.dto;
 import com.fasterxml.jackson.annotation.*;
 import com.percolate.sdk.interfaces.HasExtraFields;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.jetbrains.annotations.NotNull;
@@ -76,6 +78,29 @@ public class Schema implements Serializable, HasExtraFields, Comparable<Schema> 
                 !ext.isEmpty() &&
                 ext.containsKey("platform_id") &&
                 StringUtils.equalsIgnoreCase(ext.get("platform_id").toString(), platformId);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Schema schema = (Schema) o;
+        return new EqualsBuilder()
+                .append(id, schema.id)
+                .append(scopeId, schema.scopeId)
+                .append(status, schema.status)
+                .append(type, schema.type)
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(id)
+                .append(scopeId)
+                .append(status)
+                .append(type)
+                .toHashCode();
     }
 
     public String getId() {
