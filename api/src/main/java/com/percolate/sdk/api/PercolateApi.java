@@ -46,13 +46,13 @@ import com.percolate.sdk.api.request.terms.TermsRequest;
 import com.percolate.sdk.api.request.tokens.TokensRequest;
 import com.percolate.sdk.api.request.topics.TopicsRequest;
 import com.percolate.sdk.api.request.translate.TranslateRequest;
+import com.percolate.sdk.api.request.upload.UploadRequest;
 import com.percolate.sdk.api.request.users.UsersRequest;
 import com.percolate.sdk.api.request.vendor.facebook.FacebookVendorRequest;
 import com.percolate.sdk.api.request.vendor.instagram.InstagramVendorRequest;
 import com.percolate.sdk.api.request.vendor.twitter.TwitterVendorRequest;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.api.utils.RetrofitLogic;
-
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -521,6 +521,14 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public TranslateRequest translate() {
         return new TranslateRequest(this);
+    }
+
+    /**
+     * @return {@link UploadRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public UploadRequest uploads() {
+        return new UploadRequest(this);
     }
 
     /**
