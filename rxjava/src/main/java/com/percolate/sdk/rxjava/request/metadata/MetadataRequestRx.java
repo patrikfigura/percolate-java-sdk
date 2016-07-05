@@ -50,4 +50,14 @@ public class MetadataRequestRx {
     public Observable<SingleMetadataItem> create(@NotNull final MetadataItem metadataItem) {
         return service.create(metadataItem);
     }
+
+    /**
+     * Update metadata data item.
+     *
+     * @param metadataItem {@link MetadataItem} object.
+     * @return {@link SingleMetadataItem} object.
+     */
+    public Observable<SingleMetadataItem> update(@NotNull final MetadataItem metadataItem) {
+        return service.update(metadataItem.getId(), metadataItem);
+    }
 }
