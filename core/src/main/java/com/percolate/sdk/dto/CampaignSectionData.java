@@ -37,7 +37,7 @@ public class CampaignSectionData implements Serializable, HasExtraFields, Compar
     protected LinkedHashMap<String, Object> ext;
 
     @JsonProperty("ordinal")
-    protected Integer ordinal;
+    protected Double ordinal;
 
     @JsonProperty("schema_id")
     protected String schemaId;
@@ -104,11 +104,11 @@ public class CampaignSectionData implements Serializable, HasExtraFields, Compar
         this.ext = ext;
     }
 
-    public Integer getOrdinal() {
+    public Double getOrdinal() {
         return ordinal;
     }
 
-    public void setOrdinal(Integer ordinal) {
+    public void setOrdinal(Double ordinal) {
         this.ordinal = ordinal;
     }
 
