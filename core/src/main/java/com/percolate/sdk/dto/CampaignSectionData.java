@@ -7,8 +7,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.percolate.sdk.interfaces.HasExtraFields;
 
+import org.apache.commons.lang3.builder.CompareToBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -18,7 +20,7 @@ import java.util.Map;
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CampaignSectionData implements Serializable, HasExtraFields {
+public class CampaignSectionData implements Serializable, HasExtraFields, Comparable<CampaignSectionData> {
 
     private static final long serialVersionUID = 8602264666688442839L;
 
@@ -35,7 +37,7 @@ public class CampaignSectionData implements Serializable, HasExtraFields {
     protected LinkedHashMap<String, Object> ext;
 
     @JsonProperty("ordinal")
-    protected Integer ordinal;
+    protected Double ordinal;
 
     @JsonProperty("schema_id")
     protected String schemaId;
@@ -58,6 +60,16 @@ public class CampaignSectionData implements Serializable, HasExtraFields {
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
+
+    /**
+     * Used to sort CampaignSectionData by their ordinal.
+     */
+    @Override
+    public int compareTo(@NotNull CampaignSectionData other) {
+        return new CompareToBuilder()
+                .append(ordinal, other.ordinal)
+                .toComparison();
     }
 
     public String getId() {
@@ -92,11 +104,11 @@ public class CampaignSectionData implements Serializable, HasExtraFields {
         this.ext = ext;
     }
 
-    public Integer getOrdinal() {
+    public Double getOrdinal() {
         return ordinal;
     }
 
-    public void setOrdinal(Integer ordinal) {
+    public void setOrdinal(Double ordinal) {
         this.ordinal = ordinal;
     }
 
