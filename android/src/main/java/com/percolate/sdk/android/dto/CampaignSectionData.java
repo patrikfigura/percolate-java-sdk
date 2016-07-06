@@ -40,7 +40,7 @@ public class CampaignSectionData extends com.percolate.sdk.dto.CampaignSectionDa
         this.createdAt = in.readString();
         this.ext = new LinkedHashMap<>();
         in.readMap(this.ext, LinkedHashMap.class.getClassLoader());
-        this.ordinal = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.ordinal = (Double) in.readValue(Integer.class.getClassLoader());
         this.schemaId = in.readString();
         this.scopeId = in.readString();
         this.title = in.readString();
