@@ -55,13 +55,13 @@ public class MediaMetaData implements Serializable, HasExtraFields {
     protected Date subjectDate;
 
     @JsonProperty("is_photo")
-    protected boolean photo;
+    protected Boolean isPhoto;
 
     @JsonProperty("is_advertising")
-    protected boolean advertising;
+    protected Boolean isAdvertising;
 
     @JsonProperty("has_logo")
-    protected boolean hasLogo;
+    protected Boolean hasLogo;
 
     //For Folders
     @JsonProperty("name")
@@ -170,27 +170,27 @@ public class MediaMetaData implements Serializable, HasExtraFields {
         this.subjectDate = subjectDate;
     }
 
-    public boolean isPhoto() {
-        return photo;
+    public Boolean getPhoto() {
+        return isPhoto;
     }
 
-    public void setPhoto(boolean photo) {
-        this.photo = photo;
+    public void setPhoto(Boolean photo) {
+        isPhoto = photo;
     }
 
-    public boolean isAdvertising() {
-        return advertising;
+    public Boolean getAdvertising() {
+        return isAdvertising;
     }
 
-    public void setAdvertising(boolean advertising) {
-        this.advertising = advertising;
+    public void setAdvertising(Boolean advertising) {
+        isAdvertising = advertising;
     }
 
-    public boolean isHasLogo() {
+    public Boolean getHasLogo() {
         return hasLogo;
     }
 
-    public void setHasLogo(boolean hasLogo) {
+    public void setHasLogo(Boolean hasLogo) {
         this.hasLogo = hasLogo;
     }
 
