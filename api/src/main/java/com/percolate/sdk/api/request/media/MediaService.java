@@ -1,10 +1,7 @@
 package com.percolate.sdk.api.request.media;
 
 import com.percolate.sdk.api.config.Endpoints;
-import com.percolate.sdk.dto.Media;
-import com.percolate.sdk.dto.MediaItems;
-import com.percolate.sdk.dto.MediaList;
-import com.percolate.sdk.dto.MediaMetaDataHolder;
+import com.percolate.sdk.dto.*;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.*;
@@ -30,6 +27,9 @@ interface MediaService {
 
     @GET(Endpoints.API_V3_PATH + "/media/{uid}/metadata")
     Call<MediaMetaDataHolder> meta(@Path("uid") String uid, @QueryMap Map<String, Object> params);
+
+    @PUT(Endpoints.API_V3_PATH + "/media/{uid}/metadata")
+    Call<MediaMetaData> updateMeta(@Path("uid") String uid, @Body MediaMetaData metaData);
 
     @Multipart
     @POST(Endpoints.API_V3_PATH + "/media")
