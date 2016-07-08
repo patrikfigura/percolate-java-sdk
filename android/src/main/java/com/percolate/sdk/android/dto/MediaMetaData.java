@@ -17,6 +17,7 @@ public class MediaMetaData extends com.percolate.sdk.dto.MediaMetaData implement
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.licenseId);
         dest.writeString(this.description);
         dest.writeString(this.copyright);
         dest.writeString(this.title);
@@ -45,6 +46,7 @@ public class MediaMetaData extends com.percolate.sdk.dto.MediaMetaData implement
     }
 
     protected MediaMetaData(Parcel in) {
+        this.licenseId = (Long) in.readValue(Long.class.getClassLoader());
         this.description = in.readString();
         this.copyright = in.readString();
         this.title = in.readString();

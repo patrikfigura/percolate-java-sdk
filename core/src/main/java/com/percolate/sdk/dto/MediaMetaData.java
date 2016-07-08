@@ -18,6 +18,9 @@ public class MediaMetaData implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = 7544126992287411792L;
 
+    @JsonProperty("license_id")
+    protected Long licenseId;
+
     @JsonProperty("description")
     protected String description;
 
@@ -88,6 +91,14 @@ public class MediaMetaData implements Serializable, HasExtraFields {
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
+
+    public Long getLicenseId() {
+        return licenseId;
+    }
+
+    public void setLicenseId(Long licenseId) {
+        this.licenseId = licenseId;
     }
 
     public String getDescription() {
