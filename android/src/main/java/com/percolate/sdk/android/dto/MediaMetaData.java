@@ -17,6 +17,7 @@ public class MediaMetaData extends com.percolate.sdk.dto.MediaMetaData implement
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.licenseId);
         dest.writeString(this.description);
         dest.writeString(this.copyright);
         dest.writeString(this.title);
@@ -29,9 +30,9 @@ public class MediaMetaData extends com.percolate.sdk.dto.MediaMetaData implement
         dest.writeSerializable(this.creator);
         dest.writeValue(this.ownerId);
         dest.writeLong(subjectDate != null ? subjectDate.getTime() : -1);
-        dest.writeByte(photo ? (byte) 1 : (byte) 0);
-        dest.writeByte(advertising ? (byte) 1 : (byte) 0);
-        dest.writeByte(hasLogo ? (byte) 1 : (byte) 0);
+        dest.writeValue(isPhoto);
+        dest.writeValue(isAdvertising);
+        dest.writeValue(hasLogo);
         dest.writeString(this.name);
         dest.writeString(this.parentUID);
         dest.writeString(this.ownerUID);
@@ -45,6 +46,7 @@ public class MediaMetaData extends com.percolate.sdk.dto.MediaMetaData implement
     }
 
     protected MediaMetaData(Parcel in) {
+        this.licenseId = (Long) in.readValue(Long.class.getClassLoader());
         this.description = in.readString();
         this.copyright = in.readString();
         this.title = in.readString();
@@ -58,9 +60,9 @@ public class MediaMetaData extends com.percolate.sdk.dto.MediaMetaData implement
         this.ownerId = (Long) in.readValue(Long.class.getClassLoader());
         long tmpSubjectDate = in.readLong();
         this.subjectDate = tmpSubjectDate == -1 ? null : new Date(tmpSubjectDate);
-        this.photo = in.readByte() != 0;
-        this.advertising = in.readByte() != 0;
-        this.hasLogo = in.readByte() != 0;
+        this.isPhoto = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.isAdvertising = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.hasLogo = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.name = in.readString();
         this.parentUID = in.readString();
         this.ownerUID = in.readString();

@@ -78,10 +78,21 @@ public class MediaRequest {
     }
 
     /**
+     * Update media metadata.
+     *
+     * @param uid Media item UID.
+     * @param metaData {@link MediaMetaData}.
+     * @return {@link Call} object.
+     */
+    public Call<MediaMetaData> updateMeta(@NotNull String uid, @NotNull final MediaMetaData metaData) {
+        return service.updateMeta(uid, metaData);
+    }
+
+    /**
      * Create media item.
      *
      * @param params API params.
-     * @return {@link SingleTerm} object.
+     * @return {@link Call} object.
      */
     public Call<Media> create(@NotNull final MediaUploadParams params) {
         return service.create(params.getParams());

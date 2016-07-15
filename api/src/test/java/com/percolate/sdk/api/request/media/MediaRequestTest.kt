@@ -1,6 +1,7 @@
 package com.percolate.sdk.api.request.media
 
 import com.percolate.sdk.api.BaseApiTest
+import com.percolate.sdk.dto.MediaMetaData
 import okhttp3.RequestBody
 import org.junit.Assert
 import org.junit.Test
@@ -56,6 +57,19 @@ class MediaRequestTest : BaseApiTest() {
 
         Assert.assertNotNull(mediaMetaDataHolder)
         Assert.assertNotNull(mediaMetaDataHolder.data)
+    }
+
+    @Test
+    fun testUpdateMeta() {
+        val metadata = percolateApi
+                .media()
+                .updateMeta("video:123", MediaMetaData())
+                .execute()
+                .body();
+
+        Assert.assertNotNull(metadata)
+        Assert.assertEquals("New title", metadata.title)
+        Assert.assertEquals(2, metadata.tags.size)
     }
 
     @Test

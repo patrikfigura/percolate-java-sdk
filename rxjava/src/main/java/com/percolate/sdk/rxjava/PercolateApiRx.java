@@ -49,6 +49,7 @@ import com.percolate.sdk.rxjava.request.terms.TermsRequestRx;
 import com.percolate.sdk.rxjava.request.tokens.TokensRequestRx;
 import com.percolate.sdk.rxjava.request.topics.TopicsRequestRx;
 import com.percolate.sdk.rxjava.request.translate.TranslateRequestRx;
+import com.percolate.sdk.rxjava.request.upload.UploadRequestRx;
 import com.percolate.sdk.rxjava.request.users.UsersRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.facebook.FacebookVendorRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.instagram.InstagramVendorRequestRx;
@@ -448,6 +449,14 @@ public class PercolateApiRx extends PercolateApi {
     @SuppressWarnings("unused")
     public TranslateRequestRx translateRx() {
         return new TranslateRequestRx(this);
+    }
+
+    /**
+     * @return {@link UploadRequestRx} instance.
+     */
+    @SuppressWarnings("unused")
+    public UploadRequestRx uploadsRx() {
+        return new UploadRequestRx(this);
     }
 
     /**

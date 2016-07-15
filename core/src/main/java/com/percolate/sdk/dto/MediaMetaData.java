@@ -18,6 +18,9 @@ public class MediaMetaData implements Serializable, HasExtraFields {
 
     private static final long serialVersionUID = 7544126992287411792L;
 
+    @JsonProperty("license_id")
+    protected Long licenseId;
+
     @JsonProperty("description")
     protected String description;
 
@@ -55,13 +58,13 @@ public class MediaMetaData implements Serializable, HasExtraFields {
     protected Date subjectDate;
 
     @JsonProperty("is_photo")
-    protected boolean photo;
+    protected Boolean isPhoto;
 
     @JsonProperty("is_advertising")
-    protected boolean advertising;
+    protected Boolean isAdvertising;
 
     @JsonProperty("has_logo")
-    protected boolean hasLogo;
+    protected Boolean hasLogo;
 
     //For Folders
     @JsonProperty("name")
@@ -88,6 +91,14 @@ public class MediaMetaData implements Serializable, HasExtraFields {
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
+
+    public Long getLicenseId() {
+        return licenseId;
+    }
+
+    public void setLicenseId(Long licenseId) {
+        this.licenseId = licenseId;
     }
 
     public String getDescription() {
@@ -170,27 +181,27 @@ public class MediaMetaData implements Serializable, HasExtraFields {
         this.subjectDate = subjectDate;
     }
 
-    public boolean isPhoto() {
-        return photo;
+    public Boolean getPhoto() {
+        return isPhoto;
     }
 
-    public void setPhoto(boolean photo) {
-        this.photo = photo;
+    public void setPhoto(Boolean photo) {
+        isPhoto = photo;
     }
 
-    public boolean isAdvertising() {
-        return advertising;
+    public Boolean getAdvertising() {
+        return isAdvertising;
     }
 
-    public void setAdvertising(boolean advertising) {
-        this.advertising = advertising;
+    public void setAdvertising(Boolean advertising) {
+        isAdvertising = advertising;
     }
 
-    public boolean isHasLogo() {
+    public Boolean getHasLogo() {
         return hasLogo;
     }
 
-    public void setHasLogo(boolean hasLogo) {
+    public void setHasLogo(Boolean hasLogo) {
         this.hasLogo = hasLogo;
     }
 

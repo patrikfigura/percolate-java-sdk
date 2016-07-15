@@ -6,16 +6,13 @@ import com.percolate.sdk.api.request.media.MediaItemParams;
 import com.percolate.sdk.api.request.media.MediaListParams;
 import com.percolate.sdk.api.request.media.MediaUploadParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
-import com.percolate.sdk.dto.Media;
-import com.percolate.sdk.dto.MediaItems;
-import com.percolate.sdk.dto.MediaList;
-import com.percolate.sdk.dto.MediaMetaDataHolder;
-import com.percolate.sdk.dto.SingleTerm;
+import com.percolate.sdk.dto.*;
 
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import retrofit2.Call;
 import rx.Observable;
 
 /**
@@ -88,10 +85,21 @@ public class MediaRequestRx {
     }
 
     /**
+     * Update media metadata.
+     *
+     * @param uid Media item UID.
+     * @param metaData {@link MediaMetaData}.
+     * @return {@link Call} object.
+     */
+    public Observable<MediaMetaData> updateMeta(@NotNull String uid, @NotNull final MediaMetaData metaData) {
+        return service.updateMeta(uid, metaData);
+    }
+
+    /**
      * Create media item.
      *
      * @param params API params.
-     * @return {@link SingleTerm} object.
+     * @return {@link Call} object.
      */
     public Observable<Media> create(@NotNull final MediaUploadParams params) {
         return service.create(params.getParams());
