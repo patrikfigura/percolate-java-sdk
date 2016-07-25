@@ -44,6 +44,9 @@ public class Media implements Serializable, HasExtraFields {
     @JsonProperty("type")
     protected String type;
 
+    @JsonProperty("file_size")
+    protected Integer fileSize;
+
     @JsonProperty("metadata")
     protected MediaMetaData mediaMetaData = new MediaMetaData();
 
@@ -260,6 +263,14 @@ public class Media implements Serializable, HasExtraFields {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Integer getFileSize() {
+        return fileSize;
+    }
+
+    public void setFileSize(Integer fileSize) {
+        this.fileSize = fileSize;
     }
 
     @Override
