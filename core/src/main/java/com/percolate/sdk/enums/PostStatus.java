@@ -39,6 +39,8 @@ public class PostStatus {
         QUEUED_PUBLISHING("queued.publishing"),
         QUEUED_ERROR("queued.error"),
         QUEUED_PUBLISHED("queued.published"),
+        QUEUED_UNPUBLISHING("queued.unpublishing"),
+        UNPUBLISHED("unpublished"),
         LIVE("live");
 
         private final String value;
@@ -60,6 +62,7 @@ public class PostStatus {
         APPROVAL_DRAFTS("approvals.draft"),
         APPROVALS("approvals.*"),
         QUEUED("queued.*"),
+        UNPUBLISHED("unpublished"),
         LIVE("live");
 
         private final String value;
