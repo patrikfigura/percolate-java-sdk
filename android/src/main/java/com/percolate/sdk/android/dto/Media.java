@@ -30,6 +30,7 @@ public class Media extends com.percolate.sdk.dto.Media implements Parcelable {
         dest.writeInt(this.width);
         dest.writeInt(this.height);
         dest.writeString(this.type);
+        dest.writeInt(this.fileSize);
         dest.writeSerializable(this.mediaMetaData);
         dest.writeString(this.url);
         dest.writeString(this.state);
@@ -54,6 +55,7 @@ public class Media extends com.percolate.sdk.dto.Media implements Parcelable {
         this.width = in.readInt();
         this.height = in.readInt();
         this.type = in.readString();
+        this.fileSize = in.readInt();
         this.mediaMetaData = (com.percolate.sdk.dto.MediaMetaData) in.readSerializable();
         this.url = in.readString();
         this.state = in.readString();
