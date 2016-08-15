@@ -14,7 +14,7 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UploadPolicyRequestData implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = 8979109163471254287L;
+    private static final long serialVersionUID = -5850668333170408350L;
 
     @JsonProperty("upload_id")
     protected String uploadId;
@@ -23,7 +23,7 @@ public class UploadPolicyRequestData implements Serializable, HasExtraFields {
     protected String type;
 
     @JsonProperty("ext")
-    protected String ext;
+    protected UploadPolicyRequestDataExt ext;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -49,11 +49,11 @@ public class UploadPolicyRequestData implements Serializable, HasExtraFields {
         this.type = type;
     }
 
-    public String getExt() {
+    public UploadPolicyRequestDataExt getExt() {
         return ext;
     }
 
-    public void setExt(String ext) {
+    public void setExt(UploadPolicyRequestDataExt ext) {
         this.ext = ext;
     }
 

@@ -19,7 +19,7 @@ public class UploadPolicyRequestData extends com.percolate.sdk.dto.UploadPolicyR
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.uploadId);
         dest.writeString(this.type);
-        dest.writeString(this.ext);
+        dest.writeSerializable(this.ext);
         dest.writeMap(this.extraFields);
     }
 
@@ -29,7 +29,7 @@ public class UploadPolicyRequestData extends com.percolate.sdk.dto.UploadPolicyR
     protected UploadPolicyRequestData(Parcel in) {
         this.uploadId = in.readString();
         this.type = in.readString();
-        this.ext = in.readString();
+        this.ext = (com.percolate.sdk.dto.UploadPolicyRequestDataExt) in.readSerializable();
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
