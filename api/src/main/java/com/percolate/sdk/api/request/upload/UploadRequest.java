@@ -2,6 +2,7 @@ package com.percolate.sdk.api.request.upload;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
+import com.percolate.sdk.dto.UploadPolicyRequestData;
 import com.percolate.sdk.dto.UploadPolicyResponse;
 import com.percolate.sdk.dto.UploadRequestData;
 import com.percolate.sdk.dto.UploadResponse;
@@ -43,10 +44,10 @@ public class UploadRequest {
     /**
      * Upload Policy endpoint
      *
-     * @param params Upload policy params.
+     * @param uploadPolicyRequestData Upload policy data.
      * @return {@link Call} object.
      */
-    public Call<UploadPolicyResponse> uploadPolicy(@NotNull final UploadPolicyParams params) {
-        return service.uploadPolicy(params.getParams());
+    public Call<UploadPolicyResponse> uploadPolicy(@NotNull final UploadPolicyRequestData uploadPolicyRequestData) {
+        return service.uploadPolicy(uploadPolicyRequestData);
     }
 }
