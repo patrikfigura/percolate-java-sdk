@@ -24,6 +24,21 @@ public class UploadPolicyParams {
         return this;
     }
 
+    public UploadPolicyParams partNumber(String partNumber) {
+        params.put("part_number", partNumber);
+        return this;
+    }
+
+    public UploadPolicyParams contentLength(String contentLength) {
+        params.put("Content-Length", contentLength);
+        return this;
+    }
+
+    public UploadPolicyParams sha256(String sha256) {
+        params.put("x-amz-content-sha256", sha256);
+        return this;
+    }
+
     public Map<String, Object> getParams() {
         return params;
     }
