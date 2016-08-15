@@ -20,7 +20,7 @@ public class UploadPolicyRequestDataExt implements Serializable, HasExtraFields 
     protected Integer partNumber;
 
     @JsonProperty("Content-Length")
-    protected String contentLength;
+    protected Long contentLength;
 
     @JsonProperty("x-amz-content-sha256")
     protected String sha256;
@@ -41,11 +41,11 @@ public class UploadPolicyRequestDataExt implements Serializable, HasExtraFields 
         this.partNumber = partNumber;
     }
 
-    public String getContentLength() {
+    public Long getContentLength() {
         return contentLength;
     }
 
-    public void setContentLength(String contentLength) {
+    public void setContentLength(Long contentLength) {
         this.contentLength = contentLength;
     }
 

@@ -18,7 +18,7 @@ public class UploadPolicyRequestDataExt extends com.percolate.sdk.dto.UploadPoli
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeValue(this.partNumber);
-        dest.writeString(this.contentLength);
+        dest.writeValue(this.contentLength);
         dest.writeString(this.sha256);
         dest.writeMap(this.extraFields);
     }
@@ -28,7 +28,7 @@ public class UploadPolicyRequestDataExt extends com.percolate.sdk.dto.UploadPoli
 
     protected UploadPolicyRequestDataExt(Parcel in) {
         this.partNumber = (Integer) in.readValue(Integer.class.getClassLoader());
-        this.contentLength = in.readString();
+        this.contentLength = (Long) in.readValue(Long.class.getClassLoader());
         this.sha256 = in.readString();
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
