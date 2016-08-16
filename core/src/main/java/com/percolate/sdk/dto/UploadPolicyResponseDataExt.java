@@ -14,7 +14,7 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UploadPolicyResponseDataExt implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = 244883792597394126L;
+    private static final long serialVersionUID = -3029734739224968270L;
 
     @JsonProperty("AWSAccessKeyId")
     protected String awsAccessKeyId;
@@ -33,6 +33,21 @@ public class UploadPolicyResponseDataExt implements Serializable, HasExtraFields
 
     @JsonProperty("policy")
     protected String policy;
+
+    @JsonProperty("Authorization")
+    protected String Authorization;
+
+    @JsonProperty("Content-Length")
+    protected Long contentLength;
+
+    @JsonProperty("part_number")
+    protected Integer partNumber;
+
+    @JsonProperty("x-amz-date")
+    protected String amzDate;
+
+    @JsonProperty("x-amz-content-sha256")
+    protected String amzContentSha256;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -88,6 +103,46 @@ public class UploadPolicyResponseDataExt implements Serializable, HasExtraFields
 
     public void setPolicy(String policy) {
         this.policy = policy;
+    }
+
+    public String getAuthorization() {
+        return Authorization;
+    }
+
+    public void setAuthorization(String authorization) {
+        Authorization = authorization;
+    }
+
+    public Long getContentLength() {
+        return contentLength;
+    }
+
+    public void setContentLength(Long contentLength) {
+        this.contentLength = contentLength;
+    }
+
+    public Integer getPartNumber() {
+        return partNumber;
+    }
+
+    public void setPartNumber(Integer partNumber) {
+        this.partNumber = partNumber;
+    }
+
+    public String getAmzDate() {
+        return amzDate;
+    }
+
+    public void setAmzDate(String amzDate) {
+        this.amzDate = amzDate;
+    }
+
+    public String getAmzContentSha256() {
+        return amzContentSha256;
+    }
+
+    public void setAmzContentSha256(String amzContentSha256) {
+        this.amzContentSha256 = amzContentSha256;
     }
 
     @Override
