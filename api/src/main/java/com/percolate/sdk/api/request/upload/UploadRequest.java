@@ -2,10 +2,7 @@ package com.percolate.sdk.api.request.upload;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
-import com.percolate.sdk.dto.UploadPolicyRequestData;
-import com.percolate.sdk.dto.UploadPolicyResponse;
-import com.percolate.sdk.dto.UploadRequestData;
-import com.percolate.sdk.dto.UploadResponse;
+import com.percolate.sdk.dto.*;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 
@@ -29,6 +26,17 @@ public class UploadRequest {
      */
     public Call<UploadResponse> status(@NotNull final String uploadId) {
         return service.status(uploadId);
+    }
+
+    /**
+     * Update media status.
+     *
+     * @param uploadId Upload id.
+     * @param uploadStatusRequestData Upload status.
+     * @return {@link Call} object.
+     */
+    public Call<UploadResponse> updateStatus(@NotNull final String uploadId, @NotNull final UploadStatusRequestData uploadStatusRequestData) {
+        return service.updateStatus(uploadId, uploadStatusRequestData);
     }
 
     /**
