@@ -1,12 +1,10 @@
 package com.percolate.sdk.rxjava.request.upload;
 
 import com.percolate.sdk.api.PercolateApi;
-import com.percolate.sdk.api.request.upload.UploadPolicyParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
-import com.percolate.sdk.dto.UploadPolicyResponse;
-import com.percolate.sdk.dto.UploadRequestData;
-import com.percolate.sdk.dto.UploadResponse;
+import com.percolate.sdk.dto.*;
 import org.jetbrains.annotations.NotNull;
+import retrofit2.Call;
 import rx.Observable;
 
 /**
@@ -32,6 +30,17 @@ public class UploadRequestRx {
     }
 
     /**
+     * Update media status.
+     *
+     * @param uploadId Upload id.
+     * @param uploadStatusRequestData Upload status.
+     * @return {@link Call} object.
+     */
+    public Observable<UploadResponse> updateStatus(@NotNull final String uploadId, @NotNull final UploadStatusRequestData uploadStatusRequestData) {
+        return service.updateStatus(uploadId, uploadStatusRequestData);
+    }
+
+    /**
      * Upload endpoint
      *
      * @param uploadRequestData Upload data
@@ -44,10 +53,10 @@ public class UploadRequestRx {
     /**
      * Upload Policy endpoint
      *
-     * @param params Upload policy params.
-     * @return {@link Observable} object.
+     * @param uploadPolicyRequestData Upload policy data.
+     * @return {@link Call} object.
      */
-    public Observable<UploadPolicyResponse> uploadPolicy(@NotNull final UploadPolicyParams params) {
-        return service.uploadPolicy(params.getParams());
+    public Observable<UploadPolicyResponse> uploadPolicy(@NotNull final UploadPolicyRequestData uploadPolicyRequestData) {
+        return service.uploadPolicy(uploadPolicyRequestData);
     }
 }

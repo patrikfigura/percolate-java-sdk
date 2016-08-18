@@ -23,6 +23,11 @@ public class UploadPolicyResponseDataExt extends com.percolate.sdk.dto.UploadPol
         dest.writeString(this.acl);
         dest.writeString(this.signature);
         dest.writeString(this.policy);
+        dest.writeString(this.Authorization);
+        dest.writeValue(this.contentLength);
+        dest.writeValue(this.partNumber);
+        dest.writeString(this.amzDate);
+        dest.writeString(this.amzContentSha256);
         dest.writeMap(this.extraFields);
     }
 
@@ -36,6 +41,11 @@ public class UploadPolicyResponseDataExt extends com.percolate.sdk.dto.UploadPol
         this.acl = in.readString();
         this.signature = in.readString();
         this.policy = in.readString();
+        this.Authorization = in.readString();
+        this.contentLength = (Long) in.readValue(Long.class.getClassLoader());
+        this.partNumber = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.amzDate = in.readString();
+        this.amzContentSha256 = in.readString();
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
