@@ -37,6 +37,11 @@ public class MediaListParams {
         return this;
     }
 
+    public MediaListParams flat(Boolean flat) {
+        params.put("flat", flat);
+        return this;
+    }
+
     public MediaListParams folderUid(String folderUid) {
         params.put("folder_uid", folderUid);
         return this;
