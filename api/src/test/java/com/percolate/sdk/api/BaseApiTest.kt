@@ -7,7 +7,7 @@ package com.percolate.sdk.api
  */
 open class BaseApiTest {
 
-    var percolateApi : PercolateApi;
+    var percolateApi : PercolateApi
 
     constructor() {
         percolateApi = PercolateApi("")

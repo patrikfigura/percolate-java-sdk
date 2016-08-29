@@ -1,0 +1,25 @@
+{
+  "guardrails": {},
+  "scheduling": {
+    "enabled": false,
+    "daily_frequency": null,
+    "from_hour": null,
+    "days": null,
+    "to_hour": null
+  },
+  "approvee_ids": [],
+  "targeting_presets": [],
+  "tags": [],
+  "platform_uids": [],
+  "preferred_term_uids": [],
+  "tag_ids": [],
+  "paused": false,
+  "platforms": [],
+  "image_editor_tools": [],
+  "services": [],
+  "crops": [],
+  "external_media_rate_limit": 1000,
+  "publishing": {
+    "reference_source": true
+  }
+}

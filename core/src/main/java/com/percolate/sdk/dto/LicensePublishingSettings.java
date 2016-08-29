@@ -15,7 +15,7 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicensePublishingSettings implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -5154375915441246126L;
+    private static final long serialVersionUID = -7497352074904109845L;
 
     /* Everything available in the JSON:
          * guardrails
@@ -35,6 +35,9 @@ public class LicensePublishingSettings implements Serializable, HasExtraFields {
     @JsonProperty("tags")
     protected List<Topic> topics;
 
+    @JsonProperty("paused")
+    protected Boolean paused;
+
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
@@ -49,6 +52,14 @@ public class LicensePublishingSettings implements Serializable, HasExtraFields {
 
     public void setTopics(List<Topic> topics) {
         this.topics = topics;
+    }
+
+    public Boolean getPaused() {
+        return paused;
+    }
+
+    public void setPaused(Boolean paused) {
+        this.paused = paused;
     }
 
     @Override

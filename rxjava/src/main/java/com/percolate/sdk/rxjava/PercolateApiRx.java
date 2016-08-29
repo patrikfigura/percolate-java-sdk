@@ -21,6 +21,7 @@ import com.percolate.sdk.rxjava.request.features.FeaturesRequestRx;
 import com.percolate.sdk.rxjava.request.followers.FollowersRequestRx;
 import com.percolate.sdk.rxjava.request.interaction.InteractionRequestRx;
 import com.percolate.sdk.rxjava.request.license.LicenseRequestRx;
+import com.percolate.sdk.rxjava.request.license.settings.LicenseSettingsRequestRx;
 import com.percolate.sdk.rxjava.request.license.users.LicenseUsersRequestRx;
 import com.percolate.sdk.rxjava.request.licensechannel.LicenseChannelRequestRx;
 import com.percolate.sdk.rxjava.request.links.LinksRequestRx;
@@ -249,6 +250,14 @@ public class PercolateApiRx extends PercolateApi {
     @SuppressWarnings("unused")
     public InteractionRequestRx interactionsRx() {
         return new InteractionRequestRx(this);
+    }
+
+    /**
+     * @return {@link LicenseSettingsRequestRx} instance.
+     */
+    @SuppressWarnings("unused")
+    public LicenseSettingsRequestRx licenseSettingsRx() {
+        return new LicenseSettingsRequestRx(this);
     }
 
     /**
