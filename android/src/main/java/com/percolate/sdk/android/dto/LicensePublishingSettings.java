@@ -19,6 +19,7 @@ public class LicensePublishingSettings extends com.percolate.sdk.dto.LicensePubl
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeList(this.topics);
+        dest.writeValue(this.paused);
         dest.writeMap(this.extraFields);
     }
 
@@ -28,6 +29,7 @@ public class LicensePublishingSettings extends com.percolate.sdk.dto.LicensePubl
     protected LicensePublishingSettings(Parcel in) {
         this.topics = new ArrayList<com.percolate.sdk.dto.Topic>();
         in.readList(this.topics, List.class.getClassLoader());
+        this.paused = (Boolean) in.readValue(Boolean.class.getClassLoader());
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
