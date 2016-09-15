@@ -5,5 +5,6 @@ package com.percolate.sdk.enums;
  */
 public enum ApprovalType {
     POST,
-    BRIEF;
+    BRIEF,
+    ASSET
 }
