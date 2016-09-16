@@ -1,4 +1,4 @@
-package com.percolate.sdk.api.request.comment
+package com.percolate.sdk.api.request.config
 
 import com.percolate.sdk.api.BaseApiTest
 import org.junit.Assert
