@@ -14,6 +14,7 @@ import com.percolate.sdk.api.request.campaign.workspace.WorkspaceSectionsRequest
 import com.percolate.sdk.api.request.campaignsection.CampaignSectionsRequest;
 import com.percolate.sdk.api.request.channel.ChannelRequest;
 import com.percolate.sdk.api.request.comment.CommentRequest;
+import com.percolate.sdk.api.request.config.ConfigRequest;
 import com.percolate.sdk.api.request.features.FeaturesRequest;
 import com.percolate.sdk.api.request.followers.FollowersRequest;
 import com.percolate.sdk.api.request.interaction.InteractionRequest;
@@ -244,6 +245,14 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public CampaignSectionsRequest campaignSections() {
         return new CampaignSectionsRequest(this);
+    }
+
+    /**
+     * @return {@link ConfigRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public ConfigRequest config() {
+        return new ConfigRequest(this);
     }
 
     /**
