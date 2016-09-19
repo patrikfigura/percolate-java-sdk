@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "query": {},
+    "total": 1
+  },
+  "data": [
+    {
+      "id": "config:key1",
+      "value": "val1",
+      "updated_at": "2016-09-16T19:33:48+00:00"
+    },
+    {
+      "id": "config:key2",
+      "value": "val2",
+      "updated_at": "2016-09-16T19:33:48+00:00"
+    },
+    {
+      "id": "config:key3",
+      "value": "val3",
+      "updated_at": "2016-09-16T19:33:48+00:00"
+    }
+  ]
+}
