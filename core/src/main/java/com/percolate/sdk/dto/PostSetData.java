@@ -102,6 +102,9 @@ public class PostSetData implements Serializable, HasExtraFields {
     @JsonProperty("related_license_id")
     protected Integer relatedLicenseId;
 
+    @JsonProperty("video_id")
+    protected String videoId;
+
     @JsonProperty("errors")
     protected List<LinkedHashMap<String, Object>> errors;
 
@@ -350,6 +353,14 @@ public class PostSetData implements Serializable, HasExtraFields {
 
     public String getUserAgent() {
         return userAgent;
+    }
+
+    public String getVideoId() {
+        return videoId;
+    }
+
+    public void setVideoId(String videoId) {
+        this.videoId = videoId;
     }
 
     public List<LinkedHashMap<String, Object>> getErrors() {
