@@ -44,11 +44,11 @@ public class Schema extends com.percolate.sdk.dto.Schema implements Parcelable {
         this.status = in.readString();
         this.type = in.readString();
         this.name = in.readString();
-        this.fields = new ArrayList<com.percolate.sdk.dto.SchemaField>();
+        this.fields = new ArrayList<>();
         in.readList(this.fields, List.class.getClassLoader());
-        this.plugins = new ArrayList<Object>();
+        this.plugins = new ArrayList<>();
         in.readList(this.plugins, List.class.getClassLoader());
-        this.fieldsets = new ArrayList<Object>();
+        this.fieldsets = new ArrayList<>();
         in.readList(this.fieldsets, List.class.getClassLoader());
         in.readMap(this.ext, LinkedHashMap.class.getClassLoader());
         this.updated_at = in.readString();
