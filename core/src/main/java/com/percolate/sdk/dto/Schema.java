@@ -17,7 +17,7 @@ import java.util.*;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Schema implements Serializable, HasExtraFields, Comparable<Schema> {
 
-    private static final long serialVersionUID = -6137788601263891457L;
+    private static final long serialVersionUID = 6842648994318822793L;
 
     @JsonProperty("id")
     protected String id;
@@ -38,7 +38,7 @@ public class Schema implements Serializable, HasExtraFields, Comparable<Schema> 
     protected List<SchemaField> fields;
 
     @JsonProperty("plugins")
-    protected List<Object> plugins;
+    protected List<SchemaPlugin> plugins;
 
     @JsonProperty("fieldsets")
     protected List<Object> fieldsets;
@@ -151,11 +151,11 @@ public class Schema implements Serializable, HasExtraFields, Comparable<Schema> 
         this.fields = fields;
     }
 
-    public List<Object> getPlugins() {
+    public List<SchemaPlugin> getPlugins() {
         return plugins;
     }
 
-    public void setPlugins(List<Object> plugins) {
+    public void setPlugins(List<SchemaPlugin> plugins) {
         this.plugins = plugins;
     }
 
