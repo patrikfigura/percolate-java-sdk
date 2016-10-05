@@ -10,6 +10,7 @@ import com.percolate.sdk.rxjava.request.approvals.workflow.ApprovalWorkflowReque
 import com.percolate.sdk.rxjava.request.approvals.workflow.history.ApprovalWorkflowHistoryRequestRx;
 import com.percolate.sdk.rxjava.request.auth.AuthRequestRx;
 import com.percolate.sdk.rxjava.request.authorization.UserRolesRequestRx;
+import com.percolate.sdk.rxjava.request.autocomplete.AutocompleteRequestRx;
 import com.percolate.sdk.rxjava.request.brief.BriefRequestRx;
 import com.percolate.sdk.rxjava.request.campaign.CampaignsRequestRx;
 import com.percolate.sdk.rxjava.request.campaign.brief.BriefSectionsRequestRx;
@@ -101,6 +102,13 @@ public class PercolateApiRx extends PercolateApi {
      */
     public AuthRequestRx authRx() {
         return new AuthRequestRx(this);
+    }
+
+    /**
+     * @return {@link AutocompleteRequestRx} instance.
+     */
+    public AutocompleteRequestRx autocompleteRx() {
+        return new AutocompleteRequestRx(this);
     }
 
     /**

@@ -7,6 +7,7 @@ import com.percolate.sdk.api.request.approvals.workflow.ApprovalWorkflowRequest;
 import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflowHistoryRequest;
 import com.percolate.sdk.api.request.auth.AuthRequest;
 import com.percolate.sdk.api.request.authorization.UserRolesRequest;
+import com.percolate.sdk.api.request.autocomplete.AutocompleteRequest;
 import com.percolate.sdk.api.request.brief.BriefRequest;
 import com.percolate.sdk.api.request.campaign.CampaignsRequest;
 import com.percolate.sdk.api.request.campaign.brief.BriefSectionsRequest;
@@ -173,6 +174,13 @@ public class PercolateApi {
      */
     public AuthRequest auth() {
         return new AuthRequest(this);
+    }
+
+    /**
+     * @return {@link AutocompleteRequest} instance.
+     */
+    public AutocompleteRequest autocomplete() {
+        return new AutocompleteRequest(this);
     }
 
     /**
