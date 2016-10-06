@@ -7,6 +7,7 @@ import com.percolate.sdk.api.request.approvals.workflow.ApprovalWorkflowRequest;
 import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflowHistoryRequest;
 import com.percolate.sdk.api.request.auth.AuthRequest;
 import com.percolate.sdk.api.request.authorization.UserRolesRequest;
+import com.percolate.sdk.api.request.autocomplete.AutocompleteRequest;
 import com.percolate.sdk.api.request.brief.BriefRequest;
 import com.percolate.sdk.api.request.campaign.CampaignsRequest;
 import com.percolate.sdk.api.request.campaign.brief.BriefSectionsRequest;
@@ -14,10 +15,12 @@ import com.percolate.sdk.api.request.campaign.workspace.WorkspaceSectionsRequest
 import com.percolate.sdk.api.request.campaignsection.CampaignSectionsRequest;
 import com.percolate.sdk.api.request.channel.ChannelRequest;
 import com.percolate.sdk.api.request.comment.CommentRequest;
+import com.percolate.sdk.api.request.config.ConfigRequest;
 import com.percolate.sdk.api.request.features.FeaturesRequest;
 import com.percolate.sdk.api.request.followers.FollowersRequest;
 import com.percolate.sdk.api.request.interaction.InteractionRequest;
 import com.percolate.sdk.api.request.license.LicenseRequest;
+import com.percolate.sdk.api.request.license.settings.LicenseSettingsRequest;
 import com.percolate.sdk.api.request.license.users.LicenseUsersRequest;
 import com.percolate.sdk.api.request.licensechannel.LicenseChannelRequest;
 import com.percolate.sdk.api.request.links.LinksRequest;
@@ -174,6 +177,13 @@ public class PercolateApi {
     }
 
     /**
+     * @return {@link AutocompleteRequest} instance.
+     */
+    public AutocompleteRequest autocomplete() {
+        return new AutocompleteRequest(this);
+    }
+
+    /**
      * @return {@link TermsRequest} instance.
      */
     @SuppressWarnings("unused")
@@ -243,6 +253,14 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public CampaignSectionsRequest campaignSections() {
         return new CampaignSectionsRequest(this);
+    }
+
+    /**
+     * @return {@link ConfigRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public ConfigRequest config() {
+        return new ConfigRequest(this);
     }
 
     /**
@@ -321,6 +339,14 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public InteractionRequest interactions() {
         return new InteractionRequest(this);
+    }
+
+    /**
+     * @return {@link LicenseSettingsRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public LicenseSettingsRequest licenseSettings() {
+        return new LicenseSettingsRequest(this);
     }
 
     /**

@@ -13,30 +13,15 @@ import java.util.Map;
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class LicensePublishingSettings implements Serializable, HasExtraFields {
+public class AutocompleteResponse implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -7497352074904109845L;
+    private static final long serialVersionUID = -5906918116705860091L;
 
-    /* Everything available in the JSON:
-         * guardrails
-         * scheduling   
-         * approvee_ids 
-         * targeting_presets    
-         * tags 
-         * tag_ids  
-         * paused
-         * platforms    
-         * image_editor_tools   
-         * services 
-         * external_media_rate_limit
-         * publishing
-    */
+    @JsonProperty("meta")
+    protected V5Meta meta;
 
-    @JsonProperty("tags")
-    protected List<Topic> topics;
-
-    @JsonProperty("paused")
-    protected Boolean paused;
+    @JsonProperty("data")
+    protected List<AutocompleteResponseData> data;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -46,25 +31,25 @@ public class LicensePublishingSettings implements Serializable, HasExtraFields {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-    public List<Topic> getTopics() {
-        return topics;
+    public V5Meta getMeta() {
+        return meta;
     }
 
-    public void setTopics(List<Topic> topics) {
-        this.topics = topics;
+    public void setMeta(V5Meta meta) {
+        this.meta = meta;
     }
 
-    public Boolean getPaused() {
-        return paused;
+    public List<AutocompleteResponseData> getData() {
+        return data;
     }
 
-    public void setPaused(Boolean paused) {
-        this.paused = paused;
+    public void setData(List<AutocompleteResponseData> data) {
+        this.data = data;
     }
 
     @Override
     public Map<String, Object> getExtraFields() {
-        if(extraFields == null) {
+        if (extraFields == null) {
             extraFields = new HashMap<>();
         }
         return extraFields;

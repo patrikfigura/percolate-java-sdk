@@ -7,36 +7,27 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.List;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class LicensePublishingSettings implements Serializable, HasExtraFields {
+public class SchemaPlugin implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -7497352074904109845L;
+    private static final long serialVersionUID = -7305761577921674778L;
 
-    /* Everything available in the JSON:
-         * guardrails
-         * scheduling   
-         * approvee_ids 
-         * targeting_presets    
-         * tags 
-         * tag_ids  
-         * paused
-         * platforms    
-         * image_editor_tools   
-         * services 
-         * external_media_rate_limit
-         * publishing
-    */
+    @JsonProperty("key")
+    protected String key;
 
-    @JsonProperty("tags")
-    protected List<Topic> topics;
+    @JsonProperty("type")
+    protected String type;
 
-    @JsonProperty("paused")
-    protected Boolean paused;
+    @JsonProperty("field_key")
+    protected String fieldKey;
+
+    @JsonProperty("ext")
+    protected LinkedHashMap<String, Object> ext;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -46,20 +37,36 @@ public class LicensePublishingSettings implements Serializable, HasExtraFields {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-    public List<Topic> getTopics() {
-        return topics;
+    public String getKey() {
+        return key;
     }
 
-    public void setTopics(List<Topic> topics) {
-        this.topics = topics;
+    public void setKey(String key) {
+        this.key = key;
     }
 
-    public Boolean getPaused() {
-        return paused;
+    public String getType() {
+        return type;
     }
 
-    public void setPaused(Boolean paused) {
-        this.paused = paused;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getFieldKey() {
+        return fieldKey;
+    }
+
+    public void setFieldKey(String fieldKey) {
+        this.fieldKey = fieldKey;
+    }
+
+    public LinkedHashMap<String, Object> getExt() {
+        return ext;
+    }
+
+    public void setExt(LinkedHashMap<String, Object> ext) {
+        this.ext = ext;
     }
 
     @Override
