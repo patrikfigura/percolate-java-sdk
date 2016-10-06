@@ -41,6 +41,16 @@ public class CampaignsListParams {
         return this;
     }
 
+    public CampaignsListParams title(String title) {
+        params.put("title", title);
+        return this;
+    }
+
+    public CampaignsListParams keywords(List<String> keyboards) {
+        params.put("keywords", StringUtils.join(keyboards, ","));
+        return this;
+    }
+
     public CampaignsListParams startAt(String startAt) {
         params.put("start_at", startAt);
         return this;
