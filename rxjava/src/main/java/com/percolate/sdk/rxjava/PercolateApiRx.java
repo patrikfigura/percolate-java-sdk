@@ -10,6 +10,7 @@ import com.percolate.sdk.rxjava.request.approvals.workflow.ApprovalWorkflowReque
 import com.percolate.sdk.rxjava.request.approvals.workflow.history.ApprovalWorkflowHistoryRequestRx;
 import com.percolate.sdk.rxjava.request.auth.AuthRequestRx;
 import com.percolate.sdk.rxjava.request.authorization.UserRolesRequestRx;
+import com.percolate.sdk.rxjava.request.autocomplete.AutocompleteRequestRx;
 import com.percolate.sdk.rxjava.request.brief.BriefRequestRx;
 import com.percolate.sdk.rxjava.request.campaign.CampaignsRequestRx;
 import com.percolate.sdk.rxjava.request.campaign.brief.BriefSectionsRequestRx;
@@ -17,10 +18,12 @@ import com.percolate.sdk.rxjava.request.campaign.workspace.WorkspaceSectionsRequ
 import com.percolate.sdk.rxjava.request.campaignsection.CampaignSectionsRequestRx;
 import com.percolate.sdk.rxjava.request.channel.ChannelRequestRx;
 import com.percolate.sdk.rxjava.request.comment.CommentRequestRx;
+import com.percolate.sdk.rxjava.request.config.ConfigRequestRx;
 import com.percolate.sdk.rxjava.request.features.FeaturesRequestRx;
 import com.percolate.sdk.rxjava.request.followers.FollowersRequestRx;
 import com.percolate.sdk.rxjava.request.interaction.InteractionRequestRx;
 import com.percolate.sdk.rxjava.request.license.LicenseRequestRx;
+import com.percolate.sdk.rxjava.request.license.settings.LicenseSettingsRequestRx;
 import com.percolate.sdk.rxjava.request.license.users.LicenseUsersRequestRx;
 import com.percolate.sdk.rxjava.request.licensechannel.LicenseChannelRequestRx;
 import com.percolate.sdk.rxjava.request.links.LinksRequestRx;
@@ -102,6 +105,13 @@ public class PercolateApiRx extends PercolateApi {
     }
 
     /**
+     * @return {@link AutocompleteRequestRx} instance.
+     */
+    public AutocompleteRequestRx autocompleteRx() {
+        return new AutocompleteRequestRx(this);
+    }
+
+    /**
      * @return {@link TermsRequestRx} instance.
      */
     @SuppressWarnings("unused")
@@ -171,6 +181,14 @@ public class PercolateApiRx extends PercolateApi {
     @SuppressWarnings("unused")
     public CampaignSectionsRequestRx campaignSectionsRx() {
         return new CampaignSectionsRequestRx(this);
+    }
+
+    /**
+     * @return {@link ConfigRequestRx} instance.
+     */
+    @SuppressWarnings("unused")
+    public ConfigRequestRx configRx() {
+        return new ConfigRequestRx(this);
     }
 
     /**
@@ -249,6 +267,14 @@ public class PercolateApiRx extends PercolateApi {
     @SuppressWarnings("unused")
     public InteractionRequestRx interactionsRx() {
         return new InteractionRequestRx(this);
+    }
+
+    /**
+     * @return {@link LicenseSettingsRequestRx} instance.
+     */
+    @SuppressWarnings("unused")
+    public LicenseSettingsRequestRx licenseSettingsRx() {
+        return new LicenseSettingsRequestRx(this);
     }
 
     /**
