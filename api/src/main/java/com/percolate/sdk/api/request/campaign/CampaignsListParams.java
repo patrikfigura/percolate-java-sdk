@@ -46,8 +46,8 @@ public class CampaignsListParams {
         return this;
     }
 
-    public CampaignsListParams keywords(List<String> keyboards) {
-        params.put("keywords", StringUtils.join(keyboards, ","));
+    public CampaignsListParams keywords(String keywords) {
+        params.put("keywords", StringUtils.join(keywords, ","));
         return this;
     }
 
