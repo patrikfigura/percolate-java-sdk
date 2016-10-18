@@ -12,7 +12,7 @@ class CampaignsRequestTest : BaseApiTest() {
                 .campaigns()
                 .list(CampaignsListParams())
                 .execute()
-                .body();
+                .body()
 
         Assert.assertNotNull(campaigns)
         Assert.assertNotNull(campaigns.data)
@@ -25,7 +25,7 @@ class CampaignsRequestTest : BaseApiTest() {
                 .campaigns()
                 .get("123")
                 .execute()
-                .body();
+                .body()
 
         Assert.assertNotNull(singleCampaign)
         Assert.assertNotNull(singleCampaign.data)
