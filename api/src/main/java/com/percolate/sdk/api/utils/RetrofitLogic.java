@@ -79,6 +79,11 @@ public class RetrofitLogic {
             okHttpClientBuilder.interceptors().add(context.getSelectedServer().getCustomInterceptor());
         }
 
+        //Add timing interceptor
+        if(context.getSelectedServer().isTrackTimingData()) {
+            okHttpClientBuilder.interceptors().add(new TimingInterceptor());
+        }
+
         // Enable caching.
         if(context.getSelectedServer().getCache() != null) {
             okHttpClientBuilder.cache(context.getSelectedServer().getCache());

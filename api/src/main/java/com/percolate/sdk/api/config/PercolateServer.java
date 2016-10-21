@@ -24,6 +24,11 @@ public class PercolateServer {
     private boolean enableLocalProxy = false;
 
     /**
+     * Send timing data to help us improve slow endpoints.  Disabled by default.
+     */
+    private boolean trackTimingData = false;
+
+    /**
      * Allow clients to inject a custom interceptor if required.
      */
     private Interceptor customInterceptor;
@@ -52,6 +57,14 @@ public class PercolateServer {
 
     public void setEnableLocalProxy(boolean enableLocalProxy) {
         this.enableLocalProxy = enableLocalProxy;
+    }
+
+    public boolean isTrackTimingData() {
+        return trackTimingData;
+    }
+
+    public void setTrackTimingData(boolean trackTimingData) {
+        this.trackTimingData = trackTimingData;
     }
 
     public Interceptor getCustomInterceptor() {
