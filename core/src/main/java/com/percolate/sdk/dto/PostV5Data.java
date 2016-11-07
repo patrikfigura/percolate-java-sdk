@@ -109,6 +109,9 @@ public class PostV5Data implements Serializable, HasExtraFields {
     @JsonProperty("link_ids")
     protected List<String> linkIds;
 
+    @JsonProperty("metadata")
+    protected List<MetadataItem> metadata;
+
     @JsonProperty("created_at")
     protected String createdAt;
 
@@ -292,6 +295,14 @@ public class PostV5Data implements Serializable, HasExtraFields {
 
     public void setLinkIds(List<String> linkIds) {
         this.linkIds = linkIds;
+    }
+
+    public List<MetadataItem> getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(List<MetadataItem> metadata) {
+        this.metadata = metadata;
     }
 
     public String getCreatedAt() {
