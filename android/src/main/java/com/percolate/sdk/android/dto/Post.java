@@ -55,6 +55,7 @@ public class Post extends com.percolate.sdk.dto.Post implements Parcelable {
         dest.writeString(this.errorId);
         dest.writeValue(this.approvalPoolId);
         dest.writeList(this.facebookMentions);
+        dest.writeList(this.metadata);
         dest.writeMap(this.extraFields);
         dest.writeMap(this.extraFields);
     }
@@ -94,8 +95,10 @@ public class Post extends com.percolate.sdk.dto.Post implements Parcelable {
         this.referenceXId = in.readString();
         this.errorId = in.readString();
         this.approvalPoolId = (Long) in.readValue(Long.class.getClassLoader());
-        this.facebookMentions = new ArrayList<FacebookMentionData>();
+        this.facebookMentions = new ArrayList<>();
         in.readList(this.facebookMentions, List.class.getClassLoader());
+        this.metadata= new ArrayList<>();
+        in.readList(this.metadata, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
