@@ -107,6 +107,9 @@ public class Post implements Serializable, HasExtraFields {
     @JsonProperty("facebook_mentions")
     protected List<FacebookMentionData> facebookMentions;
 
+    @JsonProperty("metadata")
+    protected List<MetadataItem> metadata;
+
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
@@ -321,6 +324,14 @@ public class Post implements Serializable, HasExtraFields {
 
     public void setFacebookMentions(List<FacebookMentionData> facebookMentions) {
         this.facebookMentions = facebookMentions;
+    }
+
+    public List<MetadataItem> getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(List<MetadataItem> metadata) {
+        this.metadata = metadata;
     }
 
     @Override

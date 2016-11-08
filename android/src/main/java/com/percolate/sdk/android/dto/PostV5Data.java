@@ -46,6 +46,7 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
         dest.writeStringList(this.termIds);
         dest.writeStringList(this.originIds);
         dest.writeStringList(this.linkIds);
+        dest.writeList(this.metadata);
         dest.writeString(this.createdAt);
         dest.writeString(this.updatedAt);
         dest.writeMap(this.ext);
@@ -83,6 +84,7 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
         this.termIds = other.getTermIds();
         this.originIds = other.getOriginIds();
         this.linkIds = other.getLinkIds();
+        this.metadata = other.getMetadata();
         this.createdAt = other.getCreatedAt();
         this.updatedAt = other.getUpdatedAt();
         this.ext = other.getExt();
@@ -118,6 +120,8 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
         this.termIds = in.createStringArrayList();
         this.originIds = in.createStringArrayList();
         this.linkIds = in.createStringArrayList();
+        this.metadata= new ArrayList<>();
+        in.readList(this.metadata, List.class.getClassLoader());
         this.createdAt = in.readString();
         this.updatedAt = in.readString();
         this.ext = new LinkedHashMap<>();
