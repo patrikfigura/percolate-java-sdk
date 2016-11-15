@@ -43,11 +43,23 @@ public class Schema implements Serializable, HasExtraFields, Comparable<Schema> 
     @JsonProperty("fieldsets")
     protected List<Object> fieldsets;
 
+    @JsonProperty("limit_resource_types")
+    protected List<String> limitResourceTypes;
+
+    @JsonProperty("in_use")
+    protected Boolean inUse;
+
+    @JsonProperty("slug")
+    protected String slug;
+
+    @JsonProperty("version")
+    protected VersionData version;
+
     @JsonProperty("ext")
     protected LinkedHashMap<String, Object> ext;
 
     @JsonProperty("updated_at")
-    protected String updated_at;
+    protected String updatedAt;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -175,12 +187,12 @@ public class Schema implements Serializable, HasExtraFields, Comparable<Schema> 
         this.ext = ext;
     }
 
-    public String getUpdated_at() {
-        return updated_at;
+    public String getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(String updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
