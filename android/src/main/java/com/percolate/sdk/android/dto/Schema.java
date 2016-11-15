@@ -2,6 +2,7 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.percolate.sdk.dto.VersionData;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,9 +30,14 @@ public class Schema extends com.percolate.sdk.dto.Schema implements Parcelable {
         dest.writeList(this.plugins);
         this.fieldsets = new ArrayList<>();
         dest.writeList(this.fieldsets);
+        this.limitResourceTypes = new ArrayList<>();
+        dest.writeList(this.limitResourceTypes);
+        dest.writeValue(this.inUse);
+        dest.writeString(this.slug);
+        dest.writeSerializable(this.version);
         this.ext = new LinkedHashMap<>();
         dest.writeMap(this.ext);
-        dest.writeString(this.updated_at);
+        dest.writeString(this.updatedAt);
         dest.writeMap(this.extraFields);
     }
 
@@ -50,8 +56,13 @@ public class Schema extends com.percolate.sdk.dto.Schema implements Parcelable {
         in.readList(this.plugins, List.class.getClassLoader());
         this.fieldsets = new ArrayList<>();
         in.readList(this.fieldsets, List.class.getClassLoader());
+        this.limitResourceTypes = new ArrayList<>();
+        in.readList(this.limitResourceTypes, List.class.getClassLoader());
+        this.inUse = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.slug = in.readString();
+        this.version = (VersionData) in.readSerializable();
         in.readMap(this.ext, LinkedHashMap.class.getClassLoader());
-        this.updated_at = in.readString();
+        this.updatedAt = in.readString();
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
