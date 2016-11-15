@@ -2,8 +2,6 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.ImageSize;
-import com.percolate.sdk.dto.MediaFormat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,6 +30,7 @@ public class Media extends com.percolate.sdk.dto.Media implements Parcelable {
         dest.writeString(this.type);
         dest.writeInt(this.fileSize);
         dest.writeSerializable(this.mediaMetaData);
+        dest.writeList(this.customMediaMetaData);
         dest.writeString(this.url);
         dest.writeString(this.state);
         dest.writeList(this.formats);
@@ -57,15 +56,16 @@ public class Media extends com.percolate.sdk.dto.Media implements Parcelable {
         this.type = in.readString();
         this.fileSize = in.readInt();
         this.mediaMetaData = (com.percolate.sdk.dto.MediaMetaData) in.readSerializable();
+        in.readList(this.customMediaMetaData, List.class.getClassLoader());
         this.url = in.readString();
         this.state = in.readString();
-        this.formats = new ArrayList<MediaFormat>();
+        this.formats = new ArrayList<>();
         in.readList(this.formats, List.class.getClassLoader());
         this.format = in.readString();
         this.licenseId = (Long) in.readValue(Long.class.getClassLoader());
         this.imagesForTypeImage = new LinkedHashMap<>();
         in.readMap(this.imagesForTypeImage, LinkedHashMap.class.getClassLoader());
-        this.imagesForTypeVideo = new ArrayList<ImageSize>();
+        this.imagesForTypeVideo = new ArrayList<>();
         in.readList(this.imagesForTypeVideo, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
