@@ -50,6 +50,9 @@ public class Media implements Serializable, HasExtraFields {
     @JsonProperty("metadata")
     protected MediaMetaData mediaMetaData = new MediaMetaData();
 
+    @JsonProperty("custom_metadata")
+    protected List<CustomMediaMetaData> customMediaMetaData = new ArrayList<>();
+
     @JsonProperty("url")
     protected String url;
 
@@ -175,6 +178,14 @@ public class Media implements Serializable, HasExtraFields {
 
     public void setMediaMetaData(MediaMetaData mediaMetaData) {
         this.mediaMetaData = mediaMetaData;
+    }
+
+    public List<CustomMediaMetaData> getCustomMediaMetaData() {
+        return customMediaMetaData;
+    }
+
+    public void setCustomMediaMetaData(List<CustomMediaMetaData> customMediaMetaData) {
+        this.customMediaMetaData = customMediaMetaData;
     }
 
     public String getUrl() {
