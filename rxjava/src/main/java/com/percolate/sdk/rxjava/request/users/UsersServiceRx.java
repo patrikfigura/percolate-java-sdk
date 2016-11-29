@@ -7,6 +7,7 @@ import com.percolate.sdk.dto.Users;
 
 import java.util.Map;
 
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
@@ -25,5 +26,5 @@ interface UsersServiceRx {
     Observable<Users> get(@QueryMap Map<String, Object> params);
 
     @PUT(Endpoints.API_V5_PATH + "/user/{user_id}/password")
-    Observable<ChangePasswordError> changePassword(@Path("user_id") String userId, @QueryMap Map<String, Object> params);
+    Observable<ChangePasswordError> changePassword(@Path("user_id") String userId, @Body Map<String, Object> params);
 }
