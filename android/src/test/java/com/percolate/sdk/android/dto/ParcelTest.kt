@@ -21,7 +21,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.robolectric.RobolectricGradleTestRunner
+import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 import java.lang.reflect.Modifier
 import java.util.*
@@ -29,7 +29,7 @@ import java.util.*
 /**
  * This class uses OpenPojo + reflection to test parceling all of our DTOs in one sweep.
  */
-@RunWith(RobolectricGradleTestRunner::class)
+@RunWith(RobolectricTestRunner::class)
 @Config(constants = BuildConfig::class, sdk = intArrayOf(Build.VERSION_CODES.LOLLIPOP))
 class ParcelTest {
 

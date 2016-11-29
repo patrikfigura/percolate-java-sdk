@@ -57,12 +57,12 @@ dependencies {
     compile 'net.sf.py4j:py4j:0.9.1'
 
     // Apache Commons
-    compile 'org.apache.commons:commons-lang3:3.4'
+    compile "org.apache.commons:commons-lang3:${commons_lang3_version}"
 
     // Jackson
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.1'
-    compile 'com.fasterxml.jackson.core:jackson-core:2.7.1'
-    compile 'com.fasterxml.jackson.core:jackson-annotations:2.7.1'
+    compile "com.fasterxml.jackson.core:jackson-databind:${jackson_version}"
+    compile "com.fasterxml.jackson.core:jackson-core:${jackson_version}"
+    compile "com.fasterxml.jackson.core:jackson-annotations:${jackson_version}"
 
     // JetBrains Annotations
     compile 'org.jetbrains:annotations-java5:15.0'

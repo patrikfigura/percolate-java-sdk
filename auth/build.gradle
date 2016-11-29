@@ -57,15 +57,15 @@ dependencies {
     testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // Apache Commons
-    compile 'org.apache.commons:commons-lang3:3.4'
+    compile "org.apache.commons:commons-lang3:${commons_lang3_version}"
 
     // Base64 Encoder/Decoder
     compile 'net.iharder:base64:2.3.9'
 
     // Jackson
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.1'
-    compile 'com.fasterxml.jackson.core:jackson-core:2.7.1'
-    compile 'com.fasterxml.jackson.core:jackson-annotations:2.7.1'
+    compile "com.fasterxml.jackson.core:jackson-databind:${jackson_version}"
+    compile "com.fasterxml.jackson.core:jackson-core:${jackson_version}"
+    compile "com.fasterxml.jackson.core:jackson-annotations:${jackson_version}"
 
     // JetBrains Annotations
     compile 'org.jetbrains:annotations-java5:15.0'
