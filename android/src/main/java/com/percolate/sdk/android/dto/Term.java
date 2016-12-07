@@ -20,6 +20,11 @@ public class Term extends com.percolate.sdk.dto.Term implements Parcelable {
         dest.writeString(this.name);
         dest.writeString(this.namespace);
         dest.writeString(this.scopeId);
+        dest.writeString(this.parentId);
+        dest.writeString(this.taxonomyId);
+        dest.writeValue(this.childCount);
+        dest.writeStringList(this.pathIds);
+        dest.writeString(this.createdAt);
         dest.writeString(this.updatedAt);
         dest.writeMap(this.extraFields);
     }
@@ -32,6 +37,11 @@ public class Term extends com.percolate.sdk.dto.Term implements Parcelable {
         this.name = in.readString();
         this.namespace = in.readString();
         this.scopeId = in.readString();
+        this.parentId = in.readString();
+        this.taxonomyId = in.readString();
+        this.childCount = (Long) in.readValue(Long.class.getClassLoader());
+        this.pathIds = in.createStringArrayList();
+        this.createdAt = in.readString();
         this.updatedAt = in.readString();
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
