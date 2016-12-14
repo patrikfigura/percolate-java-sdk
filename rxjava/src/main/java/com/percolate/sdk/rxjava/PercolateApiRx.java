@@ -11,7 +11,6 @@ import com.percolate.sdk.rxjava.request.approvals.workflow.history.ApprovalWorkf
 import com.percolate.sdk.rxjava.request.auth.AuthRequestRx;
 import com.percolate.sdk.rxjava.request.authorization.UserRolesRequestRx;
 import com.percolate.sdk.rxjava.request.autocomplete.AutocompleteRequestRx;
-import com.percolate.sdk.rxjava.request.brief.BriefRequestRx;
 import com.percolate.sdk.rxjava.request.campaign.CampaignsRequestRx;
 import com.percolate.sdk.rxjava.request.campaign.brief.BriefSectionsRequestRx;
 import com.percolate.sdk.rxjava.request.campaign.workspace.WorkspaceSectionsRequestRx;
@@ -57,6 +56,7 @@ import com.percolate.sdk.rxjava.request.users.UsersRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.facebook.FacebookVendorRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.instagram.InstagramVendorRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.twitter.TwitterVendorRequestRx;
+
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -157,14 +157,6 @@ public class PercolateApiRx extends PercolateApi {
     @SuppressWarnings("unused")
     public UserRolesRequestRx userRolesRx() {
         return new UserRolesRequestRx(this);
-    }
-
-    /**
-     * @return {@link BriefRequestRx} instance.
-     */
-    @SuppressWarnings("unused")
-    public BriefRequestRx briefsRx() {
-        return new BriefRequestRx(this);
     }
 
     /**

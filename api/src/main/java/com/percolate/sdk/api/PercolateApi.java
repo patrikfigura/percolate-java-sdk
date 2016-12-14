@@ -8,7 +8,6 @@ import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflow
 import com.percolate.sdk.api.request.auth.AuthRequest;
 import com.percolate.sdk.api.request.authorization.UserRolesRequest;
 import com.percolate.sdk.api.request.autocomplete.AutocompleteRequest;
-import com.percolate.sdk.api.request.brief.BriefRequest;
 import com.percolate.sdk.api.request.campaign.CampaignsRequest;
 import com.percolate.sdk.api.request.campaign.brief.BriefSectionsRequest;
 import com.percolate.sdk.api.request.campaign.workspace.WorkspaceSectionsRequest;
@@ -56,6 +55,7 @@ import com.percolate.sdk.api.request.vendor.instagram.InstagramVendorRequest;
 import com.percolate.sdk.api.request.vendor.twitter.TwitterVendorRequest;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.api.utils.RetrofitLogic;
+
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -229,14 +229,6 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public UserRolesRequest userRoles() {
         return new UserRolesRequest(this);
-    }
-
-    /**
-     * @return {@link BriefRequest} instance.
-     */
-    @SuppressWarnings("unused")
-    public BriefRequest briefs() {
-        return new BriefRequest(this);
     }
 
     /**
