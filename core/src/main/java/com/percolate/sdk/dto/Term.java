@@ -10,6 +10,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("UnusedDeclaration")
@@ -20,16 +21,31 @@ public class Term implements Serializable, HasExtraFields {
     private static final long serialVersionUID = 3098198274190964473L;
 
     @JsonProperty("id")
-    protected String id;   // term id
+    protected String id;
 
     @JsonProperty("name")
-    protected String name;  // tag name
+    protected String name;
 
     @JsonProperty("namespace")
-    protected String namespace;  // the namespace the term belongs to
+    protected String namespace;
 
     @JsonProperty("scope_id")
-    protected String scopeId;  // an ID of the owner
+    protected String scopeId;
+
+    @JsonProperty("parent_id")
+    protected String parentId;
+
+    @JsonProperty("taxonomy_id")
+    protected String taxonomyId;
+
+    @JsonProperty("child_count")
+    protected Long childCount;
+
+    @JsonProperty("path_ids")
+    protected List<String> pathIds;
+
+    @JsonProperty("created_at")
+    protected String createdAt;
 
     @JsonProperty("update_at")
     protected String updatedAt;
@@ -71,12 +87,12 @@ public class Term implements Serializable, HasExtraFields {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-    public String getUid() {
+    public String getId() {
         return id;
     }
 
-    public void setUid(String uid) {
-        this.id = uid;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -101,6 +117,46 @@ public class Term implements Serializable, HasExtraFields {
 
     public void setScopeId(String scopeId) {
         this.scopeId = scopeId;
+    }
+
+    public String getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getTaxonomyId() {
+        return taxonomyId;
+    }
+
+    public void setTaxonomyId(String taxonomyId) {
+        this.taxonomyId = taxonomyId;
+    }
+
+    public Long getChildCount() {
+        return childCount;
+    }
+
+    public void setChildCount(Long childCount) {
+        this.childCount = childCount;
+    }
+
+    public List<String> getPathIds() {
+        return pathIds;
+    }
+
+    public void setPathIds(List<String> pathIds) {
+        this.pathIds = pathIds;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getUpdatedAt() {
