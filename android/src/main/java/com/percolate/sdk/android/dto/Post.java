@@ -3,7 +3,6 @@ package com.percolate.sdk.android.dto;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.percolate.sdk.dto.Channel;
-import com.percolate.sdk.dto.FacebookMentionData;
 import com.percolate.sdk.dto.LocalCreatedAt;
 import com.percolate.sdk.dto.PostSetData;
 import com.percolate.sdk.dto.Targeting;
@@ -28,6 +27,7 @@ public class Post extends com.percolate.sdk.dto.Post implements Parcelable {
         dest.writeSerializable(this.workflowData);
         dest.writeSerializable(this.twitterInteractionsData);
         dest.writeList(this.terms);
+        dest.writeList(this.taxonomies);
         dest.writeSerializable(this.postSetData);
         dest.writeValue(this.id);
         dest.writeMap(this.analytics);
@@ -68,6 +68,8 @@ public class Post extends com.percolate.sdk.dto.Post implements Parcelable {
         this.twitterInteractionsData = (TwitterInteractionsData) in.readSerializable();
         this.terms = new ArrayList<>();
         in.readList(this.terms, List.class.getClassLoader());
+        this.taxonomies = new ArrayList<>();
+        in.readList(this.taxonomies, List.class.getClassLoader());
         this.postSetData = (PostSetData) in.readSerializable();
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.analytics = new LinkedHashMap<>();
