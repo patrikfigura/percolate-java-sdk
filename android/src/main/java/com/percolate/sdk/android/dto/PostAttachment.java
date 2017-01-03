@@ -8,6 +8,7 @@ import com.percolate.sdk.dto.V5Meta;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Android version of {@link com.percolate.sdk.dto.PostAttachment}.  Implements {@link Parcelable}
@@ -34,6 +35,8 @@ public class PostAttachment extends com.percolate.sdk.dto.PostAttachment impleme
         this.meta = (V5Meta) in.readSerializable();
         this.data = new ArrayList<>();
         in.readList(this.data, PostAttachmentData.class.getClassLoader());
+        this.errors = new ArrayList<>();
+        in.readList(this.errors, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
     }
