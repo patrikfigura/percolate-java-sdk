@@ -33,6 +33,7 @@ import com.percolate.sdk.api.request.monitoring.twitter.TwitterMonitoringRequest
 import com.percolate.sdk.api.request.platform.PlatformsRequest;
 import com.percolate.sdk.api.request.post.PostRequest;
 import com.percolate.sdk.api.request.post.plug.PostPlugRequest;
+import com.percolate.sdk.api.request.post_attachment.PostAttachmentRequest;
 import com.percolate.sdk.api.request.postset.PostSetRequest;
 import com.percolate.sdk.api.request.preview.PreviewRequest;
 import com.percolate.sdk.api.request.previewformat.PreviewFormatRequest;
@@ -515,6 +516,14 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public PostSetRequest postSet() {
         return new PostSetRequest(this);
+    }
+
+    /**
+     * @return {@link PostAttachmentRequest} instance.
+     */
+    @SuppressWarnings("unused")
+    public PostAttachmentRequest postAttachment() {
+        return new PostAttachmentRequest(this);
     }
 
     /**

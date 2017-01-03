@@ -36,6 +36,7 @@ import com.percolate.sdk.rxjava.request.monitoring.twitter.TwitterMonitoringRequ
 import com.percolate.sdk.rxjava.request.platform.PlatformsRequestRx;
 import com.percolate.sdk.rxjava.request.post.PostRequestRx;
 import com.percolate.sdk.rxjava.request.post.plug.PostPlugRequestRx;
+import com.percolate.sdk.rxjava.request.post_attachment.PostAttachmentRequestRx;
 import com.percolate.sdk.rxjava.request.postset.PostSetRequestRx;
 import com.percolate.sdk.rxjava.request.preview.PreviewRequestRx;
 import com.percolate.sdk.rxjava.request.previewformat.PreviewFormatRequestRx;
@@ -443,6 +444,14 @@ public class PercolateApiRx extends PercolateApi {
     @SuppressWarnings("unused")
     public PostSetRequestRx postSetRx() {
         return new PostSetRequestRx(this);
+    }
+
+    /**
+     * @return {@link PostAttachmentRequestRx} instance.
+     */
+    @SuppressWarnings("unused")
+    public PostAttachmentRequestRx postAttachmentRx() {
+        return new PostAttachmentRequestRx(this);
     }
 
     /**
