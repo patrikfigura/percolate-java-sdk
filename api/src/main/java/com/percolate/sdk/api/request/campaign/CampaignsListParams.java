@@ -16,6 +16,11 @@ public class CampaignsListParams {
     public CampaignsListParams() {
     }
 
+    public CampaignsListParams approvalWorkflow(String approvalWorkflow) {
+        params.put("approval_workflow", approvalWorkflow);
+        return this;
+    }
+
     public CampaignsListParams ids(List<String> ids) {
         params.put("ids", StringUtils.join(ids, ","));
         return this;
@@ -52,12 +57,17 @@ public class CampaignsListParams {
     }
 
     public CampaignsListParams startAt(String startAt) {
-        params.put("start_at", startAt);
+        params.put("start_at:from", startAt);
         return this;
     }
 
     public CampaignsListParams endAt(String endAt) {
-        params.put("end_at", endAt);
+        params.put("end_at:to", endAt);
+        return this;
+    }
+
+    public CampaignsListParams hasDates(boolean hasDates) {
+        params.put("has_dates", hasDates);
         return this;
     }
 
