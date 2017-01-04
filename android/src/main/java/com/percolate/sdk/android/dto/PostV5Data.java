@@ -44,6 +44,7 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
         dest.writeStringList(this.assetIds);
         dest.writeStringList(this.topicIds);
         dest.writeStringList(this.termIds);
+        dest.writeStringList(this.postAttachmentIds);
         dest.writeStringList(this.originIds);
         dest.writeStringList(this.linkIds);
         dest.writeList(this.metadata);
@@ -82,6 +83,7 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
         this.assetIds = other.getAssetIds();
         this.topicIds = other.getTopicIds();
         this.termIds = other.getTermIds();
+        this.postAttachmentIds = other.getPostAttachmentIds();
         this.originIds = other.getOriginIds();
         this.linkIds = other.getLinkIds();
         this.metadata = other.getMetadata();
@@ -118,6 +120,7 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
         this.assetIds = in.createStringArrayList();
         this.topicIds = in.createStringArrayList();
         this.termIds = in.createStringArrayList();
+        this.postAttachmentIds = in.createStringArrayList();
         this.originIds = in.createStringArrayList();
         this.linkIds = in.createStringArrayList();
         this.metadata= new ArrayList<>();

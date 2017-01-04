@@ -103,6 +103,9 @@ public class PostV5Data implements Serializable, HasExtraFields {
     @JsonProperty("term_ids")
     protected List<String> termIds;
 
+    @JsonProperty("post_attachment_ids")
+    protected List<String> postAttachmentIds;
+
     @JsonProperty("origin_ids")
     protected List<String> originIds;
 
@@ -279,6 +282,14 @@ public class PostV5Data implements Serializable, HasExtraFields {
 
     public void setTermIds(List<String> termIds) {
         this.termIds = termIds;
+    }
+
+    public List<String> getPostAttachmentIds() {
+        return postAttachmentIds;
+    }
+
+    public void setPostAttachmentIds(List<String> postAttachmentIds) {
+        this.postAttachmentIds = postAttachmentIds;
     }
 
     public List<String> getOriginIds() {
