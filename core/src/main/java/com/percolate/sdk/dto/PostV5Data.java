@@ -40,6 +40,10 @@ public class PostV5Data implements Serializable, HasExtraFields {
 
     @JsonIgnore
     @Nullable
+    public List<PostAttachmentData> attachments; //Set by client after calling post attachment api.
+
+    @JsonIgnore
+    @Nullable
     public Link link; //Set by client after calling links api.
 
     @JsonIgnore

@@ -23,6 +23,7 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
         dest.writeSerializable(this.channel);
         dest.writeList(this.media);
         dest.writeSerializable(this.workflowData);
+        dest.writeList(this.attachments);
         dest.writeSerializable(this.link);
         dest.writeMap(this.fieldLabels);
         dest.writeString(this.id);
@@ -62,6 +63,7 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
         this.channel = other.channel;
         this.media = other.media;
         this.workflowData = other.workflowData;
+        this.attachments = other.attachments;
         this.link = other.link;
         this.fieldLabels = other.fieldLabels;
         this.id = other.getId();
@@ -99,6 +101,8 @@ public class PostV5Data extends com.percolate.sdk.dto.PostV5Data implements Parc
         this.media = new ArrayList<>();
         in.readList(this.media, List.class.getClassLoader());
         this.workflowData = (WorkflowData) in.readSerializable();
+        this.attachments = new ArrayList<>();
+        in.readList(this.attachments, List.class.getClassLoader());
         this.link = (Link) in.readSerializable();
         in.readMap(this.fieldLabels, Map.class.getClassLoader());
         this.id = in.readString();
