@@ -26,6 +26,11 @@ public class FeaturesParams {
         return this;
     }
 
+    public FeaturesParams limit(String limit) {
+        params.put("limit", limit);
+        return this;
+    }
+
     public Map<String, Object> getParams() {
         return params;
     }
