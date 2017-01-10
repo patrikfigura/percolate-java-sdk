@@ -2,6 +2,7 @@ package com.percolate.sdk.rxjava.request.config;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
+import com.percolate.sdk.dto.Config;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 import rx.Observable;
@@ -23,7 +24,7 @@ public class ConfigRequestRx {
      *
      * @return {@link Observable} object.
      */
-    public Call<Observable> get() {
+    public Observable<Config> get() {
         return service.get();
     }
 }
