@@ -3,6 +3,7 @@ package com.percolate.sdk.api.request.interaction;
 import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.InteractionData;
 import com.percolate.sdk.dto.Interactions;
+import com.percolate.sdk.dto.SingleInteraction;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -17,7 +18,7 @@ import java.util.Map;
 interface InteractionService {
 
     @GET(Endpoints.API_V5_PATH + "/interaction/")
-    Call<Interactions> get(@QueryMap Map<String, Object> params);
+    Call<SingleInteraction> get(@QueryMap Map<String, Object> params);
 
     @POST(Endpoints.API_V5_PATH + "/interaction/")
     Call<InteractionData> create(@Body InteractionData interaction);

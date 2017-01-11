@@ -4,6 +4,7 @@ import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.InteractionData;
 import com.percolate.sdk.dto.Interactions;
+import com.percolate.sdk.dto.SingleInteraction;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 
@@ -25,7 +26,7 @@ public class InteractionRequest {
      * @param params API params.
      * @return {@link Call} object.
      */
-    public Call<Interactions> get(@NotNull final InteractionParams params) {
+    public Call<SingleInteraction> get(@NotNull final InteractionParams params) {
         return service.get(params.getParams());
     }
 

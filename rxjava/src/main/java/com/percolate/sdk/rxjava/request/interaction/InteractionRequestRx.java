@@ -6,6 +6,7 @@ import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.InteractionData;
 import com.percolate.sdk.dto.Interactions;
 
+import com.percolate.sdk.dto.SingleInteraction;
 import org.jetbrains.annotations.NotNull;
 
 import rx.Observable;
@@ -28,7 +29,7 @@ public class InteractionRequestRx {
      * @param params API params.
      * @return {@link Observable} object.
      */
-    public Observable<Interactions> get(@NotNull final InteractionParams params) {
+    public Observable<SingleInteraction> get(@NotNull final InteractionParams params) {
         return service.get(params.getParams());
     }
 
