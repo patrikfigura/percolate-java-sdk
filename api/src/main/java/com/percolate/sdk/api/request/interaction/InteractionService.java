@@ -18,8 +18,8 @@ import java.util.Map;
 interface InteractionService {
 
     @GET(Endpoints.API_V5_PATH + "/interaction/")
-    Call<SingleInteraction> get(@QueryMap Map<String, Object> params);
+    Call<Interactions> get(@QueryMap Map<String, Object> params);
 
     @POST(Endpoints.API_V5_PATH + "/interaction/")
-    Call<InteractionData> create(@Body InteractionData interaction);
+    Call<SingleInteraction> create(@Body InteractionData interaction);
 }

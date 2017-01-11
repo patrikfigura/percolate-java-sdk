@@ -19,8 +19,8 @@ import rx.Observable;
 interface InteractionServiceRx {
 
     @GET(Endpoints.API_V5_PATH + "/interaction/")
-    Observable<SingleInteraction> get(@QueryMap Map<String, Object> params);
+    Observable<Interactions> get(@QueryMap Map<String, Object> params);
 
     @POST(Endpoints.API_V5_PATH + "/interaction/")
-    Observable<InteractionData> create(@Body InteractionData interaction);
+    Observable<SingleInteraction> create(@Body InteractionData interaction);
 }

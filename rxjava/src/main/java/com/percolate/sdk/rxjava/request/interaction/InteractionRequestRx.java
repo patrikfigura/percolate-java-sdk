@@ -29,7 +29,7 @@ public class InteractionRequestRx {
      * @param params API params.
      * @return {@link Observable} object.
      */
-    public Observable<SingleInteraction> get(@NotNull final InteractionParams params) {
+    public Observable<Interactions> get(@NotNull final InteractionParams params) {
         return service.get(params.getParams());
     }
 
@@ -37,9 +37,9 @@ public class InteractionRequestRx {
      * Create interaction.
      *
      * @param interaction {@link InteractionData} object.
-     * @return {@link InteractionData} object.
+     * @return {@link SingleInteraction} object.
      */
-    public Observable<InteractionData> create(@NotNull final InteractionData interaction) {
+    public Observable<SingleInteraction> create(@NotNull final InteractionData interaction) {
         return service.create(interaction);
     }
 }

@@ -26,7 +26,7 @@ public class InteractionRequest {
      * @param params API params.
      * @return {@link Call} object.
      */
-    public Call<SingleInteraction> get(@NotNull final InteractionParams params) {
+    public Call<Interactions> get(@NotNull final InteractionParams params) {
         return service.get(params.getParams());
     }
 
@@ -34,9 +34,9 @@ public class InteractionRequest {
      * Create interaction.
      *
      * @param interaction {@link InteractionData} object.
-     * @return {@link InteractionData} object.
+     * @return {@link SingleInteraction} object.
      */
-    public Call<InteractionData> create(@NotNull final InteractionData interaction) {
+    public Call<SingleInteraction> create(@NotNull final InteractionData interaction) {
         return service.create(interaction);
     }
 }

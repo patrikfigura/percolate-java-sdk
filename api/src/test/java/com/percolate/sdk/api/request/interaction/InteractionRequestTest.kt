@@ -11,15 +11,15 @@ class InteractionRequestTest : BaseApiTest() {
 
     @Test
     fun testGet() {
-        val interaction = percolateApi
+        val interactions = percolateApi
                 .interactions()
                 .get(InteractionParams())
                 .execute()
                 .body()
 
-        Assert.assertNotNull(interaction)
-        Assert.assertNotNull(interaction.data)
-        Assert.assertEquals("interaction:1", interaction.data.id)
+        Assert.assertNotNull(interactions)
+        Assert.assertNotNull(interactions.data)
+        Assert.assertEquals(2, interactions.data.size)
     }
 
     @Test
@@ -31,6 +31,7 @@ class InteractionRequestTest : BaseApiTest() {
                 .body()
 
         Assert.assertNotNull(interaction)
-        Assert.assertEquals("interaction:1", interaction.id)
+        Assert.assertNotNull(interaction.data)
+        Assert.assertEquals("interaction:1", interaction.data.id)
     }
 }
