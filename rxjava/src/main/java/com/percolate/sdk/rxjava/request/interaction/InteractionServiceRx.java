@@ -6,6 +6,7 @@ import com.percolate.sdk.dto.Interactions;
 
 import java.util.Map;
 
+import com.percolate.sdk.dto.SingleInteraction;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -21,5 +22,5 @@ interface InteractionServiceRx {
     Observable<Interactions> get(@QueryMap Map<String, Object> params);
 
     @POST(Endpoints.API_V5_PATH + "/interaction/")
-    Observable<InteractionData> create(@Body InteractionData interaction);
+    Observable<SingleInteraction> create(@Body InteractionData interaction);
 }

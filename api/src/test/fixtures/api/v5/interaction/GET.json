@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "query": {
+      "platform": "twitter",
+      "xids": "12345,123456",
+      "scope_ids": "license:111"
+    },
+    "total": 1
+  },
+  "data": [{
+    "platform": "twitter",
+    "archived": false,
+    "xid": "12345",
+    "term_ids": [],
+    "read": false,
+    "scope_id": "license:111",
+    "created_at": "2016-02-23T21:17:52+00:00",
+    "id": "interaction:1",
+    "updated_at": "2017-01-11T17:24:40+00:00"
+  }, {
+    "platform": "twitter",
+    "archived": false,
+    "xid": "123456",
+    "term_ids": [],
+    "read": true,
+    "scope_id": "license:111",
+    "created_at": "2016-02-23T21:16:52+00:00",
+    "id": "interaction:2",
+    "updated_at": "2017-01-11T19:24:40+00:00"
+  }]
+}
