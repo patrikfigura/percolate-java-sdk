@@ -38,6 +38,7 @@ import com.percolate.sdk.rxjava.request.post.PostRequestRx;
 import com.percolate.sdk.rxjava.request.post.plug.PostPlugRequestRx;
 import com.percolate.sdk.rxjava.request.post_attachment.PostAttachmentRequestRx;
 import com.percolate.sdk.rxjava.request.postset.PostSetRequestRx;
+import com.percolate.sdk.rxjava.request.preference.PreferenceRequestRx;
 import com.percolate.sdk.rxjava.request.preview.PreviewRequestRx;
 import com.percolate.sdk.rxjava.request.previewformat.PreviewFormatRequestRx;
 import com.percolate.sdk.rxjava.request.push.PushTokenRequestRx;
@@ -348,6 +349,14 @@ public class PercolateApiRx extends PercolateApi {
     @SuppressWarnings("unused")
     public PlatformsRequestRx platformsRx() {
         return new PlatformsRequestRx(this);
+    }
+
+    /**
+     * @return {@link PreferenceRequestRx} instance.
+     */
+    @SuppressWarnings("unused")
+    public PreferenceRequestRx preferenceRx() {
+        return new PreferenceRequestRx(this);
     }
 
     /**

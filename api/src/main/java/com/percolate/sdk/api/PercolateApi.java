@@ -35,6 +35,7 @@ import com.percolate.sdk.api.request.post.PostRequest;
 import com.percolate.sdk.api.request.post.plug.PostPlugRequest;
 import com.percolate.sdk.api.request.post_attachment.PostAttachmentRequest;
 import com.percolate.sdk.api.request.postset.PostSetRequest;
+import com.percolate.sdk.api.request.preference.PreferenceRequest;
 import com.percolate.sdk.api.request.preview.PreviewRequest;
 import com.percolate.sdk.api.request.previewformat.PreviewFormatRequest;
 import com.percolate.sdk.api.request.push.PushTokenRequest;
@@ -423,6 +424,13 @@ public class PercolateApi {
     }
 
     /**
+     * @return {@link PreferenceRequest} instance.
+     */
+    public PreferenceRequest preference() {
+        return new PreferenceRequest(this);
+    }
+
+    /**
      * @return {@link PreviewFormatRequest} instance.
      */
     @SuppressWarnings("unused")
@@ -525,6 +533,8 @@ public class PercolateApi {
     public PostAttachmentRequest postAttachment() {
         return new PostAttachmentRequest(this);
     }
+
+
 
     /**
      * @return {@link TasksRequest} instance.
