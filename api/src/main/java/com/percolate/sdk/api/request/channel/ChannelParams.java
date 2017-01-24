@@ -21,6 +21,11 @@ public class ChannelParams {
         return this;
     }
 
+    public ChannelParams include(String include) {
+        params.put("include", include);
+        return this;
+    }
+
     public ChannelParams page(Integer page) {
         params.put("page", page);
         return this;
