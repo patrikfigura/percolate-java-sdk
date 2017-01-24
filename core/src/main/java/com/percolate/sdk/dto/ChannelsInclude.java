@@ -1,7 +1,12 @@
 package com.percolate.sdk.dto;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.percolate.sdk.interfaces.HasExtraFields;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -13,18 +18,12 @@ import java.util.Map;
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Channels implements Serializable, HasExtraFields {
+public class ChannelsInclude implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -4966307858641906925L;
+    private static final long serialVersionUID = 6913934210095835536L;
 
-    @JsonProperty("meta")
-    protected V5Meta meta;
-
-    @JsonProperty("include")
-    protected ChannelsInclude include;
-
-    @JsonProperty("data")
-    protected List<ChannelV5> data;
+    @JsonProperty("platform")
+    protected List<Platform> platforms;
 
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
@@ -34,20 +33,12 @@ public class Channels implements Serializable, HasExtraFields {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
 
-    public V5Meta getMeta() {
-        return meta;
+    public List<Platform> getPlatforms() {
+        return platforms;
     }
 
-    public void setMeta(V5Meta meta) {
-        this.meta = meta;
-    }
-
-    public List<ChannelV5> getData() {
-        return data;
-    }
-
-    public void setData(List<ChannelV5> data) {
-        this.data = data;
+    public void setPlatforms(List<Platform> platforms) {
+        this.platforms = platforms;
     }
 
     @Override
