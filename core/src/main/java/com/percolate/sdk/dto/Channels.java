@@ -42,6 +42,14 @@ public class Channels implements Serializable, HasExtraFields {
         this.meta = meta;
     }
 
+    public ChannelsInclude getInclude() {
+        return include;
+    }
+
+    public void setInclude(ChannelsInclude include) {
+        this.include = include;
+    }
+
     public List<ChannelV5> getData() {
         return data;
     }
