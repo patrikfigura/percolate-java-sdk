@@ -2,6 +2,7 @@ package com.percolate.sdk.api.request.post;
 
 import com.percolate.sdk.enums.PostIncludeType;
 import com.percolate.sdk.enums.PostStatus;
+
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -21,6 +22,16 @@ public class PostListParams {
 
     public PostListParams scopeIds(List<String> scopeIds) {
         params.put("scope_ids", StringUtils.join(scopeIds, ","));
+        return this;
+    }
+
+    public PostListParams platformIds(List<String> platformIds) {
+        params.put("platform_ids", StringUtils.join(platformIds, ","));
+        return this;
+    }
+
+    public PostListParams topicIds(List<String> topicIds) {
+        params.put("topic_ids", StringUtils.join(topicIds, ","));
         return this;
     }
 
