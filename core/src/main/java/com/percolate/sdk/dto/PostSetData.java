@@ -13,7 +13,7 @@ import java.util.*;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PostSetData implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -7566682514171654050L;
+    private static final long serialVersionUID = 7008695773126850195L;
 
     @JsonProperty("id")
     protected Long id;
@@ -104,6 +104,9 @@ public class PostSetData implements Serializable, HasExtraFields {
 
     @JsonProperty("video_id")
     protected String videoId;
+
+    @JsonProperty("origin_ids")
+    protected List<String> originIds;
 
     @JsonProperty("errors")
     protected List<LinkedHashMap<String, Object>> errors;
@@ -361,6 +364,14 @@ public class PostSetData implements Serializable, HasExtraFields {
 
     public void setVideoId(String videoId) {
         this.videoId = videoId;
+    }
+
+    public List<String> getOriginIds() {
+        return originIds;
+    }
+
+    public void setOriginIds(List<String> originIds) {
+        this.originIds = originIds;
     }
 
     public List<LinkedHashMap<String, Object>> getErrors() {

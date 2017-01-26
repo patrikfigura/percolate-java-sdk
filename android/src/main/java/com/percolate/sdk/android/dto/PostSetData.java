@@ -4,8 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.percolate.sdk.dto.LocalCreatedAt;
 import com.percolate.sdk.dto.Media;
-import com.percolate.sdk.dto.Post;
-import com.percolate.sdk.dto.Topic;
 import com.percolate.sdk.dto.User;
 
 import java.util.ArrayList;
@@ -54,6 +52,7 @@ public class PostSetData extends com.percolate.sdk.dto.PostSetData implements Pa
         dest.writeValue(this.shareId);
         dest.writeValue(this.relatedLicenseId);
         dest.writeString(this.videoId);
+        dest.writeList(this.originIds);
         dest.writeList(this.errors);
         dest.writeMap(this.extraFields);
     }
@@ -75,20 +74,20 @@ public class PostSetData extends com.percolate.sdk.dto.PostSetData implements Pa
         this.linkId = (Long) in.readValue(Long.class.getClassLoader());
         this.localCreatedAt = (LocalCreatedAt) in.readSerializable();
         this.media = (Media) in.readSerializable();
-        this.medias = new ArrayList<Media>();
+        this.medias = new ArrayList<>();
         in.readList(this.medias, List.class.getClassLoader());
-        this.posts = new ArrayList<Post>();
+        this.posts = new ArrayList<>();
         in.readList(this.posts, List.class.getClassLoader());
         this.shortUrl = in.readString();
-        this.tagIds = new ArrayList<Long>();
+        this.tagIds = new ArrayList<>();
         in.readList(this.tagIds, List.class.getClassLoader());
         this.title = in.readString();
-        this.trackingTagIds = new ArrayList<Integer>();
+        this.trackingTagIds = new ArrayList<>();
         in.readList(this.trackingTagIds, List.class.getClassLoader());
         this.user = (User) in.readSerializable();
         this.userId = (Long) in.readValue(Long.class.getClassLoader());
         this.xtags = in.createStringArrayList();
-        this.topics = new ArrayList<Topic>();
+        this.topics = new ArrayList<>();
         in.readList(this.topics, List.class.getClassLoader());
         this.linkTitle = in.readString();
         this.note = in.readString();
@@ -98,6 +97,8 @@ public class PostSetData extends com.percolate.sdk.dto.PostSetData implements Pa
         this.shareId = (Long) in.readValue(Long.class.getClassLoader());
         this.relatedLicenseId = (Integer) in.readValue(Integer.class.getClassLoader());
         this.videoId = in.readString();
+        this.originIds = new ArrayList<>();
+        in.readList(this.originIds, List.class.getClassLoader());
         this.errors = new ArrayList<>();
         in.readList(this.errors, List.class.getClassLoader());
         this.extraFields = new HashMap<>();
