@@ -3,7 +3,7 @@ package com.percolate.sdk.enums;
 import java.util.Locale;
 
 /**
- * Approval workflow types for filtering campaigns.
+ * Valid approval workflow types.
  */
 public enum ApprovalWorkflowType {
     NO_WORKFLOW,
