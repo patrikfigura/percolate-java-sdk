@@ -19,7 +19,7 @@ public class CampaignsListParams {
     }
 
     public CampaignsListParams approvalWorkflow(ApprovalWorkflowType approvalWorkflow) {
-        params.put("approval_workflow", approvalWorkflow);
+        params.put("approval_workflow", approvalWorkflow.toString());
         return this;
     }
 
