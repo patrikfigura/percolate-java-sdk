@@ -33,6 +33,16 @@ public class FolderListParams {
         return this;
     }
 
+    public FolderListParams creatorIds(List<String> creatorIds) {
+        params.put("creator_ids", StringUtils.join(creatorIds, ","));
+        return this;
+    }
+
+    public FolderListParams recursive(boolean recursive) {
+        params.put("recursive", recursive);
+        return this;
+    }
+
     public FolderListParams page(Integer page) {
         params.put("page", page);
         return this;

@@ -1,10 +1,14 @@
 package com.percolate.sdk.api.request.assets;
 
 import com.percolate.sdk.enums.AssetIncludeType;
+import com.percolate.sdk.enums.AssetOrientationType;
+import com.percolate.sdk.enums.AssetSizeType;
+import com.percolate.sdk.enums.AssetType;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -27,13 +31,47 @@ public class AssetsListParams {
         return this;
     }
 
-    public AssetsListParams recursive(boolean recursive) {
-        params.put("recursive", recursive);
+    public AssetsListParams include(List<AssetIncludeType> include) {
+        params.put("include", StringUtils.join(include, ",").toLowerCase(Locale.getDefault()));
+        return this;
+    }
+    public AssetsListParams types(List<AssetType> types) {
+        params.put("types", StringUtils.join(types, ",").toLowerCase(Locale.getDefault()));
         return this;
     }
 
-    public AssetsListParams include(List<AssetIncludeType> include) {
-        params.put("include", StringUtils.join(include, ",").toLowerCase());
+    public AssetsListParams contentTypes(List<String> contentTypes) {
+        params.put("content_types", StringUtils.join(contentTypes, ","));
+        return this;
+    }
+
+    public AssetsListParams creatorIds(List<String> creatorIds) {
+        params.put("creator_ids", StringUtils.join(creatorIds, ","));
+        return this;
+    }
+
+    public AssetsListParams orientation(List<AssetOrientationType> orientation) {
+        params.put("orientation", StringUtils.join(orientation, ",").toLowerCase(Locale.getDefault()));
+        return this;
+    }
+
+    public AssetsListParams size(List<AssetSizeType> size) {
+        params.put("size", StringUtils.join(size, ",").toLowerCase(Locale.getDefault()));
+        return this;
+    }
+
+    public AssetsListParams folderId(String folderId) {
+        params.put("folder_id", folderId);
+        return this;
+    }
+
+    public AssetsListParams createdThrough(List<String> createdThrough) {
+        params.put("created_through", StringUtils.join(createdThrough, ","));
+        return this;
+    }
+
+    public AssetsListParams recursive(boolean recursive) {
+        params.put("recursive", recursive);
         return this;
     }
 
