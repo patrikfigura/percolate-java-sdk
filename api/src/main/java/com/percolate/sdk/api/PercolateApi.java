@@ -5,6 +5,7 @@ import com.percolate.sdk.api.request.activity.ActivityRequest;
 import com.percolate.sdk.api.request.approvals.pools.ApprovalPoolsRequest;
 import com.percolate.sdk.api.request.approvals.workflow.ApprovalWorkflowRequest;
 import com.percolate.sdk.api.request.approvals.workflow.history.ApprovalWorkflowHistoryRequest;
+import com.percolate.sdk.api.request.assets.AssetsRequest;
 import com.percolate.sdk.api.request.auth.AuthRequest;
 import com.percolate.sdk.api.request.authorization.UserRolesRequest;
 import com.percolate.sdk.api.request.autocomplete.AutocompleteRequest;
@@ -169,6 +170,13 @@ public class PercolateApi {
         this.selectedServer = selectedServer;
         RetrofitLogic.reset();
         RetrofitApiFactory.reset();
+    }
+
+    /**
+     * @return {@link AssetsRequest} instance.
+     */
+    public AssetsRequest assets() {
+        return new AssetsRequest(this);
     }
 
     /**

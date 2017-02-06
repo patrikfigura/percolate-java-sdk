@@ -2,12 +2,14 @@ package com.percolate.sdk.rxjava;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.config.PercolateServer;
+import com.percolate.sdk.api.request.assets.AssetsRequest;
 import com.percolate.sdk.api.request.media.release.MediaReleaseRequest;
 import com.percolate.sdk.api.request.post.plug.PostPlugRequest;
 import com.percolate.sdk.rxjava.request.activity.ActivityRequestRx;
 import com.percolate.sdk.rxjava.request.approvals.pools.ApprovalPoolsRequestRx;
 import com.percolate.sdk.rxjava.request.approvals.workflow.ApprovalWorkflowRequestRx;
 import com.percolate.sdk.rxjava.request.approvals.workflow.history.ApprovalWorkflowHistoryRequestRx;
+import com.percolate.sdk.rxjava.request.assets.AssetsRequestRx;
 import com.percolate.sdk.rxjava.request.auth.AuthRequestRx;
 import com.percolate.sdk.rxjava.request.authorization.UserRolesRequestRx;
 import com.percolate.sdk.rxjava.request.autocomplete.AutocompleteRequestRx;
@@ -97,6 +99,13 @@ public class PercolateApiRx extends PercolateApi {
      */
     public PercolateApiRx(@Nullable String apiKey, @Nullable PercolateServer selectedServer) {
         super(apiKey, selectedServer);
+    }
+
+    /**
+     * @return {@link AssetsRequestRx} instance.
+     */
+    public AssetsRequestRx assetsRx() {
+        return new AssetsRequestRx(this);
     }
 
     /**
