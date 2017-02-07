@@ -1,4 +1,4 @@
-package com.percolate.sdk.api.request.assets;
+package com.percolate.sdk.api.request.variants;
 
 import com.percolate.sdk.enums.MediaType;
 import com.percolate.sdk.enums.VariantDownloadType;
@@ -13,58 +13,68 @@ import java.util.Map;
  * Parameters for variant request.
  */
 @SuppressWarnings("unused")
-public class VariantParams {
+public class VariantsListParams {
     private Map<String, Object> params = new HashMap<>();
 
-    public VariantParams() {
+    public VariantsListParams() {
     }
 
-    public VariantParams assetId(String assetId) {
+    public VariantsListParams assetId(String assetId) {
         params.put("asset_id", assetId);
         return this;
     }
 
-    public VariantParams maxWidth(int maxWidth) {
+    public VariantsListParams minWidth(int minWidth) {
+        params.put("min_width", minWidth);
+        return this;
+    }
+
+    public VariantsListParams minHeight(int minHeight) {
+        params.put("min_height", minHeight);
+        return this;
+    }
+
+    public VariantsListParams maxWidth(int maxWidth) {
         params.put("max_width", maxWidth);
         return this;
     }
 
-    public VariantParams maxHeight(int maxHeight) {
+    public VariantsListParams maxHeight(int maxHeight) {
         params.put("max_height", maxHeight);
         return this;
     }
 
-    public VariantParams download(VariantDownloadType type) {
+    public VariantsListParams download(VariantDownloadType type) {
         params.put("download", type.toString().toLowerCase(Locale.getDefault()));
         return this;
     }
 
-    public VariantParams types(List<MediaType> types) {
+    public VariantsListParams types(List<MediaType> types) {
         params.put("types", StringUtils.join(types, ",").toLowerCase(Locale.getDefault()));
         return this;
     }
 
-    public VariantParams page(Integer page) {
+    public VariantsListParams page(Integer page) {
         params.put("page", page);
         return this;
     }
 
-    public VariantParams offset(Integer offset) {
+    public VariantsListParams offset(Integer offset) {
         params.put("offset", offset);
         return this;
     }
 
-    public VariantParams limit(Integer limit) {
+    public VariantsListParams limit(Integer limit) {
         params.put("limit", limit);
         return this;
     }
 
-    public VariantParams orderBy(String orderBy) {
+    public VariantsListParams orderBy(String orderBy) {
         params.put("order_by", orderBy);
         return this;
     }
 
-    public VariantParams orderDirection(String orderDirection) {
+    public VariantsListParams orderDirection(String orderDirection) {
         params.put("order_direction", orderDirection);
         return this;
     }

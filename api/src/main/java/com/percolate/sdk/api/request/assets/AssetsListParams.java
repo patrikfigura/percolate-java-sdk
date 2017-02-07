@@ -35,6 +35,7 @@ public class AssetsListParams {
         params.put("include", StringUtils.join(include, ",").toLowerCase(Locale.getDefault()));
         return this;
     }
+
     public AssetsListParams types(List<AssetType> types) {
         params.put("types", StringUtils.join(types, ",").toLowerCase(Locale.getDefault()));
         return this;

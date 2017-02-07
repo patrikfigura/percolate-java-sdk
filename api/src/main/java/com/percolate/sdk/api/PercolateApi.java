@@ -17,6 +17,7 @@ import com.percolate.sdk.api.request.channel.ChannelRequest;
 import com.percolate.sdk.api.request.comment.CommentRequest;
 import com.percolate.sdk.api.request.config.ConfigRequest;
 import com.percolate.sdk.api.request.features.FeaturesRequest;
+import com.percolate.sdk.api.request.folders.FoldersRequest;
 import com.percolate.sdk.api.request.followers.FollowersRequest;
 import com.percolate.sdk.api.request.interaction.InteractionRequest;
 import com.percolate.sdk.api.request.license.LicenseRequest;
@@ -53,6 +54,7 @@ import com.percolate.sdk.api.request.topics.TopicsRequest;
 import com.percolate.sdk.api.request.translate.TranslateRequest;
 import com.percolate.sdk.api.request.upload.UploadRequest;
 import com.percolate.sdk.api.request.users.UsersRequest;
+import com.percolate.sdk.api.request.variants.VariantsRequest;
 import com.percolate.sdk.api.request.vendor.facebook.FacebookVendorRequest;
 import com.percolate.sdk.api.request.vendor.instagram.InstagramVendorRequest;
 import com.percolate.sdk.api.request.vendor.twitter.TwitterVendorRequest;
@@ -328,6 +330,13 @@ public class PercolateApi {
     }
 
     /**
+     * @return {@link FoldersRequest} instance.
+     */
+    public FoldersRequest folders() {
+        return new FoldersRequest(this);
+    }
+
+    /**
      * @return {@link FollowersRequest} instance.
      */
     @SuppressWarnings("unused")
@@ -582,6 +591,13 @@ public class PercolateApi {
     @SuppressWarnings("unused")
     public UsersRequest users() {
         return new UsersRequest(this);
+    }
+
+    /**
+     * @return {@link VariantsRequest} instance.
+     */
+    public VariantsRequest variants() {
+        return new VariantsRequest(this);
     }
 
     /**

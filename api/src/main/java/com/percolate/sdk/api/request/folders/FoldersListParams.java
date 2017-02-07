@@ -1,6 +1,5 @@
-package com.percolate.sdk.api.request.assets;
+package com.percolate.sdk.api.request.folders;
 
-import com.percolate.sdk.enums.AssetIncludeType;
 import com.percolate.sdk.enums.FolderIncludeType;
 import org.apache.commons.lang3.StringUtils;
 
@@ -9,61 +8,61 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Parameters for folder list request.
+ * Parameters for folder request.
  */
 @SuppressWarnings("unused")
-public class FolderListParams {
+public class FoldersListParams {
     private Map<String, Object> params = new HashMap<>();
 
-    public FolderListParams() {
+    public FoldersListParams() {
     }
 
-    public FolderListParams scopeIds(List<String> scopeIds) {
+    public FoldersListParams scopeIds(List<String> scopeIds) {
         params.put("scope_ids", StringUtils.join(scopeIds, ","));
         return this;
     }
 
-    public FolderListParams parentIds(List<String> parentIds) {
+    public FoldersListParams parentIds(List<String> parentIds) {
         params.put("parent_ids", StringUtils.join(parentIds, ","));
         return this;
     }
 
-    public FolderListParams include(List<FolderIncludeType> include) {
+    public FoldersListParams include(List<FolderIncludeType> include) {
         params.put("includes", StringUtils.join(include, ",").toLowerCase());
         return this;
     }
 
-    public FolderListParams creatorIds(List<String> creatorIds) {
+    public FoldersListParams creatorIds(List<String> creatorIds) {
         params.put("creator_ids", StringUtils.join(creatorIds, ","));
         return this;
     }
 
-    public FolderListParams recursive(boolean recursive) {
+    public FoldersListParams recursive(boolean recursive) {
         params.put("recursive", recursive);
         return this;
     }
 
-    public FolderListParams page(Integer page) {
+    public FoldersListParams page(Integer page) {
         params.put("page", page);
         return this;
     }
 
-    public FolderListParams offset(Integer offset) {
+    public FoldersListParams offset(Integer offset) {
         params.put("offset", offset);
         return this;
     }
 
-    public FolderListParams limit(Integer limit) {
+    public FoldersListParams limit(Integer limit) {
         params.put("limit", limit);
         return this;
     }
 
-    public FolderListParams orderBy(String orderBy) {
+    public FoldersListParams orderBy(String orderBy) {
         params.put("order_by", orderBy);
         return this;
     }
 
-    public FolderListParams orderDirection(String orderDirection) {
+    public FoldersListParams orderDirection(String orderDirection) {
         params.put("order_direction", orderDirection);
         return this;
     }

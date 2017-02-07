@@ -3,6 +3,7 @@ package com.percolate.sdk.api.request.assets;
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.*;
+import okhttp3.ResponseBody;
 import org.jetbrains.annotations.NotNull;
 import retrofit2.Call;
 
@@ -24,18 +25,18 @@ public class AssetsRequest {
      * @param params API params.
      * @return {@link Call} object.
      */
-    public Call<Assets> list(@NotNull final AssetsListParams params) {
-        return service.list(params.getParams());
+    public Call<SingleAsset> get(@NotNull final AssetsGetParams params) {
+        return service.get(params.getAssetId(), params.getParams());
     }
 
     /**
-     * Query assets folder endpoint.
+     * Query assets endpoint.
      *
      * @param params API params.
      * @return {@link Call} object.
      */
-    public Call<Folders> folder(@NotNull final FolderListParams params) {
-        return service.folder(params.getParams());
+    public Call<Assets> list(@NotNull final AssetsListParams params) {
+        return service.list(params.getParams());
     }
 
     /**
@@ -44,7 +45,7 @@ public class AssetsRequest {
      * @param params API params.
      * @return {@link Call} object.
      */
-    public Call<Variants> variant(@NotNull final VariantParams params) {
-        return service.variant(params.getParams());
+    public Call<ResponseBody> download(@NotNull String assetId, @NotNull final AssetsListParams params) {
+        return service.download(assetId, params.getParams());
     }
 }

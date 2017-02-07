@@ -1,13 +1,12 @@
 package com.percolate.sdk.rxjava.request.assets;
 
 import com.percolate.sdk.api.PercolateApi;
+import com.percolate.sdk.api.request.assets.AssetsGetParams;
 import com.percolate.sdk.api.request.assets.AssetsListParams;
-import com.percolate.sdk.api.request.assets.FolderListParams;
-import com.percolate.sdk.api.request.assets.VariantParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.Assets;
-import com.percolate.sdk.dto.Folders;
-import com.percolate.sdk.dto.Variants;
+import com.percolate.sdk.dto.SingleAsset;
+import okhttp3.ResponseBody;
 import org.jetbrains.annotations.NotNull;
 import rx.Observable;
 
@@ -28,18 +27,18 @@ public class AssetsRequestRx {
      * @param params API params.
      * @return {@link Observable} object.
      */
-    public Observable<Assets> list(@NotNull final AssetsListParams params) {
-        return service.list(params.getParams());
+    public Observable<SingleAsset> get(@NotNull final AssetsGetParams params) {
+        return service.get(params.getAssetId(), params.getParams());
     }
 
     /**
-     * Query assets folder endpoint.
+     * Query assets endpoint.
      *
      * @param params API params.
      * @return {@link Observable} object.
      */
-    public Observable<Folders> folder(@NotNull final FolderListParams params) {
-        return service.folder(params.getParams());
+    public Observable<Assets> list(@NotNull final AssetsListParams params) {
+        return service.list(params.getParams());
     }
 
     /**
@@ -48,7 +47,8 @@ public class AssetsRequestRx {
      * @param params API params.
      * @return {@link Observable} object.
      */
-    public Observable<Variants> variant(@NotNull final VariantParams params) {
-        return service.variant(params.getParams());
+    public Observable<ResponseBody> download(@NotNull String assetId, @NotNull final AssetsListParams params) {
+        return service.download(assetId, params.getParams());
     }
+
 }
