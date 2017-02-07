@@ -1,0 +1,91 @@
+{
+  "include": {},
+  "meta": {
+    "total": 320,
+    "query": {
+      "creator_ids": ["user:111"],
+      "limit": 3,
+      "offset": 0,
+      "order_by": "created_at",
+      "order_direction": "desc",
+      "recursive": true,
+      "scope_ids": ["license:11111"],
+      "size": ["large"]
+    }
+  },
+  "data": [{
+    "id": "asset:1",
+    "content_type": "image/jpeg",
+    "size": 2348342,
+    "scope_id": "license:11111",
+    "created_at": "2016-12-09T15:57:14+00:00",
+    "updated_at": "2016-12-09T15:57:32+00:00",
+    "status": "ready",
+    "type": "image",
+    "created_through": "Android Percolate",
+    "filename": "IMG_20161209_155659_917.jpg",
+    "creator_id": "user:111",
+    "folder_id": "folder:1",
+    "deleted": false,
+    "ext": {
+      "dimensions": {
+        "width": 2448,
+        "height": 3264,
+        "unit": "pixels"
+      },
+      "orientation": "portrait"
+    }
+  }, {
+    "id": "asset:2",
+    "content_type": "video/mp4",
+    "size": 16708164,
+    "scope_id": "license:11111",
+    "created_at": "2016-10-04T14:11:18+00:00",
+    "updated_at": "2016-10-04T14:11:33+00:00",
+    "status": "ready",
+    "type": "video",
+    "created_through": "Android Percolate",
+    "filename": "VID_20161004_101053.mp4",
+    "creator_id": "user:111",
+    "folder_id": "folder:2",
+    "deleted": false,
+    "ext": {
+      "dimensions": {
+        "width": 1920,
+        "height": 1080,
+        "unit": "pixels"
+      },
+      "orientation": "landscape",
+      "duration": 8
+    }
+  }, {
+    "id": "asset:3",
+    "content_type": "image/jpeg",
+    "size": 1345758,
+    "scope_id": "license:11111",
+    "created_at": "2016-09-27T14:19:07+00:00",
+    "updated_at": "2016-09-27T14:19:12+00:00",
+    "status": "ready",
+    "type": "image",
+    "created_through": "Android Percolate",
+    "filename": "aviary-image-1474841947768.jpeg",
+    "creator_id": "user:111",
+    "folder_id": "folder:4",
+    "deleted": false,
+    "ext": {
+      "dimensions": {
+        "width": 1500,
+        "height": 2000,
+        "unit": "pixels"
+      },
+      "orientation": "portrait",
+      "device_maker": "Huawei",
+      "device_model": "Nexus 6P",
+      "focal_length": "4.67 mm",
+      "iso": 438,
+      "aperture": "f/2",
+      "shutter_speed": "26/625",
+      "flash": false
+    }
+  }]
+}
