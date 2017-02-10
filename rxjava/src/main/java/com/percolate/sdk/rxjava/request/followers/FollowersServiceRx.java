@@ -3,6 +3,7 @@ package com.percolate.sdk.rxjava.request.followers;
 import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Follower;
 import com.percolate.sdk.dto.Followers;
+import com.percolate.sdk.dto.SingleFollower;
 
 import java.util.List;
 import java.util.Map;
@@ -25,7 +26,7 @@ interface FollowersServiceRx {
     Observable<Followers> get(@QueryMap Map<String, Object> params);
 
     @POST(Endpoints.API_V4_PATH + "/follower/")
-    Observable<Followers> create(@Body List<Follower> followers);
+    Observable<SingleFollower> create(@Body List<Follower> followers);
 
     @DELETE(Endpoints.API_V4_PATH + "/follower/{follower_id}")
     Observable<ResponseBody> delete(@Path("follower_id") String followerId);
