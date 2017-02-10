@@ -1,5 +1,7 @@
 package com.percolate.sdk.api.request.preference;
 
+import com.percolate.sdk.enums.PreferenceNameType;
+
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
@@ -10,8 +12,8 @@ public class PreferenceParams {
 
     private Map<String, Object> params = new HashMap<>();
 
-    public PreferenceParams names(List<String> names) {
-        params.put("names", StringUtils.join(names, ","));
+    public PreferenceParams names(List<PreferenceNameType> names) {
+        params.put("names", StringUtils.join(names, ",").toLowerCase());
         return this;
     }
 
