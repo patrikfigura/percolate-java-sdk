@@ -5,6 +5,7 @@ import com.percolate.sdk.api.request.followers.FollowersParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.Follower;
 import com.percolate.sdk.dto.Followers;
+import com.percolate.sdk.dto.SingleFollower;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -39,9 +40,9 @@ public class FollowersRequestRx {
      * Create followers.
      *
      * @param followers list of {@link Follower} objects.
-     * @return {@link Followers} object.
+     * @return {@link SingleFollower} object.
      */
-    public Observable<Followers> create(@NotNull final List<Follower> followers) {
+    public Observable<SingleFollower> create(@NotNull final List<Follower> followers) {
         return service.create(followers);
     }
 
