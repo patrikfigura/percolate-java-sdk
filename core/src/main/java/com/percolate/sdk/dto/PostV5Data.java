@@ -32,7 +32,7 @@ public class PostV5Data implements Serializable, HasExtraFields {
 
     @JsonIgnore
     @Nullable
-    public List<Media> media; //Set by client after calling media api.
+    public List<Asset> assets; //Set by client after calling assets api.
 
     @JsonIgnore
     @Nullable
