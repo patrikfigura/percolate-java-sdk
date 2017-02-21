@@ -22,6 +22,7 @@ public class PostSetData extends com.percolate.sdk.dto.PostSetData implements Pa
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeList(this.assets);
         dest.writeValue(this.id);
         dest.writeMap(this.analytics);
         dest.writeString(this.body);
@@ -61,6 +62,8 @@ public class PostSetData extends com.percolate.sdk.dto.PostSetData implements Pa
     }
 
     protected PostSetData(Parcel in) {
+        this.assets = new ArrayList<>();
+        in.readList(this.assets, List.class.getClassLoader());
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.analytics = new LinkedHashMap<>();
         in.readMap(this.analytics, LinkedHashMap.class.getClassLoader());

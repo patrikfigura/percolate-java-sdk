@@ -13,7 +13,10 @@ import java.util.*;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PostSetData implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = 7008695773126850195L;
+    private static final long serialVersionUID = 501851829707380945L;
+
+    @JsonIgnore
+    public List<Asset> assets; //Optionally set by client to track assets added to a post.
 
     @JsonProperty("id")
     protected Long id;
