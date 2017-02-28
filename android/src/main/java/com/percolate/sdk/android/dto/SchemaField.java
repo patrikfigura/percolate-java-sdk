@@ -2,9 +2,6 @@ package com.percolate.sdk.android.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.percolate.sdk.dto.Link;
-import com.percolate.sdk.dto.Term;
-import com.percolate.sdk.dto.Topic;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,14 +37,14 @@ public class SchemaField extends com.percolate.sdk.dto.SchemaField implements Pa
     }
 
     protected SchemaField(Parcel in) {
-        this.assets = new ArrayList<com.percolate.sdk.dto.Media>();
+        this.assets = new ArrayList<>();
         in.readList(this.assets, List.class.getClassLoader());
         this.stringArrayValues = in.createStringArrayList();
-        this.terms = new ArrayList<Term>();
+        this.terms = new ArrayList<>();
         in.readList(this.terms, List.class.getClassLoader());
-        this.links = new ArrayList<Link>();
+        this.links = new ArrayList<>();
         in.readList(this.links, List.class.getClassLoader());
-        this.topics = new ArrayList<Topic>();
+        this.topics = new ArrayList<>();
         in.readList(this.topics, List.class.getClassLoader());
         this.key = in.readString();
         this.type = in.readString();

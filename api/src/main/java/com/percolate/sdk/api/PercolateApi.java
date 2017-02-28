@@ -378,6 +378,7 @@ public class PercolateApi {
 
     /**
      * @return {@link MediaRequest} instance.
+     * @deprecated {@link #assets()} should be used instead.
      */
     @SuppressWarnings("unused")
     public MediaRequest media() {

@@ -305,6 +305,7 @@ public class PercolateApiRx extends PercolateApi {
 
     /**
      * @return {@link MediaRequestRx} instance.
+     * @deprecated {@link #assetsRx()} should be used instead.
      */
     @SuppressWarnings("unused")
     public MediaRequestRx mediaRx() {

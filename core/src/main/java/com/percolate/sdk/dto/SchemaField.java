@@ -16,10 +16,10 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SchemaField implements Serializable, HasExtraFields {
 
-    private static final long serialVersionUID = -8430096455662427494L;
+    private static final long serialVersionUID = 4387266474588592330L;
 
     @JsonIgnore
-    public List<Media> assets; // Set by clients when adding assets
+    public List<Asset> assets; // Set by clients when adding assets.
 
     @JsonIgnore
     public List<String> stringArrayValues; // Set by clients when adding string array values
