@@ -8,6 +8,7 @@ import com.percolate.sdk.rxjava.request.activity.ActivityRequestRx;
 import com.percolate.sdk.rxjava.request.approvals.pools.ApprovalPoolsRequestRx;
 import com.percolate.sdk.rxjava.request.approvals.workflow.ApprovalWorkflowRequestRx;
 import com.percolate.sdk.rxjava.request.approvals.workflow.history.ApprovalWorkflowHistoryRequestRx;
+import com.percolate.sdk.rxjava.request.assets.AssetsRequestRx;
 import com.percolate.sdk.rxjava.request.auth.AuthRequestRx;
 import com.percolate.sdk.rxjava.request.authorization.UserRolesRequestRx;
 import com.percolate.sdk.rxjava.request.autocomplete.AutocompleteRequestRx;
@@ -17,6 +18,7 @@ import com.percolate.sdk.rxjava.request.channel.ChannelRequestRx;
 import com.percolate.sdk.rxjava.request.comment.CommentRequestRx;
 import com.percolate.sdk.rxjava.request.config.ConfigRequestRx;
 import com.percolate.sdk.rxjava.request.features.FeaturesRequestRx;
+import com.percolate.sdk.rxjava.request.folders.FoldersRequestRx;
 import com.percolate.sdk.rxjava.request.followers.FollowersRequestRx;
 import com.percolate.sdk.rxjava.request.interaction.InteractionRequestRx;
 import com.percolate.sdk.rxjava.request.license.LicenseRequestRx;
@@ -53,10 +55,10 @@ import com.percolate.sdk.rxjava.request.topics.TopicsRequestRx;
 import com.percolate.sdk.rxjava.request.translate.TranslateRequestRx;
 import com.percolate.sdk.rxjava.request.upload.UploadRequestRx;
 import com.percolate.sdk.rxjava.request.users.UsersRequestRx;
+import com.percolate.sdk.rxjava.request.variants.VariantsRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.facebook.FacebookVendorRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.instagram.InstagramVendorRequestRx;
 import com.percolate.sdk.rxjava.request.vendor.twitter.TwitterVendorRequestRx;
-
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -95,6 +97,13 @@ public class PercolateApiRx extends PercolateApi {
      */
     public PercolateApiRx(@Nullable String apiKey, @Nullable PercolateServer selectedServer) {
         super(apiKey, selectedServer);
+    }
+
+    /**
+     * @return {@link AssetsRequestRx} instance.
+     */
+    public AssetsRequestRx assetsRx() {
+        return new AssetsRequestRx(this);
     }
 
     /**
@@ -232,6 +241,13 @@ public class PercolateApiRx extends PercolateApi {
     }
 
     /**
+     * @return {@link FoldersRequestRx} instance.
+     */
+    public FoldersRequestRx foldersRx() {
+        return new FoldersRequestRx(this);
+    }
+
+    /**
      * @return {@link FollowersRequestRx} instance.
      */
     @SuppressWarnings("unused")
@@ -273,6 +289,7 @@ public class PercolateApiRx extends PercolateApi {
 
     /**
      * @return {@link MediaRequestRx} instance.
+     * @deprecated {@link #assetsRx()} should be used instead.
      */
     @SuppressWarnings("unused")
     public MediaRequestRx mediaRx() {
@@ -485,6 +502,13 @@ public class PercolateApiRx extends PercolateApi {
     @SuppressWarnings("unused")
     public UsersRequestRx usersRx() {
         return new UsersRequestRx(this);
+    }
+
+    /**
+     * @return {@link VariantsRequestRx} instance.
+     */
+    public VariantsRequestRx variantsRx() {
+        return new VariantsRequestRx(this);
     }
 
     /**

@@ -1,5 +1,7 @@
 package com.percolate.sdk.api.request.campaign;
 
+import com.percolate.sdk.enums.ApprovalWorkflowType;
+
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
@@ -16,8 +18,8 @@ public class CampaignsListParams {
     public CampaignsListParams() {
     }
 
-    public CampaignsListParams approvalWorkflow(String approvalWorkflow) {
-        params.put("approval_workflow", approvalWorkflow);
+    public CampaignsListParams approvalWorkflow(ApprovalWorkflowType approvalWorkflow) {
+        params.put("approval_workflow", approvalWorkflow.toString());
         return this;
     }
 

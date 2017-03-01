@@ -99,13 +99,24 @@ public class RetrofitLogic {
                 Request.Builder builder = request.newBuilder();
                 builder.addHeader("User-Agent", userAgentString);
                 if(StringUtils.isBlank(request.header("Authorization"))) {
-                    if(StringUtils.isNotBlank(context.getOAuthTokenKey())) {
-                        builder.addHeader("Authorization", "Bearer " + context.getOAuthTokenKey());
-                    } else if(StringUtils.isNotBlank(context.getApiKey())){
-                        builder.addHeader("Authorization", context.getApiKey());
+                    if(isApiEndpoint(request.url())) {
+                        if (StringUtils.isNotBlank(context.getOAuthTokenKey())) {
+                            builder.addHeader("Authorization", "Bearer " + context.getOAuthTokenKey());
+                        } else if (StringUtils.isNotBlank(context.getApiKey())) {
+                            builder.addHeader("Authorization", context.getApiKey());
+                        }
                     }
                 }
                 return chain.proceed(builder.build());
+            }
+
+            /**
+             * @return {@code true} if the requested url starts with "/api".
+             */
+            private boolean isApiEndpoint(HttpUrl url) {
+                return url.pathSegments() != null &&
+                        !url.pathSegments().isEmpty() &&
+                        url.pathSegments().get(0).equalsIgnoreCase("api");
             }
         });
 
