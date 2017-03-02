@@ -13,8 +13,6 @@ import com.percolate.sdk.rxjava.request.auth.AuthRequestRx;
 import com.percolate.sdk.rxjava.request.authorization.UserRolesRequestRx;
 import com.percolate.sdk.rxjava.request.autocomplete.AutocompleteRequestRx;
 import com.percolate.sdk.rxjava.request.campaign.CampaignsRequestRx;
-import com.percolate.sdk.rxjava.request.campaign.brief.BriefSectionsRequestRx;
-import com.percolate.sdk.rxjava.request.campaign.workspace.WorkspaceSectionsRequestRx;
 import com.percolate.sdk.rxjava.request.campaignsection.CampaignSectionsRequestRx;
 import com.percolate.sdk.rxjava.request.channel.ChannelRequestRx;
 import com.percolate.sdk.rxjava.request.comment.CommentRequestRx;
@@ -192,20 +190,6 @@ public class PercolateApiRx extends PercolateApi {
     @SuppressWarnings("unused")
     public ConfigRequestRx configRx() {
         return new ConfigRequestRx(this);
-    }
-
-    /**
-     * @return {@link BriefSectionsRequestRx} instance.
-     */
-    public BriefSectionsRequestRx briefSectionsRx() {
-        return new BriefSectionsRequestRx(this);
-    }
-
-    /**
-     * @return {@link WorkspaceSectionsRequestRx} instance.
-     */
-    public WorkspaceSectionsRequestRx workspaceSectionsRx() {
-        return new WorkspaceSectionsRequestRx(this);
     }
 
     /**
