@@ -49,6 +49,16 @@ public class PostListParams {
         return this;
     }
 
+    public PostListParams liveAtFrom(String liveAtFrom) {
+        params.put("live_at:from", liveAtFrom);
+        return this;
+    }
+
+    public PostListParams liveAtTo(String liveAtTo) {
+        params.put("live_at:to", liveAtTo);
+        return this;
+    }
+
     public PostListParams approvalUserIds(List<String> approvalUserIds) {
         params.put("approval_user_ids", StringUtils.join(approvalUserIds, ","));
         return this;
