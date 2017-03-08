@@ -10,8 +10,6 @@ import com.percolate.sdk.api.request.auth.AuthRequest;
 import com.percolate.sdk.api.request.authorization.UserRolesRequest;
 import com.percolate.sdk.api.request.autocomplete.AutocompleteRequest;
 import com.percolate.sdk.api.request.campaign.CampaignsRequest;
-import com.percolate.sdk.api.request.campaign.brief.BriefSectionsRequest;
-import com.percolate.sdk.api.request.campaign.workspace.WorkspaceSectionsRequest;
 import com.percolate.sdk.api.request.campaignsection.CampaignSectionsRequest;
 import com.percolate.sdk.api.request.channel.ChannelRequest;
 import com.percolate.sdk.api.request.comment.CommentRequest;
@@ -268,20 +266,6 @@ public class PercolateApi {
     }
 
     /**
-     * @return {@link BriefSectionsRequest} instance.
-     */
-    public BriefSectionsRequest briefSections() {
-        return new BriefSectionsRequest(this);
-    }
-
-    /**
-     * @return {@link WorkspaceSectionsRequest} instance.
-     */
-    public WorkspaceSectionsRequest workspaceSections() {
-        return new WorkspaceSectionsRequest(this);
-    }
-
-    /**
      * @return {@link LicenseRequest} instance.
      */
     @SuppressWarnings("unused")
@@ -378,6 +362,7 @@ public class PercolateApi {
 
     /**
      * @return {@link MediaRequest} instance.
+     * @deprecated {@link #assets()} should be used instead.
      */
     @SuppressWarnings("unused")
     public MediaRequest media() {

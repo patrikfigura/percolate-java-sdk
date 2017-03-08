@@ -1,6 +1,6 @@
 package com.percolate.sdk.api.request.variants;
 
-import com.percolate.sdk.enums.MediaType;
+import com.percolate.sdk.enums.AssetType;
 import com.percolate.sdk.enums.VariantDownloadType;
 import org.apache.commons.lang3.StringUtils;
 
@@ -49,7 +49,7 @@ public class VariantsListParams {
         return this;
     }
 
-    public VariantsListParams types(List<MediaType> types) {
+    public VariantsListParams types(List<AssetType> types) {
         params.put("types", StringUtils.join(types, ",").toLowerCase(Locale.getDefault()));
         return this;
     }

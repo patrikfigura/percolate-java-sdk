@@ -13,8 +13,6 @@ import com.percolate.sdk.rxjava.request.auth.AuthRequestRx;
 import com.percolate.sdk.rxjava.request.authorization.UserRolesRequestRx;
 import com.percolate.sdk.rxjava.request.autocomplete.AutocompleteRequestRx;
 import com.percolate.sdk.rxjava.request.campaign.CampaignsRequestRx;
-import com.percolate.sdk.rxjava.request.campaign.brief.BriefSectionsRequestRx;
-import com.percolate.sdk.rxjava.request.campaign.workspace.WorkspaceSectionsRequestRx;
 import com.percolate.sdk.rxjava.request.campaignsection.CampaignSectionsRequestRx;
 import com.percolate.sdk.rxjava.request.channel.ChannelRequestRx;
 import com.percolate.sdk.rxjava.request.comment.CommentRequestRx;
@@ -195,20 +193,6 @@ public class PercolateApiRx extends PercolateApi {
     }
 
     /**
-     * @return {@link BriefSectionsRequestRx} instance.
-     */
-    public BriefSectionsRequestRx briefSectionsRx() {
-        return new BriefSectionsRequestRx(this);
-    }
-
-    /**
-     * @return {@link WorkspaceSectionsRequestRx} instance.
-     */
-    public WorkspaceSectionsRequestRx workspaceSectionsRx() {
-        return new WorkspaceSectionsRequestRx(this);
-    }
-
-    /**
      * @return {@link LicenseRequestRx} instance.
      */
     @SuppressWarnings("unused")
@@ -305,6 +289,7 @@ public class PercolateApiRx extends PercolateApi {
 
     /**
      * @return {@link MediaRequestRx} instance.
+     * @deprecated {@link #assetsRx()} should be used instead.
      */
     @SuppressWarnings("unused")
     public MediaRequestRx mediaRx() {

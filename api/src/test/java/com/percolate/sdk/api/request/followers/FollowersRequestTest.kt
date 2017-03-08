@@ -13,7 +13,7 @@ class FollowersRequestTest : BaseApiTest() {
                 .followers()
                 .get(FollowersParams())
                 .execute()
-                .body();
+                .body()
 
         Assert.assertNotNull(followers)
         Assert.assertNotNull(followers.followers)
@@ -22,15 +22,14 @@ class FollowersRequestTest : BaseApiTest() {
 
     @Test
     fun testCreate() {
-        val followers = percolateApi
+        val follower = percolateApi
                 .followers()
                 .create(arrayListOf(Follower()))
                 .execute()
-                .body();
+                .body()
 
-        Assert.assertNotNull(followers)
-        Assert.assertNotNull(followers.followers)
-        Assert.assertEquals(1, followers.followers.size.toLong())
+        Assert.assertNotNull(follower)
+        Assert.assertNotNull(follower.data)
     }
 
     @Test
@@ -39,7 +38,7 @@ class FollowersRequestTest : BaseApiTest() {
                 .followers()
                 .delete("123")
                 .execute()
-                .body();
+                .body()
 
         Assert.assertNotNull(response)
     }

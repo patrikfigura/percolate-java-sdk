@@ -2,6 +2,7 @@ package com.percolate.sdk.dto;
 
 import com.fasterxml.jackson.annotation.*;
 import com.percolate.sdk.interfaces.HasExtraFields;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -64,6 +65,19 @@ public class Asset implements Serializable, HasExtraFields {
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
+
+    /**
+     * Assets are the equal if {@link #id}'s match.
+     */
+    @Override
+    @SuppressWarnings("SimplifiableIfStatement")
+    public boolean equals(Object that) {
+        if (this == that) return true;
+        if (that == null || ((Object) this).getClass() != that.getClass()) return false;
+
+        Asset asset = (Asset) that;
+        return StringUtils.equals(id, asset.id);
     }
 
     public String getId() {
