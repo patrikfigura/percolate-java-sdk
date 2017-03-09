@@ -17,6 +17,11 @@ public class FoldersListParams {
     public FoldersListParams() {
     }
 
+    public FoldersListParams ids(List<String> ids) {
+        params.put("ids", StringUtils.join(ids, ","));
+        return this;
+    }
+
     public FoldersListParams scopeIds(List<String> scopeIds) {
         params.put("scope_ids", StringUtils.join(scopeIds, ","));
         return this;
