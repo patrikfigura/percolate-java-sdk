@@ -3,6 +3,7 @@ package com.percolate.sdk.api.request.post;
 import com.percolate.sdk.enums.PostIncludeType;
 import com.percolate.sdk.enums.PostStatus;
 
+import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -56,6 +57,12 @@ public class PostListParams {
 
     public PostListParams liveAtTo(String liveAtTo) {
         params.put("live_at:to", liveAtTo);
+        return this;
+    }
+
+
+    public PostListParams isInteraction(Boolean isInteraction) {
+        params.put("is_interaction", BooleanUtils.toString(isInteraction, "true", "false"));
         return this;
     }
 
