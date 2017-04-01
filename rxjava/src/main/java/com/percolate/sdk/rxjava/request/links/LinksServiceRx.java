@@ -5,11 +5,11 @@ import com.percolate.sdk.dto.Link;
 
 import java.util.Map;
 
+import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
-import rx.Observable;
 
 /**
  * Percolate v3/links API definition.

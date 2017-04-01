@@ -7,7 +7,7 @@ import com.percolate.sdk.dto.LicenseUsers;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * LicenseUsers request proxy.

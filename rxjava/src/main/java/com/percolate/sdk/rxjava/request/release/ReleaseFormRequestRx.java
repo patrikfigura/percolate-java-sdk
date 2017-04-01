@@ -7,7 +7,7 @@ import com.percolate.sdk.dto.ReleaseFormHtml;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Release Form request proxy.

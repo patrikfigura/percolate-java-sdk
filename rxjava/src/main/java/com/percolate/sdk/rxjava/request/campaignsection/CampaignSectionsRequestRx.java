@@ -9,8 +9,8 @@ import com.percolate.sdk.dto.SingleCampaignSection;
 
 import org.jetbrains.annotations.NotNull;
 
+import io.reactivex.Observable;
 import okhttp3.ResponseBody;
-import rx.Observable;
 
 /**
  * Campaign Sections request proxy.

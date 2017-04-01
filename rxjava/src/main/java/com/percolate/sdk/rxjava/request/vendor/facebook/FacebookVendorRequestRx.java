@@ -18,7 +18,7 @@ import com.percolate.sdk.dto.SuccessStatus;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Facebook vendor API request proxy.

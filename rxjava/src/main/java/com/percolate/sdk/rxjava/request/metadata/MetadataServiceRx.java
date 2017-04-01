@@ -4,10 +4,16 @@ import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.MetadataItem;
 import com.percolate.sdk.dto.MetadataList;
 import com.percolate.sdk.dto.SingleMetadataItem;
-import retrofit2.http.*;
-import rx.Observable;
 
 import java.util.Map;
+
+import io.reactivex.Observable;
+import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
+import retrofit2.http.QueryMap;
 
 /**
  * Percolate v5/metadata API definition.

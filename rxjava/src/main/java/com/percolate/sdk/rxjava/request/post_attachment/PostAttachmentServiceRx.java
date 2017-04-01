@@ -7,13 +7,13 @@ import com.percolate.sdk.dto.SinglePostAttachment;
 
 import java.util.Map;
 
+import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
-import rx.Observable;
 
 /**
  * Percolate v5/post_attachment API definition.

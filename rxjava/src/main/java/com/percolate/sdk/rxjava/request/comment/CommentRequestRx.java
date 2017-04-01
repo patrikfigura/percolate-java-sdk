@@ -9,8 +9,8 @@ import com.percolate.sdk.dto.Comments;
 
 import org.jetbrains.annotations.NotNull;
 
+import io.reactivex.Observable;
 import okhttp3.ResponseBody;
-import rx.Observable;
 
 /**
  * Comment request proxy.

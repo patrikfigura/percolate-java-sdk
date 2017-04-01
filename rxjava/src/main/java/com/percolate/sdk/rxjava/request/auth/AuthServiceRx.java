@@ -6,10 +6,10 @@ import com.percolate.sdk.dto.AuthTokenPostData;
 import com.percolate.sdk.dto.AuthorizeData;
 import com.percolate.sdk.dto.AuthorizePostData;
 
+import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
-import rx.Observable;
 
 /**
  * Percolate auth/v5/authorize/ API definition.

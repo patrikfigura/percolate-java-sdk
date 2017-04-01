@@ -7,7 +7,7 @@ import com.percolate.sdk.dto.Channels;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Channel request proxy.

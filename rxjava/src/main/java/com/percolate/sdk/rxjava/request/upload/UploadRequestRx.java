@@ -2,10 +2,16 @@ package com.percolate.sdk.rxjava.request.upload;
 
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
-import com.percolate.sdk.dto.*;
+import com.percolate.sdk.dto.UploadPolicyRequestData;
+import com.percolate.sdk.dto.UploadPolicyResponse;
+import com.percolate.sdk.dto.UploadRequestData;
+import com.percolate.sdk.dto.UploadResponse;
+import com.percolate.sdk.dto.UploadStatusRequestData;
+
 import org.jetbrains.annotations.NotNull;
+
+import io.reactivex.Observable;
 import retrofit2.Call;
-import rx.Observable;
 
 /**
  * Uploads request proxy.

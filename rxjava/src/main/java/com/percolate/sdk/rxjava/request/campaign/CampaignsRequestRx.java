@@ -8,7 +8,7 @@ import com.percolate.sdk.dto.SingleCampaign;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Campaigns request proxy.

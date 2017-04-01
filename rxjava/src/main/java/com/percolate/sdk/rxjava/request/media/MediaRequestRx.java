@@ -6,14 +6,18 @@ import com.percolate.sdk.api.request.media.MediaItemParams;
 import com.percolate.sdk.api.request.media.MediaListParams;
 import com.percolate.sdk.api.request.media.MediaUploadParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
-import com.percolate.sdk.dto.*;
+import com.percolate.sdk.dto.Media;
+import com.percolate.sdk.dto.MediaItems;
+import com.percolate.sdk.dto.MediaList;
+import com.percolate.sdk.dto.MediaMetaData;
+import com.percolate.sdk.dto.MediaMetaDataHolder;
 
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import io.reactivex.Observable;
 import retrofit2.Call;
-import rx.Observable;
 
 /**
  * Media request proxy.

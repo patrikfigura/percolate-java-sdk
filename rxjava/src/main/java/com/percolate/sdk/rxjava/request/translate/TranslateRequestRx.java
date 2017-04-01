@@ -7,7 +7,7 @@ import com.percolate.sdk.dto.Translation;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Translate request proxy.

@@ -3,14 +3,15 @@ package com.percolate.sdk.rxjava.request.assets;
 import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Assets;
 import com.percolate.sdk.dto.SingleAsset;
+
+import java.util.Map;
+
+import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
 import retrofit2.http.Streaming;
-import rx.Observable;
-
-import java.util.Map;
 
 /**
  * Percolate v5/asset, v5/folder, v5/variant API definitions.

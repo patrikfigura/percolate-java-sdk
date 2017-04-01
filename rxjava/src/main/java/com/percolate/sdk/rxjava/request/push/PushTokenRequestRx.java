@@ -8,8 +8,8 @@ import com.percolate.sdk.dto.MobileAppPushTokenData;
 
 import org.jetbrains.annotations.NotNull;
 
+import io.reactivex.Observable;
 import okhttp3.ResponseBody;
-import rx.Observable;
 
 /**
  * Push Token request proxy.

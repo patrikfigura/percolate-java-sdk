@@ -7,7 +7,7 @@ import com.percolate.sdk.dto.Platforms;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Platforms request proxy.

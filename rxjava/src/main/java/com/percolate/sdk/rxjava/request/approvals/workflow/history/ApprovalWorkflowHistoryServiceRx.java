@@ -4,11 +4,11 @@ import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.WorkflowHistory;
 import com.percolate.sdk.dto.WorkflowHistoryEvents;
 
+import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
-import rx.Observable;
 
 /**
  * Percolate v3/approval/workflow/:id:/history/ API definition.

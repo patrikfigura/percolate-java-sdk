@@ -5,9 +5,9 @@ import com.percolate.sdk.dto.Preview;
 
 import java.util.Map;
 
+import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
-import rx.Observable;
 
 /**
  * Percolate v5/preview API definition.

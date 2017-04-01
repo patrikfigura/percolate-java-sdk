@@ -11,9 +11,9 @@ import com.percolate.sdk.dto.SingleFlag;
 
 import org.jetbrains.annotations.NotNull;
 
+import io.reactivex.Observable;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-import rx.Observable;
 
 /**
  * Flags request proxy.

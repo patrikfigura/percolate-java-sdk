@@ -7,7 +7,7 @@ import com.percolate.sdk.dto.Streams;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Streams request proxy.

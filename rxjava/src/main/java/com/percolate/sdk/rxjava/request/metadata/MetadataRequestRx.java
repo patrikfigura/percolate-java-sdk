@@ -6,8 +6,10 @@ import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.MetadataItem;
 import com.percolate.sdk.dto.MetadataList;
 import com.percolate.sdk.dto.SingleMetadataItem;
+
 import org.jetbrains.annotations.NotNull;
-import rx.Observable;
+
+import io.reactivex.Observable;
 
 /**
  * Metadata request proxy.

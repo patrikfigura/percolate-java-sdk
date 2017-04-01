@@ -17,7 +17,7 @@ import com.percolate.sdk.dto.TwitterQueries;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Twitter monitoring request proxy.

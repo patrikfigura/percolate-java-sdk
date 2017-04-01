@@ -12,8 +12,8 @@ import com.percolate.sdk.dto.PostsV5;
 
 import org.jetbrains.annotations.NotNull;
 
+import io.reactivex.Observable;
 import okhttp3.ResponseBody;
-import rx.Observable;
 
 /**
  * Post request proxy.

@@ -16,7 +16,7 @@ import com.percolate.sdk.dto.FacebookMonitoringObjectsList;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Facebook monitoring request proxy.

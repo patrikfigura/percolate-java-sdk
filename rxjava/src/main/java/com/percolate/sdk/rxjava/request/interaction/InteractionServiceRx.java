@@ -3,15 +3,15 @@ package com.percolate.sdk.rxjava.request.interaction;
 import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.InteractionData;
 import com.percolate.sdk.dto.Interactions;
+import com.percolate.sdk.dto.SingleInteraction;
 
 import java.util.Map;
 
-import com.percolate.sdk.dto.SingleInteraction;
+import io.reactivex.Observable;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.QueryMap;
-import rx.Observable;
 
 /**
  * Percolate v5/interaction API definition.

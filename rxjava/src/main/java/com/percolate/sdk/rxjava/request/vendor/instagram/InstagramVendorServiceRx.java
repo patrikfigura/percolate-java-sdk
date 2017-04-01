@@ -8,10 +8,10 @@ import com.percolate.sdk.dto.InstagramUser;
 
 import java.util.Map;
 
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
-import rx.Observable;
 
 /**
  * Percolate v5/vendor/instagram API definition.

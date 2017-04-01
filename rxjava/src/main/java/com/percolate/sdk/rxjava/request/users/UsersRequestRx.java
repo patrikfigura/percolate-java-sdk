@@ -10,7 +10,7 @@ import com.percolate.sdk.dto.Users;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Users request proxy.

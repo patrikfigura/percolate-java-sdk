@@ -7,7 +7,7 @@ import com.percolate.sdk.dto.Features;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Feature request proxy.

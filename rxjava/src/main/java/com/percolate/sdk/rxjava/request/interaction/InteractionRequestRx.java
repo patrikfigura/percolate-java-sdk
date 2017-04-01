@@ -5,11 +5,11 @@ import com.percolate.sdk.api.request.interaction.InteractionParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.InteractionData;
 import com.percolate.sdk.dto.Interactions;
-
 import com.percolate.sdk.dto.SingleInteraction;
+
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Interactions request proxy.

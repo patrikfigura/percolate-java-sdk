@@ -5,9 +5,9 @@ import com.percolate.sdk.dto.Channels;
 
 import java.util.Map;
 
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.QueryMap;
-import rx.Observable;
 
 /**
  * Percolate v5/channel API definition.

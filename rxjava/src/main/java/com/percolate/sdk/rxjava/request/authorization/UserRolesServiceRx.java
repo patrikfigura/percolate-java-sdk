@@ -6,10 +6,10 @@ import com.percolate.sdk.dto.UserRolesV5;
 
 import java.util.Map;
 
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
-import rx.Observable;
 
 /**
  * Percolate user roles (v3 and v5) API definitions.

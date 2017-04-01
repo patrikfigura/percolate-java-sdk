@@ -7,7 +7,7 @@ import com.percolate.sdk.dto.ApprovalPools;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Approval pools request proxy.

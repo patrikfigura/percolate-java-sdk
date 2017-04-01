@@ -6,8 +6,10 @@ import com.percolate.sdk.api.request.folders.FoldersListParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.Folders;
 import com.percolate.sdk.dto.SingleFolder;
+
 import org.jetbrains.annotations.NotNull;
-import rx.Observable;
+
+import io.reactivex.Observable;
 
 /**
  * Folders request proxy.

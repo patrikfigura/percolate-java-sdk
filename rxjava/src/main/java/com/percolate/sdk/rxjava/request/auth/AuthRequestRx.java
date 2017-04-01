@@ -10,7 +10,7 @@ import com.percolate.sdk.dto.AuthorizePostData;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Auth/Login request proxy.

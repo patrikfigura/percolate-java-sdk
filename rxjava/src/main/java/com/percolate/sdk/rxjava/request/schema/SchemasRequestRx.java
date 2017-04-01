@@ -9,7 +9,7 @@ import com.percolate.sdk.dto.SingleSchema;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Schemas request proxy.

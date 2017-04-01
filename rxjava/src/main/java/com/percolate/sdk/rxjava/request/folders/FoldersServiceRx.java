@@ -3,12 +3,13 @@ package com.percolate.sdk.rxjava.request.folders;
 import com.percolate.sdk.api.config.Endpoints;
 import com.percolate.sdk.dto.Folders;
 import com.percolate.sdk.dto.SingleFolder;
+
+import java.util.Map;
+
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
-import rx.Observable;
-
-import java.util.Map;
 
 /**
  * Percolate v5/folder API definitions.

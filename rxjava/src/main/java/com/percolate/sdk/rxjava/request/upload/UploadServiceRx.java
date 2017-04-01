@@ -1,9 +1,18 @@
 package com.percolate.sdk.rxjava.request.upload;
 
 import com.percolate.sdk.api.config.Endpoints;
-import com.percolate.sdk.dto.*;
-import retrofit2.http.*;
-import rx.Observable;
+import com.percolate.sdk.dto.UploadPolicyRequestData;
+import com.percolate.sdk.dto.UploadPolicyResponse;
+import com.percolate.sdk.dto.UploadRequestData;
+import com.percolate.sdk.dto.UploadResponse;
+import com.percolate.sdk.dto.UploadStatusRequestData;
+
+import io.reactivex.Observable;
+import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
 
 /**
  * Percolate v5/upload and v5/upload_policy API definitions.

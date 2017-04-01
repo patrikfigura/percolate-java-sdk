@@ -9,7 +9,7 @@ import com.percolate.sdk.dto.UserRolesV5;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * User roles request proxy.

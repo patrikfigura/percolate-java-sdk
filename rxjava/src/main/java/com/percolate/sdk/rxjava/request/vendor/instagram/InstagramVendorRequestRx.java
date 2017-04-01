@@ -11,7 +11,7 @@ import com.percolate.sdk.dto.InstagramUser;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Instagram vendor request proxy.

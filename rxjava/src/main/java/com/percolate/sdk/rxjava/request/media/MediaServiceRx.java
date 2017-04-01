@@ -1,12 +1,24 @@
 package com.percolate.sdk.rxjava.request.media;
 
 import com.percolate.sdk.api.config.Endpoints;
-import com.percolate.sdk.dto.*;
-import okhttp3.RequestBody;
-import retrofit2.http.*;
-import rx.Observable;
+import com.percolate.sdk.dto.Media;
+import com.percolate.sdk.dto.MediaItems;
+import com.percolate.sdk.dto.MediaList;
+import com.percolate.sdk.dto.MediaMetaData;
+import com.percolate.sdk.dto.MediaMetaDataHolder;
 
 import java.util.Map;
+
+import io.reactivex.Observable;
+import okhttp3.RequestBody;
+import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.Multipart;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.PartMap;
+import retrofit2.http.Path;
+import retrofit2.http.QueryMap;
 
 /**
  * Percolate v3/media API definition.

@@ -8,7 +8,7 @@ import com.percolate.sdk.dto.SinglePreviewFormat;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Preview Format request proxy.

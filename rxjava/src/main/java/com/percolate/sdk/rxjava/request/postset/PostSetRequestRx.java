@@ -8,7 +8,7 @@ import com.percolate.sdk.dto.PostSetData;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Post Set request proxy.

@@ -3,8 +3,10 @@ package com.percolate.sdk.rxjava.request.license.settings;
 import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.LicensePublishingSettings;
+
 import org.jetbrains.annotations.NotNull;
-import rx.Observable;
+
+import io.reactivex.Observable;
 
 /**
  * License settings request proxy.

@@ -9,7 +9,7 @@ import com.percolate.sdk.dto.InstagramSingleMonitoringObject;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Instagram monitoring request proxy.

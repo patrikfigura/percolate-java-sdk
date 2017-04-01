@@ -7,7 +7,7 @@ import com.percolate.sdk.dto.CannedResponses;
 
 import org.jetbrains.annotations.NotNull;
 
-import rx.Observable;
+import io.reactivex.Observable;
 
 /**
  * Canned Responses request proxy.

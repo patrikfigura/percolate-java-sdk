@@ -6,9 +6,11 @@ import com.percolate.sdk.api.request.variants.VariantsListParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.SingleVariant;
 import com.percolate.sdk.dto.Variants;
-import okhttp3.ResponseBody;
+
 import org.jetbrains.annotations.NotNull;
-import rx.Observable;
+
+import io.reactivex.Observable;
+import okhttp3.ResponseBody;
 
 /**
  * Asset variant request proxy.

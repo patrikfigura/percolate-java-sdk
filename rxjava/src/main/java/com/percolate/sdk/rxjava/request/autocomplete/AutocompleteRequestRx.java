@@ -4,8 +4,10 @@ import com.percolate.sdk.api.PercolateApi;
 import com.percolate.sdk.api.request.autocomplete.AutocompleteParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.AutocompleteResponse;
+
 import org.jetbrains.annotations.NotNull;
-import rx.Observable;
+
+import io.reactivex.Observable;
 
 /**
  * Autocomplete request proxy.

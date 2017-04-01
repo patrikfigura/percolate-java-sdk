@@ -6,9 +6,11 @@ import com.percolate.sdk.api.request.assets.AssetsListParams;
 import com.percolate.sdk.api.utils.RetrofitApiFactory;
 import com.percolate.sdk.dto.Assets;
 import com.percolate.sdk.dto.SingleAsset;
-import okhttp3.ResponseBody;
+
 import org.jetbrains.annotations.NotNull;
-import rx.Observable;
+
+import io.reactivex.Observable;
+import okhttp3.ResponseBody;
 
 /**
  * Assets request proxy.
