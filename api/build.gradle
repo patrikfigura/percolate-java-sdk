@@ -73,5 +73,5 @@ dependencies {
     // Retrofit
     compile "com.squareup.retrofit2:retrofit:${retrofitVersion}"
     compile "com.squareup.retrofit2:converter-jackson:${retrofitVersion}"
-    compile "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}"
+    compile "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
 }

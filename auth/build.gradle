@@ -63,9 +63,9 @@ dependencies {
     compile 'net.iharder:base64:2.3.9'
 
     // Jackson
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.1'
-    compile 'com.fasterxml.jackson.core:jackson-core:2.7.1'
-    compile 'com.fasterxml.jackson.core:jackson-annotations:2.7.1'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.7'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.8.7'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.7'
 
     // JetBrains Annotations
     compile 'org.jetbrains:annotations-java5:15.0'
