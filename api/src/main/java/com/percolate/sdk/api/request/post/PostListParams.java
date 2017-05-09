@@ -50,6 +50,11 @@ public class PostListParams {
         return this;
     }
 
+    public PostListParams liveAt(String liveAt) {
+        params.put("live_at", liveAt);
+        return this;
+    }
+
     public PostListParams liveAtFrom(String liveAtFrom) {
         params.put("live_at:from", liveAtFrom);
         return this;
