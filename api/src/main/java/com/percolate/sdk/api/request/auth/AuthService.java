@@ -21,6 +21,4 @@ interface AuthService {
     @POST(Endpoints.AUTH_V5_PATH + "/token/")
     Call<AuthTokenData> token(@Header("Authorization") String authHeader, @Body AuthTokenPostData authTokenData);
 
-    @POST(Endpoints.AUTH_V5_PATH + "/token/")
-    Call<AuthTokenData> token(@Body AuthTokenPostData authTokenData);
 }

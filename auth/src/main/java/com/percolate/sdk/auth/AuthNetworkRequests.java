@@ -6,10 +6,11 @@ import com.percolate.sdk.dto.AuthTokenData;
 import com.percolate.sdk.dto.AuthTokenPostData;
 import com.percolate.sdk.dto.AuthorizeData;
 import com.percolate.sdk.dto.AuthorizePostData;
-import retrofit2.Call;
-import retrofit2.Response;
 
 import java.io.IOException;
+
+import retrofit2.Call;
+import retrofit2.Response;
 
 /**
  * Performs network requests to OAuth2 endpoints:
@@ -95,8 +96,8 @@ class AuthNetworkRequests {
             if(authTokenData == null) {
                 return new AuthResponse(AuthStatus.ERROR, response);
             } else {
-                final String tokenKey = authTokenData.getKey();
-                api.setOAuthTokenKey(tokenKey);
+                final String accessToken = authTokenData.getAccessToken();
+                api.setOAuthTokenKey(accessToken);
                 return new AuthResponse(AuthStatus.READY, response);
             }
         } catch (Exception ex) {

@@ -22,8 +22,8 @@ public class AuthTokenData implements Serializable, HasExtraFields {
     @JsonProperty("token_type")
     protected String tokenType;
 
-    @JsonProperty("key")
-    protected String key;
+    @JsonProperty("access_token")
+    protected String accessToken;
 
     @JsonProperty("user_id")
     protected String userId;
@@ -31,8 +31,8 @@ public class AuthTokenData implements Serializable, HasExtraFields {
     @JsonProperty("grant_id")
     protected String grantId;
 
-    @JsonProperty("refresh")
-    protected String refresh;
+    @JsonProperty("refresh_token")
+    protected String refreshToken;
 
     @JsonProperty("updated_at")
     protected String updatedAt;
@@ -64,12 +64,12 @@ public class AuthTokenData implements Serializable, HasExtraFields {
         this.tokenType = tokenType;
     }
 
-    public String getKey() {
-        return key;
+    public String getAccessToken() {
+        return accessToken;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 
     public String getUserId() {
@@ -88,12 +88,12 @@ public class AuthTokenData implements Serializable, HasExtraFields {
         this.grantId = grantId;
     }
 
-    public String getRefresh() {
-        return refresh;
+    public String getRefreshToken() {
+        return refreshToken;
     }
 
-    public void setRefresh(String refresh) {
-        this.refresh = refresh;
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
     }
 
     public String getUpdatedAt() {

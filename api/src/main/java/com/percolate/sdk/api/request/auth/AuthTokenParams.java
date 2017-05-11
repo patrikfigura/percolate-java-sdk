@@ -25,8 +25,12 @@ public class AuthTokenParams {
     }
 
     public String tokenAuthHeader() {
-        final String clientAndSecret = clientId + ":" + clientSecret;
-        final String encoded = Base64.encodeBytes(clientAndSecret.getBytes());
-        return "Basic " + encoded;
+        if (clientSecret != null) {
+            final String clientAndSecret = clientId + ":" + clientSecret;
+            final String encoded = Base64.encodeBytes(clientAndSecret.getBytes());
+            return "Basic " + encoded;
+        } else {
+            return "Client-ID " + clientId;
+        }
     }
 }
