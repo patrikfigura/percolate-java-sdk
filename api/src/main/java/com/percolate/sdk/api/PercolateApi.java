@@ -536,8 +536,6 @@ public class PercolateApi {
         return new PostAttachmentRequest(this);
     }
 
-
-
     /**
      * @return {@link TasksRequest} instance.
      */

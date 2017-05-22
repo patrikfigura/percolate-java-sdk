@@ -18,10 +18,10 @@ public class AuthTokenData extends com.percolate.sdk.dto.AuthTokenData implement
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.id);
         dest.writeString(this.tokenType);
-        dest.writeString(this.key);
+        dest.writeString(this.accessToken);
         dest.writeString(this.userId);
         dest.writeString(this.grantId);
-        dest.writeString(this.refresh);
+        dest.writeString(this.refreshToken);
         dest.writeString(this.updatedAt);
         dest.writeString(this.expiresAt);
         dest.writeMap(this.extraFields);
@@ -33,10 +33,10 @@ public class AuthTokenData extends com.percolate.sdk.dto.AuthTokenData implement
     protected AuthTokenData(Parcel in) {
         this.id = in.readString();
         this.tokenType = in.readString();
-        this.key = in.readString();
+        this.accessToken = in.readString();
         this.userId = in.readString();
         this.grantId = in.readString();
-        this.refresh = in.readString();
+        this.refreshToken = in.readString();
         this.updatedAt = in.readString();
         this.expiresAt = in.readString();
         this.extraFields = new HashMap<>();
