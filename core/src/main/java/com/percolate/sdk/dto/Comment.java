@@ -43,6 +43,9 @@ public class Comment implements Serializable, HasExtraFields {
     @JsonProperty("context_ext")
     protected CommentContextExt contextExt;
 
+    @JsonProperty("created_at")
+    protected String createdAt;
+
     @JsonProperty("updated_at")
     protected String updatedAt;
 
@@ -102,10 +105,6 @@ public class Comment implements Serializable, HasExtraFields {
         this.scopeUID = scopeUID;
     }
 
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
     public String getContextType() {
         return contextType;
     }
@@ -120,6 +119,18 @@ public class Comment implements Serializable, HasExtraFields {
 
     public void setContextExt(CommentContextExt contextExt) {
         this.contextExt = contextExt;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
     }
 
     public void setUpdatedAt(String updatedAt) {

@@ -29,6 +29,7 @@ public class Comment extends com.percolate.sdk.dto.Comment implements Parcelable
         dest.writeString(this.scopeUID);
         dest.writeString(this.contextType);
         dest.writeSerializable(this.contextExt);
+        dest.writeString(this.createdAt);
         dest.writeString(this.updatedAt);
         dest.writeMap(this.extraFields);
     }
@@ -47,6 +48,7 @@ public class Comment extends com.percolate.sdk.dto.Comment implements Parcelable
         this.scopeUID = in.readString();
         this.contextType = in.readString();
         this.contextExt = (CommentContextExt) in.readSerializable();
+        this.createdAt = in.readString();
         this.updatedAt = in.readString();
         this.extraFields = new HashMap<>();
         in.readMap(this.extraFields, HashMap.class.getClassLoader());
