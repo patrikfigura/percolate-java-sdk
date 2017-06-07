@@ -27,9 +27,6 @@ public class License implements Serializable, HasExtraFields, Comparable<License
     @JsonProperty("uid")
     protected String UID;
 
-    @JsonProperty("default_brew_id")
-    protected Long defaultBrewId;
-
     @JsonProperty("name")
     protected String name;
 
@@ -124,15 +121,7 @@ public class License implements Serializable, HasExtraFields, Comparable<License
     public void setId(Long id) {
         this.id = id;
     }
-
-    public Long getDefaultBrewId() {
-        return defaultBrewId;
-    }
-
-    public void setDefaultBrewId(Long defaultBrewId) {
-        this.defaultBrewId = defaultBrewId;
-    }
-
+    
     public String getName() {
         return name;
     }
