@@ -20,7 +20,7 @@ interface AssetsService {
     @GET(Endpoints.API_V5_PATH + "/asset/{asset_id}")
     Call<SingleAsset> get(@Path("asset_id") String assetId, @QueryMap Map<String, Object> params);
 
-    @GET(Endpoints.API_V5_PATH + "/asset")
+    @GET(Endpoints.API_V5_PATH + "/asset/")
     Call<Assets> list(@QueryMap Map<String, Object> params);
 
     @Streaming
