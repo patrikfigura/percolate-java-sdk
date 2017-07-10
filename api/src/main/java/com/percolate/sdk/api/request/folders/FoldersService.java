@@ -18,6 +18,6 @@ interface FoldersService {
     @GET(Endpoints.API_V5_PATH + "/folder/{folder_id}")
     Call<SingleFolder> get(@Path("folder_id") String folderId, @QueryMap Map<String, Object> params);
 
-    @GET(Endpoints.API_V5_PATH + "/folder")
+    @GET(Endpoints.API_V5_PATH + "/folder/")
     Call<Folders> list(@QueryMap Map<String, Object> params);
 }
