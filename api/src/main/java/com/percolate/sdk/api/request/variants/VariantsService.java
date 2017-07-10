@@ -20,7 +20,7 @@ interface VariantsService {
     @GET(Endpoints.API_V5_PATH + "/variant/{variant_id}")
     Call<SingleVariant> get(@Path("variant_id") String variantId, @QueryMap Map<String, Object> params);
 
-    @GET(Endpoints.API_V5_PATH + "/variant")
+    @GET(Endpoints.API_V5_PATH + "/variant/")
     Call<Variants> list(@QueryMap Map<String, Object> params);
 
     @Streaming
