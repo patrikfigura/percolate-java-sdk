@@ -2,6 +2,7 @@ package com.percolate.sdk.api.request.license;
 
 import com.percolate.sdk.enums.LicenseType;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.BooleanUtils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,6 +21,11 @@ public class LicenseParams {
 
     public LicenseParams userId(String userId) {
         params.put("user_id", userId);
+        return this;
+    }
+
+    public LicenseParams expandHierarchical(Boolean expandHierarchical) {
+        params.put("expand_hierarchical", BooleanUtils.toStringTrueFalse(expandHierarchical));
         return this;
     }
 
