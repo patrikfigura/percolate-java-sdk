@@ -64,7 +64,7 @@ public class Licenses implements Serializable, HasExtraFields {
 
     /**
      * Returns mapping of license UIDs to account ID for lookup of role data.
-     * @return {string: [string]}.
+     * @return {String: List<String>}.
      */
     public Map<String, List<String>>licensesByAccountID() {
         Map<String, List<String>> map = new HashMap<String, List<String>>();
