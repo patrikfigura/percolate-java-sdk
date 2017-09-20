@@ -57,6 +57,13 @@ public class Brand implements Serializable, HasExtraFields {
         this.companyId = companyId;
     }
 
+    public String getAccountID() {
+        if (companyID == null) {
+            return null;
+        }
+        return companyID.replace("company", "account");
+    }
+
     @Override
     public Map<String, Object> getExtraFields() {
         if(extraFields == null) {
