@@ -58,10 +58,10 @@ public class Brand implements Serializable, HasExtraFields {
     }
 
     public String getAccountID() {
-        if (companyID == null) {
+        if (getCompanyId() == null) {
             return null;
         }
-        return companyID.replace("company", "account");
+        return getCompanyId().replace("company", "account");
     }
 
     @Override
