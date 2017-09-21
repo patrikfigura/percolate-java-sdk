@@ -11,6 +11,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -83,7 +84,7 @@ public class UserRolesV5 implements Serializable, HasExtraFields {
      * Returns all license IDs associated with a particular role.
      * @return List<String>.
      */
-    public List<String> scopeIdsForUserRole(UserRole userRole, Map<String, List<String>> map) {
+    private List<String> scopeIdsForUserRole(UserRole userRole, Map<String, List<String>> map) {
         List<String> scopeIds = new ArrayList<String>();
         if (userRole.scopeId.contains("account")) {
             if (map.get(userRole.scopeId) != null) {
@@ -99,7 +100,7 @@ public class UserRolesV5 implements Serializable, HasExtraFields {
      * Returns mapping of all session license IDs to account ID.
      * @return {String: List<String>}.
      */
-    public Map<String, List<String>>licensesByAccountID(List<License> licenses) {
+    private Map<String, List<String>>licensesByAccountID(List<License> licenses) {
         Map<String, List<String>> map = new HashMap<String, List<String>>();
         for (License license : licenses) {
             String accountID = license.brand.getAccountID();
