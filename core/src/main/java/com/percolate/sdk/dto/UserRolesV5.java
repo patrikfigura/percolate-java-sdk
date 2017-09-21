@@ -37,15 +37,18 @@ public class UserRolesV5 implements Serializable, HasExtraFields {
     }
 
     /**
-     * Returns the role that the user has for the given license.
+     * Returns the role that the user has for the given license and given session licenses.
      * @param licenseId Scope UID.
+     * @param current session licenses.
      * @return The {@code Role} the user is in, or {@code null}.
      */
     @Nullable
-    public Role getRoleForLicense(final String licenseId) {
+    public Role getRoleForLicense(final String licenseId, List<License> allLicenses) {
         if (data != null && include != null) {
+            Map<String, List<String>> map = licensesByAccountID(allLicenses);
             for (UserRole userRole : data) {
-                if(StringUtils.equalsIgnoreCase(licenseId, userRole.getScopeId())) {
+                List<String> scopeIdsForUserRole = scopeIdsForUserRole(userRole, map);
+                if (scopeIdsForUserRole.contains(licenseId)) {
                     for (Role includeRole : include.getRole()) {
                         if (StringUtils.equalsIgnoreCase(includeRole.getId(), userRole.getRoleId())) {
                             return includeRole;
@@ -61,10 +64,11 @@ public class UserRolesV5 implements Serializable, HasExtraFields {
      * Checks if the {@link #include} data contains the given capability for the given license.
      * @param licenseId Scope UID.
      * @param capability Capability to check for
+     * @param current session licenses.
      * @return {@code true} if the user has the capability for the given scope.
      */
-    public boolean hasCapability(final String licenseId, final String capability) {
-        final Role role = getRoleForLicense(licenseId);
+    public boolean hasCapability(final String licenseId, final String capability, final List<License> licenses) {
+        final Role role = getRoleForLicense(licenseId, licenses);
         if(role != null && role.getCapabilities() != null) {
             for (String roleCapability : role.getCapabilities()) {
                 if(StringUtils.equalsIgnoreCase(capability, roleCapability)) {
@@ -73,6 +77,41 @@ public class UserRolesV5 implements Serializable, HasExtraFields {
             }
         }
         return false;
+    }
+
+    /**
+     * Returns all license IDs associated with a particular role.
+     * @return List<String>.
+     */
+    public List<String> scopeIdsForUserRole(UserRole userRole, Map<String, List<String>> map) {
+        List<String> scopeIds = new ArrayList<String>();
+        if (userRole.scopeId.contains("account")) {
+            if (map.get(userRole.scopeId) != null) {
+                scopeIds.addAll(map.get(userRole.scopeId));
+            }
+        } else {
+            scopeIds.add(userRole.scopeId);
+        }
+        return scopeIds;
+    }
+
+    /**
+     * Returns mapping of all session license IDs to account ID.
+     * @return {String: List<String>}.
+     */
+    public Map<String, List<String>>licensesByAccountID(List<License> licenses) {
+        Map<String, List<String>> map = new HashMap<String, List<String>>();
+        for (License license : licenses) {
+            String accountID = license.brand.getAccountID();
+            if (accountID == null || license.UID == null) {
+                continue;
+            } else {
+                List<String> UIDs = map.get(accountID) != null? map.get(accountID) : new ArrayList<String>();
+                UIDs.add(license.UID);
+                map.put(accountID, UIDs);
+            }
+        }
+        return map;
     }
 
     public V5Meta getMeta() {
