@@ -68,7 +68,7 @@ public class Licenses implements Serializable, HasExtraFields {
      */
     public Map<String, List<String>>licensesByAccountID() {
         Map<String, List<String>> map = new HashMap<String, List<String>>();
-        for (License license : this.getLicenses()) {
+        for (License license : getLicenses()) {
             String accountID = license.brand.getAccountID();
             if (accountID == null || license.UID == null) {
                 continue;
