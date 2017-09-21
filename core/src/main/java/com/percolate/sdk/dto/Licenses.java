@@ -61,23 +61,4 @@ public class Licenses implements Serializable, HasExtraFields {
     public void putExtraField(String key, Object value) {
         getExtraFields().put(key, value);
     }
-
-    /**
-     * Returns mapping of license UIDs to account ID for lookup of role data.
-     * @return {String: List<String>}.
-     */
-    public Map<String, List<String>>licensesByAccountID() {
-        Map<String, List<String>> map = new HashMap<String, List<String>>();
-        for (License license : getLicenses()) {
-            String accountID = license.brand.getAccountID();
-            if (accountID == null || license.UID == null) {
-                continue;
-            } else {
-                List<String> UIDs = map.get(accountID) != null? map.get(accountID) : new ArrayList<String>();
-                UIDs.add(license.UID);
-                map.put(accountID, UIDs);
-            }
-        }
-        return map;
-    }
 }
