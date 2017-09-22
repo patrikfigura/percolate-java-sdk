@@ -18,6 +18,6 @@ interface FoldersServiceRx {
     @GET(Endpoints.API_V5_PATH + "/folder/{folder_id}")
     Observable<SingleFolder> get(@Path("folder_id") String folderId, @QueryMap Map<String, Object> params);
 
-    @GET(Endpoints.API_V5_PATH + "/folder")
+    @GET(Endpoints.API_V5_PATH + "/folder/")
     Observable<Folders> list(@QueryMap Map<String, Object> params);
 }
