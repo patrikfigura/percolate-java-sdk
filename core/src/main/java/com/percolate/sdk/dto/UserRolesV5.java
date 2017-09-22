@@ -1,5 +1,6 @@
 package com.percolate.sdk.dto;
 
+import com.percolate.sdk.utils.UserRolesUtils;
 import com.fasterxml.jackson.annotation.*;
 import com.percolate.sdk.interfaces.HasExtraFields;
 import org.apache.commons.lang3.StringUtils;
@@ -11,7 +12,6 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.ArrayList;
 
 @SuppressWarnings("UnusedDeclaration")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -46,9 +46,9 @@ public class UserRolesV5 implements Serializable, HasExtraFields {
     @Nullable
     public Role getRoleForLicense(final String licenseId, List<License> allLicenses) {
         if (data != null && include != null) {
-            Map<String, List<String>> map = licensesByAccountID(allLicenses);
+            Map<String, List<String>> map = UserRolesUtils.licensesByAccountID(allLicenses);
             for (UserRole userRole : data) {
-                List<String> scopeIdsForUserRole = scopeIdsForUserRole(userRole, map);
+                List<String> scopeIdsForUserRole = UserRolesUtils.scopeIdsForUserRole(userRole, map);
                 if (scopeIdsForUserRole.contains(licenseId)) {
                     for (Role includeRole : include.getRole()) {
                         if (StringUtils.equalsIgnoreCase(includeRole.getId(), userRole.getRoleId())) {
@@ -78,41 +78,6 @@ public class UserRolesV5 implements Serializable, HasExtraFields {
             }
         }
         return false;
-    }
-
-    /**
-     * Returns all license IDs associated with a particular role.
-     * @return List<String>.
-     */
-    private List<String> scopeIdsForUserRole(UserRole userRole, Map<String, List<String>> map) {
-        List<String> scopeIds = new ArrayList<String>();
-        if (userRole.scopeId.contains("account")) {
-            if (map.get(userRole.scopeId) != null) {
-                scopeIds.addAll(map.get(userRole.scopeId));
-            }
-        } else {
-            scopeIds.add(userRole.scopeId);
-        }
-        return scopeIds;
-    }
-
-    /**
-     * Returns mapping of all session license IDs to account ID.
-     * @return {String: List<String>}.
-     */
-    private Map<String, List<String>>licensesByAccountID(List<License> licenses) {
-        Map<String, List<String>> map = new HashMap<String, List<String>>();
-        for (License license : licenses) {
-            String accountID = license.brand.getAccountID();
-            if (accountID == null || license.id == null) {
-                continue;
-            } else {
-                List<String> UIDs = map.get(accountID) != null? map.get(accountID) : new ArrayList<String>();
-                UIDs.add("license:" + license.id);
-                map.put(accountID, UIDs);
-            }
-        }
-        return map;
     }
 
     public V5Meta getMeta() {
