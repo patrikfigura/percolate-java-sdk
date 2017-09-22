@@ -22,6 +22,9 @@ public class Brand implements Serializable, HasExtraFields {
     @JsonProperty("name")
     protected String name;
 
+    @JsonProperty("company_id")
+    protected String companyId;
+
     @JsonIgnore
     protected Map<String, Object> extraFields = new HashMap<>();
 
@@ -44,6 +47,21 @@ public class Brand implements Serializable, HasExtraFields {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
+    }
+
+    public String getAccountID() {
+        if (getCompanyId() == null) {
+            return null;
+        }
+        return "account:" + getCompanyId();
     }
 
     @Override

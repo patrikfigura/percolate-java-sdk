@@ -1,5 +1,6 @@
 package com.percolate.sdk.dto;
 
+import com.percolate.sdk.utils.UserRolesUtils;
 import com.fasterxml.jackson.annotation.*;
 import com.percolate.sdk.interfaces.HasExtraFields;
 import org.apache.commons.lang3.StringUtils;
@@ -37,15 +38,18 @@ public class UserRolesV5 implements Serializable, HasExtraFields {
     }
 
     /**
-     * Returns the role that the user has for the given license.
+     * Returns the role that the user has for the given license and given session licenses.
      * @param licenseId Scope UID.
+     * @param current session licenses.
      * @return The {@code Role} the user is in, or {@code null}.
      */
     @Nullable
-    public Role getRoleForLicense(final String licenseId) {
+    public Role getRoleForLicense(final String licenseId, List<License> allLicenses) {
         if (data != null && include != null) {
+            Map<String, List<String>> map = UserRolesUtils.licensesByAccountID(allLicenses);
             for (UserRole userRole : data) {
-                if(StringUtils.equalsIgnoreCase(licenseId, userRole.getScopeId())) {
+                List<String> scopeIdsForUserRole = UserRolesUtils.scopeIdsForUserRole(userRole, map);
+                if (scopeIdsForUserRole.contains(licenseId)) {
                     for (Role includeRole : include.getRole()) {
                         if (StringUtils.equalsIgnoreCase(includeRole.getId(), userRole.getRoleId())) {
                             return includeRole;
@@ -61,10 +65,11 @@ public class UserRolesV5 implements Serializable, HasExtraFields {
      * Checks if the {@link #include} data contains the given capability for the given license.
      * @param licenseId Scope UID.
      * @param capability Capability to check for
+     * @param current session licenses.
      * @return {@code true} if the user has the capability for the given scope.
      */
-    public boolean hasCapability(final String licenseId, final String capability) {
-        final Role role = getRoleForLicense(licenseId);
+    public boolean hasCapability(final String licenseId, final String capability, final List<License> licenses) {
+        final Role role = getRoleForLicense(licenseId, licenses);
         if(role != null && role.getCapabilities() != null) {
             for (String roleCapability : role.getCapabilities()) {
                 if(StringUtils.equalsIgnoreCase(capability, roleCapability)) {
