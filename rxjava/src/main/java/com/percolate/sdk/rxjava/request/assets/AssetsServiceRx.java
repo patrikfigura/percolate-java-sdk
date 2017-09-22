@@ -20,7 +20,7 @@ interface AssetsServiceRx {
     @GET(Endpoints.API_V5_PATH + "/asset/{asset_id}")
     Observable<SingleAsset> get(@Path("asset_id") String assetId, @QueryMap Map<String, Object> params);
 
-    @GET(Endpoints.API_V5_PATH + "/asset")
+    @GET(Endpoints.API_V5_PATH + "/asset/")
     Observable<Assets> list(@QueryMap Map<String, Object> params);
 
     @Streaming
