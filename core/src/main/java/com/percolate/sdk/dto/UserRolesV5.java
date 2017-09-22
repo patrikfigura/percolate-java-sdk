@@ -107,9 +107,9 @@ public class UserRolesV5 implements Serializable, HasExtraFields {
             if (accountID == null || license.Id == null) {
                 continue;
             } else {
-                List<String> IDs = map.get(accountID) != null? map.get(accountID) : new ArrayList<String>();
-                IDs.add(license.Id);
-                map.put(accountID, IDs);
+                List<String> UIDs = map.get(accountID) != null? map.get(accountID) : new ArrayList<String>();
+                UIDs.add("license:" + license.Id);
+                map.put(accountID, UIDs);
             }
         }
         return map;
