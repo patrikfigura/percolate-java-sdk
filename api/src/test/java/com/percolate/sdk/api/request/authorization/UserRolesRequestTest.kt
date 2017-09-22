@@ -44,10 +44,8 @@ class UserRolesRequestTest : BaseApiTest() {
             Assert.assertEquals(11, userRoles.data.size)
             Assert.assertEquals(4, userRoles.include.role.size)
 
-
             Assert.assertNotNull(userRoles.getRoleForLicense("license:123456", licenses.licenses))
             Assert.assertNull(userRoles.getRoleForLicense("license:9999", licenses.licenses)) //License does not exist in JSON.
-
             Assert.assertTrue(userRoles.hasCapability("license:123456", "view:asset_library", licenses.licenses))
             Assert.assertFalse(userRoles.hasCapability("license:123456", "does:not:exist", licenses.licenses))
             Assert.assertFalse(userRoles.hasCapability("license:9999", "view:asset_library", licenses.licenses))
