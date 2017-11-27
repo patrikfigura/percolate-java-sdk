@@ -10,7 +10,6 @@
 			"type": "license",
 			"id": 555,
 			"license": {
-				"default_brew_id": 999,
 				"brand": {
 					"id": 1,
 					"name": "Percolate Staff"
@@ -442,7 +441,6 @@
 				"type": "license",
 				"id": 555,
 				"license": {
-					"default_brew_id": 999,
 					"brand": {
 						"id": 1,
 						"name": "Percolate Staff"
@@ -465,7 +463,6 @@
 				"type": "license",
 				"id": 555,
 				"license": {
-					"default_brew_id": 999,
 					"brand": {
 						"id": 1,
 						"name": "Percolate Staff"
@@ -488,7 +485,6 @@
 				"type": "license",
 				"id": 555,
 				"license": {
-					"default_brew_id": 999,
 					"brand": {
 						"id": 1,
 						"name": "Percolate Staff"

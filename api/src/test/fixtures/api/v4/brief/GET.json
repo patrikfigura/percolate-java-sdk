@@ -24,8 +24,7 @@
 					"name": "Percolate Staff"
 				},
 				"photo_url": "https:\/\/percolate.com\/cdn\/img\/someimage.png",
-				"id": 6666,
-				"default_brew_id": 555
+				"id": 6666
 			}
 		},
 		"terms": [],
@@ -64,8 +63,7 @@
 					"name": "Percolate Staff"
 				},
 				"photo_url": "https:\/\/percolate.com\/cdn\/img\/someimage.png",
-				"id": 6666,
-				"default_brew_id": 555
+				"id": 6666
 			}
 		},
 		"terms": [{
@@ -82,8 +80,7 @@
 						"name": "Percolate Staff"
 					},
 					"photo_url": "https:\/\/percolate.com\/cdn\/img\/someimage.png",
-					"id": 6666,
-					"default_brew_id": 555
+					"id": 6666
 				}
 			},
 			"owner_uid": "license:6666",
