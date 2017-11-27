@@ -99,7 +99,6 @@
 			"url": "https:\/\/facebook.com\/SomeFBPage",
 			"type": "facebook",
 			"subtype": null,
-			"has_links": false,
 			"page_id": "123"
 		},
 		"status": "draft",
