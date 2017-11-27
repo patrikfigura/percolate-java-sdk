@@ -32,7 +32,6 @@
 			"type": "license",
 			"id": 1,
 			"license": {
-				"default_brew_id": 333,
 				"brand": {
 					"id": 1,
 					"name": "Some Company"
@@ -75,7 +74,6 @@
 			"type": "license",
 			"id": 1,
 			"license": {
-				"default_brew_id": 333,
 				"brand": {
 					"id": 1,
 					"name": "Some Company"
@@ -99,7 +97,6 @@
 				"type": "license",
 				"id": 1,
 				"license": {
-					"default_brew_id": 333,
 					"brand": {
 						"id": 1,
 						"name": "Some Company"
@@ -122,7 +119,6 @@
 				"type": "license",
 				"id": 1,
 				"license": {
-					"default_brew_id": 333,
 					"brand": {
 						"id": 1,
 						"name": "Some Company"
@@ -164,7 +160,6 @@
 			"type": "license",
 			"id": 1,
 			"license": {
-				"default_brew_id": 333,
 				"brand": {
 					"id": 1,
 					"name": "Some Company"

@@ -9,7 +9,6 @@
     },
     "name": null,
     "license": {
-      "default_brew_id": 100,
       "name": "Personal License for Some User",
       "brand_id": null,
       "engagement_threshold": null,
