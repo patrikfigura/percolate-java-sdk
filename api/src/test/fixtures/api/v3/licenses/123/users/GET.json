@@ -19,8 +19,7 @@
 			"timezone": "US\/Eastern",
 			"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png",
 			"type": "personal",
-			"id": 123,
-			"default_brew_id": 333
+			"id": 123
 		},
 		"role_id": 11,
 		"is_approver": true,
@@ -51,8 +50,7 @@
 			"timezone": "US\/Eastern",
 			"photo_url": "https:\/\/percolate.com\/cdn\/img\/x\/default_73px.png",
 			"type": "standard",
-			"id": 456,
-			"default_brew_id": 555
+			"id": 456
 		},
 		"role_id": 12,
 		"is_approver": false,

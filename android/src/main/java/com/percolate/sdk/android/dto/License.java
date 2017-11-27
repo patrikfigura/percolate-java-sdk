@@ -21,7 +21,6 @@ public class License extends com.percolate.sdk.dto.License implements Parcelable
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeValue(this.id);
         dest.writeString(this.UID);
-        dest.writeValue(this.defaultBrewId);
         dest.writeString(this.name);
         dest.writeString(this.timezone);
         dest.writeString(this.viralityThreshold);
@@ -41,7 +40,6 @@ public class License extends com.percolate.sdk.dto.License implements Parcelable
     protected License(Parcel in) {
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.UID = in.readString();
-        this.defaultBrewId = (Long) in.readValue(Long.class.getClassLoader());
         this.name = in.readString();
         this.timezone = in.readString();
         this.viralityThreshold = in.readString();

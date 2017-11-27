@@ -10,7 +10,6 @@
 			"type": "license",
 			"id": 100,
 			"license": {
-				"default_brew_id": 8989,
 				"brand": {
 					"id": 1,
 					"name": "Percolate Staff"

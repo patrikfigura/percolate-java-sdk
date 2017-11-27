@@ -65,7 +65,6 @@
         "type": "license",
         "id": 1,
         "license": {
-          "default_brew_id": 23232323,
           "brand": {
             "id": 1,
             "name": "Company Staff"
@@ -86,7 +85,6 @@
         "type": "license",
         "id": 1,
         "license": {
-          "default_brew_id": 23232323,
           "brand": {
             "id": 1,
             "name": "Company Staff"
@@ -709,7 +707,6 @@
         "type": "license",
         "id": 1,
         "license": {
-          "default_brew_id": 23232323,
           "brand": {
             "id": 1,
             "name": "Company Staff"
@@ -730,7 +727,6 @@
         "type": "license",
         "id": 1,
         "license": {
-          "default_brew_id": 23232323,
           "brand": {
             "id": 1,
             "name": "Company Staff"
@@ -767,7 +763,6 @@
         "type": "license",
         "id": 444,
         "license": {
-          "default_brew_id": 14719,
           "brand": {
             "id": 1,
             "name": "Company Staff"
@@ -788,7 +783,6 @@
         "type": "license",
         "id": 1,
         "license": {
-          "default_brew_id": 23232323,
           "brand": {
             "id": 1,
             "name": "Company Staff"
@@ -846,7 +840,6 @@
         "type": "license",
         "id": 444,
         "license": {
-          "default_brew_id": 14719,
           "brand": {
             "id": 1,
             "name": "Company Staff"
@@ -867,7 +860,6 @@
         "type": "license",
         "id": 1,
         "license": {
-          "default_brew_id": 23232323,
           "brand": {
             "id": 1,
             "name": "Company Staff"
