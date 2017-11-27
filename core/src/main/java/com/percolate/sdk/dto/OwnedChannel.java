@@ -34,9 +34,6 @@ public class OwnedChannel implements Serializable, HasExtraFields {
     @JsonProperty("name")
     protected String name;
 
-    @JsonProperty("has_links")
-    protected boolean hasLinks;
-
     @JsonProperty("total_subscribers")
     protected Integer totalSubscribers;
 
@@ -100,14 +97,6 @@ public class OwnedChannel implements Serializable, HasExtraFields {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public boolean isHasLinks() {
-        return hasLinks;
-    }
-
-    public void setHasLinks(boolean hasLinks) {
-        this.hasLinks = hasLinks;
     }
 
     public Integer getTotalSubscribers() {

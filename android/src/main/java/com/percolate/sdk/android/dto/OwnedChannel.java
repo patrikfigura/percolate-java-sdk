@@ -22,7 +22,6 @@ public class OwnedChannel extends com.percolate.sdk.dto.OwnedChannel implements 
         dest.writeString(this.url);
         dest.writeString(this.pageId);
         dest.writeString(this.name);
-        dest.writeByte(hasLinks ? (byte) 1 : (byte) 0);
         dest.writeValue(this.totalSubscribers);
         dest.writeString(this.type);
         dest.writeString(this.photoUrl);
@@ -39,7 +38,6 @@ public class OwnedChannel extends com.percolate.sdk.dto.OwnedChannel implements 
         this.url = in.readString();
         this.pageId = in.readString();
         this.name = in.readString();
-        this.hasLinks = in.readByte() != 0;
         this.totalSubscribers = (Integer) in.readValue(Integer.class.getClassLoader());
         this.type = in.readString();
         this.photoUrl = in.readString();

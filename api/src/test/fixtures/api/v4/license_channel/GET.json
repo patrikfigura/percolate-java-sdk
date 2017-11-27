@@ -61,7 +61,6 @@
 			"name": "SomeUser",
 			"url": "http:\/\/facebook.com\/SomeUser",
 			"type": "facebook",
-			"has_links": false,
 			"page_id": "999"
 		}
 	}, {
@@ -118,7 +117,6 @@
 			"name": "percodev",
 			"url": "http:\/\/weibo.com\/u\/abc",
 			"type": "weibo",
-			"has_links": false,
 			"page_id": "6767"
 		}
 	}]
